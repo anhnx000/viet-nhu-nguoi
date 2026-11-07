@@ -1,16 +1,16 @@
 {
-  "name": "vietnamese-humanizer",
+  "name": "viet-nhu-nguoi",
   "owner": {
     "name": "anhnx000",
     "url": "https://github.com/anhnx000"
   },
-  "description": "Skill Claude Code chống giọng văn AI cho tiếng Việt.",
+  "description": "Viết như người: skill Claude Code chống giọng văn AI cho tiếng Việt (Vietnamese humanizer).",
   "plugins": [
     {
-      "name": "vietnamese-humanizer",
+      "name": "viet-nhu-nguoi",
       "source": "./",
-      "description": "Chống giọng văn AI: viết và sửa tiếng Việt cho giống người viết. Có máy quét chấm điểm 0-100 và công cụ kiểm số liệu.",
-      "version": "1.2.0",
+      "description": "Viết như người (human voice): chống giọng văn AI, viết và sửa tiếng Việt cho giống người viết. Có máy quét chấm điểm 0-100 và công cụ kiểm số liệu.",
+      "version": "2.0.0",
       "category": "writing"
     }
   ]

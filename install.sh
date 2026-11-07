@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
-# Cài skill vietnamese-humanizer cho Claude Code (cấp người dùng) bằng symlink.
-# Dùng: bash install.sh            -> ~/.claude/skills/vietnamese-humanizer
+# Cài skill viet-nhu-nguoi cho Claude Code (cấp người dùng) bằng symlink.
+# Dùng: bash install.sh            -> ~/.claude/skills/viet-nhu-nguoi
 #       bash install.sh --copy     -> chép file thay vì symlink
 set -euo pipefail
 
@@ -14,8 +14,8 @@ if (( $# > 1 )); then
   exit 2
 fi
 
-SRC="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)/skills/vietnamese-humanizer"
-DEST="${HOME}/.claude/skills/vietnamese-humanizer"
+SRC="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)/skills/viet-nhu-nguoi"
+DEST="${HOME}/.claude/skills/viet-nhu-nguoi"
 
 mkdir -p "$(dirname "$DEST")"
 if [ -e "$DEST" ] || [ -L "$DEST" ]; then
@@ -29,4 +29,4 @@ else
   ln -s "$SRC" "$DEST"
 fi
 echo "Đã cài: $DEST"
-echo "Mở phiên Claude Code mới rồi gõ /vietnamese-humanizer"
+echo "Mở phiên Claude Code mới rồi gõ /viet-nhu-nguoi"

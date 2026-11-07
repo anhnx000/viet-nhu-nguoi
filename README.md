@@ -1,6 +1,8 @@
-# Vietnamese Humanizer
+# Viết như người · Vietnamese Humanizer
 
-[![test](https://github.com/anhnx000/vietnamese-humanizer/actions/workflows/test.yml/badge.svg)](https://github.com/anhnx000/vietnamese-humanizer/actions/workflows/test.yml)
+**Human voice for Vietnamese: chống giọng văn AI.**
+
+[![test](https://github.com/anhnx000/viet-nhu-nguoi/actions/workflows/test.yml/badge.svg)](https://github.com/anhnx000/viet-nhu-nguoi/actions/workflows/test.yml)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
 **English** · [Tiếng Việt](README.vi.md)
@@ -9,7 +11,7 @@
 
 > **Tiếng Việt:** skill chống giọng văn AI, sửa bài ChatGPT/Claude/Gemini viết cho tự nhiên như người Việt viết. Bỏ văn dịch, sáo rỗng, giọng công văn, lời chatbot; giữ đúng số liệu và xưng hô. Đọc [bản tiếng Việt](README.vi.md).
 >
-> *Chong giong van AI, humanize tieng Viet, viet lai van AI tu nhien, bo giong ChatGPT, viet nhu nguoi that.*
+> *Viet nhu nguoi, chong giong van AI, human voice, Vietnamese humanizer, humanize tieng Viet, viet lai van AI tu nhien, bo giong ChatGPT.*
 
 A [Claude Code skill](https://code.claude.com/docs/en/skills) that makes AI-written Vietnamese read like a person wrote it. It removes the phrases Vietnamese readers spot right away: "Trong bối cảnh hiện nay" (*in today's context*), "không chỉ... mà còn..." (*not only... but also...*), "được phát triển bởi" (*was developed by*), "tiến hành thực hiện việc" (*proceed to carry out the act of*), "Hy vọng thông tin trên hữu ích!" (*Hope this helps!*).
 
@@ -42,7 +44,7 @@ The skill does not invent facts. If the text needs detail, it asks you, then wri
 The bundled scanner scores the draft 72/100 ("dense") with 16 tells, and both rewrites 0/100:
 
 ```text
-$ python3 -I skills/vietnamese-humanizer/scripts/scan.py examples/truoc.md
+$ python3 -I skills/viet-nhu-nguoi/scripts/scan.py examples/truoc.md
 Điểm 72/100 (dày đặc): 16 dấu hiệu trong 5 dòng.
 [từ vựng AI (vi)] 3      nâng tầm, trong bối cảnh hiện nay, bên cạnh đó
 [động từ rỗng (vi)] 3    tiến hành thực hiện, thực hiện việc, nhằm mục đích
@@ -60,15 +62,15 @@ $ python3 -I skills/vietnamese-humanizer/scripts/scan.py examples/truoc.md
 As a plugin, inside Claude Code:
 
 ```text
-/plugin marketplace add anhnx000/vietnamese-humanizer
-/plugin install vietnamese-humanizer@vietnamese-humanizer
+/plugin marketplace add anhnx000/viet-nhu-nguoi
+/plugin install viet-nhu-nguoi@viet-nhu-nguoi
 ```
 
 Or clone and run the script. It symlinks the skill into `~/.claude/skills/`, so `git pull` updates it:
 
 ```bash
-git clone https://github.com/anhnx000/vietnamese-humanizer.git
-cd vietnamese-humanizer
+git clone https://github.com/anhnx000/viet-nhu-nguoi.git
+cd viet-nhu-nguoi
 bash install.sh          # symlink
 bash install.sh --copy   # or copy, if you want to review each update before installing
 ```
@@ -78,28 +80,28 @@ Start a new Claude Code session afterwards.
 Other agents (Cursor, Codex, Gemini CLI, OpenCode and more) can use the [skills](https://github.com/vercel-labs/skills) CLI:
 
 ```bash
-npx skills add anhnx000/vietnamese-humanizer      # current project only
-npx skills add anhnx000/vietnamese-humanizer -g   # every project (user level)
+npx skills add anhnx000/viet-nhu-nguoi      # current project only
+npx skills add anhnx000/viet-nhu-nguoi -g   # every project (user level)
 ```
 
 It asks which agents to install for; pass `-a claude-code` (or `-a '*'`) and `-y` to skip the prompts. The skill is plain Markdown, so it runs on whatever model your editor uses.
 
 ## Use
 
-- Turn it on for the session: `/vietnamese-humanizer`. Claude then follows the rules in every reply, short ones included.
-- Rewrite a passage: `/vietnamese-humanizer <paste text>`, or ask "rewrite docs/intro.md so it sounds less like AI".
+- Turn it on for the session: `/viet-nhu-nguoi`. Claude then follows the rules in every reply, short ones included.
+- Rewrite a passage: `/viet-nhu-nguoi <paste text>`, or ask "rewrite docs/intro.md so it sounds less like AI".
 - It also triggers when you ask Claude to draft an email, message, post or PR that you will send under your name.
 - For a closer match to your voice, include a sample you wrote yourself. The skill picks up your sentence length, connectives and pronouns of address.
 - Pick a voice by name: *đời thường* (casual), *công việc* (work), *kỹ thuật* (technical), *ấm áp* (warm), *thẳng* (blunt). The voice changes style only, never pronouns of address or content.
 - Audit without rewriting: ask it to "soi" or "audit" a text. You get each tell with its pattern number, the reason and a short fix, split into clear problems and judgment calls.
-- Scan from the command line: `python3 -I skills/vietnamese-humanizer/scripts/scan.py file.md` prints a 0-100 score and every match. Add `--json` for machine output, or `--max 30` to exit 1 above a threshold in CI or a pre-commit hook.
-- Check that a rewrite kept the facts: `python3 -I skills/vietnamese-humanizer/scripts/check_facts.py original.md rewrite.md` fails if a number, date, time, link or code span was lost or added, and warns about missing proper names.
+- Scan from the command line: `python3 -I skills/viet-nhu-nguoi/scripts/scan.py file.md` prints a 0-100 score and every match. Add `--json` for machine output, or `--max 30` to exit 1 above a threshold in CI or a pre-commit hook.
+- Check that a rewrite kept the facts: `python3 -I skills/viet-nhu-nguoi/scripts/check_facts.py original.md rewrite.md` fails if a number, date, time, link or code span was lost or added, and warns about missing proper names.
 
 Both scripts use only the Python standard library.
 
 ## What it catches
 
-The full catalog has 38 patterns, each with a before/after example, in [references/patterns.md](skills/vietnamese-humanizer/references/patterns.md) (written in Vietnamese). Group G is Vietnamese-only:
+The full catalog has 38 patterns, each with a before/after example, in [references/patterns.md](skills/viet-nhu-nguoi/references/patterns.md) (written in Vietnamese). Group G is Vietnamese-only:
 
 | Pattern | Example | Becomes |
 | --- | --- | --- |
@@ -128,7 +130,7 @@ The skill makes text more natural and easier to read. It does not promise to bea
 ## Layout
 
 ```text
-skills/vietnamese-humanizer/
+skills/viet-nhu-nguoi/
 ├── SKILL.md                 main rules, loaded when the skill is invoked
 ├── references/patterns.md   38 patterns with before/after examples
 ├── references/sources.md    references: articles, research, style guides, other skills
@@ -146,7 +148,7 @@ Found a Vietnamese AI phrasing the skill misses, or a natural sentence it wrongl
 
 ## Support
 
-Vietnamese Humanizer is free and MIT licensed, and it will stay that way. I maintain it in my spare time. If it saves you editing time, a coffee helps me keep it current:
+Viết như người is free and MIT licensed, and it will stay that way. I maintain it in my spare time. If it saves you editing time, a coffee helps me keep it current:
 
 - update the pattern list when new models bring new habits, since each model generation shifts its favourite words;
 - turn the sentences you report into test cases, and review issues and pull requests;
@@ -154,7 +156,7 @@ Vietnamese Humanizer is free and MIT licensed, and it will stay that way. I main
 
 <img src="assets/donate-vietqr.png" alt="VietQR code for donations via VPBank / Napas 247" width="220">
 
-The QR code works with any Vietnamese banking app (VietQR / Napas 247). A transfer note such as "vietnamese-humanizer" tells me where it came from.
+The QR code works with any Vietnamese banking app (VietQR / Napas 247). A transfer note such as "viet-nhu-nguoi" tells me where it came from.
 
 Outside Vietnam, or rather not give money? These help just as much: star the repo, share it with someone who writes Vietnamese with AI, or open an issue with a sentence the skill got wrong. Donations are a thank-you, not payment for support: every issue gets the same attention.
 
@@ -163,6 +165,6 @@ Outside Vietnam, or rather not give money? These help just as much: star the rep
 - Wikipedia: [Signs of AI writing](https://en.wikipedia.org/wiki/Wikipedia:Signs_of_AI_writing) (WikiProject AI Cleanup).
 - [blader/humanizer](https://github.com/blader/humanizer), MIT, Copyright (c) 2025 Siqi Chen. The pattern catalog structure is based on it.
 - Open-source Vietnamese humanize skills (MIT), used for cross-checking the catalog; the text here is written independently: [longhang2004/vietnamese-humanizer](https://github.com/longhang2004/vietnamese-humanizer), [andyluu98/vn-humanize](https://github.com/andyluu98/vn-humanize), [cuongducle/viet-humanize](https://github.com/cuongducle/viet-humanize), [pdh372/humanize-vietnamese](https://github.com/pdh372/humanize-vietnamese).
-- Full reference list (in Vietnamese), covering articles, Vietnamese linguistics, research on detector reliability, style guides and other skills, and marking which ones the skill builds on directly: [references/sources.md](skills/vietnamese-humanizer/references/sources.md).
+- Full reference list (in Vietnamese), covering articles, Vietnamese linguistics, research on detector reliability, style guides and other skills, and marking which ones the skill builds on directly: [references/sources.md](skills/viet-nhu-nguoi/references/sources.md).
 
 MIT licensed.

@@ -1,19 +1,20 @@
 ---
-name: vietnamese-humanizer
+name: viet-nhu-nguoi
 description: |
-  Viết hoặc sửa văn bản (tiếng Việt và tiếng Anh) cho giống người viết, bỏ các dấu hiệu văn AI.
-  Dùng khi người dùng gọi /vietnamese-humanizer, hoặc nhờ "viết cho giống người", "bớt giọng AI",
-  "humanize", "viết tự nhiên hơn", "chống giọng văn AI", "bớt giọng ChatGPT", "sửa văn AI", "soi
-  giọng AI", hoặc khi soạn tin nhắn, email, bài viết, PR, commit mà người
-  dùng sẽ gửi đi dưới tên mình. Có phần riêng cho tiếng Việt: văn dịch từ tiếng Anh, "việc/sự/một
-  cách", giọng công văn, xưng hô. Dựa trên Wikipedia "Signs of AI writing", skill humanizer (MIT)
-  và các skill humanize tiếng Việt mã nguồn mở.
+  Viết như người (human voice, Vietnamese humanizer): chống giọng văn AI cho tiếng Việt và tiếng
+  Anh. Viết hoặc sửa văn bản cho giống người viết, bỏ các dấu hiệu văn AI. Dùng khi người dùng gọi
+  /viet-nhu-nguoi, hoặc nhờ "viết như người", "viết cho giống người", "human voice", "humanize",
+  "chống giọng văn AI", "bớt giọng AI", "bớt giọng ChatGPT", "viết tự nhiên hơn", "sửa văn AI",
+  "soi giọng AI", hoặc khi soạn tin nhắn, email, bài viết, PR, commit mà người dùng sẽ gửi đi dưới
+  tên mình. Có phần riêng cho tiếng Việt: văn dịch từ tiếng Anh, "việc/sự/một cách", giọng công
+  văn, xưng hô. Dựa trên Wikipedia "Signs of AI writing", skill humanizer (MIT) và các skill
+  humanize tiếng Việt mã nguồn mở.
 license: MIT
 metadata:
-  version: "1.2.0"
+  version: "2.0.0"
 ---
 
-# Vietnamese humanizer: viết như người, không như chatbot
+# Viết như người (Vietnamese humanizer): chống giọng văn AI
 
 Mục tiêu là văn bản đọc lên giống một người cụ thể đang viết cho một người đọc cụ thể. Giữ nguyên nội dung, không bịa thêm gì.
 

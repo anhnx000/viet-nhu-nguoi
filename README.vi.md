@@ -1,6 +1,8 @@
-# Vietnamese Humanizer
+# Viết như người · Vietnamese Humanizer
 
-[![test](https://github.com/anhnx000/vietnamese-humanizer/actions/workflows/test.yml/badge.svg)](https://github.com/anhnx000/vietnamese-humanizer/actions/workflows/test.yml)
+**Chống giọng văn AI cho tiếng Việt (human voice).**
+
+[![test](https://github.com/anhnx000/viet-nhu-nguoi/actions/workflows/test.yml/badge.svg)](https://github.com/anhnx000/viet-nhu-nguoi/actions/workflows/test.yml)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
 [English](README.md) · **Tiếng Việt**
@@ -8,6 +10,8 @@
 ![Trước: văn AI được 72/100. Sau: bản viết lại giọng người được 0/100.](assets/banner.png)
 
 Skill cho [Claude Code](https://code.claude.com/docs/en/skills) giúp văn tiếng Việt do AI viết đọc lên giống người viết. Nó bỏ những thứ khiến người đọc nhận ra ngay là "con AI viết": "Trong bối cảnh hiện nay", "không chỉ... mà còn...", "được phát triển bởi", "tiến hành thực hiện việc", "một cách hiệu quả", "Hy vọng thông tin trên hữu ích!".
+
+*Viet nhu nguoi, chong giong van AI, human voice, Vietnamese humanizer, humanize tieng Viet, bo giong ChatGPT.*
 
 Tiếng Anh vẫn dùng được, nhưng phần làm kỹ nhất là tiếng Việt: văn dịch từ tiếng Anh, danh hóa "việc/sự", giọng công văn, xưng hô sai vai.
 
@@ -40,7 +44,7 @@ Skill không bịa số liệu. Nếu muốn bài có chi tiết, nó sẽ hỏi
 Máy quét đi kèm chấm bản đầu 72/100 (dày đặc) với 16 dấu hiệu, hai bản sau đều 0/100:
 
 ```text
-$ python3 -I skills/vietnamese-humanizer/scripts/scan.py examples/truoc.md
+$ python3 -I skills/viet-nhu-nguoi/scripts/scan.py examples/truoc.md
 Điểm 72/100 (dày đặc): 16 dấu hiệu trong 5 dòng.
 [từ vựng AI (vi)] 3      nâng tầm, trong bối cảnh hiện nay, bên cạnh đó
 [động từ rỗng (vi)] 3    tiến hành thực hiện, thực hiện việc, nhằm mục đích
@@ -58,15 +62,15 @@ $ python3 -I skills/vietnamese-humanizer/scripts/scan.py examples/truoc.md
 Cài như plugin, trong Claude Code:
 
 ```text
-/plugin marketplace add anhnx000/vietnamese-humanizer
-/plugin install vietnamese-humanizer@vietnamese-humanizer
+/plugin marketplace add anhnx000/viet-nhu-nguoi
+/plugin install viet-nhu-nguoi@viet-nhu-nguoi
 ```
 
 Hoặc clone rồi chạy script. Script tạo symlink vào `~/.claude/skills/`, sau này `git pull` là skill được cập nhật:
 
 ```bash
-git clone https://github.com/anhnx000/vietnamese-humanizer.git
-cd vietnamese-humanizer
+git clone https://github.com/anhnx000/viet-nhu-nguoi.git
+cd viet-nhu-nguoi
 bash install.sh          # symlink
 bash install.sh --copy   # hoặc chép file, nếu muốn đọc lại từng bản cập nhật trước khi cài
 ```
@@ -76,28 +80,28 @@ Mở phiên Claude Code mới sau khi cài.
 Agent khác (Cursor, Codex, Gemini CLI, OpenCode...) cài bằng công cụ [skills](https://github.com/vercel-labs/skills):
 
 ```bash
-npx skills add anhnx000/vietnamese-humanizer      # chỉ cho dự án hiện tại
-npx skills add anhnx000/vietnamese-humanizer -g   # cho mọi dự án (cấp người dùng)
+npx skills add anhnx000/viet-nhu-nguoi      # chỉ cho dự án hiện tại
+npx skills add anhnx000/viet-nhu-nguoi -g   # cho mọi dự án (cấp người dùng)
 ```
 
 Lệnh sẽ hỏi cài cho agent nào; thêm `-a claude-code` (hoặc `-a '*'`) và `-y` để bỏ qua các câu hỏi. Skill chỉ là Markdown nên chạy được với mô hình nào mà editor của bạn đang dùng.
 
 ## Dùng
 
-- Bật cho cả phiên: gõ `/vietnamese-humanizer`. Từ đó Claude trả lời theo quy tắc của skill, kể cả tin nhắn ngắn.
-- Sửa một đoạn: `/vietnamese-humanizer <dán văn bản>`, hoặc nói "viết lại file docs/gioi-thieu.md cho bớt giọng AI".
+- Bật cho cả phiên: gõ `/viet-nhu-nguoi`. Từ đó Claude trả lời theo quy tắc của skill, kể cả tin nhắn ngắn.
+- Sửa một đoạn: `/viet-nhu-nguoi <dán văn bản>`, hoặc nói "viết lại file docs/gioi-thieu.md cho bớt giọng AI".
 - Skill cũng tự bật khi bạn nhờ soạn email, tin nhắn, bài đăng, PR mà bạn sẽ gửi dưới tên mình.
 - Muốn bài giống giọng bạn hơn thì đưa kèm một đoạn văn bạn tự viết. Skill đọc nhịp câu, từ nối, cách xưng hô trong đó rồi viết theo.
 - Gọi giọng bằng tên: *đời thường*, *công việc*, *kỹ thuật*, *ấm áp*, *thẳng*. Tên giọng chỉ đổi văn phong, không đổi xưng hô hay nội dung.
 - Chỉ soi, không sửa: nhờ "soi giúp đoạn này" hoặc "audit". Skill liệt kê từng chỗ kèm số mục, lý do và gợi ý sửa ngắn, tách chỗ chắc chắn nên sửa với chỗ tùy người viết.
-- Quét bằng dòng lệnh: `python3 -I skills/vietnamese-humanizer/scripts/scan.py file.md` in điểm 0-100 và từng chỗ khớp. Thêm `--json` để lấy kết quả dạng máy đọc, hoặc `--max 30` để thoát mã 1 khi điểm vượt ngưỡng, dùng cho CI hay pre-commit.
-- Kiểm bản sửa còn giữ đúng dữ kiện: `python3 -I skills/vietnamese-humanizer/scripts/check_facts.py goc.md moi.md` báo lỗi khi số liệu, ngày giờ, link hay code bị mất hoặc bị thêm, và nhắc khi thiếu tên riêng.
+- Quét bằng dòng lệnh: `python3 -I skills/viet-nhu-nguoi/scripts/scan.py file.md` in điểm 0-100 và từng chỗ khớp. Thêm `--json` để lấy kết quả dạng máy đọc, hoặc `--max 30` để thoát mã 1 khi điểm vượt ngưỡng, dùng cho CI hay pre-commit.
+- Kiểm bản sửa còn giữ đúng dữ kiện: `python3 -I skills/viet-nhu-nguoi/scripts/check_facts.py goc.md moi.md` báo lỗi khi số liệu, ngày giờ, link hay code bị mất hoặc bị thêm, và nhắc khi thiếu tên riêng.
 
 Hai script chỉ dùng thư viện chuẩn của Python.
 
 ## Skill bắt những gì
 
-Danh mục đầy đủ có 38 dấu hiệu, mỗi dấu hiệu kèm ví dụ trước/sau, nằm trong [references/patterns.md](skills/vietnamese-humanizer/references/patterns.md). Nhóm G dành riêng cho tiếng Việt:
+Danh mục đầy đủ có 38 dấu hiệu, mỗi dấu hiệu kèm ví dụ trước/sau, nằm trong [references/patterns.md](skills/viet-nhu-nguoi/references/patterns.md). Nhóm G dành riêng cho tiếng Việt:
 
 | Dấu hiệu | Ví dụ | Sửa thành |
 | --- | --- | --- |
@@ -126,7 +130,7 @@ Skill giúp văn bản tự nhiên và dễ đọc hơn, nhưng không cam kết
 ## Cấu trúc
 
 ```text
-skills/vietnamese-humanizer/
+skills/viet-nhu-nguoi/
 ├── SKILL.md                 quy tắc chính, Claude nạp khi skill được gọi
 ├── references/patterns.md   38 dấu hiệu, ví dụ trước/sau
 ├── references/sources.md    nguồn tham khảo: bài viết, nghiên cứu, hướng dẫn giọng văn, skill khác
@@ -144,7 +148,7 @@ Gặp một kiểu câu AI tiếng Việt mà skill chưa bắt, hoặc thấy s
 
 ## Ủng hộ
 
-Vietnamese Humanizer miễn phí, giấy phép MIT, và sẽ luôn như vậy. Mình làm skill này vào thời gian rảnh. Nếu nó giúp bạn bớt thời gian sửa văn, một ly cà phê giúp mình giữ skill luôn mới:
+Viết như người miễn phí, giấy phép MIT, và sẽ luôn như vậy. Mình làm skill này vào thời gian rảnh. Nếu nó giúp bạn bớt thời gian sửa văn, một ly cà phê giúp mình giữ skill luôn mới:
 
 - cập nhật danh mục khi mô hình mới ra, vì mỗi đời mô hình lại có bộ từ ưa dùng riêng;
 - biến những câu các bạn báo thành test, đọc và trả lời issue, pull request;
@@ -152,7 +156,7 @@ Vietnamese Humanizer miễn phí, giấy phép MIT, và sẽ luôn như vậy. M
 
 <img src="assets/donate-vietqr.png" alt="Mã VietQR ủng hộ qua VPBank / Napas 247" width="220">
 
-Quét bằng app ngân hàng bất kỳ hỗ trợ VietQR / Napas 247. Ghi nội dung chuyển khoản là "vietnamese-humanizer" để mình biết khoản ủng hộ đến từ đâu.
+Quét bằng app ngân hàng bất kỳ hỗ trợ VietQR / Napas 247. Ghi nội dung chuyển khoản là "viet-nhu-nguoi" để mình biết khoản ủng hộ đến từ đâu.
 
 Không tiện ủng hộ tiền thì những việc này giúp không kém: thả ⭐ cho repo, giới thiệu cho người hay dùng AI viết tiếng Việt, hoặc mở issue kèm một câu skill sửa chưa đúng. Ủng hộ là lời cảm ơn, không phải phí hỗ trợ: issue của ai cũng được xem như nhau.
 
@@ -161,4 +165,4 @@ Không tiện ủng hộ tiền thì những việc này giúp không kém: th�
 - Wikipedia: [Signs of AI writing](https://en.wikipedia.org/wiki/Wikipedia:Signs_of_AI_writing) (WikiProject AI Cleanup).
 - [blader/humanizer](https://github.com/blader/humanizer), MIT, Copyright (c) 2025 Siqi Chen. Khung danh mục dấu hiệu dựa trên skill này.
 - Các skill humanize tiếng Việt mã nguồn mở (MIT), dùng để đối chiếu danh mục; nội dung ở đây viết lại theo cách riêng: [longhang2004/vietnamese-humanizer](https://github.com/longhang2004/vietnamese-humanizer), [andyluu98/vn-humanize](https://github.com/andyluu98/vn-humanize), [cuongducle/viet-humanize](https://github.com/cuongducle/viet-humanize), [pdh372/humanize-vietnamese](https://github.com/pdh372/humanize-vietnamese).
-- Danh sách nguồn đầy đủ gồm bài viết, sách và nghiên cứu về tiếng Việt, nghiên cứu về độ tin cậy của máy dò, hướng dẫn giọng văn và các skill khác. Danh sách ghi rõ nguồn nào skill dựa vào trực tiếp: [references/sources.md](skills/vietnamese-humanizer/references/sources.md).
+- Danh sách nguồn đầy đủ gồm bài viết, sách và nghiên cứu về tiếng Việt, nghiên cứu về độ tin cậy của máy dò, hướng dẫn giọng văn và các skill khác. Danh sách ghi rõ nguồn nào skill dựa vào trực tiếp: [references/sources.md](skills/viet-nhu-nguoi/references/sources.md).

@@ -10,8 +10,8 @@ import tempfile
 import unittest
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
-SCAN_PATH = ROOT / "skills/vietnamese-humanizer/scripts/scan.py"
-FACTS_PATH = ROOT / "skills/vietnamese-humanizer/scripts/check_facts.py"
+SCAN_PATH = ROOT / "skills/viet-nhu-nguoi/scripts/scan.py"
+FACTS_PATH = ROOT / "skills/viet-nhu-nguoi/scripts/check_facts.py"
 SPEC = importlib.util.spec_from_file_location("scan", SCAN_PATH)
 scan = importlib.util.module_from_spec(SPEC)
 SPEC.loader.exec_module(scan)
