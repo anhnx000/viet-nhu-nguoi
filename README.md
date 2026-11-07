@@ -75,7 +75,14 @@ bash install.sh --copy   # or copy, if you want to review each update before ins
 
 Start a new Claude Code session afterwards.
 
-Other agents (Cursor, Codex, Gemini CLI, OpenCode and more) can install it with `npx skills add anhnx000/vietnamese-humanizer`. The skill is plain Markdown, so it runs on whatever model your editor uses.
+Other agents (Cursor, Codex, Gemini CLI, OpenCode and more) can use the [skills](https://github.com/vercel-labs/skills) CLI:
+
+```bash
+npx skills add anhnx000/vietnamese-humanizer      # current project only
+npx skills add anhnx000/vietnamese-humanizer -g   # every project (user level)
+```
+
+It asks which agents to install for; pass `-a claude-code` (or `-a '*'`) and `-y` to skip the prompts. The skill is plain Markdown, so it runs on whatever model your editor uses.
 
 ## Use
 

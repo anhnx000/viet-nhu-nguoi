@@ -73,7 +73,14 @@ bash install.sh --copy   # hoặc chép file, nếu muốn đọc lại từng b
 
 Mở phiên Claude Code mới sau khi cài.
 
-Agent khác (Cursor, Codex, Gemini CLI, OpenCode...) cài bằng `npx skills add anhnx000/vietnamese-humanizer`. Skill chỉ là Markdown nên chạy được với mô hình nào mà editor của bạn đang dùng.
+Agent khác (Cursor, Codex, Gemini CLI, OpenCode...) cài bằng công cụ [skills](https://github.com/vercel-labs/skills):
+
+```bash
+npx skills add anhnx000/vietnamese-humanizer      # chỉ cho dự án hiện tại
+npx skills add anhnx000/vietnamese-humanizer -g   # cho mọi dự án (cấp người dùng)
+```
+
+Lệnh sẽ hỏi cài cho agent nào; thêm `-a claude-code` (hoặc `-a '*'`) và `-y` để bỏ qua các câu hỏi. Skill chỉ là Markdown nên chạy được với mô hình nào mà editor của bạn đang dùng.
 
 ## Dùng
 
