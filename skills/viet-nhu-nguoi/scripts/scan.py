@@ -4,6 +4,10 @@
 Dùng: python3 -I scan.py FILE      hoặc      cat FILE | python3 -I scan.py
       python3 -I scan.py FILE --json       in kết quả dạng JSON
       python3 -I scan.py FILE --max 30     thoát mã 1 nếu điểm > 30 (dùng cho CI, pre-commit)
+      python3 -I scan.py FILE --titles     chỉ in các tiêu đề theo thứ tự, để đọc lướt xem có thành mạch không
+      python3 -I scan.py FILE.pptx --text  in toàn bộ chữ của từng slide (tiêu đề, nội dung, bảng, ghi chú)
+FILE có thể là .md, .txt hoặc .pptx. Với .pptx, máy quét đọc tiêu đề, nội dung, bảng và ghi chú
+thuyết trình của từng slide, và chạy thêm các kiểm riêng cho slide.
 
 Điểm 0-100 đo mật độ dấu hiệu bề mặt và độ đều của câu. Điểm cao nghĩa là văn bản có
 nhiều thói quen viết theo khuôn, không phải xác suất văn bản do AI viết.
@@ -11,11 +15,23 @@ Chỉ bắt dấu hiệu bề mặt. Cấu trúc (bộ ba, câu chốt, sai ngư
 """
 import argparse
 import json
+import os
 import re
 import statistics
 import sys
 
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))  # -I bỏ thư mục script khỏi sys.path
+import slides as slides_mod  # noqa: E402
+
 PATTERNS = {
+    # Hứa làm sau mà không nói ai, khi nào, làm gì
+    "hứa suông": [
+        r"chi tiết (sẽ được|sẽ) (trao đổi|gửi|cập nhật|trình bày|làm rõ)( thêm)? (sau|trong (thời gian tới|buổi khác))",
+        r"sẽ (tiếp tục )?(nghiên cứu|xem xét|cân nhắc|cập nhật|làm rõ) (thêm|sau|trong thời gian tới)",
+        r"sẽ được (làm rõ|cập nhật|bổ sung) (sau|trong thời gian tới)",
+        r"\bwill (be )?(shared|discussed|clarified|provided) (later|separately|in due course)",
+        r"\bdetails to follow\b", r"\bmore details (will follow|later)\b",
+    ],
     "lời chatbot": [
         r"chắc chắn rồi", r"tất nhiên rồi", r"câu hỏi (rất )?hay", r"hoàn toàn đúng",
         r"hy vọng (điều này|(những )?thông tin (này|trên)|bài viết)", r"đừng ngần ngại", r"bạn có muốn tôi",
@@ -64,7 +80,7 @@ PATTERNS = {
         r"(đưa ra|cung cấp) sự (hỗ trợ|giúp đỡ)", r"hiện thực hóa", r"đóng góp vào",
     ],
     "danh hóa (vi)": [
-        r"một cách \w+", r"trở nên \w+", r"có khả năng \w+",
+        r"một cách (?!(gọi|khác|nữa|làm|để|viết|nói|hiểu|nhìn|đơn giản là)\b)\w+", r"trở nên \w+", r"có khả năng \w+",
     ],
     "thừa nghĩa (vi)": [
         r"quay trở lại", r"hiện nay đang", r"đang trong quá trình", r"hoàn toàn đầy đủ",
@@ -163,6 +179,70 @@ def sentence_checks(prose, no, hits):
             hits.setdefault("câu dài đều nhau", []).append((no, f"{lengths}"))
 
 
+# Tiêu đề slide chỉ là nhãn chủ đề hoặc tả việc đang làm, không nói kết luận.
+LABEL_TITLE = re.compile(
+    r"^(tổng quan|giới thiệu|bối cảnh|thực trạng|hiện trạng|thách thức|giải pháp|lợi ích|kết luận|"
+    r"tóm tắt|tóm lại|phân tích|đánh giá|tổng hợp|định hướng|tầm nhìn|mục tiêu|vấn đề|"
+    r"overview|introduction|background|challenges?|solutions?|benefits|conclusions?|summary|"
+    r"key takeaways|analysis)\b")
+COUNT_TITLE = re.compile(
+    r"(^|\s)(\d+|hai|ba|bốn|năm|sáu|bảy) (trụ cột|giải pháp|bước|lý do|điểm|yếu tố|mục tiêu|vấn đề|"
+    r"thách thức|lợi ích|xu hướng|chiến lược|nhóm|cách|bài học|nguyên tắc)\b|"
+    r"\b(\d+|three|four|five) (pillars|steps|reasons|keys|ways|lessons|principles)\b")
+FRAMEWORK = re.compile(r"\b(scr|situation|complication|resolution)\b|(→|->).*(→|->)")
+CLOSING_TITLE = re.compile(r"^(cảm ơn|xin cảm ơn|thank you|thanks|q ?& ?a|hỏi đáp)\b")
+
+
+def words(text):
+    return len(text.split())
+
+
+def slide_checks(deck, index, hits):
+    """Kiểm riêng cho slide: tiêu đề, số gạch đầu dòng, độ dày chữ, ghi chú thuyết trình."""
+    title_line = {no: line for line, no, kind, _ in index if kind == "tiêu đề"}
+    first_line = {}
+    for line, no, _, _ in index:
+        first_line.setdefault(no, line)
+    content = [s for s in deck if s["no"] > 1 and not CLOSING_TITLE.match(s["title"].lower())]
+    for s in content:
+        title = s["title"].strip().lower()
+        line = title_line.get(s["no"], first_line.get(s["no"], 1))
+        if title and words(title) <= 6 and not re.search(r"\d", title) and LABEL_TITLE.match(title):
+            hits.setdefault("tiêu đề dạng nhãn", []).append((line, s["title"][:50]))
+        prefix = re.match(r"^([^:]{2,30}):\s+\S", title)
+        if prefix and words(prefix.group(1)) <= 3:
+            hits.setdefault("tiêu đề có tiền tố nhãn", []).append((line, s["title"][:50]))
+        if COUNT_TITLE.search(title):
+            hits.setdefault("tiêu đề đếm số ý", []).append((line, s["title"][:50]))
+        if FRAMEWORK.search(title):
+            hits.setdefault("lộ tên khung", []).append((line, s["title"][:50]))
+        body_words = sum(words(x) for x in s["body"])
+        if body_words > 80:
+            hits.setdefault("slide nhiều chữ", []).append((line, f"{body_words} chữ"))
+    for line, no, kind, text in index:
+        if kind == "nội dung" and no > 1 and words(text) > 20:
+            hits.setdefault("gạch đầu dòng dài", []).append((line, text[:50]))
+        if kind == "ghi chú":
+            for sent in SENT_SPLIT.split(text):
+                if words(sent) > 30:
+                    hits.setdefault("câu khó nói (ghi chú)", []).append((line, sent[:50]))
+            if re.search(r"\([^)]{3,}\)", text):
+                hits.setdefault("ngoặc trong lời nói", []).append((line, text[:50]))
+    # Slide nào cũng đúng 3 (hoặc 4) gạch đầu dòng
+    counts = [len(s["body"]) for s in content if len(s["body"]) >= 2]
+    if len(counts) >= 4:
+        top = max(set(counts), key=counts.count)
+        if top in (3, 4) and counts.count(top) / len(counts) >= 0.75:
+            hits.setdefault("số gạch đầu dòng đều", []).append(
+                (first_line.get(content[0]["no"], 1), f"{counts.count(top)}/{len(counts)} slide có đúng {top} ý"))
+    # Ba tiêu đề liền nhau mở bằng cùng hai chữ
+    titles = [(title_line[s["no"]], s["title"].lower().split()[:2]) for s in content if s["title"]]
+    for (l1, a), (_, b), (_, c) in zip(titles, titles[1:], titles[2:]):
+        if len(a) == 2 and a == b == c:
+            hits.setdefault("tiêu đề lặp khuôn", []).append((l1, " ".join(a)))
+            break
+
+
 # Trọng số theo độ mạnh của dấu hiệu. Nhóm không có tên ở đây tính 1.
 WEIGHTS = {
     "lời chatbot": 3, "câu dẫn": 3, "đối lập giả": 3, "tổng kết rỗng": 3,
@@ -170,6 +250,8 @@ WEIGHTS = {
     "thổi phồng": 2, "uy tín mơ hồ": 2, "quảng cáo": 2, "từ vựng AI (vi)": 2,
     "từ vựng AI (en)": 2, "né là/có": 2, "danh hóa (vi)": 2, "thừa nghĩa (vi)": 2,
     "chuỗi \"của\"": 2, "việc/sự dày": 2, "\"Điều này\"/\"Nó\" mở câu": 2,
+    "hứa suông": 2, "tiêu đề dạng nhãn": 2, "tiêu đề đếm số ý": 2, "số gạch đầu dòng đều": 2,
+    "lộ tên khung": 2,
 }
 BANDS = ((10, "sạch"), (30, "vài dấu hiệu"), (60, "nhiều dấu hiệu"), (101, "dày đặc"))
 
@@ -185,8 +267,11 @@ def prose_only(text):
     return "\n".join(out)
 
 
-def score(text, hits):
-    """Điểm 0-100: mật độ dấu hiệu có trọng số trên 100 chữ, cộng phần phạt khi câu dài đều nhau."""
+def score(text, hits, burst=True):
+    """Điểm 0-100: mật độ dấu hiệu có trọng số trên 100 chữ, cộng phần phạt khi câu dài đều nhau.
+
+    burst=False bỏ phần phạt câu đều (dùng cho slide, vì gạch đầu dòng vốn ngắn và đều).
+    """
     prose = prose_only(text)
     words = len(prose.split())
     weighted = sum(WEIGHTS.get(g, 1) * len(v) for g, v in hits.items())
@@ -194,7 +279,7 @@ def score(text, hits):
     lengths = [len(x.split()) for x in re.split(r"(?<=[.!?])\s+|\n+", prose) if len(x.split()) >= 3]
     cv = None
     burst_penalty = 0.0
-    if len(lengths) >= 5:
+    if burst and len(lengths) >= 5:
         cv = statistics.pstdev(lengths) / statistics.mean(lengths)
         burst_penalty = max(0.0, 0.35 - cv) * 40
     value = min(100, round(density * 2 + burst_penalty))
@@ -203,32 +288,75 @@ def score(text, hits):
             "sentence_length_cv": None if cv is None else round(cv, 2)}
 
 
+def load(path):
+    """Đọc file. Trả về (text, deck, index); deck và index là None nếu không phải .pptx."""
+    if path and path.lower().endswith(".pptx"):
+        deck = slides_mod.read_pptx(path)
+        text, index = slides_mod.to_text(deck)
+        return text, deck, index
+    if path:
+        with open(path, encoding="utf-8") as f:
+            return f.read(), None, None
+    return sys.stdin.read(), None, None
+
+
+def titles_of(text, deck):
+    if deck is not None:
+        return [f"{s['no']:>2}. {s['title'] or '(không có tiêu đề)'}" for s in deck]
+    return [line.strip() for line in prose_only(text).splitlines() if re.match(r"\s*#{1,6}\s", line)]
+
+
 def main():
-    ap = argparse.ArgumentParser(description="Quét dấu hiệu văn AI bề mặt (Việt/Anh).")
-    ap.add_argument("file", nargs="?", help="file cần quét; bỏ trống thì đọc stdin")
+    ap = argparse.ArgumentParser(description="Quét dấu hiệu văn AI bề mặt (Việt/Anh), đọc được cả .pptx.")
+    ap.add_argument("file", nargs="?", help="file cần quét (.md, .txt, .pptx); bỏ trống thì đọc stdin")
     ap.add_argument("--json", action="store_true", help="in kết quả dạng JSON")
     ap.add_argument("--max", type=int, metavar="N", help="thoát mã 1 nếu điểm lớn hơn N")
+    ap.add_argument("--titles", action="store_true",
+                    help="chỉ in các tiêu đề (slide hoặc heading Markdown) theo thứ tự")
+    ap.add_argument("--text", action="store_true",
+                    help="in chữ của từng slide kèm vị trí (chỉ cho .pptx), không quét")
     args = ap.parse_args()
-    if args.file:
-        with open(args.file, encoding="utf-8") as f:
-            text = f.read()
-    else:
-        text = sys.stdin.read()
+    text, deck, index = load(args.file)
+    if args.text:
+        if deck is None:
+            sys.exit("--text chỉ dùng cho file .pptx.")
+        for s in deck:
+            print(f"=== Slide {s['no']}" + (" (ẩn)" if s["hidden"] else ""))
+            print(f"Tiêu đề: {s['title'] or '(không có)'}")
+            for label, items in (("Nội dung", s["body"]), ("Bảng", s["table"]), ("Ghi chú", s["notes"])):
+                if items:
+                    print(f"{label}:")
+                    print("\n".join(f"  - {x}" for x in items))
+            print()
+        return
+    if args.titles:
+        print("\n".join(titles_of(text, deck)) or "Không thấy tiêu đề nào.")
+        print("\nĐọc liền các tiêu đề trên: có thành một mạch không, slide nào chỉ là nhãn chủ đề?")
+        return
     hits, total = scan(text)
-    result = score(text, hits)
+    where = {}
+    if deck is not None:
+        slide_checks(deck, index, hits)
+        where = slides_mod.labels(index)
+    result = score(text, hits, burst=deck is None)
+    loc = (lambda no: where.get(no, f"dòng {no}")) if deck is not None else (lambda no: f"dòng {no}")
+    unit = f"{len(deck)} slide" if deck is not None else f"{total} dòng"
     if args.json:
-        result["hits"] = {g: [{"line": no, "match": m} for no, m in v] for g, v in hits.items()}
+        result["hits"] = {g: [{"line": no, "where": loc(no), "match": m} for no, m in v]
+                          for g, v in hits.items()}
+        if deck is not None:
+            result["slides"] = len(deck)
         print(json.dumps(result, ensure_ascii=False, indent=2))
     elif not hits:
         print(f"Điểm {result['score']}/100 ({result['band']}). Không thấy dấu hiệu bề mặt. "
               "Vẫn cần tự đọc phần cấu trúc.")
     else:
         count = sum(len(v) for v in hits.values())
-        print(f"Điểm {result['score']}/100 ({result['band']}): {count} dấu hiệu trong {total} dòng.\n")
+        print(f"Điểm {result['score']}/100 ({result['band']}): {count} dấu hiệu trong {unit}.\n")
         for group, items in sorted(hits.items(), key=lambda kv: -len(kv[1])):
             print(f"[{group}] {len(items)}")
-            for no, s in items[:12]:
-                print(f"  dòng {no}: {s}")
+            for no, m in items[:12]:
+                print(f"  {loc(no)}: {m}")
             if len(items) > 12:
                 print(f"  ... và {len(items) - 12} chỗ khác")
         print("\nMột dấu hiệu đơn lẻ chưa nói lên gì. Nhiều nhóm cùng lúc mới đáng sửa.")

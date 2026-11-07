@@ -94,14 +94,14 @@ It asks which agents to install for; pass `-a claude-code` (or `-a '*'`) and `-y
 - For a closer match to your voice, include a sample you wrote yourself. The skill picks up your sentence length, connectives and pronouns of address.
 - Pick a voice by name: *đời thường* (casual), *công việc* (work), *kỹ thuật* (technical), *ấm áp* (warm), *thẳng* (blunt). The voice changes style only, never pronouns of address or content.
 - Audit without rewriting: ask it to "soi" or "audit" a text. You get each tell with its pattern number, the reason and a short fix, split into clear problems and judgment calls.
-- Scan from the command line: `python3 -I skills/viet-nhu-nguoi/scripts/scan.py file.md` prints a 0-100 score and every match. Add `--json` for machine output, or `--max 30` to exit 1 above a threshold in CI or a pre-commit hook.
-- Check that a rewrite kept the facts: `python3 -I skills/viet-nhu-nguoi/scripts/check_facts.py original.md rewrite.md` fails if a number, date, time, link or code span was lost or added, and warns about missing proper names.
+- Scan from the command line: `python3 -I skills/viet-nhu-nguoi/scripts/scan.py file.md` (or `file.pptx`) prints a 0-100 score and every match. Add `--json` for machine output, or `--max 30` to exit 1 above a threshold in CI or a pre-commit hook. Add `--titles` to print only the headings or slide titles, in order, or `--text` to dump every slide's text and notes from a `.pptx`.
+- Check that a rewrite kept the facts: `python3 -I skills/viet-nhu-nguoi/scripts/check_facts.py original.md rewrite.md` (also reads `.pptx`) fails if a number, date, time, link or code span was lost or added, and warns about missing proper names.
 
 Both scripts use only the Python standard library.
 
 ## What it catches
 
-The full catalog has 38 patterns, each with a before/after example, in [references/patterns.md](skills/viet-nhu-nguoi/references/patterns.md) (written in Vietnamese). Group G is Vietnamese-only:
+The full catalog has 44 patterns, each with a before/after example, in [references/patterns.md](skills/viet-nhu-nguoi/references/patterns.md) (written in Vietnamese). Group G is Vietnamese-only:
 
 | Pattern | Example | Becomes |
 | --- | --- | --- |
@@ -115,9 +115,41 @@ The full catalog has 38 patterns, each with a before/after example, in [referenc
 | Pronouns of address | "bạn" in an email to your boss; mixing "bạn" and "quý vị" | one pair that fits the relationship |
 | English glosses in brackets | hiệu suất (performance) | hiệu suất |
 
-The other groups apply to both languages: false contrasts, one-line punchlines, forced triplets, em dashes, inflated significance, vague authorities, decorative bold and emoji, chatbot filler, and re-explaining what the reader already knows.
+Group H covers slides and long documents (see below). The other groups apply to both languages: false contrasts, one-line punchlines, forced triplets, em dashes, inflated significance, vague authorities, decorative bold and emoji, chatbot filler, and re-explaining what the reader already knows.
 
 It also knows when to leave text alone: regional dialect, colloquial speech, Sino-Vietnamese terms used correctly, passives in technical docs, and small words that carry meaning such as "vẫn" (*still*), "chưa" (*not yet*), "chỉ" (*only*), "có thể" (*may*). Text you wrote yourself only gets a light edit.
+
+## Slides and talks
+
+AI-made slides give themselves away before anyone reads a sentence: titles like "Tổng quan" (*Overview*) and "Thách thức" (*Challenges*), exactly three bullets on every slide, speaker notes that read like a memo. The skill has a separate guide for this ([references/slides.md](skills/viet-nhu-nguoi/references/slides.md), in Vietnamese):
+
+- Gather context before building a deck: who watches, what they must decide, presented live or sent to read.
+- Write the storyline as titles first. Each title is a conclusion, and the titles read top to bottom form one argument.
+- One message per slide. Missing numbers are marked `[cần xác nhận]` (*to confirm*), never invented.
+- Speaker notes are written to be spoken: short sentences, no brackets, saying what the slide doesn't.
+- A fresh agent with no context reads the deck, and its feedback goes into an accept/reject table for you to decide.
+
+The scanner reads `.pptx` files directly (slide text, tables and speaker notes) and reports by slide:
+
+```text
+$ python3 -I skills/viet-nhu-nguoi/scripts/scan.py examples/slide-truoc.pptx
+Điểm 48/100 (nhiều dấu hiệu): 21 dấu hiệu trong 7 slide.
+[từ vựng AI (vi)] 7
+[tiêu đề dạng nhãn] 4        slide 2: Tổng quan, slide 3: Thách thức, slide 5: Lợi ích, slide 6: Kết luận
+[hứa suông] 1                slide 5, ghi chú: chi tiết sẽ được trao đổi sau
+[tiêu đề đếm số ý] 1         slide 4: 3 trụ cột giải pháp
+[câu khó nói (ghi chú)] 1    slide 2, ghi chú: Như chúng ta có thể thấy, ...
+[số gạch đầu dòng đều] 1     5/5 slide có đúng 3 ý
+...
+
+$ python3 -I skills/viet-nhu-nguoi/scripts/scan.py --titles examples/slide-sau.pptx
+ 1. Đề xuất thuê thêm 1 QA cho quý 1/2027
+ 2. Quý 3 trễ 2 tuần, cả 2 lần đều do thiếu người test
+ 3. Thuê 1 QA rẻ hơn tiếp tục trễ
+ 4. Cần anh duyệt trước 30/11 để kịp tuyển
+```
+
+The rewrite scores 0/100, and the four titles alone tell the whole proposal (*hire one QA for Q1 2027; Q3 slipped two weeks, both times for lack of testers; one QA costs less than more delays; please approve by 30/11 so hiring finishes in time*).
 
 ## Good to know
 
@@ -132,13 +164,15 @@ The skill makes text more natural and easier to read. It does not promise to bea
 ```text
 skills/viet-nhu-nguoi/
 ├── SKILL.md                 main rules, loaded when the skill is invoked
-├── references/patterns.md   38 patterns with before/after examples
+├── references/patterns.md   44 patterns with before/after examples
+├── references/slides.md     slides, speaker notes, fresh-reader test
 ├── references/sources.md    references: articles, research, style guides, other skills
 ├── scripts/scan.py          scanner with a 0-100 score, no third-party packages
 ├── scripts/check_facts.py   checks a rewrite kept numbers, dates, links and code
+├── scripts/slides.py        reads slide text and notes from .pptx, standard library only
 └── LICENSE-humanizer        MIT license of blader/humanizer
 assets/                      donation QR code
-examples/                    before/after samples used in the README and tests
+examples/                    before/after text and .pptx decks used in the README and tests
 tests/test_scan.py           python3 -m unittest discover -s tests
 ```
 
@@ -165,6 +199,7 @@ Outside Vietnam, or rather not give money? These help just as much: star the rep
 - Wikipedia: [Signs of AI writing](https://en.wikipedia.org/wiki/Wikipedia:Signs_of_AI_writing) (WikiProject AI Cleanup).
 - [blader/humanizer](https://github.com/blader/humanizer), MIT, Copyright (c) 2025 Siqi Chen. The pattern catalog structure is based on it.
 - Open-source Vietnamese humanize skills (MIT), used for cross-checking the catalog; the text here is written independently: [longhang2004/vietnamese-humanizer](https://github.com/longhang2004/vietnamese-humanizer), [andyluu98/vn-humanize](https://github.com/andyluu98/vn-humanize), [cuongducle/viet-humanize](https://github.com/cuongducle/viet-humanize), [pdh372/humanize-vietnamese](https://github.com/pdh372/humanize-vietnamese).
+- The slide guidance borrows ideas, rewritten in our own words, from [carnot-tech/jinba-consulting-pptx-skill](https://github.com/carnot-tech/jinba-consulting-pptx-skill) (MIT), [zarazhangrui/frontend-slides](https://github.com/zarazhangrui/frontend-slides) (MIT) and the `doc-coauthoring` skill in [anthropics/skills](https://github.com/anthropics/skills) (Apache 2.0).
 - Full reference list (in Vietnamese), covering articles, Vietnamese linguistics, research on detector reliability, style guides and other skills, and marking which ones the skill builds on directly: [references/sources.md](skills/viet-nhu-nguoi/references/sources.md).
 
 MIT licensed.

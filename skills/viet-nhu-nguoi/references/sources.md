@@ -57,6 +57,9 @@ Skill tiếng Anh:
 - [conorbronsdon/avoid-ai-writing](https://github.com/conorbronsdon/avoid-ai-writing). **Dùng trực tiếp** cho ý tưởng: chế độ chỉ soi lỗi, điểm số 0-100, chặn trong CI.
 - [Aboudjem/humanizer-skill](https://github.com/Aboudjem/humanizer-skill). **Dùng trực tiếp** cho ý tưởng: kiểm bản sửa còn giữ số liệu, chọn giọng theo tên.
 - [hardikpandya/stop-slop](https://github.com/hardikpandya/stop-slop). **Dùng trực tiếp** cho ý tưởng: tự chấm theo năm tiêu chí.
+- [carnot-tech/jinba-consulting-pptx-skill](https://github.com/carnot-tech/jinba-consulting-pptx-skill), MIT. **Dùng trực tiếp** cho ý tưởng: tiêu đề slide là câu kết luận và đọc liền thành mạch; không đếm số ý trong tiêu đề, không ép về ba; không lộ tên khung; thiếu số liệu thì để trống chứ không bịa; danh sách từ "mùi AI" và câu hứa suông; nhờ agent mới đọc soát và lập bảng nhận/không nhận góp ý. Bản gốc viết bằng tiếng Nhật cho slide HTML; ở đây chọn lọc phần về chữ và viết lại cho tiếng Việt.
+- [zarazhangrui/frontend-slides](https://github.com/zarazhangrui/frontend-slides), MIT. **Dùng trực tiếp** cho ý tưởng: chia mật độ chữ theo cách trình bày (nói trực tiếp hay gửi đọc), tách slide thay vì thu nhỏ chữ, danh sách hình thức "AI slop" (gradient tím, lưới thẻ icon, bố cục rập khuôn), không để chữ của quy trình làm slide lên slide.
+- Anthropic, skill `doc-coauthoring` trong [anthropics/skills](https://github.com/anthropics/skills), Apache 2.0. **Dùng trực tiếp** cho ý tưởng: hỏi gộp bối cảnh trước khi viết, câu hỏi đánh số cho phép trả lời tắt, thử tài liệu với một agent mới không biết bối cảnh.
 - [jurigis/avoid-ai-writing-multilingual](https://github.com/jurigis/avoid-ai-writing-multilingual). **Đọc thêm** (cuongducle). Cách tách quy tắc theo từng ngôn ngữ.
 
 Skill tiếng Việt, đều MIT. Dùng để đối chiếu danh mục; quy tắc và ví dụ ở đây viết lại theo cách riêng:

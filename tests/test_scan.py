@@ -8,6 +8,7 @@ import subprocess
 import sys
 import tempfile
 import unittest
+import zipfile
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 SCAN_PATH = ROOT / "skills/viet-nhu-nguoi/scripts/scan.py"
@@ -15,6 +16,9 @@ FACTS_PATH = ROOT / "skills/viet-nhu-nguoi/scripts/check_facts.py"
 SPEC = importlib.util.spec_from_file_location("scan", SCAN_PATH)
 scan = importlib.util.module_from_spec(SPEC)
 SPEC.loader.exec_module(scan)
+slides = scan.slides_mod
+DECK_AI = ROOT / "examples/slide-truoc.pptx"
+DECK_HUMAN = ROOT / "examples/slide-sau.pptx"
 
 
 def groups(text):
@@ -64,6 +68,9 @@ class KeepsHumanText(unittest.TestCase):
 
     def test_dev_jargon(self):
         self.assertEqual(groups("Deploy xong rồi, anh check giúp em cái PR nhé."), set())
+
+    def test_mot_cach_meaning_one_way(self):
+        self.assertNotIn("danh hóa (vi)", groups("Cả deck chỉ dùng một cách gọi. Có một cách khác là hỏi Lan."))
 
     def test_acronym_in_parens(self):
         self.assertEqual(groups("Phát hành theo giấy phép mã nguồn mở (MIT)."), set())
@@ -118,6 +125,118 @@ class CheckFacts(unittest.TestCase):
     def test_lost_code_fails(self):
         r = self.run_check("Chạy `npm test` trước khi push.", "Chạy test trước khi push.")
         self.assertEqual(r.returncode, 1)
+
+
+def scan_deck(path):
+    deck = slides.read_pptx(str(path))
+    text, index = slides.to_text(deck)
+    hits, _ = scan.scan(text)
+    scan.slide_checks(deck, index, hits)
+    return deck, text, hits
+
+
+P = "http://schemas.openxmlformats.org/presentationml/2006/main"
+A = "http://schemas.openxmlformats.org/drawingml/2006/main"
+R = "http://schemas.openxmlformats.org/officeDocument/2006/relationships"
+REL = "http://schemas.openxmlformats.org/package/2006/relationships"
+
+
+def sp(text, ph=None):
+    nv = f'<p:nvPr><p:ph type="{ph}"/></p:nvPr>' if ph else "<p:nvPr/>"
+    return (f'<p:sp><p:nvSpPr><p:cNvPr id="1" name="x"/><p:cNvSpPr/>{nv}</p:nvSpPr>'
+            f'<p:txBody><a:p><a:r><a:t>{text}</a:t></a:r></a:p></p:txBody></p:sp>')
+
+
+def tiny_deck(path):
+    """Deck tối thiểu viết tay: thứ tự slide trong presentation.xml ngược với tên file, có ghi chú."""
+    head = f'<p:sld xmlns:p="{P}" xmlns:a="{A}"><p:cSld><p:spTree>'
+    tailx = "</p:spTree></p:cSld></p:sld>"
+    with zipfile.ZipFile(path, "w") as z:
+        z.writestr("ppt/presentation.xml",
+                   f'<p:presentation xmlns:p="{P}" xmlns:r="{R}"><p:sldIdLst>'
+                   '<p:sldId id="256" r:id="rId2"/><p:sldId id="257" r:id="rId1"/></p:sldIdLst></p:presentation>')
+        z.writestr("ppt/_rels/presentation.xml.rels",
+                   f'<Relationships xmlns="{REL}">'
+                   '<Relationship Id="rId1" Type="x" Target="slides/slide1.xml"/>'
+                   '<Relationship Id="rId2" Type="x" Target="slides/slide2.xml"/></Relationships>')
+        z.writestr("ppt/slides/slide1.xml", head + sp("Slide thứ hai", "title") + sp("Nội dung B") + tailx)
+        z.writestr("ppt/slides/slide2.xml", head + sp("Slide đầu", "title") + sp("Nội dung A") + tailx)
+        z.writestr("ppt/slides/_rels/slide1.xml.rels",
+                   f'<Relationships xmlns="{REL}"><Relationship Id="rId9" Type="{R}/notesSlide" '
+                   'Target="../notesSlides/notesSlide1.xml"/></Relationships>')
+        z.writestr("ppt/notesSlides/notesSlide1.xml",
+                   f'<p:notes xmlns:p="{P}" xmlns:a="{A}"><p:cSld><p:spTree>'
+                   + sp("3", "sldNum") + sp("Lời nói cho slide B", "body") + "</p:spTree></p:cSld></p:notes>")
+
+
+class Slides(unittest.TestCase):
+    def test_reads_order_titles_and_notes(self):
+        with tempfile.TemporaryDirectory() as d:
+            path = pathlib.Path(d, "t.pptx")
+            tiny_deck(path)
+            deck = slides.read_pptx(str(path))
+        self.assertEqual([s["title"] for s in deck], ["Slide đầu", "Slide thứ hai"])
+        self.assertEqual(deck[1]["body"], ["Nội dung B"])
+        self.assertEqual(deck[1]["notes"], ["Lời nói cho slide B"])  # bỏ số trang
+        self.assertEqual(deck[0]["notes"], [])
+
+    def test_ai_deck_slide_tells(self):
+        deck, _, hits = scan_deck(DECK_AI)
+        self.assertEqual(len(deck), 7)
+        for group in ("tiêu đề dạng nhãn", "tiêu đề đếm số ý", "số gạch đầu dòng đều",
+                      "hứa suông", "câu khó nói (ghi chú)", "ngoặc trong lời nói"):
+            self.assertIn(group, hits)
+        titles = [m for _, m in hits["tiêu đề dạng nhãn"]]
+        self.assertNotIn("Cảm ơn", titles)  # slide cảm ơn và slide bìa không bị bắt
+
+    def test_label_prefix_title(self):
+        deck = [{"no": 1, "title": "Bìa: tên dự án", "body": [], "table": [], "notes": [], "hidden": False},
+                {"no": 2, "title": "Kỳ vọng: chi phí thấp hơn", "body": [], "table": [], "notes": [],
+                 "hidden": False},
+                {"no": 3, "title": "Quý 3 trễ 2 tuần vì thiếu người test", "body": [], "table": [],
+                 "notes": [], "hidden": False}]
+        _, index = slides.to_text(deck)
+        hits = {}
+        scan.slide_checks(deck, index, hits)
+        self.assertEqual([m for _, m in hits["tiêu đề có tiền tố nhãn"]], ["Kỳ vọng: chi phí thấp hơn"])
+
+    def test_human_deck_clean(self):
+        _, text, hits = scan_deck(DECK_HUMAN)
+        self.assertEqual(hits, {})
+        self.assertEqual(scan.score(text, hits, burst=False)["score"], 0)
+
+    def test_cli_labels_and_titles(self):
+        r = subprocess.run([sys.executable, "-I", str(SCAN_PATH), str(DECK_AI)], capture_output=True, text=True)
+        self.assertIn("slide 2, ghi chú", r.stdout)
+        r = subprocess.run([sys.executable, "-I", str(SCAN_PATH), "--titles", str(DECK_HUMAN)],
+                           capture_output=True, text=True)
+        self.assertIn("2. Quý 3 trễ 2 tuần", r.stdout)
+
+    def test_cli_text_dump(self):
+        r = subprocess.run([sys.executable, "-I", str(SCAN_PATH), "--text", str(DECK_AI)],
+                           capture_output=True, text=True)
+        self.assertEqual(r.returncode, 0, r.stderr)
+        block = r.stdout.split("=== Slide 2")[1].split("=== Slide 3")[0]
+        self.assertIn("Tiêu đề: Tổng quan", block)
+        self.assertIn("Như chúng ta có thể thấy", block)  # ghi chú nằm đúng slide 2
+
+    def test_check_facts_on_pptx(self):
+        same = subprocess.run([sys.executable, "-I", str(FACTS_PATH), str(DECK_HUMAN), str(DECK_HUMAN)],
+                              capture_output=True, text=True)
+        self.assertEqual(same.returncode, 0, same.stdout)
+        diff = subprocess.run([sys.executable, "-I", str(FACTS_PATH), str(DECK_HUMAN), str(DECK_AI)],
+                              capture_output=True, text=True)
+        self.assertEqual(diff.returncode, 1)
+        self.assertIn("30/11", diff.stdout)
+
+
+class EmptyPromises(unittest.TestCase):
+    def test_detects(self):
+        self.assertIn("hứa suông", groups("Chi tiết sẽ được trao đổi sau."))
+        self.assertIn("hứa suông", groups("Nhóm sẽ tiếp tục nghiên cứu thêm."))
+
+    def test_concrete_plan_ok(self):
+        self.assertNotIn("hứa suông", groups("Lan gửi bảng giá chi tiết trước thứ Sáu 14/11."))
 
 
 if __name__ == "__main__":

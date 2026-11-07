@@ -94,14 +94,14 @@ Lệnh sẽ hỏi cài cho agent nào; thêm `-a claude-code` (hoặc `-a '*'`) 
 - Muốn bài giống giọng bạn hơn thì đưa kèm một đoạn văn bạn tự viết. Skill đọc nhịp câu, từ nối, cách xưng hô trong đó rồi viết theo.
 - Gọi giọng bằng tên: *đời thường*, *công việc*, *kỹ thuật*, *ấm áp*, *thẳng*. Tên giọng chỉ đổi văn phong, không đổi xưng hô hay nội dung.
 - Chỉ soi, không sửa: nhờ "soi giúp đoạn này" hoặc "audit". Skill liệt kê từng chỗ kèm số mục, lý do và gợi ý sửa ngắn, tách chỗ chắc chắn nên sửa với chỗ tùy người viết.
-- Quét bằng dòng lệnh: `python3 -I skills/viet-nhu-nguoi/scripts/scan.py file.md` in điểm 0-100 và từng chỗ khớp. Thêm `--json` để lấy kết quả dạng máy đọc, hoặc `--max 30` để thoát mã 1 khi điểm vượt ngưỡng, dùng cho CI hay pre-commit.
-- Kiểm bản sửa còn giữ đúng dữ kiện: `python3 -I skills/viet-nhu-nguoi/scripts/check_facts.py goc.md moi.md` báo lỗi khi số liệu, ngày giờ, link hay code bị mất hoặc bị thêm, và nhắc khi thiếu tên riêng.
+- Quét bằng dòng lệnh: `python3 -I skills/viet-nhu-nguoi/scripts/scan.py file.md` (hoặc `file.pptx`) in điểm 0-100 và từng chỗ khớp. Thêm `--json` để lấy kết quả dạng máy đọc, hoặc `--max 30` để thoát mã 1 khi điểm vượt ngưỡng, dùng cho CI hay pre-commit. Thêm `--titles` để chỉ in các tiêu đề theo thứ tự, hoặc `--text` để in toàn bộ chữ và ghi chú của từng slide trong file `.pptx`.
+- Kiểm bản sửa còn giữ đúng dữ kiện: `python3 -I skills/viet-nhu-nguoi/scripts/check_facts.py goc.md moi.md` (đọc được cả `.pptx`) báo lỗi khi số liệu, ngày giờ, link hay code bị mất hoặc bị thêm, và nhắc khi thiếu tên riêng.
 
 Hai script chỉ dùng thư viện chuẩn của Python.
 
 ## Skill bắt những gì
 
-Danh mục đầy đủ có 38 dấu hiệu, mỗi dấu hiệu kèm ví dụ trước/sau, nằm trong [references/patterns.md](skills/viet-nhu-nguoi/references/patterns.md). Nhóm G dành riêng cho tiếng Việt:
+Danh mục đầy đủ có 44 dấu hiệu, mỗi dấu hiệu kèm ví dụ trước/sau, nằm trong [references/patterns.md](skills/viet-nhu-nguoi/references/patterns.md). Nhóm G dành riêng cho tiếng Việt:
 
 | Dấu hiệu | Ví dụ | Sửa thành |
 | --- | --- | --- |
@@ -115,9 +115,41 @@ Danh mục đầy đủ có 38 dấu hiệu, mỗi dấu hiệu kèm ví dụ tr
 | Xưng hô | cả bài "bạn" gửi sếp, trộn "bạn"/"quý vị" | một cặp xưng hô đúng vai |
 | Chêm tiếng Anh | hiệu suất (performance) | hiệu suất |
 
-Các nhóm còn lại áp cho cả tiếng Việt lẫn tiếng Anh: đối lập giả, câu chốt một dòng, bộ ba ép buộc, gạch ngang dài, thổi phồng, mượn uy tín mơ hồ, in đậm và emoji trang trí, lời chatbot, giải thích lại điều người đọc đã biết.
+Nhóm H dành cho slide và tài liệu nhiều trang (xem mục dưới). Các nhóm còn lại áp cho cả tiếng Việt lẫn tiếng Anh: đối lập giả, câu chốt một dòng, bộ ba ép buộc, gạch ngang dài, thổi phồng, mượn uy tín mơ hồ, in đậm và emoji trang trí, lời chatbot, giải thích lại điều người đọc đã biết.
 
 Skill cũng biết khi nào không nên sửa: giọng vùng miền, khẩu ngữ, thuật ngữ Hán Việt đúng chỗ, câu bị động trong tài liệu kỹ thuật, và các từ nhỏ làm đổi nghĩa như "vẫn", "chưa", "chỉ", "có thể" đều được giữ. Bài bạn tự viết thì skill chỉ sửa nhẹ.
+
+## Slide và thuyết trình
+
+Làm slide bằng AI thì người xem nhận ra từ trước khi đọc kỹ câu nào: tiêu đề "Tổng quan", "Thách thức", "Giải pháp", slide nào cũng đúng ba ý, ghi chú thuyết trình viết như công văn. Skill có thêm hướng dẫn riêng ([references/slides.md](skills/viet-nhu-nguoi/references/slides.md)):
+
+- Hỏi đủ bối cảnh trước khi dựng deck: ai xem, cần họ quyết gì, trình bày trực tiếp hay gửi đọc.
+- Viết mạch bằng tiêu đề trước. Mỗi tiêu đề là một câu kết luận, đọc liền từ trên xuống phải thành một lập luận.
+- Mỗi slide một thông điệp, thiếu số liệu thì ghi `[cần xác nhận]` chứ không bịa cho đầy.
+- Ghi chú thuyết trình viết để nói: câu ngắn, không ngoặc, nói điều slide không ghi.
+- Nhờ một agent mới, không biết bối cảnh, đọc thử deck rồi lập bảng góp ý nhận/không nhận.
+
+Máy quét đọc thẳng file `.pptx` (chữ trên slide, bảng, ghi chú) và báo theo từng slide:
+
+```text
+$ python3 -I skills/viet-nhu-nguoi/scripts/scan.py examples/slide-truoc.pptx
+Điểm 48/100 (nhiều dấu hiệu): 21 dấu hiệu trong 7 slide.
+[từ vựng AI (vi)] 7
+[tiêu đề dạng nhãn] 4        slide 2: Tổng quan, slide 3: Thách thức, slide 5: Lợi ích, slide 6: Kết luận
+[hứa suông] 1                slide 5, ghi chú: chi tiết sẽ được trao đổi sau
+[tiêu đề đếm số ý] 1         slide 4: 3 trụ cột giải pháp
+[câu khó nói (ghi chú)] 1    slide 2, ghi chú: Như chúng ta có thể thấy, ...
+[số gạch đầu dòng đều] 1     5/5 slide có đúng 3 ý
+...
+
+$ python3 -I skills/viet-nhu-nguoi/scripts/scan.py --titles examples/slide-sau.pptx
+ 1. Đề xuất thuê thêm 1 QA cho quý 1/2027
+ 2. Quý 3 trễ 2 tuần, cả 2 lần đều do thiếu người test
+ 3. Thuê 1 QA rẻ hơn tiếp tục trễ
+ 4. Cần anh duyệt trước 30/11 để kịp tuyển
+```
+
+Bản sau được 0/100. Chỉ đọc bốn tiêu đề là đủ hiểu cả đề xuất.
 
 ## Nên biết
 
@@ -132,13 +164,15 @@ Skill giúp văn bản tự nhiên và dễ đọc hơn, nhưng không cam kết
 ```text
 skills/viet-nhu-nguoi/
 ├── SKILL.md                 quy tắc chính, Claude nạp khi skill được gọi
-├── references/patterns.md   38 dấu hiệu, ví dụ trước/sau
+├── references/patterns.md   44 dấu hiệu, ví dụ trước/sau
+├── references/slides.md     cách viết slide, lời thuyết trình, nhờ người đọc thử
 ├── references/sources.md    nguồn tham khảo: bài viết, nghiên cứu, hướng dẫn giọng văn, skill khác
 ├── scripts/scan.py          máy quét có điểm 0-100, không cần thư viện ngoài
 ├── scripts/check_facts.py   kiểm bản sửa giữ đúng số liệu, ngày giờ, link, code
+├── scripts/slides.py        đọc chữ và ghi chú trong file .pptx, chỉ dùng thư viện chuẩn
 └── LICENSE-humanizer        giấy phép MIT của blader/humanizer
 assets/                      mã QR ủng hộ
-examples/                    văn mẫu trước/sau dùng trong README và test
+examples/                    văn mẫu và deck .pptx trước/sau dùng trong README và test
 tests/test_scan.py           python3 -m unittest discover -s tests
 ```
 
@@ -165,4 +199,5 @@ Không tiện ủng hộ tiền thì những việc này giúp không kém: th�
 - Wikipedia: [Signs of AI writing](https://en.wikipedia.org/wiki/Wikipedia:Signs_of_AI_writing) (WikiProject AI Cleanup).
 - [blader/humanizer](https://github.com/blader/humanizer), MIT, Copyright (c) 2025 Siqi Chen. Khung danh mục dấu hiệu dựa trên skill này.
 - Các skill humanize tiếng Việt mã nguồn mở (MIT), dùng để đối chiếu danh mục; nội dung ở đây viết lại theo cách riêng: [longhang2004/vietnamese-humanizer](https://github.com/longhang2004/vietnamese-humanizer), [andyluu98/vn-humanize](https://github.com/andyluu98/vn-humanize), [cuongducle/viet-humanize](https://github.com/cuongducle/viet-humanize), [pdh372/humanize-vietnamese](https://github.com/pdh372/humanize-vietnamese).
+- Phần slide học ý tưởng (viết lại bằng lời riêng) từ [carnot-tech/jinba-consulting-pptx-skill](https://github.com/carnot-tech/jinba-consulting-pptx-skill) (MIT), [zarazhangrui/frontend-slides](https://github.com/zarazhangrui/frontend-slides) (MIT) và skill `doc-coauthoring` trong [anthropics/skills](https://github.com/anthropics/skills) (Apache 2.0).
 - Danh sách nguồn đầy đủ gồm bài viết, sách và nghiên cứu về tiếng Việt, nghiên cứu về độ tin cậy của máy dò, hướng dẫn giọng văn và các skill khác. Danh sách ghi rõ nguồn nào skill dựa vào trực tiếp: [references/sources.md](skills/viet-nhu-nguoi/references/sources.md).

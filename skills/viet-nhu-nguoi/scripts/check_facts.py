@@ -1,12 +1,16 @@
 #!/usr/bin/env python3
 """So bản gốc với bản viết lại: có mất hay thêm số liệu, ngày giờ, link, code, tên riêng không.
 
-Dùng: python3 -I check_facts.py GOC.md MOI.md
+Dùng: python3 -I check_facts.py GOC.md MOI.md       (hoặc GOC.pptx MOI.pptx)
 Thoát mã 1 nếu số, link hoặc code bị mất hay được thêm. Tên riêng chỉ cảnh báo, vì sửa câu
 có thể đổi chữ đứng đầu câu hoặc lược bớt tên lặp lại.
 """
+import os
 import re
 import sys
+
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))  # -I bỏ thư mục script khỏi sys.path
+import slides  # noqa: E402
 
 URL = re.compile(r"https?://[^\s)>\]]+")
 CODE = re.compile(r"`([^`\n]+)`")
@@ -29,13 +33,18 @@ def facts(text):
     }
 
 
+def read(path):
+    if path.lower().endswith(".pptx"):
+        return slides.to_text(slides.read_pptx(path))[0]
+    with open(path, encoding="utf-8") as f:
+        return f.read()
+
+
 def main():
     if len(sys.argv) != 3:
         sys.exit(__doc__)
-    with open(sys.argv[1], encoding="utf-8") as f:
-        old = facts(f.read())
-    with open(sys.argv[2], encoding="utf-8") as f:
-        new = facts(f.read())
+    old = facts(read(sys.argv[1]))
+    new = facts(read(sys.argv[2]))
     failed = False
     for kind in old:
         lost, added = sorted(old[kind] - new[kind]), sorted(new[kind] - old[kind])

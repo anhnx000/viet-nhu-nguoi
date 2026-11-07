@@ -1,6 +1,6 @@
 # Danh mục dấu hiệu văn AI (Việt + Anh)
 
-Sắp từ mạnh đến yếu. Nhóm A và nhóm E chỉ cần gặp một lần là sửa. Nhóm G (mục 30-38) dành riêng cho tiếng Việt. Mục ghi *yếu* chỉ sửa khi đi cùng dấu hiệu khác trong cùng đoạn.
+Sắp từ mạnh đến yếu. Nhóm A và nhóm E chỉ cần gặp một lần là sửa. Nhóm G (mục 30-38) dành riêng cho tiếng Việt. Nhóm H (mục 39-44) dành cho slide, lời thuyết trình và tài liệu nhiều trang; hướng dẫn đầy đủ ở `slides.md`. Mục ghi *yếu* chỉ sửa khi đi cùng dấu hiệu khác trong cùng đoạn.
 
 ## A. Dàn dựng thay vì nói thẳng
 
@@ -287,6 +287,44 @@ Câu ngắn hơn không có nghĩa là đúng hơn. Kiểm lại sau khi sửa:
 - Giữ quan hệ: "sau khi áp dụng" không thành "nhờ áp dụng"; không tự thêm "do đó" giữa hai câu đứng cạnh nhau.
 - Giữ thuật ngữ: "phê duyệt" không thành "đồng ý", "tối ưu hóa" trong toán không thành "làm tốt hơn".
 - "Điều này" có nhiều cách hiểu (đổi lịch hay đổi phí?) thì hỏi, không tự chọn.
+
+## H. Slide và tài liệu nhiều trang
+
+### 39. Hứa làm sau mà không nói ai, khi nào
+**Dấu hiệu:** "Chi tiết sẽ được trao đổi sau", "sẽ tiếp tục nghiên cứu thêm", "sẽ cập nhật trong thời gian tới", "details to follow".
+**Sửa:** Viết luôn nội dung, hoặc ghi rõ ai gửi gì, khi nào. Không có thì bỏ cả dòng.
+**Trước:**
+> Chi tiết chi phí sẽ được trao đổi sau.
+**Sau:**
+> Lan gửi bảng chi phí trước thứ Sáu 14/11.
+
+### 40. Tiêu đề slide chỉ là nhãn chủ đề
+**Dấu hiệu:** "Tổng quan", "Thực trạng", "Thách thức", "Giải pháp", "Lợi ích", "Kết luận"; tiêu đề tả việc đang làm ("Phân tích chi phí", "Tổng hợp ý kiến"); tiền tố nhãn ("Thực trạng và thách thức: ...", "Kỳ vọng: ...", "Cần quyết: ...").
+**Sửa:** Tiêu đề là câu nói kết luận của slide, bỏ phần nhãn trước dấu hai chấm. Đọc riêng tiêu đề vẫn hiểu, không dựa vào "như trên", "điều này". Slide biểu đồ thì tiêu đề nói biểu đồ cho thấy gì. Slide bìa, slide cảm ơn, slide hỏi đáp thì để nguyên.
+**Trước:**
+> Phân tích chi phí
+**Sau:**
+> Thuê 1 QA rẻ hơn tiếp tục trễ hạn
+
+### 41. Tiêu đề đếm số ý, mọi thứ chia đều ba
+**Dấu hiệu:** "3 trụ cột", "4 giải pháp then chốt", "5 lý do"; slide nào cũng đúng 3 gạch đầu dòng; deck nào cũng đủ "3 thách thức, 3 giải pháp, 3 lợi ích".
+**Sửa:** Gọi tên các ý thay cho con số. Có mấy ý thật thì viết mấy ý; số gạch đầu dòng giữa các slide được phép lệch nhau. Nếu giữ con số trong tiêu đề thì số đó phải khớp với nội dung.
+
+### 42. Mạch dựng sẵn và tên khung lộ ra slide
+**Dấu hiệu:** deck nào cũng "Tổng quan → Thách thức → Giải pháp → Lợi ích → Kết luận" dù chủ đề khác nhau; tên khung tư duy hiện trên slide ("Situation - Complication - Resolution", "Hiện trạng → Nguyên nhân → Giải pháp"); chữ của quy trình làm slide còn sót ("Phương án A", "bản an toàn", "template").
+**Sửa:** Thứ tự slide đi theo việc người xem cần làm hoặc quyết. Phát hiện riêng của tài liệu này được làm slide chính. Tên khung chỉ dùng lúc dựng, không in lên slide. Phép thử: xóa tên công ty và con số mà deck vẫn dùng được cho công ty khác thì nó còn rỗng.
+
+### 43. Gạch đầu dòng là câu văn dài hoặc nói lại một ý
+**Dấu hiệu:** gạch đầu dòng hơn 20 chữ; ba gạch cùng một ý nói bằng ba cách; mỗi gạch một kiểu kết câu; slide chỉ có một gạch.
+**Sửa:** Mỗi gạch một ý, một dòng. Mỗi gạch một góc khác nhau (tiền, thời gian, người, rủi ro). Cùng cấp thì cùng kiểu câu. Chỉ có một ý thì viết thành câu thường. Nhiều chữ quá thì tách slide, đừng thu nhỏ chữ.
+
+### 44. Ghi chú thuyết trình viết như văn viết
+**Dấu hiệu:** câu hơn 30 chữ; có ngoặc đơn; "như đã trình bày ở trên"; đọc lại y nguyên chữ trên slide; mở bằng "Như chúng ta có thể thấy".
+**Sửa:** Viết như sẽ nói: câu ngắn, mỗi câu một ý, nói thêm điều slide không ghi (vì sao, ví dụ, con số đằng sau). Đọc thành tiếng một lần. Chỗ nào vấp thì sửa.
+**Trước:**
+> Như chúng ta có thể thấy, việc chuyển đổi số không chỉ là xu hướng mà còn là yếu tố then chốt giúp doanh nghiệp tối ưu hóa nguồn lực một cách hiệu quả (theo nhiều chuyên gia).
+**Sau:**
+> Hai lần trễ vừa rồi đều cùng một lý do. Dev phải tự test, nên vừa chậm vừa sót lỗi.
 
 ## Giữ lại
 

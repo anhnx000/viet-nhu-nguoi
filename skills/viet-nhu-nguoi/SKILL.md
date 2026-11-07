@@ -5,13 +5,14 @@ description: |
   Anh. Viết hoặc sửa văn bản cho giống người viết, bỏ các dấu hiệu văn AI. Dùng khi người dùng gọi
   /viet-nhu-nguoi, hoặc nhờ "viết như người", "viết cho giống người", "human voice", "humanize",
   "chống giọng văn AI", "bớt giọng AI", "bớt giọng ChatGPT", "viết tự nhiên hơn", "sửa văn AI",
-  "soi giọng AI", hoặc khi soạn tin nhắn, email, bài viết, PR, commit mà người dùng sẽ gửi đi dưới
-  tên mình. Có phần riêng cho tiếng Việt: văn dịch từ tiếng Anh, "việc/sự/một cách", giọng công
-  văn, xưng hô. Dựa trên Wikipedia "Signs of AI writing", skill humanizer (MIT) và các skill
+  "soi giọng AI", hoặc khi soạn tin nhắn, email, bài viết, PR, commit, slide, lời thuyết trình mà
+  người dùng sẽ gửi hoặc trình bày dưới tên mình. Có phần riêng cho tiếng Việt (văn dịch từ tiếng
+  Anh, "việc/sự/một cách", giọng công văn, xưng hô) và cho slide (tiêu đề kết luận, ghi chú
+  thuyết trình, quét thẳng file .pptx). Dựa trên Wikipedia "Signs of AI writing", skill humanizer (MIT) và các skill
   humanize tiếng Việt mã nguồn mở.
 license: MIT
 metadata:
-  version: "2.0.0"
+  version: "2.1.0"
 ---
 
 # Viết như người (Vietnamese humanizer): chống giọng văn AI
@@ -38,9 +39,9 @@ Từ vựng AI đổi theo từng đời mô hình. Các thói quen cấu trúc 
 
 **2. Chế độ sửa văn bản (người dùng dán văn bản hoặc chỉ file).**
 1. Đọc hết một lượt, đánh dấu mọi dấu hiệu, mạnh trước yếu sau. Xem cả hình dạng đoạn văn, không chỉ từng câu. Đọc `references/patterns.md` để có danh mục đầy đủ kèm ví dụ trước/sau; văn tiếng Việt thì đọc thêm nhóm G. Xác định ai viết cho ai và xưng hô đang dùng trước khi sửa.
-2. Có thể chạy `python3 -I scripts/scan.py <file>` (đường dẫn tính từ thư mục skill) để quét nhanh từ ngữ và dấu câu. Script cho điểm 0-100 theo mật độ dấu hiệu và độ đều của câu; điểm đo thói quen viết theo khuôn, không phải xác suất do AI viết. Script chỉ bắt được dấu hiệu bề mặt; cấu trúc phải tự đọc.
+2. Có thể chạy `python3 -I scripts/scan.py <file>` (đường dẫn tính từ thư mục skill; file `.md`, `.txt` hoặc `.pptx`) để quét nhanh từ ngữ và dấu câu. Script cho điểm 0-100 theo mật độ dấu hiệu và độ đều của câu; điểm đo thói quen viết theo khuôn, không phải xác suất do AI viết. Script chỉ bắt được dấu hiệu bề mặt; cấu trúc phải tự đọc.
 3. Viết lại, sửa cấu trúc trước rồi mới thay từ. Mức sửa theo nguồn gốc bài: bài người dùng tự viết thì sửa nhẹ, sửa quá khoảng một phần ba số câu thì rà lại từng chỗ, chỗ nào không chỉ ra được dấu hiệu cụ thể thì trả về câu gốc; bài AI viết gần như toàn bộ thì được viết lại nhiều hơn. Câu đã ổn thì giữ, không sửa chỉ vì nó có trong danh mục. Giữ mọi ý có căn cứ. Được rút gọn, gộp, tách đoạn, đổi cấu trúc. Không thêm tên, số liệu, ngày tháng, trích dẫn hay nguồn nào không có trong bản gốc hoặc lời người dùng. Thiếu chi tiết thì hỏi, hoặc viết câu đơn giản hơn.
-4. Tự kiểm: nếu có file gốc và file mới, chạy `python3 -I scripts/check_facts.py <gốc> <mới>` để bắt số liệu, ngày giờ, link, code bị mất hoặc tự thêm vào. Đọc thành tiếng trong đầu. Còn chỗ nào nghe giống AI? Có thêm hay mất sự kiện nào không? Quét lại năm lỗi hay sót nhất: "không phải X mà là Y", câu chốt một dòng, bộ ba, gạch ngang dài, nhãn in đậm. Với tiếng Việt, quét thêm: "việc/sự/một cách" còn dày không, "Điều này"/"Nó" mở câu, xưng hô có nhất quán không, và các từ "vẫn", "chưa", "chỉ", "có thể" có bị mất không. Sửa một chỗ hay làm hỏng chỗ khác (bỏ bộ ba có thể làm ba câu liền dài bằng nhau), nên sửa xong thì quét lại cả bài.
+4. Tự kiểm: nếu có file gốc và file mới (kể cả `.pptx`), chạy `python3 -I scripts/check_facts.py <gốc> <mới>` để bắt số liệu, ngày giờ, link, code bị mất hoặc tự thêm vào. Đọc thành tiếng trong đầu. Còn chỗ nào nghe giống AI? Có thêm hay mất sự kiện nào không? Quét lại năm lỗi hay sót nhất: "không phải X mà là Y", câu chốt một dòng, bộ ba, gạch ngang dài, nhãn in đậm. Với tiếng Việt, quét thêm: "việc/sự/một cách" còn dày không, "Điều này"/"Nó" mở câu, xưng hô có nhất quán không, và các từ "vẫn", "chưa", "chỉ", "có thể" có bị mất không. Sửa một chỗ hay làm hỏng chỗ khác (bỏ bộ ba có thể làm ba câu liền dài bằng nhau), nên sửa xong thì quét lại cả bài.
 5. Trả về: mặc định là bản cuối kèm vài dòng nói đã sửa gì. Nếu người dùng chỉ file thì ghi thẳng vào file, chỉ sửa phần văn xuôi, giữ nguyên code, lệnh, đường dẫn, link, YAML. Nếu skill được gọi bên trong việc khác (PR, commit, email) thì chỉ trả bản cuối.
 
 Sau khi tự kiểm, chấm nhanh bản cuối theo năm tiêu chí, mỗi tiêu chí 1-10: **thẳng** (nói sự việc hay chỉ báo hiệu), **nhịp** (câu có dài ngắn khác nhau không), **tin người đọc** (có giải thích thừa không), **thật** (đọc có giống một người cụ thể viết không), **gọn** (còn chỗ nào cắt được không). Dưới 35/50 thì sửa thêm một lượt. Chỉ đưa bảng điểm khi người dùng hỏi.
@@ -115,6 +116,17 @@ Không có mẫu và không có tên giọng thì chọn giọng theo loại vă
 - Kịch bản để đọc, voice-over: mỗi câu một ý, người nghe theo kịp sau một lần nghe; không dùng "xem ở trên", không tự thêm "ờ", "ừm".
 
 Bỏ dấu hiệu mới là một nửa. Văn bản cuối vẫn phải có giọng người: chi tiết cụ thể, câu dài ngắn khác nhau, đôi chỗ nói thẳng "tôi nghĩ" hay "chưa chắc". Văn quá sạch, quá đều cũng là dấu hiệu.
+
+## Slide, lời thuyết trình, tài liệu dài
+
+Khi viết hoặc sửa slide, speaker notes, đề xuất hay báo cáo nhiều trang, đọc `references/slides.md`. Những điểm chính:
+
+- **Lấy bối cảnh trước khi viết từ đầu.** Hỏi gộp một lượt: ai xem, họ cần quyết gì, trình bày trực tiếp hay gửi đọc, có số liệu hay tài liệu gì. Sau đó hỏi thêm 5-10 câu đánh số, cho phép trả lời tắt. Chưa rõ bối cảnh thì viết một trang tóm ý, chưa dựng cả deck.
+- **Tiêu đề là câu kết luận**, đọc liền từ trên xuống phải thành một mạch (`scan.py --titles`). Không dùng tiêu đề nhãn ("Tổng quan", "Thách thức") hay tiền tố nhãn ("Kỳ vọng: ..."), không đếm số ý ("3 trụ cột"), không theo mạch dựng sẵn, không ép mọi thứ về ba.
+- **Mỗi slide một thông điệp.** Gạch đầu dòng ngắn, mỗi gạch một góc khác nhau. Thiếu số liệu thì ghi `[cần xác nhận]`, không bịa cho đầy. Không hứa suông ("chi tiết sẽ trao đổi sau").
+- **Ghi chú thuyết trình viết để nói:** câu ngắn, không ngoặc, nói điều slide không ghi.
+- **Đọc file `.pptx`:** chạy `python3 -I scripts/scan.py --text <file.pptx>` để in chữ từng slide (tiêu đề, nội dung, bảng, ghi chú) kèm số slide. Không cần python-pptx, không giải nén XML bằng tay. Khi báo lỗi, ghi đúng số slide theo kết quả này.
+- **Soát:** `scan.py` đọc thẳng `.pptx`, báo dấu hiệu theo từng slide và từng phần ghi chú; `check_facts.py` so hai file `.pptx`. Deck quan trọng thì nhờ một agent mới, không biết bối cảnh, đọc thử, rồi lập bảng góp ý nhận/không nhận cho người dùng quyết.
 
 ## Khi nào không sửa
 
