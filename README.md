@@ -127,7 +127,7 @@ AI-made slides give themselves away before anyone reads a sentence: titles like 
 - Write the storyline as titles first. Each title is a conclusion, and the titles read top to bottom form one argument.
 - One message per slide. Missing numbers are marked `[cần xác nhận]` (*to confirm*), never invented.
 - Speaker notes are written to be spoken: short sentences, no brackets, saying what the slide doesn't.
-- A fresh agent with no context reads the deck, and its feedback goes into an accept/reject table for you to decide.
+- A fresh agent with no context reads the deck and scores it on seven criteria (out of 70); its feedback goes into an accept/reject table for you to decide.
 
 The scanner reads `.pptx` files directly (slide text, tables and speaker notes) and reports by slide:
 

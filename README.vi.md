@@ -127,7 +127,7 @@ Làm slide bằng AI thì người xem nhận ra từ trước khi đọc kỹ c
 - Viết mạch bằng tiêu đề trước. Mỗi tiêu đề là một câu kết luận, đọc liền từ trên xuống phải thành một lập luận.
 - Mỗi slide một thông điệp, thiếu số liệu thì ghi `[cần xác nhận]` chứ không bịa cho đầy.
 - Ghi chú thuyết trình viết để nói: câu ngắn, không ngoặc, nói điều slide không ghi.
-- Nhờ một agent mới, không biết bối cảnh, đọc thử deck rồi lập bảng góp ý nhận/không nhận.
+- Nhờ một agent mới, không biết bối cảnh, đọc thử deck, chấm 7 tiêu chí (thang 70 điểm), rồi lập bảng góp ý nhận/không nhận.
 
 Máy quét đọc thẳng file `.pptx` (chữ trên slide, bảng, ghi chú) và báo theo từng slide:
 

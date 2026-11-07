@@ -126,7 +126,7 @@ Khi viết hoặc sửa slide, speaker notes, đề xuất hay báo cáo nhiều
 - **Mỗi slide một thông điệp.** Gạch đầu dòng ngắn, mỗi gạch một góc khác nhau. Thiếu số liệu thì ghi `[cần xác nhận]`, không bịa cho đầy. Không hứa suông ("chi tiết sẽ trao đổi sau").
 - **Ghi chú thuyết trình viết để nói:** câu ngắn, không ngoặc, nói điều slide không ghi.
 - **Đọc file `.pptx`:** chạy `python3 -I scripts/scan.py --text <file.pptx>` để in chữ từng slide (tiêu đề, nội dung, bảng, ghi chú) kèm số slide. Không cần python-pptx, không giải nén XML bằng tay. Khi báo lỗi, ghi đúng số slide theo kết quả này.
-- **Soát:** `scan.py` đọc thẳng `.pptx`, báo dấu hiệu theo từng slide và từng phần ghi chú; `check_facts.py` so hai file `.pptx`. Deck quan trọng thì nhờ một agent mới, không biết bối cảnh, đọc thử, rồi lập bảng góp ý nhận/không nhận cho người dùng quyết.
+- **Soát:** `scan.py` đọc thẳng `.pptx`, báo dấu hiệu theo từng slide và từng phần ghi chú; `check_facts.py` so hai file `.pptx`. Deck quan trọng thì nhờ một agent mới, không biết bối cảnh, đọc thử và chấm 7 tiêu chí (thang 70), rồi lập bảng góp ý nhận/không nhận cho người dùng quyết.
 
 ## Khi nào không sửa
 
