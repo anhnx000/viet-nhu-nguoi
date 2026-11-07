@@ -3,7 +3,8 @@ name: vietnamese-humanizer
 description: |
   Viết hoặc sửa văn bản (tiếng Việt và tiếng Anh) cho giống người viết, bỏ các dấu hiệu văn AI.
   Dùng khi người dùng gọi /vietnamese-humanizer, hoặc nhờ "viết cho giống người", "bớt giọng AI",
-  "humanize", "viết tự nhiên hơn", hoặc khi soạn tin nhắn, email, bài viết, PR, commit mà người
+  "humanize", "viết tự nhiên hơn", "chống giọng văn AI", "bớt giọng ChatGPT", "sửa văn AI", "soi
+  giọng AI", hoặc khi soạn tin nhắn, email, bài viết, PR, commit mà người
   dùng sẽ gửi đi dưới tên mình. Có phần riêng cho tiếng Việt: văn dịch từ tiếng Anh, "việc/sự/một
   cách", giọng công văn, xưng hô. Dựa trên Wikipedia "Signs of AI writing", skill humanizer (MIT)
   và các skill humanize tiếng Việt mã nguồn mở.

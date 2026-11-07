@@ -3,11 +3,21 @@
 [![test](https://github.com/anhnx000/vietnamese-humanizer/actions/workflows/test.yml/badge.svg)](https://github.com/anhnx000/vietnamese-humanizer/actions/workflows/test.yml)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
+[English](README.md) · **Tiếng Việt**
+
+![Trước: văn AI được 72/100. Sau: bản viết lại giọng người được 0/100.](assets/banner.png)
+
 Skill cho [Claude Code](https://code.claude.com/docs/en/skills) giúp văn tiếng Việt do AI viết đọc lên giống người viết. Nó bỏ những thứ khiến người đọc nhận ra ngay là "con AI viết": "Trong bối cảnh hiện nay", "không chỉ... mà còn...", "được phát triển bởi", "tiến hành thực hiện việc", "một cách hiệu quả", "Hy vọng thông tin trên hữu ích!".
 
 Tiếng Anh vẫn dùng được, nhưng phần làm kỹ nhất là tiếng Việt: văn dịch từ tiếng Anh, danh hóa "việc/sự", giọng công văn, xưng hô sai vai.
 
-[English](README.md) · **Tiếng Việt**
+## Khi nào nên dùng
+
+- Bài ChatGPT, Claude hay Gemini viết đọc là biết ngay "văn AI", muốn sửa cho tự nhiên mà không phải viết lại từ đầu.
+- Viết caption, bài Facebook, bài blog, email, báo cáo bằng AI nhưng muốn giữ giọng của mình.
+- Tài liệu dịch từ tiếng Anh nghe cứng, đầy "được... bởi", "Điều này cho phép", "thông qua việc".
+- Email gửi sếp hay khách hàng bị AI xưng "bạn" hoặc trộn "chúng ta" với "quý vị".
+- Muốn kiểm nhanh một bài có bao nhiêu dấu hiệu văn AI trước khi đăng, hoặc chặn trong CI.
 
 ## Trước và sau
 

@@ -5,6 +5,12 @@
 
 **English** · [Tiếng Việt](README.vi.md)
 
+![Before: AI-written Vietnamese scores 72/100. After: a plain human rewrite scores 0/100.](assets/banner.png)
+
+> **Tiếng Việt:** skill chống giọng văn AI, sửa bài ChatGPT/Claude/Gemini viết cho tự nhiên như người Việt viết. Bỏ văn dịch, sáo rỗng, giọng công văn, lời chatbot; giữ đúng số liệu và xưng hô. Đọc [bản tiếng Việt](README.vi.md).
+>
+> *Chong giong van AI, humanize tieng Viet, viet lai van AI tu nhien, bo giong ChatGPT, viet nhu nguoi that.*
+
 A [Claude Code skill](https://code.claude.com/docs/en/skills) that makes AI-written Vietnamese read like a person wrote it. It removes the phrases Vietnamese readers spot right away: "Trong bối cảnh hiện nay" (*in today's context*), "không chỉ... mà còn..." (*not only... but also...*), "được phát triển bởi" (*was developed by*), "tiến hành thực hiện việc" (*proceed to carry out the act of*), "Hy vọng thông tin trên hữu ích!" (*Hope this helps!*).
 
 English works too, based on Wikipedia's [Signs of AI writing](https://en.wikipedia.org/wiki/Wikipedia:Signs_of_AI_writing) and [blader/humanizer](https://github.com/blader/humanizer). Most of the work went into Vietnamese, because generic humanizers miss what makes Vietnamese AI text sound off: it reads like it was written in English and translated.
