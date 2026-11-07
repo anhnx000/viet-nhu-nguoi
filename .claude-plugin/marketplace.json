@@ -1,0 +1,14 @@
+{
+  "name": "vietnamese-humanizer",
+  "owner": { "name": "anhnx000", "url": "https://github.com/anhnx000" },
+  "description": "Skill Claude Code viết tiếng Việt tự nhiên, bỏ giọng AI.",
+  "plugins": [
+    {
+      "name": "vietnamese-humanizer",
+      "source": "./",
+      "description": "Viết và sửa tiếng Việt cho giống người viết, bỏ dấu hiệu văn AI. Có máy quét không cần thư viện ngoài.",
+      "version": "1.1.0",
+      "category": "writing"
+    }
+  ]
+}
