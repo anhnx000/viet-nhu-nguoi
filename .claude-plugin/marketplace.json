@@ -7,7 +7,7 @@
       "name": "vietnamese-humanizer",
       "source": "./",
       "description": "Viết và sửa tiếng Việt cho giống người viết, bỏ dấu hiệu văn AI. Có máy quét không cần thư viện ngoài.",
-      "version": "1.1.0",
+      "version": "1.2.0",
       "category": "writing"
     }
   ]

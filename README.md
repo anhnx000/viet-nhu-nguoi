@@ -33,11 +33,11 @@ The skill does not invent facts. If the text needs detail, it asks you, then wri
 
 *"Since March we track projects in the new system. Customers check progress themselves instead of messaging us, and the team saves about half a day of reporting each week."*
 
-The bundled scanner finds 16 tells in the draft and none in the rewrites:
+The bundled scanner scores the draft 72/100 ("dense") with 16 tells, and both rewrites 0/100:
 
 ```text
 $ python3 -I skills/vietnamese-humanizer/scripts/scan.py examples/truoc.md
-16 dấu hiệu trong 5 dòng:
+Điểm 72/100 (dày đặc): 16 dấu hiệu trong 5 dòng.
 [từ vựng AI (vi)] 3      nâng tầm, trong bối cảnh hiện nay, bên cạnh đó
 [động từ rỗng (vi)] 3    tiến hành thực hiện, thực hiện việc, nhằm mục đích
 [văn dịch (vi)] 2        được chứng minh bởi, trải nghiệm liền mạch
@@ -69,13 +69,20 @@ bash install.sh --copy   # or copy, if you want to review each update before ins
 
 Start a new Claude Code session afterwards.
 
+Other agents (Cursor, Codex, Gemini CLI, OpenCode and more) can install it with `npx skills add anhnx000/vietnamese-humanizer`. The skill is plain Markdown, so it runs on whatever model your editor uses.
+
 ## Use
 
 - Turn it on for the session: `/vietnamese-humanizer`. Claude then follows the rules in every reply, short ones included.
 - Rewrite a passage: `/vietnamese-humanizer <paste text>`, or ask "rewrite docs/intro.md so it sounds less like AI".
 - It also triggers when you ask Claude to draft an email, message, post or PR that you will send under your name.
 - For a closer match to your voice, include a sample you wrote yourself. The skill picks up your sentence length, connectives and pronouns of address.
-- Scan only, no rewrite: `python3 -I skills/vietnamese-humanizer/scripts/scan.py file.md`. Standard library only.
+- Pick a voice by name: *đời thường* (casual), *công việc* (work), *kỹ thuật* (technical), *ấm áp* (warm), *thẳng* (blunt). The voice changes style only, never pronouns of address or content.
+- Audit without rewriting: ask it to "soi" or "audit" a text. You get each tell with its pattern number, the reason and a short fix, split into clear problems and judgment calls.
+- Scan from the command line: `python3 -I skills/vietnamese-humanizer/scripts/scan.py file.md` prints a 0-100 score and every match. Add `--json` for machine output, or `--max 30` to exit 1 above a threshold in CI or a pre-commit hook.
+- Check that a rewrite kept the facts: `python3 -I skills/vietnamese-humanizer/scripts/check_facts.py original.md rewrite.md` fails if a number, date, time, link or code span was lost or added, and warns about missing proper names.
+
+Both scripts use only the Python standard library.
 
 ## What it catches
 
@@ -97,7 +104,11 @@ The other groups apply to both languages: false contrasts, one-line punchlines, 
 
 It also knows when to leave text alone: regional dialect, colloquial speech, Sino-Vietnamese terms used correctly, passives in technical docs, and small words that carry meaning such as "vẫn" (*still*), "chưa" (*not yet*), "chỉ" (*only*), "có thể" (*may*). Text you wrote yourself only gets a light edit.
 
-## What it is not for
+## Good to know
+
+Nothing leaves your machine beyond what your agent already sends to its model. The skill is Markdown plus two Python scripts with no dependencies, no network calls, no telemetry and no account.
+
+The score is a stand-in, not a verdict. It measures how many template habits a text has and how uniform its sentences are; it is not the probability that AI wrote it. Some people write in a uniform rhythm, and detectors are known to misfire on non-native writers. Treat a high score as a list of places to reread.
 
 The skill makes text more natural and easier to read. It does not promise to beat AI detectors and does not use evasion tricks such as deliberate typos or hidden characters. Don't use it to submit someone else's coursework or to impersonate anyone. And don't use the pattern list to accuse people of using AI: humans guessing by feel do only a little better than chance.
 
@@ -107,7 +118,8 @@ The skill makes text more natural and easier to read. It does not promise to bea
 skills/vietnamese-humanizer/
 ├── SKILL.md                 main rules, loaded when the skill is invoked
 ├── references/patterns.md   38 patterns with before/after examples
-├── scripts/scan.py          scanner, no third-party packages
+├── scripts/scan.py          scanner with a 0-100 score, no third-party packages
+├── scripts/check_facts.py   checks a rewrite kept numbers, dates, links and code
 └── LICENSE-humanizer        MIT license of blader/humanizer
 assets/                      donation QR code
 examples/                    before/after samples used in the README and tests
@@ -120,11 +132,17 @@ Found a Vietnamese AI phrasing the skill misses, or a natural sentence it wrongl
 
 ## Support
 
-If the skill saves you time, you can buy me a coffee. It gives me time to update the catalog as new models come out, answer issues and keep the skill working well. No pressure: a ⭐ or an issue about a bad rewrite helps a lot too.
+Vietnamese Humanizer is free and MIT licensed, and it will stay that way. I maintain it in my spare time. If it saves you editing time, a coffee helps me keep it current:
+
+- update the pattern list when new models bring new habits, since each model generation shifts its favourite words;
+- turn the sentences you report into test cases, and review issues and pull requests;
+- keep improving the scanner and the fact checker.
 
 <img src="assets/donate-vietqr.png" alt="VietQR code for donations via VPBank / Napas 247" width="220">
 
-Scan with any banking app that supports VietQR / Napas 247 (Vietnam).
+The QR code works with any Vietnamese banking app (VietQR / Napas 247). A transfer note such as "vietnamese-humanizer" tells me where it came from.
+
+Outside Vietnam, or rather not give money? These help just as much: star the repo, share it with someone who writes Vietnamese with AI, or open an issue with a sentence the skill got wrong. Donations are a thank-you, not payment for support: every issue gets the same attention.
 
 ## Credits
 
