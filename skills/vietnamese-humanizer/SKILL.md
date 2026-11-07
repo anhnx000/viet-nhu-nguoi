@@ -129,6 +129,9 @@ Skill này giúp văn bản tự nhiên hơn. Không dùng mẹo lừa máy dò 
 
 ## Nguồn
 
+Danh sách đầy đủ, ghi rõ nguồn nào dùng trực tiếp và nguồn nào để đọc thêm: `references/sources.md`.
+
+
 - Wikipedia: [Signs of AI writing](https://en.wikipedia.org/wiki/Wikipedia:Signs_of_AI_writing) (WikiProject AI Cleanup).
 - [blader/humanizer](https://github.com/blader/humanizer), giấy phép MIT, Copyright (c) 2025 Siqi Chen.
 - Skill humanize tiếng Việt (đều MIT), dùng để đối chiếu danh mục, nội dung viết lại bằng lời của skill này: [longhang2004/vietnamese-humanizer](https://github.com/longhang2004/vietnamese-humanizer) (văn dịch, register, bảo toàn sắc thái), [andyluu98/vn-humanize](https://github.com/andyluu98/vn-humanize) (mẫu V1-V8, hồ sơ giọng văn, bảng tự kiểm), [cuongducle/viet-humanize](https://github.com/cuongducle/viet-humanize), [pdh372/humanize-vietnamese](https://github.com/pdh372/humanize-vietnamese) (bảng chuyển văn dịch).

@@ -124,6 +124,7 @@ The skill makes text more natural and easier to read. It does not promise to bea
 skills/vietnamese-humanizer/
 ├── SKILL.md                 main rules, loaded when the skill is invoked
 ├── references/patterns.md   38 patterns with before/after examples
+├── references/sources.md    references: articles, research, style guides, other skills
 ├── scripts/scan.py          scanner with a 0-100 score, no third-party packages
 ├── scripts/check_facts.py   checks a rewrite kept numbers, dates, links and code
 └── LICENSE-humanizer        MIT license of blader/humanizer
@@ -155,6 +156,6 @@ Outside Vietnam, or rather not give money? These help just as much: star the rep
 - Wikipedia: [Signs of AI writing](https://en.wikipedia.org/wiki/Wikipedia:Signs_of_AI_writing) (WikiProject AI Cleanup).
 - [blader/humanizer](https://github.com/blader/humanizer), MIT, Copyright (c) 2025 Siqi Chen. The pattern catalog structure is based on it.
 - Open-source Vietnamese humanize skills (MIT), used for cross-checking the catalog; the text here is written independently: [longhang2004/vietnamese-humanizer](https://github.com/longhang2004/vietnamese-humanizer), [andyluu98/vn-humanize](https://github.com/andyluu98/vn-humanize), [cuongducle/viet-humanize](https://github.com/cuongducle/viet-humanize), [pdh372/humanize-vietnamese](https://github.com/pdh372/humanize-vietnamese).
-- Full list of articles at the end of [SKILL.md](skills/vietnamese-humanizer/SKILL.md).
+- Full reference list (in Vietnamese), covering articles, Vietnamese linguistics, research on detector reliability, style guides and other skills, and marking which ones the skill builds on directly: [references/sources.md](skills/vietnamese-humanizer/references/sources.md).
 
 MIT licensed.

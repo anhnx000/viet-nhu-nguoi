@@ -122,6 +122,7 @@ Skill giúp văn bản tự nhiên và dễ đọc hơn, nhưng không cam kết
 skills/vietnamese-humanizer/
 ├── SKILL.md                 quy tắc chính, Claude nạp khi skill được gọi
 ├── references/patterns.md   38 dấu hiệu, ví dụ trước/sau
+├── references/sources.md    nguồn tham khảo: bài viết, nghiên cứu, hướng dẫn giọng văn, skill khác
 ├── scripts/scan.py          máy quét có điểm 0-100, không cần thư viện ngoài
 ├── scripts/check_facts.py   kiểm bản sửa giữ đúng số liệu, ngày giờ, link, code
 └── LICENSE-humanizer        giấy phép MIT của blader/humanizer
@@ -153,4 +154,4 @@ Không tiện ủng hộ tiền thì những việc này giúp không kém: th�
 - Wikipedia: [Signs of AI writing](https://en.wikipedia.org/wiki/Wikipedia:Signs_of_AI_writing) (WikiProject AI Cleanup).
 - [blader/humanizer](https://github.com/blader/humanizer), MIT, Copyright (c) 2025 Siqi Chen. Khung danh mục dấu hiệu dựa trên skill này.
 - Các skill humanize tiếng Việt mã nguồn mở (MIT), dùng để đối chiếu danh mục; nội dung ở đây viết lại theo cách riêng: [longhang2004/vietnamese-humanizer](https://github.com/longhang2004/vietnamese-humanizer), [andyluu98/vn-humanize](https://github.com/andyluu98/vn-humanize), [cuongducle/viet-humanize](https://github.com/cuongducle/viet-humanize), [pdh372/humanize-vietnamese](https://github.com/pdh372/humanize-vietnamese).
-- Nguồn bài viết đầy đủ nằm cuối [SKILL.md](skills/vietnamese-humanizer/SKILL.md).
+- Danh sách nguồn đầy đủ gồm bài viết, sách và nghiên cứu về tiếng Việt, nghiên cứu về độ tin cậy của máy dò, hướng dẫn giọng văn và các skill khác. Danh sách ghi rõ nguồn nào skill dựa vào trực tiếp: [references/sources.md](skills/vietnamese-humanizer/references/sources.md).
