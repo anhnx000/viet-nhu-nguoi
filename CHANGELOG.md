@@ -2,7 +2,7 @@
 
 ## 2.5.0 (2026-11-11)
 
-Văn dịch tính trên cả bài, và học thêm từ humanizer 4.0.0.
+Máy quét đo văn dịch trên cả bài, skill học thêm từ humanizer 4.0.0.
 
 - Thử máy quét trên hai bộ văn do agent khác viết: mỗi bộ có đoạn dịch từng chữ và đoạn giọng người cùng nội dung, thuộc 22 thể loại (tin nhắn, thông báo, điều khoản, release note, review phim...). Trước bản này, đoạn dịch phần lớn chỉ được 0-15/100, vì danh sách cụm từ không theo kịp cách viết của người khác.
 - `scan.py` kiểm cả bài "chữ đệm dịch dày": đếm "một", "các/những", "được", "có thể", "sẽ", "đã", "rằng", "cho phép/giúp", "điều này/nó", "việc/sự", "của bạn/của tôi..." (tính gấp đôi) trên 1.000 chữ, từ 110 trở lên thì báo, cộng 12 điểm. Bộ thứ nhất: đoạn dịch 120-189, đoạn người 30-90. Bộ thứ hai, không dùng để chỉnh ngưỡng: bắt 5/6 đoạn dịch nặng, không báo nhầm đoạn nào trong 12 đoạn người. Đoạn chỉ hơi dịch, vài chỗ gượng lẻ tẻ, thì máy vẫn không thấy, phải đọc.

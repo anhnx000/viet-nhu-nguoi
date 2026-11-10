@@ -159,7 +159,7 @@ Từ bản 2.2 máy quét đếm trên cả bài nên bài này lên 55/100. Tro
 
 ## Skill sửa những lỗi nào
 
-Danh mục của skill có 62 dấu hiệu văn AI, dấu hiệu nào cũng kèm ví dụ trước và sau khi sửa ([xem đầy đủ](skills/viet-nhu-nguoi/references/patterns.md)). Nhóm riêng cho tiếng Việt có những dấu hiệu dễ thấy sau:
+Danh mục của skill có 62 dấu hiệu văn AI, dấu hiệu nào cũng kèm ví dụ trước và sau khi sửa ([xem đầy đủ](skills/viet-nhu-nguoi/references/patterns.md)). Nhóm riêng cho tiếng Việt có mấy dấu hiệu dễ thấy như bảng dưới:
 
 | Dấu hiệu | Ví dụ | Sửa thành |
 | --- | --- | --- |

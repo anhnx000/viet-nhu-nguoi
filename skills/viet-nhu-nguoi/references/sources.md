@@ -1,6 +1,6 @@
 # Nguồn tham khảo
 
-Skill học từ các nguồn dưới đây, kèm vài thứ nên đọc thêm. Nguồn có nhắc tới một từ hay một cấu trúc thì chưa chắc đó đã là lỗi, bản viết lại cũng không phải lúc nào cũng hay hơn. Danh mục dấu hiệu, ví dụ trước/sau và quy tắc trong skill đều viết lại bằng lời riêng, không chép nguyên văn bài nào.
+Skill học từ các nguồn dưới đây, kèm vài thứ nên đọc thêm. Nguồn có nhắc tới một từ hay một cấu trúc thì chưa chắc đó đã là lỗi, câu sửa mà nguồn đề xuất cũng chưa chắc đã hay hơn. Danh mục dấu hiệu, ví dụ trước/sau và quy tắc trong skill đều viết lại bằng lời riêng, không chép nguyên văn bài nào.
 
 Ngày 07-11-2026 đã kiểm, link nào cũng còn mở được. Mỗi mục ghi rõ mức dùng:
 
@@ -57,14 +57,14 @@ Skill tiếng Anh:
 - [conorbronsdon/avoid-ai-writing](https://github.com/conorbronsdon/avoid-ai-writing). **Dùng trực tiếp**, lấy ý tưởng: chế độ chỉ soi lỗi, điểm số 0-100, chặn trong CI.
 - [Aboudjem/humanizer-skill](https://github.com/Aboudjem/humanizer-skill). **Dùng trực tiếp**, lấy ý tưởng: kiểm xem bản sửa có còn đủ số liệu, chọn giọng theo tên.
 - [hardikpandya/stop-slop](https://github.com/hardikpandya/stop-slop). **Dùng trực tiếp**, lấy ý tưởng: tự chấm theo năm tiêu chí.
-- [carnot-tech/jinba-consulting-pptx-skill](https://github.com/carnot-tech/jinba-consulting-pptx-skill), MIT. **Dùng trực tiếp**, lấy ý tưởng: tiêu đề slide là câu kết luận và đọc liền thành mạch; không đếm số ý trong tiêu đề, không ép về ba; không lộ tên khung; thiếu số liệu thì để trống chứ không bịa; danh sách từ "mùi AI" và câu hứa suông; nhờ agent mới đọc soát, chấm 7 tiêu chí (thang 70) và lập bảng nhận/không nhận góp ý. Bản gốc viết bằng tiếng Nhật cho slide HTML; ở đây chọn lọc phần về chữ và viết lại cho tiếng Việt.
+- [carnot-tech/jinba-consulting-pptx-skill](https://github.com/carnot-tech/jinba-consulting-pptx-skill), MIT. **Dùng trực tiếp**, lấy ý tưởng: tiêu đề slide là câu kết luận và đọc liền thành mạch; không đếm số ý trong tiêu đề, không ép về ba; không ghi tên khung phân tích (kiểu SWOT, 3C) lên slide; thiếu số liệu thì để trống chứ không bịa; danh sách từ "mùi AI" và câu hứa suông; nhờ agent mới đọc soát, chấm 7 tiêu chí (thang 70) và lập bảng nhận/không nhận góp ý. Bản gốc viết bằng tiếng Nhật cho slide HTML; ở đây chọn lọc phần về chữ và viết lại cho tiếng Việt.
 - [zarazhangrui/frontend-slides](https://github.com/zarazhangrui/frontend-slides), MIT. **Dùng trực tiếp**, lấy ý tưởng: chia mật độ chữ theo cách trình bày (nói trực tiếp hay gửi đọc), tách slide thay vì thu nhỏ chữ, danh sách hình thức "AI slop" (gradient tím, lưới thẻ icon, bố cục rập khuôn), không để chữ của quy trình làm slide sót lại trên slide.
 - Anthropic, skill `doc-coauthoring` trong [anthropics/skills](https://github.com/anthropics/skills), Apache 2.0. **Dùng trực tiếp**, lấy ý tưởng: hỏi gộp bối cảnh trước khi viết, câu hỏi đánh số để trả lời tắt được, nhờ một agent mới, không biết bối cảnh, đọc thử tài liệu.
 - [jurigis/avoid-ai-writing-multilingual](https://github.com/jurigis/avoid-ai-writing-multilingual). **Đọc thêm** (cuongducle). Cách tách quy tắc theo từng ngôn ngữ.
 
 Skill tiếng Việt, đều MIT. Dùng để đối chiếu danh mục; quy tắc và ví dụ ở đây viết lại theo cách riêng:
 
-- [longhang2004/vietnamese-humanizer](https://github.com/longhang2004/vietnamese-humanizer). **Dùng trực tiếp.** Văn dịch kiểu "mở khóa tiềm năng", "thông qua việc"; tách register khỏi kênh; giữ các từ nhỏ làm đổi nghĩa ("vẫn", "chưa", "chỉ"); mặc định sửa nhẹ. Đây cũng là nguồn của phần lớn mục **Đọc thêm** ở trên.
+- [longhang2004/vietnamese-humanizer](https://github.com/longhang2004/vietnamese-humanizer). **Dùng trực tiếp.** Văn dịch kiểu "mở khóa tiềm năng", "thông qua việc"; tách giọng (trang trọng hay thân mật) khỏi kênh đăng; giữ mấy chữ nhỏ mà bỏ đi là đổi nghĩa ("vẫn", "chưa", "chỉ"); mặc định sửa nhẹ. Đây cũng là nguồn của phần lớn mục **Đọc thêm** ở trên.
 - [andyluu98/vn-humanize](https://github.com/andyluu98/vn-humanize). **Dùng trực tiếp.** Các mẫu riêng tiếng Việt (danh hóa, Hán Việt quá mức, xưng hô, chêm tiếng Anh, chuỗi bổ ngữ, thừa nghĩa), hồ sơ giọng văn, ngưỡng sửa khoảng một phần ba số câu.
 - [cuongducle/viet-humanize](https://github.com/cuongducle/viet-humanize). **Dùng trực tiếp.** Bảng "sửa khi / giữ khi", các thay đổi dễ làm sai nghĩa.
 - [pdh372/humanize-vietnamese](https://github.com/pdh372/humanize-vietnamese). **Dùng trực tiếp.** Bảng chuyển câu văn dịch sang câu tự nhiên, cách viết kịch bản để đọc.
