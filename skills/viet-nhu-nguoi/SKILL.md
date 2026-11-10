@@ -12,7 +12,7 @@ description: |
   humanize tiếng Việt mã nguồn mở.
 license: MIT
 metadata:
-  version: "2.3.0"
+  version: "2.4.0"
 ---
 
 # Viết như người (Vietnamese humanizer): chống giọng văn AI
@@ -29,13 +29,13 @@ Mô hình chọn cách viết hợp với nhiều người đọc nhất, nên c
 - **Trình bày theo luật:** in đậm, tiêu đề, gạch đầu dòng, emoji cho mọi thứ.
 - **Đồ thừa của chat:** "Câu hỏi rất hay!", "Hy vọng điều này hữu ích!".
 - **Sai người đọc:** giải thích lại bối cảnh người đọc đã biết, kết luận nằm ở cuối.
-- **Văn dịch (tiếng Việt):** câu nghĩ bằng tiếng Anh rồi dịch sang: "được... bởi", "Điều này cho phép", "việc", "sự", "một cách", "tiến hành thực hiện".
+- **Văn dịch (tiếng Việt):** câu nghĩ bằng tiếng Anh rồi thay từng chữ sang tiếng Việt. Dễ thấy là "được... bởi", "Điều này cho phép", "việc", "sự", "một cách", "tiến hành thực hiện". Khó thấy hơn là trật tự câu và chữ đệm của tiếng Anh: câu nào cũng có "bạn", "của bạn", "một", "các", "sẽ", "có thể", "và".
 
 - **Sạch từng câu, lặp cả bài:** bỏ cụm bị cấm rồi thay bằng cụm cùng họ ("Nói thẳng ra thì" thành "Nói cho thật:"), và một khuôn câu quay lại ba bốn lần trong bài.
 
 Từ vựng AI đổi theo từng đời mô hình. Các thói quen cấu trúc thì ở lại, nên ưu tiên sửa cấu trúc trước, từ vựng sau.
 
-Danh sách cấm cũng có mặt trái. Mô hình né được từng cụm trong danh sách mà vẫn giữ nguyên động tác: báo trước rồi mới nói, phủ định rồi mới khẳng định, nêu sự việc rồi đúc kết. Vì vậy mỗi quy tắc dưới đây cấm cả họ, kể cả những cụm chưa được liệt kê. Thay một cụm bằng cụm đồng nghĩa thì chưa tính là sửa.
+Danh sách cấm cũng có mặt trái. Mô hình né được từng cụm trong danh sách mà vẫn giữ nguyên động tác: báo trước rồi mới nói, phủ định rồi mới khẳng định, nêu sự việc rồi đúc kết. Vì vậy mỗi quy tắc dưới đây cấm cả họ, kể cả những cụm chưa có trong danh sách. Thay một cụm bằng cụm đồng nghĩa thì chưa tính là sửa.
 
 ## Ba chế độ
 
@@ -45,7 +45,7 @@ Danh sách cấm cũng có mặt trái. Mô hình né được từng cụm tron
 1. Đọc hết một lượt, đánh dấu mọi dấu hiệu, mạnh trước yếu sau. Xem cả hình dạng đoạn văn, không chỉ từng câu. Đọc `references/patterns.md` để có danh mục đầy đủ kèm ví dụ trước/sau; văn tiếng Việt thì đọc thêm nhóm G. Xác định ai viết cho ai và xưng hô đang dùng trước khi sửa.
 2. Có thể chạy `python3 -I scripts/scan.py <file>` (đường dẫn tính từ thư mục skill; file `.md`, `.txt` hoặc `.pptx`) để quét nhanh từ ngữ và dấu câu. Script cho điểm 0-100 theo mật độ dấu hiệu và độ đều của câu, cộng điểm cố định cho các dấu hiệu cả bài (một khuôn lặp từ ba lần, hai chấm dồn dập, đoạn ngắn đều nhau, câu vụn, bài đăng dài chia mục viết hoa); điểm đo thói quen viết theo khuôn, không phải xác suất do AI viết. Văn bản bàn về chính các dấu hiệu (tài liệu hướng dẫn, README có trích ví dụ) thì thêm `--meta` để phần trích dẫn không bị tính. Script chỉ bắt được dấu hiệu bề mặt; cấu trúc phải tự đọc, kể cả câu chốt cuối đoạn và câu gộp quá nhiều vế.
 3. Viết lại, sửa cấu trúc trước rồi mới thay từ. Mức sửa theo nguồn gốc bài: bài người dùng tự viết thì sửa nhẹ, sửa quá khoảng một phần ba số câu thì rà lại từng chỗ, chỗ nào không chỉ ra được dấu hiệu cụ thể thì trả về câu gốc; bài AI viết gần như toàn bộ thì được viết lại nhiều hơn. Câu đã ổn thì giữ, không sửa chỉ vì nó có trong danh mục. Giữ mọi ý có căn cứ. Được rút gọn, gộp, tách đoạn, đổi cấu trúc. Không thêm tên, số liệu, ngày tháng, trích dẫn hay nguồn nào không có trong bản gốc hoặc lời người dùng. Thiếu chi tiết thì hỏi, hoặc viết câu đơn giản hơn.
-4. Tự kiểm: nếu có file gốc và file mới (kể cả `.pptx`), chạy `python3 -I scripts/check_facts.py <gốc> <mới>` để bắt số liệu, ngày giờ, link, code bị mất hoặc tự thêm vào. Đọc thành tiếng trong đầu. Còn chỗ nào nghe giống AI? Có thêm hay mất sự kiện nào không? Quét lại sáu lỗi hay sót nhất: "không phải X mà là Y", nhãn báo giọng ("nói gọn", "nói cho thật"), câu chốt một dòng hoặc cuối đoạn, bộ ba, gạch ngang dài, nhãn in đậm. Với tiếng Việt, quét thêm: "việc/sự/một cách" còn dày không, "Điều này"/"Nó" mở câu, xưng hô có nhất quán không, dấu chấm có chặt một ý thành hai ba câu vụn không, có câu nào gộp quá ba vế không, và các từ "vẫn", "chưa", "chỉ", "có thể" có bị mất không. Sửa một chỗ hay làm hỏng chỗ khác (bỏ bộ ba có thể làm ba câu liền dài bằng nhau), nên sửa xong thì quét lại cả bài. Bài từ khoảng 300 chữ trở lên thì đếm thêm trên cả bài theo phần "Cả bài" bên dưới: số câu đối lập, số nhãn báo giọng, câu cuối của từng đoạn, số dấu hai chấm, số mục. `scan.py` in sẵn các con số này.
+4. Tự kiểm: nếu có file gốc và file mới (kể cả `.pptx`), chạy `python3 -I scripts/check_facts.py <gốc> <mới>` để bắt số liệu, ngày giờ, link, code bị mất hoặc tự thêm vào. Đọc thành tiếng trong đầu. Còn chỗ nào nghe giống AI? Có thêm hay mất sự kiện nào không? Quét lại sáu lỗi hay sót nhất: "không phải X mà là Y", nhãn báo giọng ("nói gọn", "nói cho thật"), câu chốt một dòng hoặc cuối đoạn, bộ ba, gạch ngang dài, nhãn in đậm. Với tiếng Việt, làm phép thử dịch ngược ở phần "Văn dịch" cho từng đoạn, rồi quét thêm: "việc/sự/một cách" còn dày không, "Điều này"/"Nó" mở câu, xưng hô có nhất quán không, dấu chấm có chặt một ý thành hai ba câu vụn không, có câu nào gộp quá ba vế không, và các từ "vẫn", "chưa", "chỉ", "có thể" có bị mất không. Sửa một chỗ hay làm hỏng chỗ khác (bỏ bộ ba có thể làm ba câu liền dài bằng nhau), nên sửa xong thì quét lại cả bài. Bài từ khoảng 300 chữ trở lên thì đếm thêm trên cả bài theo phần "Cả bài" bên dưới: số câu đối lập, số nhãn báo giọng, câu cuối của từng đoạn, số dấu hai chấm, số mục. `scan.py` in sẵn các con số này.
 5. Trả về: mặc định là bản cuối kèm vài dòng nói đã sửa gì. Nếu người dùng chỉ file thì ghi thẳng vào file, chỉ sửa phần văn xuôi, giữ nguyên code, lệnh, đường dẫn, link, YAML. Nếu skill được gọi bên trong việc khác (PR, commit, email) thì chỉ trả bản cuối.
 
 Sau khi tự kiểm, chấm nhanh bản cuối theo năm tiêu chí, mỗi tiêu chí 1-10: **thẳng** (nói sự việc hay chỉ báo hiệu), **nhịp** (câu có dài ngắn khác nhau không), **tin người đọc** (có giải thích thừa không), **thật** (đọc có giống một người cụ thể viết không), **gọn** (còn chỗ nào cắt được không). Dưới 35/50 thì sửa thêm một lượt. Chỉ đưa bảng điểm khi người dùng hỏi.
@@ -94,8 +94,26 @@ Người đọc nhận ra văn AI ở lần thứ ba họ gặp cùng một đ�
 - Nhượng bộ ("không hoàn toàn sai, nhưng", "X vẫn có giá") chỉ ở chỗ người viết phân vân thật, không rải cho mỗi nhận định một lần.
 - Bài xưng "mình", "tôi" phải có chuyện của người viết: một lần hỏng, một lỗi, một đêm cụ thể. Bài chỉ có số tổng kết và kiến thức tra được thì hỏi người dùng một hai chuyện thật trước khi viết. Không có thì viết ngắn, trung tính. Không bịa.
 
+### Văn dịch: viết từ ý, đừng dịch từ câu
+Mô hình hay nghĩ câu bằng tiếng Anh rồi thay từng chữ sang tiếng Việt. Chữ nào cũng đúng mà cả câu vẫn nghe như dịch, vì trật tự câu và mấy chữ đệm vẫn là của tiếng Anh. Bỏ vài cụm trong danh sách thì chưa đủ, phải viết lại từ ý. Ví dụ đầy đủ ở nhóm K của `references/patterns.md`.
+
+1. Đọc câu, nắm ý rồi che câu đi. Tự hỏi nếu kể chuyện này cho một đồng nghiệp người Việt ngồi cạnh thì mình nói thế nào, và viết đúng câu đó ra.
+2. Thử dịch ngược. Câu nào dịch từng chữ sang tiếng Anh mà ra ngay một câu tiếng Anh trôi chảy, đúng trật tự, thì câu đó là tiếng Anh viết bằng chữ Việt. Viết lại.
+3. Rà mấy chữ tiếng Anh buộc phải có còn tiếng Việt thì không:
+   - Chủ ngữ và sở hữu. Đã rõ ai làm thì lược "bạn", "chúng tôi", "nó", "của bạn". "Bạn không phải gõ lệnh nào" → "Không phải gõ lệnh gì cả". "Trợ lý của bạn" → "trợ lý đang dùng".
+   - "một", "các", "những". Chỉ giữ khi cần đếm hoặc cần nhấn. "Mở một cuộc trò chuyện mới" → "Mở cuộc trò chuyện mới".
+   - "đã", "đang", "sẽ". Câu có mốc thời gian hoặc ngữ cảnh đã rõ thì bỏ. "Skill sẽ đổi theo" → "skill đổi theo".
+   - "được", "bị" trong câu bị động không nói ai làm. "Số liệu được giữ nguyên" → "số liệu thì để nguyên". "Skill được cập nhật" → "skill tự cập nhật".
+   - "và", "với", "để", "khi". "Và" nối hai vế thì thử thay bằng dấu phẩy, "rồi", "còn", "mà". "Với bộ slide quan trọng, ..." → "Bộ slide nào quan trọng thì...". "Để cài, bạn cần..." → "Muốn cài thì cần...".
+   - "có thể", "cho phép", "giúp". "Bạn có thể gọi giọng bằng tên" → "Gọi giọng bằng tên cũng được". "X cho phép bạn làm Y" → "Có X thì làm được Y".
+4. Dùng khung đề-thuyết. Nêu cái đang bàn trước rồi mới nói về nó, nối bằng "thì", "là", "mà": "Email thì nói việc trước", "Bài tự viết thì chỉ sửa nhẹ". Vật vô tri ít khi làm chủ ngữ cho "cho thấy", "cho biết", "giúp", "mang lại": "Điểm cho biết bài có nhiều thói quen viết theo khuôn" → "Nhìn điểm thì biết bài viết theo khuôn nhiều hay ít".
+5. Dùng chữ người Việt vẫn nói. Thành ngữ và cách ghép từ không dịch thẳng được: "đúng hơn may rủi một chút" → "chỉ nhỉnh hơn đoán mò"; "tin tốt là" → "may là"; "làm nên sự khác biệt" → nói rõ khác ở đâu. Tiêu đề cũng vậy: "Trước và sau", "Nên biết", "Bắt đầu nhanh" là tiêu đề tiếng Anh, hãy viết "Văn AI và bản đã sửa", "Lưu ý", "Cài nhanh".
+6. Đừng sửa quá tay thành văn nói suồng sã. Văn bản trang trọng vẫn giữ câu bị động quen dùng ("được cấp phép", "được bổ nhiệm"), giữ chủ ngữ ở chỗ lược đi thì mơ hồ, và không tự thêm "nhé", "nha", "ạ".
+
+Kiểm cuối bằng cách đọc thành tiếng. Chỗ nào người Việt không nói như vậy thì sửa, kể cả khi không quy tắc nào ở trên gọi được tên nó.
+
 ### Riêng tiếng Việt
-- Viết như người Việt nói, không như bản dịch. Người làm đứng đầu câu: "Google phát triển", không "được phát triển bởi Google". Gọi tên sự vật thay cho "Điều này", "Nó" mở câu.
+- Người làm đứng đầu câu: "Google phát triển", không "được phát triển bởi Google". Gọi tên sự vật thay cho "Điều này", "Nó" mở câu.
 - Động từ làm vị ngữ, bớt danh hóa: "Việc áp dụng X giúp việc quản lý trở nên dễ dàng" → "Dùng X thì quản lý dễ hơn". Bỏ "một cách", "trở nên", "có khả năng".
 - Ngắt câu theo ý, đọc thành tiếng để kiểm. Một câu trọn một ý: ai làm gì, vì sao hoặc để làm gì. Chỗ đọc lên phải lấy hơi mà chưa hết ý thì dùng dấu phẩy, hết ý mới chấm.
 - Không chặt ý bằng dấu chấm. Tiếng Việt nối các vế bằng dấu phẩy và từ nối ("nên", "thì", "mà", "còn", "rồi", "vì"), nên hai ba câu ngắn liền nhau cùng nói một ý thì gộp lại, nhất là khi câu sau lặp chủ ngữ của câu trước ("Skill giúp... Skill không...") hoặc chỉ là một cụm bổ sung ("Thường mất chưa tới một phút."). Câu dưới chừng mười chữ để dành cho chỗ cần nhấn; cả bài quá một phần ba số câu ngắn như vậy là văn bị vụn.

@@ -1,6 +1,6 @@
 # Danh mục dấu hiệu văn AI (Việt + Anh)
 
-Sắp từ mạnh đến yếu. Nhóm A và nhóm E chỉ cần gặp một lần là sửa. Nhóm G (mục 30-38) dành riêng cho tiếng Việt. Nhóm H (mục 39-44) dành cho slide, lời thuyết trình và tài liệu nhiều trang; hướng dẫn đầy đủ ở `slides.md`. Nhóm I (mục 45-55) là những dấu hiệu chỉ thấy khi nhìn cả bài, hay còn lại sau khi từng câu đã được sửa sạch; bài dài và bài đăng mạng xã hội thì đọc nhóm này trước. Mục ghi *yếu* chỉ sửa khi đi cùng dấu hiệu khác trong cùng đoạn.
+Sắp từ mạnh đến yếu. Nhóm A và nhóm E chỉ cần gặp một lần là sửa. Nhóm G (mục 30-38) dành riêng cho tiếng Việt. Nhóm H (mục 39-44) dành cho slide, lời thuyết trình và tài liệu nhiều trang; hướng dẫn đầy đủ ở `slides.md`. Nhóm K (mục 56-62) là văn dịch ở tầng sâu hơn nhóm G: từng chữ đều là tiếng Việt nhưng câu vẫn theo khuôn tiếng Anh; văn tiếng Việt nào cũng nên rà nhóm này. Nhóm I (mục 45-55) là những dấu hiệu chỉ thấy khi nhìn cả bài, hay còn lại sau khi từng câu đã được sửa sạch; bài dài và bài đăng mạng xã hội thì đọc nhóm này trước. Mục ghi *yếu* chỉ sửa khi đi cùng dấu hiệu khác trong cùng đoạn.
 
 ## A. Dàn dựng thay vì nói thẳng
 
@@ -416,6 +416,66 @@ Cách đọc nhóm này: đếm trên cả bài. Một lần thì có thể là 
 **Sau:**
 > Slide và tài liệu nhiều trang có nhóm riêng. Ở nhóm này skill bắt tiêu đề chỉ là nhãn, tiêu đề đếm số ý, slide nào cũng đúng ba ý, lời hứa suông và ghi chú thuyết trình viết như công văn. Hướng dẫn viết slide nằm ở file riêng.
 **Sửa:** Mỗi câu một ý, nhiều nhất hai ba vế có quan hệ rõ. Tìm chỗ đổi ý để chấm. Câu liệt kê được phép dài, nhưng phần dẫn vào danh sách phải ngắn. Đọc thành tiếng: chỗ nào hụt hơi mà chưa hết ý thì câu đang quá dài. `scan.py` chỉ báo câu từ 60 chữ; ngắn hơn phải tự đọc.
+
+## K. Văn dịch sâu: câu nghĩ bằng tiếng Anh, viết bằng chữ Việt
+
+Nhóm G bắt các cụm dịch dễ thấy. Nhóm này bắt thứ khó thấy hơn: không cụm nào sai, nhưng câu giữ nguyên trật tự và mấy chữ đệm của tiếng Anh nên đọc lên vẫn như dịch từng chữ. Phép thử chung là dịch ngược: câu nào dịch từng chữ sang tiếng Anh mà ra ngay câu tiếng Anh trôi chảy thì viết lại từ ý.
+
+### 56. Chủ ngữ và sở hữu chép từ "you", "we", "your"
+**Dấu hiệu:** câu nào cũng mở bằng "Bạn", "Chúng tôi", hoặc tên sản phẩm; "của bạn", "của chúng tôi" đi sau mọi danh từ ("trợ lý của bạn", "máy tính của bạn", "đội ngũ của chúng tôi"); "Bạn có thể...", "Bạn không cần...", "Bạn sẽ thấy..." lặp cả bài.
+**Vấn đề:** Tiếng Anh buộc mỗi câu có chủ ngữ và hay kèm từ sở hữu. Tiếng Việt đã rõ ai làm thì lược.
+**Trước:**
+> Bạn không phải gõ lệnh nào. Bạn chỉ cần nhờ trợ lý AI của bạn cài hộ, và bạn có thể thử ngay sau khi nó được cài.
+**Sau:**
+> Không phải gõ lệnh gì cả, cứ nhờ trợ lý AI cài hộ, cài xong là thử được ngay.
+**Sửa:** Lược chủ ngữ và sở hữu khi đã rõ. Giữ ở câu đầu đoạn, ở chỗ đổi người làm, và ở chỗ lược đi thì không biết ai làm.
+
+### 57. "một", "các", "những" chép từ mạo từ và số nhiều
+**Dấu hiệu:** "là một công cụ", "mở một cuộc trò chuyện mới", "các trợ lý AI khác", "những kiểu câu dịch", "một trong những"; danh từ nào cũng có "một" hoặc "các" đứng trước.
+**Vấn đề:** "một" dịch "a/an", "các/những" dịch đuôi số nhiều. Danh từ tiếng Việt đứng trơn vẫn đủ nghĩa.
+**Trước:**
+> Viết như người là một skill cho Claude và các trợ lý AI khác. Mở một cuộc trò chuyện mới và thử một câu.
+**Sau:**
+> Viết như người là skill dùng cho Claude và trợ lý AI khác. Mở cuộc trò chuyện mới rồi thử một câu.
+**Sửa:** Bỏ "một", "các", "những" khi không cần đếm, không cần nhấn. Giữ khi số lượng có nghĩa ("thử một câu", "cả ba bước"). *Yếu* khi đứng riêng.
+
+### 58. Bị động không ai làm, vật vô tri làm chủ ngữ
+**Dấu hiệu:** "số liệu được giữ nguyên", "skill được cập nhật", "bài được chấm 55/100", "được thiết kế để"; "Điểm cho biết...", "Bảng dưới đây cho thấy...", "Công cụ này cho phép bạn...", "Tính năng này giúp bạn...", "Kết quả mang lại...".
+**Vấn đề:** Nhóm G mới bắt "được... bởi". Bị động không tác nhân và chủ ngữ là đồ vật cũng là khuôn tiếng Anh. Tiếng Việt quen đưa người làm lên, hoặc nêu đề rồi nói về nó.
+**Trước:**
+> Điểm cho biết bài có bao nhiêu thói quen viết theo khuôn. Số liệu bạn đưa được giữ nguyên. Công cụ này cho phép bạn so hai bản.
+**Sau:**
+> Nhìn điểm thì biết bài viết theo khuôn nhiều hay ít. Số liệu đã đưa thì để nguyên. Muốn so hai bản thì dùng công cụ này.
+**Sửa:** Đổi sang chủ động, hoặc dùng khung "X thì...". Giữ bị động quen dùng trong văn hành chính, kỹ thuật ("được cấp phép", "bị lỗi") và khi người làm thật sự không quan trọng.
+
+### 59. "đã", "đang", "sẽ", "có thể" rải theo thì và trợ động từ tiếng Anh
+**Dấu hiệu:** động từ nào cũng kèm "đã", "đang", "sẽ" dù câu đã có mốc thời gian; "có thể" dịch "can/may" ở mọi chỗ ("bạn có thể gõ", "skill có thể nhờ"); "sẽ" trong câu nói chuyện thường xảy ra ("skill sẽ hỏi lại").
+**Trước:**
+> Hôm qua đội đã họp và đã quyết định sẽ lùi hạn. Khi bạn gõ lệnh, skill sẽ đọc file và bạn có thể xem kết quả.
+**Sau:**
+> Hôm qua đội họp, quyết định lùi hạn. Gõ lệnh xong thì skill đọc file, kết quả hiện ra ngay.
+**Sửa:** Bỏ chữ chỉ thì khi ngữ cảnh đã rõ. "Có thể" chỉ giữ khi thật sự chưa chắc hoặc đang nói về khả năng; cho phép thì viết "cũng được", "được". Đừng bỏ "đã", "chưa", "sẽ" ở chỗ nó phân biệt việc xong với việc chưa làm.
+
+### 60. Giới từ và từ nối dịch thẳng: "với", "để", "khi", "và", "trong"
+**Dấu hiệu:** "Với X, ..." mở câu (For/With X); "Để X, bạn cần Y" (To X, you need Y); "Bằng cách..."; "Đối với..."; "Thông qua..."; "Dựa trên..."; "khi" cho mọi chữ "when"; "và" nối mọi cặp vế, "và cũng"; "trong" cho mọi chữ "in" ("trong Claude Code", "trong trường hợp này"); "nơi mà", "người mà", "điều mà", "lý do mà".
+**Trước:**
+> Với bộ slide quan trọng, bạn có thể nhờ một agent đọc thử. Để cập nhật, bạn chạy lại lệnh và mở một phiên mới khi nó hoàn tất.
+**Sau:**
+> Bộ slide nào quan trọng thì nhờ thêm một agent đọc thử. Muốn cập nhật thì chạy lại lệnh, xong mở phiên mới.
+**Sửa:** "Với X" → "X thì", "Riêng X", "Còn X". "Để X, Y" → "Muốn X thì Y". "Và" → dấu phẩy, "rồi", "còn", "mà", hoặc giữ nếu thật sự là liệt kê. "khi" → "lúc", "hễ", "xong", hoặc bỏ. Bỏ "mà" sau "nơi", "người", "điều".
+
+### 61. Thành ngữ, cách ghép từ và tiêu đề dịch thẳng
+**Dấu hiệu:** "đúng hơn may rủi một chút" (better than chance); "ở cuối ngày" (at the end of the day); "tin tốt là" (the good news is); "làm nên sự khác biệt" (make a difference); "đóng một vai trò" (play a role); "có một cái nhìn rõ ràng"; "là rất quan trọng để" (it is important to); "hãy chắc chắn rằng bạn" (make sure you); "đừng ngần ngại" (don't hesitate); "như đã đề cập ở trên"; "một loạt các". Tiêu đề: "Trước và sau", "Nên biết", "Bắt đầu nhanh", "Tại sao chọn X", "Những gì bạn nhận được", "Đóng góp".
+**Sửa:** Tìm cách người Việt vẫn nói ý đó: "chỉ nhỉnh hơn đoán mò", "rốt cuộc", "may là", "nhớ kiểm...", "cứ hỏi". Không có cách nói sẵn thì nói thẳng sự việc. Tiêu đề viết theo việc người đọc muốn tìm: "Văn AI và bản đã sửa", "Lưu ý", "Cài nhanh", "Góp ý, báo lỗi".
+
+### 62. Thiếu khung đề-thuyết và tiểu từ
+**Dấu hiệu:** câu nào cũng theo đúng thứ tự chủ ngữ, động từ, tân ngữ; trạng ngữ thời gian, nơi chốn nằm cuối câu như tiếng Anh ("Đội họp vào thứ Ba tại phòng 3"); cả đoạn không có "thì", "mà", "còn", "chứ", "cũng", "mới", "cứ", "lại"; không câu nào đưa đề lên đầu.
+**Vấn đề:** Tiếng Việt nêu đề rồi mới nói về nó, và dùng tiểu từ để tỏ quan hệ giữa các ý. Thiếu những thứ này thì câu đúng ngữ pháp mà phẳng, nghe như phụ đề.
+**Trước:**
+> Skill chỉ sửa nhẹ các bài mà bạn tự viết. Skill giữ nguyên số liệu. Bạn quyết định việc sửa hay không.
+**Sau:**
+> Bài tự viết thì skill chỉ sửa nhẹ, số liệu để nguyên, còn sửa hay không là do bạn.
+**Sửa:** Đưa cái đang bàn lên đầu câu. Đưa thời gian, nơi chốn lên trước ("Thứ Ba đội họp ở phòng 3"). Dùng "thì", "còn", "mà", "chứ" đúng chỗ, đừng rải cho có.
 
 ## Giữ lại
 

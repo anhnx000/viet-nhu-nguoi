@@ -198,7 +198,7 @@ Since version 2.2 the scanner counts across the whole text and scores this post 
 
 ## What the skill fixes
 
-The skill has a catalog of 55 AI-writing patterns, each with a before and after example ([full list](skills/viet-nhu-nguoi/references/patterns.md), in Vietnamese). The table below is the Vietnamese-only group.
+The skill has a catalog of 62 AI-writing patterns, each with a before and after example ([full list](skills/viet-nhu-nguoi/references/patterns.md), in Vietnamese). The table below is the Vietnamese-only group.
 
 | Pattern | Example | Becomes |
 | --- | --- | --- |
@@ -211,6 +211,8 @@ The skill has a catalog of 55 AI-writing patterns, each with a before and after 
 | Redundant pairs | hiện nay đang trong quá trình (*currently now in the process of*) | đang (*is*) |
 | Pronouns of address | "bạn" in an email to your boss; mixing "bạn" and "quý vị" | one pair that fits the relationship |
 | English glosses in brackets | hiệu suất (performance) | hiệu suất |
+
+Harder to spot is word-for-word translation: every word is Vietnamese, but the sentence still follows English. It shows as "bạn" (*you*) opening every sentence and "của bạn" (*your*) after every noun, "một/các/những" standing in for English articles and plurals, agentless passives and objects as grammatical subjects, tense markers ("đã", "đang", "sẽ") and "có thể" (*can*) everywhere, sentences opening with "Với..." (*With/For...*) or "Để..., bạn cần..." (*To..., you need...*), and idioms or headings translated literally. For text like this the skill rewrites from the idea, the way Vietnamese speakers would say it to each other, instead of swapping phrases one by one.
 
 Some patterns only show when you read the whole text, even after each sentence is fine. Examples are sentences that open with a label ("nói gọn", "nói cho thật:"), the "not X but Y" shape used three times or more, every paragraph closing on a line that sounds like a proverb, colons everywhere, full stops that chop one thought into several short sentences (or the reverse, one sentence joined from too many clauses), and a long post that covers every topic.
 
@@ -283,7 +285,7 @@ The skill makes text more natural and easier to read. It does not promise to get
 ```text
 skills/viet-nhu-nguoi/
 ├── SKILL.md                 main rules, loaded when the skill is invoked
-├── references/patterns.md   55 patterns with before/after examples
+├── references/patterns.md   62 patterns with before/after examples
 ├── references/slides.md     slides, speaker notes, fresh-reader test
 ├── references/sources.md    references: articles, research, style guides, other skills
 ├── scripts/scan.py          scanner with a 0-100 score, no third-party packages

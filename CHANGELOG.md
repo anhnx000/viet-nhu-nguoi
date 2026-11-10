@@ -1,5 +1,15 @@
 # Changelog
 
+## 2.4.0 (2026-11-10)
+
+Văn dịch từng chữ: chữ nào cũng là tiếng Việt mà câu vẫn theo khuôn tiếng Anh.
+
+- `SKILL.md`: phần mới "Văn dịch: viết từ ý, đừng dịch từ câu". Che câu đi rồi viết lại như kể cho đồng nghiệp người Việt, thử dịch ngược, rà các chữ tiếng Anh buộc có mà tiếng Việt thì không ("bạn", "của bạn", "một", "các", "đã/đang/sẽ", "được", "và", "với", "có thể"), dùng khung đề-thuyết, dùng thành ngữ và tiêu đề của tiếng Việt.
+- Nhóm dấu hiệu K (mục 56-62): chủ ngữ và sở hữu chép từ "you/your", mạo từ và số nhiều, bị động không ai làm và vật vô tri làm chủ ngữ, chữ chỉ thì và "có thể", giới từ và từ nối dịch thẳng, thành ngữ và tiêu đề dịch thẳng, thiếu khung đề-thuyết.
+- `scan.py`: nhóm mới "bị động dịch sát", "vật làm chủ ngữ", "mở câu dịch sát", "quan hệ từ dịch sát"; thêm thành ngữ dịch thẳng vào "văn dịch (vi)"; kiểm cả bài "đại từ dày" khi "bạn/chúng tôi/chúng ta" từ 12 lần trên 1.000 chữ. Điểm các file mẫu không đổi.
+- README tiếng Việt viết lại từ ý theo phần mới, đổi cả tiêu đề mục ("Trước và sau" thành "Văn AI và bản đã sửa", "Vài điều nên biết" thành "Lưu ý"...).
+- Còn hạn chế: phần lớn văn dịch tầng này máy không đếm được, phải tự đọc. Ngưỡng "đại từ dày" chưa thử trên văn người viết thật.
+
 ## 2.3.0 (2026-11-10)
 
 Ngắt câu tiếng Việt và các việc tồn đọng của máy quét.

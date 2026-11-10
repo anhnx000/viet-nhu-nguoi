@@ -353,6 +353,34 @@ class WholeDocument(unittest.TestCase):
         self.assertEqual(groups(text), set())
 
 
+class DeepTranslationese(unittest.TestCase):
+    """Văn dịch từng chữ: không cụm nào sai nhưng câu theo khuôn tiếng Anh (nhóm K)."""
+
+    def test_agentless_passive(self):
+        self.assertIn("bị động dịch sát", groups("Số liệu bạn đưa được giữ nguyên và skill được cập nhật mỗi tuần."))
+        self.assertNotIn("bị động dịch sát", groups("Email này gửi được rồi, mai em làm được."))
+
+    def test_object_as_subject(self):
+        self.assertIn("vật làm chủ ngữ", groups("Công cụ này cho phép bạn so hai bản."))
+        self.assertNotIn("vật làm chủ ngữ", groups("Muốn so hai bản thì dùng công cụ này."))
+
+    def test_calqued_openers(self):
+        self.assertIn("mở câu dịch sát", groups("Để cập nhật, bạn chạy lại lệnh."))
+        self.assertIn("mở câu dịch sát", groups("Với sự thay đổi này, đội làm nhanh hơn."))
+        self.assertNotIn("mở câu dịch sát", groups("Muốn cập nhật thì chạy lại lệnh. Em để file trên bàn."))
+
+    def test_calqued_idioms(self):
+        self.assertIn("văn dịch (vi)", groups("Tin tốt là bản mới làm nên sự khác biệt."))
+        self.assertIn("quan hệ từ dịch sát", groups("Đây là nơi mà đội họp mỗi sáng."))
+
+    def test_dense_pronouns(self):
+        dense = "Bạn mở ứng dụng của bạn rồi bạn chọn file bạn muốn sửa trong máy tính.\n\n" * 8
+        self.assertIn("đại từ dày", groups(dense))
+        sparse = ("Mở ứng dụng lên rồi chọn file muốn sửa, sửa xong thì lưu lại vào đúng thư mục cũ.\n\n" * 7
+                  + "Bạn nào chưa cài thì nhắn mình.\n")
+        self.assertNotIn("đại từ dày", groups(sparse))
+
+
 class EmptyPromises(unittest.TestCase):
     def test_detects(self):
         self.assertIn("hứa suông", groups("Chi tiết sẽ được trao đổi sau."))

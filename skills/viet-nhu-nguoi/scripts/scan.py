@@ -106,6 +106,31 @@ PATTERNS = {
         r"tận dụng (sức mạnh|khả năng|tối đa)", r"khi nói đến", r"là một trong những\b.{0,40}?\bnhất",
         r"đây là lý do (tại sao|vì sao)", r"có (một số|nhiều) cách để", r"được biết đến (như|là)",
         r"với sự (hỗ trợ|giúp đỡ) của",
+        # kết hợp từ dịch sát từ thành ngữ tiếng Anh
+        r"ở cuối ngày", r"tin (tốt|vui|xấu) là", r"không có gì (đáng )?ngạc nhiên khi",
+        r"(làm|tạo) (nên|ra) sự khác biệt", r"chơi (một )?vai trò", r"đóng một vai trò",
+        r"(có|lấy|mang lại) (một )?cái nhìn (sâu sắc|tổng quan|rõ ràng)", r"(tốt|đúng|chính xác) hơn (may rủi|ngẫu nhiên)",
+        r"là (rất |vô cùng )?(quan trọng|cần thiết|hữu ích) (để|rằng)\b", r"bạn có thể (sẽ )?(muốn|cần phải)",
+        r"hãy chắc chắn rằng", r"(đảm bảo|chắc chắn) rằng bạn", r"cảm thấy tự do", r"đừng ngần ngại",
+        r"như đã (đề cập|nói|nêu) (ở trên|trước đó)", r"một loạt các", r"theo (một )?cách mà",
+    ],
+    "bị động dịch sát": [
+        r"\b((sẽ|đã|đang|cần|phải|nên|có thể) )?được (giữ nguyên|cập nhật|cài đặt|thiết kế|xây dựng|phát triển|tạo ra|"
+        r"sử dụng|thực hiện|triển khai|cung cấp|áp dụng|đánh giá|xem là|coi là|coi như|lưu trữ|tối ưu|tích hợp|"
+        r"quản lý|xử lý|xác định|đề cập|thiết lập|cấu hình|ghi nhận|trình bày|mô tả|liệt kê|đặt tên|biết đến)\b(?! bởi)",
+    ],
+    "vật làm chủ ngữ": [
+        r"\b(bảng|hình|biểu đồ|sơ đồ|kết quả|điểm số|số liệu|dữ liệu|con số|báo cáo|bài viết|tài liệu|công cụ|"
+        r"tính năng|hệ thống|giải pháp|nền tảng|ứng dụng|skill)( \w+){0,3}? "
+        r"(cho phép|giúp bạn|giúp người dùng|mang lại|mang đến|đảm bảo rằng|cho thấy rằng|chỉ ra rằng)",
+    ],
+    "mở câu dịch sát": [
+        r"(?:^|(?<=[.!?:] ))(để [^.!?\n,]{3,60}, (bạn|chúng ta|chúng tôi|hãy)\b|bằng cách \w+|"
+        r"với (sự|việc|những|các|một) \w+|đối với \w+|dựa trên \w+|thông qua \w+)",
+    ],
+    "quan hệ từ dịch sát": [
+        r"\b(nơi|người|những người|điều|thứ|lý do|thời điểm) mà\b", r"\blà một trong (những|các)\b",
+        r"\bcũng như là\b", r"\bvà cũng\b", r"\bvà/hoặc\b",
     ],
     "động từ rỗng (vi)": [
         r"tiến hành (thực hiện|việc)?", r"thực hiện việc", r"nhằm mục đích",
@@ -318,6 +343,13 @@ def document_checks(text, hits):
         short += sum(1 for x in body if len(x.split()) <= 10)
         dense += len(body)
     first = paras[0][0] if paras else 1
+    # Đại từ dịch từ "you/we/your": tiếng Việt thường lược chủ ngữ và sở hữu khi đã rõ
+    low_all = " ".join(p for _, p in paras).lower()
+    pron = len(re.findall(r"\b(bạn|chúng tôi|chúng ta)\b", low_all))
+    para_words = len(low_all.split())
+    if pron >= 12 and pron * 1000 / max(para_words, 1) >= 12:
+        hits.setdefault("đại từ dày", []).append(
+            (first, f"{pron} lần \"bạn\"/\"chúng tôi\"/\"chúng ta\" trong {para_words} chữ"))
     if sents_all >= 20 and colons >= 6 and colons / sents_all >= 0.15:
         hits.setdefault("hai chấm dồn dập", []).append((first, f"{colons}/{sents_all} câu có dấu hai chấm"))
     # Dấu chấm chặt ý thành câu vụn: từ 30% số câu chỉ dài tối đa 10 chữ (không tính câu dẫn
@@ -408,7 +440,7 @@ WEIGHTS = {
 }
 # Dấu hiệu cả bài: điểm cố định, không chia theo độ dài.
 DOC_POINTS = {
-    "hai chấm dồn dập": 6, "đoạn ngắn đều nhau": 4, "câu vụn": 4,
+    "hai chấm dồn dập": 6, "đoạn ngắn đều nhau": 4, "câu vụn": 4, "đại từ dày": 4,
     "bài đăng chia mục viết hoa": 4, "bài mạng xã hội dài": 6,
 }
 for _g in list(DOC_POINTS) + ["tật lặp cả bài"]:
