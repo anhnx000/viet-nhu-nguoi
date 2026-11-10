@@ -15,7 +15,7 @@
 
 Nhờ AI làm slide, viết email, viết báo cáo thì nhanh thật, có điều ai đọc cũng nhận ra ngay. Slide nào cũng có tiêu đề "Tổng quan", "Thách thức". Email thì mở bằng "Trong bối cảnh hiện nay", kết bằng "Hy vọng thông tin trên hữu ích!". Gửi trong nhóm thì không sao, chứ gửi sếp hay gửi khách thì lại phải ngồi sửa.
 
-Viết như người là một skill, tức là gói hướng dẫn cài thêm cho Claude và mấy trợ lý AI khác. Cài rồi thì AI viết tiếng Việt giống người đi làm hơn: tiêu đề slide nói thẳng kết luận, email xưng hô đúng vai, câu không rườm, số liệu đưa sao để vậy. Skill miễn phí, mã nguồn mở.
+Viết như người là một skill, tức là gói hướng dẫn cài thêm cho Claude và trợ lý AI khác. Cài rồi thì AI viết tiếng Việt giống người đi làm hơn: tiêu đề slide nói thẳng kết luận, email xưng hô đúng vai, câu không rườm, số liệu đưa sao để vậy. Skill miễn phí, mã nguồn mở.
 
 **Mục lục:** [Cài, không cần biết lập trình](#cài-mất-vài-phút-không-cần-biết-lập-trình) · [Cách dùng hằng ngày](#cách-dùng-hằng-ngày) · [Văn AI và bản đã sửa](#văn-ai-và-bản-đã-sửa) · [Skill sửa những lỗi nào](#skill-sửa-những-lỗi-nào) · [Dòng lệnh](#chạy-bằng-dòng-lệnh)
 
@@ -37,7 +37,7 @@ Không phải gõ lệnh gì cả, cứ nhờ trợ lý AI cài hộ, như nhờ
 
 > Cài giúp tôi skill viet-nhu-nguoi từ https://github.com/anhnx000/viet-nhu-nguoi
 
-**Bước 3. Bấm đồng ý** lúc trợ lý xin phép tải và cài, thường chưa tới một phút là xong.
+**Bước 3. Bấm đồng ý** lúc trợ lý xin phép tải và cài. Thường chưa tới một phút là xong.
 
 **Bước 4. Mở cuộc trò chuyện mới rồi thử:**
 
@@ -116,16 +116,16 @@ Cứ nói như nhờ đồng nghiệp, không có cú pháp gì phải nhớ.
 
 Muốn skill viết sát ý hơn thì:
 
-1. Nói rõ ai đọc, bạn là ai với họ. "Gửi chị trưởng phòng, xưng em" ra email khác hẳn "gửi khách hàng, xưng chúng tôi".
+1. Nói rõ ai đọc, bạn với họ vai vế thế nào. "Gửi chị trưởng phòng, xưng em" ra email khác hẳn "gửi khách hàng, xưng chúng tôi".
 2. Dán một đoạn tự viết, cùng loại với bài sắp viết, để skill bắt chước độ dài câu và chữ hay dùng.
-3. Số liệu, tên, ngày tháng thì đưa đúng cái thật. Thiếu chỗ nào skill hỏi lại hoặc để trống, không tự nghĩ ra.
+3. Số liệu, tên, ngày tháng thì đưa số thật, tên thật. Thiếu chỗ nào skill hỏi lại hoặc để trống, không tự nghĩ ra.
 4. Thấy chỗ nào lạ thì bảo "mình không nói thế". Skill đổi theo và nhớ tới hết cuộc trò chuyện.
 
 Còn vài cách dùng nữa:
 
 - Gõ `/viet-nhu-nguoi` để bật cho cả cuộc trò chuyện. Từ đó câu trả lời nào cũng theo quy tắc của skill, kể cả tin nhắn ngắn.
 - Nhờ soạn email, tin nhắn, bài đăng mà bạn đứng tên gửi thì skill tự bật.
-- Gọi giọng bằng tên cũng được: *đời thường*, *công việc*, *kỹ thuật*, *ấm áp*, *thẳng*. Đổi giọng thì chỉ văn phong đổi, còn xưng hô với nội dung vẫn giữ nguyên.
+- Muốn giọng nào thì gọi tên giọng đó: *đời thường*, *công việc*, *kỹ thuật*, *ấm áp*, *thẳng*. Đổi giọng thì chỉ văn phong đổi, còn xưng hô và nội dung vẫn giữ nguyên.
 - Bài tự viết thì skill chỉ sửa nhẹ.
 - Bộ slide nào quan trọng thì skill nhờ thêm một trợ lý AI khác, chưa biết gì về bối cảnh, đọc thử rồi chấm 7 tiêu chí trên thang 70 điểm. Skill xếp góp ý thành bảng, nhận mục nào bỏ mục nào tùy bạn.
 
@@ -135,7 +135,7 @@ Còn vài cách dùng nữa:
 
 ### Slide
 
-Thư mục [`examples/`](examples) có hai bộ slide mẫu. Bộ AI làm có mấy tiêu đề thế này:
+Thư mục [`examples/`](examples) có hai bộ slide mẫu. Bộ AI làm có các tiêu đề thế này:
 
 ```text
 1. Chuyển đổi số: Hành trình kiến tạo giá trị
@@ -172,7 +172,7 @@ Qua skill thì còn:
 
 > Đội mình đã đưa hệ thống quản lý dự án mới vào dùng. Khách hàng giờ tự xem được tiến độ.
 
-Bản này ngắn vì skill không bịa số liệu. Muốn có chi tiết thì skill hỏi, đưa gì viết nấy:
+Bản này ngắn vì skill không bịa số liệu. Cần thêm chi tiết thì skill hỏi lại, bạn đưa gì skill viết nấy:
 
 > Từ tháng 3, đội mình chuyển việc theo dõi dự án sang hệ thống mới. Khách hàng tự xem tiến độ, không phải nhắn hỏi như trước, và mỗi tuần đội bớt được khoảng nửa ngày làm báo cáo.
 
@@ -190,7 +190,7 @@ Từ bản 2.2 máy quét đếm trên cả bài, bài này lên 55/100. Trong b
 
 ## Skill sửa những lỗi nào
 
-Danh mục của skill có 62 dấu hiệu văn AI, dấu hiệu nào cũng kèm ví dụ trước và sau khi sửa ([xem đầy đủ](skills/viet-nhu-nguoi/references/patterns.md)). Nhóm riêng cho tiếng Việt gồm mấy thứ dễ thấy sau:
+Danh mục của skill có 62 dấu hiệu văn AI, dấu hiệu nào cũng kèm ví dụ trước và sau khi sửa ([xem đầy đủ](skills/viet-nhu-nguoi/references/patterns.md)). Nhóm riêng cho tiếng Việt gồm những thứ dễ thấy sau:
 
 | Dấu hiệu | Ví dụ | Sửa thành |
 | --- | --- | --- |
@@ -213,7 +213,7 @@ Khó thấy hơn là văn dịch từng chữ: chữ nào cũng là tiếng Vi�
 - "Với...", "Để..., bạn cần..." mở câu, "và" nối mọi vế;
 - thành ngữ và tiêu đề dịch thẳng ("tin tốt là", "Bắt đầu nhanh").
 
-Gặp văn như vậy, skill không thay từng cụm mà viết lại từ ý, theo cách người Việt vẫn nói chuyện đó với nhau.
+Gặp văn như vậy, skill không thay từng cụm mà viết lại từ ý, theo cách người Việt vẫn nói ý đó.
 
 Có dấu hiệu phải đọc cả bài mới thấy, dù từng câu đã ổn:
 
@@ -226,7 +226,7 @@ Có dấu hiệu phải đọc cả bài mới thấy, dù từng câu đã ổn
 
 Slide với tài liệu nhiều trang có nhóm riêng: tiêu đề chỉ là nhãn ("Tổng quan", "Kết luận"), tiêu đề đếm số ý ("3 trụ cột"), slide nào cũng đúng ba ý, hứa suông ("chi tiết sẽ trao đổi sau"), ghi chú thuyết trình viết như công văn. Cách viết slide có hướng dẫn riêng ở [references/slides.md](skills/viet-nhu-nguoi/references/slides.md).
 
-Mấy nhóm còn lại thì tiếng Việt hay tiếng Anh đều gặp: đối lập giả, câu chốt một dòng, liệt kê ép cho đủ ba, gạch ngang dài, thổi phồng, mượn uy tín mơ hồ, in đậm và emoji trang trí, lời chatbot, giải thích lại điều người đọc biết rồi.
+Các nhóm còn lại thì tiếng Việt hay tiếng Anh đều gặp: đối lập giả, câu chốt một dòng, liệt kê ép cho đủ ba, gạch ngang dài, thổi phồng, mượn uy tín mơ hồ, in đậm và emoji trang trí, lời chatbot, giải thích lại điều người đọc biết rồi.
 
 Cũng có thứ skill không đụng tới: giọng vùng miền, khẩu ngữ, thuật ngữ Hán Việt dùng đúng chỗ, câu bị động trong tài liệu kỹ thuật, và mấy chữ nhỏ mà bỏ đi là đổi nghĩa như "vẫn", "chưa", "chỉ", "có thể".
 
@@ -282,9 +282,9 @@ $ python3 -I skills/viet-nhu-nguoi/scripts/scan.py examples/slide-truoc.pptx
 
 ## Lưu ý
 
-Skill không gửi văn bản đi đâu khác, văn bản chỉ tới mô hình AI mà trợ lý vốn đang dùng. Skill chỉ gồm file Markdown với mấy script Python dùng thư viện chuẩn, không kết nối mạng, không thu thập dữ liệu, không cần tài khoản.
+Skill không gửi văn bản đi đâu khác, văn bản chỉ tới mô hình AI mà trợ lý vốn đang dùng. Skill chỉ gồm file Markdown và vài script Python dùng thư viện chuẩn, không kết nối mạng, không thu thập dữ liệu, không cần tài khoản.
 
-Điểm số chỉ để tham khảo, vì nhìn điểm thì chỉ biết bài viết theo khuôn nhiều hay ít, câu có đều nhau quá không, còn bài có phải AI viết hay không thì điểm không nói được. Có người vốn viết câu đều nhịp. Máy dò AI cũng hay bắt nhầm người viết bằng ngoại ngữ. Bài bị điểm cao thì cứ coi đó là danh sách chỗ nên đọc lại.
+Điểm số chỉ để tham khảo. Nhìn điểm thì biết bài viết theo khuôn nhiều hay ít, câu có đều quá không, còn bài có phải AI viết hay không thì không biết được. Có người vốn viết câu đều nhịp. Máy dò AI cũng hay bắt nhầm người viết bằng ngoại ngữ. Bài bị điểm cao thì cứ coi đó là danh sách chỗ nên đọc lại.
 
 Dùng skill thì văn tự nhiên, dễ đọc hơn, nhưng không dám hứa bài sẽ lọt máy dò AI. Skill cũng không chơi mẹo lừa máy dò như cố ý sai chính tả hay chèn ký tự ẩn. Xin đừng dùng skill để làm bài hộ người học hay giả danh người khác. Cũng đừng cầm danh sách dấu hiệu đi kết luận ai đó dùng AI, vì đoán bằng cảm giác thì cũng chỉ nhỉnh hơn đoán mò một chút.
 
@@ -307,12 +307,12 @@ tests/test_scan.py           python3 -m unittest discover -s tests
 
 ## Góp ý, báo lỗi
 
-Gặp kiểu câu AI tiếng Việt nào skill chưa bắt, hay thấy skill sửa hỏng một câu vốn tự nhiên, thì mở issue, dán câu đó vào, kèm bản bạn thấy đúng. Pull request thêm dấu hiệu mới cần có ví dụ trước/sau và một test trong `tests/test_scan.py`, có cả trường hợp không được báo nhầm.
+Gặp kiểu câu AI tiếng Việt nào skill chưa bắt, hay thấy skill sửa hỏng một câu vốn tự nhiên, thì mở issue, dán câu đó vào, kèm bản bạn thấy đúng. Pull request thêm dấu hiệu mới cần có ví dụ trước/sau và một test trong `tests/test_scan.py`, trong đó có cả câu máy quét không được báo nhầm.
 
 ## Nguồn tham khảo
 
 - Wikipedia: [Signs of AI writing](https://en.wikipedia.org/wiki/Wikipedia:Signs_of_AI_writing) (WikiProject AI Cleanup).
 - [blader/humanizer](https://github.com/blader/humanizer), MIT, Copyright (c) 2025 Siqi Chen. Khung danh mục dấu hiệu dựa theo skill này.
-- Mấy skill humanize tiếng Việt mã nguồn mở (MIT), dùng để đối chiếu danh mục, còn nội dung ở đây thì viết lại theo cách riêng: [longhang2004/vietnamese-humanizer](https://github.com/longhang2004/vietnamese-humanizer), [andyluu98/vn-humanize](https://github.com/andyluu98/vn-humanize), [cuongducle/viet-humanize](https://github.com/cuongducle/viet-humanize), [pdh372/humanize-vietnamese](https://github.com/pdh372/humanize-vietnamese).
+- Các skill humanize tiếng Việt mã nguồn mở (MIT), dùng để đối chiếu danh mục, còn nội dung ở đây thì viết lại theo cách riêng: [longhang2004/vietnamese-humanizer](https://github.com/longhang2004/vietnamese-humanizer), [andyluu98/vn-humanize](https://github.com/andyluu98/vn-humanize), [cuongducle/viet-humanize](https://github.com/cuongducle/viet-humanize), [pdh372/humanize-vietnamese](https://github.com/pdh372/humanize-vietnamese).
 - Phần slide học ý tưởng từ [carnot-tech/jinba-consulting-pptx-skill](https://github.com/carnot-tech/jinba-consulting-pptx-skill) (MIT), [zarazhangrui/frontend-slides](https://github.com/zarazhangrui/frontend-slides) (MIT) và skill `doc-coauthoring` trong [anthropics/skills](https://github.com/anthropics/skills) (Apache 2.0), rồi viết lại bằng lời riêng.
 - [references/sources.md](skills/viet-nhu-nguoi/references/sources.md) liệt kê đủ nguồn: bài viết, sách và nghiên cứu về tiếng Việt, nghiên cứu về độ tin cậy của máy dò, hướng dẫn giọng văn, skill khác. Nguồn nào skill dựa vào trực tiếp thì trong file có ghi rõ.
