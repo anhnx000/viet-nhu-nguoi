@@ -1,5 +1,10 @@
 # Changelog
 
+## 2.2.2 (2026-11-10)
+
+- Dấu hiệu 54, câu vụn: dấu chấm chặt một ý thành nhiều câu ngắn, lặp chủ ngữ. `SKILL.md` thêm quy tắc gộp vế bằng dấu phẩy và từ nối; `scan.py` báo "câu vụn" khi từ một phần ba số câu dài không quá 10 chữ (bài từ 20 câu). "Đoạn ngắn đều nhau" không còn tính cho tài liệu có tiêu đề Markdown như README.
+- README tiếng Việt gộp lại các câu bị chặt vụn.
+
 ## 2.2.1 (2026-11-10)
 
 - Ví dụ bài đăng dài: `examples/bai-dang-truoc.md` (1.740 chữ, 55/100) và `examples/bai-dang-sau.md` (376 chữ, 0/100), có test kiểm bản viết lại không thêm số liệu.

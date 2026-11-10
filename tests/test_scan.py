@@ -243,6 +243,14 @@ class WholeDocument(unittest.TestCase):
                 + "".join(f"PHẦN SỐ {i}, NÓI GỌN\n\n" + self.PARA * 3 for i in range(4))
                 + "KẾT\n\nNói rõ để bạn khỏi kỳ vọng sai: đây là dự án nghiên cứu.\n\n#OSDev #Rust\n")
 
+    def test_chopped_sentences(self):
+        chopped = "Skill giúp văn dễ đọc hơn. Skill không lừa máy dò. Thường mất một phút.\n\n" * 8
+        self.assertIn("câu vụn", scan.scan(chopped)[0])
+        joined = ("Skill giúp văn bản dễ đọc hơn nhưng không cam kết qua được máy dò, "
+                  "và việc cài thường mất chưa tới một phút trên máy đã có sẵn git.\n\n") * 24
+        self.assertNotIn("câu vụn", scan.scan(joined)[0])
+        self.assertNotIn("câu vụn", scan.scan("Ngắn thôi. Hai câu.\n")[0])
+
     def test_voice_labels(self):
         for text in ("Nói cho thật: tiến độ không dễ.", "Nói rõ để bạn khỏi kỳ vọng sai: đây là bản thử.",
                      "HỆ ĐIỀU HÀNH LÀ GÌ, NÓI GỌN", "Vibe coding, hiểu đơn giản là ngồi nói chuyện với AI.",

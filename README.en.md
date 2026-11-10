@@ -197,7 +197,7 @@ Since version 2.2 the scanner counts across the whole text and scores this post 
 
 ## What the skill fixes
 
-The skill has a catalog of 53 AI-writing patterns, each with a before and after example ([full list](skills/viet-nhu-nguoi/references/patterns.md), in Vietnamese). The table below is the Vietnamese-only group.
+The skill has a catalog of 54 AI-writing patterns, each with a before and after example ([full list](skills/viet-nhu-nguoi/references/patterns.md), in Vietnamese). The table below is the Vietnamese-only group.
 
 | Pattern | Example | Becomes |
 | --- | --- | --- |
@@ -211,7 +211,7 @@ The skill has a catalog of 53 AI-writing patterns, each with a before and after 
 | Pronouns of address | "bạn" in an email to your boss; mixing "bạn" and "quý vị" | one pair that fits the relationship |
 | English glosses in brackets | hiệu suất (performance) | hiệu suất |
 
-Some patterns only show when you read the whole text, even after each sentence is fine. Examples are sentences that open with a label ("nói gọn", "nói cho thật:"), the "not X but Y" shape used three times or more, every paragraph closing on a line that sounds like a proverb, colons everywhere, and a long post that covers every topic.
+Some patterns only show when you read the whole text, even after each sentence is fine. Examples are sentences that open with a label ("nói gọn", "nói cho thật:"), the "not X but Y" shape used three times or more, every paragraph closing on a line that sounds like a proverb, colons everywhere, full stops that chop one thought into several short sentences, and a long post that covers every topic.
 
 Slides and long documents have their own group. The skill catches titles that are only labels ("Tổng quan", "Kết luận"), titles that count points ("3 trụ cột", *3 pillars*), exactly three bullets on every slide, empty promises ("chi tiết sẽ trao đổi sau", *details to be discussed later*) and speaker notes that read like a memo. The slide-writing guide is in [references/slides.md](skills/viet-nhu-nguoi/references/slides.md) (in Vietnamese).
 
@@ -281,7 +281,7 @@ The skill makes text more natural and easier to read. It does not promise to get
 ```text
 skills/viet-nhu-nguoi/
 ├── SKILL.md                 main rules, loaded when the skill is invoked
-├── references/patterns.md   53 patterns with before/after examples
+├── references/patterns.md   54 patterns with before/after examples
 ├── references/slides.md     slides, speaker notes, fresh-reader test
 ├── references/sources.md    references: articles, research, style guides, other skills
 ├── scripts/scan.py          scanner with a 0-100 score, no third-party packages

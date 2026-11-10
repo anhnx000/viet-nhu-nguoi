@@ -245,7 +245,7 @@ def document_checks(text, hits):
         n = len(hits.get(group, []))
         if n >= 3:
             hits.setdefault("tật lặp cả bài", []).append((hits[group][0][0], f"{group} x{n}"))
-    paras, cur, start, caps, tagged, total_words = [], [], 0, [], False, 0
+    paras, cur, start, caps, tagged, total_words, md_heads = [], [], 0, [], False, 0, 0
     for no, line in list(prose_lines(text)) + [(0, "")]:
         s = line.strip()
         total_words += len(s.split())
@@ -264,6 +264,8 @@ def document_checks(text, hits):
                 hits.setdefault("mục kết dán nhãn", []).append((no, s[:40]))
             if not md_heading:
                 caps.append(no)
+            else:
+                md_heads += 1
             continue
         if LIST_ITEM.match(s):
             continue
@@ -274,7 +276,7 @@ def document_checks(text, hits):
         hits.setdefault("bài đăng chia mục viết hoa", []).append((caps[0], f"{len(caps)} mục"))
     if tagged and total_words > 800:
         hits.setdefault("bài mạng xã hội dài", []).append((1, f"{total_words} chữ"))
-    counts, sents_all, colons = [], 0, 0
+    counts, sents_all, colons, short = [], 0, 0, 0
     for _, para in paras:
         sents = [x for x in SENT_SPLIT.split(para) if len(x.split()) >= 2]
         if not sents:
@@ -282,13 +284,18 @@ def document_checks(text, hits):
         counts.append(len(sents))
         sents_all += len(sents)
         colons += sum(1 for x in sents if COLON.search(x))
+        short += sum(1 for x in sents if len(x.split()) <= 10)
     first = paras[0][0] if paras else 1
     if sents_all >= 20 and colons >= 6 and colons / sents_all >= 0.15:
         hits.setdefault("hai chấm dồn dập", []).append((first, f"{colons}/{sents_all} câu có dấu hai chấm"))
-    if len(counts) >= 12 and max(counts) <= 4 and sum(1 for c in counts if c <= 3) / len(counts) >= 0.9:
-        short = sum(1 for c in counts if c <= 3)
+    # Dấu chấm chặt ý thành câu vụn: từ một phần ba số câu chỉ dài tối đa 10 chữ
+    if sents_all >= 20 and short / sents_all >= 1 / 3:
+        hits.setdefault("câu vụn", []).append((first, f"{short}/{sents_all} câu dài không quá 10 chữ"))
+    # Tài liệu có tiêu đề Markdown (README, hướng dẫn) vốn nhiều đoạn dẫn ngắn, không tính
+    if md_heads < 3 and len(counts) >= 12 and max(counts) <= 4 and sum(1 for c in counts if c <= 3) / len(counts) >= 0.9:
+        few = sum(1 for c in counts if c <= 3)
         hits.setdefault("đoạn ngắn đều nhau", []).append(
-            (first, f"{short}/{len(counts)} đoạn chỉ 1-3 câu, không đoạn nào quá 4 câu"))
+            (first, f"{few}/{len(counts)} đoạn chỉ 1-3 câu, không đoạn nào quá 4 câu"))
 
 
 # Tiêu đề slide chỉ là nhãn chủ đề hoặc tả việc đang làm, không nói kết luận.
@@ -368,7 +375,7 @@ WEIGHTS = {
 }
 # Dấu hiệu cả bài: điểm cố định, không chia theo độ dài.
 DOC_POINTS = {
-    "hai chấm dồn dập": 6, "đoạn ngắn đều nhau": 4,
+    "hai chấm dồn dập": 6, "đoạn ngắn đều nhau": 4, "câu vụn": 4,
     "bài đăng chia mục viết hoa": 4, "bài mạng xã hội dài": 6,
 }
 for _g in list(DOC_POINTS) + ["tật lặp cả bài"]:
