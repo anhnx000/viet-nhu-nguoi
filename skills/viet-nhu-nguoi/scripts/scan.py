@@ -122,6 +122,7 @@ PATTERNS = {
         r"cho dù bạn là", r"sự lựa chọn hoàn hảo", r"nhận được nhiều hơn từ", r"vẫn còn tồn tại",
         r"bạn (sẽ )?không muốn (bỏ lỡ|mất)",
         # khuôn báo cáo và bài giải thích
+        r"(làm|đạt) được điều (này|đó) mà không", r"(chúng tôi|tôi) (muốn|xin) gửi lời cảm ơn đặc biệt",
         r"tiến về phía trước", r"(đạt được|có) những tiến bộ đáng kể", r"điều đó (được )?nói rằng",
         r"hãy nghĩ về (nó|điều này|chúng) như", r"không phải là không có (những )?(hạn chế|nhược điểm|thách thức|rủi ro)",
         r"(chúng ta|mình) sẽ cùng nhau (xem xét|tìm hiểu|khám phá|đi qua)", r"(đang )?tìm kiếm một cách để",
@@ -149,7 +150,7 @@ PATTERNS = {
         r"(đưa ra|cung cấp) sự (hỗ trợ|giúp đỡ)", r"hiện thực hóa", r"đóng góp vào",
     ],
     "danh hóa (vi)": [
-        r"một cách (?!(gọi|khác|nữa|làm|để|viết|nói|hiểu|nhìn|đơn giản là)\b)\w+", r"trở nên \w+", r"có khả năng \w+",
+        r"một cách (?!(gọi|khác|nữa|làm|để|viết|nói|hiểu|nhìn|đơn giản là)\b)\w+", r"trở nên \w+", r"có khả năng \w+", r"\btrong việc (cải thiện|nâng cao|xây dựng|phát triển|giúp|tạo|đảm bảo|thúc đẩy|giải quyết|quản lý)\b",
     ],
     "thừa nghĩa (vi)": [
         r"quay trở lại", r"hiện nay đang", r"đang trong quá trình", r"hoàn toàn đầy đủ",

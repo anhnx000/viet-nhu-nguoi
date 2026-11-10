@@ -1,11 +1,15 @@
 # Changelog
 
+## 2.4.5 (2026-11-11)
+
+- Đoạn báo cáo quý dịch từng chữ từ 26 lên 44/100: "danh hóa (vi)" bắt "trong việc cải thiện/xây dựng/...", "văn dịch (vi)" bắt "làm được điều này mà không" và "muốn gửi lời cảm ơn đặc biệt". "Điều đáng nói là" vẫn để người đọc tự xét. Điểm các file mẫu và README không đổi.
+
 ## 2.4.4 (2026-11-11)
 
 - Thử thêm hai thể loại: báo cáo quý và bài giải thích kiến thức, đều viết theo kiểu dịch từng chữ. Báo cáo từ 12 lên 26/100, bài giải thích từ 17 lên 43/100.
 - "văn dịch (vi)" bắt thêm "tiến về phía trước", "đạt được những tiến bộ đáng kể", "hãy nghĩ về nó như", "điều đó nói rằng", "không phải là không có những hạn chế". "quan hệ từ dịch sát" bắt "mà tập trung vào/cho phép/giúp" sau danh từ và "càng nhiều X mà". "bị động dịch sát" thêm "được lập trình".
 - Test có đoạn giọng người cùng nội dung để chắc không báo nhầm. Điểm các file mẫu và README không đổi.
-- Còn sót: báo cáo dịch vẫn chỉ 26/100. Câu kiểu "Điều đáng nói là", "gửi lời cảm ơn đặc biệt đến" cũng là cách nói quen của báo Việt nên không đưa vào máy quét.
+- Còn sót: báo cáo dịch vẫn chỉ 26/100 (bản 2.4.5 vá tiếp).
 
 ## 2.4.3 (2026-11-11)
 

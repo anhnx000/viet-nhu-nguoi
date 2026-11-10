@@ -401,6 +401,9 @@ class DeepTranslationese(unittest.TestCase):
                      "Hãy nghĩ về nó như một đứa trẻ học nhận biết con vật.",
                      "Điều đó nói rằng, học máy không phải là không có những hạn chế của nó."):
             self.assertIn("văn dịch (vi)", groups(text), text)
+        self.assertIn("danh hóa (vi)", groups("Nhóm có nhiều tiến bộ trong việc cải thiện hiệu suất."))
+        self.assertIn("văn dịch (vi)", groups("Chúng tôi đã làm được điều này mà không cần tăng chi phí."))
+        self.assertIn("văn dịch (vi)", groups("Chúng tôi muốn gửi lời cảm ơn đặc biệt đến cả nhóm."))
         self.assertIn("quan hệ từ dịch sát", groups("Học máy là một nhánh của trí tuệ nhân tạo mà tập trung vào dữ liệu."))
         self.assertIn("quan hệ từ dịch sát", groups("Càng nhiều ví dụ mà nó nhìn thấy, nó càng giỏi."))
         self.assertIn("bị động dịch sát", groups("Mô hình không được lập trình sẵn từng bước."))
