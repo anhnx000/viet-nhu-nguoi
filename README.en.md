@@ -131,70 +131,35 @@ The scores below come from the scanner bundled with the skill, on a 0-100 scale.
 
 ### Slides
 
-The [`examples/`](examples) folder has two sample decks. These are the titles of the one AI made:
+The [`examples/`](examples) folder has two sample decks, one made by AI and one made with the skill. These are their titles:
 
-```text
-1. Chuyển đổi số: Hành trình kiến tạo giá trị
-2. Tổng quan
-3. Thách thức
-4. 3 trụ cột giải pháp
-5. Lợi ích
-6. Kết luận
-7. Cảm ơn
-```
+![Slide titles. Made by AI, 48/100: Digital transformation: a journey of value creation; Overview; Challenges; 3 pillars of the solution; Benefits; Conclusion; Thank you. Made with the skill, 0/100: Proposal: hire one more QA for Q1 2027; Q3 slipped two weeks, both times for lack of testers; One QA costs less than more delays; Please approve by 30/11 so hiring finishes in time.](assets/vi-du-slide.en.png)
 
-*"Digital transformation: a journey of value creation; Overview; Challenges; 3 pillars of the solution; Benefits; Conclusion; Thank you."*
-
-And the deck made with the skill:
-
-```text
-1. Đề xuất thuê thêm 1 QA cho quý 1/2027
-2. Quý 3 trễ 2 tuần, cả 2 lần đều do thiếu người test
-3. Thuê 1 QA rẻ hơn tiếp tục trễ
-4. Cần anh duyệt trước 30/11 để kịp tuyển
-```
-
-*"Proposal: hire one more QA for Q1 2027; Q3 slipped two weeks, both times for lack of testers; one QA costs less than more delays; please approve by 30/11 so hiring finishes in time."*
+*AI deck: "Digital transformation: a journey of value creation; Overview; Challenges; 3 pillars of the solution; Benefits; Conclusion; Thank you." Skill deck: "Proposal: hire one more QA for Q1 2027; Q3 slipped two weeks, both times for lack of testers; one QA costs less than more delays; please approve by 30/11 so hiring finishes in time."*
 
 The four titles of the second deck are enough to follow the whole proposal. The scanner gives it 0/100 and the first deck 48/100.
 
 ### Emails and reports
 
-AI draft:
+![Emails and reports. The AI draft scores 72/100; it opens with "In today's context" and closes with "Hope this helps!". After the skill, 0/100: Our team started using the new project management system. Customers can now check progress themselves. With details supplied, 0/100: Since March we track projects in the new system.](assets/vi-du-email.en.png)
 
-> Trong bối cảnh hiện nay, việc ứng dụng AI không chỉ là xu hướng mà còn là yếu tố then chốt giúp doanh nghiệp nâng tầm hiệu suất. Điều này được chứng minh bởi nhiều nghiên cứu chỉ ra rằng năng suất có thể tăng một cách đáng kể.
->
-> Bên cạnh đó, đội ngũ của chúng tôi đã tiến hành thực hiện việc triển khai hệ thống mới nhằm mục đích mang lại trải nghiệm liền mạch cho khách hàng. Nó giúp việc quản lý dự án trở nên dễ dàng hơn, nhanh chóng hơn và hiệu quả hơn.
->
-> Hy vọng những thông tin trên sẽ hữu ích cho bạn!
+*AI draft, roughly: "In today's context, applying AI is not only a trend but also a key factor that elevates business performance. This is proven by many studies showing productivity can increase significantly. In addition, our team proceeded to carry out the deployment of a new system for the purpose of delivering a seamless experience. It makes project management easier, faster and more efficient. Hope this helps!"*
 
-*Roughly: "In today's context, applying AI is not only a trend but also a key factor that elevates business performance. This is proven by many studies showing productivity can increase significantly. In addition, our team proceeded to carry out the deployment of a new system for the purpose of delivering a seamless experience. It makes project management easier, faster and more efficient. Hope this helps!"*
+*After the skill: "Our team started using the new project management system. Customers can now check progress themselves." With details: "Since March we track projects in the new system. Customers check progress themselves instead of messaging us, and the team saves about half a day of reporting each week."*
 
-After the skill:
-
-> Đội mình đã đưa hệ thống quản lý dự án mới vào dùng. Khách hàng giờ tự xem được tiến độ.
-
-*"Our team started using the new project management system. Customers can now check progress themselves."*
-
-This version is short because the skill does not invent numbers. If you want detail, the skill asks you, then writes with only what you gave it:
-
-> Từ tháng 3, đội mình chuyển việc theo dõi dự án sang hệ thống mới. Khách hàng tự xem tiến độ, không phải nhắn hỏi như trước, và mỗi tuần đội bớt được khoảng nửa ngày làm báo cáo.
-
-*"Since March we track projects in the new system. Customers check progress themselves instead of messaging us, and the team saves about half a day of reporting each week."*
-
-The AI draft scores 72/100 with 16 tells, and both rewrites score 0/100.
+The AI draft scores 72/100 with 16 tells, the parts marked red in the image. The version after the skill is short because the skill does not invent numbers. If you want detail, the skill asks you and writes with only what you gave it, as in the third version. Both rewrites score 0/100. The three texts are in [`examples/truoc.md`](examples/truoc.md), [`examples/sau.md`](examples/sau.md) and [`examples/sau-co-chi-tiet.md`](examples/sau-co-chi-tiet.md).
 
 ### A long post
 
-Version 2.2 of the skill came out of a real post. [The original](examples/bai-dang-truoc.md) runs 1,740 Vietnamese words under nine all-caps headings. Most of the familiar AI vocabulary was already gone, so the old scanner scored it 3/100, and readers still spotted it at once. The whole post keeps repeating a few sentence shapes:
+Version 2.2 of the skill came out of a real post. [The original](examples/bai-dang-truoc.md) runs 1,740 Vietnamese words under nine all-caps headings. Most of the familiar AI vocabulary was already gone, so the previous scanner scored it 3/100. Readers still spotted it at once, because the whole post keeps repeating a few sentence shapes.
 
-> Nói cho thật: tiến độ không dễ. [...] Khó nhất không phải là code, mà là chọn việc gì để làm. [...] Mình không cần bạn giỏi kernel. Mình cần bạn kiên nhẫn đọc log.
+![A long post. Original, 55/100: 1,740 words, ten "not X but Y" sentences, six sentences opening with a label, a colon in 19 of 88 sentences. Rewrite, 0/100: 373 words, one job, inviting people to join the project.](assets/vi-du-bai-dang.en.png)
 
-*"To be honest: progress isn't easy. [...] The hardest part isn't the code, it's choosing what to work on. [...] I don't need you to be good at kernels. I need you to be patient with logs."*
+*The three quoted lines: "To be honest: progress isn't easy." "The hardest part isn't the code, it's choosing what to work on." "I don't need you to be good at kernels. I need you to be patient with logs."*
 
-Since version 2.2 the scanner counts across the whole text and scores this post 55/100. It has ten "not X but Y" sentences, six sentences that open with a label such as "nói gọn" (*put briefly*) or "nói cho thật" (*to be honest*), and a colon in 19 of 88 sentences.
+Since version 2.2 the scanner counts across the whole text, so this post scores 55/100. It has ten "not X but Y" sentences, six sentences that open with a label such as "nói gọn" (*put briefly*) or "nói cho thật" (*to be honest*), and a colon in 19 of 88 sentences.
 
-[The rewrite](examples/bai-dang-sau.md) is 373 words, only invites people to join the project, scores 0/100 and adds no fact that the original lacks. The operating-system primer, the microkernel history and the security statistics are left for other posts.
+[The rewrite](examples/bai-dang-sau.md) is 373 words and does one job, inviting people to join the project. The scanner gives it 0/100, and it adds no fact that the original lacks. The operating-system primer, the microkernel history and the security statistics are left for other posts.
 
 ## What the skill fixes
 
@@ -308,7 +273,7 @@ skills/viet-nhu-nguoi/
 ├── scripts/check_facts.py   checks a rewrite kept numbers, dates, times, links, code
 ├── scripts/slides.py        reads slide text and notes from .pptx, standard library only
 └── LICENSE-humanizer        MIT license of blader/humanizer
-assets/                      banner
+assets/                      banner, example images and the script that redraws them (make_images.py)
 examples/                    before/after text and .pptx decks used in the README and tests
 tests/test_scan.py           python3 -m unittest discover -s tests
 ```

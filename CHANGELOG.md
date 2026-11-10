@@ -1,5 +1,11 @@
 # Changelog
 
+## 2.4.1 (2026-11-10)
+
+- Vẽ lại banner ở độ phân giải gấp đôi, tô đỏ các cụm máy quét bắt được.
+- Ba ảnh ví dụ mới thay cho khối chữ trong README: tiêu đề slide, email và báo cáo, bài đăng dài. Có bản nhãn tiếng Anh cho `README.en.md`.
+- `assets/make_images.py` vẽ lại toàn bộ ảnh từ các file trong `examples/` (cần Pillow và font Inter).
+
 ## 2.4.0 (2026-11-10)
 
 Văn dịch từng chữ: chữ nào cũng là tiếng Việt mà câu vẫn theo khuôn tiếng Anh.

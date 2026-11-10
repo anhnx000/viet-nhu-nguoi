@@ -135,54 +135,23 @@ Còn vài cách dùng nữa:
 
 ### Slide
 
-Thư mục [`examples/`](examples) có hai bộ slide mẫu. Bộ AI làm có các tiêu đề thế này:
+Thư mục [`examples/`](examples) có hai bộ slide mẫu, một bộ AI làm và một bộ làm theo skill. Đây là tiêu đề của hai bộ:
 
-```text
-1. Chuyển đổi số: Hành trình kiến tạo giá trị
-2. Tổng quan
-3. Thách thức
-4. 3 trụ cột giải pháp
-5. Lợi ích
-6. Kết luận
-7. Cảm ơn
-```
-
-Còn đây là bộ làm theo skill:
-
-```text
-1. Đề xuất thuê thêm 1 QA cho quý 1/2027
-2. Quý 3 trễ 2 tuần, cả 2 lần đều do thiếu người test
-3. Thuê 1 QA rẻ hơn tiếp tục trễ
-4. Cần anh duyệt trước 30/11 để kịp tuyển
-```
+![Tiêu đề slide. Bộ AI làm, 48/100: Chuyển đổi số: Hành trình kiến tạo giá trị; Tổng quan; Thách thức; 3 trụ cột giải pháp; Lợi ích; Kết luận; Cảm ơn. Bộ làm theo skill, 0/100: Đề xuất thuê thêm 1 QA cho quý 1/2027; Quý 3 trễ 2 tuần, cả 2 lần đều do thiếu người test; Thuê 1 QA rẻ hơn tiếp tục trễ; Cần anh duyệt trước 30/11 để kịp tuyển.](assets/vi-du-slide.png)
 
 Bộ sau chỉ đọc bốn tiêu đề là hiểu cả đề xuất. Máy quét chấm bộ này 0/100, bộ đầu 48/100.
 
 ### Email, báo cáo
 
-AI viết:
+![Email, báo cáo. Bản AI viết, 72/100, mở bằng "Trong bối cảnh hiện nay" và kết bằng "Hy vọng những thông tin trên sẽ hữu ích cho bạn!". Qua skill, 0/100: Đội mình đã đưa hệ thống quản lý dự án mới vào dùng. Khách hàng giờ tự xem được tiến độ. Có thêm chi tiết, 0/100: Từ tháng 3, đội mình chuyển việc theo dõi dự án sang hệ thống mới.](assets/vi-du-email.png)
 
-> Trong bối cảnh hiện nay, việc ứng dụng AI không chỉ là xu hướng mà còn là yếu tố then chốt giúp doanh nghiệp nâng tầm hiệu suất. Điều này được chứng minh bởi nhiều nghiên cứu chỉ ra rằng năng suất có thể tăng một cách đáng kể.
->
-> Bên cạnh đó, đội ngũ của chúng tôi đã tiến hành thực hiện việc triển khai hệ thống mới nhằm mục đích mang lại trải nghiệm liền mạch cho khách hàng. Nó giúp việc quản lý dự án trở nên dễ dàng hơn, nhanh chóng hơn và hiệu quả hơn.
->
-> Hy vọng những thông tin trên sẽ hữu ích cho bạn!
-
-Qua skill thì còn:
-
-> Đội mình đã đưa hệ thống quản lý dự án mới vào dùng. Khách hàng giờ tự xem được tiến độ.
-
-Bản này ngắn vì skill không bịa số liệu. Cần thêm chi tiết thì skill hỏi lại, bạn đưa gì skill viết nấy:
-
-> Từ tháng 3, đội mình chuyển việc theo dõi dự án sang hệ thống mới. Khách hàng tự xem tiến độ, không phải nhắn hỏi như trước, và mỗi tuần đội bớt được khoảng nửa ngày làm báo cáo.
-
-Bản AI viết bị chấm 72/100, dính 16 dấu hiệu, còn hai bản sau đều 0/100.
+Bản AI viết bị chấm 72/100, dính 16 dấu hiệu, là những chỗ tô đỏ trong ảnh. Bản qua skill ngắn vì skill không bịa số liệu. Cần thêm chi tiết thì skill hỏi lại, bạn đưa gì skill viết nấy, như bản thứ ba. Hai bản sau đều được 0/100. Ba đoạn văn này nằm ở [`examples/truoc.md`](examples/truoc.md), [`examples/sau.md`](examples/sau.md) và [`examples/sau-co-chi-tiet.md`](examples/sau-co-chi-tiet.md).
 
 ### Bài đăng dài
 
-Bản 2.2 của skill ra đời từ một bài đăng thật. [Bài gốc](examples/bai-dang-truoc.md) dài 1.740 chữ, chia chín mục viết hoa. Bài gần như không còn từ AI quen mặt nên máy quét ở bản trước chỉ chấm 3/100. Vậy mà ai đọc cũng nhận ra, vì cả bài cứ lặp đi lặp lại vài kiểu câu:
+Bản 2.2 của skill ra đời từ một bài đăng thật. [Bài gốc](examples/bai-dang-truoc.md) dài 1.740 chữ, chia chín mục viết hoa. Bài gần như không còn từ AI quen mặt nên máy quét ở bản trước chỉ chấm 3/100. Vậy mà ai đọc cũng nhận ra, vì cả bài cứ lặp đi lặp lại vài kiểu câu.
 
-> Nói cho thật: tiến độ không dễ. [...] Khó nhất không phải là code, mà là chọn việc gì để làm. [...] Mình không cần bạn giỏi kernel. Mình cần bạn kiên nhẫn đọc log.
+![Bài đăng dài. Bài gốc, 55/100: 1.740 chữ, mười câu kiểu "không phải X mà là Y", sáu câu mở bằng nhãn, 19 trên 88 câu có dấu hai chấm. Bản viết lại, 0/100: 373 chữ, chỉ làm một việc là rủ người vào làm cùng.](assets/vi-du-bai-dang.png)
 
 Từ bản 2.2 máy quét đếm trên cả bài nên bài này lên 55/100. Trong bài có mười câu kiểu "không phải X mà là Y", sáu câu mở bằng nhãn như "nói gọn", "nói cho thật", và 19 trên 88 câu có dấu hai chấm.
 
@@ -300,7 +269,7 @@ skills/viet-nhu-nguoi/
 ├── scripts/check_facts.py   kiểm bản sửa giữ đúng số liệu, ngày giờ, link, code
 ├── scripts/slides.py        đọc chữ và ghi chú trong file .pptx, chỉ dùng thư viện chuẩn
 └── LICENSE-humanizer        giấy phép MIT của blader/humanizer
-assets/                      banner
+assets/                      banner, ảnh ví dụ và script vẽ lại ảnh (make_images.py)
 examples/                    văn mẫu và deck .pptx trước/sau dùng trong README và test
 tests/test_scan.py           python3 -m unittest discover -s tests
 ```
