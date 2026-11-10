@@ -111,10 +111,16 @@ PATTERNS = {
         r"(làm|tạo) (nên|ra) sự khác biệt", r"chơi (một )?vai trò", r"đóng một vai trò",
         r"(có|lấy|mang lại) (một )?cái nhìn (sâu sắc|tổng quan|rõ ràng)", r"(tốt|đúng|chính xác) hơn (may rủi|ngẫu nhiên)",
         r"là (rất |vô cùng )?(quan trọng|cần thiết|hữu ích) (để|rằng)\b", r"bạn có thể (sẽ )?(muốn|cần phải)",
-        r"hãy chắc chắn rằng", r"(?<!hãy )(đảm bảo|chắc chắn) rằng bạn", r"cảm thấy tự do", r"đừng ngần ngại",
+        r"hãy chắc chắn (rằng|để)", r"(?<!hãy )(đảm bảo|chắc chắn) rằng bạn", r"cảm thấy tự do", r"đừng ngần ngại",
         r"như đã (đề cập|nói|nêu) (ở trên|trước đó)", r"một loạt các", r"theo (một )?cách mà",
         r"(bạn )?đã đến đúng nơi", r"đầu tiên và (quan trọng nhất|trước hết)", r"(như|theo) một (quy tắc|nguyên tắc) chung",
         r"cuối cùng nhưng không (kém|phải là ít) (phần )?quan trọng", r"kẻ thù (lớn nhất|tồi tệ nhất) của (bạn|chúng ta)",
+        # khuôn email, mô tả sản phẩm, tài liệu hướng dẫn dịch thẳng
+        r"hy vọng (email|thư|tin nhắn) này (tìm thấy|đến với)", r"vui lòng tìm (thấy )?(tệp|file|tài liệu) đính kèm",
+        r"mong (chờ |đợi )?(được )?nghe (tin )?từ", r"để theo dõi (về|lại) (cuộc họp|buổi họp|email|thư)",
+        r"(bất kỳ|bất cứ) câu hỏi (hoặc|hay) (mối quan tâm|thắc mắc)", r"với (bạn|khách hàng|người dùng) trong tâm trí",
+        r"cho dù bạn là", r"sự lựa chọn hoàn hảo", r"nhận được nhiều hơn từ", r"vẫn còn tồn tại",
+        r"bạn (sẽ )?không muốn (bỏ lỡ|mất)",
         r"(chúng ta|mình) sẽ cùng nhau (xem xét|tìm hiểu|khám phá|đi qua)", r"(đang )?tìm kiếm một cách để",
     ],
     "bị động dịch sát": [

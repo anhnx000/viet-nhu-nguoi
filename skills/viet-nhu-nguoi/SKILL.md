@@ -12,7 +12,7 @@ description: |
   humanize tiếng Việt mã nguồn mở.
 license: MIT
 metadata:
-  version: "2.4.2"
+  version: "2.4.3"
 ---
 
 # Viết như người (Vietnamese humanizer): chống giọng văn AI
@@ -107,7 +107,7 @@ Mô hình hay nghĩ câu bằng tiếng Anh rồi chuyển từng chữ sang ti�
    - "và", "với", "để", "khi". "Và" nối hai vế thì thử thay bằng dấu phẩy, "rồi", "còn", "mà". "Với bộ slide quan trọng, ..." → "Bộ slide nào quan trọng thì...". "Để cài, bạn cần..." → "Muốn cài thì cần...".
    - "có thể", "cho phép", "giúp". "Bạn có thể gọi giọng bằng tên" → "Gọi giọng bằng tên cũng được". "X cho phép bạn làm Y" → "Có X thì làm được Y".
 4. Dùng khung đề-thuyết. Nêu cái đang bàn trước rồi mới nói về nó, nối bằng "thì", "là", "mà": "Email thì nói việc trước", "Bài tự viết thì chỉ sửa nhẹ". Vật vô tri ít khi làm chủ ngữ cho "cho thấy", "cho biết", "giúp", "mang lại": "Điểm cho biết bài có nhiều thói quen viết theo khuôn" → "Nhìn điểm thì biết bài viết theo khuôn nhiều hay ít".
-5. Dùng chữ người Việt vẫn nói. Thành ngữ và cách ghép từ không dịch thẳng được: "đúng hơn may rủi một chút" → "chỉ nhỉnh hơn đoán mò"; "tin tốt là" → "may là"; "làm nên sự khác biệt" → nói rõ khác ở đâu. Tiêu đề cũng vậy: "Trước và sau", "Nên biết", "Bắt đầu nhanh" là tiêu đề tiếng Anh, hãy viết "Văn AI và bản đã sửa", "Lưu ý", "Cài nhanh".
+5. Dùng chữ người Việt vẫn nói. Thành ngữ và cách ghép từ không dịch thẳng được: "đúng hơn may rủi một chút" → "chỉ nhỉnh hơn đoán mò"; "tin tốt là" → "may là"; "làm nên sự khác biệt" → nói rõ khác ở đâu. Email, mô tả sản phẩm và hướng dẫn hay bị dịch nguyên khuôn: "Tôi hy vọng email này tìm thấy anh..." thì bỏ hẳn, "Vui lòng tìm thấy tệp đính kèm" → "Em gửi kèm file...", "mong chờ được nghe từ anh" → "anh xem rồi phản hồi giúp em". Tiêu đề cũng vậy: "Trước và sau", "Nên biết", "Bắt đầu nhanh" là tiêu đề tiếng Anh, hãy viết "Văn AI và bản đã sửa", "Lưu ý", "Cài nhanh".
 6. Đừng sửa quá tay thành văn nói suồng sã, và đừng đổi tật này lấy tật khác: thay hết "các" bằng "mấy", hết "và" bằng "với", hết "khi" bằng "lúc" thì người đọc lại thấy một kiểu lặp mới. Lược chữ mà câu thành mơ hồ, không rõ ai làm, thì trả chữ đó về. Văn bản trang trọng vẫn giữ câu bị động quen dùng ("được cấp phép", "được bổ nhiệm"), và không tự thêm "nhé", "nha", "ạ".
 
 Cuối cùng, đọc thành tiếng để kiểm. Chỗ nào người Việt không nói như vậy thì sửa, dù ở trên không có quy tắc nào nhắc tới.

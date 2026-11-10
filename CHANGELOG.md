@@ -1,5 +1,11 @@
 # Changelog
 
+## 2.4.3 (2026-11-11)
+
+- Thử thêm ba đoạn văn dịch mới viết ở ba thể loại: email công việc, mô tả sản phẩm, hướng dẫn xử lý lỗi. Email dịch nguyên khuôn tiếng Anh trước đây được 0/100, giờ 39/100. Mô tả sản phẩm từ 16 lên 47, hướng dẫn từ 14 lên 37.
+- "văn dịch (vi)" và mục 61 bắt thêm khuôn email ("hy vọng email này tìm thấy anh", "vui lòng tìm thấy tệp đính kèm", "mong chờ được nghe từ anh", "bất kỳ câu hỏi hoặc mối quan tâm nào"), khuôn quảng cáo ("với bạn trong tâm trí", "cho dù bạn là", "sự lựa chọn hoàn hảo", "nhận được nhiều hơn từ") và khuôn hướng dẫn ("vẫn còn tồn tại", "hãy chắc chắn để", "bạn không muốn bỏ lỡ"). `SKILL.md` có thêm ví dụ sửa khuôn email.
+- Test có đoạn email giọng người ("Anh Minh ơi, em gửi bản báo cáo cuối trong file đính kèm...") để chắc không báo nhầm. Điểm các file mẫu và README không đổi.
+
 ## 2.4.2 (2026-11-11)
 
 - Thử máy quét trên một đoạn văn dịch mới viết, không lấy từ repo. Máy quét bỏ sót các cụm mở và chuyển đoạn quen thuộc của bài hướng dẫn tiếng Anh. Đã thêm vào "văn dịch (vi)" và mục 61: "bạn đã đến đúng nơi", "đầu tiên và quan trọng nhất", "như một quy tắc chung", "cuối cùng nhưng không kém phần quan trọng", "kẻ thù lớn nhất của bạn", "chúng ta sẽ cùng nhau xem xét", "tìm kiếm một cách để". Đoạn thử từ 31/100 lên 49/100, điểm các file mẫu không đổi.

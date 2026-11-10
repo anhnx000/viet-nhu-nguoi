@@ -10,7 +10,7 @@
       "name": "viet-nhu-nguoi",
       "source": "./",
       "description": "Viết như người (human voice): chống giọng văn AI, viết và sửa tiếng Việt cho giống người viết. Có máy quét chấm điểm 0-100 và công cụ kiểm số liệu.",
-      "version": "2.4.2",
+      "version": "2.4.3",
       "category": "writing"
     }
   ]

@@ -381,6 +381,20 @@ class DeepTranslationese(unittest.TestCase):
             self.assertIn("văn dịch (vi)", groups(text), text)
         self.assertNotIn("văn dịch (vi)", groups("Trước hết là lên kế hoạch. Cuối cùng thì ngủ cho đủ."))
 
+    def test_calqued_templates(self):
+        for text in ("Tôi hy vọng email này tìm thấy anh trong tình trạng sức khỏe tốt.",
+                     "Vui lòng tìm thấy tệp đính kèm là bản báo cáo cuối cùng.",
+                     "Tôi mong chờ được nghe từ anh sớm.",
+                     "Cho tôi biết nếu anh có bất kỳ câu hỏi hoặc mối quan tâm nào.",
+                     "Sản phẩm này được thiết kế với bạn trong tâm trí.",
+                     "Cho dù bạn là sinh viên hay người đi làm, đây là sự lựa chọn hoàn hảo.",
+                     "Nếu vấn đề vẫn còn tồn tại, hãy liên hệ đội hỗ trợ.",
+                     "Hãy chắc chắn để sao lưu dữ liệu trước khi tiếp tục."):
+            self.assertIn("văn dịch (vi)", groups(text), text)
+        human = ("Anh Minh ơi, em gửi bản báo cáo cuối trong file đính kèm. Anh xem có gì chưa ổn thì báo em nhé. "
+                 "Máy vẫn lỗi thì khởi động lại, còn lỗi nữa thì gọi bên hỗ trợ.")
+        self.assertNotIn("văn dịch (vi)", groups(human))
+
     def test_no_double_count_make_sure(self):
         hits, _ = scan.scan("Hãy chắc chắn rằng bạn ngủ đủ giấc.")
         self.assertEqual(len(hits["văn dịch (vi)"]), 1)
