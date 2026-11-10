@@ -212,9 +212,25 @@ The skill has a catalog of 62 AI-writing patterns, each with a before and after 
 | Pronouns of address | "bạn" in an email to your boss; mixing "bạn" and "quý vị" | one pair that fits the relationship |
 | English glosses in brackets | hiệu suất (performance) | hiệu suất |
 
-Harder to spot is word-for-word translation: every word is Vietnamese, but the sentence still follows English. It shows as "bạn" (*you*) opening every sentence and "của bạn" (*your*) after every noun, "một/các/những" standing in for English articles and plurals, agentless passives and objects as grammatical subjects, tense markers ("đã", "đang", "sẽ") and "có thể" (*can*) everywhere, sentences opening with "Với..." (*With/For...*) or "Để..., bạn cần..." (*To..., you need...*), and idioms or headings translated literally. For text like this the skill rewrites from the idea, the way Vietnamese speakers would say it to each other, instead of swapping phrases one by one.
+Harder to spot is word-for-word translation: every word is Vietnamese, but the sentence still follows English. It tends to show in these places:
 
-Some patterns only show when you read the whole text, even after each sentence is fine. Examples are sentences that open with a label ("nói gọn", "nói cho thật:"), the "not X but Y" shape used three times or more, every paragraph closing on a line that sounds like a proverb, colons everywhere, full stops that chop one thought into several short sentences (or the reverse, one sentence joined from too many clauses), and a long post that covers every topic.
+- "bạn" (*you*) opens every sentence and "của bạn" (*your*) follows every noun;
+- "một", "các", "những" stand in front of every noun, copying English articles and plurals;
+- passives that never say who acted ("số liệu được giữ nguyên", *the figures are kept*), and objects as grammatical subjects ("Bảng này cho thấy", *This table shows*);
+- "đã", "đang", "sẽ" (tense markers) and "có thể" (*can*) scattered everywhere;
+- sentences that open with "Với..." (*With/For...*) or "Để..., bạn cần..." (*To..., you need...*), and "và" (*and*) joining every clause;
+- idioms and headings translated literally ("tin tốt là", *the good news is*; "Bắt đầu nhanh", *Quick start*).
+
+For text like this the skill rewrites from the idea, the way Vietnamese speakers would say it, instead of swapping phrases one by one.
+
+Some patterns only show when you read the whole text, even after each sentence is fine:
+
+- sentences that open with a label ("nói gọn", "nói cho thật:");
+- the "not X but Y" shape used three times or more;
+- every paragraph closing on a line that sounds like a proverb;
+- colons everywhere;
+- full stops that chop one thought into several short sentences, or the reverse, one sentence joined from too many clauses;
+- a long post that covers every topic.
 
 Slides and long documents have their own group. The skill catches titles that are only labels ("Tổng quan", "Kết luận"), titles that count points ("3 trụ cột", *3 pillars*), exactly three bullets on every slide, empty promises ("chi tiết sẽ trao đổi sau", *details to be discussed later*) and speaker notes that read like a memo. The slide-writing guide is in [references/slides.md](skills/viet-nhu-nguoi/references/slides.md) (in Vietnamese).
 
