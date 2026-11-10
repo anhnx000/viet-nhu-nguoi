@@ -32,7 +32,7 @@ Thiếu bối cảnh mà người dùng vẫn cần gấp thì viết một tran
 
 - Một slide, một thông điệp. Nhiều ý quá thì tách slide. Không thu nhỏ chữ để nhồi.
 - Mật độ theo cách trình bày. Nói trực tiếp: 1-3 ý mỗi slide, chữ to, phần còn lại để trong lời nói. Gửi để đọc: 4-6 ý, đọc riêng slide nào cũng hiểu, không cần người nói.
-- Gạch đầu dòng: mỗi gạch một ý, một dòng, dưới chừng 15 chữ. Mỗi gạch một góc khác nhau (tiền, thời gian, người, rủi ro), không nói lại cùng một ý. Cùng cấp thì cùng kiểu câu. Có một ý thì viết thành câu thường.
+- Gạch đầu dòng: mỗi gạch một ý, một dòng, không quá 15 chữ. Mỗi gạch một góc khác nhau (tiền, thời gian, người, rủi ro), không nói lại cùng một ý. Cùng cấp thì cùng kiểu câu. Có một ý thì viết thành câu thường.
 - Không bịa để lấp chỗ trống. Thiếu số liệu thì ghi `[cần xác nhận: ...]` và báo người dùng. Slide quá mỏng thì gộp với slide bên cạnh, đừng thêm ý cho đầy.
 - Cả deck, mỗi sự việc chỉ một cách gọi, một con số. Viết tắt thì lần đầu ghi đầy đủ.
 - Từ đánh giá ("đáng kể", "hạn chế", "đủ", "tối ưu") phải có căn cứ ngay trên slide đó. Không có thì thay bằng con số hoặc bỏ.
@@ -63,7 +63,7 @@ Nên thay bằng biểu đồ vẽ từ số liệu thật, ảnh chụp màn h�
 ## 6. Soát trước khi gửi
 
 0. `python3 -I scripts/scan.py --text <file.pptx>`: in chữ từng slide kèm số slide, để đọc trước khi soi hay sửa.
-1. `python3 -I scripts/scan.py <file.pptx>`: quét chữ trên slide, bảng và ghi chú. Kết quả ghi theo vị trí, ví dụ "slide 3, ghi chú". Ngoài các dấu hiệu chung, máy quét bắt thêm: tiêu đề dạng nhãn, tiêu đề có tiền tố nhãn, tiêu đề đếm số ý, gạch đầu dòng dài, slide nhiều chữ, slide nào cũng đúng 3-4 ý, ba tiêu đề cùng khuôn, tên khung lộ ra slide, câu ghi chú dài quá, khó nói một hơi, ngoặc trong lời nói.
+1. `python3 -I scripts/scan.py <file.pptx>`: quét chữ trên slide, bảng và ghi chú. Kết quả ghi theo vị trí, ví dụ "slide 3, ghi chú". Ngoài các dấu hiệu chung, máy quét bắt thêm: tiêu đề dạng nhãn, tiêu đề có tiền tố nhãn, tiêu đề đếm số ý, gạch đầu dòng dài, slide nhiều chữ, slide nào cũng đúng 3-4 ý, ba tiêu đề cùng khuôn, tên khung lộ ra slide, câu ghi chú dài quá nên khó nói một hơi, ngoặc trong lời nói.
 2. `python3 -I scripts/scan.py --titles <file>`: đọc liền các tiêu đề.
 3. Sửa xong một file `.pptx` có sẵn thì chạy `python3 -I scripts/check_facts.py goc.pptx moi.pptx` để chắc không mất hay tự thêm con số, ngày tháng, tên viết tắt.
 4. Deck hay tài liệu quan trọng thì nhờ một người chưa biết gì đọc thử (mục 7).
@@ -75,8 +75,8 @@ Muốn sửa thẳng file `.pptx` thì dùng skill `pptx` nếu có. Nếu khôn
 Người viết không thấy được chỗ mình viết khó hiểu, vì trong đầu đã có sẵn bối cảnh. Nếu có công cụ gọi subagent, giao file cho một agent mới. Chỉ đưa đường dẫn file và lời dặn dưới đây, không kể deck làm ra sao, dùng skill gì, hay chỗ nào mình đã cân nhắc kỹ:
 
 > Bạn là người xem bộ slide (hoặc tài liệu) này lần đầu, không biết nó làm ra sao. Đọc hết file `<đường dẫn>`, không đọc file nào khác.
-> 1. Viết tự do 3-10 điều khiến bạn khó hiểu, không tin, hoặc là người duyệt thì bạn sẽ trả lại.
-> 2. Chỉ đọc các tiêu đề từ trên xuống: chỗ nào nhảy ý, lặp ý, hoặc kết luận xuất hiện mà không có căn cứ?
+> 1. Viết tự do 3-10 chỗ bạn thấy khó hiểu, không tin, hoặc nếu là người duyệt thì bạn sẽ trả lại.
+> 2. Chỉ đọc các tiêu đề từ trên xuống: chỗ nào nhảy ý, lặp ý, hoặc kết luận đưa ra mà không có căn cứ?
 > 3. Liệt kê kèm số slide và câu trích: con số mâu thuẫn giữa các slide; tiêu đề nói một đằng, nội dung hoặc biểu đồ nói một nẻo; từ đánh giá không có căn cứ ("đáng kể", "hạn chế", "đủ"); slide sau lặp lại slide trước; mục lục không khớp nội dung; câu tiếng Việt nghe lạ hoặc giống văn dịch.
 > 4. Đoán 5 câu người xem sẽ hỏi, và trả lời từng câu chỉ bằng nội dung trong file. Câu nào không trả lời được thì ghi rõ.
 > 5. Chấm 7 tiêu chí, mỗi tiêu chí 1-10, kèm một câu lý do: **mạch** (đọc liền tiêu đề có thành một lập luận không), **một thông điệp** (mỗi slide nói rõ một ý, không nhồi, không quá mỏng), **cấu trúc** (so sánh, nhân quả, số liệu có được trình bày bằng bảng, sơ đồ, biểu đồ hợp lý không), **dễ nhìn** (vài giây đầu có biết nhìn vào đâu không), **dùng được** (người xem có đủ căn cứ để quyết hay làm không), **nhất quán** (từ ngữ, con số, cách trình bày có khớp giữa các slide không), **trung thực** (số liệu có nguồn, có nói rõ giới hạn, có gây hiểu nhầm không). Ghi tổng điểm trên 70.
