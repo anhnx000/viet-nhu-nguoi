@@ -373,6 +373,18 @@ class DeepTranslationese(unittest.TestCase):
         self.assertIn("văn dịch (vi)", groups("Tin tốt là bản mới làm nên sự khác biệt."))
         self.assertIn("quan hệ từ dịch sát", groups("Đây là nơi mà đội họp mỗi sáng."))
 
+    def test_calqued_set_phrases(self):
+        for text in ("Đầu tiên và quan trọng nhất, lên kế hoạch cho mỗi ngày.",
+                     "Cuối cùng nhưng không kém phần quan trọng, ngủ đủ giấc.",
+                     "Nếu đang tìm mẹo làm việc thì bạn đã đến đúng nơi.",
+                     "Như một quy tắc chung, sáng nào cũng dành mười lăm phút."):
+            self.assertIn("văn dịch (vi)", groups(text), text)
+        self.assertNotIn("văn dịch (vi)", groups("Trước hết là lên kế hoạch. Cuối cùng thì ngủ cho đủ."))
+
+    def test_no_double_count_make_sure(self):
+        hits, _ = scan.scan("Hãy chắc chắn rằng bạn ngủ đủ giấc.")
+        self.assertEqual(len(hits["văn dịch (vi)"]), 1)
+
     def test_dense_pronouns(self):
         dense = "Bạn mở ứng dụng của bạn rồi bạn chọn file bạn muốn sửa trong máy tính.\n\n" * 8
         self.assertIn("đại từ dày", groups(dense))

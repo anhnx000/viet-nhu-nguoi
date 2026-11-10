@@ -1,5 +1,11 @@
 # Changelog
 
+## 2.4.2 (2026-11-11)
+
+- Thử máy quét trên một đoạn văn dịch mới viết, không lấy từ repo. Máy quét bỏ sót các cụm mở và chuyển đoạn quen thuộc của bài hướng dẫn tiếng Anh. Đã thêm vào "văn dịch (vi)" và mục 61: "bạn đã đến đúng nơi", "đầu tiên và quan trọng nhất", "như một quy tắc chung", "cuối cùng nhưng không kém phần quan trọng", "kẻ thù lớn nhất của bạn", "chúng ta sẽ cùng nhau xem xét", "tìm kiếm một cách để". Đoạn thử từ 31/100 lên 49/100, điểm các file mẫu không đổi.
+- "hãy chắc chắn rằng bạn" không còn bị đếm hai lần.
+- CHANGELOG: sửa một cụm dịch sát ("như một luật").
+
 ## 2.4.1 (2026-11-10)
 
 - Vẽ lại banner ở độ phân giải gấp đôi, tô đỏ các cụm máy quét bắt được.
@@ -22,7 +28,7 @@ Văn dịch từng chữ: chữ nào cũng là tiếng Việt mà câu vẫn the
 
 Ngắt câu tiếng Việt và các việc tồn đọng của máy quét.
 
-- `SKILL.md`: quy tắc ngắt câu viết lại cho nhất quán. Ngắt theo ý, không chặt vụn, cũng không gộp quá ba vế; từ nối phải đúng quan hệ; ngoặc đơn và chấm phẩy dùng dè. Bỏ lời khuyên xen câu dài ngắn như một luật.
+- `SKILL.md`: quy tắc ngắt câu viết lại cho nhất quán. Ngắt theo ý, không chặt vụn, cũng không gộp quá ba vế; từ nối phải đúng quan hệ; ngoặc đơn và chấm phẩy dùng dè. Bỏ lời khuyên bắt buộc xen câu dài với câu ngắn.
 - Dấu hiệu 55, câu gộp quá tay: chuỗi vế nối bằng dấu phẩy. `scan.py` báo "câu quá dài" từ 60 chữ; ngắn hơn phải tự đọc.
 - `scan.py --meta`: bỏ qua phần trích dẫn (dòng `>`, bảng, chữ trong ngoặc kép) khi quét văn bản bàn về chính các dấu hiệu. README từ 19/100 xuống 0/100 với `--meta`, điểm các file mẫu không đổi.
 - "Hai chấm dồn dập" không còn đếm dấu hai chấm cuối đoạn dẫn vào danh sách, khối lệnh, bảng. Bài mẫu từ 20/88 còn 19/88 câu, điểm vẫn 55/100.

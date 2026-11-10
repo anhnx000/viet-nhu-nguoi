@@ -111,8 +111,11 @@ PATTERNS = {
         r"(làm|tạo) (nên|ra) sự khác biệt", r"chơi (một )?vai trò", r"đóng một vai trò",
         r"(có|lấy|mang lại) (một )?cái nhìn (sâu sắc|tổng quan|rõ ràng)", r"(tốt|đúng|chính xác) hơn (may rủi|ngẫu nhiên)",
         r"là (rất |vô cùng )?(quan trọng|cần thiết|hữu ích) (để|rằng)\b", r"bạn có thể (sẽ )?(muốn|cần phải)",
-        r"hãy chắc chắn rằng", r"(đảm bảo|chắc chắn) rằng bạn", r"cảm thấy tự do", r"đừng ngần ngại",
+        r"hãy chắc chắn rằng", r"(?<!hãy )(đảm bảo|chắc chắn) rằng bạn", r"cảm thấy tự do", r"đừng ngần ngại",
         r"như đã (đề cập|nói|nêu) (ở trên|trước đó)", r"một loạt các", r"theo (một )?cách mà",
+        r"(bạn )?đã đến đúng nơi", r"đầu tiên và (quan trọng nhất|trước hết)", r"(như|theo) một (quy tắc|nguyên tắc) chung",
+        r"cuối cùng nhưng không (kém|phải là ít) (phần )?quan trọng", r"kẻ thù (lớn nhất|tồi tệ nhất) của (bạn|chúng ta)",
+        r"(chúng ta|mình) sẽ cùng nhau (xem xét|tìm hiểu|khám phá|đi qua)", r"(đang )?tìm kiếm một cách để",
     ],
     "bị động dịch sát": [
         r"\b((sẽ|đã|đang|cần|phải|nên|có thể) )?được (giữ nguyên|cập nhật|cài đặt|thiết kế|xây dựng|phát triển|tạo ra|"
