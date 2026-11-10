@@ -121,12 +121,15 @@ PATTERNS = {
         r"(bất kỳ|bất cứ) câu hỏi (hoặc|hay) (mối quan tâm|thắc mắc)", r"với (bạn|khách hàng|người dùng) trong tâm trí",
         r"cho dù bạn là", r"sự lựa chọn hoàn hảo", r"nhận được nhiều hơn từ", r"vẫn còn tồn tại",
         r"bạn (sẽ )?không muốn (bỏ lỡ|mất)",
+        # khuôn báo cáo và bài giải thích
+        r"tiến về phía trước", r"(đạt được|có) những tiến bộ đáng kể", r"điều đó (được )?nói rằng",
+        r"hãy nghĩ về (nó|điều này|chúng) như", r"không phải là không có (những )?(hạn chế|nhược điểm|thách thức|rủi ro)",
         r"(chúng ta|mình) sẽ cùng nhau (xem xét|tìm hiểu|khám phá|đi qua)", r"(đang )?tìm kiếm một cách để",
     ],
     "bị động dịch sát": [
         r"\b((sẽ|đã|đang|cần|phải|nên|có thể) )?được (giữ nguyên|cập nhật|cài đặt|thiết kế|xây dựng|phát triển|tạo ra|"
         r"sử dụng|thực hiện|triển khai|cung cấp|áp dụng|đánh giá|xem là|coi là|coi như|lưu trữ|tối ưu|tích hợp|"
-        r"quản lý|xử lý|xác định|đề cập|thiết lập|cấu hình|ghi nhận|trình bày|mô tả|liệt kê|đặt tên|biết đến)\b(?! bởi)",
+        r"quản lý|xử lý|xác định|lập trình|đề cập|thiết lập|cấu hình|ghi nhận|trình bày|mô tả|liệt kê|đặt tên|biết đến)\b(?! bởi)",
     ],
     "vật làm chủ ngữ": [
         r"\b(bảng|hình|biểu đồ|sơ đồ|kết quả|điểm số|số liệu|dữ liệu|con số|báo cáo|bài viết|tài liệu|công cụ|"
@@ -138,7 +141,7 @@ PATTERNS = {
         r"với (sự|việc|những|các|một) \w+|đối với \w+|dựa trên \w+|thông qua \w+)",
     ],
     "quan hệ từ dịch sát": [
-        r"\b(nơi|người|những người|điều|thứ|lý do|thời điểm) mà\b", r"\blà một trong (những|các)\b",
+        r"\b(nơi|người|những người|điều|thứ|lý do|thời điểm) mà\b", r"\bmà (tập trung vào|cho phép|giúp)\b", r"\bcàng nhiều [^.,!?\n]{1,30} mà\b", r"\blà một trong (những|các)\b",
         r"\bcũng như là\b", r"\bvà cũng\b", r"\bvà/hoặc\b",
     ],
     "động từ rỗng (vi)": [

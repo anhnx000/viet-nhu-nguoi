@@ -395,6 +395,20 @@ class DeepTranslationese(unittest.TestCase):
                  "Máy vẫn lỗi thì khởi động lại, còn lỗi nữa thì gọi bên hỗ trợ.")
         self.assertNotIn("văn dịch (vi)", groups(human))
 
+    def test_calqued_report_and_explainer(self):
+        for text in ("Tiến về phía trước, nhóm tập trung mở rộng quy mô.",
+                     "Quý này nhóm đã đạt được những tiến bộ đáng kể.",
+                     "Hãy nghĩ về nó như một đứa trẻ học nhận biết con vật.",
+                     "Điều đó nói rằng, học máy không phải là không có những hạn chế của nó."):
+            self.assertIn("văn dịch (vi)", groups(text), text)
+        self.assertIn("quan hệ từ dịch sát", groups("Học máy là một nhánh của trí tuệ nhân tạo mà tập trung vào dữ liệu."))
+        self.assertIn("quan hệ từ dịch sát", groups("Càng nhiều ví dụ mà nó nhìn thấy, nó càng giỏi."))
+        self.assertIn("bị động dịch sát", groups("Mô hình không được lập trình sẵn từng bước."))
+        human = ("Quý này hệ thống phản hồi nhanh hơn 30%, chi phí không tăng. Quý sau nhóm lo phần mở rộng. "
+                 "Học máy giống đứa trẻ tập nhận mặt con vật, xem càng nhiều thì nhận càng đúng, nhưng cũng có giới hạn.")
+        for g in ("văn dịch (vi)", "quan hệ từ dịch sát", "bị động dịch sát"):
+            self.assertNotIn(g, groups(human))
+
     def test_no_double_count_make_sure(self):
         hits, _ = scan.scan("Hãy chắc chắn rằng bạn ngủ đủ giấc.")
         self.assertEqual(len(hits["văn dịch (vi)"]), 1)

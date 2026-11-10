@@ -1,5 +1,12 @@
 # Changelog
 
+## 2.4.4 (2026-11-11)
+
+- Thử thêm hai thể loại: báo cáo quý và bài giải thích kiến thức, đều viết theo kiểu dịch từng chữ. Báo cáo từ 12 lên 26/100, bài giải thích từ 17 lên 43/100.
+- "văn dịch (vi)" bắt thêm "tiến về phía trước", "đạt được những tiến bộ đáng kể", "hãy nghĩ về nó như", "điều đó nói rằng", "không phải là không có những hạn chế". "quan hệ từ dịch sát" bắt "mà tập trung vào/cho phép/giúp" sau danh từ và "càng nhiều X mà". "bị động dịch sát" thêm "được lập trình".
+- Test có đoạn giọng người cùng nội dung để chắc không báo nhầm. Điểm các file mẫu và README không đổi.
+- Còn sót: báo cáo dịch vẫn chỉ 26/100. Câu kiểu "Điều đáng nói là", "gửi lời cảm ơn đặc biệt đến" cũng là cách nói quen của báo Việt nên không đưa vào máy quét.
+
 ## 2.4.3 (2026-11-11)
 
 - Thử thêm ba đoạn văn dịch mới viết ở ba thể loại: email công việc, mô tả sản phẩm, hướng dẫn xử lý lỗi. Email dịch nguyên khuôn tiếng Anh trước đây được 0/100, giờ 39/100. Mô tả sản phẩm từ 16 lên 47, hướng dẫn từ 14 lên 37.
