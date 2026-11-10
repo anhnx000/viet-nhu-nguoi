@@ -1,6 +1,6 @@
 # Viết như người · Vietnamese Humanizer
 
-**Chống giọng văn AI cho tiếng Việt (human voice).**
+**Chống giọng văn AI cho tiếng Việt. Nhờ AI viết, đọc lên vẫn là bạn.**
 
 [![test](https://github.com/anhnx000/viet-nhu-nguoi/actions/workflows/test.yml/badge.svg)](https://github.com/anhnx000/viet-nhu-nguoi/actions/workflows/test.yml)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
@@ -9,57 +9,54 @@
 
 ![Trước: văn AI được 72/100. Sau: bản viết lại giọng người được 0/100.](assets/banner.png)
 
-Skill cho [Claude Code](https://code.claude.com/docs/en/skills) giúp văn tiếng Việt do AI viết đọc lên giống người viết. Nó bỏ những thứ khiến người đọc nhận ra ngay là "con AI viết": "Trong bối cảnh hiện nay", "không chỉ... mà còn...", "được phát triển bởi", "tiến hành thực hiện việc", "một cách hiệu quả", "Hy vọng thông tin trên hữu ích!".
+Nhờ AI làm slide, viết email, viết báo cáo thì nhanh, nhưng người đọc nhận ra ngay. Tiêu đề slide là "Tổng quan", "Thách thức". Email mở bằng "Trong bối cảnh hiện nay", kết bằng "Hy vọng thông tin trên hữu ích!". Câu nào cũng "tiến hành thực hiện việc...". Gửi trong nhóm thì không sao, gửi lãnh đạo hay khách hàng thì lại mất công ngồi sửa.
+
+Viết như người là một skill (kỹ năng cài thêm) cho Claude và các trợ lý AI khác. Cài xong, AI viết tiếng Việt như người đi làm thật: tiêu đề slide nói thẳng kết luận, email xưng hô đúng vai, câu gọn, số liệu giữ nguyên. Miễn phí, mã nguồn mở.
 
 *Viet nhu nguoi, chong giong van AI, human voice, Vietnamese humanizer, humanize tieng Viet, bo giong ChatGPT.*
 
-Tiếng Anh vẫn dùng được, nhưng phần làm kỹ nhất là tiếng Việt: văn dịch từ tiếng Anh, danh hóa "việc/sự", giọng công văn, xưng hô sai vai.
+**Đi nhanh:** [Cài, không cần biết code](#cài-trong-vài-phút-không-cần-biết-code) · [Dùng hằng ngày](#dùng-hằng-ngày) · [Trước và sau](#trước-và-sau) · [Skill bắt những gì](#skill-bắt-những-gì) · [Dòng lệnh](#cho-người-dùng-dòng-lệnh) · [Mời một ly cà phê](#mời-một-ly-cà-phê)
 
-## Khi nào nên dùng
+## Dùng vào việc gì
 
-- Bài ChatGPT, Claude hay Gemini viết đọc là biết ngay "văn AI", muốn sửa cho tự nhiên mà không phải viết lại từ đầu.
-- Viết caption, bài Facebook, bài blog, email, báo cáo bằng AI nhưng muốn giữ giọng của mình.
-- Tài liệu dịch từ tiếng Anh nghe cứng, đầy "được... bởi", "Điều này cho phép", "thông qua việc".
-- Email gửi sếp hay khách hàng bị AI xưng "bạn" hoặc trộn "chúng ta" với "quý vị".
-- Muốn kiểm nhanh một bài có bao nhiêu dấu hiệu văn AI trước khi đăng, hoặc chặn trong CI.
+- Slide báo cáo, đề xuất: mỗi tiêu đề là một câu kết luận, đọc lướt tiêu đề là biết cần lãnh đạo quyết gì. Thiếu số liệu thì ghi `[cần xác nhận]`, không bịa cho đầy.
+- Email cho sếp, khách hàng: xưng hô đúng vai (anh/chị/em, quý khách), không mặc định "bạn", nói việc trước.
+- Báo cáo, tài liệu dịch từ tiếng Anh: bỏ kiểu câu dịch "được... bởi", "Điều này cho phép", "thông qua việc".
+- Bài Facebook, LinkedIn, blog: AI viết nháp nhưng giữ giọng của bạn, kể một chuyện cho gọn thay vì ôm hết mọi thứ.
+- Soi trước khi gửi: chỉ ra chỗ nào nghe giống AI, bạn tự quyết sửa hay không.
 
-## Trước và sau
+## Cài trong vài phút, không cần biết code
 
-Bản AI viết:
+Bạn không phải gõ lệnh nào. Bạn nhờ trợ lý AI tự cài, giống nhờ một bạn IT ngồi cạnh.
 
-> Trong bối cảnh hiện nay, việc ứng dụng AI không chỉ là xu hướng mà còn là yếu tố then chốt giúp doanh nghiệp nâng tầm hiệu suất. Điều này được chứng minh bởi nhiều nghiên cứu chỉ ra rằng năng suất có thể tăng một cách đáng kể.
->
-> Bên cạnh đó, đội ngũ của chúng tôi đã tiến hành thực hiện việc triển khai hệ thống mới nhằm mục đích mang lại trải nghiệm liền mạch cho khách hàng. Nó giúp việc quản lý dự án trở nên dễ dàng hơn, nhanh chóng hơn và hiệu quả hơn.
->
-> Hy vọng những thông tin trên sẽ hữu ích cho bạn!
+**Bước 1. Mở một trợ lý AI chạy trên máy tính.** Ví dụ ứng dụng Claude Code trên máy tính (có giao diện bấm chuột, không cần cửa sổ dòng lệnh), hoặc Codex, Cursor, Gemini CLI, OpenCode. Bản chat trên web của Claude hay ChatGPT không cài được gì vào máy, nên cần một trong các bản này.
 
-Sau khi qua skill:
+**Bước 2. Dán câu này vào ô chat:**
 
-> Đội mình đã đưa hệ thống quản lý dự án mới vào dùng. Khách hàng giờ tự xem được tiến độ.
+> Cài giúp tôi skill viet-nhu-nguoi từ https://github.com/anhnx000/viet-nhu-nguoi
 
-Skill không bịa số liệu. Nếu muốn bài có chi tiết, nó sẽ hỏi bạn, rồi viết với đúng những gì bạn đưa:
+**Bước 3. Bấm đồng ý** khi trợ lý xin phép tải và cài. Thường mất chưa tới một phút.
 
-> Từ tháng 3, đội mình chuyển việc theo dõi dự án sang hệ thống mới. Khách hàng tự xem tiến độ, không phải nhắn hỏi như trước, và mỗi tuần đội bớt được khoảng nửa ngày làm báo cáo.
+**Bước 4. Mở một cuộc trò chuyện mới và thử:**
 
-Máy quét đi kèm chấm bản đầu 72/100 (dày đặc) với 16 dấu hiệu, hai bản sau đều 0/100:
+> Viết như người: soạn giúp tôi email xin sếp lùi hạn nộp báo cáo 3 ngày, xưng em
 
-```text
-$ python3 -I skills/viet-nhu-nguoi/scripts/scan.py examples/truoc.md
-Điểm 72/100 (dày đặc): 16 dấu hiệu trong 5 dòng.
-[từ vựng AI (vi)] 3      nâng tầm, trong bối cảnh hiện nay, bên cạnh đó
-[động từ rỗng (vi)] 3    tiến hành thực hiện, thực hiện việc, nhằm mục đích
-[văn dịch (vi)] 2        được chứng minh bởi, trải nghiệm liền mạch
-[danh hóa (vi)] 2        một cách đáng..., trở nên dễ...
-["Điều này"/"Nó" mở câu] 2
-[đối lập giả] 1          không chỉ là xu hướng mà còn
-[thổi phồng] 1           yếu tố then chốt
-[uy tín mơ hồ] 1         nhiều nghiên cứu chỉ ra
-[lời chatbot] 1          hy vọng những thông tin trên
-```
+Email trả về ngắn, nói việc trước, xưng "em" từ đầu đến cuối là skill đã chạy.
 
-## Cài
+Vài câu hay cần về sau, cũng chỉ việc nói với trợ lý:
 
-Cài như plugin, trong Claude Code:
+| Bạn muốn | Bạn gõ |
+| --- | --- |
+| Kiểm tra đã cài chưa | "Máy tôi có skill viet-nhu-nguoi chưa?" |
+| Lấy bản mới | "Cập nhật skill viet-nhu-nguoi lên bản mới nhất" |
+| Gỡ ra | "Gỡ skill viet-nhu-nguoi khỏi máy" |
+
+Trợ lý báo lỗi khi cài? Chụp màn hình rồi [mở issue](https://github.com/anhnx000/viet-nhu-nguoi/issues), mình xem giúp.
+
+<details>
+<summary>Dành cho người quen dòng lệnh: tự gõ lệnh cài</summary>
+
+Trong Claude Code, cài như plugin:
 
 ```text
 /plugin marketplace add anhnx000/viet-nhu-nguoi
@@ -75,8 +72,6 @@ bash install.sh          # symlink
 bash install.sh --copy   # hoặc chép file, nếu muốn đọc lại từng bản cập nhật trước khi cài
 ```
 
-Mở phiên Claude Code mới sau khi cài.
-
 Agent khác (Cursor, Codex, Gemini CLI, OpenCode...) cài bằng công cụ [skills](https://github.com/vercel-labs/skills):
 
 ```bash
@@ -86,22 +81,87 @@ npx skills add anhnx000/viet-nhu-nguoi -g   # cho mọi dự án (cấp người
 
 Lệnh sẽ hỏi cài cho agent nào; thêm `-a claude-code` (hoặc `-a '*'`) và `-y` để bỏ qua các câu hỏi. Skill chỉ là Markdown nên chạy được với mô hình nào mà editor của bạn đang dùng.
 
-## Dùng
+</details>
 
-- Bật cho cả phiên: gõ `/viet-nhu-nguoi`. Từ đó Claude trả lời theo quy tắc của skill, kể cả tin nhắn ngắn.
-- Sửa một đoạn: `/viet-nhu-nguoi <dán văn bản>`, hoặc nói "viết lại file docs/gioi-thieu.md cho bớt giọng AI".
-- Skill cũng tự bật khi bạn nhờ soạn email, tin nhắn, bài đăng, PR mà bạn sẽ gửi dưới tên mình.
-- Muốn bài giống giọng bạn hơn thì đưa kèm một đoạn văn bạn tự viết. Skill đọc nhịp câu, từ nối, cách xưng hô trong đó rồi viết theo.
-- Gọi giọng bằng tên: *đời thường*, *công việc*, *kỹ thuật*, *ấm áp*, *thẳng*. Tên giọng chỉ đổi văn phong, không đổi xưng hô hay nội dung.
-- Chỉ soi, không sửa: nhờ "soi giúp đoạn này" hoặc "audit". Skill liệt kê từng chỗ kèm số mục, lý do và gợi ý sửa ngắn, tách chỗ chắc chắn nên sửa với chỗ tùy người viết.
-- Quét bằng dòng lệnh: `python3 -I skills/viet-nhu-nguoi/scripts/scan.py file.md` (hoặc `file.pptx`) in điểm 0-100 và từng chỗ khớp. Thêm `--json` để lấy kết quả dạng máy đọc, hoặc `--max 30` để thoát mã 1 khi điểm vượt ngưỡng, dùng cho CI hay pre-commit. Thêm `--titles` để chỉ in các tiêu đề theo thứ tự, hoặc `--text` để in toàn bộ chữ và ghi chú của từng slide trong file `.pptx`.
-- Kiểm bản sửa còn giữ đúng dữ kiện: `python3 -I skills/viet-nhu-nguoi/scripts/check_facts.py goc.md moi.md` (đọc được cả `.pptx`) báo lỗi khi số liệu, ngày giờ, link hay code bị mất hoặc bị thêm, và nhắc khi thiếu tên riêng.
+## Dùng hằng ngày
 
-Hai script chỉ dùng thư viện chuẩn của Python.
+Cứ nói như nhờ đồng nghiệp. Không có cú pháp nào phải nhớ.
+
+| Bạn gõ | Skill làm gì |
+| --- | --- |
+| "Làm slide báo cáo tiến độ dự án tuần này để sếp duyệt" | Hỏi trước: ai xem, cần họ quyết gì, trình bày trực tiếp hay gửi đọc. Rồi mới dựng slide |
+| "Sửa file bao-cao-q3.pptx cho bớt giọng AI" | Đọc chữ và ghi chú từng slide, sửa tiêu đề, gạch đầu dòng, lời thuyết trình |
+| "Viết email xin sếp lùi deadline 3 ngày, xưng em" | Viết email ngắn, nói việc trước, giữ đúng "em"/"anh" từ đầu đến cuối |
+| "Viết bài Facebook kể về dự án của mình, khoảng 300 chữ" | Hỏi bạn một hai chuyện thật đã xảy ra, rồi kể đúng một chuyện. Không chia mục, không giảng lại kiến thức nền |
+| "Soi giúp đoạn này chỗ nào giọng AI" | Chỉ ra từng chỗ kèm lý do và gợi ý sửa, không tự sửa |
+| Dán kèm một email bạn tự viết | Học nhịp câu, từ nối, cách xưng hô của bạn rồi viết theo |
+
+Bốn thói quen giúp kết quả tốt hơn hẳn:
+
+1. Nói rõ ai đọc và bạn là ai với họ. "Gửi chị trưởng phòng, xưng em" cho ra email khác hẳn "gửi khách hàng, xưng chúng tôi".
+2. Dán một đoạn bạn tự viết, cùng loại với bài sắp viết. Skill bắt chước độ dài câu và từ bạn hay dùng.
+3. Đưa số liệu, tên, ngày thật. Thiếu thì skill hỏi lại hoặc để trống, nó không tự nghĩ ra.
+4. Thấy chỗ nào lạ thì nói "mình không nói thế". Skill đổi theo và nhớ cho phần còn lại của cuộc trò chuyện.
+
+Vài cách gọi khác:
+
+- Gõ `/viet-nhu-nguoi` để bật cho cả phiên. Từ đó mọi câu trả lời đều theo quy tắc của skill, kể cả tin nhắn ngắn.
+- Skill cũng tự bật khi bạn nhờ soạn email, tin nhắn, bài đăng mà bạn sẽ gửi dưới tên mình.
+- Gọi giọng bằng tên: *đời thường*, *công việc*, *kỹ thuật*, *ấm áp*, *thẳng*. Tên giọng chỉ đổi văn phong, xưng hô và nội dung giữ nguyên.
+- Bài bạn tự viết thì skill chỉ sửa nhẹ.
+
+## Trước và sau
+
+### Slide
+
+Hai bộ slide mẫu trong [`examples/`](examples), chỉ đọc tiêu đề.
+
+Slide AI làm:
+
+```text
+1. Chuyển đổi số: Hành trình kiến tạo giá trị
+2. Tổng quan
+3. Thách thức
+4. 3 trụ cột giải pháp
+5. Lợi ích
+6. Kết luận
+7. Cảm ơn
+```
+
+Slide làm theo skill:
+
+```text
+1. Đề xuất thuê thêm 1 QA cho quý 1/2027
+2. Quý 3 trễ 2 tuần, cả 2 lần đều do thiếu người test
+3. Thuê 1 QA rẻ hơn tiếp tục trễ
+4. Cần anh duyệt trước 30/11 để kịp tuyển
+```
+
+Bộ thứ hai chỉ cần đọc bốn tiêu đề là hiểu cả đề xuất. Máy quét đi kèm chấm bộ đầu 48/100, bộ sau 0/100.
+
+### Email, báo cáo
+
+Bản AI viết:
+
+> Trong bối cảnh hiện nay, việc ứng dụng AI không chỉ là xu hướng mà còn là yếu tố then chốt giúp doanh nghiệp nâng tầm hiệu suất. Điều này được chứng minh bởi nhiều nghiên cứu chỉ ra rằng năng suất có thể tăng một cách đáng kể.
+>
+> Bên cạnh đó, đội ngũ của chúng tôi đã tiến hành thực hiện việc triển khai hệ thống mới nhằm mục đích mang lại trải nghiệm liền mạch cho khách hàng. Nó giúp việc quản lý dự án trở nên dễ dàng hơn, nhanh chóng hơn và hiệu quả hơn.
+>
+> Hy vọng những thông tin trên sẽ hữu ích cho bạn!
+
+Sau khi qua skill:
+
+> Đội mình đã đưa hệ thống quản lý dự án mới vào dùng. Khách hàng giờ tự xem được tiến độ.
+
+Skill không bịa số liệu. Muốn bài có chi tiết thì nó hỏi bạn, rồi viết đúng với những gì bạn đưa:
+
+> Từ tháng 3, đội mình chuyển việc theo dõi dự án sang hệ thống mới. Khách hàng tự xem tiến độ, không phải nhắn hỏi như trước, và mỗi tuần đội bớt được khoảng nửa ngày làm báo cáo.
+
+Máy quét chấm bản đầu 72/100 với 16 dấu hiệu, hai bản sau đều 0/100.
 
 ## Skill bắt những gì
 
-Danh mục đầy đủ có 44 dấu hiệu, mỗi dấu hiệu kèm ví dụ trước/sau, nằm trong [references/patterns.md](skills/viet-nhu-nguoi/references/patterns.md). Nhóm G dành riêng cho tiếng Việt:
+Danh mục đầy đủ có 53 dấu hiệu, mỗi dấu hiệu kèm ví dụ trước/sau, nằm trong [references/patterns.md](skills/viet-nhu-nguoi/references/patterns.md). Nhóm G dành riêng cho tiếng Việt:
 
 | Dấu hiệu | Ví dụ | Sửa thành |
 | --- | --- | --- |
@@ -115,25 +175,35 @@ Danh mục đầy đủ có 44 dấu hiệu, mỗi dấu hiệu kèm ví dụ tr
 | Xưng hô | cả bài "bạn" gửi sếp, trộn "bạn"/"quý vị" | một cặp xưng hô đúng vai |
 | Chêm tiếng Anh | hiệu suất (performance) | hiệu suất |
 
-Nhóm H dành cho slide và tài liệu nhiều trang (xem mục dưới). Các nhóm còn lại áp cho cả tiếng Việt lẫn tiếng Anh: đối lập giả, câu chốt một dòng, bộ ba ép buộc, gạch ngang dài, thổi phồng, mượn uy tín mơ hồ, in đậm và emoji trang trí, lời chatbot, giải thích lại điều người đọc đã biết.
+Nhóm I là những dấu hiệu chỉ thấy khi nhìn cả bài, sau khi từng câu đã sạch: nhãn báo giọng ("nói gọn", "nói cho thật:"), "không phải X mà là Y" lặp từ ba lần, đoạn nào cũng chốt một câu châm ngôn, dấu hai chấm dồn dập, bài đăng dài ôm đủ mọi chủ đề.
 
-Skill cũng biết khi nào không nên sửa: giọng vùng miền, khẩu ngữ, thuật ngữ Hán Việt đúng chỗ, câu bị động trong tài liệu kỹ thuật, và các từ nhỏ làm đổi nghĩa như "vẫn", "chưa", "chỉ", "có thể" đều được giữ. Bài bạn tự viết thì skill chỉ sửa nhẹ.
+Nhóm H dành cho slide và tài liệu nhiều trang: tiêu đề dạng nhãn ("Tổng quan", "Kết luận"), tiêu đề đếm số ý ("3 trụ cột"), slide nào cũng đúng ba ý, hứa suông ("chi tiết sẽ trao đổi sau"), ghi chú thuyết trình viết như công văn. Hướng dẫn riêng cho slide nằm trong [references/slides.md](skills/viet-nhu-nguoi/references/slides.md). Các nhóm còn lại áp cho cả tiếng Việt lẫn tiếng Anh: đối lập giả, câu chốt một dòng, bộ ba ép buộc, gạch ngang dài, thổi phồng, mượn uy tín mơ hồ, in đậm và emoji trang trí, lời chatbot, giải thích lại điều người đọc đã biết.
 
-## Slide và thuyết trình
+Skill cũng biết khi nào không nên sửa: giọng vùng miền, khẩu ngữ, thuật ngữ Hán Việt đúng chỗ, câu bị động trong tài liệu kỹ thuật, và các từ nhỏ làm đổi nghĩa như "vẫn", "chưa", "chỉ", "có thể" đều được giữ.
 
-Làm slide bằng AI thì người xem nhận ra từ trước khi đọc kỹ câu nào: tiêu đề "Tổng quan", "Thách thức", "Giải pháp", slide nào cũng đúng ba ý, ghi chú thuyết trình viết như công văn. Skill có thêm hướng dẫn riêng ([references/slides.md](skills/viet-nhu-nguoi/references/slides.md)):
+## Cho người dùng dòng lệnh
 
-- Hỏi đủ bối cảnh trước khi dựng deck: ai xem, cần họ quyết gì, trình bày trực tiếp hay gửi đọc.
-- Viết mạch bằng tiêu đề trước. Mỗi tiêu đề là một câu kết luận, đọc liền từ trên xuống phải thành một lập luận.
-- Mỗi slide một thông điệp, thiếu số liệu thì ghi `[cần xác nhận]` chứ không bịa cho đầy.
-- Ghi chú thuyết trình viết để nói: câu ngắn, không ngoặc, nói điều slide không ghi.
-- Nhờ một agent mới, không biết bối cảnh, đọc thử deck, chấm 7 tiêu chí (thang 70 điểm), rồi lập bảng góp ý nhận/không nhận.
+Hai script đi kèm chỉ dùng thư viện chuẩn của Python.
 
-Máy quét đọc thẳng file `.pptx` (chữ trên slide, bảng, ghi chú) và báo theo từng slide:
+- Quét điểm: `python3 -I skills/viet-nhu-nguoi/scripts/scan.py file.md` (hoặc `file.pptx`) in điểm 0-100 và từng chỗ khớp. Thêm `--json` để lấy kết quả dạng máy đọc, `--max 30` để thoát mã 1 khi điểm vượt ngưỡng (dùng cho CI hay pre-commit), `--titles` để chỉ in các tiêu đề theo thứ tự, `--text` để in toàn bộ chữ và ghi chú của từng slide trong file `.pptx`.
+- Kiểm dữ kiện: `python3 -I skills/viet-nhu-nguoi/scripts/check_facts.py goc.md moi.md` (đọc được cả `.pptx`) báo lỗi khi số liệu, ngày giờ, link hay code bị mất hoặc bị thêm, và nhắc khi thiếu tên riêng.
+- Deck quan trọng: nhờ một agent mới, không biết bối cảnh, đọc thử, chấm 7 tiêu chí (thang 70 điểm), rồi lập bảng góp ý nhận/không nhận cho bạn quyết.
 
 ```text
+$ python3 -I skills/viet-nhu-nguoi/scripts/scan.py examples/truoc.md
+Điểm 72/100 (dày đặc): 16 dấu hiệu trong 5 dòng, 110 chữ.
+[từ vựng AI (vi)] 3      nâng tầm, trong bối cảnh hiện nay, bên cạnh đó
+[động từ rỗng (vi)] 3    tiến hành thực hiện, thực hiện việc, nhằm mục đích
+[văn dịch (vi)] 2        được chứng minh bởi, trải nghiệm liền mạch
+[danh hóa (vi)] 2        một cách đáng..., trở nên dễ...
+["Điều này"/"Nó" mở câu] 2
+[đối lập giả] 1          không chỉ là xu hướng mà còn
+[thổi phồng] 1           yếu tố then chốt
+[uy tín mơ hồ] 1         nhiều nghiên cứu chỉ ra
+[lời chatbot] 1          hy vọng những thông tin trên
+
 $ python3 -I skills/viet-nhu-nguoi/scripts/scan.py examples/slide-truoc.pptx
-Điểm 48/100 (nhiều dấu hiệu): 21 dấu hiệu trong 7 slide.
+Điểm 48/100 (nhiều dấu hiệu): 21 dấu hiệu trong 7 slide, 176 chữ.
 [từ vựng AI (vi)] 7
 [tiêu đề dạng nhãn] 4        slide 2: Tổng quan, slide 3: Thách thức, slide 5: Lợi ích, slide 6: Kết luận
 [hứa suông] 1                slide 5, ghi chú: chi tiết sẽ được trao đổi sau
@@ -141,15 +211,7 @@ $ python3 -I skills/viet-nhu-nguoi/scripts/scan.py examples/slide-truoc.pptx
 [câu khó nói (ghi chú)] 1    slide 2, ghi chú: Như chúng ta có thể thấy, ...
 [số gạch đầu dòng đều] 1     5/5 slide có đúng 3 ý
 ...
-
-$ python3 -I skills/viet-nhu-nguoi/scripts/scan.py --titles examples/slide-sau.pptx
- 1. Đề xuất thuê thêm 1 QA cho quý 1/2027
- 2. Quý 3 trễ 2 tuần, cả 2 lần đều do thiếu người test
- 3. Thuê 1 QA rẻ hơn tiếp tục trễ
- 4. Cần anh duyệt trước 30/11 để kịp tuyển
 ```
-
-Bản sau được 0/100. Chỉ đọc bốn tiêu đề là đủ hiểu cả đề xuất.
 
 ## Nên biết
 
@@ -164,14 +226,14 @@ Skill giúp văn bản tự nhiên và dễ đọc hơn, nhưng không cam kết
 ```text
 skills/viet-nhu-nguoi/
 ├── SKILL.md                 quy tắc chính, Claude nạp khi skill được gọi
-├── references/patterns.md   44 dấu hiệu, ví dụ trước/sau
+├── references/patterns.md   53 dấu hiệu, ví dụ trước/sau
 ├── references/slides.md     cách viết slide, lời thuyết trình, nhờ người đọc thử
 ├── references/sources.md    nguồn tham khảo: bài viết, nghiên cứu, hướng dẫn giọng văn, skill khác
 ├── scripts/scan.py          máy quét có điểm 0-100, không cần thư viện ngoài
 ├── scripts/check_facts.py   kiểm bản sửa giữ đúng số liệu, ngày giờ, link, code
 ├── scripts/slides.py        đọc chữ và ghi chú trong file .pptx, chỉ dùng thư viện chuẩn
 └── LICENSE-humanizer        giấy phép MIT của blader/humanizer
-assets/                      mã QR ủng hộ
+assets/                      banner và mã QR mời cà phê
 examples/                    văn mẫu và deck .pptx trước/sau dùng trong README và test
 tests/test_scan.py           python3 -m unittest discover -s tests
 ```
@@ -180,19 +242,30 @@ tests/test_scan.py           python3 -m unittest discover -s tests
 
 Gặp một kiểu câu AI tiếng Việt mà skill chưa bắt, hoặc thấy skill sửa sai một câu vốn tự nhiên? Mở issue và dán câu đó vào, kèm bản bạn thấy đúng. Pull request thêm dấu hiệu mới nên có ví dụ trước/sau và một test trong `tests/test_scan.py`, gồm cả trường hợp không được báo nhầm.
 
-## Ủng hộ
+## Mời một ly cà phê
 
-Viết như người miễn phí, giấy phép MIT, và sẽ luôn như vậy. Mình làm skill này vào thời gian rảnh. Nếu nó giúp bạn bớt thời gian sửa văn, một ly cà phê giúp mình giữ skill luôn mới:
+Viết như người miễn phí, giấy phép MIT, và sẽ giữ như vậy. Mình làm skill này vào thời gian rảnh. Nếu nó giúp bạn bớt một buổi ngồi sửa văn, bạn có thể mời mình một ly cà phê sữa đá.
+
+<table>
+  <tr>
+    <td width="240" align="center">
+      <img src="assets/donate-vietqr.png" alt="Mã VietQR mời cà phê qua VPBank / Napas 247" width="210">
+    </td>
+    <td>
+      <b>Quét bằng app ngân hàng nào cũng được</b> (VietQR / Napas 247).<br><br>
+      Số tiền tùy bạn, một ly cà phê là mình vui cả buổi.<br><br>
+      Nội dung chuyển khoản ghi <code>viet-nhu-nguoi</code> để mình biết ly này từ đâu tới.
+    </td>
+  </tr>
+</table>
+
+Tiền cà phê đổi thành thời gian cho ba việc:
 
 - cập nhật danh mục khi mô hình mới ra, vì mỗi đời mô hình lại có bộ từ ưa dùng riêng;
 - biến những câu các bạn báo thành test, đọc và trả lời issue, pull request;
 - làm tốt thêm máy quét và công cụ kiểm dữ kiện.
 
-<img src="assets/donate-vietqr.png" alt="Mã VietQR ủng hộ qua VPBank / Napas 247" width="220">
-
-Quét bằng app ngân hàng bất kỳ hỗ trợ VietQR / Napas 247. Ghi nội dung chuyển khoản là "viet-nhu-nguoi" để mình biết khoản ủng hộ đến từ đâu.
-
-Không tiện ủng hộ tiền thì những việc này giúp không kém: thả ⭐ cho repo, giới thiệu cho người hay dùng AI viết tiếng Việt, hoặc mở issue kèm một câu skill sửa chưa đúng. Ủng hộ là lời cảm ơn, không phải phí hỗ trợ: issue của ai cũng được xem như nhau.
+Chưa tiện chuyển khoản thì ba việc này quý không kém: gắn sao cho repo, giới thiệu cho một người hay dùng AI viết tiếng Việt, hoặc mở issue kèm một câu skill sửa chưa đúng. Có mời cà phê hay không thì issue của ai cũng được xem như nhau.
 
 ## Nguồn
 

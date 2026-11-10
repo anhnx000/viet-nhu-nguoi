@@ -1,6 +1,6 @@
 # Viết như người · Vietnamese Humanizer
 
-**Human voice for Vietnamese: chống giọng văn AI.**
+**Human voice for Vietnamese (chống giọng văn AI). Let AI draft it, and still sound like you.**
 
 [![test](https://github.com/anhnx000/viet-nhu-nguoi/actions/workflows/test.yml/badge.svg)](https://github.com/anhnx000/viet-nhu-nguoi/actions/workflows/test.yml)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
@@ -13,9 +13,108 @@
 >
 > *Viet nhu nguoi, chong giong van AI, human voice, Vietnamese humanizer, humanize tieng Viet, viet lai van AI tu nhien, bo giong ChatGPT.*
 
-A [Claude Code skill](https://code.claude.com/docs/en/skills) that makes AI-written Vietnamese read like a person wrote it. It removes the phrases Vietnamese readers spot right away: "Trong bối cảnh hiện nay" (*in today's context*), "không chỉ... mà còn..." (*not only... but also...*), "được phát triển bởi" (*was developed by*), "tiến hành thực hiện việc" (*proceed to carry out the act of*), "Hy vọng thông tin trên hữu ích!" (*Hope this helps!*).
+AI drafts slides, emails and reports quickly, and Vietnamese readers spot the result just as quickly. The slide titles say "Tổng quan" (*Overview*) and "Thách thức" (*Challenges*). The email opens with "Trong bối cảnh hiện nay" (*in today's context*) and closes with "Hy vọng thông tin trên hữu ích!" (*Hope this helps!*). Fine for a team chat. For your boss or a customer, you end up rewriting it by hand.
+
+Viết như người ("write like a person") is a skill, a small add-on, for Claude and other AI assistants. Once installed, the assistant writes Vietnamese the way a working person does: slide titles that state the conclusion, emails with the right pronouns of address, short sentences, and your numbers left exactly as you gave them. Free and open source.
 
 English works too, based on Wikipedia's [Signs of AI writing](https://en.wikipedia.org/wiki/Wikipedia:Signs_of_AI_writing) and [blader/humanizer](https://github.com/blader/humanizer). Most of the work went into Vietnamese, because generic humanizers miss what makes Vietnamese AI text sound off: it reads like it was written in English and translated.
+
+**Jump to:** [Install, no coding needed](#install-in-a-few-minutes-no-coding-needed) · [Everyday use](#everyday-use) · [Before and after](#before-and-after) · [What it catches](#what-it-catches) · [Command line](#for-command-line-users) · [Buy me a coffee](#buy-me-a-coffee)
+
+## What people use it for
+
+- Report and proposal decks: every title is a conclusion, so reading the titles alone tells your manager what to decide. Missing numbers are marked `[cần xác nhận]` (*to confirm*), never made up.
+- Emails to a boss or a customer: the right pronouns of address (anh/chị/em, quý khách) instead of a default "bạn", and the request comes first.
+- Reports and documents translated from English: no more calqued sentences such as "được... bởi" (*was ... by*) or "Điều này cho phép" (*This allows*).
+- Facebook, LinkedIn and blog posts: AI drafts, the voice stays yours, and the post tells one story instead of covering everything.
+- A check before you send: it points at the places that sound like AI, and you decide what to change.
+
+## Install in a few minutes, no coding needed
+
+You don't type any commands. You ask your AI assistant to install it, the way you would ask a colleague from IT.
+
+**Step 1. Open an AI assistant that runs on your computer.** For example the Claude Code desktop app (point and click, no terminal window), or Codex, Cursor, Gemini CLI, OpenCode. The web chat versions of Claude and ChatGPT cannot install anything on your machine, so you need one of these.
+
+**Step 2. Paste this into the chat box:**
+
+> Install the viet-nhu-nguoi skill for me from https://github.com/anhnx000/viet-nhu-nguoi
+
+**Step 3. Click approve** when the assistant asks permission to download and install. It usually takes under a minute.
+
+**Step 4. Start a new conversation and try it:**
+
+> Viết như người: soạn giúp tôi email xin sếp lùi hạn nộp báo cáo 3 ngày, xưng em
+
+(*"Write like a person: draft an email asking my boss for three more days on the report; I address myself as em."*) If the email comes back short, leads with the request and keeps "em" all the way through, the skill is working.
+
+A few things you may want later. Again, just say them to the assistant:
+
+| You want to | You type |
+| --- | --- |
+| Check it is installed | "Do I have the viet-nhu-nguoi skill installed?" |
+| Get the latest version | "Update the viet-nhu-nguoi skill to the latest version" |
+| Remove it | "Uninstall the viet-nhu-nguoi skill" |
+
+Did the assistant hit an error? Take a screenshot and [open an issue](https://github.com/anhnx000/viet-nhu-nguoi/issues). I'll take a look.
+
+<details>
+<summary>For people comfortable with a terminal: install by hand</summary>
+
+As a plugin, inside Claude Code:
+
+```text
+/plugin marketplace add anhnx000/viet-nhu-nguoi
+/plugin install viet-nhu-nguoi@viet-nhu-nguoi
+```
+
+Or clone and run the script. It symlinks the skill into `~/.claude/skills/`, so `git pull` updates it:
+
+```bash
+git clone https://github.com/anhnx000/viet-nhu-nguoi.git
+cd viet-nhu-nguoi
+bash install.sh          # symlink
+bash install.sh --copy   # or copy, if you want to review each update before installing
+```
+
+Start a new Claude Code session afterwards.
+
+Other agents (Cursor, Codex, Gemini CLI, OpenCode and more) can use the [skills](https://github.com/vercel-labs/skills) CLI:
+
+```bash
+npx skills add anhnx000/viet-nhu-nguoi      # current project only
+npx skills add anhnx000/viet-nhu-nguoi -g   # every project (user level)
+```
+
+It asks which agents to install for; pass `-a claude-code` (or `-a '*'`) and `-y` to skip the prompts. The skill is plain Markdown, so it runs on whatever model your editor uses.
+
+</details>
+
+## Everyday use
+
+Talk to it the way you would brief a colleague. There is no syntax to remember, and you can ask in Vietnamese or English.
+
+| You type | What the skill does |
+| --- | --- |
+| "Làm slide báo cáo tiến độ dự án tuần này để sếp duyệt" (*make this week's progress deck for my boss to approve*) | Asks first: who is watching, what they must decide, presented live or sent to read. Then builds the deck |
+| "Sửa file bao-cao-q3.pptx cho bớt giọng AI" (*make this deck sound less like AI*) | Reads the text and speaker notes on every slide, fixes titles, bullets and notes |
+| "Viết email xin sếp lùi deadline 3 ngày, xưng em" (*email my boss for a three-day extension*) | Writes a short email, request first, with "em"/"anh" kept consistent throughout |
+| "Viết bài Facebook kể về dự án của mình, khoảng 300 chữ" (*a 300-word Facebook post about my project*) | Asks you for one or two things that really happened, then tells one story. No section headings, no background lecture |
+| "Soi giúp đoạn này chỗ nào giọng AI" (*where does this sound like AI?*) | Lists each spot with the reason and a short fix, and rewrites nothing |
+| Paste an email you wrote yourself | Picks up your sentence length, connectives and pronouns, then writes to match |
+
+Four habits that make the output much better:
+
+1. Say who will read it and who you are to them. "To my department head, I'm em" produces a different email from "to a customer, we are chúng tôi".
+2. Paste a passage you wrote yourself, the same kind of text as the one you need. The skill copies your sentence length and the words you favour.
+3. Give it the real numbers, names and dates. If something is missing it asks or leaves a blank; it does not make things up.
+4. When a phrase feels off, say "mình không nói thế" (*I don't talk like that*). It adjusts and remembers for the rest of the conversation.
+
+More ways to call it:
+
+- Type `/viet-nhu-nguoi` to turn it on for the session. Every reply then follows the rules, short ones included.
+- It also triggers by itself when you ask for an email, message or post that you will send under your name.
+- Pick a voice by name: *đời thường* (casual), *công việc* (work), *kỹ thuật* (technical), *ấm áp* (warm), *thẳng* (blunt). The voice changes style only; pronouns of address and content stay put.
+- Text you wrote yourself only gets a light edit.
 
 ## Before and after
 
@@ -45,7 +144,7 @@ The bundled scanner scores the draft 72/100 ("dense") with 16 tells, and both re
 
 ```text
 $ python3 -I skills/viet-nhu-nguoi/scripts/scan.py examples/truoc.md
-Điểm 72/100 (dày đặc): 16 dấu hiệu trong 5 dòng.
+Điểm 72/100 (dày đặc): 16 dấu hiệu trong 5 dòng, 110 chữ.
 [từ vựng AI (vi)] 3      nâng tầm, trong bối cảnh hiện nay, bên cạnh đó
 [động từ rỗng (vi)] 3    tiến hành thực hiện, thực hiện việc, nhằm mục đích
 [văn dịch (vi)] 2        được chứng minh bởi, trải nghiệm liền mạch
@@ -57,51 +156,9 @@ $ python3 -I skills/viet-nhu-nguoi/scripts/scan.py examples/truoc.md
 [lời chatbot] 1          hy vọng những thông tin trên
 ```
 
-## Install
-
-As a plugin, inside Claude Code:
-
-```text
-/plugin marketplace add anhnx000/viet-nhu-nguoi
-/plugin install viet-nhu-nguoi@viet-nhu-nguoi
-```
-
-Or clone and run the script. It symlinks the skill into `~/.claude/skills/`, so `git pull` updates it:
-
-```bash
-git clone https://github.com/anhnx000/viet-nhu-nguoi.git
-cd viet-nhu-nguoi
-bash install.sh          # symlink
-bash install.sh --copy   # or copy, if you want to review each update before installing
-```
-
-Start a new Claude Code session afterwards.
-
-Other agents (Cursor, Codex, Gemini CLI, OpenCode and more) can use the [skills](https://github.com/vercel-labs/skills) CLI:
-
-```bash
-npx skills add anhnx000/viet-nhu-nguoi      # current project only
-npx skills add anhnx000/viet-nhu-nguoi -g   # every project (user level)
-```
-
-It asks which agents to install for; pass `-a claude-code` (or `-a '*'`) and `-y` to skip the prompts. The skill is plain Markdown, so it runs on whatever model your editor uses.
-
-## Use
-
-- Turn it on for the session: `/viet-nhu-nguoi`. Claude then follows the rules in every reply, short ones included.
-- Rewrite a passage: `/viet-nhu-nguoi <paste text>`, or ask "rewrite docs/intro.md so it sounds less like AI".
-- It also triggers when you ask Claude to draft an email, message, post or PR that you will send under your name.
-- For a closer match to your voice, include a sample you wrote yourself. The skill picks up your sentence length, connectives and pronouns of address.
-- Pick a voice by name: *đời thường* (casual), *công việc* (work), *kỹ thuật* (technical), *ấm áp* (warm), *thẳng* (blunt). The voice changes style only, never pronouns of address or content.
-- Audit without rewriting: ask it to "soi" or "audit" a text. You get each tell with its pattern number, the reason and a short fix, split into clear problems and judgment calls.
-- Scan from the command line: `python3 -I skills/viet-nhu-nguoi/scripts/scan.py file.md` (or `file.pptx`) prints a 0-100 score and every match. Add `--json` for machine output, or `--max 30` to exit 1 above a threshold in CI or a pre-commit hook. Add `--titles` to print only the headings or slide titles, in order, or `--text` to dump every slide's text and notes from a `.pptx`.
-- Check that a rewrite kept the facts: `python3 -I skills/viet-nhu-nguoi/scripts/check_facts.py original.md rewrite.md` (also reads `.pptx`) fails if a number, date, time, link or code span was lost or added, and warns about missing proper names.
-
-Both scripts use only the Python standard library.
-
 ## What it catches
 
-The full catalog has 44 patterns, each with a before/after example, in [references/patterns.md](skills/viet-nhu-nguoi/references/patterns.md) (written in Vietnamese). Group G is Vietnamese-only:
+The full catalog has 53 patterns, each with a before/after example, in [references/patterns.md](skills/viet-nhu-nguoi/references/patterns.md) (written in Vietnamese). Group I covers what only shows across a whole post after each sentence is clean: voice labels ("nói gọn", "nói cho thật:"), the same contrast frame used three times or more, a punchline closing every paragraph, colons everywhere, a post that covers everything. Group G is Vietnamese-only:
 
 | Pattern | Example | Becomes |
 | --- | --- | --- |
@@ -133,7 +190,7 @@ The scanner reads `.pptx` files directly (slide text, tables and speaker notes) 
 
 ```text
 $ python3 -I skills/viet-nhu-nguoi/scripts/scan.py examples/slide-truoc.pptx
-Điểm 48/100 (nhiều dấu hiệu): 21 dấu hiệu trong 7 slide.
+Điểm 48/100 (nhiều dấu hiệu): 21 dấu hiệu trong 7 slide, 176 chữ.
 [từ vựng AI (vi)] 7
 [tiêu đề dạng nhãn] 4        slide 2: Tổng quan, slide 3: Thách thức, slide 5: Lợi ích, slide 6: Kết luận
 [hứa suông] 1                slide 5, ghi chú: chi tiết sẽ được trao đổi sau
@@ -151,6 +208,13 @@ $ python3 -I skills/viet-nhu-nguoi/scripts/scan.py --titles examples/slide-sau.p
 
 The rewrite scores 0/100, and the four titles alone tell the whole proposal (*hire one QA for Q1 2027; Q3 slipped two weeks, both times for lack of testers; one QA costs less than more delays; please approve by 30/11 so hiring finishes in time*).
 
+## For command-line users
+
+Both scripts use only the Python standard library.
+
+- Score a file: `python3 -I skills/viet-nhu-nguoi/scripts/scan.py file.md` (or `file.pptx`) prints a 0-100 score and every match. Add `--json` for machine output, or `--max 30` to exit 1 above a threshold in CI or a pre-commit hook. Add `--titles` to print only the headings or slide titles, in order, or `--text` to dump every slide's text and notes from a `.pptx`.
+- Check that a rewrite kept the facts: `python3 -I skills/viet-nhu-nguoi/scripts/check_facts.py original.md rewrite.md` (also reads `.pptx`) fails if a number, date, time, link or code span was lost or added, and warns about missing proper names.
+
 ## Good to know
 
 Nothing leaves your machine beyond what your agent already sends to its model. The skill is Markdown plus two Python scripts with no dependencies, no network calls, no telemetry and no account.
@@ -164,14 +228,14 @@ The skill makes text more natural and easier to read. It does not promise to bea
 ```text
 skills/viet-nhu-nguoi/
 ├── SKILL.md                 main rules, loaded when the skill is invoked
-├── references/patterns.md   44 patterns with before/after examples
+├── references/patterns.md   53 patterns with before/after examples
 ├── references/slides.md     slides, speaker notes, fresh-reader test
 ├── references/sources.md    references: articles, research, style guides, other skills
 ├── scripts/scan.py          scanner with a 0-100 score, no third-party packages
 ├── scripts/check_facts.py   checks a rewrite kept numbers, dates, links and code
 ├── scripts/slides.py        reads slide text and notes from .pptx, standard library only
 └── LICENSE-humanizer        MIT license of blader/humanizer
-assets/                      donation QR code
+assets/                      banner and the coffee QR code
 examples/                    before/after text and .pptx decks used in the README and tests
 tests/test_scan.py           python3 -m unittest discover -s tests
 ```
@@ -180,19 +244,30 @@ tests/test_scan.py           python3 -m unittest discover -s tests
 
 Found a Vietnamese AI phrasing the skill misses, or a natural sentence it wrongly rewrites? Open an issue with the sentence and the version you think is right. Pull requests that add a pattern should include a before/after example and a test in `tests/test_scan.py`, including a case that must not be flagged.
 
-## Support
+## Buy me a coffee
 
-Viết như người is free and MIT licensed, and it will stay that way. I maintain it in my spare time. If it saves you editing time, a coffee helps me keep it current:
+Viết như người is free and MIT licensed, and it will stay that way. I maintain it in my spare time. If it saves you an evening of rewriting, you can buy me a cà phê sữa đá, Vietnamese iced coffee with condensed milk.
 
-- update the pattern list when new models bring new habits, since each model generation shifts its favourite words;
-- turn the sentences you report into test cases, and review issues and pull requests;
-- keep improving the scanner and the fact checker.
+<table>
+  <tr>
+    <td width="240" align="center">
+      <img src="assets/donate-vietqr.png" alt="VietQR code to buy the author a coffee via VPBank / Napas 247" width="210">
+    </td>
+    <td>
+      <b>Scan with any Vietnamese banking app</b> (VietQR / Napas 247).<br><br>
+      Any amount is welcome. One coffee makes my day.<br><br>
+      Put <code>viet-nhu-nguoi</code> in the transfer note so I know where the coffee came from.
+    </td>
+  </tr>
+</table>
 
-<img src="assets/donate-vietqr.png" alt="VietQR code for donations via VPBank / Napas 247" width="220">
+Coffee money turns into time for three things:
 
-The QR code works with any Vietnamese banking app (VietQR / Napas 247). A transfer note such as "viet-nhu-nguoi" tells me where it came from.
+- updating the pattern list when new models bring new habits, since each model generation shifts its favourite words;
+- turning the sentences you report into test cases, and reviewing issues and pull requests;
+- improving the scanner and the fact checker.
 
-Outside Vietnam, or rather not give money? These help just as much: star the repo, share it with someone who writes Vietnamese with AI, or open an issue with a sentence the skill got wrong. Donations are a thank-you, not payment for support: every issue gets the same attention.
+Outside Vietnam, or the QR code is no use to you? These are worth just as much: star the repo, share it with someone who writes Vietnamese with AI, or open an issue with a sentence the skill got wrong. Coffee or no coffee, every issue gets the same attention.
 
 ## Credits
 
