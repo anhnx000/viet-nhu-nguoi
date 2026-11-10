@@ -1,5 +1,20 @@
 # Changelog
 
+## 2.3.0 (2026-11-10)
+
+Ngắt câu tiếng Việt và các việc tồn đọng của máy quét.
+
+- `SKILL.md`: quy tắc ngắt câu viết lại cho nhất quán. Ngắt theo ý, không chặt vụn, cũng không gộp quá ba vế; từ nối phải đúng quan hệ; ngoặc đơn và chấm phẩy dùng dè. Bỏ lời khuyên "câu dài ngắn xen kẽ" theo luật.
+- Dấu hiệu 55, câu gộp quá tay: chuỗi vế nối bằng dấu phẩy. `scan.py` báo "câu quá dài" từ 60 chữ; ngắn hơn phải tự đọc.
+- `scan.py --meta`: bỏ qua phần trích dẫn (dòng `>`, bảng, chữ trong ngoặc kép) khi quét văn bản bàn về chính các dấu hiệu. README từ 19/100 xuống 0/100 với `--meta`, điểm các file mẫu không đổi.
+- "Hai chấm dồn dập" không còn đếm dấu hai chấm cuối đoạn dẫn vào danh sách, khối lệnh, bảng. Bài mẫu từ 20/88 còn 19/88 câu, điểm vẫn 55/100.
+- `check_facts.py` không báo lỗi khi đoạn code được tách, gộp hay chuyển vào khối lệnh mà nội dung còn nguyên.
+- `install.sh --update` thay bản đã cài, chỉ xóa thư mục đích khi nó đúng là skill này.
+- "Câu vụn" không tính câu dẫn vào danh sách hay khối lệnh, ngưỡng đổi thành 30% số câu. Ngưỡng này sát: bản README bị chê vụn là 32%, bản đã sửa là 28%.
+- Test: bốn đoạn văn mẫu giọng người (email, tin nhắn, bài đăng, báo cáo tuần) không được dính dấu hiệu cả bài. Các mẫu này do người bảo trì soạn, chưa phải văn thu thập từ người viết thật.
+- README tiếng Việt viết lại theo quy tắc ngắt câu mới; bản tiếng Anh cập nhật theo.
+- Chưa làm được: câu chốt cuối đoạn vẫn chưa dò được bằng máy.
+
 ## 2.2.2 (2026-11-10)
 
 - Dấu hiệu 54, câu vụn: dấu chấm chặt một ý thành nhiều câu ngắn, lặp chủ ngữ. `SKILL.md` thêm quy tắc gộp vế bằng dấu phẩy và từ nối; `scan.py` báo "câu vụn" khi từ một phần ba số câu dài không quá 10 chữ (bài từ 20 câu). "Đoạn ngắn đều nhau" không còn tính cho tài liệu có tiêu đề Markdown như README.

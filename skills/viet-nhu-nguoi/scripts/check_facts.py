@@ -25,6 +25,7 @@ NAME = re.compile(rf"(?<![.!?:\n>\-*#]\s)(?<!^)(?<=\s)[{UPPER}][\w]+", re.MULTIL
 def facts(text):
     no_code = CODE.sub(" ", URL.sub(" ", text))
     return {
+        "_raw": text,
         "link": set(URL.findall(text)),
         "code": set(CODE.findall(text)),
         "số": {n.rstrip(".,") for n in NUMBER.findall(no_code)},
@@ -47,7 +48,13 @@ def main():
     new = facts(read(sys.argv[2]))
     failed = False
     for kind in old:
+        if kind == "_raw":
+            continue
         lost, added = sorted(old[kind] - new[kind]), sorted(new[kind] - old[kind])
+        if kind == "code":
+            # Đoạn code được tách, gộp hay chuyển vào khối lệnh mà nội dung còn nguyên thì không tính
+            lost = [c for c in lost if c not in new["_raw"]]
+            added = [c for c in added if c not in old["_raw"]]
         if not lost and not added:
             continue
         strict = kind != "tên riêng"

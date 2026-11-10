@@ -159,8 +159,34 @@ NOMINAL = re.compile(r"\b(việc|sự)\b")
 THIS_IT = re.compile(r"^(điều này|điều đó|nó)\b")
 
 
-def scan(text, doc=True):
-    """doc=False bỏ các kiểm cả bài (dùng cho slide)."""
+QUOTED_LINE = re.compile(r"^\s*[>|]")
+QUOTED_SPAN = re.compile(r'"[^"\n]*"|“[^”\n]*”')
+
+
+def strip_quoted(text):
+    """Bỏ phần trích dẫn (dòng '>', dòng bảng, chữ trong ngoặc kép), giữ nguyên số dòng.
+
+    Dùng cho văn bản bàn về dấu hiệu văn AI: ví dụ được trích không tính là lỗi của bài.
+    """
+    out, in_code = [], False
+    for line in text.splitlines():
+        if FENCE.match(line):
+            in_code = not in_code
+            out.append(line)
+        elif in_code:
+            out.append(line)
+        elif QUOTED_LINE.match(line):
+            out.append("")
+        else:
+            # giữ số chữ để các phép đếm độ dài câu không lệch
+            out.append(QUOTED_SPAN.sub(lambda m: '"' + " ".join("_" * len(m.group(0).split())) + '"', line))
+    return "\n".join(out)
+
+
+def scan(text, doc=True, meta=False):
+    """doc=False bỏ các kiểm cả bài (dùng cho slide). meta=True bỏ qua phần trích dẫn."""
+    if meta:
+        text = strip_quoted(text)
     hits = {}
     in_code = False
     lines = text.splitlines()
@@ -206,6 +232,8 @@ def sentence_checks(prose, no, hits):
             hits.setdefault("việc/sự dày", []).append((no, sent[:50]))
         if THIS_IT.match(low):
             hits.setdefault("\"Điều này\"/\"Nó\" mở câu", []).append((no, sent[:40]))
+        if len(words) >= 60 and not QUOTED_LINE.match(prose):
+            hits.setdefault("câu quá dài", []).append((no, f"{len(words)} chữ: {sent[:40]}"))
     # Ba câu liền nhau trở lên, mỗi câu 20 chữ trở lên, chênh nhau không quá 4 chữ
     run = 1
     for a, b in zip(lengths, lengths[1:]):
@@ -276,21 +304,26 @@ def document_checks(text, hits):
         hits.setdefault("bài đăng chia mục viết hoa", []).append((caps[0], f"{len(caps)} mục"))
     if tagged and total_words > 800:
         hits.setdefault("bài mạng xã hội dài", []).append((1, f"{total_words} chữ"))
-    counts, sents_all, colons, short = [], 0, 0, 0
+    counts, sents_all, colons, short, dense = [], 0, 0, 0, 0
     for _, para in paras:
         sents = [x for x in SENT_SPLIT.split(para) if len(x.split()) >= 2]
         if not sents:
             continue
         counts.append(len(sents))
         sents_all += len(sents)
-        colons += sum(1 for x in sents if COLON.search(x))
-        short += sum(1 for x in sents if len(x.split()) <= 10)
+        # Dấu hai chấm cuối đoạn dẫn vào danh sách, khối lệnh, bảng, trích dẫn: dùng đúng chỗ
+        lead_in = para.rstrip(" *_").endswith(":")
+        body = sents[:-1] if lead_in else sents
+        colons += sum(1 for x in body if COLON.search(x))
+        short += sum(1 for x in body if len(x.split()) <= 10)
+        dense += len(body)
     first = paras[0][0] if paras else 1
     if sents_all >= 20 and colons >= 6 and colons / sents_all >= 0.15:
         hits.setdefault("hai chấm dồn dập", []).append((first, f"{colons}/{sents_all} câu có dấu hai chấm"))
-    # Dấu chấm chặt ý thành câu vụn: từ một phần ba số câu chỉ dài tối đa 10 chữ
-    if sents_all >= 20 and short / sents_all >= 1 / 3:
-        hits.setdefault("câu vụn", []).append((first, f"{short}/{sents_all} câu dài không quá 10 chữ"))
+    # Dấu chấm chặt ý thành câu vụn: từ 30% số câu chỉ dài tối đa 10 chữ (không tính câu dẫn
+    # vào danh sách hay khối lệnh). Ngưỡng sát: bản README bị chê vụn là 32%, bản đã sửa 28%.
+    if dense >= 20 and short / dense >= 0.3:
+        hits.setdefault("câu vụn", []).append((first, f"{short}/{dense} câu dài không quá 10 chữ"))
     # Tài liệu có tiêu đề Markdown (README, hướng dẫn) vốn nhiều đoạn dẫn ngắn, không tính
     if md_heads < 3 and len(counts) >= 12 and max(counts) <= 4 and sum(1 for c in counts if c <= 3) / len(counts) >= 0.9:
         few = sum(1 for c in counts if c <= 3)
@@ -452,6 +485,9 @@ def main():
     ap.add_argument("--max", type=int, metavar="N", help="thoát mã 1 nếu điểm lớn hơn N")
     ap.add_argument("--titles", action="store_true",
                     help="chỉ in các tiêu đề (slide hoặc heading Markdown) theo thứ tự")
+    ap.add_argument("--meta", action="store_true",
+                    help="bỏ qua phần trích dẫn (dòng '>', bảng, chữ trong ngoặc kép); "
+                         "dùng cho văn bản bàn về dấu hiệu văn AI")
     ap.add_argument("--text", action="store_true",
                     help="in chữ của từng slide kèm vị trí (chỉ cho .pptx), không quét")
     args = ap.parse_args()
@@ -472,6 +508,8 @@ def main():
         print("\n".join(titles_of(text, deck)) or "Không thấy tiêu đề nào.")
         print("\nĐọc liền các tiêu đề trên: có thành một mạch không, slide nào chỉ là nhãn chủ đề?")
         return
+    if args.meta and deck is None:
+        text = strip_quoted(text)
     hits, total = scan(text, doc=deck is None)
     where = {}
     if deck is not None:

@@ -62,7 +62,7 @@ The user is not technical, so do all of it yourself and only ask for permission 
 2. `git` and `bash` are available (macOS, Linux, WSL): `git clone https://github.com/anhnx000/viet-nhu-nguoi.git ~/viet-nhu-nguoi && bash ~/viet-nhu-nguoi/install.sh --copy`.
 3. Windows without bash, or no git: download `https://github.com/anhnx000/viet-nhu-nguoi/archive/refs/heads/main.zip`, unzip it, and copy the `skills/viet-nhu-nguoi` folder into the agent's user-level skills folder (Claude Code: `~/.claude/skills/viet-nhu-nguoi`, which on Windows is `%USERPROFILE%\.claude\skills\viet-nhu-nguoi`).
 
-Afterwards, check that `SKILL.md` sits in the target folder, tell the user where it was installed, and suggest a new conversation if the skill does not show up. To update, repeat the method you used; for methods 2 and 3, delete the old folder first. To uninstall, delete the `viet-nhu-nguoi` folder from the skills folder.
+Afterwards, check that `SKILL.md` sits in the target folder, tell the user where it was installed, and suggest a new conversation if the skill does not show up. To update, repeat the method you used. For method 2, run `git -C ~/viet-nhu-nguoi pull` and then `bash ~/viet-nhu-nguoi/install.sh --copy --update`. For method 3, delete the old folder before copying the new one. To uninstall, delete the `viet-nhu-nguoi` folder from the skills folder.
 
 </details>
 
@@ -81,8 +81,9 @@ Or clone and run the script. It symlinks the skill into `~/.claude/skills/`, so 
 ```bash
 git clone https://github.com/anhnx000/viet-nhu-nguoi.git
 cd viet-nhu-nguoi
-bash install.sh          # symlink
-bash install.sh --copy   # or copy, if you want to review each update before installing
+bash install.sh                   # symlink
+bash install.sh --copy            # or copy, if you want to review each update before installing
+bash install.sh --copy --update   # replace an installed copy with the new version
 ```
 
 Other agents (Cursor, Codex, Gemini CLI, OpenCode and more) can use the [skills](https://github.com/vercel-labs/skills) CLI:
@@ -191,13 +192,13 @@ Version 2.2 of the skill came out of a real post. [The original](examples/bai-da
 
 *"To be honest: progress isn't easy. [...] The hardest part isn't the code, it's choosing what to work on. [...] I don't need you to be good at kernels. I need you to be patient with logs."*
 
-Since version 2.2 the scanner counts across the whole text and scores this post 55/100. It has ten "not X but Y" sentences, six sentences that open with a label such as "nói gọn" (*put briefly*) or "nói cho thật" (*to be honest*), and a colon in 20 of 88 sentences.
+Since version 2.2 the scanner counts across the whole text and scores this post 55/100. It has ten "not X but Y" sentences, six sentences that open with a label such as "nói gọn" (*put briefly*) or "nói cho thật" (*to be honest*), and a colon in 19 of 88 sentences.
 
 [The rewrite](examples/bai-dang-sau.md) is 376 words, only invites people to join the project, scores 0/100 and adds no fact that the original lacks. The operating-system primer, the microkernel history and the security statistics are left for other posts.
 
 ## What the skill fixes
 
-The skill has a catalog of 54 AI-writing patterns, each with a before and after example ([full list](skills/viet-nhu-nguoi/references/patterns.md), in Vietnamese). The table below is the Vietnamese-only group.
+The skill has a catalog of 55 AI-writing patterns, each with a before and after example ([full list](skills/viet-nhu-nguoi/references/patterns.md), in Vietnamese). The table below is the Vietnamese-only group.
 
 | Pattern | Example | Becomes |
 | --- | --- | --- |
@@ -211,7 +212,7 @@ The skill has a catalog of 54 AI-writing patterns, each with a before and after 
 | Pronouns of address | "bạn" in an email to your boss; mixing "bạn" and "quý vị" | one pair that fits the relationship |
 | English glosses in brackets | hiệu suất (performance) | hiệu suất |
 
-Some patterns only show when you read the whole text, even after each sentence is fine. Examples are sentences that open with a label ("nói gọn", "nói cho thật:"), the "not X but Y" shape used three times or more, every paragraph closing on a line that sounds like a proverb, colons everywhere, full stops that chop one thought into several short sentences, and a long post that covers every topic.
+Some patterns only show when you read the whole text, even after each sentence is fine. Examples are sentences that open with a label ("nói gọn", "nói cho thật:"), the "not X but Y" shape used three times or more, every paragraph closing on a line that sounds like a proverb, colons everywhere, full stops that chop one thought into several short sentences (or the reverse, one sentence joined from too many clauses), and a long post that covers every topic.
 
 Slides and long documents have their own group. The skill catches titles that are only labels ("Tổng quan", "Kết luận"), titles that count points ("3 trụ cột", *3 pillars*), exactly three bullets on every slide, empty promises ("chi tiết sẽ trao đổi sau", *details to be discussed later*) and speaker notes that read like a memo. The slide-writing guide is in [references/slides.md](skills/viet-nhu-nguoi/references/slides.md) (in Vietnamese).
 
@@ -233,6 +234,7 @@ python3 -I skills/viet-nhu-nguoi/scripts/scan.py file.md
 | --- | --- |
 | `--json` | machine-readable output |
 | `--max 30` | exit 1 when the score is above 30, for CI or a pre-commit hook |
+| `--meta` | skip quoted material (`>` lines, tables, text in double quotes), for documents that discuss the patterns themselves |
 | `--titles` | print only the headings or slide titles, in order |
 | `--text` | dump every slide's text and notes from a `.pptx` |
 
@@ -281,7 +283,7 @@ The skill makes text more natural and easier to read. It does not promise to get
 ```text
 skills/viet-nhu-nguoi/
 ├── SKILL.md                 main rules, loaded when the skill is invoked
-├── references/patterns.md   54 patterns with before/after examples
+├── references/patterns.md   55 patterns with before/after examples
 ├── references/slides.md     slides, speaker notes, fresh-reader test
 ├── references/sources.md    references: articles, research, style guides, other skills
 ├── scripts/scan.py          scanner with a 0-100 score, no third-party packages

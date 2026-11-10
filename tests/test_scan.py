@@ -127,6 +127,11 @@ class CheckFacts(unittest.TestCase):
         r = self.run_check("Chạy `npm test` trước khi push.", "Chạy test trước khi push.")
         self.assertEqual(r.returncode, 1)
 
+    def test_code_moved_into_block_passes(self):
+        r = self.run_check("Chạy `npm test` (hoặc `npm run lint`) trước khi push.",
+                           "Chạy trước khi push:\n\n```bash\nnpm test\nnpm run lint\n```\n")
+        self.assertEqual(r.returncode, 0, r.stdout)
+
 
 def scan_deck(path):
     deck = slides.read_pptx(str(path))
@@ -250,6 +255,46 @@ class WholeDocument(unittest.TestCase):
                   "và việc cài thường mất chưa tới một phút trên máy đã có sẵn git.\n\n") * 24
         self.assertNotIn("câu vụn", scan.scan(joined)[0])
         self.assertNotIn("câu vụn", scan.scan("Ngắn thôi. Hai câu.\n")[0])
+
+    def test_meta_skips_quoted_examples(self):
+        doc = ('Skill bỏ các cụm như "trong bối cảnh hiện nay" và "nâng tầm".\n\n'
+               "> Điều này được chứng minh bởi nhiều nghiên cứu chỉ ra rằng năng suất tăng.\n\n"
+               "| Động từ rỗng | tiến hành thực hiện việc rà soát |\n")
+        self.assertTrue(scan.scan(doc)[0])
+        self.assertEqual(scan.scan(doc, meta=True)[0], {})
+        plain = "Trong bối cảnh hiện nay, đội đã tiến hành thực hiện việc rà soát.\n"
+        self.assertTrue(scan.scan(plain, meta=True)[0])
+
+    def test_lead_in_colon_not_counted(self):
+        lead = "".join(f"Bước {i} cần ba thứ sau đây cho đủ bộ hồ sơ gửi đi:\n\n- một\n- hai\n\n" for i in range(24))
+        self.assertNotIn("hai chấm dồn dập", scan.scan(lead)[0])
+        staged = "Chi tiết quan trọng nhất: máy đã nhanh hơn trước rất nhiều rồi đấy nhé.\n\n" * 24
+        self.assertIn("hai chấm dồn dập", scan.scan(staged)[0])
+
+    def test_overlong_sentence(self):
+        long_sent = "Đội mình " + "làm thêm một việc nữa, " * 14 + "rồi mới nghỉ.\n"
+        self.assertIn("câu quá dài", scan.scan(long_sent)[0])
+        self.assertNotIn("câu quá dài", scan.scan("Đội mình làm xong việc rồi mới nghỉ.\n")[0])
+
+    HUMAN = {
+        "email": ("Chào chị Lan,\n\nEm gửi chị bản báo cáo quý 3, chị xem giúp em phần chi phí ở trang 4 "
+                  "vì em chưa chắc số bên kế toán đưa đã gồm thuế chưa. Nếu được thì chị phản hồi trước thứ Sáu "
+                  "để em kịp sửa trước buổi họp.\n\nEm cảm ơn chị.\nMinh\n"),
+        "chat": "Ê mai họp mấy giờ thế?\n\n9 rưỡi nhé, phòng tầng 3.\n\nOk để tao báo thằng Tú.\n",
+        "post": ("Hôm qua mình mất gần ba tiếng chỉ để tìm ra một dấu chấm phẩy đặt nhầm chỗ trong file cấu hình. "
+                 "Lúc đầu mình cứ tưởng lỗi do thư viện mới cập nhật nên quay về bản cũ, cài lại hai lần mà vẫn không chạy. "
+                 "Đến lúc thằng em cùng phòng đi ngang qua liếc một cái rồi chỉ vào dòng 14 thì mình chỉ muốn chui xuống gầm bàn.\n\n"
+                 "Kể ra để nhắc bản thân lần sau đọc kỹ thông báo lỗi trước khi đổ cho người khác.\n"),
+        "report": ("Tuần này nhóm hoàn thành 7 trên 9 việc đã nhận. Hai việc còn lại bị chậm vì phải chờ bên đối tác "
+                   "gửi tài liệu mô tả API, họ hẹn thứ Ba tuần sau.\n\nKhách hàng phản ánh 3 lỗi trên bản thử nghiệm, "
+                   "trong đó lỗi đăng nhập đã sửa xong hôm thứ Năm, hai lỗi hiển thị sẽ sửa trong tuần tới.\n"),
+    }
+
+    def test_human_samples_have_no_document_tells(self):
+        doc_groups = set(scan.DOC_POINTS) | {"tật lặp cả bài", "mục kết dán nhãn", "câu quá dài"}
+        for name, text in self.HUMAN.items():
+            with self.subTest(name):
+                self.assertFalse(doc_groups & set(scan.scan(text)[0]))
 
     def test_voice_labels(self):
         for text in ("Nói cho thật: tiến độ không dễ.", "Nói rõ để bạn khỏi kỳ vọng sai: đây là bản thử.",

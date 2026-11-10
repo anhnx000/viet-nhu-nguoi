@@ -1,6 +1,6 @@
 # Danh mục dấu hiệu văn AI (Việt + Anh)
 
-Sắp từ mạnh đến yếu. Nhóm A và nhóm E chỉ cần gặp một lần là sửa. Nhóm G (mục 30-38) dành riêng cho tiếng Việt. Nhóm H (mục 39-44) dành cho slide, lời thuyết trình và tài liệu nhiều trang; hướng dẫn đầy đủ ở `slides.md`. Nhóm I (mục 45-54) là những dấu hiệu chỉ thấy khi nhìn cả bài, hay còn lại sau khi từng câu đã được sửa sạch; bài dài và bài đăng mạng xã hội thì đọc nhóm này trước. Mục ghi *yếu* chỉ sửa khi đi cùng dấu hiệu khác trong cùng đoạn.
+Sắp từ mạnh đến yếu. Nhóm A và nhóm E chỉ cần gặp một lần là sửa. Nhóm G (mục 30-38) dành riêng cho tiếng Việt. Nhóm H (mục 39-44) dành cho slide, lời thuyết trình và tài liệu nhiều trang; hướng dẫn đầy đủ ở `slides.md`. Nhóm I (mục 45-55) là những dấu hiệu chỉ thấy khi nhìn cả bài, hay còn lại sau khi từng câu đã được sửa sạch; bài dài và bài đăng mạng xã hội thì đọc nhóm này trước. Mục ghi *yếu* chỉ sửa khi đi cùng dấu hiệu khác trong cùng đoạn.
 
 ## A. Dàn dựng thay vì nói thẳng
 
@@ -278,7 +278,7 @@ Văn AI tiếng Việt thường là văn "nghĩ bằng tiếng Anh rồi dịch
 
 ### 38. Câu đều nhịp, từ nối đầu câu
 **Dấu hiệu:** đoạn mà câu nào cũng 25-35 chữ, cùng có một dấu phẩy ở giữa; đoạn nào cũng mở bằng "Bên cạnh đó", "Ngoài ra", "Đồng thời", "Hơn nữa", "Không những thế", "Qua đó", "Từ đó"; đoạn nào cũng kết bằng câu "cần / nên".
-**Sửa:** Tách câu dài, thêm câu ngắn có thông tin, bỏ từ nối khi quan hệ đã rõ. Đừng cố tạo nhịp dài ngắn xen kẽ máy móc hay rải câu cụt cho có vẻ tự nhiên. *Yếu*.
+**Sửa:** Để độ dài câu đi theo ý: ý đơn viết ngắn, ý có nguyên nhân hay điều kiện viết dài hơn. Bỏ từ nối khi quan hệ đã rõ. Đừng cố tạo nhịp dài ngắn xen kẽ máy móc, đừng rải câu cụt cho có vẻ tự nhiên (mục 54), cũng đừng gộp cho dài (mục 55). *Yếu*.
 
 ### Đừng làm sai nghĩa khi sửa tiếng Việt
 Câu ngắn hơn không có nghĩa là đúng hơn. Kiểm lại sau khi sửa:
@@ -400,13 +400,22 @@ Cách đọc nhóm này: đếm trên cả bài. Một lần thì có thể là 
 **Sửa:** Hỏi người dùng một hai chuyện thật: lần nào kernel không boot, mất bao lâu, vì lỗi gì, lúc đó nghĩ gì. Dùng đúng lời họ kể. Không có thì giữ bài ngắn và trung tính. Không bịa kỷ niệm.
 
 ### 54. Câu vụn: dấu chấm chặt một ý thành nhiều câu
-**Dấu hiệu:** hai ba câu ngắn liền nhau cùng nói một ý; câu sau lặp chủ ngữ của câu trước ("Skill giúp văn bản dễ đọc hơn. Skill không cam kết..."); câu chỉ là một cụm bổ sung đứng riêng ("Thường mất chưa tới một phút.", "Codex, Cursor cũng được."); gạch đầu dòng mở bằng một cụm cụt rồi chấm ("Soi lại trước khi gửi. Skill chỉ ra..."); cả bài từ một phần ba số câu dài không quá mười chữ.
+**Dấu hiệu:** hai ba câu ngắn liền nhau cùng nói một ý; câu sau lặp chủ ngữ của câu trước ("Skill giúp văn bản dễ đọc hơn. Skill không cam kết..."); câu chỉ là một cụm bổ sung đứng riêng ("Thường mất chưa tới một phút.", "Codex, Cursor cũng được."); gạch đầu dòng mở bằng một cụm cụt rồi chấm ("Soi lại trước khi gửi. Skill chỉ ra..."); cả bài chừng một phần ba số câu dài không quá mười chữ (`scan.py` báo từ 30%).
 **Vấn đề:** Đây là mặt trái của lời khuyên "viết câu ngắn". Tiếng Anh chấm câu sau mỗi mệnh đề độc lập, còn tiếng Việt nối các vế bằng dấu phẩy và "nên", "thì", "mà", "còn", "rồi". Chấm dày thì quan hệ giữa các vế biến mất, người đọc phải tự nối lại và nghe giật như đọc phụ đề.
 **Trước:**
 > Điểm số chỉ để tham khảo. Điểm cho biết bài có bao nhiêu thói quen viết theo khuôn. Điểm không nói bài do AI viết. Có người vốn viết câu đều nhịp.
 **Sau:**
 > Điểm số chỉ để tham khảo, vì nó chỉ cho biết bài có bao nhiêu thói quen viết theo khuôn, chưa nói được bài có do AI viết hay không. Có người vốn viết câu đều nhịp.
 **Sửa:** Gộp các câu cùng ý bằng dấu phẩy và từ nối đúng quan hệ (vì, nên, còn, rồi, thì). Bỏ chủ ngữ lặp. Chỉ chấm khi hết ý. Giữ câu ngắn ở chỗ cần nhấn, và đừng gộp quá tay thành câu năm sáu vế. Lời nói trên slide, ghi chú thuyết trình, tin nhắn chat thì câu ngắn là bình thường. *Yếu* khi chỉ gặp một hai chỗ.
+
+### 55. Câu gộp quá tay: chuỗi vế nối bằng dấu phẩy
+**Dấu hiệu:** câu dài bốn năm vế nối nhau bằng dấu phẩy, đọc hết hơi mới tới dấu chấm; hai vế không liên quan dán vào nhau ("Bấm đồng ý khi trợ lý xin phép, thường mất chưa tới một phút, sau đó mở cuộc trò chuyện mới"); từ nối dùng để dán chứ không chỉ quan hệ ("trong đó", "đồng thời", "và" nối hai câu vốn độc lập); ý chính nằm trong ngoặc đơn; câu quá chừng 40 chữ mà không phải câu liệt kê.
+**Vấn đề:** Đây là lỗi sinh ra khi sửa mục 54 quá tay. Người đọc mất dấu chủ ngữ ở vế thứ ba, và không biết vế nào là ý chính.
+**Trước:**
+> Slide và tài liệu nhiều trang có nhóm riêng, trong đó skill bắt tiêu đề chỉ là nhãn, tiêu đề đếm số ý, slide nào cũng đúng ba ý, lời hứa suông và ghi chú thuyết trình viết như công văn, hướng dẫn viết slide nằm ở file riêng.
+**Sau:**
+> Slide và tài liệu nhiều trang có nhóm riêng. Ở nhóm này skill bắt tiêu đề chỉ là nhãn, tiêu đề đếm số ý, slide nào cũng đúng ba ý, lời hứa suông và ghi chú thuyết trình viết như công văn. Hướng dẫn viết slide nằm ở file riêng.
+**Sửa:** Mỗi câu một ý, nhiều nhất hai ba vế có quan hệ rõ. Tìm chỗ đổi ý để chấm. Câu liệt kê được phép dài, nhưng phần dẫn vào danh sách phải ngắn. Đọc thành tiếng: chỗ nào hụt hơi mà chưa hết ý thì câu đang quá dài. `scan.py` chỉ báo câu từ 60 chữ; ngắn hơn phải tự đọc.
 
 ## Giữ lại
 
