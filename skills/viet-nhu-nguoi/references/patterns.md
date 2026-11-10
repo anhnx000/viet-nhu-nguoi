@@ -69,12 +69,12 @@ Sắp từ mạnh đến yếu. Nhóm A và nhóm E chỉ cần gặp một lầ
 **Sửa:** Gộp câu, đổi chủ ngữ, hoặc bắt đầu bằng hành động.
 
 ### 9. Gạch ngang dài khắp nơi
-**Quy tắc:** Bản cuối không có — hoặc – dùng để nối mệnh đề, trừ khi mẫu văn của người dùng có. Thay bằng dấu chấm, phẩy, hai chấm hoặc ngoặc đơn. Gồm cả " -- " dùng thay gạch ngang. Giữ gạch trong code, lệnh, URL, khoảng số (2020–2024 được viết lại thành 2020-2024 hoặc "từ 2020 đến 2024").
+**Quy tắc:** Bản cuối không có — hoặc – dùng để nối mệnh đề, trừ khi mẫu văn của người dùng có. Thay bằng dấu chấm, phẩy, hai chấm hoặc ngoặc đơn. Gồm cả " -- " dùng thay gạch ngang. Giữ gạch trong code, lệnh, URL, khoảng số (2020–2024 thì viết lại thành 2020-2024 hoặc "từ 2020 đến 2024").
 **Lưu ý:** Theo các phân tích của Pangram và Washington Post, văn AI dùng gạch ngang dài nhiều gấp mấy lần văn người. Một dấu đơn lẻ thì *yếu*.
 **Trước:**
 > Chính sách mới — được công bố không báo trước — ảnh hưởng tới hàng nghìn người.
 **Sau:**
-> Chính sách mới được công bố không báo trước và ảnh hưởng tới hàng nghìn người.
+> Chính sách mới công bố không báo trước, ảnh hưởng tới hàng nghìn người.
 
 ### 10. Rào đón chồng chất
 **Dấu hiệu:** có thể phần nào; có lẽ có khả năng; trong một số trường hợp nhất định có thể; could potentially; might arguably; it could be argued that.
@@ -149,7 +149,7 @@ Sắp từ mạnh đến yếu. Nhóm A và nhóm E chỉ cần gặp một lầ
 > - **Hiệu năng:** Hiệu năng được nâng cao nhờ thuật toán tối ưu.
 > - **Bảo mật:** Bảo mật được tăng cường với mã hóa đầu cuối.
 **Sau:**
-> Bản cập nhật đổi giao diện, tải trang nhanh hơn nhờ thuật toán mới và thêm mã hóa đầu cuối.
+> Bản cập nhật đổi giao diện, thêm mã hóa đầu cuối, trang cũng tải nhanh hơn nhờ thuật toán mới.
 
 ### 21. Tiêu đề và emoji trang trí
 **Vấn đề:** Tiêu đề Viết Hoa Mọi Chữ; emoji 🚀💡✅ hay mũi tên → đầu mục; kẻ ngang giữa mọi phần; tiêu đề lặp lại tên tài liệu; tiêu đề giật tít thay vì nói phần đó chứa gì.
@@ -162,7 +162,7 @@ Sắp từ mạnh đến yếu. Nhóm A và nhóm E chỉ cần gặp một lầ
 
 ### 23. Lời chatbot
 **Dấu hiệu:** Chắc chắn rồi!; Tất nhiên rồi!; Câu hỏi rất hay!; Bạn nói hoàn toàn đúng!; Dưới đây là...; Hy vọng điều này hữu ích!; Nếu bạn cần thêm thông tin, đừng ngần ngại...; Bạn có muốn tôi...?; Certainly!; Great question!; I hope this helps; Let me know if...; As an AI language model.
-**Sửa:** Bỏ phần bọc, giữ nội dung.
+**Sửa:** Bỏ lời rào đầu đuôi, giữ nội dung.
 **Trước:**
 > Câu hỏi rất hay! Dưới đây là tổng quan về Cách mạng Pháp. Cách mạng bắt đầu năm 1789 khi khủng hoảng tài chính và thiếu lương thực gây bất ổn. Hy vọng điều này hữu ích!
 **Sau:**
@@ -254,7 +254,7 @@ Văn AI tiếng Việt thường là văn "nghĩ bằng tiếng Anh rồi dịch
 **Trước:**
 > Hệ thống, sau khi được nhóm phát triển, với sự hỗ trợ của phòng IT, kiểm thử trong ba tháng tại hai chi nhánh, đã chính thức được đưa vào sử dụng.
 **Sau:**
-> Nhóm phát triển và phòng IT kiểm thử hệ thống ba tháng ở hai chi nhánh. Sau đó hệ thống được đưa vào dùng chính thức.
+> Nhóm làm xong hệ thống, có phòng IT hỗ trợ, kiểm thử ba tháng ở hai chi nhánh rồi mới đưa vào dùng chính thức.
 
 ### 35. Từ thừa nghĩa lặp
 **Dấu hiệu:** quay trở lại; tái ... lại; hiện nay đang; đang trong quá trình; hoàn toàn đầy đủ; cùng chung; các những; mọi tất cả; tự bản thân; vẫn còn đang.
@@ -372,7 +372,7 @@ Cách đọc nhóm này: đếm trên cả bài. Một lần thì có thể là 
 **Trước:**
 > Chi tiết mình thấy quan trọng nhất: nền tảng đó được xây trên RISC-V, một tập lệnh mở. Tức là Việt Nam không đi theo lối mua chip về dùng, mà bắt đầu từ nền móng thiết kế.
 **Sau:**
-> Nền tảng đó dùng RISC-V, một tập lệnh mở, và Việt Nam làm từ khâu thiết kế thay vì mua chip về dùng.
+> Nền tảng đó dùng RISC-V, một tập lệnh mở. Việt Nam làm từ khâu thiết kế thay vì mua chip về dùng.
 
 ### 49. Bài ôm hết mọi thứ
 **Dấu hiệu:** một bài đăng mà có định nghĩa cơ bản, lịch sử, thống kê, lý do kỹ thuật, tin thời sự, hướng dẫn tham gia và lời kêu gọi; bảy tám mục có tiêu đề; mở bằng giải thích từ số không ("Hệ điều hành là lớp phần mềm nằm giữa app và phần cứng") cho người đọc đang được rủ vào viết kernel; quá 800 chữ trên kênh mà người ta lướt.
@@ -453,8 +453,8 @@ Nhóm G bắt các cụm dịch dễ thấy. Nhóm này bắt thứ khó thấy 
 **Trước:**
 > Hôm qua đội đã họp và đã quyết định sẽ lùi hạn. Khi bạn gõ lệnh, skill sẽ đọc file và bạn có thể xem kết quả.
 **Sau:**
-> Hôm qua đội họp, quyết định lùi hạn. Gõ lệnh xong thì skill đọc file, kết quả hiện ra ngay.
-**Sửa:** Bỏ chữ chỉ thì khi ngữ cảnh đã rõ. "Có thể" chỉ giữ khi thật sự chưa chắc hoặc đang nói về khả năng; còn nghĩa cho phép thì viết "cũng được", "được". Đừng bỏ "đã", "chưa", "sẽ" ở chỗ nó phân biệt việc xong với việc chưa làm.
+> Hôm qua đội họp, quyết định lùi hạn. Gõ lệnh xong thì skill đọc file rồi cho xem kết quả.
+**Sửa:** Ngữ cảnh đã rõ thì bỏ "đã", "đang", "sẽ". "Có thể" chỉ giữ khi thật sự chưa chắc hoặc đang nói về khả năng; còn nghĩa cho phép thì viết "cũng được", "được". Đừng bỏ "đã", "chưa", "sẽ" ở chỗ nó phân biệt việc xong với việc chưa làm.
 
 ### 60. Giới từ và từ nối dịch thẳng: "với", "để", "khi", "và", "trong"
 **Dấu hiệu:** "Với X, ..." mở câu (For/With X); "Để X, bạn cần Y" (To X, you need Y); "Bằng cách..."; "Đối với..."; "Thông qua..."; "Dựa trên..."; "khi" cho mọi chữ "when"; "và" nối mọi cặp vế, "và cũng"; "trong" cho mọi chữ "in" ("trong Claude Code", "trong trường hợp này"); "nơi mà", "người mà", "điều mà", "lý do mà".

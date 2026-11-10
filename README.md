@@ -307,7 +307,7 @@ tests/test_scan.py           python3 -m unittest discover -s tests
 
 ## Góp ý, báo lỗi
 
-Gặp kiểu câu AI tiếng Việt nào skill chưa bắt, hay thấy skill sửa hỏng một câu vốn tự nhiên, thì mở issue, dán câu đó vào, kèm bản bạn thấy đúng. Pull request thêm dấu hiệu mới cần có ví dụ trước/sau và một test trong `tests/test_scan.py`, trong đó có cả câu máy quét không được báo nhầm.
+Gặp kiểu câu AI tiếng Việt nào skill chưa bắt, hay thấy skill sửa hỏng một câu vốn tự nhiên, thì mở issue, dán câu đó vào, kèm bản bạn thấy đúng. Pull request thêm dấu hiệu mới cần có ví dụ trước/sau và một test trong `tests/test_scan.py`, test phải có cả câu mà máy quét không được báo nhầm.
 
 ## Nguồn tham khảo
 
