@@ -5,6 +5,7 @@
 - Ví dụ bài đăng dài: `examples/bai-dang-truoc.md` (1.740 chữ, 55/100) và `examples/bai-dang-sau.md` (376 chữ, 0/100), có test kiểm bản viết lại không thêm số liệu.
 - README hai thứ tiếng: cách cài không cần biết code, hướng dẫn dùng hằng ngày, mục riêng cho trợ lý AI được nhờ cài (có cách cho Windows), mục "Mời một ly cà phê".
 - Mã QR vẽ lại ở độ phân giải gấp 4, nội dung mã giữ nguyên.
+- README chính (`README.md`) là bản tiếng Việt; bản tiếng Anh chuyển sang `README.en.md`.
 
 ## 2.2.0 (2026-11-10)
 
