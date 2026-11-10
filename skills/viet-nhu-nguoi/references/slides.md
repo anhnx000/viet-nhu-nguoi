@@ -53,7 +53,7 @@ Thiếu bối cảnh mà người dùng vẫn cần gấp thì viết một tran
 Skill này lo phần chữ, nhưng có ai hỏi về hình thức thì nhắc mấy điểm sau:
 
 - Emoji hoặc icon ở mọi tiêu đề, mọi gạch đầu dòng.
-- Lưới thẻ icon lặp lại, nền trắng với dải màu chuyển tím, ảnh minh họa chung chung không nói lên nội dung.
+- Lưới thẻ icon lặp lại, nền trắng với gradient tím, ảnh minh họa chung chung không nói lên nội dung.
 - Bảng tô ba màu đèn giao thông, nhiều chỗ tô màu trên một slide. Một slide chỉ nên có một chỗ nhấn màu, và màu nào cũng phải có nghĩa.
 - Cùng một bố cục lặp lại ba slide liền dù nội dung khác nhau.
 - In đậm tràn lan.

@@ -36,7 +36,7 @@ Sắp từ mạnh đến yếu. Nhóm A và nhóm E chỉ cần gặp một lầ
 
 ### 4. Câu dẫn trước khi vào ý
 **Dấu hiệu:** Hãy cùng tìm hiểu; Dưới đây là những điều bạn cần biết; Chúng ta hãy cùng khám phá; Nói thẳng ra thì; Thành thật mà nói?; Ít ai biết rằng; Không ai nói cho bạn biết điều này, nhưng; Let's dive in; Here's the thing; Honestly?; Real talk.
-**Sửa:** Bỏ phần dẫn, vào thẳng ý. Đừng thay bằng cụm cùng họ ("Nói cho thật:", "Nói gọn thì"); xem mục 45.
+**Sửa:** Bỏ phần dẫn, vào thẳng ý. Đừng thay bằng cụm cùng kiểu ("Nói cho thật:", "Nói gọn thì"); xem mục 45.
 **Trước:**
 > Hãy cùng tìm hiểu cách cache hoạt động trong Next.js. Dưới đây là những điều bạn cần biết.
 **Sau:**
@@ -328,7 +328,7 @@ Câu ngắn hơn chưa chắc đúng hơn. Kiểm lại sau khi sửa:
 
 ## I. Cả bài: dấu hiệu còn lại sau khi từng câu đã sạch
 
-Nhóm này rút ra từ một bài đăng có thật, dài 1.740 chữ về một dự án hệ điều hành. Bài đã bỏ hết từ vựng AI, gạch ngang dài, in đậm, lời chatbot. Máy quét bản 2.1.0 chấm 3/100, vậy mà người đọc vẫn nhận ra ngay. Lý do: người sửa (hoặc mô hình) bỏ cụm bị cấm rồi thay bằng cụm cùng họ, và các khuôn câu lặp lại đều đặn suốt bài. Người đọc không soi từng câu, chỉ cần thấy một kiểu lặp tới lần thứ ba là nhận ra.
+Nhóm này rút ra từ một bài đăng có thật, dài 1.740 chữ về một dự án hệ điều hành. Bài đã bỏ hết từ vựng AI, gạch ngang dài, in đậm, lời chatbot. Máy quét bản 2.1.0 chấm 3/100, vậy mà người đọc vẫn nhận ra ngay. Lý do: người sửa (hoặc mô hình) bỏ cụm bị cấm rồi thay bằng cụm cùng kiểu, và các khuôn câu lặp lại đều đặn suốt bài. Người đọc không soi từng câu, chỉ cần thấy một kiểu lặp tới lần thứ ba là nhận ra.
 
 Bài gốc và bản viết lại nằm ở `examples/bai-dang-truoc.md` và `examples/bai-dang-sau.md` trong repo.
 
@@ -336,7 +336,7 @@ Cách đọc nhóm này: đếm trên cả bài. Một lần thì có thể là 
 
 ### 45. Nhãn báo giọng: "nói gọn", "nói thật", "nói rõ"
 **Dấu hiệu:** Nói cho thật:; Nói cho công bằng:; Nói rõ để bạn khỏi hiểu lầm:; Nói gọn thì; tiêu đề có đuôi ", nói gọn"; hiểu đơn giản là; nói nôm na là; cứ hiểu nó như; thành thật mà nói; công bằng mà nói; thú thật là; to be honest; to be fair; simply put.
-**Vấn đề:** Câu báo trước mình sắp nói thật, nói gọn, nói công bằng, rồi mới nói. Đây là mục 4 và mục 5 khoác áo mới: cấm "Nói thẳng ra thì" thì mô hình viết "Nói cho thật:". Cấm một cụm trong họ này là cấm cả họ, kể cả cụm chưa có trong danh sách.
+**Vấn đề:** Câu báo trước mình sắp nói thật, nói gọn, nói công bằng, rồi mới nói. Đây là mục 4 và mục 5 khoác áo mới: cấm "Nói thẳng ra thì" thì mô hình viết "Nói cho thật:". Cấm một cụm kiểu này là cấm cả kiểu câu đó, kể cả cụm chưa có trong danh sách.
 **Sửa:** Xóa nhãn, giữ câu sau nó. Bỏ nhãn mà câu sau vẫn đủ nghĩa thì nhãn thừa. Muốn gọn thì viết gọn, không cần báo.
 **Trước:**
 > Nói cho thật: tiến độ không dễ. Có báo nước ngoài nói nhà máy đang chậm so với mốc đề ra.
