@@ -230,6 +230,61 @@ class Slides(unittest.TestCase):
         self.assertIn("30/11", diff.stdout)
 
 
+class WholeDocument(unittest.TestCase):
+    """Bài đã sạch từng câu vẫn lộ khi nhìn cả bài: nhãn báo giọng, khuôn lặp, hai chấm, đoạn đều."""
+
+    PARA = ("Kernel giữ phần cấp quyền và chia CPU. Driver chạy ở ngoài như một app thường.\n\n"
+            "Nói cho công bằng: cách này vẫn có giá. Khó nhất không phải là code, mà là chọn việc.\n\n"
+            "Mình không cần bạn giỏi kernel. Mình cần bạn chịu đọc log.\n\n")
+
+    def long_post(self):
+        return ("MÌNH ĐANG VIẾT MỘT HỆ ĐIỀU HÀNH\n\n" + self.PARA
+                + "".join(f"PHẦN SỐ {i}, NÓI GỌN\n\n" + self.PARA * 3 for i in range(4))
+                + "KẾT\n\nNói rõ để bạn khỏi kỳ vọng sai: đây là dự án nghiên cứu.\n\n#OSDev #Rust\n")
+
+    def test_voice_labels(self):
+        for text in ("Nói cho thật: tiến độ không dễ.", "Nói rõ để bạn khỏi kỳ vọng sai: đây là bản thử.",
+                     "HỆ ĐIỀU HÀNH LÀ GÌ, NÓI GỌN", "Vibe coding, hiểu đơn giản là ngồi nói chuyện với AI.",
+                     "Thành thật mà nói, mình cũng chưa chắc."):
+            self.assertIn("nhãn báo giọng", groups(text), text)
+
+    def test_plain_noi_ro_is_not_a_label(self):
+        self.assertEqual(groups("Anh nói rõ giúp em hạn nộp nhé."), set())
+        self.assertEqual(groups("Chị ấy nói thật với mình là chưa xong."), set())
+
+    def test_contrast_variants(self):
+        for text in ("Mình không cần bạn giỏi kernel. Mình cần bạn chịu đọc log.",
+                     "Con số đó không nói Linux dở. Nó nói một điều khác.",
+                     "Việt Nam không đi theo lối mua chip, mà bắt đầu từ thiết kế.",
+                     "Driver nằm ở user space chứ không nhét vào kernel."):
+            self.assertIn("đối lập giả", groups(text), text)
+
+    def test_khong_phai_meaning_need_not(self):
+        self.assertNotIn("đối lập giả", groups("Khách tự xem tiến độ, không phải nhắn hỏi như trước."))
+
+    def test_restating_and_outline(self):
+        self.assertIn("diễn giải lại", groups("Bản đo lệch 5%. Tức là thiết kế cũ mới chậm."))
+        self.assertIn("tự kể dàn ý", groups("Bài này mình viết để kể dự án cho người mới."))
+
+    def test_long_post_is_not_diluted(self):
+        text = self.long_post()
+        hits, _ = scan.scan(text)
+        for group in ("tật lặp cả bài", "hai chấm dồn dập", "đoạn ngắn đều nhau",
+                      "bài đăng chia mục viết hoa", "mục kết dán nhãn"):
+            self.assertIn(group, hits)
+        result = scan.score(text, hits)
+        self.assertGreaterEqual(result["document_points"], 30)
+        self.assertGreaterEqual(result["score"], 30)
+
+    def test_one_contrast_is_not_a_tic(self):
+        hits, _ = scan.scan("Lỗi nằm ở token chứ không phải timeout. Em đã thử tăng timeout rồi.")
+        self.assertNotIn("tật lặp cả bài", hits)
+
+    def test_document_checks_skip_code_and_lists(self):
+        text = "# Cài đặt\n\n" + "- Bước một: tải về.\n" * 30 + "\n```\nKẾT\n```\n"
+        self.assertEqual(groups(text), set())
+
+
 class EmptyPromises(unittest.TestCase):
     def test_detects(self):
         self.assertIn("hứa suông", groups("Chi tiết sẽ được trao đổi sau."))

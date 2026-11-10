@@ -12,6 +12,10 @@ thuyết trình của từng slide, và chạy thêm các kiểm riêng cho slid
 Điểm 0-100 đo mật độ dấu hiệu bề mặt và độ đều của câu. Điểm cao nghĩa là văn bản có
 nhiều thói quen viết theo khuôn, không phải xác suất văn bản do AI viết.
 Chỉ bắt dấu hiệu bề mặt. Cấu trúc (bộ ba, câu chốt, sai người đọc) phải tự đọc.
+
+Với bài dài, máy quét đếm thêm trên cả bài: một khuôn câu lặp từ 3 lần, dấu hai chấm dồn dập,
+đoạn nào cũng 1-3 câu, bài đăng chia nhiều mục viết hoa. Câu chốt cuối đoạn thì phải tự đọc.
+Các dấu hiệu này cộng điểm cố định, không chia theo độ dài, nên bài dài không "loãng" thành sạch.
 """
 import argparse
 import json
@@ -44,9 +48,37 @@ PATTERNS = {
         r"ít ai (biết|dám nói)", r"không ai nói", r"let'?s dive in", r"here'?s the thing",
         r"here'?s what you need to know", r"without further ado",
     ],
+    # "Nói gọn", "Nói cho thật:", "Nói rõ để...:": báo trước mình sắp nói kiểu gì thay vì nói luôn.
+    "nhãn báo giọng": [
+        r"(^\W*|[.!?…]\s+)(mình |tôi |em |anh |chị |xin |phải |cứ )?nói (cho )?(thật|thẳng|gọn|rõ|ngắn gọn|"
+        r"đơn giản|nhanh|trắng ra|công bằng|thật lòng|thẳng thắn|chính xác|đúng ra)( ra| thì| là| luôn| nhé)?\s*[:,]",
+        r"(^\W*|[.!?…]\s+)nói (cho )?(thật|thẳng|gọn|rõ|công bằng) (để|cho|trước)\b[^.!?\n:]{0,50}:",
+        r",\s*nói (gọn|nhanh|thật|thẳng|ngắn gọn|đơn giản)\s*$",
+        r"(thành thật|thật lòng|công bằng|thẳng thắn|thú thật|nghiêm túc) mà nói",
+        r"(hiểu|nói) (một cách )?(đơn giản|nôm na|ngắn gọn|dễ hiểu)( nhất)? (là|thì)\b",
+        r"cứ hiểu (nó |đơn giản )?(như|là)\b",
+        r"(^\W*|[.!?]\s+)(to be (honest|fair|clear)|let'?s be (honest|real|clear)|honestly|frankly|"
+        r"simply put|put simply|long story short)\s*[,:]",
+    ],
     "đối lập giả": [
-        r"không (chỉ|đơn thuần|phải)\b.{0,80}?\bmà (còn|là)", r"chứ không phải",
+        r"không (chỉ|đơn thuần|phải)\b.{0,80}?\bmà (còn|là)", r"chứ không(?! thì)\b",
+        # "không X, mà Y"; tách hai câu "Mình không cần X. Mình cần Y."
+        # Không bắt đuôi ", không phải Y" vì trùng với "không phải" nghĩa là "khỏi phải".
+        r"không (?!chỉ\b|đơn thuần\b|phải\b)[^.!?\n,;:]{1,60}, mà (?!còn\b)",
+        r"không (?!phải\b|có\b|được\b|thể\b|biết\b)(\w+)\b[^.!?\n]{0,60}[.!?]\s+(?:\w+\s+){1,3}\1\b",
         r"\bnot (just|only|merely)\b.{0,80}?\bbut\b", r"\bit'?s not\b.{0,60}?\bit'?s\b",
+    ],
+    # Nêu sự việc xong lại giải nghĩa hộ người đọc.
+    "diễn giải lại": [
+        r"(^\W*|[.!?…]\s+)(tức là|nghĩa là|có nghĩa là|điều đó có nghĩa là|(hay )?nói (một )?cách khác|"
+        r"nói đơn giản hơn)\b",
+        r"\bin other words\b", r"\bwhich means\b",
+    ],
+    "tự kể dàn ý": [
+        r"bài (viết )?này (mình |tôi |em |chúng tôi )?(viết để|sẽ (nói|kể|chia sẻ|trình bày|đi qua|giải thích|"
+        r"điểm qua)|gồm \w+ phần|chia (làm|thành))",
+        r"trong bài (viết )?này,? (mình|tôi|em|chúng ta|chúng tôi) sẽ", r"cuối bài (có|là) phần",
+        r"\bin this (post|article),? (i|we)( will|'ll)\b",
     ],
     "tổng kết rỗng": [
         r"^\s*(tóm lại|nhìn chung|nói tóm lại|kết luận lại)", r"\bin conclusion\b",
@@ -127,7 +159,8 @@ NOMINAL = re.compile(r"\b(việc|sự)\b")
 THIS_IT = re.compile(r"^(điều này|điều đó|nó)\b")
 
 
-def scan(text):
+def scan(text, doc=True):
+    """doc=False bỏ các kiểm cả bài (dùng cho slide)."""
     hits = {}
     in_code = False
     lines = text.splitlines()
@@ -154,6 +187,8 @@ def scan(text):
             if prose[m.start(1):m.end(1)].islower():  # bỏ qua viết tắt như (MIT), (API)
                 hits.setdefault("chêm tiếng Anh", []).append((no, m.group(0)))
         sentence_checks(prose, no, hits)
+    if doc:
+        document_checks(text, hits)
     return hits, len(lines)
 
 
@@ -177,6 +212,83 @@ def sentence_checks(prose, no, hits):
         run = run + 1 if a >= 20 and b >= 20 and abs(a - b) <= 4 else 1
         if run == 3:
             hits.setdefault("câu dài đều nhau", []).append((no, f"{lengths}"))
+
+
+TIC_GROUPS = ("đối lập giả", "nhãn báo giọng", "diễn giải lại")
+CLOSING_LABEL = re.compile(r"^(kết|kết luận|lời kết|kết bài|tóm lại|tổng kết|lời cuối)$")
+HASHTAG = re.compile(r"(?:^|\s)#[^\W\d_]\w+")
+LIST_ITEM = re.compile(r"^\s*([-*+>|]|\d+[.)])\s?")
+COLON = re.compile(r"(?<!\d):(\s|$)")
+
+
+def prose_lines(text):
+    """Trả về (số dòng, dòng đã bỏ code và link); dòng trong khối code thành chuỗi rỗng."""
+    in_code = False
+    for no, line in enumerate(text.splitlines(), 1):
+        if FENCE.match(line):
+            in_code = not in_code
+            yield no, ""
+        elif in_code:
+            yield no, ""
+        else:
+            yield no, re.sub(r"`[^`]*`|https?://\S+", "", line)
+
+
+def is_caps_heading(s):
+    letters = [c for c in s if c.isalpha()]
+    return len(letters) >= 3 and s == s.upper() and len(s.split()) <= 20 and not s.startswith("#")
+
+
+def document_checks(text, hits):
+    """Dấu hiệu chỉ thấy khi nhìn cả bài, sau khi từng câu đã sạch."""
+    for group in TIC_GROUPS:
+        n = len(hits.get(group, []))
+        if n >= 3:
+            hits.setdefault("tật lặp cả bài", []).append((hits[group][0][0], f"{group} x{n}"))
+    paras, cur, start, caps, tagged, total_words = [], [], 0, [], False, 0
+    for no, line in list(prose_lines(text)) + [(0, "")]:
+        s = line.strip()
+        total_words += len(s.split())
+        if not s:
+            if cur:
+                paras.append((start, " ".join(cur)))
+                cur = []
+            continue
+        if len(HASHTAG.findall(s)) >= 2:
+            tagged = True
+            continue
+        md_heading = re.match(r"#{1,6}\s+(.*)", s)
+        if md_heading or is_caps_heading(s):
+            name = (md_heading.group(1) if md_heading else s).strip(" .:!*_").lower()
+            if CLOSING_LABEL.match(name):
+                hits.setdefault("mục kết dán nhãn", []).append((no, s[:40]))
+            if not md_heading:
+                caps.append(no)
+            continue
+        if LIST_ITEM.match(s):
+            continue
+        if not cur:
+            start = no
+        cur.append(s)
+    if len(caps) >= 4:
+        hits.setdefault("bài đăng chia mục viết hoa", []).append((caps[0], f"{len(caps)} mục"))
+    if tagged and total_words > 800:
+        hits.setdefault("bài mạng xã hội dài", []).append((1, f"{total_words} chữ"))
+    counts, sents_all, colons = [], 0, 0
+    for _, para in paras:
+        sents = [x for x in SENT_SPLIT.split(para) if len(x.split()) >= 2]
+        if not sents:
+            continue
+        counts.append(len(sents))
+        sents_all += len(sents)
+        colons += sum(1 for x in sents if COLON.search(x))
+    first = paras[0][0] if paras else 1
+    if sents_all >= 20 and colons >= 6 and colons / sents_all >= 0.15:
+        hits.setdefault("hai chấm dồn dập", []).append((first, f"{colons}/{sents_all} câu có dấu hai chấm"))
+    if len(counts) >= 12 and max(counts) <= 4 and sum(1 for c in counts if c <= 3) / len(counts) >= 0.9:
+        short = sum(1 for c in counts if c <= 3)
+        hits.setdefault("đoạn ngắn đều nhau", []).append(
+            (first, f"{short}/{len(counts)} đoạn chỉ 1-3 câu, không đoạn nào quá 4 câu"))
 
 
 # Tiêu đề slide chỉ là nhãn chủ đề hoặc tả việc đang làm, không nói kết luận.
@@ -245,7 +357,8 @@ def slide_checks(deck, index, hits):
 
 # Trọng số theo độ mạnh của dấu hiệu. Nhóm không có tên ở đây tính 1.
 WEIGHTS = {
-    "lời chatbot": 3, "câu dẫn": 3, "đối lập giả": 3, "tổng kết rỗng": 3,
+    "lời chatbot": 3, "câu dẫn": 3, "đối lập giả": 3, "nhãn báo giọng": 3,
+    "diễn giải lại": 2, "tự kể dàn ý": 2, "mục kết dán nhãn": 2, "tổng kết rỗng": 3,
     "giới hạn kiến thức": 3, "dấu vết công cụ": 3, "văn dịch (vi)": 3, "động từ rỗng (vi)": 3,
     "thổi phồng": 2, "uy tín mơ hồ": 2, "quảng cáo": 2, "từ vựng AI (vi)": 2,
     "từ vựng AI (en)": 2, "né là/có": 2, "danh hóa (vi)": 2, "thừa nghĩa (vi)": 2,
@@ -253,6 +366,24 @@ WEIGHTS = {
     "hứa suông": 2, "tiêu đề dạng nhãn": 2, "tiêu đề đếm số ý": 2, "số gạch đầu dòng đều": 2,
     "lộ tên khung": 2,
 }
+# Dấu hiệu cả bài: điểm cố định, không chia theo độ dài.
+DOC_POINTS = {
+    "hai chấm dồn dập": 6, "đoạn ngắn đều nhau": 4,
+    "bài đăng chia mục viết hoa": 4, "bài mạng xã hội dài": 6,
+}
+for _g in list(DOC_POINTS) + ["tật lặp cả bài"]:
+    WEIGHTS[_g] = 0
+
+
+def doc_points(hits):
+    points = sum(v for g, v in DOC_POINTS.items() if g in hits)
+    for group in TIC_GROUPS:  # một khuôn lặp 3 lần: 6 điểm, mỗi lần thêm 2 điểm, tối đa 15
+        n = len(hits.get(group, []))
+        if n >= 3 and "tật lặp cả bài" in hits:
+            points += min(15, 6 + 2 * (n - 3))
+    return points
+
+
 BANDS = ((10, "sạch"), (30, "vài dấu hiệu"), (60, "nhiều dấu hiệu"), (101, "dày đặc"))
 
 
@@ -282,10 +413,11 @@ def score(text, hits, burst=True):
     if burst and len(lengths) >= 5:
         cv = statistics.pstdev(lengths) / statistics.mean(lengths)
         burst_penalty = max(0.0, 0.35 - cv) * 40
-    value = min(100, round(density * 2 + burst_penalty))
+    fixed = doc_points(hits)
+    value = min(100, round(density * 2 + burst_penalty + fixed))
     band = next(name for limit, name in BANDS if value < limit)
     return {"score": value, "band": band, "words": words, "weighted_hits": weighted,
-            "sentence_length_cv": None if cv is None else round(cv, 2)}
+            "document_points": fixed, "sentence_length_cv": None if cv is None else round(cv, 2)}
 
 
 def load(path):
@@ -333,7 +465,7 @@ def main():
         print("\n".join(titles_of(text, deck)) or "Không thấy tiêu đề nào.")
         print("\nĐọc liền các tiêu đề trên: có thành một mạch không, slide nào chỉ là nhãn chủ đề?")
         return
-    hits, total = scan(text)
+    hits, total = scan(text, doc=deck is None)
     where = {}
     if deck is not None:
         slide_checks(deck, index, hits)
@@ -352,7 +484,8 @@ def main():
               "Vẫn cần tự đọc phần cấu trúc.")
     else:
         count = sum(len(v) for v in hits.values())
-        print(f"Điểm {result['score']}/100 ({result['band']}): {count} dấu hiệu trong {unit}.\n")
+        print(f"Điểm {result['score']}/100 ({result['band']}): {count} dấu hiệu trong {unit}, "
+              f"{result['words']} chữ.\n")
         for group, items in sorted(hits.items(), key=lambda kv: -len(kv[1])):
             print(f"[{group}] {len(items)}")
             for no, m in items[:12]:

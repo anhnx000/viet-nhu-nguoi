@@ -69,6 +69,10 @@ Skill tiếng Việt, đều MIT. Dùng để đối chiếu danh mục; quy t�
 - [cuongducle/viet-humanize](https://github.com/cuongducle/viet-humanize). **Dùng trực tiếp.** Bảng "sửa khi / giữ khi", các thay đổi dễ làm sai nghĩa.
 - [pdh372/humanize-vietnamese](https://github.com/pdh372/humanize-vietnamese). **Dùng trực tiếp.** Bảng chuyển câu văn dịch sang câu tự nhiên, cách viết kịch bản để đọc.
 
+## Bài thực tế
+
+- Một bài đăng mạng xã hội 1.740 chữ về một dự án hệ điều hành, tháng 11-2026, bị người đọc nhận ra là AI viết dù đã qua skill. **Dùng trực tiếp.** Nguồn của nhóm I (mục 45-53) và các kiểm cả bài trong `scan.py`. Số đo trên bài: 10 câu đối lập, 6 nhãn báo giọng, 20 trên 88 câu có dấu hai chấm, 38 trên 40 đoạn chỉ 1-3 câu, 9 mục viết hoa. Ngưỡng của các kiểm cả bài được chỉnh trên đúng một bài này, nên coi là gợi ý.
+
 ## Giới hạn
 
 Ví dụ trước/sau trong skill do người làm skill tự viết, chưa qua một nhóm người đọc bản ngữ độc lập chấm. Ngưỡng điểm của `scan.py` được chỉnh trên vài văn bản mẫu, chưa đo trên một tập lớn. Cần thêm phản hồi theo vùng miền, ngành và kênh trước khi khẳng định mức cải thiện. Nếu bạn thấy một nguồn bị dẫn sai ý, hãy mở issue.

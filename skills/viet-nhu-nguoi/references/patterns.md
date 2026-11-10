@@ -1,12 +1,12 @@
 # Danh mục dấu hiệu văn AI (Việt + Anh)
 
-Sắp từ mạnh đến yếu. Nhóm A và nhóm E chỉ cần gặp một lần là sửa. Nhóm G (mục 30-38) dành riêng cho tiếng Việt. Nhóm H (mục 39-44) dành cho slide, lời thuyết trình và tài liệu nhiều trang; hướng dẫn đầy đủ ở `slides.md`. Mục ghi *yếu* chỉ sửa khi đi cùng dấu hiệu khác trong cùng đoạn.
+Sắp từ mạnh đến yếu. Nhóm A và nhóm E chỉ cần gặp một lần là sửa. Nhóm G (mục 30-38) dành riêng cho tiếng Việt. Nhóm H (mục 39-44) dành cho slide, lời thuyết trình và tài liệu nhiều trang; hướng dẫn đầy đủ ở `slides.md`. Nhóm I (mục 45-53) là những dấu hiệu chỉ thấy khi nhìn cả bài, hay còn lại sau khi từng câu đã được sửa sạch; bài dài và bài đăng mạng xã hội thì đọc nhóm này trước. Mục ghi *yếu* chỉ sửa khi đi cùng dấu hiệu khác trong cùng đoạn.
 
 ## A. Dàn dựng thay vì nói thẳng
 
 ### 1. Đối lập giả: "không phải X mà là Y"
 **Dấu hiệu:** không chỉ... mà còn; không phải X, mà là Y; X chứ không phải Y; không đơn thuần là; it's not X, it's Y; not just X but Y; X rather than Y; tách thành hai câu ("Điều này không có nghĩa là X. Nó có nghĩa là Y."); đuôi phủ định cụt ("..., không cần đoán").
-**Vấn đề:** Vế phủ định bác bỏ điều không ai nói, để vế sau nghe to hơn. Nói thẳng vế sau. Chỉ giữ khi vế đầu sửa một niềm tin người đọc thật sự có.
+**Vấn đề:** Vế phủ định bác bỏ điều không ai nói, để vế sau nghe to hơn. Nói thẳng vế sau. Chỉ giữ khi vế đầu sửa một niềm tin người đọc thật sự có, và cả bài chỉ một lần; xem mục 46.
 **Trước:**
 > Đây không chỉ là một bản cập nhật, mà là một cuộc cách mạng trong cách đội ngũ làm việc.
 **Sau:**
@@ -18,7 +18,7 @@ Sắp từ mạnh đến yếu. Nhóm A và nhóm E chỉ cần gặp một lầ
 
 ### 2. Câu chốt một dòng, câu cụt kịch tính
 **Dấu hiệu:** đoạn một câu nhắc lại đoạn trước; "Đó mới là điều quan trọng."; "Điều đó nói lên tất cả."; "Hãy suy ngẫm điều đó."; "Let that sink in."; "That is the real win."; chuỗi câu cụt ("Không phô trương. Không màu mè. Chỉ hiệu quả."); câu tổng kết sau một ví dụ ("Điều này cho thấy tầm quan trọng của...").
-**Sửa:** Bỏ câu chốt nhắc lại. Gộp chuỗi câu cụt thành một câu có ý cụ thể. Giữ câu ngắn nếu nó mang sự việc mới.
+**Sửa:** Bỏ câu chốt nhắc lại. Gộp chuỗi câu cụt thành một câu có ý cụ thể. Giữ câu ngắn nếu nó mang sự việc mới. Câu chốt gắn vào cuối đoạn cũng tính; xem mục 47.
 **Trước:**
 > Cache giảm việc lặp lại.
 >
@@ -36,7 +36,7 @@ Sắp từ mạnh đến yếu. Nhóm A và nhóm E chỉ cần gặp một lầ
 
 ### 4. Câu dẫn trước khi vào ý
 **Dấu hiệu:** Hãy cùng tìm hiểu; Dưới đây là những điều bạn cần biết; Chúng ta hãy cùng khám phá; Nói thẳng ra thì; Thành thật mà nói?; Ít ai biết rằng; Không ai nói cho bạn biết điều này, nhưng; Let's dive in; Here's the thing; Honestly?; Real talk.
-**Sửa:** Bỏ phần dẫn, vào thẳng ý.
+**Sửa:** Bỏ phần dẫn, vào thẳng ý. Đừng thay bằng cụm cùng họ ("Nói cho thật:", "Nói gọn thì"); xem mục 45.
 **Trước:**
 > Hãy cùng tìm hiểu cách cache hoạt động trong Next.js. Dưới đây là những điều bạn cần biết.
 **Sau:**
@@ -325,6 +325,77 @@ Câu ngắn hơn không có nghĩa là đúng hơn. Kiểm lại sau khi sửa:
 > Như chúng ta có thể thấy, việc chuyển đổi số không chỉ là xu hướng mà còn là yếu tố then chốt giúp doanh nghiệp tối ưu hóa nguồn lực một cách hiệu quả (theo nhiều chuyên gia).
 **Sau:**
 > Hai lần trễ vừa rồi đều cùng một lý do. Dev phải tự test, nên vừa chậm vừa sót lỗi.
+
+## I. Cả bài: dấu hiệu còn lại sau khi từng câu đã sạch
+
+Nhóm này rút ra từ một bài đăng thật dài 1.740 chữ về một dự án hệ điều hành. Bài đã bỏ hết từ vựng AI, gạch ngang dài, in đậm, lời chatbot, máy quét bản 2.1.0 chấm 3/100, vậy mà người đọc vẫn nhận ra ngay. Lý do: người sửa (hoặc mô hình) bỏ cụm bị cấm rồi thay bằng cụm cùng họ, và các khuôn câu lặp lại đều đặn suốt bài. Người đọc không soi từng câu. Họ thấy cùng một động tác xuất hiện lần thứ ba là đủ.
+
+Cách đọc nhóm này: đếm trên cả bài. Một lần thì có thể là giọng người viết, ba lần là tật.
+
+### 45. Nhãn báo giọng: "nói gọn", "nói thật", "nói rõ"
+**Dấu hiệu:** Nói cho thật:; Nói cho công bằng:; Nói rõ để bạn khỏi hiểu lầm:; Nói gọn thì; tiêu đề có đuôi ", nói gọn"; hiểu đơn giản là; nói nôm na là; cứ hiểu nó như; thành thật mà nói; công bằng mà nói; thú thật là; to be honest; to be fair; simply put.
+**Vấn đề:** Câu báo trước mình sắp thật, sắp gọn, sắp công bằng, rồi mới nói. Đây là mục 4 và mục 5 đổi áo: cấm "Nói thẳng ra thì" thì mô hình viết "Nói cho thật:". Cấm một cụm trong họ này là cấm cả họ, kể cả cụm chưa có trong danh sách.
+**Sửa:** Xóa nhãn, giữ câu sau nó. Câu sau vẫn đứng được thì nhãn thừa. Muốn gọn thì viết gọn, không cần báo.
+**Trước:**
+> Nói cho thật: tiến độ không dễ. Có báo nước ngoài nói nhà máy đang chậm so với mốc đề ra.
+**Sau:**
+> Có báo nước ngoài nói nhà máy đang chậm so với mốc đề ra.
+**Trước:**
+> Nói rõ để bạn khỏi kỳ vọng sai: đây là dự án nghiên cứu, chưa phải hệ điều hành dùng hằng ngày.
+**Sau:**
+> Đây mới là dự án nghiên cứu, chưa dùng hằng ngày được.
+
+### 46. Đối lập lặp cả bài
+**Dấu hiệu:** mẫu ở mục 1 xuất hiện từ ba lần trong một bài, kể cả các dạng ngụy trang: "không X, mà Y"; "X chứ không Y"; "X, không phải Y"; tách hai câu cùng chủ ngữ ("Mình không cần bạn giỏi kernel. Mình cần bạn kiên nhẫn."; "Con số đó không nói Linux dở. Nó nói một điều đơn giản hơn:").
+**Vấn đề:** Từng câu đều có vẻ chính đáng vì "người đọc có thể đang nghĩ X". Bài mẫu có mười câu như vậy. Ngoại lệ ở mục 1 chỉ dùng được một lần trong một bài, cho đúng chỗ người đọc thật sự tin sai nhiều nhất.
+**Sửa:** Đếm cả bài. Giữ nhiều nhất một câu. Các câu còn lại nói thẳng vế sau, vế phủ định bỏ.
+**Trước:**
+> Khó nhất không phải là code, mà là chọn việc gì để làm.
+**Sau:**
+> Khó nhất là chọn việc gì để làm.
+**Trước:**
+> Không phải agent tự lái cả dự án, mà là mình đưa việc, agent làm, mình kiểm.
+**Sau:**
+> Mình đưa việc, agent làm, mình kiểm.
+
+### 47. Câu chốt gắn ở cuối đoạn
+**Dấu hiệu:** đoạn nào cũng kết bằng một câu ngắn, cân đối, nghe như châm ngôn: "Máy đã nhanh rồi, giờ cái đắt là một lỗ hổng."; "Cùng một nhân, chỉ khác là AI giỏi lên."; "Kernel càng to thì càng khó chứng minh nó không có lỗi."; "Nhưng hướng đi thì đã rõ, và tiền đã đổ vào."
+**Vấn đề:** Mục 2 cấm câu chốt đứng riêng một dòng, nên câu chốt chui vào cuối đoạn. Một câu thì hay. Mỗi mục một câu thì thành khuôn: sự việc, sự việc, câu đúc kết.
+**Sửa:** Đọc riêng câu cuối của từng đoạn. Câu nào không thêm sự việc mới thì bỏ, để đoạn kết ở sự việc. Cả bài giữ một hai câu đúc kết ở chỗ đáng nhất.
+
+### 48. Nêu sự việc xong giải nghĩa hộ, hai chấm dồn dập
+**Dấu hiệu:** "Tức là...", "Nghĩa là...", "Nói cách khác..." mở câu ngay sau một con số hay một sự việc; câu dựng sân khấu rồi mới nói sau dấu hai chấm ("Chi tiết mình thấy quan trọng nhất:", "Thêm một thống kê:", "Nó nói một điều đơn giản hơn:", "Cái hay của làm OS là kết quả rất rõ:"); từ khoảng một phần sáu số câu trở lên có dấu hai chấm (bài mẫu: 20 trên 88 câu).
+**Vấn đề:** Dấu hai chấm làm việc của gạch ngang dài đã bị cấm. Câu "Tức là" không tin người đọc tự hiểu được con số vừa nêu.
+**Sửa:** Bỏ phần trước dấu hai chấm nếu nó chỉ báo hiệu. Câu "Tức là" thì hoặc bỏ, hoặc gộp ý vào câu sự việc. Dấu hai chấm giữ cho liệt kê và trích dẫn.
+**Trước:**
+> Chi tiết mình thấy quan trọng nhất: nền tảng đó được xây trên RISC-V, một tập lệnh mở. Tức là Việt Nam không đi theo lối mua chip về dùng, mà bắt đầu từ nền móng thiết kế.
+**Sau:**
+> Nền tảng đó xây trên RISC-V, tập lệnh mở, nên kỹ sư Việt tự sửa được thiết kế vi xử lý.
+
+### 49. Bài ôm hết mọi thứ
+**Dấu hiệu:** một bài đăng mà có định nghĩa cơ bản, lịch sử, thống kê, lý do kỹ thuật, tin thời sự, hướng dẫn tham gia và lời kêu gọi; bảy tám mục có tiêu đề; mở bằng giải thích từ số không ("Hệ điều hành là lớp phần mềm nằm giữa app và phần cứng") cho người đọc đang được rủ vào viết kernel; quá 800 chữ trên kênh mà người ta lướt.
+**Vấn đề:** Mô hình viết cho mọi người đọc có thể có, nên phần nào cũng có mặt và phần nào cũng vừa đủ. Người thật đăng bài thì có một chuyện muốn kể, bỏ qua thứ người đọc tự tra được, và hay lệch hẳn về phần họ thích. Bài dài không sao. Bài dài mà phần nào cũng tròn trịa như nhau mới lộ.
+**Sửa:** Hỏi bài này để người đọc làm gì sau khi đọc, rồi chỉ giữ những phần phục vụ việc đó. Phần kiến thức nền đổi thành một câu và một link. Phần còn lại đề xuất tách thành bài khác. Khi sửa bài của người dùng, không lặng lẽ cắt: nói rõ đề xuất bỏ phần nào và để họ quyết. Phép thử: xóa một mục mà bài không hụt thì mục đó thuộc bài khác.
+
+### 50. Bài tự kể dàn ý, mục "KẾT", tiêu đề giả hội thoại
+**Dấu hiệu:** "Bài này mình viết để kể..., rủ..., và kể..."; "Cuối bài có phần dành cho..."; "Trong bài này mình sẽ..."; mục cuối tên "KẾT", "Lời kết", "Tóm lại"; tiêu đề mục là câu hỏi dẫn chuyện ("Còn hiện tại thì sao", "Phần mềm thì sao?") hoặc một câu trích dựng lên để bác ("Có người nói X chậm"); tiêu đề rồi câu đầu nối tiếp tiêu đề ("Hệ điều hành cũng là phần mềm" / "Nên nó cũng có test...").
+**Vấn đề:** Bài đăng của người thật ít khi có mục lục nói bằng lời. Đây là mục 26 (văn bản tự nói về mình) ở dạng thân mật.
+**Sửa:** Bỏ đoạn kể dàn ý. Bỏ tiêu đề "KẾT", để đoạn cuối tự kết. Bài dưới chừng 600 chữ thì bỏ hết tiêu đề mục. Tiêu đề còn giữ thì gọi tên nội dung.
+
+### 51. Đoạn ngắn đều nhau
+**Dấu hiệu:** cả bài toàn đoạn hai ba câu, không đoạn nào quá bốn câu (bài mẫu: 38 trên 40 đoạn); câu nào cũng trọn vẹn, đủ chủ vị, không câu nào bỏ lửng hay chêm ngang.
+**Vấn đề:** Mục 12 và mục 38 nói về câu. Ở đây câu có dài ngắn, nhưng đoạn thì đều như cắt bằng thước. Xuống dòng sau mỗi hai câu là nhịp "dễ đọc trên điện thoại" mà mô hình áp cho mọi bài.
+**Sửa:** Gộp các đoạn cùng một ý thành đoạn dài năm bảy câu. Để đoạn một câu cho chỗ thật sự cần dừng. *Yếu* khi đứng riêng: nhiều người viết Facebook cũng xuống dòng liên tục.
+
+### 52. Nhượng bộ theo khuôn
+**Dấu hiệu:** nhận định nào cũng đi kèm một đoạn lùi lại cho cân: "Câu đó không hoàn toàn sai, nhưng..."; "Nói cho công bằng: X vẫn có giá"; "Con số đó không nói Linux dở"; "tiến độ không dễ... Nhưng hướng đi thì đã rõ". Khuôn lặp: khẳng định, nhượng bộ, "nhưng", khẳng định lại.
+**Vấn đề:** Là mục 11 (cân bằng máy móc) rải thành từng đoạn. Người có quan điểm thì nhượng bộ ở chỗ họ thật sự phân vân, không đều tay ở mọi chỗ.
+**Sửa:** Giữ lời nhượng bộ ở một hai chỗ người viết phân vân thật, và nói rõ phân vân vì gì. Các chỗ còn lại nói thẳng quan điểm.
+
+### 53. Xưng "mình" mà không có chuyện của mình
+**Dấu hiệu:** bài chia sẻ cá nhân, xưng "mình", "tôi", nhưng mọi chi tiết đều là số tổng kết (số dòng code, số test, số commit) và kiến thức tra được; không có một lần hỏng, một đêm, một lỗi cụ thể, một người cụ thể; "mình nghĩ" chỉ gắn với nhận định chung về ngành.
+**Vấn đề:** Bỏ dấu hiệu chỉ làm bài sạch, chưa làm bài có người. Bài như vậy đọc giống bản tóm tắt dự án do người khác viết hộ.
+**Sửa:** Hỏi người dùng một hai chuyện thật: lần nào kernel không boot, mất bao lâu, vì lỗi gì, lúc đó nghĩ gì. Dùng đúng lời họ kể. Không có thì giữ bài ngắn và trung tính. Không bịa kỷ niệm.
 
 ## Giữ lại
 

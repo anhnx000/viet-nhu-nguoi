@@ -1,5 +1,15 @@
 # Changelog
 
+## 2.2.0 (2026-11-10)
+
+Dấu hiệu cả bài. Xuất phát từ một bài đăng 1.740 chữ đã sạch từng câu (bản 2.1.0 chấm 3/100) mà người đọc vẫn nhận ra là AI viết.
+
+- Nhóm dấu hiệu I (mục 45-53): nhãn báo giọng ("nói gọn", "nói cho thật:", "nói rõ để..."), đối lập lặp cả bài, câu chốt cuối đoạn, "Tức là" giải nghĩa hộ và hai chấm dồn dập, bài ôm hết mọi thứ, bài tự kể dàn ý và mục "KẾT", đoạn ngắn đều nhau, nhượng bộ theo khuôn, xưng "mình" mà không có chuyện của mình.
+- `SKILL.md`: phần "Cả bài" trong quy tắc cốt lõi. Mỗi quy tắc cấm cả họ cụm từ, thay cụm bị cấm bằng cụm đồng nghĩa không tính là sửa. Đối lập có ngân sách một lần mỗi bài. Một bài một việc, độ dài theo kênh, giọng riêng cho bài đăng mạng xã hội.
+- `scan.py`: nhóm mới "nhãn báo giọng", "diễn giải lại", "tự kể dàn ý", "mục kết dán nhãn"; bắt thêm đối lập dạng "không X, mà Y", "chứ không", tách hai câu.
+- `scan.py` đếm trên cả bài: một khuôn lặp từ 3 lần, hai chấm dồn dập, đoạn nào cũng 1-3 câu, bài đăng chia mục viết hoa, bài mạng xã hội trên 800 chữ. Các dấu hiệu này cộng điểm cố định, không chia theo độ dài, nên bài dài không loãng thành "sạch". Bài mẫu từ 3/100 lên 55/100.
+- Kết quả in thêm số chữ; JSON có thêm `document_points`.
+
 ## 2.1.0 (2026-11-08)
 
 Slide và thuyết trình.
