@@ -11,7 +11,7 @@
 
 AI drafts slides, emails and reports quickly, and Vietnamese readers spot the result just as quickly. The slide titles say "Tổng quan" (*Overview*) and "Thách thức" (*Challenges*). The email opens with "Trong bối cảnh hiện nay" (*in today's context*) and closes with "Hy vọng thông tin trên hữu ích!" (*Hope this helps!*). Fine for a team chat. For your boss or a customer, you end up rewriting it by hand.
 
-Viết như người ("write like a person") is a skill (an add-on pack of instructions) for Claude and other AI assistants. Once installed, the assistant writes Vietnamese more like a working person does. Slide titles state the conclusion, emails use the right pronouns of address, sentences are short, and the numbers you gave are left alone. The skill is free and open source.
+Viết như người ("write like a person") is a skill (an add-on pack of instructions) for Claude and other AI assistants. Once installed, the assistant writes Vietnamese more like a working person does. Slide titles state the conclusion, emails use the right pronouns of address, sentences aren't padded, and the numbers you gave are left alone. The skill is free and open source.
 
 English works too, based on Wikipedia's [Signs of AI writing](https://en.wikipedia.org/wiki/Wikipedia:Signs_of_AI_writing) and [blader/humanizer](https://github.com/blader/humanizer). Most of the work went into Vietnamese, because generic humanizers miss what makes Vietnamese AI text sound off: it reads like it was written in English and translated.
 
@@ -21,8 +21,8 @@ English works too, based on Wikipedia's [Signs of AI writing](https://en.wikiped
 
 - Building report and proposal decks. Every title is a conclusion, so your manager can skim the titles and know what to decide. Missing numbers are marked `[cần xác nhận]` (*to confirm*), never made up.
 - Writing emails to a boss or a customer. The email leads with the request, uses the right pronouns of address (anh/chị/em, quý khách) and never switches to a default "bạn".
-- Fixing reports and documents translated from English. The skill removes calqued sentences such as "được... bởi" (*was ... by*) and "Điều này cho phép" (*This allows*).
-- Writing Facebook, LinkedIn and blog posts. AI drafts, the voice stays yours, and each post tells one story briefly.
+- Fixing reports and documents translated from English. The skill removes calqued sentences such as "được... bởi" (*was ... by*), "Điều này cho phép" (*This allows*) and "thông qua việc" (*through the act of*).
+- Writing Facebook, LinkedIn and blog posts. AI drafts, the voice stays yours, and each post tells just one story.
 - Checking before you send. The skill points at the places that sound like AI, and you decide what to change.
 
 ## Install in a few minutes, no coding needed
@@ -99,7 +99,7 @@ The command asks which agents to install for. Pass `-a claude-code` (or `-a '*'`
 
 ## Everyday use
 
-Talk to it the way you would brief a colleague. There is no syntax to remember, and you can ask in Vietnamese or English.
+Talk to it the way you would brief a colleague. There is no syntax to remember.
 
 | You type | What the skill does |
 | --- | --- |
@@ -107,8 +107,8 @@ Talk to it the way you would brief a colleague. There is no syntax to remember, 
 | "Sửa file bao-cao-q3.pptx cho bớt giọng AI" (*make this deck sound less like AI*) | Reads the text and speaker notes on every slide, fixes titles, bullets and notes |
 | "Viết email xin sếp lùi deadline 3 ngày, xưng em" (*email my boss for a three-day extension*) | Writes a short email, request first, with "em"/"anh" kept consistent throughout |
 | "Viết bài Facebook kể về dự án của mình, khoảng 300 chữ" (*a 300-word Facebook post about my project*) | Asks you for one or two things that really happened, then tells one story. No section headings, no background lecture |
-| "Soi giúp đoạn này chỗ nào giọng AI" (*where does this sound like AI?*) | Lists each spot with the reason and a short fix, and rewrites nothing |
-| Paste an email you wrote yourself | Picks up your sentence length, connectives and pronouns, then writes to match |
+| "Soi giúp đoạn này chỗ nào giọng AI" (*where does this sound like AI?*) | Lists each spot with the reason and a suggested fix, and rewrites nothing |
+| Paste an email you wrote yourself | Picks up your sentence rhythm, connectives and pronouns of address, then writes to match |
 
 For better results:
 
@@ -123,7 +123,7 @@ Other ways to use it:
 - The skill turns itself on when you ask for an email, message or post that you will send under your name.
 - You can pick a voice by name: *đời thường* (casual), *công việc* (work), *kỹ thuật* (technical), *ấm áp* (warm), *thẳng* (blunt). The voice changes style only, while pronouns of address and content stay put.
 - Text you wrote yourself only gets a light edit.
-- For an important deck, the skill can have another AI assistant, one that knows nothing about the context, read it and score it on seven criteria out of 70. The skill then puts the feedback in a table so you can accept or reject each item.
+- For an important deck, the skill has another AI assistant, one that knows nothing about the context, read it and score it on seven criteria out of 70. The skill then puts the feedback in a table so you can accept or reject each item.
 
 ## Before and after
 
@@ -156,7 +156,7 @@ And the deck made with the skill:
 
 *"Proposal: hire one more QA for Q1 2027; Q3 slipped two weeks, both times for lack of testers; one QA costs less than more delays; please approve by 30/11 so hiring finishes in time."*
 
-The four titles of the second deck are enough to follow the whole proposal. The first deck scores 48/100, the second 0/100.
+The four titles of the second deck are enough to follow the whole proposal. The scanner gives it 0/100 and the first deck 48/100.
 
 ### Emails and reports
 
@@ -198,24 +198,24 @@ Since version 2.2 the scanner counts across the whole text and scores this post 
 
 ## What the skill fixes
 
-The skill has a catalog of 62 AI-writing patterns, each with a before and after example ([full list](skills/viet-nhu-nguoi/references/patterns.md), in Vietnamese). The table below is the Vietnamese-only group.
+The skill has a catalog of 62 AI-writing patterns, each with a before and after example ([full list](skills/viet-nhu-nguoi/references/patterns.md), in Vietnamese). The Vietnamese-only group includes these easy-to-spot patterns:
 
 | Pattern | Example | Becomes |
 | --- | --- | --- |
 | Calqued passive | được phát triển bởi Google (*was developed by Google*) | Google phát triển (*Google developed*) |
-| "This" / "It" openers | Điều này cho phép... (*This allows...*) | name the thing, or drop the subject |
+| "This" / "It" openers | Điều này cho phép người dùng... (*This allows users to...*) | name the thing, or drop the subject |
 | Nominalisation | Việc áp dụng AI giúp việc quản lý trở nên dễ dàng | Dùng AI thì quản lý dễ hơn |
 | Empty verbs | tiến hành thực hiện việc rà soát (*proceed to carry out a review*) | rà soát (*review*) |
 | Literal marketing calques | mở khóa tiềm năng (*unlock potential*), trải nghiệm liền mạch (*seamless experience*) | say what it actually does |
 | Chains of "của" (*of*) | sự nâng cao của năng suất của nhân viên | nhân viên làm được nhiều hơn |
 | Redundant pairs | hiện nay đang trong quá trình (*currently now in the process of*) | đang (*is*) |
-| Pronouns of address | "bạn" in an email to your boss; mixing "bạn" and "quý vị" | one pair that fits the relationship |
+| Pronouns of address | "bạn" all the way through a message to your boss; mixing "bạn" and "quý vị" | one pair that fits the relationship |
 | English glosses in brackets | hiệu suất (performance) | hiệu suất |
 
 Harder to spot is word-for-word translation: every word is Vietnamese, but the sentence still follows English. It tends to show in these places:
 
 - "bạn" (*you*) opens every sentence and "của bạn" (*your*) follows every noun;
-- "một", "các", "những" stand in front of every noun, copying English articles and plurals;
+- "một" (*a*), "các", "những" (plural markers) stand in front of every noun;
 - passives that never say who acted ("số liệu được giữ nguyên", *the figures are kept*), and objects as grammatical subjects ("Bảng này cho thấy", *This table shows*);
 - "đã", "đang", "sẽ" (tense markers) and "có thể" (*can*) scattered everywhere;
 - sentences that open with "Với..." (*With/For...*) or "Để..., bạn cần..." (*To..., you need...*), and "và" (*and*) joining every clause;
@@ -236,7 +236,7 @@ Slides and long documents have their own group. The skill catches titles that ar
 
 The remaining groups apply to both Vietnamese and English: false contrasts, one-line punchlines, lists forced to three items, em dashes, inflated significance, vague authorities, decorative bold and emoji, chatbot filler, and re-explaining what the reader already knows.
 
-The skill also leaves alone what should not be fixed, such as regional dialect, colloquial speech, Sino-Vietnamese terms used correctly, passives in technical docs, and small words that carry meaning ("vẫn" *still*, "chưa" *not yet*, "chỉ" *only*, "có thể" *may*).
+There are also things the skill does not touch: regional dialect, colloquial speech, Sino-Vietnamese terms used correctly, passives in technical docs, and small words whose removal changes the meaning ("vẫn" *still*, "chưa" *not yet*, "chỉ" *only*, "có thể" *may*).
 
 ## For command-line users
 
@@ -294,18 +294,18 @@ The skill does not send your text anywhere new. The text only goes to the AI mod
 
 The score is only a guide. It tells you how many template habits a text has and whether its sentences are too uniform, and it cannot tell you whether AI wrote the text. Some people write in a uniform rhythm, and AI detectors are known to misfire on people writing in a second language. Treat a high score as a list of places to reread.
 
-The skill makes text more natural and easier to read. It does not promise to get past AI detectors and does not use evasion tricks such as deliberate typos or hidden characters. Please don't use it to submit someone else's coursework or to impersonate anyone, and don't use the pattern list to conclude that someone used AI. People guessing by feel do only a little better than chance.
+The skill makes text more natural and easier to read. It does not promise to get past AI detectors and does not use evasion tricks such as deliberate typos or hidden characters. Please don't use it to do a student's coursework for them or to impersonate anyone, and don't use the pattern list to conclude that someone used AI. People guessing by feel do only a little better than chance.
 
 ## What's in the repo
 
 ```text
 skills/viet-nhu-nguoi/
-├── SKILL.md                 main rules, loaded when the skill is invoked
+├── SKILL.md                 main rules, loaded by Claude when invoked
 ├── references/patterns.md   62 patterns with before/after examples
 ├── references/slides.md     slides, speaker notes, fresh-reader test
 ├── references/sources.md    references: articles, research, style guides, other skills
 ├── scripts/scan.py          scanner with a 0-100 score, no third-party packages
-├── scripts/check_facts.py   checks a rewrite kept numbers, dates, links and code
+├── scripts/check_facts.py   checks a rewrite kept numbers, dates, times, links, code
 ├── scripts/slides.py        reads slide text and notes from .pptx, standard library only
 └── LICENSE-humanizer        MIT license of blader/humanizer
 assets/                      banner
