@@ -439,7 +439,7 @@ Nhóm G bắt các cụm dịch dễ thấy. Nhóm này bắt thứ khó thấy 
 > Viết như người là skill dùng cho Claude và các trợ lý AI khác. Mở cuộc trò chuyện mới rồi thử một câu.
 **Sửa:** Bỏ "một", "các", "những" khi không cần đếm, không cần nhấn. Giữ khi số lượng có nghĩa ("thử một câu", "cả ba bước"). *Yếu* khi đứng riêng.
 
-### 58. Bị động không ai làm, vật vô tri làm chủ ngữ
+### 58. Bị động không nói ai làm, đồ vật làm chủ ngữ
 **Dấu hiệu:** "số liệu được giữ nguyên", "skill được cập nhật", "bài được chấm 55/100", "được thiết kế để"; "Điểm cho biết...", "Bảng dưới đây cho thấy...", "Công cụ này cho phép bạn...", "Tính năng này giúp bạn...", "Kết quả mang lại...".
 **Vấn đề:** Nhóm G mới bắt "được... bởi". Bị động không tác nhân và chủ ngữ là đồ vật cũng là khuôn tiếng Anh. Tiếng Việt quen đưa người làm lên, hoặc nêu đề rồi nói về nó.
 **Trước:**
