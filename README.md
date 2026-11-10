@@ -17,7 +17,7 @@ Nhờ AI làm slide, viết email, viết báo cáo thì nhanh, nhưng người 
 
 Viết như người là một skill (gói hướng dẫn cài thêm) cho Claude và các trợ lý AI khác. Cài xong, AI viết tiếng Việt giống người đi làm viết hơn: tiêu đề slide nói thẳng kết luận, email xưng hô đúng vai, câu không rườm, số liệu bạn đưa được giữ nguyên. Skill miễn phí, mã nguồn mở.
 
-**Mục lục:** [Cài, không cần biết code](#cài-trong-vài-phút-không-cần-biết-code) · [Dùng hằng ngày](#dùng-hằng-ngày) · [Trước và sau](#trước-và-sau) · [Skill sửa những lỗi nào](#skill-sửa-những-lỗi-nào) · [Dòng lệnh](#cho-người-dùng-dòng-lệnh) · [Mời một ly cà phê](#mời-một-ly-cà-phê)
+**Mục lục:** [Cài, không cần biết code](#cài-trong-vài-phút-không-cần-biết-code) · [Dùng hằng ngày](#dùng-hằng-ngày) · [Trước và sau](#trước-và-sau) · [Skill sửa những lỗi nào](#skill-sửa-những-lỗi-nào) · [Dòng lệnh](#cho-người-dùng-dòng-lệnh)
 
 ## Dùng vào việc gì
 
@@ -278,7 +278,7 @@ skills/viet-nhu-nguoi/
 ├── scripts/check_facts.py   kiểm bản sửa giữ đúng số liệu, ngày giờ, link, code
 ├── scripts/slides.py        đọc chữ và ghi chú trong file .pptx, chỉ dùng thư viện chuẩn
 └── LICENSE-humanizer        giấy phép MIT của blader/humanizer
-assets/                      banner và mã QR mời cà phê
+assets/                      banner
 examples/                    văn mẫu và deck .pptx trước/sau dùng trong README và test
 tests/test_scan.py           python3 -m unittest discover -s tests
 ```
@@ -286,33 +286,6 @@ tests/test_scan.py           python3 -m unittest discover -s tests
 ## Đóng góp
 
 Nếu bạn gặp một kiểu câu AI tiếng Việt mà skill chưa bắt, hoặc thấy skill sửa hỏng một câu vốn tự nhiên, bạn mở issue, dán câu đó vào và kèm bản bạn thấy đúng. Pull request thêm dấu hiệu mới cần có ví dụ trước/sau và một test trong `tests/test_scan.py`, gồm cả trường hợp không được báo nhầm.
-
-<a id="support"></a>
-
-## Mời một ly cà phê
-
-Viết như người miễn phí, giấy phép MIT, và sẽ giữ như vậy. Mình làm skill này vào thời gian rảnh, nên nếu nó giúp bạn bớt một buổi ngồi sửa văn thì bạn có thể mời mình một ly cà phê sữa đá.
-
-<table>
-  <tr>
-    <td width="250" align="center">
-      <img src="assets/donate-vietqr.png" alt="Mã VietQR mời cà phê qua VPBank / Napas 247" width="220">
-    </td>
-    <td>
-      <b>Quét bằng app ngân hàng nào cũng được</b> (VietQR / Napas 247).<br><br>
-      Số tiền tùy bạn, một ly cà phê là mình vui cả buổi.<br><br>
-      Nội dung chuyển khoản ghi <code>viet-nhu-nguoi</code> để mình biết ly này từ đâu tới.
-    </td>
-  </tr>
-</table>
-
-Có cà phê thì mình có thêm thời gian để:
-
-- cập nhật danh mục khi mô hình mới ra, vì mỗi đời mô hình lại có bộ từ ưa dùng riêng;
-- biến những câu các bạn báo thành test, đọc và trả lời issue, pull request;
-- làm tốt thêm máy quét và công cụ kiểm dữ kiện.
-
-Chưa tiện chuyển khoản thì bạn gắn sao cho repo, giới thiệu skill cho một người hay dùng AI viết tiếng Việt, hoặc mở issue kèm một câu skill sửa chưa đúng, mình quý những việc đó không kém. Có mời cà phê hay không thì issue của ai mình cũng xem như nhau.
 
 ## Nguồn
 

@@ -15,7 +15,7 @@ Viết như người ("write like a person") is a skill (an add-on pack of instr
 
 English works too, based on Wikipedia's [Signs of AI writing](https://en.wikipedia.org/wiki/Wikipedia:Signs_of_AI_writing) and [blader/humanizer](https://github.com/blader/humanizer). Most of the work went into Vietnamese, because generic humanizers miss what makes Vietnamese AI text sound off: it reads like it was written in English and translated.
 
-**Contents:** [Install, no coding needed](#install-in-a-few-minutes-no-coding-needed) · [Everyday use](#everyday-use) · [Before and after](#before-and-after) · [What the skill fixes](#what-the-skill-fixes) · [Command line](#for-command-line-users) · [Buy me a coffee](#buy-me-a-coffee)
+**Contents:** [Install, no coding needed](#install-in-a-few-minutes-no-coding-needed) · [Everyday use](#everyday-use) · [Before and after](#before-and-after) · [What the skill fixes](#what-the-skill-fixes) · [Command line](#for-command-line-users)
 
 ## What people use it for
 
@@ -288,7 +288,7 @@ skills/viet-nhu-nguoi/
 ├── scripts/check_facts.py   checks a rewrite kept numbers, dates, links and code
 ├── scripts/slides.py        reads slide text and notes from .pptx, standard library only
 └── LICENSE-humanizer        MIT license of blader/humanizer
-assets/                      banner and the coffee QR code
+assets/                      banner
 examples/                    before/after text and .pptx decks used in the README and tests
 tests/test_scan.py           python3 -m unittest discover -s tests
 ```
@@ -296,33 +296,6 @@ tests/test_scan.py           python3 -m unittest discover -s tests
 ## Contributing
 
 If you find a Vietnamese AI phrasing the skill misses, or a natural sentence it spoils, open an issue with the sentence and the version you think is right. Pull requests that add a pattern need a before/after example and a test in `tests/test_scan.py`, including a case that must not be flagged.
-
-<a id="support"></a>
-
-## Buy me a coffee
-
-Viết như người is free and MIT licensed, and it will stay that way. I maintain it in my spare time. If it saves you an evening of rewriting, you can buy me a cà phê sữa đá, Vietnamese iced coffee with condensed milk.
-
-<table>
-  <tr>
-    <td width="250" align="center">
-      <img src="assets/donate-vietqr.png" alt="VietQR code to buy the author a coffee via VPBank / Napas 247" width="220">
-    </td>
-    <td>
-      <b>Scan with any Vietnamese banking app</b> (VietQR / Napas 247).<br><br>
-      Any amount is welcome. One coffee makes my day.<br><br>
-      Put <code>viet-nhu-nguoi</code> in the transfer note so I know where the coffee came from.
-    </td>
-  </tr>
-</table>
-
-Coffee buys me more time to:
-
-- update the pattern list when new models come out, since each model generation has its own favourite words;
-- turn the sentences you report into test cases, and read and answer issues and pull requests;
-- improve the scanner and the fact checker.
-
-If you are outside Vietnam or a bank transfer is not convenient, you can star the repo, share the skill with someone who writes Vietnamese with AI, or open an issue with a sentence the skill got wrong. I value those just as much. Coffee or no coffee, every issue gets the same attention.
 
 ## Credits
 
