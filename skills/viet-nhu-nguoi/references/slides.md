@@ -1,6 +1,6 @@
 # Slide, lời thuyết trình và tài liệu dài
 
-Đọc file này khi viết hoặc sửa slide, ghi chú thuyết trình, báo cáo hay đề xuất nhiều trang. Danh mục dấu hiệu nằm ở nhóm H (mục 39-44) trong `patterns.md`. Phần này nói cách làm.
+Đọc file này khi viết hoặc sửa slide, ghi chú thuyết trình, báo cáo hay đề xuất nhiều trang. Danh mục dấu hiệu nằm ở nhóm H (mục 39-44) trong `patterns.md`. Còn file này nói cách làm.
 
 Người xem nhận ra slide do AI làm từ trước khi đọc kỹ câu nào: nội dung gắn vào công ty nào cũng được, mạch dựng sẵn, slide nào cũng giống slide nào. Vì vậy sửa từ ngữ thôi chưa đủ, phải sửa từ bước lấy dữ liệu.
 
@@ -13,18 +13,18 @@ Chưa biết ai xem, trong buổi nào, cần họ làm gì thì đừng dựng 
 3. Trình bày trực tiếp hay gửi cho người ta tự đọc?
 4. Có mẫu slide, số liệu, tài liệu cũ, tin nhắn liên quan không?
 
-Mời người dùng dán hết những gì họ có, chưa cần sắp xếp. Đọc xong thì hỏi thêm 5-10 câu đánh số về chỗ còn thiếu, và nói rõ họ trả lời tắt cũng được ("1: có, 2: xem file X, 3: chưa chốt"). Hỏi tới lúc bàn được phương án, rủi ro mà không phải quay lại chuyện cơ bản thì đủ. Nếu có công cụ đọc Teams, email, SharePoint thì đề nghị đọc thẳng từ đó, nhưng hỏi trước khi đọc.
+Bảo người dùng cứ dán hết những gì đang có, chưa cần sắp xếp. Đọc xong thì hỏi thêm 5-10 câu đánh số về chỗ còn thiếu, và nói rõ họ trả lời tắt cũng được ("1: có, 2: xem file X, 3: chưa chốt"). Hỏi tới lúc bàn được phương án, rủi ro mà không phải quay lại chuyện cơ bản thì đủ. Nếu có công cụ đọc Teams, email, SharePoint thì đề nghị đọc thẳng từ đó, nhưng hỏi trước khi đọc.
 
-Thiếu bối cảnh mà người dùng vẫn cần gấp: viết một trang tóm ý (kết luận, lý do, việc cần quyết) thay vì cả deck.
+Thiếu bối cảnh mà người dùng vẫn cần gấp thì viết một trang tóm ý (kết luận, lý do, việc cần quyết) thay vì cả deck.
 
-## 2. Viết mạch bằng tiêu đề trước
+## 2. Dựng mạch bằng tiêu đề trước
 
 - Viết danh sách tiêu đề trước khi viết nội dung. Mỗi tiêu đề là một câu kết luận, có chủ ngữ và vị ngữ: "Quý 3 trễ 2 tuần vì thiếu người test", không phải "Thực trạng".
 - Đọc liền các tiêu đề từ trên xuống: phải thành một lập luận, không nhảy, không lặp ý. Chạy `python3 -I scripts/scan.py --titles <file>` để in riêng các tiêu đề.
 - Tiêu đề nào đọc riêng cũng phải hiểu được: không "như trên", "điều này", "giải pháp đó". Không gắn nhãn trước dấu hai chấm ("Kỳ vọng: ...", "Hướng xử lý: ..."); viết thẳng câu kết luận.
 - Không đếm số ý trong tiêu đề ("3 trụ cột"). Gọi tên các ý. Giữ con số thì con số phải khớp nội dung slide.
 - Ba tiêu đề liền nhau không mở bằng cùng một khuôn.
-- Slide có biểu đồ hoặc bảng: tiêu đề nói số liệu đó có nghĩa gì với người xem.
+- Slide có biểu đồ hoặc bảng: tiêu đề nói luôn người xem cần rút ra gì từ số liệu đó.
 - Thứ tự slide đi theo việc người xem cần quyết. Không mặc định "Tổng quan → Thách thức → Giải pháp → Lợi ích → Kết luận". Số vấn đề và số giải pháp đúng bằng số có thật, không ép về ba.
 - Tên khung tư duy, thuật ngữ của quy trình làm slide thì đừng để lộ lên slide.
 
@@ -32,11 +32,11 @@ Thiếu bối cảnh mà người dùng vẫn cần gấp: viết một trang t�
 
 - Một slide, một thông điệp. Nhiều ý quá thì tách slide. Không thu nhỏ chữ để nhồi.
 - Mật độ theo cách trình bày. Nói trực tiếp: 1-3 ý mỗi slide, chữ to, phần còn lại để trong lời nói. Gửi để đọc: 4-6 ý, đọc riêng slide nào cũng hiểu, không cần người nói.
-- Gạch đầu dòng: mỗi gạch một ý, một dòng, khoảng dưới 15 chữ. Mỗi gạch một góc khác nhau (tiền, thời gian, người, rủi ro), không nói lại cùng một ý. Cùng cấp thì cùng kiểu câu. Có một ý thì viết thành câu thường.
+- Gạch đầu dòng: mỗi gạch một ý, một dòng, dưới chừng 15 chữ. Mỗi gạch một góc khác nhau (tiền, thời gian, người, rủi ro), không nói lại cùng một ý. Cùng cấp thì cùng kiểu câu. Có một ý thì viết thành câu thường.
 - Không bịa để lấp chỗ trống. Thiếu số liệu thì ghi `[cần xác nhận: ...]` và báo người dùng. Slide quá mỏng thì gộp với slide bên cạnh, đừng thêm ý cho đầy.
 - Cả deck, mỗi sự việc chỉ một cách gọi, một con số. Viết tắt thì lần đầu ghi đầy đủ.
 - Từ đánh giá ("đáng kể", "hạn chế", "đủ", "tối ưu") phải có căn cứ ngay trên slide đó. Không có thì thay bằng con số hoặc bỏ.
-- Nêu rủi ro thì nêu kèm cách xử lý. Slide xin quyết định ghi rõ cần quyết gì, phương án đề xuất, và hạn chót.
+- Nêu rủi ro thì nêu kèm cách xử lý. Slide xin quyết định ghi rõ cần quyết gì, phương án đề xuất, hạn chót.
 - Không hứa suông ("chi tiết sẽ trao đổi sau"). Viết luôn, hoặc ghi ai làm gì, khi nào.
 - Báo cáo cho lãnh đạo: làm tròn số, thêm "khoảng"; giữ số chính xác ở phụ lục.
 
@@ -58,12 +58,12 @@ Skill này lo phần chữ, nhưng có ai hỏi về hình thức thì nhắc m�
 - Cùng một bố cục lặp lại ba slide liền dù nội dung khác nhau.
 - In đậm tràn lan.
 
-Nên thay bằng biểu đồ vẽ từ số liệu thật, ảnh chụp màn hình sản phẩm, ảnh thật của đội, và mẫu slide của công ty.
+Nên thay bằng biểu đồ vẽ từ số liệu thật, ảnh chụp màn hình sản phẩm, ảnh thật của đội, mẫu slide của công ty.
 
 ## 6. Soát trước khi gửi
 
 0. `python3 -I scripts/scan.py --text <file.pptx>`: in chữ từng slide kèm số slide, để đọc trước khi soi hay sửa.
-1. `python3 -I scripts/scan.py <file.pptx>`: quét chữ trên slide, bảng và ghi chú. Kết quả ghi theo vị trí, ví dụ "slide 3, ghi chú". Ngoài các dấu hiệu chung, máy quét bắt thêm: tiêu đề dạng nhãn, tiêu đề có tiền tố nhãn, tiêu đề đếm số ý, gạch đầu dòng dài, slide nhiều chữ, slide nào cũng đúng 3-4 ý, ba tiêu đề cùng khuôn, tên khung lộ ra slide, câu ghi chú quá dài để nói, ngoặc trong lời nói.
+1. `python3 -I scripts/scan.py <file.pptx>`: quét chữ trên slide, bảng và ghi chú. Kết quả ghi theo vị trí, ví dụ "slide 3, ghi chú". Ngoài các dấu hiệu chung, máy quét bắt thêm: tiêu đề dạng nhãn, tiêu đề có tiền tố nhãn, tiêu đề đếm số ý, gạch đầu dòng dài, slide nhiều chữ, slide nào cũng đúng 3-4 ý, ba tiêu đề cùng khuôn, tên khung lộ ra slide, câu ghi chú dài quá, khó nói một hơi, ngoặc trong lời nói.
 2. `python3 -I scripts/scan.py --titles <file>`: đọc liền các tiêu đề.
 3. Sửa xong một file `.pptx` có sẵn thì chạy `python3 -I scripts/check_facts.py goc.pptx moi.pptx` để chắc không mất hay tự thêm con số, ngày tháng, tên viết tắt.
 4. Deck hay tài liệu quan trọng thì nhờ một người chưa biết gì đọc thử (mục 7).
@@ -72,7 +72,7 @@ Muốn sửa thẳng file `.pptx` thì dùng skill `pptx` nếu có. Nếu khôn
 
 ## 7. Nhờ người chưa biết gì đọc thử
 
-Người viết không thấy được chỗ mình viết khó hiểu, vì trong đầu đã có sẵn bối cảnh. Nếu có công cụ gọi subagent, giao file cho một agent mới. Chỉ đưa đường dẫn file và lời dặn dưới đây, không kể deck được làm thế nào, dùng skill gì, hay chỗ nào mình đã cân nhắc kỹ:
+Người viết không thấy được chỗ mình viết khó hiểu, vì trong đầu đã có sẵn bối cảnh. Nếu có công cụ gọi subagent, giao file cho một agent mới. Chỉ đưa đường dẫn file và lời dặn dưới đây, không kể deck làm ra sao, dùng skill gì, hay chỗ nào mình đã cân nhắc kỹ:
 
 > Bạn là người xem bộ slide (hoặc tài liệu) này lần đầu, không biết gì về cách nó được làm. Đọc hết file `<đường dẫn>`, không đọc file nào khác.
 > 1. Viết tự do 3-10 điều khiến bạn khó hiểu, không tin, hoặc sẽ trả lại nếu bạn là người duyệt.

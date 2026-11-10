@@ -1,12 +1,12 @@
 # Danh mục dấu hiệu văn AI (Việt + Anh)
 
-Sắp từ mạnh đến yếu. Nhóm A và nhóm E chỉ cần gặp một lần là sửa. Nhóm G (mục 30-38) dành riêng cho tiếng Việt. Nhóm H (mục 39-44) dành cho slide, lời thuyết trình và tài liệu nhiều trang; hướng dẫn đầy đủ ở `slides.md`. Nhóm K (mục 56-62) là văn dịch ở tầng sâu hơn nhóm G: từng chữ đều là tiếng Việt nhưng câu vẫn theo khuôn tiếng Anh; văn tiếng Việt nào cũng nên rà nhóm này. Nhóm I (mục 45-55) là những dấu hiệu chỉ thấy khi nhìn cả bài, hay còn lại sau khi từng câu đã được sửa sạch; bài dài và bài đăng mạng xã hội thì đọc nhóm này trước. Mục ghi *yếu* chỉ sửa khi đi cùng dấu hiệu khác trong cùng đoạn.
+Sắp từ mạnh đến yếu. Nhóm A và nhóm E chỉ cần gặp một lần là sửa. Nhóm G (mục 30-38) dành riêng cho tiếng Việt. Nhóm H (mục 39-44) dành cho slide, lời thuyết trình và tài liệu nhiều trang; hướng dẫn đầy đủ ở `slides.md`. Nhóm K (mục 56-62) là văn dịch ở tầng sâu hơn nhóm G: từng chữ đều là tiếng Việt nhưng câu vẫn theo khuôn tiếng Anh; văn tiếng Việt nào cũng nên rà nhóm này. Nhóm I (mục 45-55) là những dấu hiệu chỉ thấy khi nhìn cả bài, thường vẫn còn sau khi đã sửa sạch từng câu; bài dài và bài đăng mạng xã hội thì đọc nhóm này trước. Mục ghi *yếu* chỉ sửa khi đi cùng dấu hiệu khác trong cùng đoạn.
 
 ## A. Dàn dựng thay vì nói thẳng
 
 ### 1. Đối lập giả: "không phải X mà là Y"
 **Dấu hiệu:** không chỉ... mà còn; không phải X, mà là Y; X chứ không phải Y; không đơn thuần là; it's not X, it's Y; not just X but Y; X rather than Y; tách thành hai câu ("Điều này không có nghĩa là X. Nó có nghĩa là Y."); đuôi phủ định cụt ("..., không cần đoán").
-**Vấn đề:** Vế phủ định bác bỏ điều không ai nói, để vế sau nghe to hơn. Nói thẳng vế sau. Chỉ giữ khi vế đầu sửa một niềm tin người đọc thật sự có, và cả bài chỉ một lần; xem mục 46.
+**Vấn đề:** Vế phủ định bác bỏ điều không ai nói, để vế sau nghe to hơn. Nói thẳng vế sau. Chỉ giữ khi người đọc đúng là đang nghĩ như vế đầu, và cả bài chỉ một lần; xem mục 46.
 **Trước:**
 > Đây không chỉ là một bản cập nhật, mà là một cuộc cách mạng trong cách đội ngũ làm việc.
 **Sau:**
@@ -18,7 +18,7 @@ Sắp từ mạnh đến yếu. Nhóm A và nhóm E chỉ cần gặp một lầ
 
 ### 2. Câu chốt một dòng, câu cụt kịch tính
 **Dấu hiệu:** đoạn một câu nhắc lại đoạn trước; "Đó mới là điều quan trọng."; "Điều đó nói lên tất cả."; "Hãy suy ngẫm điều đó."; "Let that sink in."; "That is the real win."; chuỗi câu cụt ("Không phô trương. Không màu mè. Chỉ hiệu quả."); câu tổng kết sau một ví dụ ("Điều này cho thấy tầm quan trọng của...").
-**Sửa:** Bỏ câu chốt nhắc lại. Gộp chuỗi câu cụt thành một câu có ý cụ thể. Giữ câu ngắn nếu nó mang sự việc mới. Câu chốt gắn vào cuối đoạn cũng tính; xem mục 47.
+**Sửa:** Bỏ câu chốt nhắc lại. Gộp chuỗi câu cụt thành một câu có ý cụ thể. Câu ngắn mà có thêm sự việc mới thì giữ. Câu chốt gắn vào cuối đoạn cũng tính; xem mục 47.
 **Trước:**
 > Cache giảm việc lặp lại.
 >
@@ -44,7 +44,7 @@ Sắp từ mạnh đến yếu. Nhóm A và nhóm E chỉ cần gặp một lầ
 
 ### 5. Cãi với người không tồn tại
 **Dấu hiệu:** Điều này không có nghĩa là; Tôi không nói rằng; Nói cho rõ thì; Đừng hiểu lầm; Có thể bạn sẽ nghĩ... nhưng; Một cách làm dễ thấy là... nhưng; To be clear; Don't get me wrong; A tempting approach would be.
-**Sửa:** Bỏ phần phòng thủ. Nếu nó chứa ý thật thì nói ý đó.
+**Sửa:** Bỏ phần phòng thủ. Trong đó có ý thật thì nói thẳng ý đó.
 
 ### 6. Câu hỏi tu từ tự hỏi tự trả lời
 **Dấu hiệu:** "Và điều hay nhất là gì? ..."; "Kết quả thì sao? ..."; "The best part?"
@@ -52,25 +52,25 @@ Sắp từ mạnh đến yếu. Nhóm A và nhóm E chỉ cần gặp một lầ
 **Trước:**
 > Và điều tuyệt vời nhất là gì? Bạn tiết kiệm được ba giờ mỗi tuần.
 **Sau:**
-> Cách này tiết kiệm khoảng ba giờ mỗi tuần.
+> Làm cách này đỡ được khoảng ba giờ mỗi tuần.
 
 ## B. Nhịp theo luật
 
 ### 7. Bộ ba ép buộc
-**Vấn đề:** Ý tưởng đến theo nhóm ba cho nghe đầy đủ ("nhanh chóng, tiện lợi và an toàn"; "innovation, inspiration, and insights"), kể cả ở cấp đoạn văn (ba ví dụ song song rồi một câu bài học).
-**Sửa:** Mỗi mục phải là một ý riêng. Gộp, bỏ, hoặc phát triển mục mạnh nhất. Giữ ba khi thật có ba.
+**Vấn đề:** Cái gì cũng kể đủ ba thứ cho nghe đầy đủ ("nhanh chóng, tiện lợi và an toàn"; "innovation, inspiration, and insights"), kể cả ở cấp đoạn văn (ba ví dụ song song rồi một câu bài học).
+**Sửa:** Mỗi mục phải là một ý riêng. Gộp, bỏ, hoặc chỉ giữ mục mạnh nhất rồi viết kỹ hơn. Giữ ba khi thật có ba.
 **Trước:**
 > Sự kiện mang đến những phiên chia sẻ, thảo luận và kết nối. Người tham dự sẽ nhận được cảm hứng, kiến thức và cơ hội.
 **Sau:**
 > Sự kiện có các bài nói và phiên thảo luận, giữa các phiên có thời gian giao lưu.
 
 ### 8. Câu mở đầu lặp lại
-**Vấn đề:** Nhiều câu liền nhau bắt đầu cùng một chủ ngữ ("Anh ấy... Anh ấy... Anh ấy..."), hoặc đoạn nào cũng mở bằng "Bên cạnh đó", "Ngoài ra", "Additionally".
+**Vấn đề:** Nhiều câu liền nhau mở bằng cùng một chủ ngữ ("Anh ấy... Anh ấy... Anh ấy..."), hoặc đoạn nào cũng mở bằng "Bên cạnh đó", "Ngoài ra", "Additionally".
 **Sửa:** Gộp câu, đổi chủ ngữ, hoặc bắt đầu bằng hành động.
 
 ### 9. Gạch ngang dài khắp nơi
 **Quy tắc:** Bản cuối không có — hoặc – dùng để nối mệnh đề, trừ khi mẫu văn của người dùng có. Thay bằng dấu chấm, phẩy, hai chấm hoặc ngoặc đơn. Gồm cả " -- " dùng thay gạch ngang. Giữ gạch trong code, lệnh, URL, khoảng số (2020–2024 được viết lại thành 2020-2024 hoặc "từ 2020 đến 2024").
-**Lưu ý:** Theo các phân tích của Pangram và Washington Post, gạch ngang dài xuất hiện trong văn AI nhiều hơn văn người nhiều lần. Một dấu đơn lẻ thì *yếu*.
+**Lưu ý:** Theo các phân tích của Pangram và Washington Post, văn AI dùng gạch ngang dài nhiều gấp mấy lần văn người. Một dấu đơn lẻ thì *yếu*.
 **Trước:**
 > Chính sách mới — được công bố không báo trước — ảnh hưởng tới hàng nghìn người.
 **Sau:**
@@ -78,7 +78,7 @@ Sắp từ mạnh đến yếu. Nhóm A và nhóm E chỉ cần gặp một lầ
 
 ### 10. Rào đón chồng chất
 **Dấu hiệu:** có thể phần nào; có lẽ có khả năng; trong một số trường hợp nhất định có thể; could potentially; might arguably; it could be argued that.
-**Sửa:** Một từ rào đón là đủ, và chỉ khi thật sự chưa chắc. *Yếu.*
+**Sửa:** Một từ rào đón là đủ, mà cũng chỉ dùng khi thật sự chưa chắc. *Yếu.*
 **Trước:**
 > Có thể phần nào cho rằng chính sách này có khả năng ảnh hưởng đến kết quả.
 **Sau:**
@@ -102,7 +102,7 @@ Sắp từ mạnh đến yếu. Nhóm A và nhóm E chỉ cần gặp một lầ
 - Giữa 2025 đến giữa 2026 (GPT-5): emphasizing, enhance, highlighting, showcasing.
 - Từ giữa 2026: challenge, clearer, dependable, echoed, foster, leverage, matters, multifaceted, practical, prioritize, quietly, steady, universally.
 - Cụm cố định: in today's fast-paced world, in the digital age, navigating the complexities, it's important to note, deep dive, robust framework, ever-evolving, seamless.
-**Lưu ý:** Một hai từ có thể là ngẫu nhiên. Nhiều từ cùng lúc là dấu hiệu mạnh. Từ đồng nghĩa không tự động bị tính.
+**Lưu ý:** Một hai từ có thể là ngẫu nhiên. Nhiều từ cùng lúc là dấu hiệu mạnh. Từ đồng nghĩa thì chưa chắc đã tính.
 
 ### 14. Thổi phồng ý nghĩa
 **Dấu hiệu:** đánh dấu bước ngoặt; cột mốc quan trọng; để lại dấu ấn sâu đậm; mở ra kỷ nguyên mới; khẳng định vị thế; tương lai đầy hứa hẹn; chặng đường phía trước; "Dù còn nhiều thách thức, X vẫn không ngừng phát triển"; mục "Thách thức và triển vọng"; stands as a testament; marking a pivotal moment; the future looks bright.
@@ -118,11 +118,11 @@ Sắp từ mạnh đến yếu. Nhóm A và nhóm E chỉ cần gặp một lầ
 
 ### 16. Giọng quảng cáo
 **Dấu hiệu:** nằm giữa lòng; tọa lạc tại vị trí đắc địa; tuyệt đẹp; ngỡ ngàng; đẳng cấp; hàng đầu; điểm đến không thể bỏ qua; nestled; breathtaking; must-visit; renowned; rich heritage.
-**Sửa:** Nói nó là gì.
+**Sửa:** Nói thẳng đó là cái gì.
 **Trước:**
 > Nằm giữa lòng thung lũng thơ mộng, Mộc Châu là điểm đến không thể bỏ qua với vẻ đẹp ngỡ ngàng.
 **Sau:**
-> Mộc Châu là một huyện cao nguyên ở Sơn La, nổi tiếng với đồi chè và mùa hoa mận.
+> Mộc Châu là huyện cao nguyên ở Sơn La, nổi tiếng nhờ đồi chè và mùa hoa mận.
 
 ### 17. Mượn uy tín mơ hồ
 **Dấu hiệu:** các chuyên gia cho rằng; nhiều nghiên cứu chỉ ra; theo giới quan sát; được nhiều báo chí đưa tin; experts believe; industry reports; featured in [danh sách báo].
@@ -143,7 +143,7 @@ Sắp từ mạnh đến yếu. Nhóm A và nhóm E chỉ cần gặp một lầ
 ## D. Trình bày theo luật
 
 ### 20. In đậm trang trí, danh sách có nhãn
-**Vấn đề:** Từ ngữ in đậm không lý do. Danh sách mà mục nào cũng có nhãn in đậm và dấu hai chấm. Theo Pangram, markdown đậm đặc gặp trong văn AI nhiều hơn khoảng 12 lần, gạch đầu dòng khoảng 9 lần.
+**Vấn đề:** Từ ngữ in đậm không lý do. Danh sách mà mục nào cũng có nhãn in đậm và dấu hai chấm. Theo Pangram, văn AI dùng markdown đậm đặc nhiều gấp khoảng 12 lần văn người, gạch đầu dòng khoảng 9 lần.
 **Trước:**
 > - **Trải nghiệm người dùng:** Trải nghiệm người dùng được cải thiện đáng kể với giao diện mới.
 > - **Hiệu năng:** Hiệu năng được nâng cao nhờ thuật toán tối ưu.
@@ -156,7 +156,7 @@ Sắp từ mạnh đến yếu. Nhóm A và nhóm E chỉ cần gặp một lầ
 **Sửa:** Viết hoa chữ đầu câu, bỏ emoji và kẻ ngang, tiêu đề nói đúng nội dung.
 
 ### 22. Ngoặc kép cong
-**Vấn đề:** “...” ở nơi người viết hoặc định dạng đích dùng "...". *Yếu*, vì nhiều trình soạn thảo tự đổi.
+**Vấn đề:** “...” trong khi người viết, hoặc nơi sẽ đăng, dùng "...". *Yếu*, vì nhiều trình soạn thảo tự đổi.
 
 ## E. Đồ thừa của chat và bản nháp (sửa ngay khi gặp)
 
@@ -196,7 +196,7 @@ Sắp từ mạnh đến yếu. Nhóm A và nhóm E chỉ cần gặp một lầ
 
 ### 28. Giải thích lại điều người đọc đã biết
 **Dấu hiệu:** Trong một tin trả lời, viết lại vấn đề, đi qua chẩn đoán, đưa bằng chứng, rồi mới tới quyết định ở câu cuối.
-**Sửa:** Nêu quyết định trước. Chỉ giữ lý do có thể làm người đọc đổi ý, thường là một sự việc họ chưa biết và link họ cần để làm tiếp.
+**Sửa:** Nêu quyết định trước. Lý do thì chỉ giữ cái nào đủ làm người đọc đổi ý, thường là một việc họ chưa biết, kèm link để họ làm tiếp.
 **Trước:**
 > Dạ em đã xem log. Lỗi xảy ra do service A gọi B khi B đang restart, dẫn đến timeout, sau đó retry thất bại vì token hết hạn. Em đã thử tăng timeout nhưng không được. Vì vậy em đề xuất mình rollback bản deploy hôm qua.
 **Sau:**
@@ -274,14 +274,14 @@ Văn AI tiếng Việt thường là văn "nghĩ bằng tiếng Anh rồi dịch
 
 ### 37. Chêm tiếng Anh trong ngoặc
 **Dấu hiệu:** "hiệu suất (performance)", "trải nghiệm người dùng (user experience)", "chiến lược (strategy)" sau mỗi từ thường.
-**Sửa:** Bỏ phần ngoặc với từ ai cũng hiểu. Giữ tiếng Anh cho thuật ngữ dân trong nghề vẫn nói ("deploy", "PR", "deadline", "KPI", "prompt"); đừng dịch gượng những từ đó sang Hán Việt. Lần đầu nhắc một thuật ngữ lạ với người đọc thì chú thích một lần, không lặp.
+**Sửa:** Từ nào ai cũng hiểu thì bỏ phần ngoặc. Giữ tiếng Anh cho thuật ngữ dân trong nghề vẫn nói ("deploy", "PR", "deadline", "KPI", "prompt"); đừng dịch gượng những từ đó sang Hán Việt. Lần đầu nhắc một thuật ngữ lạ với người đọc thì chú thích một lần, không lặp.
 
 ### 38. Câu đều nhịp, từ nối đầu câu
 **Dấu hiệu:** đoạn mà câu nào cũng 25-35 chữ, cùng có một dấu phẩy ở giữa; đoạn nào cũng mở bằng "Bên cạnh đó", "Ngoài ra", "Đồng thời", "Hơn nữa", "Không những thế", "Qua đó", "Từ đó"; đoạn nào cũng kết bằng câu "cần / nên".
 **Sửa:** Để độ dài câu đi theo ý: ý đơn viết ngắn, ý có nguyên nhân hay điều kiện viết dài hơn. Bỏ từ nối khi quan hệ đã rõ. Đừng cố tạo nhịp dài ngắn xen kẽ máy móc, đừng rải câu cụt cho có vẻ tự nhiên (mục 54), cũng đừng gộp cho dài (mục 55). *Yếu*.
 
 ### Đừng làm sai nghĩa khi sửa tiếng Việt
-Câu ngắn hơn không có nghĩa là đúng hơn. Kiểm lại sau khi sửa:
+Câu ngắn hơn chưa chắc đúng hơn. Kiểm lại sau khi sửa:
 - Giữ "vẫn", "chưa", "chỉ", "đã", "mới", "lại", "cũng". "Chỉ còn 3 chỗ" khác "còn 3 chỗ"; "vẫn chưa xong" khác "chưa xong".
 - Giữ mức chắc chắn: "có thể giảm" không thành "giảm"; "nhóm khảo sát" không thành "mọi người"; "tăng" không thành "tăng mạnh".
 - Giữ quan hệ: "sau khi áp dụng" không thành "nhờ áp dụng"; không tự thêm "do đó" giữa hai câu đứng cạnh nhau.
@@ -300,7 +300,7 @@ Câu ngắn hơn không có nghĩa là đúng hơn. Kiểm lại sau khi sửa:
 
 ### 40. Tiêu đề slide chỉ là nhãn chủ đề
 **Dấu hiệu:** "Tổng quan", "Thực trạng", "Thách thức", "Giải pháp", "Lợi ích", "Kết luận"; tiêu đề tả việc đang làm ("Phân tích chi phí", "Tổng hợp ý kiến"); tiền tố nhãn ("Thực trạng và thách thức: ...", "Kỳ vọng: ...", "Cần quyết: ...").
-**Sửa:** Tiêu đề là câu nói kết luận của slide, bỏ phần nhãn trước dấu hai chấm. Đọc riêng tiêu đề vẫn hiểu, không dựa vào "như trên", "điều này". Slide biểu đồ thì tiêu đề nói biểu đồ cho thấy gì. Slide bìa, slide cảm ơn, slide hỏi đáp thì để nguyên.
+**Sửa:** Tiêu đề là câu nêu kết luận của slide, bỏ phần nhãn trước dấu hai chấm. Đọc riêng tiêu đề vẫn hiểu, không dựa vào "như trên", "điều này". Slide biểu đồ thì tiêu đề nói biểu đồ cho thấy gì. Slide bìa, slide cảm ơn, slide hỏi đáp thì để nguyên.
 **Trước:**
 > Phân tích chi phí
 **Sau:**
@@ -308,11 +308,11 @@ Câu ngắn hơn không có nghĩa là đúng hơn. Kiểm lại sau khi sửa:
 
 ### 41. Tiêu đề đếm số ý, mọi thứ chia đều ba
 **Dấu hiệu:** "3 trụ cột", "4 giải pháp then chốt", "5 lý do"; slide nào cũng đúng 3 gạch đầu dòng; deck nào cũng đủ "3 thách thức, 3 giải pháp, 3 lợi ích".
-**Sửa:** Gọi tên các ý thay cho con số. Có mấy ý thật thì viết mấy ý; số gạch đầu dòng giữa các slide được phép lệch nhau. Nếu giữ con số trong tiêu đề thì số đó phải khớp với nội dung.
+**Sửa:** Gọi tên các ý thay cho con số. Có mấy ý thật thì viết mấy ý; số gạch đầu dòng giữa các slide lệch nhau cũng được. Nếu giữ con số trong tiêu đề thì số đó phải khớp với nội dung.
 
 ### 42. Mạch dựng sẵn và tên khung lộ ra slide
 **Dấu hiệu:** deck nào cũng "Tổng quan → Thách thức → Giải pháp → Lợi ích → Kết luận" dù chủ đề khác nhau; tên khung tư duy hiện trên slide ("Situation - Complication - Resolution", "Hiện trạng → Nguyên nhân → Giải pháp"); chữ của quy trình làm slide còn sót ("Phương án A", "bản an toàn", "template").
-**Sửa:** Thứ tự slide đi theo việc người xem cần làm hoặc quyết. Phát hiện riêng của tài liệu này được làm slide chính. Tên khung chỉ dùng lúc dựng, không in lên slide. Phép thử: xóa tên công ty và con số mà deck vẫn dùng được cho công ty khác thì nó còn rỗng.
+**Sửa:** Thứ tự slide đi theo việc người xem cần làm hoặc quyết. Điều tài liệu này tự tìm ra thì cho làm slide chính. Tên khung chỉ dùng lúc dựng, không in lên slide. Phép thử: xóa tên công ty và con số mà deck vẫn dùng được cho công ty khác thì nó còn rỗng.
 
 ### 43. Gạch đầu dòng là câu văn dài hoặc nói lại một ý
 **Dấu hiệu:** gạch đầu dòng hơn 20 chữ; ba gạch cùng một ý nói bằng ba cách; mỗi gạch một kiểu kết câu; slide chỉ có một gạch.
@@ -328,7 +328,7 @@ Câu ngắn hơn không có nghĩa là đúng hơn. Kiểm lại sau khi sửa:
 
 ## I. Cả bài: dấu hiệu còn lại sau khi từng câu đã sạch
 
-Nhóm này rút ra từ một bài đăng có thật, dài 1.740 chữ về một dự án hệ điều hành. Bài đã bỏ hết từ vựng AI, gạch ngang dài, in đậm, lời chatbot, máy quét bản 2.1.0 chấm 3/100, vậy mà người đọc vẫn nhận ra ngay. Lý do: người sửa (hoặc mô hình) bỏ cụm bị cấm rồi thay bằng cụm cùng họ, và các khuôn câu lặp lại đều đặn suốt bài. Người đọc không soi từng câu, chỉ cần thấy một kiểu lặp tới lần thứ ba là nhận ra.
+Nhóm này rút ra từ một bài đăng có thật, dài 1.740 chữ về một dự án hệ điều hành. Bài đã bỏ hết từ vựng AI, gạch ngang dài, in đậm, lời chatbot. Máy quét bản 2.1.0 chấm 3/100, vậy mà người đọc vẫn nhận ra ngay. Lý do: người sửa (hoặc mô hình) bỏ cụm bị cấm rồi thay bằng cụm cùng họ, và các khuôn câu lặp lại đều đặn suốt bài. Người đọc không soi từng câu, chỉ cần thấy một kiểu lặp tới lần thứ ba là nhận ra.
 
 Bài gốc và bản viết lại nằm ở `examples/bai-dang-truoc.md` và `examples/bai-dang-sau.md` trong repo.
 
@@ -387,7 +387,7 @@ Cách đọc nhóm này: đếm trên cả bài. Một lần thì có thể là 
 ### 51. Đoạn ngắn đều nhau
 **Dấu hiệu:** cả bài toàn đoạn hai ba câu, không đoạn nào quá bốn câu (bài mẫu: 38 trên 40 đoạn); câu nào cũng trọn vẹn, đủ chủ vị, không câu nào bỏ lửng hay chêm ngang.
 **Vấn đề:** Mục 12 và mục 38 nói về câu. Ở đây câu có dài ngắn, nhưng đoạn thì đều như cắt bằng thước. Cứ hai câu lại xuống dòng là nhịp "dễ đọc trên điện thoại" mà mô hình áp cho mọi bài.
-**Sửa:** Gộp các đoạn cùng một ý thành đoạn dài năm bảy câu. Để đoạn một câu cho chỗ thật sự cần dừng. *Yếu* khi đứng riêng: nhiều người viết Facebook cũng xuống dòng liên tục.
+**Sửa:** Gộp các đoạn cùng một ý thành đoạn dài năm bảy câu. Đoạn một câu thì dành cho chỗ thật sự cần dừng. *Yếu* khi đứng riêng: nhiều người viết Facebook cũng xuống dòng liên tục.
 
 ### 52. Nhượng bộ theo khuôn
 **Dấu hiệu:** nhận định nào cũng đi kèm một đoạn lùi lại cho cân: "Câu đó không hoàn toàn sai, nhưng..."; "Nói cho công bằng: X vẫn có giá"; "Con số đó không nói Linux dở"; "tiến độ không dễ... Nhưng hướng đi thì đã rõ". Khuôn lặp: khẳng định, nhượng bộ, "nhưng", khẳng định lại.
@@ -405,7 +405,7 @@ Cách đọc nhóm này: đếm trên cả bài. Một lần thì có thể là 
 **Trước:**
 > Điểm số chỉ để tham khảo. Điểm cho biết bài có bao nhiêu thói quen viết theo khuôn. Điểm không nói bài do AI viết. Có người vốn viết câu đều nhịp.
 **Sau:**
-> Điểm số chỉ để tham khảo, vì nó chỉ cho biết bài có bao nhiêu thói quen viết theo khuôn, chưa nói được bài có do AI viết hay không. Có người vốn viết câu đều nhịp.
+> Điểm số chỉ để tham khảo, vì nhìn điểm chỉ biết bài viết theo khuôn nhiều hay ít, chưa biết được bài có do AI viết hay không. Có người vốn viết câu đều nhịp.
 **Sửa:** Gộp các câu cùng ý bằng dấu phẩy và từ nối đúng quan hệ (vì, nên, còn, rồi, thì). Bỏ chủ ngữ lặp. Chỉ chấm khi hết ý. Giữ câu ngắn ở chỗ cần nhấn, và đừng gộp quá tay thành câu năm sáu vế. Lời nói trên slide, ghi chú thuyết trình, tin nhắn chat thì câu ngắn là bình thường. *Yếu* khi chỉ gặp một hai chỗ.
 
 ### 55. Câu gộp quá tay: chuỗi vế nối bằng dấu phẩy
@@ -415,7 +415,7 @@ Cách đọc nhóm này: đếm trên cả bài. Một lần thì có thể là 
 > Slide và tài liệu nhiều trang có nhóm riêng, trong đó skill bắt tiêu đề chỉ là nhãn, tiêu đề đếm số ý, slide nào cũng đúng ba ý, lời hứa suông và ghi chú thuyết trình viết như công văn, hướng dẫn viết slide nằm ở file riêng.
 **Sau:**
 > Slide và tài liệu nhiều trang có nhóm riêng. Ở nhóm này skill bắt tiêu đề chỉ là nhãn, tiêu đề đếm số ý, slide nào cũng đúng ba ý, lời hứa suông và ghi chú thuyết trình viết như công văn. Hướng dẫn viết slide nằm ở file riêng.
-**Sửa:** Mỗi câu một ý, nhiều nhất hai ba vế có quan hệ rõ. Tìm chỗ đổi ý để chấm. Câu liệt kê được phép dài, nhưng phần dẫn vào danh sách phải ngắn. Đọc thành tiếng: chỗ nào hụt hơi mà chưa hết ý thì câu đang quá dài. `scan.py` chỉ báo câu từ 60 chữ; ngắn hơn phải tự đọc.
+**Sửa:** Mỗi câu một ý, nhiều nhất hai ba vế có quan hệ rõ. Tìm chỗ đổi ý để chấm. Câu liệt kê thì dài cũng được, nhưng phần dẫn vào danh sách phải ngắn. Đọc thành tiếng: chỗ nào hụt hơi mà chưa hết ý thì câu đang quá dài. `scan.py` chỉ báo câu từ 60 chữ; ngắn hơn phải tự đọc.
 
 ## K. Văn dịch sâu: câu nghĩ bằng tiếng Anh, viết bằng chữ Việt
 
@@ -436,7 +436,7 @@ Nhóm G bắt các cụm dịch dễ thấy. Nhóm này bắt thứ khó thấy 
 **Trước:**
 > Viết như người là một skill cho Claude và các trợ lý AI khác. Mở một cuộc trò chuyện mới và thử một câu.
 **Sau:**
-> Viết như người là skill dùng cho Claude và trợ lý AI khác. Mở cuộc trò chuyện mới rồi thử một câu.
+> Viết như người là skill dùng cho Claude và các trợ lý AI khác. Mở cuộc trò chuyện mới rồi thử một câu.
 **Sửa:** Bỏ "một", "các", "những" khi không cần đếm, không cần nhấn. Giữ khi số lượng có nghĩa ("thử một câu", "cả ba bước"). *Yếu* khi đứng riêng.
 
 ### 58. Bị động không ai làm, vật vô tri làm chủ ngữ
@@ -481,7 +481,7 @@ Nhóm G bắt các cụm dịch dễ thấy. Nhóm này bắt thứ khó thấy 
 
 Đừng sửa những thứ mang giọng riêng của người viết:
 - Chi tiết lạ và cụ thể: "ông luật sư từng làm ở tầng trên phòng khám nha khoa của tôi".
-- Cảm xúc lẫn lộn, chưa giải quyết: "Tôi thấy nhìn chung ổn, nhưng có gì đó cứ cấn cấn mà chưa nói rõ được."
+- Cảm xúc lẫn lộn, chưa ngã ngũ: "Tôi thấy nhìn chung ổn, nhưng có gì đó cứ cấn cấn mà chưa nói rõ được."
 - Tiếng lóng, meme, chuyện riêng của một thời, một nhóm.
 - Câu chêm, ngoặc đơn, tự sửa giữa chừng: "(Định viết 'gần như' nhưng thật ra là chắc chắn.)"
 - Văn bản viết trước 30/11/2022 không phải văn AI.

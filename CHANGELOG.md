@@ -8,7 +8,7 @@ Văn dịch từng chữ: chữ nào cũng là tiếng Việt mà câu vẫn the
 - Nhóm dấu hiệu K (mục 56-62): chủ ngữ và sở hữu chép từ "you/your", mạo từ và số nhiều, bị động không ai làm và vật vô tri làm chủ ngữ, chữ chỉ thì và "có thể", giới từ và từ nối dịch thẳng, thành ngữ và tiêu đề dịch thẳng, thiếu khung đề-thuyết.
 - `scan.py`: nhóm mới "bị động dịch sát", "vật làm chủ ngữ", "mở câu dịch sát", "quan hệ từ dịch sát"; thêm thành ngữ dịch thẳng vào "văn dịch (vi)"; kiểm cả bài "đại từ dày" khi "bạn/chúng tôi/chúng ta" từ 12 lần trên 1.000 chữ. Điểm các file mẫu không đổi.
 - README tiếng Việt viết lại từ ý theo phần mới, đổi cả tiêu đề mục ("Trước và sau" thành "Văn AI và bản đã sửa", "Vài điều nên biết" thành "Lưu ý"...).
-- Hai lượt đọc độc lập soi văn dịch trong README, bài mẫu `examples/bai-dang-sau.md`, `SKILL.md`, `slides.md` và nhóm I, K của `patterns.md`; đã sửa theo, gồm cả những chỗ `SKILL.md` tự phạm quy tắc của mình.
+- Ba vòng đọc độc lập soi văn dịch trong README, bài mẫu `examples/bai-dang-sau.md`, `SKILL.md`, `slides.md`, `patterns.md`, `sources.md` và CHANGELOG; đã sửa theo, gồm cả những chỗ `SKILL.md` tự phạm quy tắc của mình.
 - `SKILL.md` dặn thêm đừng đổi tật này lấy tật khác (thay hết "các" bằng "mấy", hết "và" bằng "với") và đừng lược chữ tới mức câu thành mơ hồ.
 - Còn hạn chế: phần lớn văn dịch tầng này máy không đếm được, phải tự đọc. Ngưỡng "đại từ dày" chưa thử trên văn người viết thật.
 
@@ -16,7 +16,7 @@ Văn dịch từng chữ: chữ nào cũng là tiếng Việt mà câu vẫn the
 
 Ngắt câu tiếng Việt và các việc tồn đọng của máy quét.
 
-- `SKILL.md`: quy tắc ngắt câu viết lại cho nhất quán. Ngắt theo ý, không chặt vụn, cũng không gộp quá ba vế; từ nối phải đúng quan hệ; ngoặc đơn và chấm phẩy dùng dè. Bỏ lời khuyên "câu dài ngắn xen kẽ" theo luật.
+- `SKILL.md`: quy tắc ngắt câu viết lại cho nhất quán. Ngắt theo ý, không chặt vụn, cũng không gộp quá ba vế; từ nối phải đúng quan hệ; ngoặc đơn và chấm phẩy dùng dè. Bỏ lời khuyên xen câu dài ngắn như một luật.
 - Dấu hiệu 55, câu gộp quá tay: chuỗi vế nối bằng dấu phẩy. `scan.py` báo "câu quá dài" từ 60 chữ; ngắn hơn phải tự đọc.
 - `scan.py --meta`: bỏ qua phần trích dẫn (dòng `>`, bảng, chữ trong ngoặc kép) khi quét văn bản bàn về chính các dấu hiệu. README từ 19/100 xuống 0/100 với `--meta`, điểm các file mẫu không đổi.
 - "Hai chấm dồn dập" không còn đếm dấu hai chấm cuối đoạn dẫn vào danh sách, khối lệnh, bảng. Bài mẫu từ 20/88 còn 19/88 câu, điểm vẫn 55/100.
@@ -46,7 +46,7 @@ Ngắt câu tiếng Việt và các việc tồn đọng của máy quét.
 Dấu hiệu cả bài. Xuất phát từ một bài đăng 1.740 chữ đã sạch từng câu (bản 2.1.0 chấm 3/100) mà người đọc vẫn nhận ra là AI viết.
 
 - Nhóm dấu hiệu I (mục 45-53): nhãn báo giọng ("nói gọn", "nói cho thật:", "nói rõ để..."), đối lập lặp cả bài, câu chốt cuối đoạn, "Tức là" giải nghĩa hộ và hai chấm dồn dập, bài ôm hết mọi thứ, bài tự kể dàn ý và mục "KẾT", đoạn ngắn đều nhau, nhượng bộ theo khuôn, xưng "mình" mà không có chuyện của mình.
-- `SKILL.md`: phần "Cả bài" trong quy tắc cốt lõi. Mỗi quy tắc cấm cả họ cụm từ, thay cụm bị cấm bằng cụm đồng nghĩa không tính là sửa. Đối lập có ngân sách một lần mỗi bài. Một bài một việc, độ dài theo kênh, giọng riêng cho bài đăng mạng xã hội.
+- `SKILL.md`: phần "Cả bài" trong quy tắc cốt lõi. Mỗi quy tắc cấm cả họ cụm từ, thay cụm bị cấm bằng cụm đồng nghĩa không tính là sửa. Đối lập chỉ được dùng một lần mỗi bài. Một bài một việc, độ dài theo kênh, giọng riêng cho bài đăng mạng xã hội.
 - `scan.py`: nhóm mới "nhãn báo giọng", "diễn giải lại", "tự kể dàn ý", "mục kết dán nhãn"; bắt thêm đối lập dạng "không X, mà Y", "chứ không", tách hai câu.
 - `scan.py` đếm trên cả bài: một khuôn lặp từ 3 lần, hai chấm dồn dập, đoạn nào cũng 1-3 câu, bài đăng chia mục viết hoa, bài mạng xã hội trên 800 chữ. Các dấu hiệu này cộng điểm cố định, không chia theo độ dài, nên bài dài không loãng thành "sạch". Bài mẫu từ 3/100 lên 55/100.
 - Kết quả in thêm số chữ; JSON có thêm `document_points`.
@@ -56,7 +56,7 @@ Dấu hiệu cả bài. Xuất phát từ một bài đăng 1.740 chữ đã s�
 Slide và thuyết trình.
 
 - `scan.py` đọc thẳng file `.pptx`: chữ trên slide, bảng, ghi chú thuyết trình. Kết quả ghi theo vị trí ("slide 2, ghi chú").
-- Kiểm riêng cho slide: tiêu đề dạng nhãn, tiêu đề có tiền tố nhãn, tiêu đề đếm số ý, ba tiêu đề cùng khuôn, tên khung lộ ra slide, slide nào cũng đúng 3-4 ý, gạch đầu dòng dài, slide nhiều chữ, câu ghi chú quá dài để nói, ngoặc trong lời nói.
+- Kiểm riêng cho slide: tiêu đề dạng nhãn, tiêu đề có tiền tố nhãn, tiêu đề đếm số ý, ba tiêu đề cùng khuôn, tên khung lộ ra slide, slide nào cũng đúng 3-4 ý, gạch đầu dòng dài, slide nhiều chữ, câu ghi chú dài quá, khó nói, ngoặc trong lời nói.
 - `scan.py --titles` in riêng các tiêu đề (slide hoặc heading Markdown); `scan.py --text` in toàn bộ chữ từng slide.
 - `check_facts.py` so được hai file `.pptx`.
 - Nhóm dấu hiệu H (mục 39-44) và hướng dẫn `references/slides.md`: lấy bối cảnh trước khi viết, tiêu đề là câu kết luận, mật độ theo cách trình bày, ghi chú viết để nói, nhờ agent mới đọc thử và chấm 7 tiêu chí.

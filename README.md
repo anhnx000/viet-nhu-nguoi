@@ -15,7 +15,7 @@
 
 Nhờ AI làm slide, viết email, viết báo cáo thì nhanh thật, có điều ai đọc cũng nhận ra ngay. Slide nào cũng có tiêu đề "Tổng quan", "Thách thức". Email thì mở bằng "Trong bối cảnh hiện nay", kết bằng "Hy vọng thông tin trên hữu ích!". Gửi trong nhóm thì không sao, chứ gửi sếp hay gửi khách thì lại phải ngồi sửa.
 
-Viết như người là một skill, tức là gói hướng dẫn cài thêm cho Claude và trợ lý AI khác. Cài rồi thì AI viết tiếng Việt giống người đi làm hơn: tiêu đề slide nói thẳng kết luận, email xưng hô đúng vai, câu không rườm, số liệu đưa sao để vậy. Skill miễn phí, mã nguồn mở.
+Viết như người là một skill, tức là gói hướng dẫn cài thêm cho Claude và các trợ lý AI khác. Cài rồi thì AI viết tiếng Việt giống người đi làm hơn: tiêu đề slide nói thẳng kết luận, email xưng hô đúng vai, câu không rườm, số liệu đưa sao để vậy. Skill miễn phí, mã nguồn mở.
 
 **Mục lục:** [Cài, không cần biết lập trình](#cài-mất-vài-phút-không-cần-biết-lập-trình) · [Cách dùng hằng ngày](#cách-dùng-hằng-ngày) · [Văn AI và bản đã sửa](#văn-ai-và-bản-đã-sửa) · [Skill sửa những lỗi nào](#skill-sửa-những-lỗi-nào) · [Dòng lệnh](#chạy-bằng-dòng-lệnh)
 
@@ -25,7 +25,7 @@ Viết như người là một skill, tức là gói hướng dẫn cài thêm c
 - Viết email gửi sếp, gửi khách. Email vào việc trước, xưng hô đúng vai (anh/chị/em, quý khách), không tự đổi thành "bạn".
 - Sửa báo cáo, tài liệu dịch từ tiếng Anh, bỏ mấy kiểu câu dịch như "được... bởi", "Điều này cho phép", "thông qua việc".
 - Viết bài Facebook, LinkedIn, blog. AI viết nháp nhưng vẫn ra giọng bạn, mỗi bài kể một chuyện thôi.
-- Soi lại bài trước lúc gửi. Skill chỉ ra chỗ nào nghe giống AI, còn sửa hay không là tùy bạn.
+- Soi lại bài trước khi gửi. Skill chỉ ra chỗ nào nghe giống AI, còn sửa hay không là tùy bạn.
 
 ## Cài mất vài phút, không cần biết lập trình
 
@@ -37,7 +37,7 @@ Không phải gõ lệnh gì cả, cứ nhờ trợ lý AI cài hộ, như nhờ
 
 > Cài giúp tôi skill viet-nhu-nguoi từ https://github.com/anhnx000/viet-nhu-nguoi
 
-**Bước 3. Bấm đồng ý** lúc trợ lý xin phép tải và cài. Thường chưa tới một phút là xong.
+**Bước 3. Bấm đồng ý** khi trợ lý xin phép tải và cài. Thường chưa tới một phút là xong.
 
 **Bước 4. Mở cuộc trò chuyện mới rồi thử:**
 
@@ -97,7 +97,7 @@ npx skills add anhnx000/viet-nhu-nguoi      # chỉ cho dự án hiện tại
 npx skills add anhnx000/viet-nhu-nguoi -g   # cho mọi dự án (cấp người dùng)
 ```
 
-Lệnh sẽ hỏi cài cho agent nào, muốn khỏi hỏi thì thêm `-a claude-code` (hoặc `-a '*'`) và `-y`. Skill chỉ gồm file Markdown nên editor đang dùng mô hình nào cũng chạy được.
+Lệnh hỏi cài cho agent nào, muốn khỏi hỏi thì thêm `-a claude-code` (hoặc `-a '*'`) và `-y`. Skill chỉ gồm file Markdown nên editor đang dùng mô hình nào cũng chạy được.
 
 </details>
 
@@ -180,17 +180,17 @@ Bản AI viết bị chấm 72/100, dính 16 dấu hiệu, còn hai bản sau đ
 
 ### Bài đăng dài
 
-Bản 2.2 của skill ra đời từ một bài đăng thật. [Bài gốc](examples/bai-dang-truoc.md) dài 1.740 chữ, chia chín mục viết hoa. Bài đã bỏ gần hết mấy từ AI quen mặt nên máy quét ở bản trước chỉ chấm 3/100. Vậy mà ai đọc cũng nhận ra, vì cả bài cứ lặp đi lặp lại vài kiểu câu:
+Bản 2.2 của skill ra đời từ một bài đăng thật. [Bài gốc](examples/bai-dang-truoc.md) dài 1.740 chữ, chia chín mục viết hoa. Bài gần như không còn từ AI quen mặt nên máy quét ở bản trước chỉ chấm 3/100. Vậy mà ai đọc cũng nhận ra, vì cả bài cứ lặp đi lặp lại vài kiểu câu:
 
 > Nói cho thật: tiến độ không dễ. [...] Khó nhất không phải là code, mà là chọn việc gì để làm. [...] Mình không cần bạn giỏi kernel. Mình cần bạn kiên nhẫn đọc log.
 
-Từ bản 2.2 máy quét đếm trên cả bài, bài này lên 55/100. Trong bài có mười câu kiểu "không phải X mà là Y", sáu câu mở bằng nhãn như "nói gọn", "nói cho thật", và 19 trên 88 câu có dấu hai chấm.
+Từ bản 2.2 máy quét đếm trên cả bài nên bài này lên 55/100. Trong bài có mười câu kiểu "không phải X mà là Y", sáu câu mở bằng nhãn như "nói gọn", "nói cho thật", và 19 trên 88 câu có dấu hai chấm.
 
-[Bản viết lại](examples/bai-dang-sau.md) còn 373 chữ, chỉ làm một việc là rủ người vào làm cùng. Máy quét chấm 0/100, dữ kiện thì không thêm gì ngoài bài gốc. Phần định nghĩa hệ điều hành, lịch sử microkernel với thống kê bảo mật thì để dành cho bài khác.
+[Bản viết lại](examples/bai-dang-sau.md) còn 373 chữ, chỉ làm một việc là rủ người vào làm cùng. Máy quét chấm 0/100, dữ kiện thì không thêm gì ngoài bài gốc. Phần định nghĩa hệ điều hành, lịch sử microkernel, thống kê bảo mật thì để dành cho bài khác.
 
 ## Skill sửa những lỗi nào
 
-Danh mục của skill có 62 dấu hiệu văn AI, dấu hiệu nào cũng kèm ví dụ trước và sau khi sửa ([xem đầy đủ](skills/viet-nhu-nguoi/references/patterns.md)). Nhóm riêng cho tiếng Việt gồm những thứ dễ thấy sau:
+Danh mục của skill có 62 dấu hiệu văn AI, dấu hiệu nào cũng kèm ví dụ trước và sau khi sửa ([xem đầy đủ](skills/viet-nhu-nguoi/references/patterns.md)). Nhóm riêng cho tiếng Việt có những dấu hiệu dễ thấy sau:
 
 | Dấu hiệu | Ví dụ | Sửa thành |
 | --- | --- | --- |
@@ -213,7 +213,7 @@ Khó thấy hơn là văn dịch từng chữ: chữ nào cũng là tiếng Vi�
 - "Với...", "Để..., bạn cần..." mở câu, "và" nối mọi vế;
 - thành ngữ và tiêu đề dịch thẳng ("tin tốt là", "Bắt đầu nhanh").
 
-Gặp văn như vậy, skill không thay từng cụm mà viết lại từ ý, theo cách người Việt vẫn nói ý đó.
+Gặp văn như vậy, skill không thay từng cụm mà viết lại từ ý, như người Việt vẫn nói.
 
 Có dấu hiệu phải đọc cả bài mới thấy, dù từng câu đã ổn:
 
@@ -224,7 +224,7 @@ Có dấu hiệu phải đọc cả bài mới thấy, dù từng câu đã ổn
 - dấu chấm chặt một ý thành nhiều câu vụn, hoặc ngược lại, một câu gộp quá nhiều vế;
 - bài đăng dài ôm đủ mọi chủ đề.
 
-Slide với tài liệu nhiều trang có nhóm riêng: tiêu đề chỉ là nhãn ("Tổng quan", "Kết luận"), tiêu đề đếm số ý ("3 trụ cột"), slide nào cũng đúng ba ý, hứa suông ("chi tiết sẽ trao đổi sau"), ghi chú thuyết trình viết như công văn. Cách viết slide có hướng dẫn riêng ở [references/slides.md](skills/viet-nhu-nguoi/references/slides.md).
+Slide và tài liệu nhiều trang có nhóm riêng: tiêu đề chỉ là nhãn ("Tổng quan", "Kết luận"), tiêu đề đếm số ý ("3 trụ cột"), slide nào cũng đúng ba ý, hứa suông ("chi tiết sẽ trao đổi sau"), ghi chú thuyết trình viết như công văn. Cách viết slide có hướng dẫn riêng ở [references/slides.md](skills/viet-nhu-nguoi/references/slides.md).
 
 Các nhóm còn lại thì tiếng Việt hay tiếng Anh đều gặp: đối lập giả, câu chốt một dòng, liệt kê ép cho đủ ba, gạch ngang dài, thổi phồng, mượn uy tín mơ hồ, in đậm và emoji trang trí, lời chatbot, giải thích lại điều người đọc biết rồi.
 
@@ -248,7 +248,7 @@ python3 -I skills/viet-nhu-nguoi/scripts/scan.py file.md
 | `--titles` | chỉ in tiêu đề theo thứ tự |
 | `--text` | in hết chữ và ghi chú từng slide trong file `.pptx` |
 
-`check_facts.py` so bản gốc với bản sửa, so hai file `.pptx` cũng được. Số liệu, ngày giờ, link hay code mà mất hoặc thêm thì script báo lỗi, thiếu tên riêng thì nhắc:
+`check_facts.py` so bản gốc với bản sửa, so hai file `.pptx` cũng được. Số liệu, ngày giờ, link hay code bị mất hoặc tự thêm vào thì script báo lỗi, thiếu tên riêng thì nhắc:
 
 ```bash
 python3 -I skills/viet-nhu-nguoi/scripts/check_facts.py goc.md moi.md

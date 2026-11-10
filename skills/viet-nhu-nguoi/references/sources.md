@@ -1,19 +1,19 @@
 # Nguồn tham khảo
 
-Danh sách này cho biết skill học từ đâu và nên đọc thêm gì. Nguồn không chứng minh một từ hay một cấu trúc riêng lẻ là lỗi, cũng không đảm bảo bản viết lại nào cũng tốt hơn. Danh mục dấu hiệu, ví dụ trước/sau và quy tắc trong skill được viết lại bằng lời riêng; không chép nguyên văn bài nào.
+Danh sách này cho biết skill học từ đâu và nên đọc thêm gì. Có nguồn không có nghĩa là một từ hay một cấu trúc riêng lẻ nào đó là lỗi, cũng chưa chắc bản viết lại nào cũng hay hơn. Danh mục dấu hiệu, ví dụ trước/sau và quy tắc trong skill được viết lại bằng lời riêng; không chép nguyên văn bài nào.
 
-Mọi link được kiểm còn truy cập được ngày 07-11-2026. Mỗi mục ghi rõ mức dùng:
+Ngày 07-11-2026 đã kiểm, link nào cũng còn mở được. Mỗi mục ghi rõ mức dùng:
 
 - **Dùng trực tiếp:** đã đọc và có quy tắc hoặc dấu hiệu trong skill dựa vào nguồn này.
-- **Đọc thêm:** nguồn được các dự án khác đọc và trích dẫn (ghi tên dự án). Skill này chưa đọc toàn văn, chỉ đưa vào để người muốn tìm hiểu sâu có chỗ bắt đầu.
+- **Đọc thêm:** nguồn mà dự án khác đã đọc và dẫn lại (ghi tên dự án). Người làm skill này chưa đọc toàn văn, chỉ đưa vào để người muốn tìm hiểu sâu có chỗ bắt đầu.
 
 ## Danh mục dấu hiệu văn AI
 
 - Wikipedia, [Signs of AI writing](https://en.wikipedia.org/wiki/Wikipedia:Signs_of_AI_writing), WikiProject AI Cleanup. **Dùng trực tiếp.** Nền của nhóm A-F: câu dàn dựng, thổi phồng, mượn uy tín, định dạng theo khuôn, lời chatbot. Viết cho Wikipedia tiếng Anh, nên skill không chuyển mọi nhận xét thành luật cho tiếng Việt.
 - [Pangram: 9 Signs of AI Writing](https://www.pangram.com/signs-of-ai-writing). **Dùng trực tiếp.** Số liệu so sánh mật độ in đậm và gạch đầu dòng trong văn AI (mục 20).
 - [GPTZero: How ChatGPT detection works](https://gptzero.me/news/how-chatgpt-detection-works). **Dùng trực tiếp.** Ý tưởng độ đều của câu, dùng cho phần chấm điểm nhịp câu trong `scan.py`.
-- Druck, Paredes và Smith, Graphite, [AI tells](https://graphite.io/research/ai-tells), 2026. **Đọc thêm** (longhang2004). Nghiên cứu các dấu hiệu cấu trúc trên bài web và sự thay đổi qua từng đời mô hình; chưa kiểm chứng cho tiếng Việt.
-- Pew Research Center, [How Much of the Internet Is Written With AI?](https://www.pewresearch.org/data-labs/2026/08/20/how-much-of-the-internet-is-written-with-ai/), 20-08-2026. **Đọc thêm** (longhang2004). Hữu ích để hiểu vì sao xu hướng trên tập lớn không đủ để kết luận về một bài cụ thể.
+- Druck, Paredes và Smith, Graphite, [AI tells](https://graphite.io/research/ai-tells), 2026. **Đọc thêm** (longhang2004). Nghiên cứu các dấu hiệu cấu trúc trên bài web và chúng đổi thế nào qua từng đời mô hình; chưa kiểm chứng cho tiếng Việt.
+- Pew Research Center, [How Much of the Internet Is Written With AI?](https://www.pewresearch.org/data-labs/2026/08/20/how-much-of-the-internet-is-written-with-ai/), 20-08-2026. **Đọc thêm** (longhang2004). Đọc để hiểu vì sao xu hướng trên tập lớn chưa đủ để kết luận về một bài cụ thể.
 - Steph Zinn, a16z, [The habits of AI writing](https://a16zfrontier.substack.com/p/the-habits-of-ai-writing-and-what), 22-08-2026. **Đọc thêm** (longhang2004). Chọn cấu trúc theo việc bài cần làm, khi nào nên giữ định dạng.
 - The Base Team, [Why Your Writing Sounds Like ChatGPT](https://the-curve.basehq.com/p/why-your-writing-sounds-like-chatgpt-and-how-to-fix-it), 02-10-2026. **Đọc thêm** (longhang2004). Đối lập dựng sẵn, nhịp giật cụt, bố cục bài mạng xã hội.
 
@@ -32,7 +32,7 @@ Mọi link được kiểm còn truy cập được ngày 07-11-2026. Mỗi mụ
 
 ## Văn phong tiếng Việt do người viết
 
-- Cao Xuân Hạo, *Tiếng Việt, văn Việt, người Việt*, 1998. **Đọc thêm** (cuongducle). Về cấu trúc câu tiếng Việt và việc không nên áp nguyên cấu trúc ngoại ngữ vào câu Việt. Đây là nền lý thuyết cho nhóm G (văn dịch).
+- Cao Xuân Hạo, *Tiếng Việt, văn Việt, người Việt*, 1998. **Đọc thêm** (cuongducle). Bàn về cấu trúc câu tiếng Việt, và chuyện không nên áp nguyên cấu trúc ngoại ngữ vào câu Việt. Đây là nền lý thuyết cho nhóm G (văn dịch).
 - Hoàng Thu Phố phỏng vấn Nguyễn Ngọc Tư, [Viết là cách tôi giao lưu với bạn đọc](https://nhandan.vn/viet-la-cach-toi-giao-luu-voi-ban-doc-post348644.html), Nhân Dân, 31-01-2019. **Đọc thêm** (longhang2004). Nhịp câu không đều mà vẫn dễ theo, giọng riêng không cần chuẩn hóa.
 - Nam Kha, Mực Tím, [Viết sao cho hay, viết gì cho chất?](https://muctim.tuoitre.vn/viet-sao-cho-hay-viet-gi-cho-chat-101230629160346324.htm), 29-06-2023. **Đọc thêm** (longhang2004). Viết từ chi tiết quan sát được, giữ mạch.
 
@@ -59,7 +59,7 @@ Skill tiếng Anh:
 - [hardikpandya/stop-slop](https://github.com/hardikpandya/stop-slop). **Dùng trực tiếp** cho ý tưởng: tự chấm theo năm tiêu chí.
 - [carnot-tech/jinba-consulting-pptx-skill](https://github.com/carnot-tech/jinba-consulting-pptx-skill), MIT. **Dùng trực tiếp** cho ý tưởng: tiêu đề slide là câu kết luận và đọc liền thành mạch; không đếm số ý trong tiêu đề, không ép về ba; không lộ tên khung; thiếu số liệu thì để trống chứ không bịa; danh sách từ "mùi AI" và câu hứa suông; nhờ agent mới đọc soát, chấm 7 tiêu chí (thang 70) và lập bảng nhận/không nhận góp ý. Bản gốc viết bằng tiếng Nhật cho slide HTML; ở đây chọn lọc phần về chữ và viết lại cho tiếng Việt.
 - [zarazhangrui/frontend-slides](https://github.com/zarazhangrui/frontend-slides), MIT. **Dùng trực tiếp** cho ý tưởng: chia mật độ chữ theo cách trình bày (nói trực tiếp hay gửi đọc), tách slide thay vì thu nhỏ chữ, danh sách hình thức "AI slop" (gradient tím, lưới thẻ icon, bố cục rập khuôn), không để chữ của quy trình làm slide lên slide.
-- Anthropic, skill `doc-coauthoring` trong [anthropics/skills](https://github.com/anthropics/skills), Apache 2.0. **Dùng trực tiếp** cho ý tưởng: hỏi gộp bối cảnh trước khi viết, câu hỏi đánh số cho phép trả lời tắt, thử tài liệu với một agent mới không biết bối cảnh.
+- Anthropic, skill `doc-coauthoring` trong [anthropics/skills](https://github.com/anthropics/skills), Apache 2.0. **Dùng trực tiếp** cho ý tưởng: hỏi gộp bối cảnh trước khi viết, câu hỏi đánh số để trả lời tắt được, thử tài liệu với một agent mới không biết bối cảnh.
 - [jurigis/avoid-ai-writing-multilingual](https://github.com/jurigis/avoid-ai-writing-multilingual). **Đọc thêm** (cuongducle). Cách tách quy tắc theo từng ngôn ngữ.
 
 Skill tiếng Việt, đều MIT. Dùng để đối chiếu danh mục; quy tắc và ví dụ ở đây viết lại theo cách riêng:
@@ -71,8 +71,8 @@ Skill tiếng Việt, đều MIT. Dùng để đối chiếu danh mục; quy t�
 
 ## Bài thực tế
 
-- Một bài đăng mạng xã hội 1.740 chữ về một dự án hệ điều hành, tháng 11-2026, bị người đọc nhận ra là AI viết dù đã qua skill. **Dùng trực tiếp.** Nguồn của nhóm I (mục 45-53) và các kiểm cả bài trong `scan.py`. Số đo trên bài: 10 câu đối lập, 6 nhãn báo giọng, 20 trên 88 câu có dấu hai chấm, 38 trên 40 đoạn chỉ 1-3 câu, 9 mục viết hoa. Ngưỡng của các kiểm cả bài được chỉnh trên đúng một bài này, nên coi là gợi ý.
+- Một bài đăng mạng xã hội 1.740 chữ về một dự án hệ điều hành, tháng 11-2026, bị người đọc nhận ra là AI viết dù đã qua skill. **Dùng trực tiếp.** Nguồn của nhóm I (mục 45-53) và các phép kiểm cả bài trong `scan.py`. Số đo trên bài: 10 câu đối lập, 6 nhãn báo giọng, 20 trên 88 câu có dấu hai chấm, 38 trên 40 đoạn chỉ 1-3 câu, 9 mục viết hoa. Ngưỡng của các phép kiểm cả bài chỉnh trên đúng một bài này, nên coi là gợi ý.
 
 ## Giới hạn
 
-Ví dụ trước/sau trong skill do người làm skill tự viết, chưa qua một nhóm người đọc bản ngữ độc lập chấm. Ngưỡng điểm của `scan.py` được chỉnh trên vài văn bản mẫu, chưa đo trên một tập lớn. Cần thêm phản hồi theo vùng miền, ngành và kênh trước khi khẳng định mức cải thiện. Nếu bạn thấy một nguồn bị dẫn sai ý, hãy mở issue.
+Ví dụ trước/sau trong skill do người làm skill tự viết, chưa có nhóm người Việt nào đọc và chấm độc lập. Ngưỡng điểm của `scan.py` được chỉnh trên vài văn bản mẫu, chưa đo trên một tập lớn. Phải có thêm phản hồi theo vùng miền, ngành, kênh thì mới dám nói skill cải thiện được bao nhiêu. Thấy nguồn nào bị dẫn sai ý thì mở issue giúp.
