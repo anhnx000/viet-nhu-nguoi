@@ -250,8 +250,8 @@ Viết như người is free and MIT licensed, and it will stay that way. I main
 
 <table>
   <tr>
-    <td width="240" align="center">
-      <img src="assets/donate-vietqr.png" alt="VietQR code to buy the author a coffee via VPBank / Napas 247" width="210">
+    <td width="250" align="center">
+      <img src="assets/donate-vietqr.png" alt="VietQR code to buy the author a coffee via VPBank / Napas 247" width="220">
     </td>
     <td>
       <b>Scan with any Vietnamese banking app</b> (VietQR / Napas 247).<br><br>

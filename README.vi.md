@@ -248,8 +248,8 @@ Viết như người miễn phí, giấy phép MIT, và sẽ giữ như vậy. M
 
 <table>
   <tr>
-    <td width="240" align="center">
-      <img src="assets/donate-vietqr.png" alt="Mã VietQR mời cà phê qua VPBank / Napas 247" width="210">
+    <td width="250" align="center">
+      <img src="assets/donate-vietqr.png" alt="Mã VietQR mời cà phê qua VPBank / Napas 247" width="220">
     </td>
     <td>
       <b>Quét bằng app ngân hàng nào cũng được</b> (VietQR / Napas 247).<br><br>
