@@ -156,7 +156,7 @@ Sắp từ mạnh đến yếu. Nhóm A và nhóm E chỉ cần gặp một lầ
 **Sửa:** Viết hoa chữ đầu câu, bỏ emoji và kẻ ngang, tiêu đề nói đúng nội dung.
 
 ### 22. Ngoặc kép cong
-**Vấn đề:** “...” trong khi người viết, hoặc nơi sẽ đăng, dùng "...". *Yếu*, vì nhiều trình soạn thảo tự đổi.
+**Vấn đề:** Ngoặc cong “...” xuất hiện ở bài mà người viết, hoặc nơi sẽ đăng, dùng ngoặc thẳng "...". *Yếu*, vì nhiều trình soạn thảo tự đổi.
 
 ## E. Đồ thừa của chat và bản nháp (sửa ngay khi gặp)
 

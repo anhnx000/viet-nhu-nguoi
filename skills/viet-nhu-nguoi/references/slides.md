@@ -83,7 +83,7 @@ Người viết không thấy được chỗ mình viết khó hiểu, vì trong
 > 6. Kết bằng 5 việc nên sửa trước, xếp theo mức quan trọng, mỗi việc nói rõ sửa thế nào.
 > Nêu ít nhất 3 điểm yếu. Không khen chung chung.
 
-Điểm trên thang 70 chỉ để so bản trước với bản sau của cùng một deck, không dùng để so hai deck khác nhau. Không sửa theo mọi góp ý. Lập bảng nhận/không nhận và cho người dùng xem:
+Điểm trên thang 70 chỉ để so bản trước với bản sau của cùng một deck, không dùng để so hai deck khác nhau. Không phải góp ý nào cũng sửa theo. Lập bảng nhận/không nhận và cho người dùng xem:
 
 | # | Slide | Góp ý | Loại (câu chữ / lập luận / số liệu / hình thức) | Nhận? | Sửa thế nào / vì sao không sửa |
 | --- | --- | --- | --- | --- | --- |
