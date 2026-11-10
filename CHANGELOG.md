@@ -8,6 +8,7 @@ Văn dịch từng chữ: chữ nào cũng là tiếng Việt mà câu vẫn the
 - Nhóm dấu hiệu K (mục 56-62): chủ ngữ và sở hữu chép từ "you/your", mạo từ và số nhiều, bị động không ai làm và vật vô tri làm chủ ngữ, chữ chỉ thì và "có thể", giới từ và từ nối dịch thẳng, thành ngữ và tiêu đề dịch thẳng, thiếu khung đề-thuyết.
 - `scan.py`: nhóm mới "bị động dịch sát", "vật làm chủ ngữ", "mở câu dịch sát", "quan hệ từ dịch sát"; thêm thành ngữ dịch thẳng vào "văn dịch (vi)"; kiểm cả bài "đại từ dày" khi "bạn/chúng tôi/chúng ta" từ 12 lần trên 1.000 chữ. Điểm các file mẫu không đổi.
 - README tiếng Việt viết lại từ ý theo phần mới, đổi cả tiêu đề mục ("Trước và sau" thành "Văn AI và bản đã sửa", "Vài điều nên biết" thành "Lưu ý"...).
+- Một lượt đọc độc lập soi văn dịch trong README, bài mẫu `examples/bai-dang-sau.md` và `SKILL.md`; đã sửa theo, gồm cả mấy chỗ `SKILL.md` tự phạm quy tắc ngắt câu của mình.
 - Còn hạn chế: phần lớn văn dịch tầng này máy không đếm được, phải tự đọc. Ngưỡng "đại từ dày" chưa thử trên văn người viết thật.
 
 ## 2.3.0 (2026-11-10)

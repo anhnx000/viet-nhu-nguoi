@@ -15,7 +15,7 @@
 
 Nhờ AI làm slide, viết email, viết báo cáo thì nhanh thật, có điều ai đọc cũng nhận ra ngay. Slide nào cũng có tiêu đề "Tổng quan", "Thách thức". Email thì mở bằng "Trong bối cảnh hiện nay", kết bằng "Hy vọng thông tin trên hữu ích!". Gửi trong nhóm thì không sao, chứ gửi sếp hay gửi khách thì lại phải ngồi sửa.
 
-Viết như người là skill, tức gói hướng dẫn cài thêm cho Claude và mấy trợ lý AI khác. Cài rồi thì AI viết tiếng Việt giống người đi làm viết hơn: tiêu đề slide nói thẳng kết luận, email xưng hô đúng vai, câu không rườm, số liệu đưa sao để vậy. Skill miễn phí, mã nguồn mở.
+Viết như người là một skill, tức là gói hướng dẫn cài thêm cho Claude và mấy trợ lý AI khác. Cài rồi thì AI viết tiếng Việt giống người đi làm hơn: tiêu đề slide nói thẳng kết luận, email xưng hô đúng vai, câu không rườm, số liệu đưa sao để vậy. Skill miễn phí, mã nguồn mở.
 
 **Mục lục:** [Cài, không cần biết lập trình](#cài-mất-vài-phút-không-cần-biết-lập-trình) · [Cách dùng hằng ngày](#cách-dùng-hằng-ngày) · [Văn AI và bản đã sửa](#văn-ai-và-bản-đã-sửa) · [Skill sửa những lỗi nào](#skill-sửa-những-lỗi-nào) · [Dòng lệnh](#chạy-bằng-dòng-lệnh)
 
@@ -24,8 +24,8 @@ Viết như người là skill, tức gói hướng dẫn cài thêm cho Claude 
 - Làm slide báo cáo, đề xuất. Tiêu đề nào cũng là câu kết luận, sếp lướt qua tiêu đề là biết cần quyết gì. Chỗ nào thiếu số liệu thì skill ghi `[cần xác nhận]`, không bịa cho đầy.
 - Viết email gửi sếp, gửi khách. Email vào việc trước, xưng hô đúng vai (anh/chị/em, quý khách), không tự đổi thành "bạn".
 - Sửa báo cáo, tài liệu dịch từ tiếng Anh, bỏ mấy kiểu câu dịch như "được... bởi", "Điều này cho phép", "thông qua việc".
-- Viết bài Facebook, LinkedIn, blog. AI viết nháp nhưng vẫn ra giọng mình, mỗi bài kể một chuyện thôi.
-- Soi lại bài trước lúc gửi. Skill chỉ chỗ nào nghe giống AI, còn sửa hay không là tùy bạn.
+- Viết bài Facebook, LinkedIn, blog. AI viết nháp nhưng vẫn ra giọng bạn, mỗi bài kể một chuyện thôi.
+- Soi lại bài trước lúc gửi. Skill chỉ ra chỗ nào nghe giống AI, còn sửa hay không là tùy bạn.
 
 ## Cài mất vài phút, không cần biết lập trình
 
@@ -64,7 +64,7 @@ Người nhờ cài không rành kỹ thuật, nên hãy tự làm hết, chỉ 
 2. Máy có `git` và `bash` (macOS, Linux, WSL): `git clone https://github.com/anhnx000/viet-nhu-nguoi.git ~/viet-nhu-nguoi && bash ~/viet-nhu-nguoi/install.sh --copy`.
 3. Windows không có bash, hoặc không có git: tải `https://github.com/anhnx000/viet-nhu-nguoi/archive/refs/heads/main.zip`, giải nén, rồi chép thư mục `skills/viet-nhu-nguoi` vào thư mục skill cấp người dùng của agent (Claude Code: `~/.claude/skills/viet-nhu-nguoi`, trên Windows là `%USERPROFILE%\.claude\skills\viet-nhu-nguoi`).
 
-Cài xong thì kiểm tra file `SKILL.md` đã nằm đúng thư mục đích chưa, rồi báo đường dẫn cho người dùng. Skill chưa hiện thì nhắc họ mở cuộc trò chuyện mới.
+Cài xong thì kiểm tra xem file `SKILL.md` đã nằm đúng thư mục đích chưa, rồi báo đường dẫn cho người dùng. Skill chưa hiện thì nhắc họ mở cuộc trò chuyện mới.
 
 Cập nhật thì cài cách nào làm lại cách đó. Cách 2: chạy `git -C ~/viet-nhu-nguoi pull` rồi `bash ~/viet-nhu-nguoi/install.sh --copy --update`. Cách 3: xóa thư mục cũ rồi mới chép bản mới. Gỡ thì xóa thư mục `viet-nhu-nguoi` trong thư mục skill.
 
@@ -116,16 +116,16 @@ Cứ nói như nhờ đồng nghiệp, không có cú pháp gì phải nhớ.
 
 Muốn skill viết sát ý hơn thì:
 
-1. Nói rõ ai đọc, mình là ai với họ. "Gửi chị trưởng phòng, xưng em" ra email khác hẳn "gửi khách hàng, xưng chúng tôi".
+1. Nói rõ ai đọc, bạn là ai với họ. "Gửi chị trưởng phòng, xưng em" ra email khác hẳn "gửi khách hàng, xưng chúng tôi".
 2. Dán một đoạn tự viết, cùng loại với bài sắp viết, để skill bắt chước độ dài câu và chữ hay dùng.
-3. Số liệu, tên, ngày tháng thì đưa số thật. Thiếu chỗ nào skill hỏi lại hoặc để trống, không tự nghĩ ra.
+3. Số liệu, tên, ngày tháng thì đưa đúng cái thật. Thiếu chỗ nào skill hỏi lại hoặc để trống, không tự nghĩ ra.
 4. Thấy chỗ nào lạ thì bảo "mình không nói thế". Skill đổi theo và nhớ tới hết cuộc trò chuyện.
 
 Còn vài cách dùng nữa:
 
 - Gõ `/viet-nhu-nguoi` để bật cho cả cuộc trò chuyện. Từ đó câu trả lời nào cũng theo quy tắc của skill, kể cả tin nhắn ngắn.
-- Nhờ soạn email, tin nhắn, bài đăng sẽ gửi dưới tên mình thì skill tự bật.
-- Gọi giọng bằng tên cũng được: *đời thường*, *công việc*, *kỹ thuật*, *ấm áp*, *thẳng*. Tên giọng chỉ đổi văn phong, xưng hô và nội dung vẫn vậy.
+- Nhờ soạn email, tin nhắn, bài đăng mà bạn đứng tên gửi thì skill tự bật.
+- Gọi giọng bằng tên cũng được: *đời thường*, *công việc*, *kỹ thuật*, *ấm áp*, *thẳng*. Đổi giọng thì chỉ văn phong đổi, còn xưng hô với nội dung vẫn giữ nguyên.
 - Bài tự viết thì skill chỉ sửa nhẹ.
 - Bộ slide nào quan trọng thì skill nhờ thêm một trợ lý AI khác, chưa biết gì về bối cảnh, đọc thử rồi chấm 7 tiêu chí trên thang 70 điểm. Skill xếp góp ý thành bảng, nhận mục nào bỏ mục nào tùy bạn.
 
@@ -180,13 +180,13 @@ Bản AI viết bị chấm 72/100, dính 16 dấu hiệu, còn hai bản sau đ
 
 ### Bài đăng dài
 
-Bản 2.2 của skill có được là nhờ một bài đăng thật. [Bài gốc](examples/bai-dang-truoc.md) dài 1.740 chữ, chia chín mục viết hoa. Mấy từ AI quen mặt đã bỏ gần hết nên máy quét bản cũ chỉ chấm 3/100, vậy mà ai đọc cũng nhận ra, vì cả bài cứ lặp lại vài kiểu câu:
+Bản 2.2 của skill ra đời từ một bài đăng thật. [Bài gốc](examples/bai-dang-truoc.md) dài 1.740 chữ, chia chín mục viết hoa. Bài đã bỏ gần hết mấy từ AI quen mặt nên máy quét ở bản trước chỉ chấm 3/100. Vậy mà ai đọc cũng nhận ra, vì cả bài cứ lặp đi lặp lại vài kiểu câu:
 
 > Nói cho thật: tiến độ không dễ. [...] Khó nhất không phải là code, mà là chọn việc gì để làm. [...] Mình không cần bạn giỏi kernel. Mình cần bạn kiên nhẫn đọc log.
 
 Từ bản 2.2 máy quét đếm trên cả bài, bài này lên 55/100. Trong bài có mười câu kiểu "không phải X mà là Y", sáu câu mở bằng nhãn như "nói gọn", "nói cho thật", và 19 trên 88 câu có dấu hai chấm.
 
-[Bản viết lại](examples/bai-dang-sau.md) còn 376 chữ, chỉ làm một việc là rủ người vào làm cùng. Máy quét chấm 0/100, dữ kiện thì không thêm gì ngoài bài gốc. Phần định nghĩa hệ điều hành, lịch sử microkernel với thống kê bảo mật để dành bài khác.
+[Bản viết lại](examples/bai-dang-sau.md) còn 373 chữ, chỉ làm một việc là rủ người vào làm cùng. Máy quét chấm 0/100, dữ kiện thì không thêm gì ngoài bài gốc. Phần định nghĩa hệ điều hành, lịch sử microkernel với thống kê bảo mật thì để dành cho bài khác.
 
 ## Skill sửa những lỗi nào
 
@@ -282,11 +282,11 @@ $ python3 -I skills/viet-nhu-nguoi/scripts/scan.py examples/slide-truoc.pptx
 
 ## Lưu ý
 
-Skill không gửi văn bản đi đâu thêm, văn bản chỉ tới mô hình AI mà trợ lý vốn đang dùng. Skill chỉ gồm file Markdown với mấy script Python dùng thư viện chuẩn, không gọi mạng, không thu thập dữ liệu, không cần tài khoản.
+Skill không gửi văn bản đi đâu khác, văn bản chỉ tới mô hình AI mà trợ lý vốn đang dùng. Skill chỉ gồm file Markdown với mấy script Python dùng thư viện chuẩn, không kết nối mạng, không thu thập dữ liệu, không cần tài khoản.
 
-Điểm số chỉ để tham khảo, vì nhìn điểm thì chỉ biết bài viết theo khuôn nhiều hay ít, câu có đều nhau quá không, còn bài có phải AI viết hay không thì điểm không nói được. Có người vốn viết câu đều nhịp, mà máy dò AI lại hay bắt nhầm người viết bằng thứ tiếng không phải tiếng mẹ đẻ. Bài bị điểm cao thì cứ coi đó là danh sách chỗ nên đọc lại.
+Điểm số chỉ để tham khảo, vì nhìn điểm thì chỉ biết bài viết theo khuôn nhiều hay ít, câu có đều nhau quá không, còn bài có phải AI viết hay không thì điểm không nói được. Có người vốn viết câu đều nhịp. Máy dò AI cũng hay bắt nhầm người viết bằng ngoại ngữ. Bài bị điểm cao thì cứ coi đó là danh sách chỗ nên đọc lại.
 
-Skill giúp văn tự nhiên, dễ đọc hơn, nhưng không dám hứa bài sẽ lọt máy dò AI. Skill cũng không chơi mẹo lừa máy dò như cố ý sai chính tả hay chèn ký tự ẩn. Xin đừng dùng skill để nộp bài thay người học hay giả danh người khác. Cũng đừng cầm danh sách dấu hiệu đi kết luận ai đó dùng AI, vì đoán bằng cảm giác thì cũng chỉ nhỉnh hơn đoán mò một chút.
+Dùng skill thì văn tự nhiên, dễ đọc hơn, nhưng không dám hứa bài sẽ lọt máy dò AI. Skill cũng không chơi mẹo lừa máy dò như cố ý sai chính tả hay chèn ký tự ẩn. Xin đừng dùng skill để làm bài hộ người học hay giả danh người khác. Cũng đừng cầm danh sách dấu hiệu đi kết luận ai đó dùng AI, vì đoán bằng cảm giác thì cũng chỉ nhỉnh hơn đoán mò một chút.
 
 ## Trong repo có gì
 
@@ -314,5 +314,5 @@ Gặp kiểu câu AI tiếng Việt nào skill chưa bắt, hay thấy skill s�
 - Wikipedia: [Signs of AI writing](https://en.wikipedia.org/wiki/Wikipedia:Signs_of_AI_writing) (WikiProject AI Cleanup).
 - [blader/humanizer](https://github.com/blader/humanizer), MIT, Copyright (c) 2025 Siqi Chen. Khung danh mục dấu hiệu dựa theo skill này.
 - Mấy skill humanize tiếng Việt mã nguồn mở (MIT), dùng để đối chiếu danh mục, còn nội dung ở đây thì viết lại theo cách riêng: [longhang2004/vietnamese-humanizer](https://github.com/longhang2004/vietnamese-humanizer), [andyluu98/vn-humanize](https://github.com/andyluu98/vn-humanize), [cuongducle/viet-humanize](https://github.com/cuongducle/viet-humanize), [pdh372/humanize-vietnamese](https://github.com/pdh372/humanize-vietnamese).
-- Phần slide học ý tưởng, viết lại bằng lời riêng, từ [carnot-tech/jinba-consulting-pptx-skill](https://github.com/carnot-tech/jinba-consulting-pptx-skill) (MIT), [zarazhangrui/frontend-slides](https://github.com/zarazhangrui/frontend-slides) (MIT) và skill `doc-coauthoring` trong [anthropics/skills](https://github.com/anthropics/skills) (Apache 2.0).
+- Phần slide học ý tưởng từ [carnot-tech/jinba-consulting-pptx-skill](https://github.com/carnot-tech/jinba-consulting-pptx-skill) (MIT), [zarazhangrui/frontend-slides](https://github.com/zarazhangrui/frontend-slides) (MIT) và skill `doc-coauthoring` trong [anthropics/skills](https://github.com/anthropics/skills) (Apache 2.0), rồi viết lại bằng lời riêng.
 - [references/sources.md](skills/viet-nhu-nguoi/references/sources.md) liệt kê đủ nguồn: bài viết, sách và nghiên cứu về tiếng Việt, nghiên cứu về độ tin cậy của máy dò, hướng dẫn giọng văn, skill khác. Nguồn nào skill dựa vào trực tiếp thì trong file có ghi rõ.

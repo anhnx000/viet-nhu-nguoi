@@ -194,7 +194,7 @@ Version 2.2 of the skill came out of a real post. [The original](examples/bai-da
 
 Since version 2.2 the scanner counts across the whole text and scores this post 55/100. It has ten "not X but Y" sentences, six sentences that open with a label such as "nói gọn" (*put briefly*) or "nói cho thật" (*to be honest*), and a colon in 19 of 88 sentences.
 
-[The rewrite](examples/bai-dang-sau.md) is 376 words, only invites people to join the project, scores 0/100 and adds no fact that the original lacks. The operating-system primer, the microkernel history and the security statistics are left for other posts.
+[The rewrite](examples/bai-dang-sau.md) is 373 words, only invites people to join the project, scores 0/100 and adds no fact that the original lacks. The operating-system primer, the microkernel history and the security statistics are left for other posts.
 
 ## What the skill fixes
 

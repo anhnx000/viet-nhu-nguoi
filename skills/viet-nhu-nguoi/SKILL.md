@@ -21,19 +21,19 @@ Mục tiêu là văn bản đọc lên giống một người cụ thể đang v
 
 ## Vì sao văn AI nghe "giống AI"
 
-Mô hình chọn cách viết hợp với nhiều người đọc nhất, nên câu chữ an toàn, đều đặn và chung chung. Người thật viết cho một người đọc, về một chuyện cụ thể, nên câu chữ không đều và có chi tiết riêng. Mọi dấu hiệu bên dưới đều là một dạng của lựa chọn mặc định đó:
+Mô hình chọn cách viết hợp với nhiều người đọc nhất, nên câu chữ an toàn, đều đặn và chung chung. Người thật viết cho một người đọc, về một chuyện cụ thể, nên câu chữ không đều và có chi tiết riêng. Dấu hiệu nào bên dưới cũng từ thói chọn cách viết mặc định đó mà ra:
 
 - **Dàn dựng:** câu báo hiệu "điều này quan trọng" thay vì nói ra sự việc.
-- **Nhịp theo luật:** bộ ba, gạch ngang dài, câu dài bằng nhau ở khắp nơi.
-- **Thổi phồng:** chuyện bình thường được gọi là "bước ngoặt", "minh chứng".
-- **Trình bày theo luật:** in đậm, tiêu đề, gạch đầu dòng, emoji cho mọi thứ.
-- **Đồ thừa của chat:** "Câu hỏi rất hay!", "Hy vọng điều này hữu ích!".
+- **Nhịp theo công thức:** bộ ba, gạch ngang dài, câu nào cũng dài bằng nhau.
+- **Thổi phồng:** chuyện bình thường cũng gọi là "bước ngoặt", "minh chứng".
+- **Trình bày theo công thức:** chỗ nào cũng in đậm, đặt tiêu đề, gạch đầu dòng, chèn emoji.
+- **Lời chatbot sót lại:** "Câu hỏi rất hay!", "Hy vọng điều này hữu ích!".
 - **Sai người đọc:** giải thích lại bối cảnh người đọc đã biết, kết luận nằm ở cuối.
 - **Văn dịch (tiếng Việt):** câu nghĩ bằng tiếng Anh rồi thay từng chữ sang tiếng Việt. Dễ thấy là "được... bởi", "Điều này cho phép", "việc", "sự", "một cách", "tiến hành thực hiện". Khó thấy hơn là trật tự câu và chữ đệm của tiếng Anh: câu nào cũng có "bạn", "của bạn", "một", "các", "sẽ", "có thể", "và".
 
-- **Sạch từng câu, lặp cả bài:** bỏ cụm bị cấm rồi thay bằng cụm cùng họ ("Nói thẳng ra thì" thành "Nói cho thật:"), và một khuôn câu quay lại ba bốn lần trong bài.
+- **Sạch từng câu, lặp cả bài:** bỏ cụm bị cấm rồi thay bằng cụm cùng họ ("Nói thẳng ra thì" thành "Nói cho thật:"), còn một khuôn câu thì lặp ba bốn lần trong bài.
 
-Từ vựng AI đổi theo từng đời mô hình. Các thói quen cấu trúc thì ở lại, nên ưu tiên sửa cấu trúc trước, từ vựng sau.
+Từ vựng AI đổi theo từng đời mô hình, còn thói quen về cấu trúc thì vẫn vậy, nên sửa cấu trúc trước, từ vựng sau.
 
 Danh sách cấm cũng có mặt trái. Mô hình né được từng cụm trong danh sách mà vẫn giữ nguyên động tác: báo trước rồi mới nói, phủ định rồi mới khẳng định, nêu sự việc rồi đúc kết. Vì vậy mỗi quy tắc dưới đây cấm cả họ, kể cả những cụm chưa có trong danh sách. Thay một cụm bằng cụm đồng nghĩa thì chưa tính là sửa.
 
@@ -97,31 +97,31 @@ Người đọc nhận ra văn AI ở lần thứ ba họ gặp cùng một đ�
 ### Văn dịch: viết từ ý, đừng dịch từ câu
 Mô hình hay nghĩ câu bằng tiếng Anh rồi thay từng chữ sang tiếng Việt. Chữ nào cũng đúng mà cả câu vẫn nghe như dịch, vì trật tự câu và mấy chữ đệm vẫn là của tiếng Anh. Bỏ vài cụm trong danh sách thì chưa đủ, phải viết lại từ ý. Ví dụ đầy đủ ở nhóm K của `references/patterns.md`.
 
-1. Đọc câu, nắm ý rồi che câu đi. Tự hỏi nếu kể chuyện này cho một đồng nghiệp người Việt ngồi cạnh thì mình nói thế nào, và viết đúng câu đó ra.
+1. Đọc câu, nắm ý rồi che câu đi. Tự hỏi nếu kể chuyện này cho một đồng nghiệp người Việt ngồi cạnh thì mình nói thế nào, rồi viết đúng câu đó ra.
 2. Thử dịch ngược. Câu nào dịch từng chữ sang tiếng Anh mà ra ngay một câu tiếng Anh trôi chảy, đúng trật tự, thì câu đó là tiếng Anh viết bằng chữ Việt. Viết lại.
 3. Rà mấy chữ tiếng Anh buộc phải có còn tiếng Việt thì không:
    - Chủ ngữ và sở hữu. Đã rõ ai làm thì lược "bạn", "chúng tôi", "nó", "của bạn". "Bạn không phải gõ lệnh nào" → "Không phải gõ lệnh gì cả". "Trợ lý của bạn" → "trợ lý đang dùng".
    - "một", "các", "những". Chỉ giữ khi cần đếm hoặc cần nhấn. "Mở một cuộc trò chuyện mới" → "Mở cuộc trò chuyện mới".
    - "đã", "đang", "sẽ". Câu có mốc thời gian hoặc ngữ cảnh đã rõ thì bỏ. "Skill sẽ đổi theo" → "skill đổi theo".
-   - "được", "bị" trong câu bị động không nói ai làm. "Số liệu được giữ nguyên" → "số liệu thì để nguyên". "Skill được cập nhật" → "skill tự cập nhật".
+   - "được", "bị" trong câu bị động không nói ai làm. "Số liệu được giữ nguyên" → "số liệu thì để nguyên". "Skill được cài vào thư mục X" → "skill nằm ở thư mục X".
    - "và", "với", "để", "khi". "Và" nối hai vế thì thử thay bằng dấu phẩy, "rồi", "còn", "mà". "Với bộ slide quan trọng, ..." → "Bộ slide nào quan trọng thì...". "Để cài, bạn cần..." → "Muốn cài thì cần...".
    - "có thể", "cho phép", "giúp". "Bạn có thể gọi giọng bằng tên" → "Gọi giọng bằng tên cũng được". "X cho phép bạn làm Y" → "Có X thì làm được Y".
 4. Dùng khung đề-thuyết. Nêu cái đang bàn trước rồi mới nói về nó, nối bằng "thì", "là", "mà": "Email thì nói việc trước", "Bài tự viết thì chỉ sửa nhẹ". Vật vô tri ít khi làm chủ ngữ cho "cho thấy", "cho biết", "giúp", "mang lại": "Điểm cho biết bài có nhiều thói quen viết theo khuôn" → "Nhìn điểm thì biết bài viết theo khuôn nhiều hay ít".
 5. Dùng chữ người Việt vẫn nói. Thành ngữ và cách ghép từ không dịch thẳng được: "đúng hơn may rủi một chút" → "chỉ nhỉnh hơn đoán mò"; "tin tốt là" → "may là"; "làm nên sự khác biệt" → nói rõ khác ở đâu. Tiêu đề cũng vậy: "Trước và sau", "Nên biết", "Bắt đầu nhanh" là tiêu đề tiếng Anh, hãy viết "Văn AI và bản đã sửa", "Lưu ý", "Cài nhanh".
-6. Đừng sửa quá tay thành văn nói suồng sã. Văn bản trang trọng vẫn giữ câu bị động quen dùng ("được cấp phép", "được bổ nhiệm"), giữ chủ ngữ ở chỗ lược đi thì mơ hồ, và không tự thêm "nhé", "nha", "ạ".
+6. Đừng sửa quá tay thành văn nói suồng sã. Văn bản trang trọng vẫn giữ câu bị động quen dùng ("được cấp phép", "được bổ nhiệm"), chỗ nào lược chủ ngữ mà thành mơ hồ thì giữ, không tự thêm "nhé", "nha", "ạ".
 
-Kiểm cuối bằng cách đọc thành tiếng. Chỗ nào người Việt không nói như vậy thì sửa, kể cả khi không quy tắc nào ở trên gọi được tên nó.
+Kiểm cuối bằng cách đọc thành tiếng. Chỗ nào người Việt không nói như vậy thì sửa, dù ở trên không có quy tắc nào nhắc tới.
 
 ### Riêng tiếng Việt
-- Người làm đứng đầu câu: "Google phát triển", không "được phát triển bởi Google". Gọi tên sự vật thay cho "Điều này", "Nó" mở câu.
+- Người làm đứng đầu câu: viết "Google phát triển", đừng viết "được phát triển bởi Google". Gọi tên sự vật thay cho "Điều này", "Nó" mở câu.
 - Động từ làm vị ngữ, bớt danh hóa: "Việc áp dụng X giúp việc quản lý trở nên dễ dàng" → "Dùng X thì quản lý dễ hơn". Bỏ "một cách", "trở nên", "có khả năng".
 - Ngắt câu theo ý, đọc thành tiếng để kiểm. Một câu trọn một ý: ai làm gì, vì sao hoặc để làm gì. Chỗ đọc lên phải lấy hơi mà chưa hết ý thì dùng dấu phẩy, hết ý mới chấm.
-- Không chặt ý bằng dấu chấm. Tiếng Việt nối các vế bằng dấu phẩy và từ nối ("nên", "thì", "mà", "còn", "rồi", "vì"), nên hai ba câu ngắn liền nhau cùng nói một ý thì gộp lại, nhất là khi câu sau lặp chủ ngữ của câu trước ("Skill giúp... Skill không...") hoặc chỉ là một cụm bổ sung ("Thường mất chưa tới một phút."). Câu dưới chừng mười chữ để dành cho chỗ cần nhấn; cả bài quá một phần ba số câu ngắn như vậy là văn bị vụn.
-- Cũng không gộp quá tay. Một câu chở nhiều nhất hai ba vế có quan hệ rõ với nhau. Hai vế không liên quan mà nối bằng dấu phẩy ("Cài mất một phút, skill miễn phí.") thì tách thành hai câu. Câu quá chừng 40 chữ mà không phải câu liệt kê thì tìm chỗ đổi ý để chấm. Từ nối phải đúng quan hệ: "vì", "nên" cho nhân quả, "còn" cho so sánh hai bên, "rồi" cho thứ tự; không dùng "và", "đồng thời", "trong đó" để dán hai câu lại cho dài.
+- Không chặt ý bằng dấu chấm. Tiếng Việt nối các vế bằng dấu phẩy và từ nối ("nên", "thì", "mà", "còn", "rồi", "vì"). Hai ba câu ngắn liền nhau cùng nói một ý thì gộp lại, nhất là khi câu sau lặp chủ ngữ của câu trước ("Skill giúp... Skill không...") hoặc chỉ là một cụm bổ sung ("Thường mất chưa tới một phút."). Câu dưới chừng mười chữ để dành cho chỗ cần nhấn. Cả bài quá một phần ba số câu ngắn như vậy là văn bị vụn.
+- Cũng không gộp quá tay. Một câu chỉ nên có hai ba vế, vế nào cũng liên quan rõ với nhau. Hai vế không liên quan mà nối bằng dấu phẩy ("Cài mất một phút, skill miễn phí.") thì tách thành hai câu. Câu quá chừng 40 chữ mà không phải câu liệt kê thì tìm chỗ đổi ý để chấm. Từ nối phải đúng quan hệ: "vì", "nên" cho nhân quả, "còn" cho so sánh hai bên, "rồi" cho thứ tự. Không dùng "và", "đồng thời", "trong đó" để dán hai câu lại cho dài.
 - Ngoặc đơn chỉ để chú một từ hay một con số. Ý cần cả một vế thì viết thành câu, không nhét vào ngoặc. Dấu chấm phẩy hiếm gặp trong văn thường ngày, dùng dấu chấm hoặc "còn", "nhưng". Trong danh sách, mỗi gạch đầu dòng là một câu trọn hoặc một cụm, không mở bằng một cụm cụt rồi chấm.
 - Bỏ động từ rỗng: "tiến hành kiểm tra" → "kiểm tra", "nhằm mục đích" → "để", "cung cấp sự hỗ trợ" → "giúp". Công văn, hợp đồng thì giữ giọng trang trọng, chỉ bỏ phần chồng lặp.
 - Bớt "của" chồng nhau, đưa chủ ngữ gần động từ, bỏ từ thừa nghĩa ("quay trở lại", "hiện nay đang", "đang trong quá trình").
-- Xưng hô đúng vai và giữ một cặp từ đầu đến cuối. Không mặc định "bạn", không trộn "bạn"/"chúng ta"/"quý vị", không tự đổi "tôi" thành "em" hay thêm "ạ", "nhé" khi quan hệ chưa rõ. Không rõ thì giữ xưng hô của bản gốc.
+- Xưng hô đúng vai và giữ một cặp từ đầu đến cuối. Không tự động dùng "bạn", không trộn "bạn"/"chúng ta"/"quý vị", không tự đổi "tôi" thành "em" hay thêm "ạ", "nhé" khi quan hệ chưa rõ. Không rõ thì giữ xưng hô của bản gốc.
 - Thuật ngữ dân trong nghề vẫn nói bằng tiếng Anh ("deploy", "PR", "deadline") thì giữ, không dịch gượng. Không chêm tiếng Anh trong ngoặc sau từ thường ("hiệu suất (performance)").
 - Sửa xong không được làm sai nghĩa: giữ "vẫn", "chưa", "chỉ", "đã", "mới"; "có thể giảm" không thành "giảm"; "sau khi" không thành "nhờ"; không đổi thuật ngữ thành từ thường nếu mất nghĩa.
 
