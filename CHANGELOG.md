@@ -6,6 +6,7 @@
 - README hai thứ tiếng: cách cài không cần biết code, hướng dẫn dùng hằng ngày, mục riêng cho trợ lý AI được nhờ cài (có cách cho Windows), mục "Mời một ly cà phê".
 - Mã QR vẽ lại ở độ phân giải gấp 4, nội dung mã giữ nguyên.
 - README chính (`README.md`) là bản tiếng Việt; bản tiếng Anh chuyển sang `README.en.md`.
+- README tiếng Việt viết lại cho dễ đọc (bớt dấu hai chấm, bỏ câu hỏi tu từ, tách bảng tùy chọn dòng lệnh); bản tiếng Anh cập nhật theo cùng bố cục.
 
 ## 2.2.0 (2026-11-10)
 
