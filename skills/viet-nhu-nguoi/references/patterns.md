@@ -330,6 +330,8 @@ Câu ngắn hơn không có nghĩa là đúng hơn. Kiểm lại sau khi sửa:
 
 Nhóm này rút ra từ một bài đăng thật dài 1.740 chữ về một dự án hệ điều hành. Bài đã bỏ hết từ vựng AI, gạch ngang dài, in đậm, lời chatbot, máy quét bản 2.1.0 chấm 3/100, vậy mà người đọc vẫn nhận ra ngay. Lý do: người sửa (hoặc mô hình) bỏ cụm bị cấm rồi thay bằng cụm cùng họ, và các khuôn câu lặp lại đều đặn suốt bài. Người đọc không soi từng câu. Họ thấy cùng một động tác xuất hiện lần thứ ba là đủ.
 
+Bài gốc và bản viết lại nằm ở `examples/bai-dang-truoc.md` và `examples/bai-dang-sau.md` trong repo.
+
 Cách đọc nhóm này: đếm trên cả bài. Một lần thì có thể là giọng người viết, ba lần là tật.
 
 ### 45. Nhãn báo giọng: "nói gọn", "nói thật", "nói rõ"

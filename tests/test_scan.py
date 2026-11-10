@@ -4,6 +4,7 @@ Chạy: python3 -m unittest discover -s tests
 """
 import importlib.util
 import pathlib
+import re
 import subprocess
 import sys
 import tempfile
@@ -275,6 +276,20 @@ class WholeDocument(unittest.TestCase):
         result = scan.score(text, hits)
         self.assertGreaterEqual(result["document_points"], 30)
         self.assertGreaterEqual(result["score"], 30)
+
+    def test_long_post_example(self):
+        """Bài đăng thật: bản gốc lộ vì lặp khuôn cả bài, bản viết lại sạch và không thêm số liệu."""
+        before = (ROOT / "examples/bai-dang-truoc.md").read_text(encoding="utf-8")
+        after = (ROOT / "examples/bai-dang-sau.md").read_text(encoding="utf-8")
+        hits, _ = scan.scan(before)
+        self.assertGreaterEqual(scan.score(before, hits)["score"], 40)
+        self.assertGreaterEqual(len(hits["đối lập giả"]), 8)
+        self.assertGreaterEqual(len(hits["nhãn báo giọng"]), 5)
+        hits, _ = scan.scan(after)
+        self.assertEqual(hits, {})
+        self.assertEqual(scan.score(after, hits)["score"], 0)
+        numbers = lambda t: set(re.findall(r"\d[\d.,]*\d|\d", t))
+        self.assertLessEqual(numbers(after), numbers(before))
 
     def test_one_contrast_is_not_a_tic(self):
         hits, _ = scan.scan("Lỗi nằm ở token chứ không phải timeout. Em đã thử tăng timeout rồi.")

@@ -1,5 +1,11 @@
 # Changelog
 
+## 2.2.1 (2026-11-10)
+
+- Ví dụ bài đăng dài: `examples/bai-dang-truoc.md` (1.740 chữ, 55/100) và `examples/bai-dang-sau.md` (376 chữ, 0/100), có test kiểm bản viết lại không thêm số liệu.
+- README hai thứ tiếng: cách cài không cần biết code, hướng dẫn dùng hằng ngày, mục riêng cho trợ lý AI được nhờ cài (có cách cho Windows), mục "Mời một ly cà phê".
+- Mã QR vẽ lại ở độ phân giải gấp 4, nội dung mã giữ nguyên.
+
 ## 2.2.0 (2026-11-10)
 
 Dấu hiệu cả bài. Xuất phát từ một bài đăng 1.740 chữ đã sạch từng câu (bản 2.1.0 chấm 3/100) mà người đọc vẫn nhận ra là AI viết.

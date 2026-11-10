@@ -58,6 +58,19 @@ A few things you may want later. Again, just say them to the assistant:
 Did the assistant hit an error? Take a screenshot and [open an issue](https://github.com/anhnx000/viet-nhu-nguoi/issues). I'll take a look.
 
 <details>
+<summary>For an AI assistant that was asked to install this skill</summary>
+
+The user is not technical, so do all of it yourself and only ask for permission to run commands. Try these in order and stop at the first that works:
+
+1. `npx` is available: run `npx skills add anhnx000/viet-nhu-nguoi -g -y`.
+2. `git` and `bash` are available (macOS, Linux, WSL): `git clone https://github.com/anhnx000/viet-nhu-nguoi.git ~/viet-nhu-nguoi && bash ~/viet-nhu-nguoi/install.sh --copy`.
+3. Windows without bash, or no git: download `https://github.com/anhnx000/viet-nhu-nguoi/archive/refs/heads/main.zip`, unzip it, and copy the `skills/viet-nhu-nguoi` folder into the agent's user-level skills folder (Claude Code: `~/.claude/skills/viet-nhu-nguoi`, which on Windows is `%USERPROFILE%\.claude\skills\viet-nhu-nguoi`).
+
+Afterwards, check that `SKILL.md` sits in the target folder, tell the user where it was installed, and suggest a new conversation if the skill does not show up. To update, repeat the method you used; for methods 2 and 3, delete the old folder first. To uninstall, delete the `viet-nhu-nguoi` folder from the skills folder.
+
+</details>
+
+<details>
 <summary>For people comfortable with a terminal: install by hand</summary>
 
 As a plugin, inside Claude Code:
@@ -155,6 +168,16 @@ $ python3 -I skills/viet-nhu-nguoi/scripts/scan.py examples/truoc.md
 [uy tín mơ hồ] 1         nhiều nghiên cứu chỉ ra
 [lời chatbot] 1          hy vọng những thông tin trên
 ```
+
+### A long post
+
+This example is why version 2.2 exists. [The original post](examples/bai-dang-truoc.md) runs 1,740 Vietnamese words under nine all-caps headings. It had already dropped the familiar AI vocabulary, so the old scanner scored it 3/100. Readers still spotted it at once, because it repeats the same few moves all the way down:
+
+> Nói cho thật: tiến độ không dễ. [...] Khó nhất không phải là code, mà là chọn việc gì để làm. [...] Mình không cần bạn giỏi kernel. Mình cần bạn kiên nhẫn đọc log.
+
+*"To be honest: progress isn't easy. [...] The hardest part isn't the code, it's choosing what to work on. [...] I don't need you to be good at kernels. I need you to be patient with logs."*
+
+Version 2.2 counts across the whole text and scores it 55/100: ten "not X but Y" frames, six voice labels such as "nói gọn" (*put briefly*) and "nói cho thật" (*to be honest*), and a colon in 20 of 88 sentences. [The rewrite](examples/bai-dang-sau.md) is 376 words, does one job (inviting people to join the project) and scores 0/100. It adds no fact that the original lacks. The operating-system primer, the microkernel history and the security statistics are left for other posts.
 
 ## What it catches
 

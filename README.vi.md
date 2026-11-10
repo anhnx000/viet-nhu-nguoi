@@ -54,6 +54,19 @@ Vài câu hay cần về sau, cũng chỉ việc nói với trợ lý:
 Trợ lý báo lỗi khi cài? Chụp màn hình rồi [mở issue](https://github.com/anhnx000/viet-nhu-nguoi/issues), mình xem giúp.
 
 <details>
+<summary>Dành cho trợ lý AI được nhờ cài skill này</summary>
+
+Người dùng không rành kỹ thuật, nên hãy tự làm hết và chỉ xin phép khi cần chạy lệnh. Thử lần lượt, dừng ở cách đầu tiên chạy được:
+
+1. Có `npx`: chạy `npx skills add anhnx000/viet-nhu-nguoi -g -y`.
+2. Có `git` và `bash` (macOS, Linux, WSL): `git clone https://github.com/anhnx000/viet-nhu-nguoi.git ~/viet-nhu-nguoi && bash ~/viet-nhu-nguoi/install.sh --copy`.
+3. Windows không có bash, hoặc không có git: tải `https://github.com/anhnx000/viet-nhu-nguoi/archive/refs/heads/main.zip`, giải nén, rồi chép thư mục `skills/viet-nhu-nguoi` vào thư mục skill cấp người dùng của agent (Claude Code: `~/.claude/skills/viet-nhu-nguoi`, trên Windows là `%USERPROFILE%\.claude\skills\viet-nhu-nguoi`).
+
+Cài xong, kiểm tra file `SKILL.md` nằm đúng trong thư mục đích, báo cho người dùng đường dẫn đã cài, và nhắc họ mở cuộc trò chuyện mới nếu skill chưa hiện. Cập nhật thì lặp lại đúng cách đã dùng; với cách 2 và 3, xóa thư mục cũ trước. Gỡ thì xóa thư mục `viet-nhu-nguoi` trong thư mục skill.
+
+</details>
+
+<details>
 <summary>Dành cho người quen dòng lệnh: tự gõ lệnh cài</summary>
 
 Trong Claude Code, cài như plugin:
@@ -158,6 +171,14 @@ Skill không bịa số liệu. Muốn bài có chi tiết thì nó hỏi bạn,
 > Từ tháng 3, đội mình chuyển việc theo dõi dự án sang hệ thống mới. Khách hàng tự xem tiến độ, không phải nhắn hỏi như trước, và mỗi tuần đội bớt được khoảng nửa ngày làm báo cáo.
 
 Máy quét chấm bản đầu 72/100 với 16 dấu hiệu, hai bản sau đều 0/100.
+
+### Bài đăng dài
+
+Ví dụ này là lý do có bản 2.2. [Bài gốc](examples/bai-dang-truoc.md) dài 1.740 chữ, chín mục viết hoa, đã sạch gần hết từ ngữ AI quen thuộc nên máy quét bản cũ chấm 3/100. Người đọc vẫn nhận ra ngay, vì nó lặp cùng vài động tác suốt bài:
+
+> Nói cho thật: tiến độ không dễ. [...] Khó nhất không phải là code, mà là chọn việc gì để làm. [...] Mình không cần bạn giỏi kernel. Mình cần bạn kiên nhẫn đọc log.
+
+Bản 2.2 đếm trên cả bài và chấm 55/100: mười câu "không phải X mà là Y", sáu nhãn kiểu "nói gọn", "nói cho thật", 20 trên 88 câu có dấu hai chấm. [Bản viết lại](examples/bai-dang-sau.md) còn 376 chữ, kể đúng một việc là rủ người vào làm cùng, và được 0/100. Nó không thêm dữ kiện nào ngoài bài gốc. Phần định nghĩa hệ điều hành, lịch sử microkernel và thống kê bảo mật được để dành cho bài khác.
 
 ## Skill bắt những gì
 
