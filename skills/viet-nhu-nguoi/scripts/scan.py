@@ -123,6 +123,7 @@ PATTERNS = {
         r"bạn (sẽ )?không muốn (bỏ lỡ|mất)",
         # khuôn báo cáo và bài giải thích
         r"(làm|đạt) được điều (này|đó) mà không", r"(chúng tôi|tôi) (muốn|xin) gửi lời cảm ơn đặc biệt",
+        r"(hào hứng|vui mừng|vinh dự) (để|được) chia sẻ rằng", r"(hãy )?để lại một bình luận",
         r"tiến về phía trước", r"(đạt được|có) những tiến bộ đáng kể", r"điều đó (được )?nói rằng",
         r"hãy nghĩ về (nó|điều này|chúng) như", r"không phải là không có (những )?(hạn chế|nhược điểm|thách thức|rủi ro)",
         r"(chúng ta|mình) sẽ cùng nhau (xem xét|tìm hiểu|khám phá|đi qua)", r"(đang )?tìm kiếm một cách để",
@@ -363,6 +364,14 @@ def document_checks(text, hits):
     if pron >= 12 and pron * 1000 / max(para_words, 1) >= 12:
         hits.setdefault("đại từ dày", []).append(
             (first, f"{pron} lần \"bạn\"/\"chúng tôi\"/\"chúng ta\" trong {para_words} chữ"))
+    # Chữ đệm của văn dịch: tiếng Anh buộc có mạo từ, số nhiều, thì, bị động, sở hữu, còn tiếng Việt
+    # thì lược được. Đo trên bộ thử 10 đoạn dịch / 10 đoạn giọng người cùng nội dung: đoạn dịch
+    # 120-188 trên 1.000 chữ, đoạn người viết 30-90, README 30.
+    filler = sum(len(re.findall(p_, low_all)) for p_ in FILLER_WORDS)
+    filler += len(re.findall(r"\bcủa (bạn|tôi|chúng tôi|chúng ta|họ|anh ấy|cô ấy|nó)\b", low_all))
+    if para_words >= 60 and filler * 1000 / para_words >= 110:
+        hits.setdefault("chữ đệm dịch dày", []).append(
+            (first, f"{round(filler * 1000 / para_words)} chữ đệm trên 1.000 chữ (một, các, những, được, có thể, sẽ, đã, của bạn...)"))
     if sents_all >= 20 and colons >= 6 and colons / sents_all >= 0.15:
         hits.setdefault("hai chấm dồn dập", []).append((first, f"{colons}/{sents_all} câu có dấu hai chấm"))
     # Dấu chấm chặt ý thành câu vụn: từ 30% số câu chỉ dài tối đa 10 chữ (không tính câu dẫn
@@ -452,8 +461,13 @@ WEIGHTS = {
     "lộ tên khung": 2,
 }
 # Dấu hiệu cả bài: điểm cố định, không chia theo độ dài.
+FILLER_WORDS = [
+    r"\bcủa (bạn|tôi|chúng tôi|chúng ta|họ|anh ấy|cô ấy|nó)\b", r"\bmột\b", r"\b(các|những)\b", r"\bđược\b",
+    r"\bcó thể\b", r"\bsẽ\b", r"\bđã\b", r"\brằng\b", r"\b(cho phép|giúp)\b", r"\b(điều này|nó)\b", r"\b(việc|sự)\b",
+]
+
 DOC_POINTS = {
-    "hai chấm dồn dập": 6, "đoạn ngắn đều nhau": 4, "câu vụn": 4, "đại từ dày": 4,
+    "hai chấm dồn dập": 6, "đoạn ngắn đều nhau": 4, "câu vụn": 4, "đại từ dày": 4, "chữ đệm dịch dày": 12,
     "bài đăng chia mục viết hoa": 4, "bài mạng xã hội dài": 6,
 }
 for _g in list(DOC_POINTS) + ["tật lặp cả bài"]:

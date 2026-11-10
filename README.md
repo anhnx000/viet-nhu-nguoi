@@ -7,7 +7,7 @@
 
 **Tiếng Việt** · [English](README.en.md)
 
-![Trước: văn AI được 72/100. Sau: bản viết lại giọng người được 0/100.](assets/banner.png)
+![Trước: văn AI được 84/100. Sau: bản viết lại giọng người được 0/100.](assets/banner.png)
 
 > **English:** a Claude skill that makes AI-drafted Vietnamese (and English) read like a person wrote it, without changing the facts. Read the [English README](README.en.md).
 >
@@ -143,9 +143,9 @@ Bộ sau chỉ đọc bốn tiêu đề là hiểu cả đề xuất. Máy quét
 
 ### Email, báo cáo
 
-![Email, báo cáo. Bản AI viết, 72/100, mở bằng "Trong bối cảnh hiện nay" và kết bằng "Hy vọng những thông tin trên sẽ hữu ích cho bạn!". Qua skill, 0/100: Đội mình đã đưa hệ thống quản lý dự án mới vào dùng. Khách hàng giờ tự xem được tiến độ. Có thêm chi tiết, 0/100: Từ tháng 3, đội mình chuyển việc theo dõi dự án sang hệ thống mới.](assets/vi-du-email.png)
+![Email, báo cáo. Bản AI viết, 84/100, mở bằng "Trong bối cảnh hiện nay" và kết bằng "Hy vọng những thông tin trên sẽ hữu ích cho bạn!". Qua skill, 0/100: Đội mình đã đưa hệ thống quản lý dự án mới vào dùng. Khách hàng giờ tự xem được tiến độ. Có thêm chi tiết, 0/100: Từ tháng 3, đội mình chuyển việc theo dõi dự án sang hệ thống mới.](assets/vi-du-email.png)
 
-Bản AI viết bị chấm 72/100, dính 16 dấu hiệu, là những chỗ tô đỏ trong ảnh. Bản qua skill ngắn vì skill không bịa số liệu. Cần thêm chi tiết thì skill hỏi lại, bạn đưa gì skill viết nấy, như bản thứ ba. Hai bản sau đều được 0/100. Ba đoạn văn này nằm ở [`examples/truoc.md`](examples/truoc.md), [`examples/sau.md`](examples/sau.md) và [`examples/sau-co-chi-tiet.md`](examples/sau-co-chi-tiet.md).
+Bản AI viết bị chấm 84/100, dính 17 dấu hiệu, là những chỗ tô đỏ trong ảnh. Bản qua skill ngắn vì skill không bịa số liệu. Cần thêm chi tiết thì skill hỏi lại, bạn đưa gì skill viết nấy, như bản thứ ba. Hai bản sau đều được 0/100. Ba đoạn văn này nằm ở [`examples/truoc.md`](examples/truoc.md), [`examples/sau.md`](examples/sau.md) và [`examples/sau-co-chi-tiet.md`](examples/sau-co-chi-tiet.md).
 
 ### Bài đăng dài
 
@@ -190,6 +190,7 @@ Có dấu hiệu phải đọc cả bài mới thấy, dù từng câu đã ổn
 - kiểu "không phải X mà là Y" lặp từ ba lần;
 - đoạn nào cũng kết bằng một câu nghe như châm ngôn;
 - dấu hai chấm dày đặc;
+- cả bài dày những chữ đệm của văn dịch như "một", "các", "được", "sẽ", "của bạn";
 - dấu chấm chặt một ý thành nhiều câu vụn, hoặc ngược lại, một câu gộp quá nhiều vế;
 - bài đăng dài ôm đủ mọi chủ đề.
 
@@ -227,7 +228,7 @@ Kết quả quét hai file mẫu:
 
 ```text
 $ python3 -I skills/viet-nhu-nguoi/scripts/scan.py examples/truoc.md
-Điểm 72/100 (dày đặc): 16 dấu hiệu trong 5 dòng, 110 chữ.
+Điểm 84/100 (dày đặc): 17 dấu hiệu trong 5 dòng, 110 chữ.
 [từ vựng AI (vi)] 3      nâng tầm, trong bối cảnh hiện nay, bên cạnh đó
 [động từ rỗng (vi)] 3    tiến hành thực hiện, thực hiện việc, nhằm mục đích
 [văn dịch (vi)] 2        được chứng minh bởi, trải nghiệm liền mạch
@@ -237,6 +238,7 @@ $ python3 -I skills/viet-nhu-nguoi/scripts/scan.py examples/truoc.md
 [thổi phồng] 1           yếu tố then chốt
 [uy tín mơ hồ] 1         nhiều nghiên cứu chỉ ra
 [lời chatbot] 1          hy vọng những thông tin trên
+[chữ đệm dịch dày] 1     145 chữ đệm trên 1.000 chữ
 
 $ python3 -I skills/viet-nhu-nguoi/scripts/scan.py examples/slide-truoc.pptx
 Điểm 48/100 (nhiều dấu hiệu): 21 dấu hiệu trong 7 slide, 176 chữ.

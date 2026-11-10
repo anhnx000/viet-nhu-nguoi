@@ -1,0 +1,44 @@
+name: Skill sửa sai
+description: Bản sửa còn giọng AI, đổi nghĩa, thêm hay mất dữ kiện, hoặc sửa cả câu đang ổn.
+labels: ["bug"]
+body:
+  - type: dropdown
+    id: problem
+    attributes:
+      label: Sai ở đâu
+      options:
+        - Bản sửa vẫn còn dấu hiệu văn AI hoặc văn dịch
+        - Bản sửa thêm hoặc làm mất dữ kiện
+        - Bản sửa đổi cả câu đang ổn
+        - Máy quét báo nhầm hoặc bỏ sót
+        - Chỗ khác
+    validations:
+      required: true
+  - type: textarea
+    id: input
+    attributes:
+      label: Văn bản đưa vào
+      description: Xóa hết thông tin riêng tư trước khi dán.
+    validations:
+      required: true
+  - type: textarea
+    id: call
+    attributes:
+      label: Gọi skill thế nào
+      description: Trợ lý AI, model và câu lệnh đã dùng.
+      placeholder: "Claude Code, gõ /viet-nhu-nguoi rồi dán đoạn văn"
+    validations:
+      required: true
+  - type: textarea
+    id: output
+    attributes:
+      label: Skill trả về gì
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Lẽ ra phải thế nào
+      description: Trích câu sai và viết lại như người viết cẩn thận sẽ viết. Biết số mục trong danh mục thì ghi kèm.
+    validations:
+      required: true

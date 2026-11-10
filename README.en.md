@@ -7,7 +7,7 @@
 
 [Tiếng Việt](README.md) · **English**
 
-![Before: AI-written Vietnamese scores 72/100. After: a plain human rewrite scores 0/100.](assets/banner.png)
+![Before: AI-written Vietnamese scores 84/100. After: a plain human rewrite scores 0/100.](assets/banner.png)
 
 AI drafts slides, emails and reports quickly, and Vietnamese readers spot the result just as quickly. The slide titles say "Tổng quan" (*Overview*) and "Thách thức" (*Challenges*). The email opens with "Trong bối cảnh hiện nay" (*in today's context*) and closes with "Hy vọng thông tin trên hữu ích!" (*Hope this helps!*). Fine for a team chat. For your boss or a customer, you end up rewriting it by hand.
 
@@ -141,13 +141,13 @@ The four titles of the second deck are enough to follow the whole proposal. The 
 
 ### Emails and reports
 
-![Emails and reports. The AI draft scores 72/100; it opens with "In today's context" and closes with "Hope this helps!". After the skill, 0/100: Our team started using the new project management system. Customers can now check progress themselves. With details supplied, 0/100: Since March we track projects in the new system.](assets/vi-du-email.en.png)
+![Emails and reports. The AI draft scores 84/100; it opens with "In today's context" and closes with "Hope this helps!". After the skill, 0/100: Our team started using the new project management system. Customers can now check progress themselves. With details supplied, 0/100: Since March we track projects in the new system.](assets/vi-du-email.en.png)
 
 *AI draft, roughly: "In today's context, applying AI is not only a trend but also a key factor that elevates business performance. This is proven by many studies showing productivity can increase significantly. In addition, our team proceeded to carry out the deployment of a new system for the purpose of delivering a seamless experience. It makes project management easier, faster and more efficient. Hope this helps!"*
 
 *After the skill: "Our team started using the new project management system. Customers can now check progress themselves." With details: "Since March we track projects in the new system. Customers check progress themselves instead of messaging us, and the team saves about half a day of reporting each week."*
 
-The AI draft scores 72/100 with 16 tells, the parts marked red in the image. The version after the skill is short because the skill does not invent numbers. If you want detail, the skill asks you and writes with only what you gave it, as in the third version. Both rewrites score 0/100. The three texts are in [`examples/truoc.md`](examples/truoc.md), [`examples/sau.md`](examples/sau.md) and [`examples/sau-co-chi-tiet.md`](examples/sau-co-chi-tiet.md).
+The AI draft scores 84/100 with 17 tells, the parts marked red in the image. The version after the skill is short because the skill does not invent numbers. If you want detail, the skill asks you and writes with only what you gave it, as in the third version. Both rewrites score 0/100. The three texts are in [`examples/truoc.md`](examples/truoc.md), [`examples/sau.md`](examples/sau.md) and [`examples/sau-co-chi-tiet.md`](examples/sau-co-chi-tiet.md).
 
 ### A long post
 
@@ -194,6 +194,7 @@ Some patterns only show when you read the whole text, even after each sentence i
 - the "not X but Y" shape used three times or more;
 - every paragraph closing on a line that sounds like a proverb;
 - colons everywhere;
+- the filler words of translated text ("một", "các", "được", "sẽ", "của bạn", the leftovers of English articles, plurals, tenses and possessives) thick across the whole text;
 - full stops that chop one thought into several short sentences, or the reverse, one sentence joined from too many clauses;
 - a long post that covers every topic.
 
@@ -231,7 +232,7 @@ Output for two of the sample files:
 
 ```text
 $ python3 -I skills/viet-nhu-nguoi/scripts/scan.py examples/truoc.md
-Điểm 72/100 (dày đặc): 16 dấu hiệu trong 5 dòng, 110 chữ.
+Điểm 84/100 (dày đặc): 17 dấu hiệu trong 5 dòng, 110 chữ.
 [từ vựng AI (vi)] 3      nâng tầm, trong bối cảnh hiện nay, bên cạnh đó
 [động từ rỗng (vi)] 3    tiến hành thực hiện, thực hiện việc, nhằm mục đích
 [văn dịch (vi)] 2        được chứng minh bởi, trải nghiệm liền mạch
@@ -241,6 +242,7 @@ $ python3 -I skills/viet-nhu-nguoi/scripts/scan.py examples/truoc.md
 [thổi phồng] 1           yếu tố then chốt
 [uy tín mơ hồ] 1         nhiều nghiên cứu chỉ ra
 [lời chatbot] 1          hy vọng những thông tin trên
+[chữ đệm dịch dày] 1     145 chữ đệm trên 1.000 chữ
 
 $ python3 -I skills/viet-nhu-nguoi/scripts/scan.py examples/slide-truoc.pptx
 Điểm 48/100 (nhiều dấu hiệu): 21 dấu hiệu trong 7 slide, 176 chữ.

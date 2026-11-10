@@ -412,6 +412,12 @@ class DeepTranslationese(unittest.TestCase):
         for g in ("văn dịch (vi)", "quan hệ từ dịch sát", "bị động dịch sát"):
             self.assertNotIn(g, groups(human))
 
+    def test_dense_filler_words(self):
+        translated = 'Tóm tắt cuộc họp: Đánh giá Dự án Q3\n\nNgười tham dự: Hà, Tuấn, Nga, Phong.\n\nCuộc họp bắt đầu với một cập nhật từ Hà về tiến độ hiện tại. Dự án được báo cáo là đang đi đúng hướng, mặc dù một vài rủi ro đã được nêu lên. Tuấn đã đề cập rằng việc tích hợp thanh toán có thể được trì hoãn do các vấn đề của bên thứ ba. Nhóm đã đồng ý rằng một cuộc kiểm tra sẽ được tổ chức vào tuần tới. Nga được giao nhiệm vụ cập nhật tài liệu, trong khi Phong sẽ liên hệ với nhà cung cấp. Các bước tiếp theo: hoàn tất ngân sách trước thứ Sáu và đưa các bên liên quan vào vòng lặp. Cuộc họp được hoãn lúc 3 giờ chiều.'
+        human = 'Biên bản họp: Rà soát dự án quý 3\n\nTham dự: Hà, Tuấn, Nga, Phong.\n\nHà báo cáo tiến độ: dự án đang đúng kế hoạch, nhưng còn vài rủi ro. Tuấn cho biết phần tích hợp thanh toán có thể trễ vì bên thứ ba đang gặp lỗi. Cả nhóm thống nhất họp kiểm tra lại vào tuần sau. Nga cập nhật tài liệu, Phong liên hệ nhà cung cấp.\n\nViệc tiếp theo: chốt ngân sách trước thứ Sáu và báo cho các bên liên quan. Họp kết thúc lúc 15 giờ.'
+        self.assertIn("chữ đệm dịch dày", groups(translated))
+        self.assertNotIn("chữ đệm dịch dày", groups(human))
+
     def test_no_double_count_make_sure(self):
         hits, _ = scan.scan("Hãy chắc chắn rằng bạn ngủ đủ giấc.")
         self.assertEqual(len(hits["văn dịch (vi)"]), 1)

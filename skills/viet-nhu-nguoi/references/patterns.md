@@ -17,8 +17,8 @@ Sắp từ mạnh đến yếu. Nhóm A và nhóm E chỉ cần gặp một lầ
 > The heavy beat adds to the aggressive tone.
 
 ### 2. Câu chốt một dòng, câu cụt kịch tính
-**Dấu hiệu:** đoạn một câu nhắc lại đoạn trước; "Đó mới là điều quan trọng."; "Điều đó nói lên tất cả."; "Hãy suy ngẫm điều đó."; "Let that sink in."; "That is the real win."; chuỗi câu cụt ("Không phô trương. Không màu mè. Chỉ hiệu quả."); câu tổng kết sau một ví dụ ("Điều này cho thấy tầm quan trọng của...").
-**Sửa:** Bỏ câu chốt nhắc lại. Gộp chuỗi câu cụt thành một câu có ý cụ thể. Câu ngắn mà có thêm sự việc mới thì giữ. Câu chốt gắn vào cuối đoạn cũng tính; xem mục 47.
+**Dấu hiệu:** đoạn một câu nhắc lại đoạn trước; "Đó mới là điều quan trọng."; "Điều đó nói lên tất cả."; "Hãy suy ngẫm điều đó."; "Let that sink in."; "That is the real win."; chuỗi câu cụt ("Không phô trương. Không màu mè. Chỉ hiệu quả."); câu tổng kết sau một ví dụ ("Điều này cho thấy tầm quan trọng của...", "Bài học ở đây rất rõ:"); một chữ VIẾT HOA để nhấn, hoặc chấm sau từng chữ ("từng. ngày. một.").
+**Sửa:** Bỏ câu chốt nhắc lại, kể cả câu giải nghĩa ví dụ người đọc vừa thấy. Câu nào nói thêm được hệ quả mà ví dụ chưa cho thấy thì giữ. Gộp chuỗi câu cụt thành một câu có ý cụ thể. Câu ngắn mà có thêm sự việc mới thì giữ. Câu chốt gắn vào cuối đoạn cũng tính; xem mục 47.
 **Trước:**
 > Cache giảm việc lặp lại.
 >
@@ -185,8 +185,8 @@ Sắp từ mạnh đến yếu. Nhóm A và nhóm E chỉ cần gặp một lầ
 > Trang chậm thì người dùng bỏ đi.
 
 ### 26. Văn bản tự nói về mình
-**Dấu hiệu:** "Bảng dưới đây so sánh..."; "Phần này được tổ chức theo..."; "Hàm này được thêm vào để thay thế cách cũ..."; "Thông tin chưa xác nhận đã được đánh dấu".
-**Sửa:** Nói về chủ đề, không nói về cách viết tài liệu. Lịch sử thay đổi chỉ đưa vào changelog, release notes.
+**Dấu hiệu:** "Bảng dưới đây so sánh..."; "Phần này được tổ chức theo..."; "Hàm này được thêm vào để thay thế cách cũ..."; "Thông tin chưa xác nhận đã được đánh dấu"; "Số liệu dưới đây tổng hợp từ...".
+**Sửa:** Nói về chủ đề, không nói về cách viết tài liệu. Lịch sử thay đổi chỉ đưa vào changelog, release notes. Nguồn mà người đọc lần theo được thì giữ, chuyện mình đã làm thế nào thì bỏ. Lưu ý nào làm người đọc phải làm khác đi thì giữ. Một câu tự nói về văn bản đứng riêng thì *yếu*.
 
 ### 27. Dấu vết công cụ
 **Dấu hiệu:** `contentReference`, `oaicite`, `turn0search0`, `[cite: 1]`, `:::writing`, placeholder `[Tên công ty]`, `<Điền ngày>` còn sót.
@@ -195,7 +195,7 @@ Sắp từ mạnh đến yếu. Nhóm A và nhóm E chỉ cần gặp một lầ
 ## F. Viết sai người đọc
 
 ### 28. Giải thích lại điều người đọc đã biết
-**Dấu hiệu:** Trong một tin trả lời, viết lại vấn đề, đi qua chẩn đoán, đưa bằng chứng, rồi mới tới quyết định ở câu cuối.
+**Dấu hiệu:** Tin trả lời mà viết lại vấn đề, nêu chẩn đoán, đưa bằng chứng, rồi mới tới quyết định ở câu cuối.
 **Sửa:** Nêu quyết định trước. Lý do thì chỉ giữ cái nào đủ làm người đọc đổi ý, thường là một việc họ chưa biết, kèm link để họ làm tiếp.
 **Trước:**
 > Dạ em đã xem log. Lỗi xảy ra do service A gọi B khi B đang restart, dẫn đến timeout, sau đó retry thất bại vì token hết hạn. Em đã thử tăng timeout nhưng không được. Vì vậy em đề xuất mình rollback bản deploy hôm qua.

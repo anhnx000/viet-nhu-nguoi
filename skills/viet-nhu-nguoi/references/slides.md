@@ -13,7 +13,7 @@ Chưa biết ai xem, trong buổi nào, cần họ làm gì thì đừng dựng 
 3. Trình bày trực tiếp hay gửi cho người ta tự đọc?
 4. Có mẫu slide, số liệu, tài liệu cũ, tin nhắn liên quan không?
 
-Bảo người dùng cứ dán hết những gì đang có, chưa cần sắp xếp. Đọc xong thì hỏi thêm 5-10 câu đánh số về chỗ còn thiếu, và nói rõ họ trả lời tắt cũng được ("1: có, 2: xem file X, 3: chưa chốt"). Hỏi tới lúc bàn được phương án, rủi ro mà không phải quay lại chuyện cơ bản thì đủ. Nếu có công cụ đọc Teams, email, SharePoint thì đề nghị đọc thẳng từ đó, nhưng hỏi trước khi đọc.
+Bảo người dùng cứ dán hết những gì đang có, chưa cần sắp xếp. Đọc xong thì hỏi thêm 5-10 câu đánh số về chỗ còn thiếu, và nói rõ họ trả lời tắt cũng được ("1: có, 2: xem file X, 3: chưa chốt"). Hỏi cho tới khi bàn được phương án và rủi ro mà không phải quay lại chuyện cơ bản thì thôi. Nếu có công cụ đọc Teams, email, SharePoint thì đề nghị đọc thẳng từ đó, nhưng hỏi trước khi đọc.
 
 Thiếu bối cảnh mà người dùng vẫn cần gấp thì viết một trang tóm ý (kết luận, lý do, việc cần quyết) thay vì cả deck.
 

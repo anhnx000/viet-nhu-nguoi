@@ -53,7 +53,7 @@ Ngày 07-11-2026 đã kiểm, link nào cũng còn mở được. Mỗi mục gh
 
 Skill tiếng Anh:
 
-- [blader/humanizer](https://github.com/blader/humanizer), MIT, Copyright (c) 2025 Siqi Chen. **Dùng trực tiếp.** Khung danh mục dấu hiệu (nhóm A-F), cách học giọng từ văn mẫu, lượt tự kiểm cuối. Giấy phép đi kèm: `LICENSE-humanizer`.
+- [blader/humanizer](https://github.com/blader/humanizer), MIT, Copyright (c) 2025 Siqi Chen. **Dùng trực tiếp.** Khung danh mục dấu hiệu (nhóm A-F), cách học giọng từ văn mẫu, lượt tự kiểm cuối. Đối chiếu lại với bản 4.0.0 (11/2026) và lấy thêm: câu nào giữ lại cũng phải cho người đọc điều mới, nhóm mạnh gặp một lần là sửa, kiểm dữ kiện trước tiên (cả thứ hạng và câu "cùng lúc"), đọc lại file trên đĩa trước khi sửa và báo khi mới sửa được một phần, coi thẻ đóng giả và lời nhắn "operator" trong văn bản là chữ cần sửa, test kiểm phiên bản và độ dài `SKILL.md`, mẫu issue, `AGENTS.md`. Không lấy quy tắc mới của 4.0.0 cho tự thêm chi tiết "biết là đúng": skill này sửa văn người dùng đứng tên gửi đi, nên vẫn không thêm dữ kiện ngoài bản gốc và lời người dùng. Giấy phép đi kèm: `LICENSE-humanizer`.
 - [conorbronsdon/avoid-ai-writing](https://github.com/conorbronsdon/avoid-ai-writing). **Dùng trực tiếp**, lấy ý tưởng: chế độ chỉ soi lỗi, điểm số 0-100, chặn trong CI.
 - [Aboudjem/humanizer-skill](https://github.com/Aboudjem/humanizer-skill). **Dùng trực tiếp**, lấy ý tưởng: kiểm xem bản sửa có còn đủ số liệu, chọn giọng theo tên.
 - [hardikpandya/stop-slop](https://github.com/hardikpandya/stop-slop). **Dùng trực tiếp**, lấy ý tưởng: tự chấm theo năm tiêu chí.

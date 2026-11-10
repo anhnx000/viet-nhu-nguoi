@@ -310,7 +310,7 @@ def banner():
               "Điều này được chứng minh bởi nhiều nghiên cứu... Hy vọng những thông tin trên sẽ hữu ích cho bạn!")
     compose(
         "banner.png", "Viết như người", "Chống giọng văn AI cho tiếng Việt · skill cho Claude và các trợ lý AI khác",
-        [Card("Trước: văn AI", "bad", [Para(before, EMAIL_TELLS, size=21)], "72/100")],
+        [Card("Trước: văn AI", "bad", [Para(before, EMAIL_TELLS, size=21)], "84/100")],
         [Card("Sau: giọng người", "good",
               [Para(read("examples/sau.md"), size=21, after=18),
                Para("Giữ nguyên nội dung, không bịa số liệu.", size=16, color=MUTED, after=4)], "0/100")],
@@ -322,7 +322,7 @@ def banner():
 def email(t):
     compose(
         f"vi-du-email{t['sfx']}.png", t["email_title"], t["email_sub"],
-        [Card(t["ai"], "bad", [Para(p, EMAIL_TELLS) for p in read("examples/truoc.md").split("\n\n")], "72/100")],
+        [Card(t["ai"], "bad", [Para(p, EMAIL_TELLS) for p in read("examples/truoc.md").split("\n\n")], "84/100")],
         [Card(t["skill"], "good", [Para(read("examples/sau.md")),
                                    Para(t["email_note"], size=15, color=MUTED, after=4)], "0/100"),
          Card(t["detail"], "good", [Para(read("examples/sau-co-chi-tiet.md"))], "0/100")])

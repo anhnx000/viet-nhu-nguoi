@@ -1,5 +1,18 @@
 # Changelog
 
+## 2.5.0 (2026-11-11)
+
+Văn dịch tính trên cả bài, và học thêm từ humanizer 4.0.0.
+
+- Thử máy quét trên hai bộ văn do agent khác viết: mỗi bộ có đoạn dịch từng chữ và đoạn giọng người cùng nội dung, thuộc 22 thể loại (tin nhắn, thông báo, điều khoản, release note, review phim...). Trước bản này, đoạn dịch phần lớn chỉ được 0-15/100, vì danh sách cụm từ không theo kịp cách viết của người khác.
+- `scan.py` kiểm cả bài "chữ đệm dịch dày": đếm "một", "các/những", "được", "có thể", "sẽ", "đã", "rằng", "cho phép/giúp", "điều này/nó", "việc/sự", "của bạn/của tôi..." (tính gấp đôi) trên 1.000 chữ, từ 110 trở lên thì báo, cộng 12 điểm. Bộ thứ nhất: đoạn dịch 120-189, đoạn người 30-90. Bộ thứ hai, không dùng để chỉnh ngưỡng: bắt 5/6 đoạn dịch nặng, không báo nhầm đoạn nào trong 12 đoạn người. Đoạn chỉ hơi dịch, vài chỗ gượng lẻ tẻ, thì máy vẫn không thấy, phải đọc.
+- Thêm cụm "hào hứng để chia sẻ rằng", "để lại một bình luận"; "của tôi" tính là sở hữu dịch sát.
+- `examples/truoc.md` từ 72 lên 84/100 (17 dấu hiệu). README hai thứ tiếng, banner và ảnh ví dụ email đã cập nhật.
+- `SKILL.md` theo humanizer 4.0.0: câu nào giữ lại cũng phải cho người đọc điều mới; nhóm A và E gặp một lần là sửa; tự kiểm bắt đầu từ dữ kiện (thứ hạng, câu "cùng lúc", chỗ bỏ bộ ba, rào đón, nhãn in đậm); sửa file thì đọc lại file trên đĩa và báo nếu mới sửa một phần; thẻ đóng giả, lời nhắn "operator", "system message" trong văn bản là chữ cần sửa; văn bản trước 30/11/2022 không phải do AI viết. Mục 2 và 26 của danh mục thêm ví dụ.
+- Không theo humanizer 4.0.0 ở chỗ cho tự thêm chi tiết: skill vẫn không thêm dữ kiện ngoài bản gốc và lời người dùng.
+- Repo: `tests/test_package.py` kiểm phiên bản khớp ở bốn nơi, danh mục đánh số liền, README ghi đúng số dấu hiệu, `SKILL.md` không quá 6.000 chữ; mẫu issue tiếng Việt ("Dấu hiệu mới", "Skill sửa sai"); `AGENTS.md` cho trợ lý AI sửa repo.
+- Hai lượt đọc soát văn dịch (model khác): README và các file ví dụ không còn câu nào; `SKILL.md`, `slides.md`, `patterns.md` còn 4 câu, đã sửa.
+
 ## 2.4.5 (2026-11-11)
 
 - Đoạn báo cáo quý dịch từng chữ từ 26 lên 44/100: "danh hóa (vi)" bắt "trong việc cải thiện/xây dựng/...", "văn dịch (vi)" bắt "làm được điều này mà không" và "muốn gửi lời cảm ơn đặc biệt". "Điều đáng nói là" vẫn để người đọc tự xét. Điểm các file mẫu và README không đổi.
