@@ -1,6 +1,6 @@
 # Danh mục dấu hiệu văn AI (Việt + Anh)
 
-Sắp từ mạnh đến yếu. Nhóm A và nhóm E chỉ cần gặp một lần là sửa. Nhóm G (mục 30-38) dành riêng cho tiếng Việt. Nhóm H (mục 39-44) dành cho slide, lời thuyết trình và tài liệu nhiều trang; hướng dẫn đầy đủ ở `slides.md`. Nhóm K (mục 56-62) là văn dịch ở tầng sâu hơn nhóm G: từng chữ đều là tiếng Việt nhưng câu vẫn theo khuôn tiếng Anh; văn tiếng Việt nào cũng nên rà nhóm này. Nhóm I (mục 45-55) là những dấu hiệu chỉ thấy khi nhìn cả bài, thường vẫn còn sau khi đã sửa sạch từng câu; bài dài và bài đăng mạng xã hội thì đọc nhóm này trước. Mục ghi *yếu* chỉ sửa khi đi cùng dấu hiệu khác trong cùng đoạn.
+Sắp từ mạnh đến yếu. Nhóm A và nhóm E chỉ cần gặp một lần là sửa. Nhóm G (mục 30-38) dành riêng cho tiếng Việt. Nhóm H (mục 39-44) dành cho slide, lời thuyết trình và tài liệu nhiều trang; hướng dẫn đầy đủ ở `slides.md`. Nhóm K (mục 56-62) là văn dịch ở tầng sâu hơn nhóm G: từng chữ đều là tiếng Việt nhưng câu vẫn theo khuôn tiếng Anh; văn tiếng Việt nào cũng nên rà nhóm này. Nhóm I (mục 45-55) là những dấu hiệu chỉ thấy khi nhìn cả bài, thường vẫn còn sau khi đã sửa sạch từng câu; bài dài và bài đăng mạng xã hội thì đọc nhóm này trước. Mục ghi *yếu* chỉ sửa khi đi cùng dấu hiệu khác trong cùng đoạn. Vài khối "Sau" có chi tiết cụ thể mà khối "Trước" không có (tên người, con số): đó là chi tiết giả định người viết đã cung cấp, còn khi sửa bài thật thì không tự thêm.
 
 ## A. Dàn dựng thay vì nói thẳng
 
@@ -70,7 +70,7 @@ Sắp từ mạnh đến yếu. Nhóm A và nhóm E chỉ cần gặp một lầ
 
 ### 9. Gạch ngang dài khắp nơi
 **Quy tắc:** Bản cuối không có — hoặc – dùng để nối mệnh đề, trừ khi mẫu văn của người dùng có. Thay bằng dấu chấm, phẩy, hai chấm hoặc ngoặc đơn. Gồm cả " -- " dùng thay gạch ngang. Giữ gạch trong code, lệnh, URL, khoảng số (2020–2024 thì viết lại thành 2020-2024 hoặc "từ 2020 đến 2024").
-**Lưu ý:** Theo các phân tích của Pangram và Washington Post, văn AI dùng gạch ngang dài nhiều gấp mấy lần văn người. Một dấu đơn lẻ thì *yếu*.
+**Lưu ý:** Theo phân tích của Pangram và Washington Post, văn AI dùng gạch ngang dài nhiều gấp mấy lần văn người. Một dấu đơn lẻ thì *yếu*.
 **Trước:**
 > Chính sách mới — được công bố không báo trước — ảnh hưởng tới hàng nghìn người.
 **Sau:**
@@ -200,15 +200,15 @@ Sắp từ mạnh đến yếu. Nhóm A và nhóm E chỉ cần gặp một lầ
 **Trước:**
 > Dạ em đã xem log. Lỗi xảy ra do service A gọi B khi B đang restart, dẫn đến timeout, sau đó retry thất bại vì token hết hạn. Em đã thử tăng timeout nhưng không được. Vì vậy em đề xuất mình rollback bản deploy hôm qua.
 **Sau:**
-> Em đề xuất rollback bản deploy hôm qua. Lỗi do token hết hạn khi retry, tăng timeout không giải quyết được. Log em để ở ticket.
+> Em đề xuất rollback bản deploy hôm qua. Lỗi do token hết hạn khi retry, tăng timeout không giải quyết được.
 
 ### 29. Kể lại tiêu đề và nội dung của thứ đã có link
-**Dấu hiệu:** Câu báo việc chép nguyên tiêu đề dài của trang hay file, kèm mô tả trang đó có gì, rồi mới tới link. Hay gặp trong daily report và tin báo xong việc.
+**Dấu hiệu:** Câu báo việc mà chép nguyên tiêu đề dài của trang hay file, kèm mô tả trang đó có gì, rồi mới tới link. Hay gặp trong daily report và tin báo xong việc.
 **Sửa:** Nói việc đã làm bằng động từ đơn giản, gắn link vào vài chữ ngắn ("link", "ở đây", tên ngắn). Ai cần chi tiết thì bấm link.
 **Trước:**
 > Vẽ lại sơ đồ luồng thanh toán từ code nhánh mới nhất và viết giải thích code, đăng lên Confluence: Payment v2: luồng code từ request tới hàng đợi settlement
 **Sau:**
-> Đọc code module thanh toán trên nhánh mới, vẽ lại sơ đồ luồng ([link](...))
+> Vẽ lại sơ đồ luồng thanh toán theo code nhánh mới nhất, kèm giải thích code ([link](...))
 
 ## G. Riêng tiếng Việt
 
@@ -270,7 +270,7 @@ Văn AI tiếng Việt thường là văn "nghĩ bằng tiếng Anh rồi dịch
 **Trước:**
 > Bạn có thể thấy rằng chúng ta cần thay đổi quy trình. Quý vị hãy cân nhắc nhé.
 **Sau (email gửi sếp):**
-> Em nghĩ phòng mình nên đổi quy trình làm báo cáo. Anh xem giúp em ạ.
+> Em nghĩ phòng mình nên đổi quy trình. Anh xem giúp em ạ.
 
 ### 37. Chêm tiếng Anh trong ngoặc
 **Dấu hiệu:** "hiệu suất (performance)", "trải nghiệm người dùng (user experience)", "chiến lược (strategy)" sau mỗi từ thường.
@@ -312,7 +312,7 @@ Câu ngắn hơn chưa chắc đúng hơn. Kiểm lại sau khi sửa:
 
 ### 42. Mạch dựng sẵn và tên khung lộ ra slide
 **Dấu hiệu:** deck nào cũng "Tổng quan → Thách thức → Giải pháp → Lợi ích → Kết luận" dù chủ đề khác nhau; tên khung tư duy hiện trên slide ("Situation - Complication - Resolution", "Hiện trạng → Nguyên nhân → Giải pháp"); chữ của quy trình làm slide còn sót ("Phương án A", "bản an toàn", "template").
-**Sửa:** Thứ tự slide đi theo việc người xem cần làm hoặc quyết. Phát hiện riêng của tài liệu thì đưa lên làm slide chính. Tên khung chỉ dùng lúc dựng, không in lên slide. Phép thử: xóa tên công ty và con số mà deck vẫn dùng được cho công ty khác thì nó còn rỗng.
+**Sửa:** Thứ tự slide đi theo việc người xem cần làm hoặc quyết. Điều chỉ tài liệu này mới có thì đưa lên làm slide chính. Tên khung chỉ dùng lúc dựng, không in lên slide. Phép thử: xóa tên công ty và con số mà deck vẫn dùng được cho công ty khác thì nó còn rỗng.
 
 ### 43. Gạch đầu dòng là câu văn dài hoặc nói lại một ý
 **Dấu hiệu:** gạch đầu dòng hơn 20 chữ; ba gạch cùng một ý nói bằng ba cách; mỗi gạch một kiểu kết câu; slide chỉ có một gạch.
@@ -324,7 +324,7 @@ Câu ngắn hơn chưa chắc đúng hơn. Kiểm lại sau khi sửa:
 **Trước:**
 > Như chúng ta có thể thấy, việc chuyển đổi số không chỉ là xu hướng mà còn là yếu tố then chốt giúp doanh nghiệp tối ưu hóa nguồn lực một cách hiệu quả (theo nhiều chuyên gia).
 **Sau:**
-> Hai lần trễ vừa rồi đều cùng một lý do. Dev phải tự test, nên vừa chậm vừa sót lỗi.
+> Làm chuyển đổi số thì doanh nghiệp dùng người, dùng tiền đỡ lãng phí hơn.
 
 ## I. Cả bài: dấu hiệu còn lại sau khi từng câu đã sạch
 
@@ -336,7 +336,7 @@ Cách đọc nhóm này: đếm trên cả bài. Một lần thì có thể là 
 
 ### 45. Nhãn báo giọng: "nói gọn", "nói thật", "nói rõ"
 **Dấu hiệu:** Nói cho thật:; Nói cho công bằng:; Nói rõ để bạn khỏi hiểu lầm:; Nói gọn thì; tiêu đề có đuôi ", nói gọn"; hiểu đơn giản là; nói nôm na là; cứ hiểu nó như; thành thật mà nói; công bằng mà nói; thú thật là; to be honest; to be fair; simply put.
-**Vấn đề:** Câu báo trước mình sắp nói thật, nói gọn, nói công bằng, rồi mới nói. Đây là mục 4 và mục 5 đổi áo: cấm "Nói thẳng ra thì" thì mô hình viết "Nói cho thật:". Cấm một cụm trong họ này là cấm cả họ, kể cả cụm chưa có trong danh sách.
+**Vấn đề:** Câu báo trước mình sắp nói thật, nói gọn, nói công bằng, rồi mới nói. Đây là mục 4 và mục 5 khoác áo mới: cấm "Nói thẳng ra thì" thì mô hình viết "Nói cho thật:". Cấm một cụm trong họ này là cấm cả họ, kể cả cụm chưa có trong danh sách.
 **Sửa:** Xóa nhãn, giữ câu sau nó. Bỏ nhãn mà câu sau vẫn đủ nghĩa thì nhãn thừa. Muốn gọn thì viết gọn, không cần báo.
 **Trước:**
 > Nói cho thật: tiến độ không dễ. Có báo nước ngoài nói nhà máy đang chậm so với mốc đề ra.
@@ -372,7 +372,7 @@ Cách đọc nhóm này: đếm trên cả bài. Một lần thì có thể là 
 **Trước:**
 > Chi tiết mình thấy quan trọng nhất: nền tảng đó được xây trên RISC-V, một tập lệnh mở. Tức là Việt Nam không đi theo lối mua chip về dùng, mà bắt đầu từ nền móng thiết kế.
 **Sau:**
-> Nền tảng đó dùng RISC-V, một tập lệnh mở. Việt Nam làm từ khâu thiết kế thay vì mua chip về dùng.
+> Nền tảng đó dùng RISC-V, một tập lệnh mở. Việt Nam làm từ khâu thiết kế, không mua chip về dùng.
 
 ### 49. Bài ôm hết mọi thứ
 **Dấu hiệu:** một bài đăng mà có định nghĩa cơ bản, lịch sử, thống kê, lý do kỹ thuật, tin thời sự, hướng dẫn tham gia và lời kêu gọi; bảy tám mục có tiêu đề; mở bằng giải thích từ số không ("Hệ điều hành là lớp phần mềm nằm giữa app và phần cứng") cho người đọc đang được rủ vào viết kernel; quá 800 chữ trên kênh mà người ta lướt.
@@ -406,7 +406,7 @@ Cách đọc nhóm này: đếm trên cả bài. Một lần thì có thể là 
 > Điểm số chỉ để tham khảo. Điểm cho biết bài có bao nhiêu thói quen viết theo khuôn. Điểm không nói bài do AI viết. Có người vốn viết câu đều nhịp.
 **Sau:**
 > Điểm số chỉ để tham khảo, vì nhìn điểm chỉ biết bài viết theo khuôn nhiều hay ít, chưa biết được bài có do AI viết hay không. Có người vốn viết câu đều nhịp.
-**Sửa:** Gộp các câu cùng ý bằng dấu phẩy và từ nối đúng quan hệ (vì, nên, còn, rồi, thì). Bỏ chủ ngữ lặp. Chỉ chấm khi hết ý. Giữ câu ngắn ở chỗ cần nhấn, và đừng gộp quá tay thành câu năm sáu vế. Lời nói trên slide, ghi chú thuyết trình, tin nhắn chat thì câu ngắn là bình thường. *Yếu* khi chỉ gặp một hai chỗ.
+**Sửa:** Gộp các câu cùng ý bằng dấu phẩy và từ nối đúng quan hệ (vì, nên, còn, rồi, thì). Bỏ chủ ngữ lặp. Chỉ chấm khi hết ý. Giữ câu ngắn ở chỗ cần nhấn, và đừng gộp quá tay thành câu năm sáu vế. Chữ trên slide, ghi chú thuyết trình, tin nhắn chat thì câu ngắn là bình thường. *Yếu* khi chỉ gặp một hai chỗ.
 
 ### 55. Câu gộp quá tay: chuỗi vế nối bằng dấu phẩy
 **Dấu hiệu:** câu dài bốn năm vế nối nhau bằng dấu phẩy, đọc hết hơi mới tới dấu chấm; hai vế không liên quan dán vào nhau ("Bấm đồng ý khi trợ lý xin phép, thường mất chưa tới một phút, sau đó mở cuộc trò chuyện mới"); từ nối dùng để dán chứ không chỉ quan hệ ("trong đó", "đồng thời", "và" nối hai câu vốn độc lập); ý chính nằm trong ngoặc đơn; câu quá chừng 40 chữ mà không phải câu liệt kê.

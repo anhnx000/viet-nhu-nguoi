@@ -27,7 +27,7 @@ Ngày 07-11-2026 đã kiểm, link nào cũng còn mở được. Mỗi mục gh
 - [Omera: 5 dấu hiệu phổ biến của văn bản AI](https://omeraapp.com/vi/blog/5-dau-hieu-pho-bien-cua-van-ban-ai/). **Dùng trực tiếp.** Đối chiếu danh sách từ vựng.
 - Phạm Mỹ, Báo Văn Nghệ, ["Mùi" AI](https://baovannghe.vn/mui-ai-26802.html), 23-02-2026. **Đọc thêm** (longhang2004). Các khuôn lặp trong nội dung thương mại tiếng Việt.
 - Upcontent, [Kiểm tra văn bản AI](https://upcontent.vn/kiem-tra-van-ban-ai/), 23-10-2026. **Đọc thêm** (longhang2004). Phép thử thay tên: bỏ tên sản phẩm đi mà nhận xét vẫn đúng với sản phẩm khác thì bài thiếu dữ kiện riêng.
-- Hoà Lương, [Hiểu về dấu gạch ngang](https://hoaluong.com/hieu-ve-dau-gach-ngang-de-khong-con-hoang-mang/). **Đọc thêm** (longhang2004). Chức năng của dấu gạch ngang trong tiếng Việt; lý do skill không cấm gạch ngang khi nó dùng đúng chức năng (lượt thoại, khoảng số).
+- Hoà Lương, [Hiểu về dấu gạch ngang](https://hoaluong.com/hieu-ve-dau-gach-ngang-de-khong-con-hoang-mang/). **Đọc thêm** (longhang2004). Chức năng của dấu gạch ngang trong tiếng Việt; lý do skill không cấm gạch ngang khi dùng đúng chức năng (lượt thoại, khoảng số).
 - VOZ, [Cảm thấy khó chịu với content từ AI](https://voz.vn/t/cam-thay-kho-chiu-voi-content-tu-ai.1104978/), 05-2025. **Đọc thêm** (longhang2004). Phản hồi của người đọc Việt về văn dài, lặp, chen quảng cáo.
 
 ## Văn phong tiếng Việt do người viết
@@ -54,12 +54,12 @@ Ngày 07-11-2026 đã kiểm, link nào cũng còn mở được. Mỗi mục gh
 Skill tiếng Anh:
 
 - [blader/humanizer](https://github.com/blader/humanizer), MIT, Copyright (c) 2025 Siqi Chen. **Dùng trực tiếp.** Khung danh mục dấu hiệu (nhóm A-F), cách học giọng từ văn mẫu, lượt tự kiểm cuối. Giấy phép đi kèm: `LICENSE-humanizer`.
-- [conorbronsdon/avoid-ai-writing](https://github.com/conorbronsdon/avoid-ai-writing). **Dùng trực tiếp** cho ý tưởng: chế độ chỉ soi lỗi, điểm số 0-100, chặn trong CI.
-- [Aboudjem/humanizer-skill](https://github.com/Aboudjem/humanizer-skill). **Dùng trực tiếp** cho ý tưởng: kiểm bản sửa còn giữ số liệu, chọn giọng theo tên.
-- [hardikpandya/stop-slop](https://github.com/hardikpandya/stop-slop). **Dùng trực tiếp** cho ý tưởng: tự chấm theo năm tiêu chí.
-- [carnot-tech/jinba-consulting-pptx-skill](https://github.com/carnot-tech/jinba-consulting-pptx-skill), MIT. **Dùng trực tiếp** cho ý tưởng: tiêu đề slide là câu kết luận và đọc liền thành mạch; không đếm số ý trong tiêu đề, không ép về ba; không lộ tên khung; thiếu số liệu thì để trống chứ không bịa; danh sách từ "mùi AI" và câu hứa suông; nhờ agent mới đọc soát, chấm 7 tiêu chí (thang 70) và lập bảng nhận/không nhận góp ý. Bản gốc viết bằng tiếng Nhật cho slide HTML; ở đây chọn lọc phần về chữ và viết lại cho tiếng Việt.
-- [zarazhangrui/frontend-slides](https://github.com/zarazhangrui/frontend-slides), MIT. **Dùng trực tiếp** cho ý tưởng: chia mật độ chữ theo cách trình bày (nói trực tiếp hay gửi đọc), tách slide thay vì thu nhỏ chữ, danh sách hình thức "AI slop" (gradient tím, lưới thẻ icon, bố cục rập khuôn), không để chữ của quy trình làm slide sót lại trên slide.
-- Anthropic, skill `doc-coauthoring` trong [anthropics/skills](https://github.com/anthropics/skills), Apache 2.0. **Dùng trực tiếp** cho ý tưởng: hỏi gộp bối cảnh trước khi viết, câu hỏi đánh số để trả lời tắt được, nhờ một agent mới, không biết bối cảnh, đọc thử tài liệu.
+- [conorbronsdon/avoid-ai-writing](https://github.com/conorbronsdon/avoid-ai-writing). **Dùng trực tiếp**, lấy ý tưởng: chế độ chỉ soi lỗi, điểm số 0-100, chặn trong CI.
+- [Aboudjem/humanizer-skill](https://github.com/Aboudjem/humanizer-skill). **Dùng trực tiếp**, lấy ý tưởng: kiểm xem bản sửa có còn đủ số liệu, chọn giọng theo tên.
+- [hardikpandya/stop-slop](https://github.com/hardikpandya/stop-slop). **Dùng trực tiếp**, lấy ý tưởng: tự chấm theo năm tiêu chí.
+- [carnot-tech/jinba-consulting-pptx-skill](https://github.com/carnot-tech/jinba-consulting-pptx-skill), MIT. **Dùng trực tiếp**, lấy ý tưởng: tiêu đề slide là câu kết luận và đọc liền thành mạch; không đếm số ý trong tiêu đề, không ép về ba; không lộ tên khung; thiếu số liệu thì để trống chứ không bịa; danh sách từ "mùi AI" và câu hứa suông; nhờ agent mới đọc soát, chấm 7 tiêu chí (thang 70) và lập bảng nhận/không nhận góp ý. Bản gốc viết bằng tiếng Nhật cho slide HTML; ở đây chọn lọc phần về chữ và viết lại cho tiếng Việt.
+- [zarazhangrui/frontend-slides](https://github.com/zarazhangrui/frontend-slides), MIT. **Dùng trực tiếp**, lấy ý tưởng: chia mật độ chữ theo cách trình bày (nói trực tiếp hay gửi đọc), tách slide thay vì thu nhỏ chữ, danh sách hình thức "AI slop" (gradient tím, lưới thẻ icon, bố cục rập khuôn), không để chữ của quy trình làm slide sót lại trên slide.
+- Anthropic, skill `doc-coauthoring` trong [anthropics/skills](https://github.com/anthropics/skills), Apache 2.0. **Dùng trực tiếp**, lấy ý tưởng: hỏi gộp bối cảnh trước khi viết, câu hỏi đánh số để trả lời tắt được, nhờ một agent mới, không biết bối cảnh, đọc thử tài liệu.
 - [jurigis/avoid-ai-writing-multilingual](https://github.com/jurigis/avoid-ai-writing-multilingual). **Đọc thêm** (cuongducle). Cách tách quy tắc theo từng ngôn ngữ.
 
 Skill tiếng Việt, đều MIT. Dùng để đối chiếu danh mục; quy tắc và ví dụ ở đây viết lại theo cách riêng:
