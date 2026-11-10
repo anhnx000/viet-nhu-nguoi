@@ -6,7 +6,7 @@ Sắp từ mạnh đến yếu. Nhóm A và nhóm E chỉ cần gặp một lầ
 
 ### 1. Đối lập giả: "không phải X mà là Y"
 **Dấu hiệu:** không chỉ... mà còn; không phải X, mà là Y; X chứ không phải Y; không đơn thuần là; it's not X, it's Y; not just X but Y; X rather than Y; tách thành hai câu ("Điều này không có nghĩa là X. Nó có nghĩa là Y."); đuôi phủ định cụt ("..., không cần đoán").
-**Vấn đề:** Vế phủ định bác bỏ điều không ai nói, để vế sau nghe to hơn. Nói thẳng vế sau. Chỉ giữ khi người đọc đúng là đang nghĩ như vế đầu, và cả bài chỉ một lần; xem mục 46.
+**Vấn đề:** Vế phủ định bác bỏ điều không ai nói, để vế sau nghe kêu hơn. Nói thẳng vế sau. Chỉ giữ khi người đọc đúng là đang nghĩ như vế đầu, và cả bài chỉ một lần; xem mục 46.
 **Trước:**
 > Đây không chỉ là một bản cập nhật, mà là một cuộc cách mạng trong cách đội ngũ làm việc.
 **Sau:**
@@ -90,7 +90,7 @@ Sắp từ mạnh đến yếu. Nhóm A và nhóm E chỉ cần gặp một lầ
 
 ### 12. Câu và đoạn đều nhau
 **Vấn đề:** Đoạn nào cũng 3 đến 5 câu, câu nào cũng 15 đến 20 từ, không lỗi, không ngắt nhịp.
-**Sửa:** Xen câu rất ngắn với câu dài. Để đoạn văn dài ngắn theo nội dung.
+**Sửa:** Để câu và đoạn dài ngắn theo nội dung: ý đơn thì ngắn, ý có nguyên nhân hay điều kiện thì dài hơn. Đừng xen câu ngắn câu dài cho có nhịp (mục 38, 54, 55).
 
 ## C. Thổi phồng và mượn uy tín
 
@@ -102,7 +102,7 @@ Sắp từ mạnh đến yếu. Nhóm A và nhóm E chỉ cần gặp một lầ
 - Giữa 2025 đến giữa 2026 (GPT-5): emphasizing, enhance, highlighting, showcasing.
 - Từ giữa 2026: challenge, clearer, dependable, echoed, foster, leverage, matters, multifaceted, practical, prioritize, quietly, steady, universally.
 - Cụm cố định: in today's fast-paced world, in the digital age, navigating the complexities, it's important to note, deep dive, robust framework, ever-evolving, seamless.
-**Lưu ý:** Một hai từ có thể là ngẫu nhiên. Nhiều từ cùng lúc là dấu hiệu mạnh. Từ đồng nghĩa thì chưa chắc đã tính.
+**Lưu ý:** Một hai từ có thể là ngẫu nhiên. Nhiều từ cùng lúc là dấu hiệu mạnh. Từ đồng nghĩa với các từ trên thì chưa chắc là dấu hiệu.
 
 ### 14. Thổi phồng ý nghĩa
 **Dấu hiệu:** đánh dấu bước ngoặt; cột mốc quan trọng; để lại dấu ấn sâu đậm; mở ra kỷ nguyên mới; khẳng định vị thế; tương lai đầy hứa hẹn; chặng đường phía trước; "Dù còn nhiều thách thức, X vẫn không ngừng phát triển"; mục "Thách thức và triển vọng"; stands as a testament; marking a pivotal moment; the future looks bright.
@@ -143,7 +143,7 @@ Sắp từ mạnh đến yếu. Nhóm A và nhóm E chỉ cần gặp một lầ
 ## D. Trình bày theo luật
 
 ### 20. In đậm trang trí, danh sách có nhãn
-**Vấn đề:** Từ ngữ in đậm không lý do. Danh sách mà mục nào cũng có nhãn in đậm và dấu hai chấm. Theo Pangram, văn AI dùng markdown đậm đặc nhiều gấp khoảng 12 lần văn người, gạch đầu dòng khoảng 9 lần.
+**Vấn đề:** Từ ngữ in đậm không lý do. Danh sách mà mục nào cũng có nhãn in đậm và dấu hai chấm. Theo Pangram, văn AI in đậm nhiều gấp khoảng 12 lần văn người, gạch đầu dòng gấp khoảng 9 lần.
 **Trước:**
 > - **Trải nghiệm người dùng:** Trải nghiệm người dùng được cải thiện đáng kể với giao diện mới.
 > - **Hiệu năng:** Hiệu năng được nâng cao nhờ thuật toán tối ưu.
@@ -312,7 +312,7 @@ Câu ngắn hơn chưa chắc đúng hơn. Kiểm lại sau khi sửa:
 
 ### 42. Mạch dựng sẵn và tên khung lộ ra slide
 **Dấu hiệu:** deck nào cũng "Tổng quan → Thách thức → Giải pháp → Lợi ích → Kết luận" dù chủ đề khác nhau; tên khung tư duy hiện trên slide ("Situation - Complication - Resolution", "Hiện trạng → Nguyên nhân → Giải pháp"); chữ của quy trình làm slide còn sót ("Phương án A", "bản an toàn", "template").
-**Sửa:** Thứ tự slide đi theo việc người xem cần làm hoặc quyết. Điều tài liệu này tự tìm ra thì cho làm slide chính. Tên khung chỉ dùng lúc dựng, không in lên slide. Phép thử: xóa tên công ty và con số mà deck vẫn dùng được cho công ty khác thì nó còn rỗng.
+**Sửa:** Thứ tự slide đi theo việc người xem cần làm hoặc quyết. Phát hiện riêng của tài liệu thì đưa lên làm slide chính. Tên khung chỉ dùng lúc dựng, không in lên slide. Phép thử: xóa tên công ty và con số mà deck vẫn dùng được cho công ty khác thì nó còn rỗng.
 
 ### 43. Gạch đầu dòng là câu văn dài hoặc nói lại một ý
 **Dấu hiệu:** gạch đầu dòng hơn 20 chữ; ba gạch cùng một ý nói bằng ba cách; mỗi gạch một kiểu kết câu; slide chỉ có một gạch.
@@ -320,7 +320,7 @@ Câu ngắn hơn chưa chắc đúng hơn. Kiểm lại sau khi sửa:
 
 ### 44. Ghi chú thuyết trình viết như văn viết
 **Dấu hiệu:** câu hơn 30 chữ; có ngoặc đơn; "như đã trình bày ở trên"; đọc lại y nguyên chữ trên slide; mở bằng "Như chúng ta có thể thấy".
-**Sửa:** Viết như sẽ nói: câu ngắn, mỗi câu một ý, nói thêm điều slide không ghi (vì sao, ví dụ, con số đằng sau). Đọc thành tiếng một lần. Chỗ nào vấp thì sửa.
+**Sửa:** Viết như sẽ nói: câu ngắn, mỗi câu một ý, nói thêm điều slide không ghi (vì sao, ví dụ, con số làm căn cứ). Đọc thành tiếng một lần. Chỗ nào vấp thì sửa.
 **Trước:**
 > Như chúng ta có thể thấy, việc chuyển đổi số không chỉ là xu hướng mà còn là yếu tố then chốt giúp doanh nghiệp tối ưu hóa nguồn lực một cách hiệu quả (theo nhiều chuyên gia).
 **Sau:**
@@ -336,7 +336,7 @@ Cách đọc nhóm này: đếm trên cả bài. Một lần thì có thể là 
 
 ### 45. Nhãn báo giọng: "nói gọn", "nói thật", "nói rõ"
 **Dấu hiệu:** Nói cho thật:; Nói cho công bằng:; Nói rõ để bạn khỏi hiểu lầm:; Nói gọn thì; tiêu đề có đuôi ", nói gọn"; hiểu đơn giản là; nói nôm na là; cứ hiểu nó như; thành thật mà nói; công bằng mà nói; thú thật là; to be honest; to be fair; simply put.
-**Vấn đề:** Câu báo trước mình sắp thật, sắp gọn, sắp công bằng, rồi mới nói. Đây là mục 4 và mục 5 đổi áo: cấm "Nói thẳng ra thì" thì mô hình viết "Nói cho thật:". Cấm một cụm trong họ này là cấm cả họ, kể cả cụm chưa có trong danh sách.
+**Vấn đề:** Câu báo trước mình sắp nói thật, nói gọn, nói công bằng, rồi mới nói. Đây là mục 4 và mục 5 đổi áo: cấm "Nói thẳng ra thì" thì mô hình viết "Nói cho thật:". Cấm một cụm trong họ này là cấm cả họ, kể cả cụm chưa có trong danh sách.
 **Sửa:** Xóa nhãn, giữ câu sau nó. Bỏ nhãn mà câu sau vẫn đủ nghĩa thì nhãn thừa. Muốn gọn thì viết gọn, không cần báo.
 **Trước:**
 > Nói cho thật: tiến độ không dễ. Có báo nước ngoài nói nhà máy đang chậm so với mốc đề ra.
@@ -372,7 +372,7 @@ Cách đọc nhóm này: đếm trên cả bài. Một lần thì có thể là 
 **Trước:**
 > Chi tiết mình thấy quan trọng nhất: nền tảng đó được xây trên RISC-V, một tập lệnh mở. Tức là Việt Nam không đi theo lối mua chip về dùng, mà bắt đầu từ nền móng thiết kế.
 **Sau:**
-> Nền tảng đó xây trên RISC-V, tập lệnh mở, nên kỹ sư Việt tự sửa được thiết kế vi xử lý.
+> Nền tảng đó dùng RISC-V, một tập lệnh mở, và Việt Nam làm từ khâu thiết kế thay vì mua chip về dùng.
 
 ### 49. Bài ôm hết mọi thứ
 **Dấu hiệu:** một bài đăng mà có định nghĩa cơ bản, lịch sử, thống kê, lý do kỹ thuật, tin thời sự, hướng dẫn tham gia và lời kêu gọi; bảy tám mục có tiêu đề; mở bằng giải thích từ số không ("Hệ điều hành là lớp phần mềm nằm giữa app và phần cứng") cho người đọc đang được rủ vào viết kernel; quá 800 chữ trên kênh mà người ta lướt.
@@ -401,7 +401,7 @@ Cách đọc nhóm này: đếm trên cả bài. Một lần thì có thể là 
 
 ### 54. Câu vụn: dấu chấm chặt một ý thành nhiều câu
 **Dấu hiệu:** hai ba câu ngắn liền nhau cùng nói một ý; câu sau lặp chủ ngữ của câu trước ("Skill giúp văn bản dễ đọc hơn. Skill không cam kết..."); câu chỉ là một cụm bổ sung đứng riêng ("Thường mất chưa tới một phút.", "Codex, Cursor cũng được."); gạch đầu dòng mở bằng một cụm cụt rồi chấm ("Soi lại trước khi gửi. Skill chỉ ra..."); cả bài chừng một phần ba số câu dài không quá mười chữ (`scan.py` báo từ 30%).
-**Vấn đề:** Đây là mặt trái của lời khuyên "viết câu ngắn". Tiếng Anh chấm câu sau mỗi mệnh đề độc lập, còn tiếng Việt nối các vế bằng dấu phẩy và "nên", "thì", "mà", "còn", "rồi". Chấm dày thì quan hệ giữa các vế biến mất, người đọc phải tự nối lại và nghe giật như đọc phụ đề.
+**Vấn đề:** Đây là mặt trái của lời khuyên "viết câu ngắn". Tiếng Anh chấm câu sau mỗi mệnh đề độc lập, còn tiếng Việt nối các vế bằng dấu phẩy và "nên", "thì", "mà", "còn", "rồi". Chấm dày thì quan hệ giữa các vế biến mất, người đọc phải tự nối lại, câu nghe giật như phụ đề.
 **Trước:**
 > Điểm số chỉ để tham khảo. Điểm cho biết bài có bao nhiêu thói quen viết theo khuôn. Điểm không nói bài do AI viết. Có người vốn viết câu đều nhịp.
 **Sau:**

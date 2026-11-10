@@ -282,9 +282,9 @@ $ python3 -I skills/viet-nhu-nguoi/scripts/scan.py examples/slide-truoc.pptx
 
 ## Lưu ý
 
-Skill không gửi văn bản đi đâu khác, văn bản chỉ tới mô hình AI mà trợ lý vốn đang dùng. Skill chỉ gồm file Markdown và vài script Python dùng thư viện chuẩn, không kết nối mạng, không thu thập dữ liệu, không cần tài khoản.
+Skill không gửi văn bản đi đâu cả, ngoài mô hình AI mà trợ lý vốn đang dùng. Skill chỉ gồm file Markdown và vài script Python dùng thư viện chuẩn, không kết nối mạng, không thu thập dữ liệu, không cần tài khoản.
 
-Điểm số chỉ để tham khảo. Nhìn điểm thì biết bài viết theo khuôn nhiều hay ít, câu có đều quá không, còn bài có phải AI viết hay không thì không biết được. Có người vốn viết câu đều nhịp. Máy dò AI cũng hay bắt nhầm người viết bằng ngoại ngữ. Bài bị điểm cao thì cứ coi đó là danh sách chỗ nên đọc lại.
+Điểm số chỉ để tham khảo. Nhìn điểm thì biết bài viết theo khuôn nhiều hay ít, câu có đều quá không, còn bài có phải AI viết hay không thì không biết được. Có người vốn viết câu đều nhịp. Máy dò AI cũng hay bắt nhầm người viết bằng ngoại ngữ. Bài bị điểm cao thì cứ đọc lại mấy chỗ máy quét báo.
 
 Dùng skill thì văn tự nhiên, dễ đọc hơn, nhưng không dám hứa bài sẽ lọt máy dò AI. Skill cũng không chơi mẹo lừa máy dò như cố ý sai chính tả hay chèn ký tự ẩn. Xin đừng dùng skill để làm bài hộ người học hay giả danh người khác. Cũng đừng cầm danh sách dấu hiệu đi kết luận ai đó dùng AI, vì đoán bằng cảm giác thì cũng chỉ nhỉnh hơn đoán mò một chút.
 

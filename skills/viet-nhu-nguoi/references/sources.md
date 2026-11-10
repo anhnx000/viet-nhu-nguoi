@@ -1,6 +1,6 @@
 # Nguồn tham khảo
 
-Danh sách này cho biết skill học từ đâu và nên đọc thêm gì. Có nguồn không có nghĩa là một từ hay một cấu trúc riêng lẻ nào đó là lỗi, cũng chưa chắc bản viết lại nào cũng hay hơn. Danh mục dấu hiệu, ví dụ trước/sau và quy tắc trong skill được viết lại bằng lời riêng; không chép nguyên văn bài nào.
+Danh sách này cho biết skill học từ đâu và nên đọc thêm gì. Một từ hay một cấu trúc được nguồn nhắc tới thì chưa chắc đã là lỗi, bản viết lại cũng chưa chắc lúc nào cũng hay hơn. Danh mục dấu hiệu, ví dụ trước/sau và quy tắc trong skill đều viết lại bằng lời riêng, không chép nguyên văn bài nào.
 
 Ngày 07-11-2026 đã kiểm, link nào cũng còn mở được. Mỗi mục ghi rõ mức dùng:
 
@@ -12,7 +12,7 @@ Ngày 07-11-2026 đã kiểm, link nào cũng còn mở được. Mỗi mục gh
 - Wikipedia, [Signs of AI writing](https://en.wikipedia.org/wiki/Wikipedia:Signs_of_AI_writing), WikiProject AI Cleanup. **Dùng trực tiếp.** Nền của nhóm A-F: câu dàn dựng, thổi phồng, mượn uy tín, định dạng theo khuôn, lời chatbot. Viết cho Wikipedia tiếng Anh, nên skill không chuyển mọi nhận xét thành luật cho tiếng Việt.
 - [Pangram: 9 Signs of AI Writing](https://www.pangram.com/signs-of-ai-writing). **Dùng trực tiếp.** Số liệu so sánh mật độ in đậm và gạch đầu dòng trong văn AI (mục 20).
 - [GPTZero: How ChatGPT detection works](https://gptzero.me/news/how-chatgpt-detection-works). **Dùng trực tiếp.** Ý tưởng độ đều của câu, dùng cho phần chấm điểm nhịp câu trong `scan.py`.
-- Druck, Paredes và Smith, Graphite, [AI tells](https://graphite.io/research/ai-tells), 2026. **Đọc thêm** (longhang2004). Nghiên cứu các dấu hiệu cấu trúc trên bài web và chúng đổi thế nào qua từng đời mô hình; chưa kiểm chứng cho tiếng Việt.
+- Druck, Paredes và Smith, Graphite, [AI tells](https://graphite.io/research/ai-tells), 2026. **Đọc thêm** (longhang2004). Nghiên cứu xem dấu hiệu cấu trúc trên bài web đổi thế nào qua từng đời mô hình; chưa kiểm chứng cho tiếng Việt.
 - Pew Research Center, [How Much of the Internet Is Written With AI?](https://www.pewresearch.org/data-labs/2026/08/20/how-much-of-the-internet-is-written-with-ai/), 20-08-2026. **Đọc thêm** (longhang2004). Đọc để hiểu vì sao xu hướng trên tập lớn chưa đủ để kết luận về một bài cụ thể.
 - Steph Zinn, a16z, [The habits of AI writing](https://a16zfrontier.substack.com/p/the-habits-of-ai-writing-and-what), 22-08-2026. **Đọc thêm** (longhang2004). Chọn cấu trúc theo việc bài cần làm, khi nào nên giữ định dạng.
 - The Base Team, [Why Your Writing Sounds Like ChatGPT](https://the-curve.basehq.com/p/why-your-writing-sounds-like-chatgpt-and-how-to-fix-it), 02-10-2026. **Đọc thêm** (longhang2004). Đối lập dựng sẵn, nhịp giật cụt, bố cục bài mạng xã hội.
@@ -71,7 +71,7 @@ Skill tiếng Việt, đều MIT. Dùng để đối chiếu danh mục; quy t�
 
 ## Bài thực tế
 
-- Một bài đăng mạng xã hội 1.740 chữ về một dự án hệ điều hành, tháng 11-2026, bị người đọc nhận ra là AI viết dù đã qua skill. **Dùng trực tiếp.** Nguồn của nhóm I (mục 45-53) và các phép kiểm cả bài trong `scan.py`. Số đo trên bài: 10 câu đối lập, 6 nhãn báo giọng, 20 trên 88 câu có dấu hai chấm, 38 trên 40 đoạn chỉ 1-3 câu, 9 mục viết hoa. Ngưỡng của các phép kiểm cả bài chỉnh trên đúng một bài này, nên coi là gợi ý.
+- Một bài đăng mạng xã hội 1.740 chữ về một dự án hệ điều hành, tháng 11-2026, bị người đọc nhận ra là AI viết dù đã qua skill. **Dùng trực tiếp.** Nguồn của nhóm I (mục 45-53) và các phép kiểm cả bài trong `scan.py`. Số đo trên bài: 10 câu đối lập, 6 nhãn báo giọng, 19 trên 88 câu có dấu hai chấm, 38 trên 40 đoạn chỉ 1-3 câu, 9 mục viết hoa. Ngưỡng của các phép kiểm cả bài chỉnh trên đúng một bài này, nên chỉ coi là gợi ý.
 
 ## Giới hạn
 
