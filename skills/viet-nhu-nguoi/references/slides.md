@@ -53,7 +53,7 @@ Thiếu bối cảnh mà người dùng vẫn cần gấp thì viết một tran
 Skill này lo phần chữ, nhưng có ai hỏi về hình thức thì nhắc mấy điểm sau:
 
 - Emoji hoặc icon ở mọi tiêu đề, mọi gạch đầu dòng.
-- Lưới thẻ icon lặp lại, nền gradient tím trên trắng, ảnh minh họa chung chung không nói lên nội dung.
+- Lưới thẻ icon lặp lại, nền trắng với dải màu chuyển tím, ảnh minh họa chung chung không nói lên nội dung.
 - Bảng tô ba màu đèn giao thông, nhiều chỗ tô màu trên một slide. Một slide chỉ nên có một chỗ nhấn màu, và màu nào cũng phải có nghĩa.
 - Cùng một bố cục lặp lại ba slide liền dù nội dung khác nhau.
 - In đậm tràn lan.
@@ -75,11 +75,11 @@ Muốn sửa thẳng file `.pptx` thì dùng skill `pptx` nếu có. Nếu khôn
 Người viết không thấy được chỗ mình viết khó hiểu, vì trong đầu đã có sẵn bối cảnh. Nếu có công cụ gọi subagent, giao file cho một agent mới. Chỉ đưa đường dẫn file và lời dặn dưới đây, không kể deck làm ra sao, dùng skill gì, hay chỗ nào mình đã cân nhắc kỹ:
 
 > Bạn là người xem bộ slide (hoặc tài liệu) này lần đầu, không biết nó làm ra sao. Đọc hết file `<đường dẫn>`, không đọc file nào khác.
-> 1. Viết tự do 3-10 chỗ bạn thấy khó hiểu, không tin, hoặc nếu là người duyệt thì bạn sẽ trả lại.
+> 1. Nêu 3-10 chỗ bạn thấy khó hiểu, khó tin, hoặc chỗ mà nếu là người duyệt bạn sẽ trả lại. Viết tự do, không cần theo mẫu.
 > 2. Chỉ đọc các tiêu đề từ trên xuống: chỗ nào nhảy ý, lặp ý, hoặc kết luận đưa ra mà không có căn cứ?
 > 3. Liệt kê kèm số slide và câu trích: con số mâu thuẫn giữa các slide; tiêu đề nói một đằng, nội dung hoặc biểu đồ nói một nẻo; từ đánh giá không có căn cứ ("đáng kể", "hạn chế", "đủ"); slide sau lặp lại slide trước; mục lục không khớp nội dung; câu tiếng Việt nghe lạ hoặc giống văn dịch.
 > 4. Đoán 5 câu người xem sẽ hỏi, và trả lời từng câu chỉ bằng nội dung trong file. Câu nào không trả lời được thì ghi rõ.
-> 5. Chấm 7 tiêu chí, mỗi tiêu chí 1-10, kèm một câu lý do: **mạch** (đọc liền tiêu đề có thành một lập luận không), **một thông điệp** (mỗi slide nói rõ một ý, không nhồi, không quá mỏng), **cấu trúc** (so sánh, nhân quả, số liệu có được trình bày bằng bảng, sơ đồ, biểu đồ hợp lý không), **dễ nhìn** (vài giây đầu có biết nhìn vào đâu không), **dùng được** (người xem có đủ căn cứ để quyết hay làm không), **nhất quán** (từ ngữ, con số, cách trình bày có khớp giữa các slide không), **trung thực** (số liệu có nguồn, có nói rõ giới hạn, có gây hiểu nhầm không). Ghi tổng điểm trên 70.
+> 5. Chấm 7 tiêu chí, mỗi tiêu chí 1-10, kèm một câu lý do: **mạch** (đọc liền tiêu đề có thành một lập luận không), **một thông điệp** (mỗi slide nói rõ một ý, không nhồi, không quá mỏng), **cấu trúc** (so sánh, nhân quả, số liệu có được trình bày bằng bảng, sơ đồ, biểu đồ hợp lý không), **dễ nhìn** (vài giây đầu có biết nhìn vào đâu không), **dùng được** (người xem có đủ căn cứ để quyết hay làm không), **nhất quán** (từ ngữ, con số, cách trình bày có khớp giữa các slide không), **trung thực** (số liệu có nguồn không, có nói rõ giới hạn không, có chỗ nào dễ gây hiểu nhầm không). Ghi tổng điểm trên 70.
 > 6. Kết bằng 5 việc nên sửa trước, xếp theo mức quan trọng, mỗi việc nói rõ sửa thế nào.
 > Nêu ít nhất 3 điểm yếu. Không khen chung chung.
 
