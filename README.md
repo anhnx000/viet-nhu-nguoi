@@ -186,7 +186,7 @@ Bản 2.2 của skill ra đời từ một bài đăng thật. [Bài gốc](exam
 
 Từ bản 2.2 máy quét đếm trên cả bài nên bài này lên 55/100. Trong bài có mười câu kiểu "không phải X mà là Y", sáu câu mở bằng nhãn như "nói gọn", "nói cho thật", và 19 trên 88 câu có dấu hai chấm.
 
-[Bản viết lại](examples/bai-dang-sau.md) còn 373 chữ, chỉ làm một việc là rủ người vào làm cùng. Máy quét chấm 0/100, dữ kiện thì không thêm gì ngoài bài gốc. Phần định nghĩa hệ điều hành, lịch sử microkernel, thống kê bảo mật thì để dành cho bài khác.
+[Bản viết lại](examples/bai-dang-sau.md) còn 373 chữ, chỉ làm một việc là rủ người vào làm cùng. Máy quét chấm 0/100, không thêm dữ kiện nào ngoài bài gốc. Phần định nghĩa hệ điều hành, lịch sử microkernel, thống kê bảo mật thì để dành cho bài khác.
 
 ## Skill sửa những lỗi nào
 

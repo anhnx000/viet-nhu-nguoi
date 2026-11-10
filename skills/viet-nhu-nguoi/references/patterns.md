@@ -69,7 +69,7 @@ Sắp từ mạnh đến yếu. Nhóm A và nhóm E chỉ cần gặp một lầ
 **Sửa:** Gộp câu, đổi chủ ngữ, hoặc bắt đầu bằng hành động.
 
 ### 9. Gạch ngang dài khắp nơi
-**Quy tắc:** Bản cuối không có — hoặc – dùng để nối mệnh đề, trừ khi mẫu văn của người dùng có. Thay bằng dấu chấm, phẩy, hai chấm hoặc ngoặc đơn. Gồm cả " -- " dùng thay gạch ngang. Giữ gạch trong code, lệnh, URL, khoảng số (2020–2024 thì viết lại thành 2020-2024 hoặc "từ 2020 đến 2024").
+**Quy tắc:** Bản cuối không có — hoặc – dùng để nối mệnh đề, trừ khi mẫu văn của người dùng có. Thay bằng dấu chấm, phẩy, hai chấm hoặc ngoặc đơn. Gồm cả " -- " dùng thay gạch ngang. Giữ gạch trong code, lệnh, URL. Khoảng số thì đổi sang gạch nối (2020–2024 thì viết lại thành 2020-2024 hoặc "từ 2020 đến 2024").
 **Lưu ý:** Theo phân tích của Pangram và Washington Post, văn AI dùng gạch ngang dài nhiều gấp mấy lần văn người. Một dấu đơn lẻ thì *yếu*.
 **Trước:**
 > Chính sách mới — được công bố không báo trước — ảnh hưởng tới hàng nghìn người.
@@ -484,6 +484,6 @@ Nhóm G bắt các cụm dịch dễ thấy. Nhóm này bắt thứ khó thấy 
 - Cảm xúc lẫn lộn, chưa ngã ngũ: "Tôi thấy nhìn chung ổn, nhưng có gì đó cứ cấn cấn mà chưa nói rõ được."
 - Tiếng lóng, meme, chuyện riêng của một thời, một nhóm.
 - Câu chêm, ngoặc đơn, tự sửa giữa chừng: "(Định viết 'gần như' nhưng thật ra là chắc chắn.)"
-- Văn bản viết trước 30/11/2022 không phải văn AI.
+- Văn bản viết trước 30/11/2022: không phải văn AI, đừng lấy danh mục này ra sửa.
 - Giọng vùng miền, từ địa phương, "má", "tui", "hông" có sẵn trong bản gốc. Không chuẩn hóa, cũng không tự rải thêm.
 - Từ Hán Việt là thuật ngữ đúng, hoặc đúng giọng văn bản (công văn, hợp đồng, học thuật).

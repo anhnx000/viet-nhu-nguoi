@@ -74,8 +74,8 @@ Muốn sửa thẳng file `.pptx` thì dùng skill `pptx` nếu có. Nếu khôn
 
 Người viết không thấy được chỗ mình viết khó hiểu, vì trong đầu đã có sẵn bối cảnh. Nếu có công cụ gọi subagent, giao file cho một agent mới. Chỉ đưa đường dẫn file và lời dặn dưới đây, không kể deck làm ra sao, dùng skill gì, hay chỗ nào mình đã cân nhắc kỹ:
 
-> Bạn là người xem bộ slide (hoặc tài liệu) này lần đầu, không biết gì về cách nó được làm. Đọc hết file `<đường dẫn>`, không đọc file nào khác.
-> 1. Viết tự do 3-10 điều khiến bạn khó hiểu, không tin, hoặc sẽ trả lại nếu bạn là người duyệt.
+> Bạn là người xem bộ slide (hoặc tài liệu) này lần đầu, không biết nó làm ra sao. Đọc hết file `<đường dẫn>`, không đọc file nào khác.
+> 1. Viết tự do 3-10 điều khiến bạn khó hiểu, không tin, hoặc là người duyệt thì bạn sẽ trả lại.
 > 2. Chỉ đọc các tiêu đề từ trên xuống: chỗ nào nhảy ý, lặp ý, hoặc kết luận xuất hiện mà không có căn cứ?
 > 3. Liệt kê kèm số slide và câu trích: con số mâu thuẫn giữa các slide; tiêu đề nói một đằng, nội dung hoặc biểu đồ nói một nẻo; từ đánh giá không có căn cứ ("đáng kể", "hạn chế", "đủ"); slide sau lặp lại slide trước; mục lục không khớp nội dung; câu tiếng Việt nghe lạ hoặc giống văn dịch.
 > 4. Đoán 5 câu người xem sẽ hỏi, và trả lời từng câu chỉ bằng nội dung trong file. Câu nào không trả lời được thì ghi rõ.
