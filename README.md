@@ -143,7 +143,7 @@ Bộ sau chỉ đọc bốn tiêu đề là hiểu cả đề xuất. Máy quét
 
 ### Email, báo cáo
 
-![Email, báo cáo. Bản AI viết, 84/100, mở bằng "Trong bối cảnh hiện nay" và kết bằng "Hy vọng những thông tin trên sẽ hữu ích cho bạn!". Qua skill, 0/100: Đội mình đã đưa hệ thống quản lý dự án mới vào dùng. Khách hàng giờ tự xem được tiến độ. Có thêm chi tiết, 0/100: Từ tháng 3, đội mình chuyển việc theo dõi dự án sang hệ thống mới.](assets/vi-du-email.png)
+![Email, báo cáo. Bản AI viết, 84/100, mở bằng "Trong bối cảnh hiện nay" và kết bằng "Hy vọng những thông tin trên sẽ hữu ích cho bạn!". Qua skill, 0/100: Đội mình đã chuyển sang hệ thống quản lý dự án mới, nên giờ theo dõi dự án nhanh và đỡ vất vả hơn, khách hàng làm việc với đội cũng thuận tiện hơn trước. Có thêm chi tiết, 0/100: Từ tháng 3, đội mình chuyển việc theo dõi dự án sang hệ thống mới.](assets/vi-du-email.png)
 
 Bản AI viết bị chấm 84/100, dính 17 dấu hiệu, là những chỗ tô đỏ trong ảnh. Bản qua skill ngắn vì skill không bịa số liệu. Cần thêm chi tiết thì skill hỏi lại, bạn đưa gì skill viết nấy, như bản thứ ba. Hai bản sau đều được 0/100. Ba đoạn văn này nằm ở [`examples/truoc.md`](examples/truoc.md), [`examples/sau.md`](examples/sau.md) và [`examples/sau-co-chi-tiet.md`](examples/sau-co-chi-tiet.md).
 

@@ -307,13 +307,14 @@ T = {
 
 def banner():
     before = ("Trong bối cảnh hiện nay, việc ứng dụng AI không chỉ là xu hướng mà còn là yếu tố then chốt. "
-              "Điều này được chứng minh bởi nhiều nghiên cứu... Hy vọng những thông tin trên sẽ hữu ích cho bạn!")
+              "Bên cạnh đó, đội ngũ của chúng tôi đã tiến hành thực hiện việc triển khai hệ thống mới nhằm mục đích "
+              "mang lại trải nghiệm liền mạch cho khách hàng... Hy vọng những thông tin trên sẽ hữu ích cho bạn!")
     compose(
         "banner.png", "Viết như người", "Chống giọng văn AI cho tiếng Việt · skill cho Claude và các trợ lý AI khác",
         [Card("Trước: văn AI", "bad", [Para(before, EMAIL_TELLS, size=21)], "84/100")],
         [Card("Sau: giọng người", "good",
               [Para(read("examples/sau.md"), size=21, after=18),
-               Para("Giữ nguyên nội dung, không bịa số liệu.", size=16, color=MUTED, after=4)], "0/100")],
+               Para("Bỏ câu sáo rỗng, giữ đúng ý, không thêm số liệu.", size=16, color=MUTED, after=4)], "0/100")],
         footer=['Bỏ văn dịch · "việc/sự/một cách" · giọng công văn · lời chatbot · xưng hô sai vai',
                 "github.com/anhnx000/viet-nhu-nguoi · MIT"],
         title_size=56)

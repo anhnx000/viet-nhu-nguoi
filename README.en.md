@@ -141,11 +141,11 @@ The four titles of the second deck are enough to follow the whole proposal. The 
 
 ### Emails and reports
 
-![Emails and reports. The AI draft scores 84/100; it opens with "In today's context" and closes with "Hope this helps!". After the skill, 0/100: Our team started using the new project management system. Customers can now check progress themselves. With details supplied, 0/100: Since March we track projects in the new system.](assets/vi-du-email.en.png)
+![Emails and reports. The AI draft scores 84/100; it opens with "In today's context" and closes with "Hope this helps!". After the skill, 0/100: Our team has moved to the new project management system, so tracking projects is now faster and less work, and customers find it easier to work with us. With details supplied, 0/100: Since March we track projects in the new system.](assets/vi-du-email.en.png)
 
 *AI draft, roughly: "In today's context, applying AI is not only a trend but also a key factor that elevates business performance. This is proven by many studies showing productivity can increase significantly. In addition, our team proceeded to carry out the deployment of a new system for the purpose of delivering a seamless experience. It makes project management easier, faster and more efficient. Hope this helps!"*
 
-*After the skill: "Our team started using the new project management system. Customers can now check progress themselves." With details: "Since March we track projects in the new system. Customers check progress themselves instead of messaging us, and the team saves about half a day of reporting each week."*
+*After the skill: "Our team has moved to the new project management system, so tracking projects is now faster and less work, and customers find it easier to work with us." With details: "Since March we track projects in the new system. Customers check progress themselves instead of messaging us, and the team saves about half a day of reporting each week."*
 
 The AI draft scores 84/100 with 17 tells, the parts marked red in the image. The version after the skill is short because the skill does not invent numbers. If you want detail, the skill asks you and writes with only what you gave it, as in the third version. Both rewrites score 0/100. The three texts are in [`examples/truoc.md`](examples/truoc.md), [`examples/sau.md`](examples/sau.md) and [`examples/sau-co-chi-tiet.md`](examples/sau-co-chi-tiet.md).
 
