@@ -133,9 +133,9 @@ The scores below come from the scanner bundled with the skill, on a 0-100 scale.
 
 The [`examples/`](examples) folder has two sample decks, one made by AI and one made with the skill. These are their titles:
 
-![Slide titles. Made by AI, 48/100: Digital transformation: a journey of value creation; Overview; Challenges; 3 pillars of the solution; Benefits; Conclusion; Thank you. Made with the skill, 0/100: Proposal: hire one more QA for Q1 2027; Q3 slipped two weeks, both times for lack of testers; One QA costs less than more delays; Please approve by 30/11 so hiring finishes in time.](assets/vi-du-slide.en.png)
+![Slide titles. Made by AI, 48/100: Digital transformation: a journey of value creation; Overview; Challenges; 3 pillars of the solution; Benefits; Conclusion; Thank you. Made with the skill, 0/100: Proposal: hire one more QA for Q1 2027; Both Q3 releases slipped because we lacked testers; One QA costs less than the penalty for each delay; Please approve by 30/11 so we can hire in time.](assets/vi-du-slide.en.png)
 
-*AI deck: "Digital transformation: a journey of value creation; Overview; Challenges; 3 pillars of the solution; Benefits; Conclusion; Thank you." Skill deck: "Proposal: hire one more QA for Q1 2027; Q3 slipped two weeks, both times for lack of testers; one QA costs less than more delays; please approve by 30/11 so hiring finishes in time."*
+*AI deck: "Digital transformation: a journey of value creation; Overview; Challenges; 3 pillars of the solution; Benefits; Conclusion; Thank you." Skill deck: "Proposal: hire one more QA for Q1 2027; both Q3 releases slipped because we lacked testers; one QA costs less than the penalty for each delay; please approve by 30/11 so we can hire in time."*
 
 The four titles of the second deck are enough to follow the whole proposal. The scanner gives it 0/100 and the first deck 48/100.
 

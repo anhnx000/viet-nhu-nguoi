@@ -216,7 +216,7 @@ class Slides(unittest.TestCase):
         self.assertIn("slide 2, ghi chú", r.stdout)
         r = subprocess.run([sys.executable, "-I", str(SCAN_PATH), "--titles", str(DECK_HUMAN)],
                            capture_output=True, text=True)
-        self.assertIn("2. Quý 3 trễ 2 tuần", r.stdout)
+        self.assertIn("2. Hai bản phát hành quý 3 đều trễ", r.stdout)
 
     def test_cli_text_dump(self):
         r = subprocess.run([sys.executable, "-I", str(SCAN_PATH), "--text", str(DECK_AI)],

@@ -304,7 +304,7 @@ Câu ngắn hơn chưa chắc đúng hơn. Kiểm lại sau khi sửa:
 **Trước:**
 > Phân tích chi phí
 **Sau:**
-> Thuê 1 QA rẻ hơn tiếp tục trễ hạn
+> Thuê 1 QA tốn ít hơn tiền phạt mỗi lần trễ hạn
 
 ### 41. Tiêu đề đếm số ý, mọi thứ chia đều ba
 **Dấu hiệu:** "3 trụ cột", "4 giải pháp then chốt", "5 lý do"; slide nào cũng đúng 3 gạch đầu dòng; deck nào cũng đủ "3 thách thức, 3 giải pháp, 3 lợi ích".

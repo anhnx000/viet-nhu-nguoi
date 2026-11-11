@@ -137,7 +137,7 @@ Còn vài cách dùng nữa:
 
 Thư mục [`examples/`](examples) có hai bộ slide mẫu, một bộ AI làm và một bộ làm theo skill. Đây là tiêu đề của hai bộ:
 
-![Tiêu đề slide. Bộ AI làm, 48/100: Chuyển đổi số: Hành trình kiến tạo giá trị; Tổng quan; Thách thức; 3 trụ cột giải pháp; Lợi ích; Kết luận; Cảm ơn. Bộ làm theo skill, 0/100: Đề xuất thuê thêm 1 QA cho quý 1/2027; Quý 3 trễ 2 tuần, cả 2 lần đều do thiếu người test; Thuê 1 QA rẻ hơn tiếp tục trễ; Cần anh duyệt trước 30/11 để kịp tuyển.](assets/vi-du-slide.png)
+![Tiêu đề slide. Bộ AI làm, 48/100: Chuyển đổi số: Hành trình kiến tạo giá trị; Tổng quan; Thách thức; 3 trụ cột giải pháp; Lợi ích; Kết luận; Cảm ơn. Bộ làm theo skill, 0/100: Đề xuất thuê thêm 1 QA cho quý 1/2027; Hai bản phát hành quý 3 đều trễ vì thiếu người test; Thuê 1 QA tốn ít hơn tiền phạt mỗi lần trễ hạn; Cần anh duyệt trước 30/11 để kịp tuyển người.](assets/vi-du-slide.png)
 
 Bộ sau chỉ đọc bốn tiêu đề là hiểu cả đề xuất. Máy quét chấm bộ này 0/100, bộ đầu 48/100.
 
@@ -149,7 +149,7 @@ Bản AI viết bị chấm 84/100, dính 17 dấu hiệu, là những chỗ tô
 
 ### Bài đăng dài
 
-Bản 2.2 của skill ra đời từ một bài đăng thật. [Bài gốc](examples/bai-dang-truoc.md) dài 1.740 chữ, chia chín mục viết hoa. Bài gần như không còn từ AI quen mặt nên máy quét ở bản trước chỉ chấm 3/100. Vậy mà ai đọc cũng nhận ra, vì cả bài cứ lặp đi lặp lại vài kiểu câu.
+Bản 2.2 của skill ra đời từ một bài đăng thật. [Bài gốc](examples/bai-dang-truoc.md) dài 1.740 chữ, chia thành chín mục có tiêu đề viết hoa. Bài gần như không còn từ AI quen mặt nên máy quét ở bản trước chỉ chấm 3/100. Vậy mà ai đọc cũng nhận ra, vì cả bài cứ lặp đi lặp lại vài kiểu câu.
 
 ![Bài đăng dài. Bài gốc, 55/100: 1.740 chữ, mười câu kiểu "không phải X mà là Y", sáu câu mở bằng nhãn, 19 trên 88 câu có dấu hai chấm. Bản viết lại, 0/100: 373 chữ, chỉ làm một việc là rủ người vào làm cùng.](assets/vi-du-bai-dang.png)
 
