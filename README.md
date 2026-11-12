@@ -159,7 +159,7 @@ Từ bản 2.2 máy quét đếm trên cả bài nên bài này lên 55/100. Tro
 
 ## Skill sửa những lỗi nào
 
-Danh mục của skill có 62 dấu hiệu văn AI, dấu hiệu nào cũng kèm ví dụ trước và sau khi sửa ([xem đầy đủ](skills/viet-nhu-nguoi/references/patterns.md)). Nhóm riêng cho tiếng Việt có mấy dấu hiệu dễ thấy như bảng dưới:
+Danh mục của skill có 65 dấu hiệu văn AI, dấu hiệu nào cũng kèm ví dụ trước và sau khi sửa ([xem đầy đủ](skills/viet-nhu-nguoi/references/patterns.md)). Nhóm riêng cho tiếng Việt có mấy dấu hiệu dễ thấy như bảng dưới:
 
 | Dấu hiệu | Ví dụ | Sửa thành |
 | --- | --- | --- |
@@ -196,6 +196,8 @@ Có dấu hiệu phải đọc cả bài mới thấy, dù từng câu đã ổn
 
 Slide và tài liệu nhiều trang có nhóm riêng: tiêu đề chỉ là nhãn ("Tổng quan", "Kết luận"), tiêu đề đếm số ý ("3 trụ cột"), slide nào cũng đúng ba ý, hứa suông ("chi tiết sẽ trao đổi sau"), ghi chú thuyết trình viết như công văn. Cách viết slide có hướng dẫn riêng ở [references/slides.md](skills/viet-nhu-nguoi/references/slides.md).
 
+Tin nhắn trả lời bạn bè, đồng nghiệp cũng có nhóm riêng. Nhờ skill "rep giống mình" thì skill đọc vài tin bạn tự gõ, học cách viết hoa, chấm câu, kiểu cười (":v", ")))"), trợ từ, xưng hô, rồi viết tin trả lời theo đúng giọng đó. Giọng Gen Z hay giọng miền chỉ dùng khi tin mẫu của bạn có, hoặc khi bạn nói rõ muốn giọng vùng nào. Bản nháp nào dồn ba bốn chữ lóng vào một tin ("u là trời", "đỉnh nóc kịch trần", "slay") hay trộn "rứa", "nghen", "giời ơi" trong cùng một câu thì máy quét báo. Hướng dẫn ở [references/chat.md](skills/viet-nhu-nguoi/references/chat.md).
+
 Các nhóm còn lại thì tiếng Việt hay tiếng Anh đều gặp: đối lập giả, câu chốt một dòng, liệt kê ép cho đủ ba, gạch ngang dài, thổi phồng, mượn uy tín mơ hồ, in đậm và emoji trang trí, lời chatbot, giải thích lại điều người đọc biết rồi.
 
 Cũng có thứ skill không đụng tới: giọng vùng miền, khẩu ngữ, thuật ngữ Hán Việt dùng đúng chỗ, câu bị động trong tài liệu kỹ thuật, và mấy chữ nhỏ mà bỏ đi là đổi nghĩa như "vẫn", "chưa", "chỉ", "có thể".
@@ -216,6 +218,7 @@ python3 -I skills/viet-nhu-nguoi/scripts/scan.py file.md
 | `--max 30` | thoát mã 1 nếu điểm quá 30, dùng trong CI hay pre-commit |
 | `--meta` | bỏ qua phần trích dẫn (dòng `>`, bảng, chữ trong ngoặc kép), dùng khi văn bản bàn về chính các dấu hiệu |
 | `--titles` | chỉ in tiêu đề theo thứ tự |
+| `--chat` | văn bản là tin nhắn trả lời: báo thêm gạch đầu dòng, in đậm, câu khách sáo, tin quá dài |
 | `--text` | in hết chữ và ghi chú từng slide trong file `.pptx` |
 
 `check_facts.py` so bản gốc với bản sửa, so hai file `.pptx` cũng được. Số liệu, ngày giờ, link hay code bị mất hoặc tự thêm vào thì script báo lỗi, thiếu tên riêng thì nhắc:
@@ -264,8 +267,9 @@ Dùng skill thì văn tự nhiên, dễ đọc hơn, nhưng không dám hứa b�
 ```text
 skills/viet-nhu-nguoi/
 ├── SKILL.md                 quy tắc chính, Claude nạp khi skill được gọi
-├── references/patterns.md   62 dấu hiệu, ví dụ trước/sau
+├── references/patterns.md   65 dấu hiệu, ví dụ trước/sau
 ├── references/slides.md     cách viết slide, lời thuyết trình, nhờ người đọc thử
+├── references/chat.md       trả lời tin nhắn theo giọng người dùng (Gen Z, giọng miền)
 ├── references/sources.md    nguồn tham khảo: bài viết, nghiên cứu, hướng dẫn giọng văn, skill khác
 ├── scripts/scan.py          máy quét có điểm 0-100, không cần thư viện ngoài
 ├── scripts/check_facts.py   kiểm bản sửa giữ đúng số liệu, ngày giờ, link, code

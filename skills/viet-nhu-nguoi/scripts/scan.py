@@ -6,6 +6,7 @@ Dùng: python3 -I scan.py FILE      hoặc      cat FILE | python3 -I scan.py
       python3 -I scan.py FILE --max 30     thoát mã 1 nếu điểm > 30 (dùng cho CI, pre-commit)
       python3 -I scan.py FILE --titles     chỉ in các tiêu đề theo thứ tự, để đọc lướt xem có thành mạch không
       python3 -I scan.py FILE.pptx --text  in toàn bộ chữ của từng slide (tiêu đề, nội dung, bảng, ghi chú)
+      python3 -I scan.py FILE --chat       văn bản là tin nhắn trả lời: kiểm thêm định dạng, độ dài, câu khách sáo
 FILE có thể là .md, .txt hoặc .pptx. Với .pptx, máy quét đọc tiêu đề, nội dung, bảng và ghi chú
 thuyết trình của từng slide, và chạy thêm các kiểm riêng cho slide.
 
@@ -383,6 +384,62 @@ def document_checks(text, hits):
         few = sum(1 for c in counts if c <= 3)
         hits.setdefault("đoạn ngắn đều nhau", []).append(
             (first, f"{few}/{len(counts)} đoạn chỉ 1-3 câu, không đoạn nào quá 4 câu"))
+    voice_checks(text, hits)
+
+
+# Tiếng lóng đang thịnh hoặc vừa hết thịnh. Người thật mỗi tin thường chỉ một chữ, bản giả thì dồn
+# ba bốn chữ vào một tin. Viết tắt quen tay ("ko", "đc", "j") là thói quen thật, không tính.
+SLANG = re.compile(
+    r"\b(u là trời|đỉnh nóc( kịch trần)?|đỉnh của chóp|slay|keo (lỳ|lì)|gét gô|xu cà na|ét o ét|chằm zn|"
+    r"khum|khét lẹt|báo thủ|ối dồi ôi|xỉu up xỉu down|hết nước chấm|tới công chuyện|flex|chill|mlem|"
+    r"ủa alo|dảk dảk|bủh bủh|mãi đỉnh|quá xá xịn|xịn xò|cháy quá|pick me|red flag|green flag)\b")
+# Dấu hiệu giọng từng vùng hay gặp trong tin nhắn. Chỉ lấy chữ ít khi gặp ngoài vùng đó.
+REGIONS = {
+    "Bắc": re.compile(r"\b(giời (ơi|ạ)|nhể|chứ lị|thế cơ|nhá)\b"),
+    "Trung": re.compile(r"\b(rứa|chừ|hỉ|(đi|ở|chỗ|bên) mô|(làm|nói) răng|răng (rứa|ri|hè)|(bữa|chỗ|cái) ni)\b"),
+    "Nam": re.compile(r"\b(nghen|nhen|dìa|hổng|hông|dzậy|bển|ổng)\b"),
+}
+
+
+def voice_checks(text, hits):
+    """Giả giọng trẻ, giả giọng miền: chồng tiếng lóng, trộn dấu hiệu của nhiều vùng."""
+    lines = [(no, s.lower()) for no, s in prose_lines(text) if s.strip()]
+    low = " ".join(s for _, s in lines)
+    total = len(low.split())
+    found = [(no, m.group(0)) for no, s in lines for m in SLANG.finditer(s)]
+    distinct = {m for _, m in found}
+    if len(distinct) >= 3 and len(found) * 25 >= total:
+        hits.setdefault("chồng tiếng lóng", []).append(
+            (found[0][0], f"{len(found)} chữ lóng trong {total} chữ: {', '.join(sorted(distinct))}"))
+    regions = {}
+    for name, rx in REGIONS.items():
+        for no, s in lines:
+            regions.setdefault(name, []).extend((no, m.group(0)) for m in rx.finditer(s))
+    present = {k: v for k, v in regions.items() if v}
+    if len(present) >= 2 and sum(len(v) for v in present.values()) >= 3:
+        first = min(v[0][0] for v in present.values())
+        detail = "; ".join(f"{k}: {', '.join(m for _, m in v)}" for k, v in present.items())
+        hits.setdefault("trộn giọng miền", []).append((first, detail))
+
+
+CHAT_POLITE = re.compile(
+    r"^\W*(chào (bạn|anh|chị|em|mọi người|cả nhà)\b|cảm ơn (bạn|anh|chị|em|mọi người)?\s*(đã|vì|rất nhiều vì)\b)|"
+    r"(sẽ|xin) (cân nhắc|ghi nhận|tiếp thu)|góp ý (rất )?(hay|quý báu|giá trị)")
+
+
+def chat_checks(text, hits):
+    """Chỉ chạy với --chat: tin nhắn trả lời mà viết như email hay văn bản."""
+    lines = [(no, s) for no, s in prose_lines(text) if s.strip()]
+    total = sum(len(s.split()) for _, s in lines)
+    for no, s in lines:
+        if LIST_ITEM.match(s) and not s.lstrip().startswith(">") or re.match(r"\s*#{1,6}\s", s) or "**" in s:
+            hits.setdefault("tin nhắn định dạng như văn bản", []).append((no, s.strip()[:40]))
+        for sent in SENT_SPLIT.split(s.strip()):
+            m = CHAT_POLITE.search(sent.lower())
+            if m:
+                hits.setdefault("tin nhắn khách sáo", []).append((no, m.group(0).strip()))
+    if total > 80:
+        hits.setdefault("tin nhắn dài", []).append((lines[0][0] if lines else 1, f"{total} chữ"))
 
 
 # Tiêu đề slide chỉ là nhãn chủ đề hoặc tả việc đang làm, không nói kết luận.
@@ -458,7 +515,7 @@ WEIGHTS = {
     "từ vựng AI (en)": 2, "né là/có": 2, "danh hóa (vi)": 2, "thừa nghĩa (vi)": 2,
     "chuỗi \"của\"": 2, "việc/sự dày": 2, "\"Điều này\"/\"Nó\" mở câu": 2,
     "hứa suông": 2, "tiêu đề dạng nhãn": 2, "tiêu đề đếm số ý": 2, "số gạch đầu dòng đều": 2,
-    "lộ tên khung": 2,
+    "lộ tên khung": 2, "tin nhắn định dạng như văn bản": 2, "tin nhắn khách sáo": 3, "tin nhắn dài": 2,
 }
 # Dấu hiệu cả bài: điểm cố định, không chia theo độ dài.
 FILLER_WORDS = [
@@ -468,7 +525,7 @@ FILLER_WORDS = [
 
 DOC_POINTS = {
     "hai chấm dồn dập": 6, "đoạn ngắn đều nhau": 4, "câu vụn": 4, "đại từ dày": 4, "chữ đệm dịch dày": 12,
-    "bài đăng chia mục viết hoa": 4, "bài mạng xã hội dài": 6,
+    "bài đăng chia mục viết hoa": 4, "bài mạng xã hội dài": 6, "chồng tiếng lóng": 8, "trộn giọng miền": 6,
 }
 for _g in list(DOC_POINTS) + ["tật lặp cả bài"]:
     WEIGHTS[_g] = 0
@@ -547,6 +604,8 @@ def main():
     ap.add_argument("--meta", action="store_true",
                     help="bỏ qua phần trích dẫn (dòng '>', bảng, chữ trong ngoặc kép); "
                          "dùng cho văn bản bàn về dấu hiệu văn AI")
+    ap.add_argument("--chat", action="store_true",
+                    help="văn bản là tin nhắn trả lời: kiểm thêm định dạng, độ dài, câu khách sáo")
     ap.add_argument("--text", action="store_true",
                     help="in chữ của từng slide kèm vị trí (chỉ cho .pptx), không quét")
     args = ap.parse_args()
@@ -570,6 +629,8 @@ def main():
     if args.meta and deck is None:
         text = strip_quoted(text)
     hits, total = scan(text, doc=deck is None)
+    if args.chat and deck is None:
+        chat_checks(text, hits)
     where = {}
     if deck is not None:
         slide_checks(deck, index, hits)

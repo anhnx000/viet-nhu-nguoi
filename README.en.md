@@ -163,7 +163,7 @@ Since version 2.2 the scanner counts across the whole text, so this post scores 
 
 ## What the skill fixes
 
-The skill has a catalog of 62 AI-writing patterns, each with a before and after example ([full list](skills/viet-nhu-nguoi/references/patterns.md), in Vietnamese). The Vietnamese-only group includes these easy-to-spot patterns:
+The skill has a catalog of 65 AI-writing patterns, each with a before and after example ([full list](skills/viet-nhu-nguoi/references/patterns.md), in Vietnamese). The Vietnamese-only group includes these easy-to-spot patterns:
 
 | Pattern | Example | Becomes |
 | --- | --- | --- |
@@ -200,6 +200,8 @@ Some patterns only show when you read the whole text, even after each sentence i
 
 Slides and long documents have their own group. The skill catches titles that are only labels ("Tổng quan", "Kết luận"), titles that count points ("3 trụ cột", *3 pillars*), exactly three bullets on every slide, empty promises ("chi tiết sẽ trao đổi sau", *details to be discussed later*) and speaker notes that read like a memo. The slide-writing guide is in [references/slides.md](skills/viet-nhu-nguoi/references/slides.md) (in Vietnamese).
 
+Casual chat replies have a group too. Ask the skill to "reply like me" and it reads a few messages you typed yourself, picks up your capitalization, punctuation, laugh style (":v", ")))"), particles and forms of address, then writes the reply in that voice. Gen Z slang or a regional dialect is used only when your own messages show it or you name the region. The scanner flags drafts that pile three or four slang words into one message ("u là trời", "đỉnh nóc kịch trần", "slay") or mix Northern, Central and Southern markers ("giời ơi", "rứa", "nghen") in one sentence. Guide: [references/chat.md](skills/viet-nhu-nguoi/references/chat.md) (in Vietnamese).
+
 The remaining groups apply to both Vietnamese and English: false contrasts, one-line punchlines, lists forced to three items, em dashes, inflated significance, vague authorities, decorative bold and emoji, chatbot filler, and re-explaining what the reader already knows.
 
 There are also things the skill does not touch: regional dialect, colloquial speech, Sino-Vietnamese terms used correctly, passives in technical docs, and small words whose removal changes the meaning ("vẫn" *still*, "chưa" *not yet*, "chỉ" *only*, "có thể" *may*).
@@ -220,6 +222,7 @@ python3 -I skills/viet-nhu-nguoi/scripts/scan.py file.md
 | `--max 30` | exit 1 when the score is above 30, for CI or a pre-commit hook |
 | `--meta` | skip quoted material (`>` lines, tables, text in double quotes), for documents that discuss the patterns themselves |
 | `--titles` | print only the headings or slide titles, in order |
+| `--chat` | the text is a chat reply: also flag bullets, bold, stock politeness, overlong messages |
 | `--text` | dump every slide's text and notes from a `.pptx` |
 
 `check_facts.py` compares an original with its rewrite (two `.pptx` files work too). It fails if a number, date, time, link or code span was lost or added, and warns about missing proper names:
@@ -268,8 +271,9 @@ The skill makes text more natural and easier to read. It does not promise to get
 ```text
 skills/viet-nhu-nguoi/
 ├── SKILL.md                 main rules, loaded by Claude when invoked
-├── references/patterns.md   62 patterns with before/after examples
+├── references/patterns.md   65 patterns with before/after examples
 ├── references/slides.md     slides, speaker notes, fresh-reader test
+├── references/chat.md       chat replies in the user's own voice (Gen Z, dialects)
 ├── references/sources.md    references: articles, research, style guides, other skills
 ├── scripts/scan.py          scanner with a 0-100 score, no third-party packages
 ├── scripts/check_facts.py   checks a rewrite kept numbers, dates, times, links, code

@@ -1,7 +1,7 @@
 {
   "name": "viet-nhu-nguoi",
   "displayName": "Viết như người (Vietnamese Humanizer)",
-  "version": "2.5.0",
+  "version": "2.6.0",
   "description": "Viết như người: chống giọng văn AI cho tiếng Việt (human voice, Vietnamese humanizer). Sửa bài ChatGPT/Claude viết cho tự nhiên như người viết, bỏ văn dịch, giọng công văn, \"việc/sự/một cách\", lời chatbot. Make Vietnamese (and English) AI text sound human.",
   "author": {
     "name": "anhnx000",

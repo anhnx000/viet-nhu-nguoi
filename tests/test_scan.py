@@ -439,5 +439,59 @@ class EmptyPromises(unittest.TestCase):
         self.assertNotIn("hứa suông", groups("Lan gửi bảng giá chi tiết trước thứ Sáu 14/11."))
 
 
+def chat_groups(text):
+    hits, _ = scan.scan(text)
+    scan.chat_checks(text, hits)
+    return set(hits)
+
+
+class ChatVoice(unittest.TestCase):
+    FAKE_GENZ = "U là trời ý tưởng đỉnh nóc kịch trần luôn á, chưa có nha bà, để tui gét gô làm liền, slay quá trời"
+    REAL_GENZ = ("chưa :v mới dùng viết mấy cái nghiêm túc: slide, report, email thôi. "
+                 "Để làm thêm vụ đó thành tính năng Personalize khi reply tin nhắn")
+    MIXED = "Ủa rứa hả, giời ơi chiều nay dìa sớm nghen, hông kịp thì nhắn tui nhá"
+    SOUTH = "ủa vậy hả, ổng nói chiều dìa sớm nghen, hông kịp thì nhắn tui"
+    CENTRAL = "Răng rứa, chừ mi đi mô? Bữa ni tau bận lắm hỉ"
+    STIFF = ("Cảm ơn bạn đã góp ý rất hay! Hiện tại skill chủ yếu tập trung vào văn bản trang trọng. "
+             "Mình sẽ cân nhắc bổ sung tính năng này trong thời gian tới nhé!")
+
+    def test_slang_pileup(self):
+        self.assertIn("chồng tiếng lóng", groups(self.FAKE_GENZ))
+
+    def test_real_casual_message_not_slang(self):
+        self.assertNotIn("chồng tiếng lóng", groups(self.REAL_GENZ))
+        self.assertNotIn("chồng tiếng lóng", groups("tối nay chill xíu không ae, mai nghỉ mà"))
+
+    def test_slang_spread_over_long_text_not_flagged(self):
+        filler = "Hôm qua cả nhóm ngồi sửa bản báo cáo tới khuya rồi gửi cho anh Tuấn. " * 8
+        text = filler + "Xong việc thì chill. " + filler + "Bài đó slay thật. " + filler + "Mệt xỉu up xỉu down."
+        self.assertNotIn("chồng tiếng lóng", groups(text))
+
+    def test_mixed_dialect(self):
+        self.assertIn("trộn giọng miền", groups(self.MIXED))
+
+    def test_single_region_not_flagged(self):
+        self.assertNotIn("trộn giọng miền", groups(self.SOUTH))
+        self.assertNotIn("trộn giọng miền", groups(self.CENTRAL))
+        self.assertNotIn("trộn giọng miền", groups("Đi đâu thế? Mai tớ bận rồi nhá, để hôm khác nhé."))
+
+    def test_common_words_are_not_dialect(self):
+        text = "Mô hình mới chạy nhanh hơn. Đau răng nên chiều nay em xin nghỉ. Bên kia mô tả khác."
+        self.assertNotIn("trộn giọng miền", groups(text))
+
+    def test_chat_reply_written_like_email(self):
+        found = chat_groups(self.STIFF)
+        self.assertIn("tin nhắn khách sáo", found)
+        self.assertIn("tin nhắn định dạng như văn bản", chat_groups("Về ý này:\n- **Hiện tại:** chưa có\n- **Sắp tới:** sẽ làm"))
+        self.assertIn("tin nhắn dài", chat_groups("ok " * 90))
+
+    def test_real_chat_reply_clean(self):
+        self.assertEqual(chat_groups(self.REAL_GENZ) & {"tin nhắn khách sáo", "tin nhắn định dạng như văn bản", "tin nhắn dài"}, set())
+        self.assertEqual(chat_groups("cảm ơn nha, mai tui gửi file"), set())
+
+    def test_chat_checks_off_by_default(self):
+        self.assertNotIn("tin nhắn khách sáo", groups(self.STIFF))
+
+
 if __name__ == "__main__":
     unittest.main()
