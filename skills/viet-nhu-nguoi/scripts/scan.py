@@ -402,7 +402,7 @@ REGIONS = {
 
 
 def voice_checks(text, hits):
-    """Giả giọng trẻ, giả giọng miền: chồng tiếng lóng, trộn dấu hiệu của nhiều vùng."""
+    """Ngữ điệu bắt chước sai: chồng tiếng lóng, trộn dấu hiệu của nhiều vùng."""
     lines = [(no, s.lower()) for no, s in prose_lines(text) if s.strip()]
     low = " ".join(s for _, s in lines)
     total = len(low.split())

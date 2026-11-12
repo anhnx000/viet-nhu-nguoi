@@ -2,10 +2,10 @@
 
 ## 2.6.0 (2026-11-13)
 
-Trả lời tin nhắn theo giọng của chính người dùng, kể cả giọng Gen Z và giọng miền. Ý tưởng từ một đồng nghiệp hỏi skill đã xử lý tiếng địa phương chưa.
+Cá nhân hóa tin nhắn trả lời: icon và ngữ điệu lấy từ cuộc trò chuyện, giữ nguyên tới hết cuộc. Ý tưởng từ một đồng nghiệp hỏi skill đã xử lý tiếng địa phương chưa.
 
-- `references/chat.md`: lấy giọng từ 5-20 tin người dùng tự gõ (viết hoa, chấm câu, kiểu cười, trợ từ, xưng hô, chữ lóng, từ địa phương), chỉ dùng những gì mẫu có và dùng thưa như mẫu. Không có mẫu thì hỏi, vẫn không có thì viết đời thường, không lóng, không giọng miền. Một tin một vùng, không nhại phát âm, không đoán vùng từ tên hay quê.
-- Nhóm dấu hiệu L (mục 63-65): tin nhắn viết như email, giả giọng trẻ (chồng lóng, lóng lệch mùa, emoji lạ), giả giọng miền (trộn vùng, nhại phát âm, tự rải).
+- `references/chat.md`: lập hồ sơ giọng từ tối đa 30 lượt trò chuyện gần nhất đọc được (đoạn chat dán vào, các lượt trong phiên, công cụ đọc tin nhắn nếu người dùng cho phép). Hồ sơ gồm icon (emoji, emoticon, đặt ở đâu, dày cỡ nào) và ngữ điệu (độ dài, viết hoa, chấm câu, trợ từ, xưng hô, chữ lóng, từ địa phương). Chỉ dùng những gì hồ sơ có, giữ hồ sơ cho mọi tin sau trong phiên, cửa sổ 30 lượt trượt theo lượt mới, mỗi người nhận một hồ sơ. Không có lượt nào thì hỏi, vẫn không có thì viết đời thường, không lóng, không icon, không giọng miền. Một tin một vùng, không nhại phát âm, không đoán vùng từ tên hay quê.
+- Nhóm dấu hiệu L (mục 63-65): tin nhắn viết như email, icon và ngữ điệu lạc giọng (chồng lóng, icon lạ, đổi giọng giữa chừng), giả giọng miền (trộn vùng, nhại phát âm, tự rải).
 - `scan.py` kiểm cả bài "chồng tiếng lóng" (từ ba chữ lóng khác nhau, dày từ một chữ trên 25 chữ, cộng 8 điểm) và "trộn giọng miền" (dấu hiệu của hai vùng trở lên, tổng từ ba chỗ, cộng 6 điểm). Tùy chọn mới `--chat` báo thêm gạch đầu dòng, in đậm, tiêu đề trong tin nhắn, câu khách sáo ("cảm ơn bạn đã", "sẽ cân nhắc") và tin quá 80 chữ.
 - Test có cả tin nhắn người viết thật (giọng Nam thuần, giọng Trung thuần, tin có ":v" và một chữ "chill") để chắc không báo nhầm. Điểm các file mẫu và README không đổi.
 - `SKILL.md` thêm một mục ngắn trỏ sang `chat.md`, README hai thứ tiếng thêm một đoạn và tùy chọn `--chat`.

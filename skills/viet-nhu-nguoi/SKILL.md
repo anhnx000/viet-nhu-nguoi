@@ -8,8 +8,8 @@ description: |
   "soi giọng AI", hoặc khi soạn tin nhắn, email, bài viết, PR, commit, slide, lời thuyết trình mà
   người dùng sẽ gửi hoặc trình bày dưới tên mình. Có phần riêng cho tiếng Việt (văn dịch từ tiếng
   Anh, "việc/sự/một cách", giọng công văn, xưng hô) và cho slide (tiêu đề kết luận, ghi chú
-  thuyết trình, quét thẳng file .pptx), cho tin nhắn trả lời theo giọng người dùng ("rep giống mình",
-  giọng Gen Z, giọng miền). Dựa trên Wikipedia "Signs of AI writing", skill humanizer (MIT) và các skill
+  thuyết trình, quét thẳng file .pptx), cho tin nhắn trả lời theo giọng người dùng (cá nhân hóa icon,
+  ngữ điệu, giọng miền theo 30 lượt trò chuyện gần nhất). Dựa trên Wikipedia "Signs of AI writing", skill humanizer (MIT) và các skill
   humanize tiếng Việt mã nguồn mở.
 license: MIT
 metadata:
@@ -172,12 +172,13 @@ Viết hoặc sửa slide, ghi chú thuyết trình, đề xuất hay báo cáo 
 - **Đọc file `.pptx`:** chạy `python3 -I scripts/scan.py --text <file.pptx>` để in chữ từng slide (tiêu đề, nội dung, bảng, ghi chú) kèm số slide. Không cần python-pptx, không giải nén XML bằng tay. Khi báo lỗi, ghi đúng số slide theo kết quả này.
 - **Soát:** `scan.py` đọc thẳng `.pptx`, báo dấu hiệu theo từng slide và từng phần ghi chú; `check_facts.py` so hai file `.pptx`. Deck quan trọng thì nhờ một agent mới, không biết bối cảnh, đọc thử và chấm 7 tiêu chí (thang 70), rồi lập bảng góp ý nhận/không nhận cho người dùng quyết.
 
-## Tin nhắn thân mật, giọng Gen Z, giọng miền
+## Cá nhân hóa tin nhắn: icon và ngữ điệu
 
-Trả lời tin nhắn bạn bè, đồng nghiệp thân, hoặc khi người dùng nhờ "rep giống mình", "giọng Gen Z", "giọng miền Tây" thì đọc `references/chat.md`. Điểm chính:
+Trả lời tin nhắn bạn bè, đồng nghiệp thân, hoặc khi người dùng nhờ "trả lời theo giọng mình", "cá nhân hóa", "giọng miền Tây" thì đọc `references/chat.md`. Điểm chính:
 
-- Lấy giọng từ 5-20 tin người dùng tự gõ, không lấy từ danh sách tiếng lóng. Không có mẫu thì hỏi, vẫn không có thì viết đời thường, không lóng, không giọng miền.
-- Chữ lóng, kiểu cười, emoji, trợ từ, từ địa phương nào có trong mẫu thì mới dùng, và dùng thưa như mẫu. Một tin một vùng, không nhại phát âm, không đoán vùng từ tên hay quê.
+- Icon và ngữ điệu lấy từ tối đa 30 lượt trò chuyện gần nhất đọc được (đoạn chat dán vào, các lượt trong phiên, công cụ đọc tin nhắn nếu người dùng cho phép), không lấy từ danh sách tiếng lóng. Không có lượt nào thì hỏi, vẫn không có thì viết đời thường, không lóng, không icon, không giọng miền.
+- Lập hồ sơ giọng một lần rồi giữ cho mọi tin sau trong phiên, kể cả khi chuyện chuyển sang nghiêm túc. Người dùng sửa thì theo tới hết phiên. Mỗi người nhận một hồ sơ.
+- Chữ lóng, kiểu cười, emoji, trợ từ, từ địa phương nào có trong các lượt đó thì mới dùng, và dùng thưa như vậy. Một tin một vùng, không nhại phát âm, không đoán vùng từ tên hay quê.
 - Tin ngắn, đúng ý được hỏi, không chào, không cảm ơn góp ý, không gạch đầu dòng. Đổi giọng mà làm rơi hạn chót, số liệu, lời hứa thì là lỗi. Soát bằng `scan.py --chat`.
 
 ## Khi nào không sửa

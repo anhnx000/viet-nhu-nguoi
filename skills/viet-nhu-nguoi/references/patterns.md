@@ -477,9 +477,9 @@ Nhóm G bắt các cụm dịch dễ thấy. Nhóm này bắt thứ khó thấy 
 > Bài tự viết thì skill chỉ sửa nhẹ, số liệu để nguyên, còn sửa hay không là do bạn.
 **Sửa:** Đưa cái đang bàn lên đầu câu. Đưa thời gian, nơi chốn lên trước ("Thứ Ba đội họp ở phòng 3"). Dùng "thì", "còn", "mà", "chứ" đúng chỗ, đừng rải cho có.
 
-## L. Tin nhắn thân mật: giả giọng trẻ, giả giọng miền
+## L. Tin nhắn thân mật: icon và ngữ điệu lạc giọng người gửi
 
-Tin nhắn trả lời bạn bè, đồng nghiệp thân thì người nhận biết rõ giọng người gửi, nên chỉ cần lệch một chút là lộ. Cách làm nằm ở `references/chat.md`. Chạy `scan.py --chat` để máy quét kiểm thêm phần định dạng.
+Tin nhắn trả lời bạn bè, đồng nghiệp thân thì người nhận biết rõ giọng người gửi, nên chỉ cần lệch một chút là lộ. Icon và ngữ điệu phải lấy từ tối đa 30 lượt trò chuyện gần nhất và giữ nguyên suốt cuộc trò chuyện. Cách làm nằm ở `references/chat.md`. Chạy `scan.py --chat` để máy quét kiểm thêm phần định dạng.
 
 ### 63. Tin nhắn viết như email
 **Dấu hiệu:** tin trả lời mở bằng "Cảm ơn bạn đã góp ý", "Chào bạn"; câu đủ chủ vị, viết hoa, chấm cuối; có gạch đầu dòng, in đậm; hứa "sẽ cân nhắc trong thời gian tới"; dài gấp mấy lần tin người kia gửi.
@@ -489,13 +489,13 @@ Tin nhắn trả lời bạn bè, đồng nghiệp thân thì người nhận bi
 > chưa, mới dùng viết slide, report, email thôi. Để làm thêm vụ đó
 **Sửa:** Trả lời đúng ý được hỏi, độ dài và cách viết hoa, chấm câu theo tin người dùng hay gõ. Bỏ lời cảm ơn, lời hứa chung chung.
 
-### 64. Giả giọng trẻ: chồng lóng, lóng lệch mùa, emoji lạ
-**Dấu hiệu:** ba bốn chữ lóng trong một tin ("u là trời", "đỉnh nóc kịch trần", "slay", "gét gô"); lóng đã cũ hoặc của nhóm khác; câu chuẩn chính tả gắn thêm "khum"; emoji 🔥✨ trong khi người dùng quen ":v", ")))".
+### 64. Icon và ngữ điệu lạc giọng: chồng lóng, icon lạ, đổi giọng giữa chừng
+**Dấu hiệu:** ba bốn chữ lóng trong một tin ("u là trời", "đỉnh nóc kịch trần", "slay", "gét gô"); lóng đã cũ hoặc của nhóm khác; câu chuẩn chính tả gắn thêm "khum"; emoji 🔥✨ trong khi người dùng quen ":v", ")))"; mấy tin đầu theo giọng người dùng, tới lúc bàn chuyện nghiêm túc thì quay về giọng chatbot.
 **Trước:**
 > U là trời ý tưởng đỉnh nóc kịch trần luôn á 🔥🔥 chưa có nha bà, để tui gét gô làm liền, slay quá trời ✨
 **Sau:**
 > chưa :v để làm thêm vụ đó 🐧
-**Sửa:** Lấy giọng từ tin của chính người dùng: chữ lóng, kiểu cười, emoji nào có trong mẫu thì mới dùng, và dùng thưa như mẫu. Không có mẫu thì viết đời thường, không lóng.
+**Sửa:** Lấy icon và ngữ điệu từ các lượt của chính người dùng trong 30 lượt gần nhất: chữ lóng, kiểu cười, emoji nào có thì mới dùng, và dùng thưa như vậy. Giữ hồ sơ đó cho mọi tin sau trong phiên. Không có lượt nào để học thì viết đời thường, không lóng, không icon.
 
 ### 65. Giả giọng miền: trộn vùng, nhại phát âm, tự rải
 **Dấu hiệu:** một tin có cả "rứa" (Trung), "nghen" (Nam), "giời ơi" (Bắc); viết theo phát âm cả câu ("dzậy dzồi dzô"); tự thêm giọng miền khi người dùng không nói thế, hoặc đoán vùng từ tên, quê quán.

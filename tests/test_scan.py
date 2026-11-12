@@ -446,9 +446,9 @@ def chat_groups(text):
 
 
 class ChatVoice(unittest.TestCase):
-    FAKE_GENZ = "U là trời ý tưởng đỉnh nóc kịch trần luôn á, chưa có nha bà, để tui gét gô làm liền, slay quá trời"
-    REAL_GENZ = ("chưa :v mới dùng viết mấy cái nghiêm túc: slide, report, email thôi. "
-                 "Để làm thêm vụ đó thành tính năng Personalize khi reply tin nhắn")
+    SLANG_PILE = "U là trời ý tưởng đỉnh nóc kịch trần luôn á, chưa có nha bà, để tui gét gô làm liền, slay quá trời"
+    REAL_REPLY = ("chưa :v mới dùng viết mấy cái nghiêm túc: slide, report, email thôi. "
+                 "Để làm thêm vụ đó thành tính năng cá nhân hóa khi reply tin nhắn")
     MIXED = "Ủa rứa hả, giời ơi chiều nay dìa sớm nghen, hông kịp thì nhắn tui nhá"
     SOUTH = "ủa vậy hả, ổng nói chiều dìa sớm nghen, hông kịp thì nhắn tui"
     CENTRAL = "Răng rứa, chừ mi đi mô? Bữa ni tau bận lắm hỉ"
@@ -456,10 +456,10 @@ class ChatVoice(unittest.TestCase):
              "Mình sẽ cân nhắc bổ sung tính năng này trong thời gian tới nhé!")
 
     def test_slang_pileup(self):
-        self.assertIn("chồng tiếng lóng", groups(self.FAKE_GENZ))
+        self.assertIn("chồng tiếng lóng", groups(self.SLANG_PILE))
 
     def test_real_casual_message_not_slang(self):
-        self.assertNotIn("chồng tiếng lóng", groups(self.REAL_GENZ))
+        self.assertNotIn("chồng tiếng lóng", groups(self.REAL_REPLY))
         self.assertNotIn("chồng tiếng lóng", groups("tối nay chill xíu không ae, mai nghỉ mà"))
 
     def test_slang_spread_over_long_text_not_flagged(self):
@@ -486,7 +486,7 @@ class ChatVoice(unittest.TestCase):
         self.assertIn("tin nhắn dài", chat_groups("ok " * 90))
 
     def test_real_chat_reply_clean(self):
-        self.assertEqual(chat_groups(self.REAL_GENZ) & {"tin nhắn khách sáo", "tin nhắn định dạng như văn bản", "tin nhắn dài"}, set())
+        self.assertEqual(chat_groups(self.REAL_REPLY) & {"tin nhắn khách sáo", "tin nhắn định dạng như văn bản", "tin nhắn dài"}, set())
         self.assertEqual(chat_groups("cảm ơn nha, mai tui gửi file"), set())
 
     def test_chat_checks_off_by_default(self):

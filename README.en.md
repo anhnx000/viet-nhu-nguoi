@@ -200,7 +200,7 @@ Some patterns only show when you read the whole text, even after each sentence i
 
 Slides and long documents have their own group. The skill catches titles that are only labels ("Tổng quan", "Kết luận"), titles that count points ("3 trụ cột", *3 pillars*), exactly three bullets on every slide, empty promises ("chi tiết sẽ trao đổi sau", *details to be discussed later*) and speaker notes that read like a memo. The slide-writing guide is in [references/slides.md](skills/viet-nhu-nguoi/references/slides.md) (in Vietnamese).
 
-Casual chat replies have a group too. Ask the skill to "reply like me" and it reads a few messages you typed yourself, picks up your capitalization, punctuation, laugh style (":v", ")))"), particles and forms of address, then writes the reply in that voice. Gen Z slang or a regional dialect is used only when your own messages show it or you name the region. The scanner flags drafts that pile three or four slang words into one message ("u là trời", "đỉnh nóc kịch trần", "slay") or mix Northern, Central and Southern markers ("giời ơi", "rứa", "nghen") in one sentence. Guide: [references/chat.md](skills/viet-nhu-nguoi/references/chat.md) (in Vietnamese).
+Chat replies get personalized icons and tone. The skill reads up to the last 30 turns of the conversation it can access, picks up your capitalization, punctuation, laugh style (":v", ")))"), emoji, particles and forms of address, and keeps that voice for every later reply in the conversation. Slang or a regional dialect is used only when those turns show it or you name the region. The scanner flags drafts that pile three or four slang words into one message ("u là trời", "đỉnh nóc kịch trần", "slay") or mix Northern, Central and Southern markers ("giời ơi", "rứa", "nghen") in one sentence. Guide: [references/chat.md](skills/viet-nhu-nguoi/references/chat.md) (in Vietnamese).
 
 The remaining groups apply to both Vietnamese and English: false contrasts, one-line punchlines, lists forced to three items, em dashes, inflated significance, vague authorities, decorative bold and emoji, chatbot filler, and re-explaining what the reader already knows.
 
@@ -273,7 +273,7 @@ skills/viet-nhu-nguoi/
 ├── SKILL.md                 main rules, loaded by Claude when invoked
 ├── references/patterns.md   65 patterns with before/after examples
 ├── references/slides.md     slides, speaker notes, fresh-reader test
-├── references/chat.md       chat replies in the user's own voice (Gen Z, dialects)
+├── references/chat.md       personalized icons and tone for chat replies
 ├── references/sources.md    references: articles, research, style guides, other skills
 ├── scripts/scan.py          scanner with a 0-100 score, no third-party packages
 ├── scripts/check_facts.py   checks a rewrite kept numbers, dates, times, links, code

@@ -196,7 +196,7 @@ Có dấu hiệu phải đọc cả bài mới thấy, dù từng câu đã ổn
 
 Slide và tài liệu nhiều trang có nhóm riêng: tiêu đề chỉ là nhãn ("Tổng quan", "Kết luận"), tiêu đề đếm số ý ("3 trụ cột"), slide nào cũng đúng ba ý, hứa suông ("chi tiết sẽ trao đổi sau"), ghi chú thuyết trình viết như công văn. Cách viết slide có hướng dẫn riêng ở [references/slides.md](skills/viet-nhu-nguoi/references/slides.md).
 
-Tin nhắn trả lời bạn bè, đồng nghiệp cũng có nhóm riêng. Nhờ skill "rep giống mình" thì skill đọc vài tin bạn tự gõ, học cách viết hoa, chấm câu, kiểu cười (":v", ")))"), trợ từ, xưng hô, rồi viết tin trả lời theo đúng giọng đó. Giọng Gen Z hay giọng miền chỉ dùng khi tin mẫu của bạn có, hoặc khi bạn nói rõ muốn giọng vùng nào. Bản nháp nào dồn ba bốn chữ lóng vào một tin ("u là trời", "đỉnh nóc kịch trần", "slay") hay trộn "rứa", "nghen", "giời ơi" trong cùng một câu thì máy quét báo. Hướng dẫn ở [references/chat.md](skills/viet-nhu-nguoi/references/chat.md).
+Tin nhắn trả lời thì skill cá nhân hóa icon và ngữ điệu. Skill đọc tối đa 30 lượt trò chuyện gần nhất mà nó truy cập được, học cách bạn viết hoa, chấm câu, cười (":v", ")))"), dùng emoji, trợ từ, xưng hô, rồi giữ đúng giọng đó cho mọi tin sau trong cuộc trò chuyện. Tiếng lóng hay giọng miền chỉ dùng khi các lượt đó có, hoặc khi bạn nói rõ muốn giọng vùng nào. Bản nháp nào dồn ba bốn chữ lóng vào một tin ("u là trời", "đỉnh nóc kịch trần", "slay") hay trộn "rứa", "nghen", "giời ơi" trong cùng một câu thì máy quét báo. Hướng dẫn ở [references/chat.md](skills/viet-nhu-nguoi/references/chat.md).
 
 Các nhóm còn lại thì tiếng Việt hay tiếng Anh đều gặp: đối lập giả, câu chốt một dòng, liệt kê ép cho đủ ba, gạch ngang dài, thổi phồng, mượn uy tín mơ hồ, in đậm và emoji trang trí, lời chatbot, giải thích lại điều người đọc biết rồi.
 
@@ -269,7 +269,7 @@ skills/viet-nhu-nguoi/
 ├── SKILL.md                 quy tắc chính, Claude nạp khi skill được gọi
 ├── references/patterns.md   65 dấu hiệu, ví dụ trước/sau
 ├── references/slides.md     cách viết slide, lời thuyết trình, nhờ người đọc thử
-├── references/chat.md       trả lời tin nhắn theo giọng người dùng (Gen Z, giọng miền)
+├── references/chat.md       cá nhân hóa icon, ngữ điệu khi trả lời tin nhắn
 ├── references/sources.md    nguồn tham khảo: bài viết, nghiên cứu, hướng dẫn giọng văn, skill khác
 ├── scripts/scan.py          máy quét có điểm 0-100, không cần thư viện ngoài
 ├── scripts/check_facts.py   kiểm bản sửa giữ đúng số liệu, ngày giờ, link, code
