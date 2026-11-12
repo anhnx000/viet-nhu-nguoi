@@ -89,6 +89,10 @@ Người dùng xin giọng một vùng mà không có mẫu thì mỗi tin chỉ
 
 ## Ví dụ
 
+Tên người trong các ví dụ là tên đặt ra.
+
+### Trả lời góp ý trong nhóm
+
 Đồng nghiệp bình luận dưới bài giới thiệu skill: "bạn xử lý tiếng địa phương chưa :v chưa có tiếng địa phương chưa thật đc )))". Lượt trước đó người dùng gõ: "ò, để thay icon tên lửa bằng chim cánh cụt với mặt hề nữa he :v".
 
 Bản nháp giọng chatbot:
@@ -100,7 +104,56 @@ Bản nháp chồng lóng:
 Bản theo hồ sơ của người dùng: chữ thường, ":v", câu ngắn, chim cánh cụt.
 > chưa :v mới dùng viết mấy cái nghiêm túc: slide, report, email thôi. Để làm thêm vụ đó thành tính năng cá nhân hóa khi reply tin nhắn 🐧
 
-Giọng miền, các lượt mẫu là của một người ở Sài Gòn ("ổng nói chiều dìa sớm á, kẹt xe quá trời"):
+### Chuyện chuyển sang nghiêm túc mà giọng vẫn giữ
+
+Các lượt trước trong nhóm cho thấy người dùng viết chữ thường, không chấm cuối, thỉnh thoảng ")))", gọi bạn là "ông", xưng "tui". Bạn nhắn: "ê bản deploy hôm qua lỗi à, khách đang kêu". Người dùng cho biết lỗi do thiếu biến môi trường, đang rollback, khoảng 15 phút nữa xong.
+
+Bản nháp quay về giọng chatbot:
+> Chào anh, em xin lỗi về sự cố này. Hiện tại team đang tiến hành kiểm tra nguyên nhân và sẽ cập nhật sớm nhất có thể.
+
+Bản nháp này lạc giọng, lại còn mất cả nguyên nhân lẫn mốc 15 phút. Theo hồ sơ:
+> ừ lỗi thật, thiếu biến môi trường. tui đang rollback, tầm 15p nữa xong báo ông
+
+Chuyện gấp nên không có ")))", nhưng chữ thường, xưng hô và độ dài vẫn như mọi tin khác.
+
+### Cùng người gửi, hai người nhận
+
+Người dùng nhắn bạn thân thì "ok m, tối t qua :v", nhắn trưởng nhóm thì "Dạ anh, em gửi bản sửa rồi ạ." Giờ cần báo là đã gửi file báo cáo, chiều sửa nốt phần số liệu.
+
+Lấy hồ sơ nhóm bạn thân để trả lời trưởng nhóm:
+> gửi r nha, chiều t sửa nốt phần số liệu :v
+
+Mỗi người nhận một hồ sơ:
+> Cho bạn thân: gửi r nha, chiều t sửa nốt phần số liệu :v
+>
+> Cho trưởng nhóm: Dạ em gửi file báo cáo rồi ạ, chiều em sửa nốt phần số liệu.
+
+### Người không dùng icon
+
+Ba mươi lượt gần nhất của người dùng đều viết hoa đầu câu, có chấm cuối, hay dùng "nhé", không có emoji nào. Chị Linh hỏi bao giờ có hợp đồng bản cuối, người dùng bảo mai gửi.
+
+Bản nháp tự thêm cho thân thiện:
+> Okiee chị 😊 mai em gửi liền nha ✨
+
+Theo hồ sơ:
+> Mai em gửi chị bản cuối nhé.
+
+### Một tin lạ không làm đổi hồ sơ
+
+Trong 30 lượt gần nhất, 29 lượt không có emoji, lượt mới nhất là "🎉🎉🎉 chúc mừng sinh nhật Tuấn!". Tin chúc mừng thì ai cũng chèn icon, đó không phải giọng thường ngày. Tin trả lời công việc ngay sau đó vẫn không có emoji.
+
+### Người dùng sửa giữa chừng
+
+Người dùng bảo "bỏ :v đi, nhóm này toàn sếp". Từ đó tới hết phiên, mọi tin trả lời trong nhóm đó không còn ":v", kể cả khi các lượt cũ của người dùng có. Các nhóm khác vẫn theo hồ sơ của nhóm đó.
+
+### Giọng miền
+
+Các lượt mẫu là của một người ở Sài Gòn ("ổng nói chiều dìa sớm á, kẹt xe quá trời").
 > Nháp trộn vùng: Ủa rứa hả, giời ơi chiều nay dìa sớm nghen, hông kịp thì nhắn tui nhá
 >
 > Theo mẫu: ủa vậy hả, chiều dìa sớm nha, hông kịp thì nhắn tui
+
+Một người ở Huế, các lượt mẫu có "rứa", "chừ", "hỉ". Bạn hỏi tối nay có đi ăn không.
+> Nháp nhại cả câu: Răng rứa mi, chừ tau đi mô cũng được hỉ, ăn chi cũng ngon nờ
+>
+> Theo mẫu: tối ni đi được, chừ còn họp tí, xong t nhắn hỉ

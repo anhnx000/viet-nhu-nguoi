@@ -13,7 +13,7 @@ description: |
   humanize tiếng Việt mã nguồn mở.
 license: MIT
 metadata:
-  version: "2.6.0"
+  version: "2.6.1"
 ---
 
 # Viết như người (Vietnamese humanizer): chống giọng văn AI

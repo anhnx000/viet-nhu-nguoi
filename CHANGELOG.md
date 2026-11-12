@@ -1,5 +1,10 @@
 # Changelog
 
+## 2.6.1 (2026-11-13)
+
+- `references/chat.md` thêm ví dụ cá nhân hóa: chuyện chuyển sang nghiêm túc mà giọng vẫn giữ (bản nháp quay về giọng chatbot còn làm mất nguyên nhân lỗi và mốc 15 phút), cùng người gửi mà hai người nhận, người không dùng icon, một tin chúc mừng không làm đổi hồ sơ, người dùng sửa giữa chừng, giọng Huế nhại cả câu và bản theo mẫu.
+- Test kiểm bản nháp quay về giọng chatbot bị `--chat` báo, còn bản giữ giọng thì không.
+
 ## 2.6.0 (2026-11-13)
 
 Cá nhân hóa tin nhắn trả lời: icon và ngữ điệu lấy từ cuộc trò chuyện, giữ nguyên tới hết cuộc. Ý tưởng từ một đồng nghiệp hỏi skill đã xử lý tiếng địa phương chưa.

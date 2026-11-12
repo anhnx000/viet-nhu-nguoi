@@ -489,6 +489,12 @@ class ChatVoice(unittest.TestCase):
         self.assertEqual(chat_groups(self.REAL_REPLY) & {"tin nhắn khách sáo", "tin nhắn định dạng như văn bản", "tin nhắn dài"}, set())
         self.assertEqual(chat_groups("cảm ơn nha, mai tui gửi file"), set())
 
+    def test_reply_reverting_to_chatbot_when_serious(self):
+        drifted = "Chào anh, em xin lỗi về sự cố này. Hiện tại team đang tiến hành kiểm tra nguyên nhân và sẽ cập nhật sớm nhất có thể."
+        kept = "ừ lỗi thật, thiếu biến môi trường. tui đang rollback, tầm 15p nữa xong báo ông"
+        self.assertIn("tin nhắn khách sáo", chat_groups(drifted))
+        self.assertEqual(chat_groups(kept), set())
+
     def test_chat_checks_off_by_default(self):
         self.assertNotIn("tin nhắn khách sáo", groups(self.STIFF))
 
