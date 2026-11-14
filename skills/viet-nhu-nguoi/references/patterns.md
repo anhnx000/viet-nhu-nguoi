@@ -5,7 +5,7 @@ Sắp từ mạnh đến yếu. Nhóm A và nhóm E chỉ cần gặp một lầ
 ## A. Dàn dựng thay vì nói thẳng
 
 ### 1. Đối lập giả: "không phải X mà là Y"
-**Dấu hiệu:** không chỉ... mà còn; không phải X, mà là Y; X chứ không phải Y; không đơn thuần là; it's not X, it's Y; not just X but Y; X rather than Y; tách thành hai câu ("Điều này không có nghĩa là X. Nó có nghĩa là Y."); đuôi phủ định cụt ("..., không cần đoán").
+**Dấu hiệu:** không chỉ... mà còn; không phải X, mà là Y; X chứ không phải Y; không đơn thuần là; it's not X, it's Y; not just X but Y; X rather than Y; tách thành hai câu ("Điều này không có nghĩa là X. Nó có nghĩa là Y."; "Đây không chỉ là một con số. Đây là sự công nhận."; "PM không phải là người có câu trả lời đúng. PM là người đặt câu hỏi đúng."); "X là A, không phải B" ("Kỹ sư là đồng đội, không phải người nhận việc"); "Đừng A, hãy B" ("Đừng yêu giải pháp, hãy yêu vấn đề"); "Không có A, chỉ có B"; đuôi phủ định cụt ("..., không cần đoán").
 **Vấn đề:** Vế phủ định bác bỏ điều không ai nói, để vế sau nghe kêu hơn. Nói thẳng vế sau. Chỉ giữ khi người đọc đúng là đang nghĩ như vế đầu, và cả bài chỉ một lần; xem mục 46.
 **Trước:**
 > Đây không chỉ là một bản cập nhật, mà là một cuộc cách mạng trong cách đội ngũ làm việc.
@@ -27,8 +27,8 @@ Sắp từ mạnh đến yếu. Nhóm A và nhóm E chỉ cần gặp một lầ
 > Cache giảm việc lặp lại.
 
 ### 3. Câu nghe sâu sắc mà rỗng
-**Dấu hiệu:** câu hỏi thật sự là; xét cho cùng; suy cho cùng; cốt lõi của vấn đề; điều thực sự quan trọng; X là ngôn ngữ của Y; at its core; the real question is; the heart of the matter.
-**Sửa:** Thay câu châm ngôn bằng nhận định cụ thể.
+**Dấu hiệu:** câu hỏi thật sự là; xét cho cùng; suy cho cùng; cốt lõi của vấn đề; điều thực sự quan trọng; X là ngôn ngữ của Y; at its core; the real question is; the heart of the matter. Châm ngôn truyền cảm hứng gắn vào bài nào cũng được: "tương lai thuộc về những người..."; "đây mới chỉ là khởi đầu"; "không bao giờ là quá muộn"; "hành trình phía trước còn dài"; "mọi mục tiêu lớn đều bắt đầu từ những bước nhỏ"; "viết rõ ràng là siêu năng lực"; "hãy bắt đầu ngay hôm nay".
+**Sửa:** Thay câu châm ngôn bằng nhận định cụ thể. Phép thử: chép câu đó sang một bài về chủ đề khác mà vẫn đúng thì câu đó rỗng, bỏ đi.
 **Trước:**
 > Suy cho cùng, sự tin tưởng là ngôn ngữ chung của mọi đội nhóm.
 **Sau:**
@@ -117,7 +117,7 @@ Sắp từ mạnh đến yếu. Nhóm A và nhóm E chỉ cần gặp một lầ
 **Sửa:** Giữ sự việc. Chỉ giữ phần đuôi nếu nguồn thật sự nói vậy.
 
 ### 16. Giọng quảng cáo
-**Dấu hiệu:** nằm giữa lòng; tọa lạc tại vị trí đắc địa; tuyệt đẹp; ngỡ ngàng; đẳng cấp; hàng đầu; điểm đến không thể bỏ qua; nestled; breathtaking; must-visit; renowned; rich heritage.
+**Dấu hiệu:** nằm giữa lòng; tọa lạc tại vị trí đắc địa; tuyệt đẹp; ngỡ ngàng; đẳng cấp; hàng đầu; điểm đến không thể bỏ qua; điểm dừng chân lý tưởng; đậm chất thơ; đắm mình trong; giữa nhịp sống vội vã; mang đến trải nghiệm trọn vẹn; được pha chế tỉ mỉ; sở hữu bộ sưu tập; nestled; breathtaking; must-visit; renowned; rich heritage.
 **Sửa:** Nói thẳng đó là cái gì.
 **Trước:**
 > Nằm giữa lòng thung lũng thơ mộng, Mộc Châu là điểm đến không thể bỏ qua với vẻ đẹp ngỡ ngàng.
@@ -152,7 +152,7 @@ Sắp từ mạnh đến yếu. Nhóm A và nhóm E chỉ cần gặp một lầ
 > Bản cập nhật đổi giao diện, thêm mã hóa đầu cuối, trang cũng tải nhanh hơn nhờ thuật toán mới.
 
 ### 21. Tiêu đề và emoji trang trí
-**Vấn đề:** Tiêu đề Viết Hoa Mọi Chữ; emoji 🚀💡✅ hay mũi tên → đầu mục; kẻ ngang giữa mọi phần; tiêu đề lặp lại tên tài liệu; tiêu đề giật tít thay vì nói phần đó chứa gì.
+**Vấn đề:** Tiêu đề Viết Hoa Mọi Chữ; emoji 🚀💡✅ hay mũi tên → đầu mục; bài đăng chia mục bằng emoji (1️⃣ 2️⃣, 🔹, 🎯); dòng in đậm đứng làm tiêu đề trong email hay bài đăng ngắn ("**1. Lý do đề xuất**", "**Điểm nổi bật**"); kẻ ngang giữa mọi phần; tiêu đề lặp lại tên tài liệu; tiêu đề giật tít thay vì nói phần đó chứa gì.
 **Sửa:** Viết hoa chữ đầu câu, bỏ emoji và kẻ ngang, tiêu đề nói đúng nội dung.
 
 ### 22. Ngoặc kép cong
@@ -233,7 +233,7 @@ Văn AI tiếng Việt thường là văn "nghĩ bằng tiếng Anh rồi dịch
 > Dùng AI đúng chỗ thì quản lý dự án dễ hơn.
 
 ### 32. Động từ rỗng và giọng công văn
-**Dấu hiệu:** tiến hành; thực hiện việc; tiến hành thực hiện; triển khai; đưa ra / cung cấp sự hỗ trợ; nhằm mục đích; nhằm; với sự hỗ trợ của; đóng góp vào; hiện thực hóa; gia tăng; dùng cho việc thường ngày trong email, tin nhắn, bài chia sẻ.
+**Dấu hiệu:** tiến hành; thực hiện việc; tiến hành thực hiện; triển khai; đưa ra / cung cấp sự hỗ trợ; nhằm mục đích; nhằm; với sự hỗ trợ của; đóng góp vào; hiện thực hóa; gia tăng; "em xin trình bày chi tiết như sau"; "rất mong nhận được sự xem xét và phê duyệt"; "tiềm ẩn rủi ro"; dùng cho việc thường ngày trong email, tin nhắn, bài chia sẻ.
 **Sửa:** Bỏ động từ rỗng, giữ động từ thật ("tiến hành kiểm tra" → "kiểm tra"). "Nhằm mục đích" → "để". "Cung cấp sự hỗ trợ" → "hỗ trợ", "giúp". Công văn, văn bản pháp lý thì giữ giọng trang trọng, chỉ bỏ phần chồng lặp. *Yếu* khi đứng riêng.
 **Trước:**
 > Nhóm sẽ tiến hành thực hiện việc rà soát tài liệu nhằm mục đích đưa ra sự hỗ trợ cho khách hàng.
@@ -335,7 +335,7 @@ Bài gốc và bản viết lại nằm ở `examples/bai-dang-truoc.md` và `ex
 Cách đọc nhóm này: đếm trên cả bài. Một lần thì có thể là giọng người viết, ba lần là tật.
 
 ### 45. Nhãn báo giọng: "nói gọn", "nói thật", "nói rõ"
-**Dấu hiệu:** Nói cho thật:; Nói cho công bằng:; Nói rõ để bạn khỏi hiểu lầm:; Nói gọn thì; tiêu đề có đuôi ", nói gọn"; hiểu đơn giản là; nói nôm na là; cứ hiểu nó như; thành thật mà nói; công bằng mà nói; thú thật là; to be honest; to be fair; simply put.
+**Dấu hiệu:** Nói cho thật:; Nói cho công bằng:; Nói rõ để bạn khỏi hiểu lầm:; Nói gọn thì; tiêu đề có đuôi ", nói gọn"; hiểu đơn giản là; nói nôm na là; cứ hiểu nó như; thành thật mà nói; công bằng mà nói; thú thật là; "Thú thật,"; "Điều mình muốn nói là:"; "mình chỉ muốn nói:"; to be honest; to be fair; simply put.
 **Vấn đề:** Câu báo trước mình sắp nói thật, nói gọn, nói công bằng, rồi mới nói. Đây là mục 4 và mục 5 khoác áo mới: cấm "Nói thẳng ra thì" thì mô hình viết "Nói cho thật:". Cấm một cụm kiểu này là cấm cả kiểu câu đó, kể cả cụm chưa có trong danh sách.
 **Sửa:** Xóa nhãn, giữ câu sau nó. Bỏ nhãn mà câu sau vẫn đủ nghĩa thì nhãn thừa. Muốn gọn thì viết gọn, không cần báo.
 **Trước:**
@@ -380,9 +380,9 @@ Cách đọc nhóm này: đếm trên cả bài. Một lần thì có thể là 
 **Sửa:** Hỏi xem đọc xong bài này người đọc cần làm gì, rồi chỉ giữ phần giúp được việc đó. Phần kiến thức nền đổi thành một câu và một link. Phần còn lại đề xuất tách thành bài khác. Khi sửa bài của người dùng, không lặng lẽ cắt: nói rõ đề xuất bỏ phần nào và để họ quyết. Phép thử: xóa một mục mà bài không hụt thì mục đó nên để cho bài khác.
 
 ### 50. Bài tự kể dàn ý, mục "KẾT", tiêu đề giả hội thoại
-**Dấu hiệu:** "Bài này mình viết để kể..., rủ..., và kể..."; "Cuối bài có phần dành cho..."; "Trong bài này mình sẽ..."; mục cuối tên "KẾT", "Lời kết", "Tóm lại"; tiêu đề mục là câu hỏi dẫn chuyện ("Còn hiện tại thì sao", "Phần mềm thì sao?") hoặc một câu trích dựng lên để bác ("Có người nói X chậm"); tiêu đề rồi câu đầu nối tiếp tiêu đề ("Hệ điều hành cũng là phần mềm" / "Nên nó cũng có test...").
+**Dấu hiệu:** "Bài này mình viết để kể..., rủ..., và kể..."; "Cuối bài có phần dành cho..."; "Trong bài này mình sẽ..."; mục cuối tên "KẾT", "Lời kết", "Tóm lại"; tiêu đề mục là câu hỏi dẫn chuyện ("Còn hiện tại thì sao", "Phần mềm thì sao?") hoặc một câu trích dựng lên để bác ("Có người nói X chậm"); tiêu đề rồi câu đầu nối tiếp tiêu đề ("Hệ điều hành cũng là phần mềm" / "Nên nó cũng có test..."); câu kết mời tương tác ("Còn bạn, bài học lớn nhất của bạn là gì? Chia sẻ dưới comment nhé 👇", "Nếu bạn cũng đang ở ngã rẽ như mình, cứ nhắn cho mình nhé", "Hãy tiếp tục theo dõi và đồng hành cùng chúng tôi").
 **Vấn đề:** Bài đăng của người thật ít khi có mục lục nói bằng lời. Đây là mục 26 (văn bản tự nói về mình) ở dạng thân mật.
-**Sửa:** Bỏ đoạn kể dàn ý. Bỏ tiêu đề "KẾT", để đoạn cuối tự kết. Bài dưới chừng 600 chữ thì bỏ hết tiêu đề mục. Tiêu đề còn giữ thì gọi tên nội dung.
+**Sửa:** Bỏ đoạn kể dàn ý. Bỏ tiêu đề "KẾT", để đoạn cuối tự kết. Bỏ câu mời tương tác; cần người đọc làm một việc thật (ứng tuyển, đăng ký, góp ý về một điểm cụ thể) thì nói đúng việc đó. Bài dưới chừng 600 chữ thì bỏ hết tiêu đề mục. Tiêu đề còn giữ thì gọi tên nội dung.
 
 ### 51. Đoạn ngắn đều nhau
 **Dấu hiệu:** cả bài toàn đoạn hai ba câu, không đoạn nào quá bốn câu (bài mẫu: 38 trên 40 đoạn); câu nào cũng trọn vẹn, đủ chủ vị, không câu nào bỏ lửng hay chêm ngang.
@@ -397,7 +397,8 @@ Cách đọc nhóm này: đếm trên cả bài. Một lần thì có thể là 
 ### 53. Xưng "mình" mà không có chuyện của mình
 **Dấu hiệu:** bài chia sẻ cá nhân, xưng "mình", "tôi", nhưng mọi chi tiết đều là số tổng kết (số dòng code, số test, số commit) và kiến thức tra được; không có một lần hỏng, một đêm, một lỗi cụ thể, một người cụ thể; "mình nghĩ" chỉ gắn với nhận định chung về ngành.
 **Vấn đề:** Bỏ dấu hiệu thì bài mới sạch, chứ chưa có hơi người. Bài như vậy đọc giống bản tóm tắt dự án do người khác viết hộ.
-**Sửa:** Hỏi người dùng một hai chuyện thật: lần nào kernel không boot, mất bao lâu, vì lỗi gì, lúc đó nghĩ gì. Dùng đúng lời họ kể. Không có thì giữ bài ngắn và trung tính. Không bịa kỷ niệm.
+**Mặt trái:** nhờ viết hộ một bài chia sẻ mà chỉ cho đề bài, mô hình tự bịa chuyện cho có hơi người, chi tiết nào cũng tròn trịa: "sau 5 năm, 3 công ty", "mất 2 tháng xây một tính năng không ai dùng", "tháng thứ tư đau ống đồng, nghỉ gần một tháng", "đặt báo thức 5h15". Người đọc không biết, nhưng người đứng tên thì biết đó không phải chuyện của mình.
+**Sửa:** Hỏi người dùng một hai chuyện thật: lần nào kernel không boot, mất bao lâu, vì lỗi gì, lúc đó nghĩ gì. Dùng đúng lời họ kể. Không có thì giữ bài ngắn và trung tính. Không bịa kỷ niệm, và không đưa khung điền chỗ trống có tình tiết dựng sẵn.
 
 ### 54. Câu vụn: dấu chấm chặt một ý thành nhiều câu
 **Dấu hiệu:** hai ba câu ngắn liền nhau cùng nói một ý; câu sau lặp chủ ngữ của câu trước ("Skill giúp văn bản dễ đọc hơn. Skill không cam kết..."); câu chỉ là một cụm bổ sung đứng riêng ("Thường mất chưa tới một phút.", "Codex, Cursor cũng được."); gạch đầu dòng mở bằng một cụm cụt rồi chấm ("Soi lại trước khi gửi. Skill chỉ ra..."); cả bài chừng một phần ba số câu dài không quá mười chữ (`scan.py` báo từ 30%).
@@ -465,7 +466,7 @@ Nhóm G bắt các cụm dịch dễ thấy. Nhóm này bắt thứ khó thấy 
 **Sửa:** "Với X" → "X thì", "Riêng X", "Còn X". "Để X, Y" → "Muốn X thì Y". "Và" → dấu phẩy, "rồi", "còn", "mà", hoặc giữ nếu thật sự là liệt kê. "khi" → "lúc", "hễ", "xong", hoặc bỏ. Bỏ "mà" sau "nơi", "người", "điều".
 
 ### 61. Thành ngữ, cách ghép từ và tiêu đề dịch thẳng
-**Dấu hiệu:** "đúng hơn may rủi một chút" (better than chance); "ở cuối ngày" (at the end of the day); "tin tốt là" (the good news is); "làm nên sự khác biệt" (make a difference); "đóng một vai trò" (play a role); "có một cái nhìn rõ ràng"; "là rất quan trọng để" (it is important to); "hãy chắc chắn rằng bạn" (make sure you); "đừng ngần ngại" (don't hesitate); "như đã đề cập ở trên"; "một loạt các". Cụm mở và chuyển đoạn của bài hướng dẫn tiếng Anh: "bạn đã đến đúng nơi" (you've come to the right place), "đầu tiên và quan trọng nhất" (first and foremost), "như một quy tắc chung" (as a general rule), "cuối cùng nhưng không kém phần quan trọng" (last but not least), "kẻ thù lớn nhất của bạn" (your worst enemy). Khuôn email: "hy vọng email này tìm thấy anh" (I hope this email finds you well), "vui lòng tìm thấy tệp đính kèm" (please find attached), "mong chờ được nghe từ anh" (I look forward to hearing from you), "bất kỳ câu hỏi hoặc mối quan tâm nào" (any questions or concerns). Mô tả sản phẩm: "được thiết kế với bạn trong tâm trí" (designed with you in mind), "cho dù bạn là" (whether you are), "sự lựa chọn hoàn hảo" (the perfect choice), "nhận được nhiều hơn từ" (get more out of). Hướng dẫn: "nếu vấn đề vẫn còn tồn tại" (if the problem persists), "hãy chắc chắn để" (be sure to). Báo cáo và bài giải thích: "tiến về phía trước" (moving forward), "đạt được những tiến bộ đáng kể" (made significant progress), "hãy nghĩ về nó như" (think of it as), "điều đó nói rằng" (that said), "không phải là không có những hạn chế của nó" (not without its limitations), "một nhánh... mà tập trung vào" (which focuses on), "càng nhiều ví dụ mà nó thấy" (the more examples it sees), "tiến bộ trong việc cải thiện" (progress in improving), "làm được điều này mà không cần" (did this without), "chúng tôi muốn gửi lời cảm ơn đặc biệt" (we would like to extend special thanks). Tiêu đề: "Trước và sau", "Nên biết", "Bắt đầu nhanh", "Tại sao chọn X", "Những gì bạn nhận được", "Đóng góp".
+**Dấu hiệu:** "đúng hơn may rủi một chút" (better than chance); "ở cuối ngày" (at the end of the day); "tin tốt là" (the good news is); "làm nên sự khác biệt" (make a difference); "đóng một vai trò" (play a role); "có một cái nhìn rõ ràng"; "là rất quan trọng để" (it is important to); "hãy chắc chắn rằng bạn" (make sure you); "đừng ngần ngại" (don't hesitate); "như đã đề cập ở trên"; "một loạt các". Cụm mở và chuyển đoạn của bài hướng dẫn tiếng Anh: "bạn đã đến đúng nơi" (you've come to the right place), "đầu tiên và quan trọng nhất" (first and foremost), "như một quy tắc chung" (as a general rule), "cuối cùng nhưng không kém phần quan trọng" (last but not least), "kẻ thù lớn nhất của bạn" (your worst enemy). Khuôn email: "em viết thư này để" (I am writing to), "xin lỗi vì sự bất tiện này" (sorry for the inconvenience), "rất vui được chia sẻ rằng" (excited to share that), "dẫn dắt bởi quỹ X" (led by), "hy vọng email này tìm thấy anh" (I hope this email finds you well), "vui lòng tìm thấy tệp đính kèm" (please find attached), "mong chờ được nghe từ anh" (I look forward to hearing from you), "bất kỳ câu hỏi hoặc mối quan tâm nào" (any questions or concerns). Mô tả sản phẩm: "được thiết kế với bạn trong tâm trí" (designed with you in mind), "cho dù bạn là" (whether you are), "sự lựa chọn hoàn hảo" (the perfect choice), "nhận được nhiều hơn từ" (get more out of). Hướng dẫn: "nếu vấn đề vẫn còn tồn tại" (if the problem persists), "hãy chắc chắn để" (be sure to). Báo cáo và bài giải thích: "tiến về phía trước" (moving forward), "đạt được những tiến bộ đáng kể" (made significant progress), "hãy nghĩ về nó như" (think of it as), "điều đó nói rằng" (that said), "không phải là không có những hạn chế của nó" (not without its limitations), "một nhánh... mà tập trung vào" (which focuses on), "càng nhiều ví dụ mà nó thấy" (the more examples it sees), "tiến bộ trong việc cải thiện" (progress in improving), "làm được điều này mà không cần" (did this without), "chúng tôi muốn gửi lời cảm ơn đặc biệt" (we would like to extend special thanks). Tiêu đề: "Trước và sau", "Nên biết", "Bắt đầu nhanh", "Tại sao chọn X", "Những gì bạn nhận được", "Đóng góp".
 **Sửa:** Tìm cách người Việt vẫn nói ý đó: "chỉ nhỉnh hơn đoán mò", "rốt cuộc", "may là", "nhớ kiểm...", "cứ hỏi", "trước hết", "thường thì", "cuối cùng", "em gửi kèm file", "còn lỗi thì". Không có cách nói sẵn thì nói thẳng sự việc. Tiêu đề viết theo việc người đọc muốn tìm: "Văn AI và bản đã sửa", "Lưu ý", "Cài nhanh", "Góp ý, báo lỗi".
 
 ### 62. Thiếu khung đề-thuyết và tiểu từ

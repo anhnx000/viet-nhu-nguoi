@@ -14,6 +14,7 @@ Repo này là một skill viết bằng Markdown, kèm hai script Python chỉ d
 
 - Dấu hiệu mới: trước hết xem có gộp được vào mục đã có không. Thêm, bớt hay đánh số lại mục nào thì sửa con số tổng trong hai README.
 - Kiểm tra mới trong `scan.py` phải có test cả hai chiều: bắt được văn có dấu hiệu, không báo nhầm văn người viết.
+- Thêm hay chỉnh ngưỡng trong `scan.py` thì đo trên hai phía rồi ghi số vào `CHANGELOG.md`: bài mô hình viết theo đề bài thường gặp mà không bật skill, và bài người viết đăng trước 11/2022. Đề bài dùng để chỉnh thì không dùng lại để báo kết quả, viết đề mới.
 - Điểm của các file trong `examples/` mà đổi thì sửa mọi chỗ dẫn lại: README hai thứ tiếng, ảnh trong `assets/` (vẽ lại bằng `python3 assets/make_images.py`), test.
 - Phiên bản phải giống nhau ở `SKILL.md` (`metadata.version`), `.claude-plugin/plugin.json`, `.claude-plugin/marketplace.json` và mục đầu `CHANGELOG.md`.
 - Không thêm mẹo lừa máy dò AI, không hứa qua được máy dò, không bịa số liệu, tên, nguồn.

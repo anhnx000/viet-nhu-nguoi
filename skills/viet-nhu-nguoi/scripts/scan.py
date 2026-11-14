@@ -56,6 +56,7 @@ PATTERNS = {
         r"(^\W*|[.!?…]\s+)nói (cho )?(thật|thẳng|gọn|rõ|công bằng) (để|cho|trước)\b[^.!?\n:]{0,50}:",
         r",\s*nói (gọn|nhanh|thật|thẳng|ngắn gọn|đơn giản)\s*$",
         r"(thành thật|thật lòng|công bằng|thẳng thắn|thú thật|nghiêm túc) mà nói",
+        r"(điều )?(mình|tôi|em) (chỉ )?muốn nói( là)?\s*:", r"(^\W*|[.!?…]\s+)(thú thật|nói thật)( là)?\s*[,:]",
         r"(hiểu|nói) (một cách )?(đơn giản|nôm na|ngắn gọn|dễ hiểu)( nhất)? (là|thì)\b",
         r"cứ hiểu (nó |đơn giản )?(như|là)\b",
         r"(^\W*|[.!?]\s+)(to be (honest|fair|clear)|let'?s be (honest|real|clear)|honestly|frankly|"
@@ -67,7 +68,43 @@ PATTERNS = {
         # Không bắt đuôi ", không phải Y" vì trùng với "không phải" nghĩa là "khỏi phải".
         r"không (?!chỉ\b|đơn thuần\b|phải\b)[^.!?\n,;:]{1,60}, mà (?!còn\b)",
         r"không (?!phải\b|có\b|được\b|thể\b|biết\b)(\w+)\b[^.!?\n]{0,60}[.!?]\s+(?:\w+\s+){1,3}\1\b",
+        # "X không chỉ là A. Nó là B."; "X là A, không phải B" (bỏ "không phải" nghĩa là "khỏi phải")
+        r"không (chỉ|đơn thuần) (là )?[^.!?\n]{1,80}[.!?]\s+(nó|đây|đó)\b",
+        r"\blà [^.!?\n,]{1,40}, không phải (là )?(?!làm|gõ|cài|cấu hình|chờ|lo|trả|đi|mua|sửa|viết|đợi|nghĩ|hỏi|tốn|mất|ai|lúc|khi)\w",
+        # "PM không phải là A. PM là B."; "không có nghĩa là A, mà là B"; "Đừng A, hãy B"; "Không có A, chỉ có B"
+        r"(\w+) không phải (là )?[^.!?\n]{1,60}[.!?]\s+\1 là\b", r"không có nghĩa là\b[^.!?\n]{0,60}?\bmà là\b",
+        r"(^|[.!?*]\s*)đừng [^.!?\n,]{1,40}, hãy\b", r"\bkhông có [^.!?\n,]{1,40}, chỉ có\b",
         r"\bnot (just|only|merely)\b.{0,80}?\bbut\b", r"\bit'?s not\b.{0,60}?\bit'?s\b",
+    ],
+    # Câu kết mời bình luận, mời theo dõi: khuôn của bài mạng xã hội viết để kéo tương tác.
+    "mời tương tác": [
+        r"(chia sẻ|để lại|comment|bình luận|kể)\b[^.!?\n]{0,50}(bình luận|comment|cmt|bên dưới|phía dưới)",
+        r"\bbạn (nghĩ sao|thấy sao|thì sao)\b", r"\bcòn bạn\??\s*$", r"(^|[.!?]\s+)còn bạn,[^.!?\n]{0,80}\?",
+        r"nếu bạn (cũng )?(đang|từng)[^.!?\n]{0,80}(nhắn|inbox|kể|chia sẻ)",
+        r"bạn đã (từng|bao giờ) [^.!?\n]{1,50} chưa\?", r"kể (cho )?(mình|tôi) nghe", r"hãy (tiếp tục )?(theo dõi|đồng hành cùng)",
+        r"điều gì (bạn|anh chị)[^.!?\n]{0,50}\?\s*$", r"(tag|gắn thẻ) (ngay )?(một )?(người|ai đó|bạn bè)",
+        r"(follow|theo dõi) (mình|tôi|page|trang)[^.!?\n]{0,20} để", r"\bwhat do you think\?",
+        r"\b(let me know|share your thoughts|drop a comment)[^.!?\n]{0,30}(comments|below)", r"\bagree\?\s*$",
+    ],
+    # Châm ngôn truyền cảm hứng và lời tri ân theo khuôn: gắn vào bài nào cũng được.
+    "khẩu hiệu": [
+        r"tương lai thuộc về", r"chỉ là (sự |bước )?khởi đầu", r"chưa bao giờ (là )?(dễ dàng|muộn)",
+        r"bắt đầu từ những bước (nhỏ|đầu tiên)", r"mọi (điều|thứ) đều có thể", r"bạn sẽ (phải )?ngạc nhiên",
+        r"(bắt đầu|hành động|thử|đăng ký|ra khỏi nhà) ngay hôm nay", r"thay vì (lo sợ|sợ hãi|chờ đợi)",
+        r"phía trước còn (rất )?nhiều (thách thức|khó khăn)", r"vững bước", r"chặng đường (phía trước|sắp tới)",
+        r"cột mốc (quan trọng|đáng nhớ)", r"nỗ lực không ngừng", r"không ngừng (học hỏi|nỗ lực|phát triển|đổi mới|hoàn thiện)",
+        r"lòng biết ơn sâu sắc", r"biến (tầm nhìn|ước mơ|ý tưởng) thành hiện thực", r"tạo ra giá trị( thực| thật)?",
+        r"thay đổi mọi thứ", r"phải thừa nhận rằng", r"(làm việc|nỗ lực|cống hiến) không (biết )?mệt mỏi",
+        r"(bước )?ra khỏi vùng an toàn", r"phiên bản tốt (hơn|nhất) của", r"bài học (quý|lớn|đắt)( giá)? nhất",
+        r"câu trả lời (ngắn gọn )?(là|không đơn giản)", r"không hề dễ dàng", r"siêu năng lực",
+        r"(hành trình|chặng đường|con đường) phía trước còn (dài|nhiều)", r"(điều|thứ) gì đó có ý nghĩa",
+        r"ước gì (mình |tôi )?(được )?biết sớm hơn", r"đây là câu chuyện của (mình|tôi)", r"không (bao giờ là|phải là) quá muộn",
+        r"tin (tưởng )?vào tầm nhìn", r"\bthe future belongs to\b", r"\bthis is just the beginning\b",
+    ],
+    # Câu công văn dùng trong email, tin nhắn thường ngày
+    "khuôn công văn": [
+        r"rất mong nhận được sự", r"xin (được )?trình bày( chi tiết)? như sau", r"tiềm ẩn (nhiều )?(rủi ro|nguy cơ)",
+        r"(?<!rất mong )nhận được sự (quan tâm|xem xét|ủng hộ|phê duyệt)", r"kính mong (anh|chị|quý)[^.!?\n]{0,30}(xem xét|tạo điều kiện)",
     ],
     # Nêu sự việc xong lại giải nghĩa hộ người đọc.
     "diễn giải lại": [
@@ -122,9 +159,11 @@ PATTERNS = {
         r"(bất kỳ|bất cứ) câu hỏi (hoặc|hay) (mối quan tâm|thắc mắc)", r"với (bạn|khách hàng|người dùng) trong tâm trí",
         r"cho dù bạn là", r"sự lựa chọn hoàn hảo", r"nhận được nhiều hơn từ", r"vẫn còn tồn tại",
         r"bạn (sẽ )?không muốn (bỏ lỡ|mất)",
+        r"viết (thư|email|mail) này (để|nhằm)", r"xin lỗi vì (sự |bất kỳ sự )(bất tiện|chậm trễ|phiền toái)",
         # khuôn báo cáo và bài giải thích
         r"(làm|đạt) được điều (này|đó) mà không", r"(chúng tôi|tôi) (muốn|xin) gửi lời cảm ơn đặc biệt",
-        r"(hào hứng|vui mừng|vinh dự) (để|được) chia sẻ rằng", r"(hãy )?để lại một bình luận",
+        r"(hào hứng|vui mừng|vui|vinh dự|tự hào) (để|được) chia sẻ rằng",
+        r"(?<!được )(?<!bị )\b(dẫn dắt|dẫn đầu|tài trợ|phát triển|xây dựng|thiết kế|tạo ra|thực hiện) bởi\b", r"(hãy )?để lại một bình luận",
         r"tiến về phía trước", r"(đạt được|có) những tiến bộ đáng kể", r"điều đó (được )?nói rằng",
         r"hãy nghĩ về (nó|điều này|chúng) như", r"không phải là không có (những )?(hạn chế|nhược điểm|thách thức|rủi ro)",
         r"(chúng ta|mình) sẽ cùng nhau (xem xét|tìm hiểu|khám phá|đi qua)", r"(đang )?tìm kiếm một cách để",
@@ -144,7 +183,7 @@ PATTERNS = {
         r"với (sự|việc|những|các|một) \w+|đối với \w+|dựa trên \w+|thông qua \w+)",
     ],
     "quan hệ từ dịch sát": [
-        r"\b(nơi|người|những người|điều|thứ|lý do|thời điểm) mà\b", r"\bmà (tập trung vào|cho phép|giúp)\b", r"\bcàng nhiều [^.,!?\n]{1,30} mà\b", r"\blà một trong (những|các)\b",
+        r"\b(nơi|người|những người|điều|thứ|lý do|thời điểm) mà\b(?! (không|chưa|vẫn|chẳng|cũng|còn|lại)\b)", r"\bmà (tập trung vào|cho phép|giúp)\b", r"\bcàng nhiều [^.,!?\n]{1,30} mà\b", r"\blà một trong (những|các)\b",
         r"\bcũng như là\b", r"\bvà cũng\b", r"\bvà/hoặc\b",
     ],
     "động từ rỗng (vi)": [
@@ -168,7 +207,12 @@ PATTERNS = {
         r"today'?s fast-paced", r"it'?s important to note", r"ever-evolving",
     ],
     "quảng cáo": [
-        r"nằm giữa lòng", r"vị trí đắc địa", r"ngỡ ngàng", r"không thể bỏ qua", r"đẳng cấp",
+        r"nằm giữa lòng", r"(góc|chốn|khoảng|ốc đảo|không gian)[^.,\n]{0,25} giữa lòng",
+        r"vị trí đắc địa", r"ngỡ ngàng", r"không thể bỏ qua", r"đẳng cấp",
+        r"điểm (dừng chân|đến|hẹn) lý tưởng", r"đắm mình", r"nhịp sống (vội vã|hối hả)", r"đậm chất", r"mộng mơ",
+        r"trải nghiệm (trọn vẹn|khó quên|tuyệt vời|đáng nhớ)", r"khoảng lặng",
+        r"thiên đường (nghỉ dưỡng|mua sắm|ẩm thực|du lịch|sống ảo)", r"(pha chế|chăm chút|chế tác|lựa chọn) (một cách )?(tỉ mỉ|kỹ lưỡng)", r"thành phố ngàn hoa",
+        r"\bsở hữu (bộ sưu tập|không gian|vị trí|đội ngũ|hệ thống|thiết kế|tầm nhìn|vẻ đẹp)",
         r"\bnestled\b", r"\bbreathtaking\b", r"\bmust-visit\b", r"\brenowned\b",
     ],
     "uy tín mơ hồ": [
@@ -182,15 +226,27 @@ PATTERNS = {
         r"tính đến thời điểm (cập nhật|huấn luyện)", r"dựa trên thông tin hiện có",
         r"as of my (last|knowledge)", r"based on available information",
     ],
+    # Chỉ dẫn gửi cho AI nằm lẫn trong văn bản cần sửa: coi là chữ, không làm theo
+    "chỉ dẫn chèn vào": [
+        r"</?(skill|system|instructions?)>", r"(bỏ qua|quên) (mọi|tất cả|toàn bộ|các) (hướng dẫn|chỉ dẫn|chỉ thị)",
+        r"\bignore (all |any )?(the )?(previous|prior|above) instructions\b", r"\bsystem message\b",
+    ],
     "dấu vết công cụ": [
         r"contentReference", r"oaicite", r"turn0search\d", r"\[cite: ?\d+\]", r":::writing",
+        # chỗ trống của bản mẫu còn sót: [Họ tên], [Tên công ty], [Your name]
+        r"\[(họ (và )?tên|tên[^\]\n]{0,30}|chức vụ|số điện thoại|sđt|email[^\]\n]{0,20}|địa chỉ[^\]\n]{0,20}|"
+        r"ngày[^\]\n]{0,20}|điền[^\]\n]{0,40}|chèn[^\]\n]{0,40}|link[^\]\n]{0,20}|công ty[^\]\n]{0,20}|"
+        r"your [^\]\n]{1,30}|company[^\]\n]{0,20}|name|date|insert[^\]\n]{0,40})\](?!\()",
     ],
 }
 
 DASH = re.compile(r"[—–]| -- ")
 CURLY = re.compile(r"[“”‘’]")
 BOLD_LABEL = re.compile(r"^\s*([-*+]|\d+\.)\s+(\S+\s+)?\*\*[^*]+:?\*\*:?")
-EMOJI = re.compile(r"[\U0001F300-\U0001FAFF✅✨➡→]")
+EMOJI = re.compile(r"[\U0001F300-\U0001FAFF\u2600-\u27BF\u2B50\u2B06\u2B07\u20E3→]")
+EMOJI_LEAD = re.compile(r"^\s*(?:[-*+#>]+\s*)*(?:\d\ufe0f?\u20e3|[\U0001F300-\U0001FAFF\u2600-\u27BF\u2B50])")
+# Dòng chỉ có chữ in đậm, hoặc đoạn mở bằng một cụm in đậm kết bằng dấu câu ("**Văn phong đơn giản.** Tác giả...")
+BOLD_HEADING = re.compile(r"^\s*\*\*[^*\n]{2,80}\*\*:?\s*$|^\s*\*\*[^*\n]{2,60}[:.!?]\*\*\s+\S")
 FENCE = re.compile(r"^\s*```")
 # Chêm tiếng Anh trong ngoặc sau từ Việt: "hiệu suất (performance)"
 EN_GLOSS = re.compile(r"\w*[àáảãạăằắẳẵặâầấẩẫậèéẻẽẹêềếểễệìíỉĩịòóỏõọôồốổỗộơờớởỡợùúủũụưừứửữựỳýỷỹỵđ]\w*\s+\(([a-z][a-z ]{2,30})\)")
@@ -199,6 +255,7 @@ NOMINAL = re.compile(r"\b(việc|sự)\b")
 THIS_IT = re.compile(r"^(điều này|điều đó|nó)\b")
 
 
+OFFICIAL = re.compile(r"(?im)^\s*(số:\s*\d+\s*/|v/v\b|kính gửi:)")
 QUOTED_LINE = re.compile(r"^\s*[>|]")
 QUOTED_SPAN = re.compile(r'"[^"\n]*"|“[^”\n]*”')
 
@@ -249,10 +306,20 @@ def scan(text, doc=True, meta=False):
                 hits.setdefault(name, []).append((no, f"x{n}"))
         if BOLD_LABEL.match(prose):
             hits.setdefault("nhãn in đậm", []).append((no, prose.strip()[:40]))
+        elif BOLD_HEADING.match(prose):
+            hits.setdefault("in đậm làm tiêu đề", []).append((no, prose.strip()[:40]))
+        if EMOJI_LEAD.match(prose) and len(prose.split()) >= 3:
+            hits.setdefault("emoji đầu dòng", []).append((no, prose.strip()[:40]))
         for m in EN_GLOSS.finditer(low):
             if prose[m.start(1):m.end(1)].islower():  # bỏ qua viết tắt như (MIT), (API)
                 hits.setdefault("chêm tiếng Anh", []).append((no, m.group(0)))
         sentence_checks(prose, no, hits)
+    if OFFICIAL.search(text):  # công văn thật thì câu công văn là đúng chỗ
+        hits.pop("khuôn công văn", None)
+    # Một dòng chúc mừng mở bằng emoji hay một nhãn in đậm lẻ thì chưa phải khuôn
+    for group in ("emoji đầu dòng", "in đậm làm tiêu đề"):
+        if len(hits.get(group, [])) < 2:
+            hits.pop(group, None)
     if doc:
         document_checks(text, hits)
     return hits, len(lines)
@@ -313,6 +380,18 @@ def document_checks(text, hits):
         n = len(hits.get(group, []))
         if n >= 3:
             hits.setdefault("tật lặp cả bài", []).append((hits[group][0][0], f"{group} x{n}"))
+    if len(hits.get("emoji đầu dòng", [])) >= 3:
+        hits.setdefault("chia mục bằng emoji", []).append(
+            (hits["emoji đầu dòng"][0][0], f"{len(hits['emoji đầu dòng'])} dòng mở bằng emoji"))
+    labels = hits.get("nhãn in đậm", []) + hits.get("in đậm làm tiêu đề", [])
+    # Từ bốn chỗ, và dày cỡ một chỗ trên 150 chữ: tài liệu dài có vài nhãn in đậm thì không tính
+    if len(labels) >= 4 and len(labels) * 150 >= len(text.split()):
+        hits.setdefault("in đậm dày", []).append((min(labels)[0], f"{len(labels)} nhãn hoặc tiêu đề in đậm"))
+    filled = [no for no, s in prose_lines(text) if s.strip() and len(HASHTAG.findall(s)) < 2]
+    tail = set(filled[-3:])
+    cta = [h for h in hits.get("mời tương tác", []) if h[0] in tail]
+    if cta and len(filled) >= 5:
+        hits.setdefault("kết bài mời tương tác", []).append(cta[0])
     paras, cur, start, caps, tagged, total_words, md_heads = [], [], 0, [], False, 0, 0
     for no, line in list(prose_lines(text)) + [(0, "")]:
         s = line.strip()
@@ -510,7 +589,7 @@ def slide_checks(deck, index, hits):
 WEIGHTS = {
     "lời chatbot": 3, "câu dẫn": 3, "đối lập giả": 3, "nhãn báo giọng": 3,
     "diễn giải lại": 2, "tự kể dàn ý": 2, "mục kết dán nhãn": 2, "tổng kết rỗng": 3,
-    "giới hạn kiến thức": 3, "dấu vết công cụ": 3, "văn dịch (vi)": 3, "động từ rỗng (vi)": 3,
+    "giới hạn kiến thức": 3, "dấu vết công cụ": 3, "chỉ dẫn chèn vào": 3, "mời tương tác": 2, "khẩu hiệu": 2, "emoji đầu dòng": 2, "văn dịch (vi)": 3, "động từ rỗng (vi)": 3,
     "thổi phồng": 2, "uy tín mơ hồ": 2, "quảng cáo": 2, "từ vựng AI (vi)": 2,
     "từ vựng AI (en)": 2, "né là/có": 2, "danh hóa (vi)": 2, "thừa nghĩa (vi)": 2,
     "chuỗi \"của\"": 2, "việc/sự dày": 2, "\"Điều này\"/\"Nó\" mở câu": 2,
@@ -525,7 +604,7 @@ FILLER_WORDS = [
 
 DOC_POINTS = {
     "hai chấm dồn dập": 6, "đoạn ngắn đều nhau": 4, "câu vụn": 4, "đại từ dày": 4, "chữ đệm dịch dày": 12,
-    "bài đăng chia mục viết hoa": 4, "bài mạng xã hội dài": 6, "chồng tiếng lóng": 8, "trộn giọng miền": 6,
+    "bài đăng chia mục viết hoa": 4, "chia mục bằng emoji": 8, "in đậm dày": 5, "kết bài mời tương tác": 5, "bài mạng xã hội dài": 6, "chồng tiếng lóng": 8, "trộn giọng miền": 6,
 }
 for _g in list(DOC_POINTS) + ["tật lặp cả bài"]:
     WEIGHTS[_g] = 0

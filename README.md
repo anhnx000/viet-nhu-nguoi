@@ -118,7 +118,7 @@ Muốn skill viết sát ý hơn thì:
 
 1. Nói rõ ai đọc, bạn với họ vai vế thế nào. "Gửi chị trưởng phòng, xưng em" ra email khác hẳn "gửi khách hàng, xưng chúng tôi".
 2. Dán một đoạn tự viết, cùng loại với bài sắp viết, để skill bắt chước độ dài câu và chữ hay dùng.
-3. Số liệu, tên, ngày tháng thì đưa số thật, tên thật. Thiếu chỗ nào skill hỏi lại hoặc để trống, không tự nghĩ ra.
+3. Số liệu, tên, ngày tháng thì đưa số thật, tên thật. Thiếu chỗ nào skill hỏi lại hoặc để trống, không tự nghĩ ra. Nhờ viết bài chia sẻ mà chưa kể chuyện nào thì skill hỏi vài câu trước, không bịa kỷ niệm hộ bạn.
 4. Thấy chỗ nào lạ thì bảo "mình không nói thế". Skill đổi theo và nhớ tới hết cuộc trò chuyện.
 
 Còn vài cách dùng nữa:
@@ -192,6 +192,7 @@ Có dấu hiệu phải đọc cả bài mới thấy, dù từng câu đã ổn
 - dấu hai chấm dày đặc;
 - cả bài dày những chữ đệm của văn dịch như "một", "các", "được", "sẽ", "của bạn";
 - dấu chấm chặt một ý thành nhiều câu vụn, hoặc ngược lại, một câu gộp quá nhiều vế;
+- bài đăng chia mục bằng emoji, kết bằng câu mời bình luận hoặc một câu hô hào gắn vào bài nào cũng được;
 - bài đăng dài ôm đủ mọi chủ đề.
 
 Slide và tài liệu nhiều trang có nhóm riêng: tiêu đề chỉ là nhãn ("Tổng quan", "Kết luận"), tiêu đề đếm số ý ("3 trụ cột"), slide nào cũng đúng ba ý, hứa suông ("chi tiết sẽ trao đổi sau"), ghi chú thuyết trình viết như công văn. Cách viết slide có hướng dẫn riêng ở [references/slides.md](skills/viet-nhu-nguoi/references/slides.md).
@@ -221,7 +222,7 @@ python3 -I skills/viet-nhu-nguoi/scripts/scan.py file.md
 | `--chat` | văn bản là tin nhắn trả lời: báo thêm gạch đầu dòng, in đậm, câu khách sáo, tin quá dài |
 | `--text` | in hết chữ và ghi chú từng slide trong file `.pptx` |
 
-`check_facts.py` so bản gốc với bản sửa, so hai file `.pptx` cũng được. Số liệu, ngày giờ, link hay code bị mất hoặc tự thêm vào thì script báo lỗi, thiếu tên riêng thì nhắc:
+`check_facts.py` so bản gốc với bản sửa, so hai file `.pptx` cũng được. Số liệu, ngày giờ, link hay code bị mất hoặc tự thêm vào thì script báo lỗi. Số được so theo giá trị, nên "1.250" với "1250", "3 khách" với "ba khách" coi là một. Tên riêng, số viết bằng chữ, thứ trong tuần và mấy chữ như "chưa", "vẫn", "chỉ", "có thể" bị rơi thì script nhắc xem lại:
 
 ```bash
 python3 -I skills/viet-nhu-nguoi/scripts/check_facts.py goc.md moi.md

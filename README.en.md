@@ -114,7 +114,7 @@ For better results:
 
 1. Say who will read it and who you are to them. "To my department head, I'm em" produces a different email from "to a customer, we are chúng tôi".
 2. Paste a passage you wrote yourself, the same kind of text as the one you need. The skill copies your sentence length and the words you favour.
-3. Give it the real numbers, names and dates. If something is missing the skill asks or leaves a blank, and it does not make things up.
+3. Give it the real numbers, names and dates. If something is missing the skill asks or leaves a blank, and it does not make things up. Ask for a personal post without telling it any story and it asks a few questions first; it will not invent memories for you.
 4. When a phrase feels off, say "mình không nói thế" (*I don't talk like that*). The skill adjusts and remembers for the rest of the conversation.
 
 Other ways to use it:
@@ -196,6 +196,7 @@ Some patterns only show when you read the whole text, even after each sentence i
 - colons everywhere;
 - the filler words of translated text ("một", "các", "được", "sẽ", "của bạn", the leftovers of English articles, plurals, tenses and possessives) thick across the whole text;
 - full stops that chop one thought into several short sentences, or the reverse, one sentence joined from too many clauses;
+- a post split into sections with emoji, closing on a call for comments or a slogan that would fit any post;
 - a long post that covers every topic.
 
 Slides and long documents have their own group. The skill catches titles that are only labels ("Tổng quan", "Kết luận"), titles that count points ("3 trụ cột", *3 pillars*), exactly three bullets on every slide, empty promises ("chi tiết sẽ trao đổi sau", *details to be discussed later*) and speaker notes that read like a memo. The slide-writing guide is in [references/slides.md](skills/viet-nhu-nguoi/references/slides.md) (in Vietnamese).
@@ -225,7 +226,7 @@ python3 -I skills/viet-nhu-nguoi/scripts/scan.py file.md
 | `--chat` | the text is a chat reply: also flag bullets, bold, stock politeness, overlong messages |
 | `--text` | dump every slide's text and notes from a `.pptx` |
 
-`check_facts.py` compares an original with its rewrite (two `.pptx` files work too). It fails if a number, date, time, link or code span was lost or added, and warns about missing proper names:
+`check_facts.py` compares an original with its rewrite (two `.pptx` files work too). It fails if a number, date, time, link or code span was lost or added. Numbers are compared by value, so "1.250" and "1250", or "3 khách" and "ba khách" (*three customers*), count as the same. It warns about missing proper names, spelled-out numbers, weekdays, and dropped qualifiers such as "chưa" (*not yet*), "vẫn" (*still*), "chỉ" (*only*), "có thể" (*may*):
 
 ```bash
 python3 -I skills/viet-nhu-nguoi/scripts/check_facts.py original.md rewrite.md
