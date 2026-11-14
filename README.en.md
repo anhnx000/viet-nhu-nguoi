@@ -226,6 +226,8 @@ python3 -I skills/viet-nhu-nguoi/scripts/scan.py file.md
 | `--chat` | the text is a chat reply: also flag bullets, bold, stock politeness, overlong messages |
 | `--text` | dump every slide's text and notes from a `.pptx` |
 
+The scanner cannot tell an invented story from a real one. For first-person text it prints one extra line listing personal details that carry a number ("tháng thứ tư", *the fourth month*; "5h15"; "3 công ty", *three companies*) so you can check them: these are exactly what a model adds when it writes a post on your behalf. That line does not count toward the score.
+
 `check_facts.py` compares an original with its rewrite (two `.pptx` files work too). It fails if a number, date, time, link or code span was lost or added. Numbers are compared by value, so "1.250" and "1250", or "3 khách" and "ba khách" (*three customers*), count as the same. It warns about missing proper names, spelled-out numbers, weekdays, and dropped qualifiers such as "chưa" (*not yet*), "vẫn" (*still*), "chỉ" (*only*), "có thể" (*may*):
 
 ```bash
@@ -283,6 +285,7 @@ skills/viet-nhu-nguoi/
 assets/                      banner, example images and the script that redraws them (make_images.py)
 examples/                    before/after text and .pptx decks used in the README and tests
 tests/test_scan.py           python3 -m unittest discover -s tests
+tests/fixtures/              model-written and human-written texts the tests keep apart
 ```
 
 ## Contributing

@@ -258,6 +258,50 @@ class SocialPostTells(unittest.TestCase):
         self.assertNotIn("quan hệ từ dịch sát", groups("Mình gửi CV đi hàng chục nơi mà không ai hồi âm."))
 
 
+class WeakSignsAndDetails(unittest.TestCase):
+    def test_weak_document_signs_need_a_strong_one(self):
+        blog = "\n\n".join(["Hồi mới ra trường mình hay nghĩ vậy. Giờ thì khác nhiều rồi."] * 14)
+        hits = scan.scan(blog)[0]
+        self.assertIn("đoạn ngắn đều nhau", hits)
+        self.assertEqual(scan.doc_points(hits), 0)
+        hits = scan.scan(blog + "\n\nHy vọng bài viết hữu ích với bạn!")[0]
+        self.assertGreaterEqual(scan.doc_points(hits), scan.DOC_POINTS["đoạn ngắn đều nhau"])
+
+    def test_first_person_details_listed_not_scored(self):
+        post = ("Một năm trước mình chạy được 800 mét thì dừng. Sáng nay mình về đích 21km sau 2 tiếng 14 phút.\n\n"
+                "Tháng thứ tư mình đau ống đồng, nghỉ gần một tháng. Mình đặt báo thức 5h15 mỗi sáng.")
+        found = [m for _, m in scan.personal_details(post)]
+        for detail in ("800 mét", "21km", "tháng thứ tư", "5h15"):
+            self.assertIn(detail, found)
+        self.assertEqual(scan.score(post, scan.scan(post)[0])["score"], 0)
+
+    def test_no_detail_list_without_first_person(self):
+        report = "Quý 3 doanh thu 1.250 tỷ, tăng 12% sau 3 tháng. Đội có 14 người, làm 2 dự án."
+        self.assertEqual(scan.personal_details(report), [])
+
+
+class Corpus(unittest.TestCase):
+    """Khoảng cách giữa bài mô hình viết mặc định và văn người viết (xem tests/fixtures/README.md)."""
+
+    def scores(self, pattern):
+        out = []
+        for path in sorted((ROOT / "tests/fixtures").glob(pattern)):
+            text = path.read_text(encoding="utf-8")
+            out.append(scan.score(text, scan.scan(text)[0])["score"])
+        return out
+
+    def test_model_default_writing_is_flagged(self):
+        scores = self.scores("ai-opus/*.md")
+        self.assertEqual(len(scores), 16)
+        self.assertGreaterEqual(sum(scores) / len(scores), 12)
+        self.assertGreaterEqual(sum(1 for s in scores if s >= 10), 9)
+
+    def test_human_prose_stays_clean(self):
+        scores = self.scores("nguoi-viet/*.txt")
+        self.assertEqual(len(scores), 6)
+        self.assertLess(max(scores), 10, scores)
+
+
 def scan_deck(path):
     deck = slides.read_pptx(str(path))
     text, index = slides.to_text(deck)

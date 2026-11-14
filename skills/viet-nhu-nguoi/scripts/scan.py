@@ -501,6 +501,34 @@ def voice_checks(text, hits):
         hits.setdefault("trộn giọng miền", []).append((first, detail))
 
 
+FIRST_PERSON = re.compile(r"\b(mình|tôi|tụi mình|bọn mình)\b")
+_UNIT = (r"(năm|tháng|tuần|ngày|giờ|tiếng|phút|km|mét|kg|công ty|người|lần|buổi|triệu|tỷ|nghìn|tuổi|cuộc|dự án|khách|"
+         r"đêm|trang|cuốn)")
+PERSONAL_DETAIL = re.compile(
+    rf"\b\d+(?:[.,]\d+)?\s?(?:{_UNIT}\b|%)|\b(?:tháng|năm|tuần|ngày|lần|km|lớp) thứ \w+|\blớp \d+|\b\d{{1,2}}h\d{{0,2}}\b|"
+    rf"\b(?:hai|ba|bốn|sáu|bảy|tám|chín|mười) {_UNIT}\b")
+
+
+def personal_details(text):
+    """Chi tiết có con số trong bài xưng "mình", "tôi": máy không biết thật hay bịa, chỉ liệt kê để hỏi lại.
+
+    Bài mô hình viết hộ hay tự thêm đúng loại chi tiết này ("sau 5 năm, 3 công ty", "tháng thứ tư", "5h15").
+    Không tính điểm.
+    """
+    lines = [(no, s) for no, s in prose_lines(text) if s.strip()]
+    if len(FIRST_PERSON.findall(" ".join(s for _, s in lines).lower())) < 3:
+        return []
+    seen, out = set(), []
+    for no, s in lines:
+        if is_caps_heading(s.strip()) or len(HASHTAG.findall(s)) >= 2:
+            continue
+        for m in PERSONAL_DETAIL.finditer(s.lower()):
+            if m.group(0) not in seen:
+                seen.add(m.group(0))
+                out.append((no, m.group(0)))
+    return out if len(out) >= 3 else []
+
+
 CHAT_POLITE = re.compile(
     r"^\W*(chào (bạn|anh|chị|em|mọi người|cả nhà)\b|cảm ơn (bạn|anh|chị|em|mọi người)?\s*(đã|vì|rất nhiều vì)\b)|"
     r"(sẽ|xin) (cân nhắc|ghi nhận|tiếp thu)|góp ý (rất )?(hay|quý báu|giá trị)")
@@ -606,12 +634,17 @@ DOC_POINTS = {
     "hai chấm dồn dập": 6, "đoạn ngắn đều nhau": 4, "câu vụn": 4, "đại từ dày": 4, "chữ đệm dịch dày": 12,
     "bài đăng chia mục viết hoa": 4, "chia mục bằng emoji": 8, "in đậm dày": 5, "kết bài mời tương tác": 5, "bài mạng xã hội dài": 6, "chồng tiếng lóng": 8, "trộn giọng miền": 6,
 }
+# Ba dấu hiệu cả bài này người viết thật cũng hay có (blog xuống dòng liên tục, truyện ngắn câu cụt,
+# bài hướng dẫn xưng "bạn"). Chỉ cộng điểm khi bài còn dính ít nhất một dấu hiệu mạnh.
+WEAK_DOC = ("đoạn ngắn đều nhau", "câu vụn", "đại từ dày")
+STRONG = {g for g, w in WEIGHTS.items() if w == 3} | (set(DOC_POINTS) - set(WEAK_DOC)) | {"tật lặp cả bài"}
 for _g in list(DOC_POINTS) + ["tật lặp cả bài"]:
     WEIGHTS[_g] = 0
 
 
 def doc_points(hits):
-    points = sum(v for g, v in DOC_POINTS.items() if g in hits)
+    backed = any(g in hits for g in STRONG)
+    points = sum(v for g, v in DOC_POINTS.items() if g in hits and (backed or g not in WEAK_DOC))
     for group in TIC_GROUPS:  # một khuôn lặp 3 lần: 6 điểm, mỗi lần thêm 2 điểm, tối đa 15
         n = len(hits.get(group, []))
         if n >= 3 and "tật lặp cả bài" in hits:
@@ -715,9 +748,16 @@ def main():
         slide_checks(deck, index, hits)
         where = slides_mod.labels(index)
     result = score(text, hits, burst=deck is None)
+    details = personal_details(text) if deck is None and not args.meta else []
     loc = (lambda no: where.get(no, f"dòng {no}")) if deck is not None else (lambda no: f"dòng {no}")
     unit = f"{len(deck)} slide" if deck is not None else f"{total} dòng"
+    confirm = ""
+    if details:
+        confirm = ("\nBài xưng \"mình\"/\"tôi\" có chi tiết riêng (không tính điểm). Nếu bài do AI viết hộ thì hỏi lại "
+                   "người đứng tên xem có thật không: " + ", ".join(f"{m} (dòng {no})" for no, m in details[:10])
+                   + (f", và {len(details) - 10} chỗ khác" if len(details) > 10 else "") + ".")
     if args.json:
+        result["to_confirm"] = [{"line": no, "match": m} for no, m in details]
         result["hits"] = {g: [{"line": no, "where": loc(no), "match": m} for no, m in v]
                           for g, v in hits.items()}
         if deck is not None:
@@ -725,7 +765,7 @@ def main():
         print(json.dumps(result, ensure_ascii=False, indent=2))
     elif not hits:
         print(f"Điểm {result['score']}/100 ({result['band']}). Không thấy dấu hiệu bề mặt. "
-              "Vẫn cần tự đọc phần cấu trúc.")
+              "Vẫn cần tự đọc phần cấu trúc." + confirm)
     else:
         count = sum(len(v) for v in hits.values())
         print(f"Điểm {result['score']}/100 ({result['band']}): {count} dấu hiệu trong {unit}, "
@@ -737,7 +777,7 @@ def main():
             if len(items) > 12:
                 print(f"  ... và {len(items) - 12} chỗ khác")
         print("\nMột dấu hiệu đơn lẻ chưa nói lên gì. Nhiều nhóm cùng lúc mới đáng sửa.")
-        print("Điểm đo thói quen viết theo khuôn, không phải xác suất do AI viết.")
+        print("Điểm đo thói quen viết theo khuôn, không phải xác suất do AI viết." + confirm)
     if args.max is not None and result["score"] > args.max:
         sys.exit(1)
 
