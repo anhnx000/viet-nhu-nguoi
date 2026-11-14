@@ -506,7 +506,7 @@ _UNIT = (r"(năm|tháng|tuần|ngày|giờ|tiếng|phút|km|mét|kg|công ty|ng�
          r"đêm|trang|cuốn)")
 PERSONAL_DETAIL = re.compile(
     rf"\b\d+(?:[.,]\d+)?\s?(?:{_UNIT}\b|%)|\b(?:tháng|năm|tuần|ngày|lần|km|lớp) thứ \w+|\blớp \d+|\b\d{{1,2}}h\d{{0,2}}\b|"
-    rf"\b(?:hai|ba|bốn|sáu|bảy|tám|chín|mười) {_UNIT}\b")
+    rf"\b(?:hai|ba|bốn|sáu|bảy|tám|chín|mười) {_UNIT}\b|\bnăm (?:năm|tuần|lần|buổi|công ty|người)\b")
 
 
 def personal_details(text):
@@ -526,7 +526,7 @@ def personal_details(text):
             if m.group(0) not in seen:
                 seen.add(m.group(0))
                 out.append((no, m.group(0)))
-    return out if len(out) >= 3 else []
+    return out if len(out) >= 2 else []
 
 
 CHAT_POLITE = re.compile(
