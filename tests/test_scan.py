@@ -730,6 +730,25 @@ class ChatVoice(unittest.TestCase):
         self.assertNotIn("tin nhắn khách sáo", groups(self.STIFF))
 
 
+class ListNumbering(unittest.TestCase):
+    """Bài chia mục "1.", "2." viết lại thành văn liền: số thứ tự mất đi không phải mất dữ kiện."""
+
+    def test_dropped_list_numbers_are_not_lost_facts(self):
+        old = check_facts.facts("**1. Hỏi người dùng trước**\n\nMình mất 2 tháng làm một tính năng.\n\n"
+                                "**2. Biết từ chối**\n\nRoadmap có 14 việc.\n\n4. Viết rõ\n\nPRD ngắn thôi.")
+        new = check_facts.facts("Mình mất 2 tháng làm một tính năng không ai dùng. Roadmap có 14 việc. PRD thì viết ngắn.")
+        lines, failed = check_facts.compare(old, new)
+        self.assertFalse(failed)
+        self.assertFalse([line for line in lines if " số " in line], lines)
+
+    def test_real_number_at_line_start_still_counts(self):
+        old = check_facts.facts("Doanh thu quý 3:\n\n1.250 tỷ đồng, tăng 12%.")
+        new = check_facts.facts("Doanh thu quý 3 tăng 12%.")
+        lines, failed = check_facts.compare(old, new)
+        self.assertTrue(failed)
+        self.assertIn("1.250", " ".join(lines))
+
+
 class BriefCheck(unittest.TestCase):
     """check_facts.py --brief: bài viết mới so với lời dặn, liệt kê chi tiết trợ lý tự thêm."""
 

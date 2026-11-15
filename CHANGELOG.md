@@ -1,5 +1,13 @@
 # Changelog
 
+## 2.7.3 (2026-11-15)
+
+- `check_facts.py` không còn tính số thứ tự đầu dòng ("1.", "**2.", "## 3)") là dữ kiện. Trước đây bài chia năm mục đánh số mà viết lại thành văn liền thì script báo "số bị mất: 1, 4" và thoát mã lỗi, dù không mất dữ kiện nào. Lỗi lộ ra khi đọc tay một bản sửa trong bộ đề.
+- Thử lượt hai của chế độ viết mới, phần trước giờ chưa có đề nào: người dùng đã trả lời các câu skill hỏi (ba đề: bài LinkedIn của product manager, bài chạy bộ, bài giới thiệu quán), giờ skill viết bài. Mỗi đề chạy hai lượt bằng Opus mức medium, kèm một bài viết không bật skill từ cùng lời kể.
+  - Có skill: cả sáu bài chỉ dùng điều người dùng kể, `scan.py` chấm 0-1 điểm. Bài ngắn hơn độ dài người dùng xin (193 và 253 chữ so với 350, 133 và 143 chữ so với 250, bài chạy bộ 96 và 97 chữ), bốn trong sáu bài nói rõ vì sao và gợi ý kể thêm chuyện gì. Con số duy nhất ngoài lời kể là "chín việc còn lại", tính từ 14 việc xong 5.
+  - Không skill: `scan.py` chấm 22, 10 và 7 điểm. Bài chạy bộ thêm cảnh người dùng không kể ("vừa đi vừa xoa chân, nhìn người ta chạy vượt qua", "con bé chạy ra ôm bố"), bài quán thêm "công việc văn phòng" và một câu về cảm giác chủ quán muốn khách mang theo, bài product manager thêm một câu hỏi trong ngoặc kép.
+  - Ba đề này vào `evals/`, bộ đề thành 34 đề.
+
 ## 2.7.2 (2026-11-15)
 
 Chi tiết tự thêm thì máy quét không chấm được khi chỉ có bài viết. Có cả lời dặn của người dùng thì so được, nên bản này thêm phép so đó.

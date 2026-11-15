@@ -548,5 +548,70 @@
    ],
    "max_words": 140
   }
+ },
+ {
+  "id": "luot-hai-bai-pm",
+  "che_do": "viết mới",
+  "tin_nhan": "Lúc nãy mình nhờ viết bài đăng LinkedIn khoảng 350 chữ về bài học sau 5 năm làm product manager, bạn hỏi lại mấy câu. Mình trả lời đây, viết giúp mình nhé:\n1. Chưa có sẵn 5 bài học đâu, mình nhớ nhất 2 chuyện thôi, viết 2 cũng được.\n2. Chuyện một: năm 2022 mình đẩy team làm tính năng tích điểm đổi quà mất gần 3 tháng, ra mắt xong tháng đầu chỉ 4% người dùng mở. Sau đi hỏi mới biết khách bên mình là tiệm tạp hóa, họ cần ghi nợ chứ không cần tích điểm. Chuyện hai: mình hay nhận hết yêu cầu của sales, có quý roadmap 14 đầu việc mà xong được 5.\n3. App quản lý bán hàng cho tiệm tạp hóa, startup khoảng 40 người, không nêu tên công ty.\n4. Viết cho mấy bạn mới làm PM 1-2 năm đọc.",
+  "mong_doi": "Người dùng đã trả lời các câu hỏi: viết bài từ đúng hai chuyện họ kể, không thêm chuyện thứ ba hay số liệu mới; bài ngắn hơn 350 chữ thì nói rõ vì sao.",
+  "kiem": {
+   "must_keep": [
+    "2022",
+    "4%",
+    "ghi nợ",
+    "14",
+    "tạp hóa"
+   ],
+   "max_placeholders": 0,
+   "min_words": 120,
+   "max_words": 420,
+   "scan_max": 9
+  }
+ },
+ {
+  "id": "luot-hai-bai-chay-bo",
+  "che_do": "viết mới",
+  "tin_nhan": "Lúc nãy mình nhờ viết bài đăng Facebook về một năm chạy bộ, từ không chạy nổi 1km tới hoàn thành half marathon, bạn hỏi lại mấy câu. Mình trả lời đây, viết giúp mình nhé:\n1. Tháng 3 năm ngoái đi khám sức khỏe công ty, bác sĩ bảo mỡ máu cao. Về chạy thử quanh hồ gần nhà, được chừng 600m là phải đi bộ.\n2. Tháng thứ hai ham quá ngày nào cũng chạy nên đau đầu gối, phải nghỉ 3 tuần. Sau đó chạy cách ngày.\n3. Giải ở Hạ Long tháng 11, về đích 2 tiếng 31 phút. Từ km 17 bị chuột rút bắp chân, phải đi bộ gần 1km. Về đích có vợ với con gái đứng chờ.\n4. Kể lại thôi, không khuyên ai.",
+  "mong_doi": "Kể lại đúng các mốc người dùng đưa, không khuyên ai, không thêm cảnh hay cảm nghĩ họ chưa kể.",
+  "kiem": {
+   "must_keep": [
+    "600m",
+    [
+     "3 tuần",
+     "ba tuần"
+    ],
+    "km 17",
+    "2 tiếng 31 phút",
+    "Hạ Long"
+   ],
+   "must_not": [
+    "Hãy "
+   ],
+   "max_placeholders": 0,
+   "min_words": 60,
+   "max_words": 330,
+   "scan_max": 9
+  }
+ },
+ {
+  "id": "luot-hai-bai-quan",
+  "che_do": "viết mới",
+  "tin_nhan": "Lúc nãy mình nhờ viết bài giới thiệu khoảng 250 chữ cho quán cà phê sách của mình ở Đà Lạt, tên quán là \"Mây Lang Thang\", bạn hỏi lại mấy câu. Mình trả lời đây, viết giúp mình nhé:\n1. Số 12 dốc Nhà Làng, gần chợ Đà Lạt. Nhà gỗ 2 tầng, tầng trên nhìn xuống mái ngói khu Hòa Bình.\n2. Khoảng 800 cuốn, phần lớn văn học với sách về Đà Lạt, đọc tại chỗ, không bán. Món chạy nhất là cacao nóng.\n3. Tên lấy theo ban nhạc mình thích hồi sinh viên. Mình mở quán năm 2021 sau khi nghỉ việc ở Sài Gòn.\n4. Đăng fanpage. Giờ mở cửa 7h30-21h, nghỉ thứ Ba, ghi cả địa chỉ.",
+  "mong_doi": "Bài giới thiệu từ đúng chi tiết chủ quán kể, không chữ quảng cáo, có giờ mở cửa và địa chỉ; ngắn hơn 250 chữ thì nói rõ vì sao.",
+  "kiem": {
+   "must_keep": [
+    "12 dốc Nhà Làng",
+    "800",
+    "cacao",
+    "2021",
+    "7h30",
+    "21h",
+    "thứ Ba"
+   ],
+   "max_placeholders": 0,
+   "min_words": 90,
+   "max_words": 330,
+   "scan_max": 9
+  }
  }
 ]

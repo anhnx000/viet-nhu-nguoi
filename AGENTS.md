@@ -8,7 +8,7 @@ Repo này là một skill viết bằng Markdown, kèm hai script Python chỉ d
 - `skills/viet-nhu-nguoi/references/patterns.md`: danh mục dấu hiệu, đánh số liền từ 1, mỗi mục có ví dụ trước và sau.
 - `skills/viet-nhu-nguoi/scripts/scan.py`, `check_facts.py`: máy quét và công cụ so dữ kiện.
 - `tests/`: `test_scan.py` cho máy quét, `test_package.py` cho phiên bản, số dấu hiệu, độ dài `SKILL.md`.
-- `evals/`: 31 đề thử hành vi của skill (`scenarios.json`), file đầu vào và `check.py` chấm phần đếm được. Sửa `SKILL.md` hay file trong `references/` thì chạy lại các đề liên quan theo `evals/README.md`.
+- `evals/`: 34 đề thử hành vi của skill (`scenarios.json`), file đầu vào và `check.py` chấm phần đếm được. Sửa `SKILL.md` hay file trong `references/` thì chạy lại các đề liên quan theo `evals/README.md`.
 - `README.md` (tiếng Việt, bản chính), `README.en.md`, `CHANGELOG.md`.
 
 ## Khi sửa

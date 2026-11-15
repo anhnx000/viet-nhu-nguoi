@@ -1,6 +1,6 @@
 # Bộ đề thử skill
 
-Ba mươi mốt tình huống thường gặp, dùng để xem một bản `SKILL.md` mới có làm hỏng hành vi cũ không. Bộ đề này rút từ các lượt thử của bản 2.7.0, kết quả từng lượt ghi trong `CHANGELOG.md`.
+Ba mươi tư tình huống thường gặp, dùng để xem một bản `SKILL.md` mới có làm hỏng hành vi cũ không. Bộ đề này rút từ các lượt thử của bản 2.7.0, kết quả từng lượt ghi trong `CHANGELOG.md`.
 
 ## Chạy một đề
 
@@ -25,5 +25,7 @@ Mô hình trả lời mỗi lần một khác, nên một đề trượt một l
 Thêm đề mới thì thêm một mục vào `scenarios.json`. Điều kiện trong `kiem` nên lỏng vừa đủ: câu trả lời đúng mà viết khác đi một chút thì vẫn phải qua. Đừng đặt `must_not` cho cụm mà trợ lý có thể trích lại trong ghi chú ("mình đã bỏ câu ...").
 
 Năm đề `chat-giong-*` thử phần cá nhân hóa trên năm giọng khác nhau (miền Tây, Nghệ An, sinh viên viết tắt, cô giáo viết trang trọng, dân văn phòng chêm tiếng Anh). Năm đoạn chat đó do một mô hình không bật skill viết, lời dặn thì cố ý xưng "tôi" và viết trang trọng để xem tin trả lời theo giọng mẫu hay theo giọng lời dặn. Lượt đầu cả năm đúng giọng mẫu.
+
+Ba đề `luot-hai-*` thử lượt hai của chế độ viết mới: người dùng đã trả lời các câu skill hỏi, giờ skill phải viết bài từ đúng những gì họ kể. Phần đọc tay ở ba đề này là chỗ quan trọng nhất: bài có thêm cảnh, lời thoại hay cảm nghĩ nào người dùng chưa kể không.
 
 File đầu vào trong `inputs/` là văn viết ra để thử, tên người và số liệu đều bịa.

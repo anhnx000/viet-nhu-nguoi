@@ -60,8 +60,12 @@ def canon(number):
     return core + n[len(n.rstrip("%")):]
 
 
+# Số thứ tự đầu dòng ("1.", "**2.", "## 3)") là cách trình bày, không phải dữ kiện
+LIST_NUMBER = re.compile(r"(?m)^[\s#>*_-]*\d{1,2}[.)](?=\s)")
+
+
 def facts(text):
-    no_code = CODE.sub(" ", URL.sub(" ", text))
+    no_code = LIST_NUMBER.sub("", CODE.sub(" ", URL.sub(" ", text)))
     low = no_code.lower()
     # Dòng viết hoa cả (tiêu đề mục của bài đăng) không phải tên viết tắt hay tên riêng
     mixed = "\n".join(line for line in no_code.splitlines()
@@ -91,14 +95,9 @@ SPEECH = re.compile(
     r'["“]([^"“”\n]{10,160}[?!])["”]')
 
 
-LIST_NUMBER = re.compile(r"(?m)^[\s#>*_-]*\d{1,2}[.)](?=\s)")
-
-
 def added(brief, draft):
     """Bài viết mới so với lời dặn: trả về (danh sách dòng báo, bài có số liệu hay link tự thêm không)."""
     lines, failed = [], False
-    # số thứ tự đầu dòng của danh sách không phải dữ kiện
-    draft = facts(LIST_NUMBER.sub("", draft["_raw"]))
     for kind in ("số", "link"):
         new = sorted(draft[kind] - brief[kind])
         if kind == "số":
