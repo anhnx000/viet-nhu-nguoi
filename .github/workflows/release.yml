@@ -1,0 +1,50 @@
+# Đổi phiên bản trong SKILL.md rồi đẩy lên main thì tự gắn tag vX.Y.Z và tạo GitHub Release:
+# ghi chú (tiếng Anh) lấy từ mục cùng số trong RELEASE_NOTES.md, kèm file zip thư mục skill.
+name: release
+on:
+  push:
+    branches: [main]
+    paths:
+      - skills/viet-nhu-nguoi/SKILL.md
+      - CHANGELOG.md
+      - RELEASE_NOTES.md
+      - .claude-plugin/**
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency: release
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+      - name: Chạy test (có kiểm phiên bản khớp nhau ở bốn chỗ)
+        run: python -m unittest discover -s tests
+      - name: Đọc phiên bản
+        id: v
+        run: |
+          v=$(sed -n 's/^ *version: *"\([^"]*\)".*/\1/p' skills/viet-nhu-nguoi/SKILL.md | head -n 1)
+          test -n "$v"
+          echo "version=$v" >> "$GITHUB_OUTPUT"
+          if git rev-parse -q --verify "refs/tags/v$v" >/dev/null; then
+            echo "Đã có tag v$v, không phát hành lại."
+            echo "exists=true" >> "$GITHUB_OUTPUT"
+          fi
+      - name: Tạo release
+        if: steps.v.outputs.exists != 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          V: ${{ steps.v.outputs.version }}
+        run: |
+          set -eu
+          awk -v v="$V" '$0 == "## " v {f = 1; next} /^## / && f {exit} f' RELEASE_NOTES.md > notes.md
+          test -s notes.md
+          (cd skills && zip -rq "../viet-nhu-nguoi-$V.zip" viet-nhu-nguoi -x '*/__pycache__/*' '*.pyc')
+          gh release create "v$V" "viet-nhu-nguoi-$V.zip" \
+            --title "$V" --notes-file notes.md --target "$GITHUB_SHA"

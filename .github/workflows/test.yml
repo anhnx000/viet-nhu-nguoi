@@ -1,0 +1,58 @@
+name: test
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  test:
+    name: python ${{ matrix.python }} / ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 10
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest]
+        python: ["3.10", "3.12", "3.14"]
+        include:
+          - os: macos-latest
+            python: "3.12"
+          - os: windows-latest
+            python: "3.12"
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: ${{ matrix.python }}
+      - run: python -m unittest discover -s tests -v
+
+  install:
+    name: install.sh / ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 5
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, macos-latest]
+    steps:
+      - uses: actions/checkout@v7
+      - run: bash -n install.sh
+      - if: runner.os == 'Linux'
+        run: shellcheck install.sh
+      - name: Cài thử vào HOME tạm
+        run: |
+          set -eu
+          export HOME="$(mktemp -d)"
+          dest="$HOME/.claude/skills/viet-nhu-nguoi"
+          bash install.sh
+          test -L "$dest" && test -f "$dest/SKILL.md"
+          if bash install.sh; then echo "cài đè mà không có --update" >&2; exit 1; fi
+          bash install.sh --copy --update
+          test -d "$dest" && ! test -L "$dest" && test -f "$dest/SKILL.md"
+          bash install.sh --update
+          test -L "$dest"

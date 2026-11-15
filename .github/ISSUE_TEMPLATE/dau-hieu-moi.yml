@@ -1,0 +1,24 @@
+name: Dấu hiệu mới
+description: Một kiểu văn AI hay văn dịch mà skill chưa bắt được.
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: before
+    attributes:
+      label: Câu hoặc đoạn có dấu hiệu
+      description: Dán văn thật, xóa hết thông tin riêng tư.
+    validations:
+      required: true
+  - type: textarea
+    id: after
+    attributes:
+      label: Người Việt sẽ viết thế nào
+    validations:
+      required: true
+  - type: textarea
+    id: why
+    attributes:
+      label: Vì sao chưa mục nào trong danh mục bắt được
+      description: Nêu mục gần nhất trong references/patterns.md và chỗ nó bỏ sót. Phần lớn dấu hiệu mới gộp được vào một mục đã có.
+    validations:
+      required: true

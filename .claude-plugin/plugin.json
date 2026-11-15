@@ -1,0 +1,30 @@
+{
+  "name": "viet-nhu-nguoi",
+  "displayName": "Viết như người (Vietnamese Humanizer)",
+  "version": "2.7.12",
+  "description": "Viết như người: chống giọng văn AI cho tiếng Việt (human voice, Vietnamese humanizer). Sửa bài ChatGPT/Claude viết cho tự nhiên như người viết, bỏ văn dịch, giọng công văn, \"việc/sự/một cách\", lời chatbot. Make Vietnamese (and English) AI text sound human.",
+  "author": {
+    "name": "anhnx000",
+    "url": "https://github.com/anhnx000"
+  },
+  "homepage": "https://github.com/anhnx000/viet-nhu-nguoi",
+  "repository": "https://github.com/anhnx000/viet-nhu-nguoi",
+  "license": "MIT",
+  "keywords": [
+    "viết như người",
+    "chống giọng văn ai",
+    "human voice",
+    "vietnamese humanizer",
+    "vietnamese",
+    "tiếng việt",
+    "humanizer",
+    "humanize",
+    "ai writing",
+    "anti-slop",
+    "claude-code",
+    "skill",
+    "slide",
+    "thuyết trình",
+    "pptx"
+  ]
+}

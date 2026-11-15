@@ -1,0 +1,6 @@
+__pycache__/
+*.pyc
+.claude/
+.DS_Store
+evals/results/
+examples/ai-thuc-te/
