@@ -397,7 +397,7 @@ Cách đọc nhóm này: đếm trên cả bài. Một lần thì có thể là 
 ### 53. Xưng "mình" mà không có chuyện của mình
 **Dấu hiệu:** bài chia sẻ cá nhân, xưng "mình", "tôi", nhưng mọi chi tiết đều là số tổng kết (số dòng code, số test, số commit) và kiến thức tra được; không có một lần hỏng, một đêm, một lỗi cụ thể, một người cụ thể; "mình nghĩ" chỉ gắn với nhận định chung về ngành.
 **Vấn đề:** Bỏ dấu hiệu thì bài mới sạch, chứ chưa có hơi người. Bài như vậy đọc giống bản tóm tắt dự án do người khác viết hộ.
-**Mặt trái:** nhờ viết hộ một bài chia sẻ mà chỉ cho đề bài, mô hình tự bịa chuyện cho có hơi người, chi tiết nào cũng tròn trịa: "sau 5 năm, 3 công ty", "mất 2 tháng xây một tính năng không ai dùng", "tháng thứ tư đau ống đồng, nghỉ gần một tháng", "đặt báo thức 5h15". Người đọc không biết, nhưng người đứng tên thì biết đó không phải chuyện của mình.
+**Mặt trái:** nhờ viết hộ một bài chia sẻ mà chỉ cho đề bài, mô hình tự bịa chuyện cho có hơi người, chi tiết nào cũng tròn trịa: "sau 5 năm, 3 công ty", "mất 2 tháng xây một tính năng không ai dùng", "tháng thứ tư đau ống đồng, nghỉ gần một tháng", "đặt báo thức 5h15". Người đọc không biết, nhưng người đứng tên thì biết đó không phải chuyện của mình. Máy quét không phân biệt được chuyện thật với chuyện bịa; `scan.py` chỉ liệt kê các chi tiết có con số trong bài xưng "mình", "tôi" để hỏi lại.
 **Sửa:** Hỏi người dùng một hai chuyện thật: lần nào kernel không boot, mất bao lâu, vì lỗi gì, lúc đó nghĩ gì. Dùng đúng lời họ kể. Không có thì giữ bài ngắn và trung tính. Không bịa kỷ niệm, và không đưa khung điền chỗ trống có tình tiết dựng sẵn.
 
 ### 54. Câu vụn: dấu chấm chặt một ý thành nhiều câu

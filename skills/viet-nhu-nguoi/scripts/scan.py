@@ -250,6 +250,7 @@ BOLD_HEADING = re.compile(r"^\s*\*\*[^*\n]{2,80}\*\*:?\s*$|^\s*\*\*[^*\n]{2,60}[
 FENCE = re.compile(r"^\s*```")
 # Chêm tiếng Anh trong ngoặc sau từ Việt: "hiệu suất (performance)"
 EN_GLOSS = re.compile(r"\w*[àáảãạăằắẳẵặâầấẩẫậèéẻẽẹêềếểễệìíỉĩịòóỏõọôồốổỗộơờớởỡợùúủũụưừứửữựỳýỷỹỵđ]\w*\s+\(([a-z][a-z ]{2,30})\)")
+VI_LETTER = re.compile(r"[ăâđêôơưàáảãạằắẳẵặầấẩẫậèéẻẽẹềếểễệìíỉĩịòóỏõọồốổỗộờớởỡợùúủũụừứửữựỳýỷỹỵ]")
 SENT_SPLIT = re.compile(r"(?<=[.!?])\s+")
 NOMINAL = re.compile(r"\b(việc|sự)\b")
 THIS_IT = re.compile(r"^(điều này|điều đó|nó)\b")
@@ -295,7 +296,11 @@ def scan(text, doc=True, meta=False):
             continue
         prose = re.sub(r"`[^`]*`|https?://\S+", "", line)
         low = prose.lower()
+        vietnamese = len(VI_LETTER.findall(low)) >= 3
         for group, pats in PATTERNS.items():
+            # Danh sách từ tiếng Anh dành cho văn tiếng Anh; trong câu tiếng Việt, "highlight", "robust" là thuật ngữ
+            if vietnamese and group == "từ vựng AI (en)":
+                continue
             for p in pats:
                 for m in re.finditer(p, low, re.MULTILINE):
                     hits.setdefault(group, []).append((no, m.group(0).strip(" .!?")))
@@ -353,7 +358,8 @@ TIC_GROUPS = ("đối lập giả", "nhãn báo giọng", "diễn giải lại")
 CLOSING_LABEL = re.compile(r"^(kết|kết luận|lời kết|kết bài|tóm lại|tổng kết|lời cuối)$")
 HASHTAG = re.compile(r"(?:^|\s)#[^\W\d_]\w+")
 LIST_ITEM = re.compile(r"^\s*([-*+>|]|\d+[.)])\s?")
-COLON = re.compile(r"(?<!\d):(\s|$)")
+# Hai chấm dẫn vào lời thoại hay câu trích ("Bà nói: «...»", ": - Con về rồi à?") là dùng đúng chỗ, không đếm
+COLON = re.compile(r"(?<!\d):(?!\s*[\"“«‘'–—-])(\s|$)")
 
 
 def prose_lines(text):

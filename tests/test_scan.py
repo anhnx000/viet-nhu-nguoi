@@ -275,6 +275,18 @@ class WeakSignsAndDetails(unittest.TestCase):
             self.assertIn(detail, found)
         self.assertEqual(scan.score(post, scan.scan(post)[0])["score"], 0)
 
+    def test_dialogue_colons_not_counted(self):
+        line = 'Bà Tư ngó nó rồi nói: "Mầy đi đâu về đó?" Thằng Tý cúi mặt đáp: "Dạ con đi coi hát." Ông Ba la lớn: "Vô nhà!"'
+        story = "\n\n".join([line] * 8)
+        self.assertNotIn("hai chấm dồn dập", scan.scan(story)[0])
+        staged = "\n\n".join(["Chi tiết quan trọng nhất: nền tảng dùng RISC-V. Thêm một thống kê: 70% lỗi là lỗi bộ nhớ. "
+                              "Nó nói một điều đơn giản hơn: kernel càng to càng khó kiểm."] * 8)
+        self.assertIn("hai chấm dồn dập", scan.scan(staged)[0])
+
+    def test_english_word_list_skips_vietnamese_sentences(self):
+        self.assertNotIn("từ vựng AI (en)", groups("Bạn bôi đen rồi bấm highlight để tô màu đoạn code cần xem."))
+        self.assertIn("từ vựng AI (en)", groups("We highlight a robust and seamless experience."))
+
     def test_no_detail_list_without_first_person(self):
         report = "Quý 3 doanh thu 1.250 tỷ, tăng 12% sau 3 tháng. Đội có 14 người, làm 2 dự án."
         self.assertEqual(scan.personal_details(report), [])
