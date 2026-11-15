@@ -38,12 +38,30 @@ Chỉ dùng những gì có trong hồ sơ, và dùng thưa như hồ sơ. Ba ti
 
 ## 3. Giữ giọng suốt cuộc trò chuyện
 
-Lập hồ sơ xong thì mọi tin trả lời sau đó trong phiên đều theo hồ sơ này, kể cả khi nội dung chuyển sang chuyện nghiêm túc hơn. Chỉ nội dung đổi, icon và ngữ điệu giữ nguyên.
+Lập hồ sơ xong thì mọi tin trả lời sau đó trong phiên đều theo hồ sơ này, kể cả khi nội dung chuyển sang chuyện nghiêm túc hơn. Giữ cách xưng hô và nhịp quen thuộc, nhưng điều chỉnh cách đùa, tiếng cười và icon theo tình huống; mẫu hay cười không có nghĩa là tin chia buồn hoặc báo sự cố cũng phải cười.
 
 - Có lượt mới thì cửa sổ 30 lượt trượt theo. Giọng đổi dần, không lật hẳn chỉ vì một tin khác thường.
 - Người dùng sửa ("mình không nói thế", "bỏ icon đi") thì theo ngay và giữ tới hết phiên, lời sửa này ưu tiên hơn hồ sơ.
-- Mỗi người nhận, mỗi nhóm chat có một hồ sơ riêng. Một người nhắn nhóm bạn thân và nhắn sếp vốn đã khác giọng, nên chuyển sang trả lời người khác thì lập hồ sơ mới từ cuộc trò chuyện đó.
+- Lưu hồ sơ theo người gửi → người nhận trong từng nhóm. Cùng một nhóm có thể có nhiều cặp xưng hô và mức lễ phép; không lấy giọng nói với bạn thân làm giọng mặc định để trả lời sếp hoặc người lớn tuổi.
 - Người dùng muốn trợ lý nói chuyện với chính họ theo giọng đó thì áp hồ sơ cho câu trả lời của trợ lý trong phiên, theo cùng các quy tắc trên.
+
+### Nhóm có từ ba người
+
+Trước khi viết, xác định tin đang trả lời ai: người được reply, được nhắc tên, người vừa hỏi hay cả nhóm. Người xem được tin không nhất thiết là người được trực tiếp trả lời. Nếu thiếu thông tin này và cách xưng hô có thể sai vai, hỏi ngắn người dùng; không tự đoán tuổi hoặc chức vụ từ tên, ảnh hay cách người khác nói.
+
+- Chọn mẫu người dùng từng gửi cho đúng người đó trong nhóm. Tin người dùng gửi cho người khác chỉ giúp hiểu bối cảnh. Hai người cùng chức vụ cũng có thể có mức thân thiết khác nhau.
+- Giữ sự lễ phép qua cả câu: cặp xưng hô, cách gọi tên, lời nhờ thay vì ra lệnh, mức viết tắt, tiếng cười và cách đùa. Không lấy câu suồng sã rồi thêm "ạ" để coi là lịch sự. Mẫu quan hệ đã rõ ưu tiên hơn khuôn đoán theo tuổi hoặc chức vụ.
+- Trả lời riêng một người trong nhóm thì dùng giọng dành cho người ấy, đồng thời tránh cách đùa riêng không phù hợp trước người lớn tuổi hoặc cấp trên đang có mặt.
+- Tin gửi cả nhóm dùng cách xưng hô bao quát và mức lịch sự phù hợp những người có mặt. Không gọi tất cả là "mày", "ông", "em" chỉ vì người dùng quen gọi một thành viên như vậy. Với nhiều người nhận khác vai, có thể tách câu gọi từng người; chỉ tách thành nhiều tin nếu cần để rõ việc.
+- Khi đổi người được trả lời, chọn lại hồ sơ dù vẫn trong cùng nhóm. Lời sửa của người dùng chỉ áp cho đúng người hoặc nhóm được nói tới, trừ khi họ yêu cầu áp dụng chung.
+
+Ví dụ cùng nhóm có Minh, bạn thân Khoa và chị Hạnh là trưởng nhóm lớn tuổi hơn. Minh từng nhắn Khoa "ok ông, tui gửi r :v", nhắn chị Hạnh "Dạ chị, em gửi rồi ạ", nhắn cả nhóm "Em gửi mọi người bản mới ạ". Cùng ý đã sửa xong tài liệu và nhờ xem trước 17h:
+
+> Trả lời Khoa: tui sửa xong tài liệu rồi, ông xem giúp trước 17h nha
+>
+> Trả lời chị Hạnh: Dạ chị, em sửa xong tài liệu rồi, chị xem giúp em trước 17h được không ạ?
+>
+> Gửi cả nhóm: Em sửa xong tài liệu rồi, nhờ mọi người xem giúp trước 17h ạ.
 
 ## 4. Tiếng lóng và icon
 
@@ -75,17 +93,17 @@ Người dùng xin giọng một vùng mà không có mẫu thì mỗi tin chỉ
 
 ## 6. Viết bản trả lời
 
-- Trả lời đúng tin cần trả lời, một hai ý. Không chào, không cảm ơn góp ý, không tóm lại. Không gạch đầu dòng, không in đậm, không tiêu đề.
+- Trả lời đúng tin cần trả lời, một hai ý. Không tự thêm lời chào hay câu kết theo khuôn; giữ lời cảm ơn, xin lỗi hoặc xác nhận khi phù hợp với tin đang đáp. Không gạch đầu dòng, không in đậm, không tiêu đề.
 - Độ dài theo hồ sơ. Không có hồ sơ thì dưới khoảng 40 chữ, dài hơn thì tách hai ba tin.
 - Lời người dùng dặn ("bảo Tú là mình chưa rõ lịch nên cứ đặt phòng trước") là giọng giải thích cho trợ lý, chưa phải giọng nhắn tin của họ. Đừng chép chữ trong lời dặn vào tin. Lấy ý, rồi viết bằng chữ họ vẫn dùng trong các lượt mẫu: mẫu viết "book", "đc", "r" thì tin cũng viết vậy, kể cả khi lời dặn viết "đặt", "được", "rồi".
 - Lược tới mức hồ sơ vẫn lược. Mẫu hay bỏ chủ ngữ, bỏ "để", "vào", "thì" thì tin cũng bỏ; đừng viết đủ ý hơn chính người dùng.
-- Đổi giọng không được làm rơi nội dung: lời hứa, hạn chót, số liệu, quyết định phải còn đủ. Cũng không thêm lời hứa người dùng chưa nói ("mai làm luôn").
+- Đổi giọng không được làm rơi nội dung: lời hứa, hạn chót, số liệu, quyết định phải còn đủ. Cũng không thêm lời hứa người dùng chưa nói ("mai làm luôn"), hoặc gán việc chưa rõ người làm cho người gửi ("đã test" thành "em đã test").
 - Đưa một bản. Người dùng muốn thì đưa thêm một bản khác giọng (nghiêm hơn hoặc lầy hơn), không đưa năm bản.
 - Người nhận là sếp, khách, người lớn tuổi, hoặc nhóm công việc đông người, còn hồ sơ lại lập từ cuộc trò chuyện khác, thì hỏi trước khi dùng lóng, icon hay giọng miền.
 
 ## 7. Soát
 
-Đọc lại như người nhận. Họ có nhận ra giọng của người gửi không? Đặt tin này cạnh mấy tin trước của người gửi thì có lạc giọng không?
+Đọc lại như người nhận. Họ có nhận ra giọng của người gửi không? Đặt tin này cạnh những tin người gửi đã nhắn cho đúng người nhận đó: xưng hô, viết hoa, dấu chấm cuối tin và viết tắt có khớp không? Lễ phép không có nghĩa là tự chuẩn hóa chữ hoa và dấu câu khi mẫu lịch sự vốn viết chữ thường.
 
 `python3 -I scripts/scan.py --chat <file>` bắt định dạng văn bản trong tin nhắn (gạch đầu dòng, in đậm, tiêu đề), tin quá dài, câu khách sáo, chồng lóng và trộn giọng miền. Tin nhắn ít chữ nên điểm dao động nhiều, xem từng dòng máy báo chứ đừng nhìn điểm.
 

@@ -5,7 +5,7 @@ Dùng: python3 -I evals/check.py THU_MUC_KET_QUA
 THU_MUC_KET_QUA chứa mỗi đề một file <id>.md, là nguyên văn câu trả lời của trợ lý khi skill đang bật.
 Cách chạy từng đề và phần phải đọc tay nằm ở evals/README.md.
 
-Script chỉ kiểm những thứ đếm được: số câu hỏi đánh số, số chỗ trống trong ngoặc vuông, dữ kiện còn đủ,
+Script chỉ kiểm những thứ đếm được: số câu hỏi có dấu hỏi, số chỗ trống trong ngoặc vuông, dữ kiện còn đủ,
 độ dài, điểm scan.py, tỉ lệ chữ giữ nguyên so với bài gốc, số liệu tự thêm ngoài lời dặn. Giọng văn có tự nhiên không thì vẫn phải đọc.
 Thoát mã 1 nếu có đề trượt hoặc thiếu file.
 """
@@ -20,11 +20,11 @@ sys.path.insert(0, str(ROOT / "skills/viet-nhu-nguoi/scripts"))
 import check_facts  # noqa: E402
 import scan  # noqa: E402
 
-QUESTION = re.compile(r"(?m)^\s*\d+[.)]\s")
+QUESTION = re.compile(r"[?？]+")
 # [địa chỉ], [Họ tên]... nhưng không tính link Markdown [chữ](url) và ô đánh dấu [x], [ ]
 PLACEHOLDER = re.compile(r"\[(?![ xX]\])[^\]\n]{2,60}\](?!\()")
 # Số mục trong danh mục: "mục 45", hoặc dãy số trong ngoặc như "(45, 3, 1)"
-REF = re.compile(r"\bmục (\d{1,2})\b|\(((?:mục )?\d{1,2}(?:, ?\d{1,2})*)\)")
+REF = re.compile(r"\bmục (\d{1,2}(?:, ?\d{1,2})*)\b|\(((?:mục )?\d{1,2}(?:, ?\d{1,2})*)\)", re.IGNORECASE)
 BOLD = re.compile(r"\*\*[^*\n]+\*\*")
 
 
@@ -42,6 +42,9 @@ def check(scenario, reply, root=ROOT):
     rules, errors = scenario.get("kiem", {}), []
     words = len(reply.split())
     questions = len(QUESTION.findall(reply))
+    # Giới hạn hỏi lại chỉ xét danh sách đánh số: dấu ? trong email soạn hộ
+    # có thể là lời nhờ người nhận, không phải hỏi lại người dùng. Đọc tay phần này.
+    numbered_questions = len(re.findall(r"(?m)^\s*\d+[.)]\s", reply))
     placeholders = len(PLACEHOLDER.findall(reply))
     source = ""
     if scenario.get("tep"):
@@ -56,9 +59,9 @@ def check(scenario, reply, root=ROOT):
     if "max_words" in rules:
         need(words <= rules["max_words"], f"{words} chữ, quá {rules['max_words']}")
     if "min_questions" in rules:
-        need(questions >= rules["min_questions"], f"{questions} câu hỏi đánh số, cần từ {rules['min_questions']}")
+        need(questions >= rules["min_questions"], f"{questions} câu hỏi có dấu hỏi, cần từ {rules['min_questions']}")
     if "max_questions" in rules:
-        need(questions <= rules["max_questions"], f"{questions} câu hỏi đánh số, quá {rules['max_questions']}")
+        need(numbered_questions <= rules["max_questions"], f"{numbered_questions} mục hỏi lại đánh số, quá {rules['max_questions']}")
     if "max_placeholders" in rules:
         need(placeholders <= rules["max_placeholders"],
              f"{placeholders} chỗ trống trong ngoặc vuông, quá {rules['max_placeholders']}")

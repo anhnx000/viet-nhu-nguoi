@@ -1,5 +1,17 @@
 # Changelog
 
+## 2.7.6 (2026-11-15)
+
+Gộp ba bản 2.7.4-2.7.6 sửa liền nhau trong một ngày, chưa bản nào phát hành riêng.
+
+- Tin nhắn trong nhóm từ ba người: chọn giọng theo từng người được trả lời, không dùng chung một giọng cho cả nhóm. Xưng hô, mức lễ phép, cách nhờ, viết tắt và cách đùa lấy từ tin người dùng từng gửi đúng người đó. Tin gửi cả nhóm xét cả người lớn tuổi và cấp trên có mặt. Chưa rõ gửi cho ai mà xưng hô có thể sai vai thì hỏi lại. Ví dụ ở `references/chat.md`.
+- Thêm `references/spoken.md` cho tin nhắn, hội thoại, bản chép lời: giữ nghĩa của trợ từ ("Gửi rồi à?" khác "Gửi rồi nhé"), phạm vi phủ định, mức chắc chắn, lời nhờ, và ai làm, ai hứa ("đã test" không thành "em đã test").
+- Bỏ mấy quy tắc dễ sửa quá tay: kết luận văn dịch từ việc dịch ngược ra tiếng Anh trôi chảy, tránh mọi chủ ngữ chỉ sự vật ("Số liệu cho thấy doanh thu giảm" là câu bình thường), lược "đã/đang/sẽ" chỉ vì có mốc thời gian, ép gộp câu ngắn trong hội thoại. Lời xác nhận, cảm ơn có tác dụng thì giữ. Tiếng cười và icon đổi theo tình huống, tin báo sự cố không cười theo mẫu.
+- Viết mới: bài giới thiệu chỉ có tên, loại hình, địa điểm thì hỏi thêm, không dựng bài có ô trống. Số chữ yêu cầu không cho phép bịa thêm, không suy kết quả thành diễn biến, không thêm "mình nghĩ", "mình muốn" để nối đoạn.
+- Bước tự soát cuối đối chiếu thẳng với mẫu giọng (xưng hô, viết hoa, dấu câu, mức in đậm) thay cho bảng tự chấm 35/50. Có mẫu giọng dùng gạch ngang thì theo mẫu.
+- Bộ đề thành 45: tám đề `spoken-*`, bốn đề nhóm chat. `check.py` nhận câu hỏi không đánh số và dẫn "Mục" viết hoa. Kết quả từng đợt và lỗi còn thấy ghi ở `evals/README.md`. Chưa có lượt nào chạy đủ 45 đề trên bản cuối.
+- README hai thứ tiếng viết lại ngắn hơn (bản tiếng Việt từ 3.836 xuống khoảng 3.000 chữ tính cả khối lệnh), ảnh ví dụ vẽ lại theo lời mới. Máy quét không đổi quy tắc hay ngưỡng, danh mục vẫn 65 dấu hiệu.
+
 ## 2.7.3 (2026-11-15)
 
 - `check_facts.py` không còn tính số thứ tự đầu dòng ("1.", "**2.", "## 3)") là dữ kiện. Trước đây bài chia năm mục đánh số mà viết lại thành văn liền thì script báo "số bị mất: 1, 4" và thoát mã lỗi, dù không mất dữ kiện nào. Lỗi lộ ra khi đọc tay một bản sửa trong bộ đề.

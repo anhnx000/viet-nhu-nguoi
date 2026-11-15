@@ -613,5 +613,192 @@
    "max_words": 330,
    "scan_max": 9
   }
+ },
+ {
+  "id": "spoken-nho",
+  "che_do": "chat",
+  "tin_nhan": "Sửa tin này cho tự nhiên, chỉ trả tin đã sửa, giữ đúng ý và xưng hô: \"Anh xem giúp em bản này trước chiều mai được không ạ? Nếu anh bận thì để em hỏi chị Lan.\"",
+  "mong_doi": "Giữ câu nhờ lịch sự, hạn trước chiều mai và phương án hỏi chị Lan nếu anh bận.",
+  "kiem": {
+   "must_keep": [
+    "chiều mai",
+    "Lan"
+   ],
+   "max_words": 65
+  }
+ },
+ {
+  "id": "spoken-chac-chan",
+  "che_do": "chat",
+  "tin_nhan": "Sửa tin này cho gọn tự nhiên, chỉ trả tin: \"Em có khả năng sẽ gửi được vào chiều mai, nhưng chưa chắc đâu anh. Để em xem lại lịch đã, em chưa nhận làm nhé.\"",
+  "mong_doi": "Giữ sự chưa chắc chắn và chưa nhận làm; không đổi thành hứa gửi chiều mai.",
+  "kiem": {
+   "must_keep": [
+    [
+     "chiều mai",
+     "Chiều mai"
+    ],
+    "chưa"
+   ],
+   "max_words": 70
+  }
+ },
+ {
+  "id": "spoken-xac-nhan",
+  "che_do": "chat",
+  "tin_nhan": "Sửa nhẹ tin này nếu cần, chỉ trả tin: \"Ủa, chị gửi rồi à? Em tưởng mai chị mới gửi. Để em xem đã nhé.\"",
+  "mong_doi": "Giữ câu hỏi xác nhận đã gửi, ý tưởng mai mới gửi và việc xem lại chưa phải đồng ý.",
+  "kiem": {
+   "must_keep": [
+    "mai",
+    "xem"
+   ],
+   "max_words": 60
+  }
+ },
+ {
+  "id": "spoken-su-co",
+  "che_do": "chat",
+  "tin_nhan": "Soạn một tin theo giọng mình để trả lời bạn. Mẫu mình nhắn bạn: \"ừ ông :v\", \"tui gửi r )))\", \"để tui coi\". Bạn vừa báo xóa nhầm dữ liệu khách. Ý cần nói: tui đang kiểm tra bản sao lưu, chưa biết khôi phục được không; nhờ ông đừng ghi thêm dữ liệu. Chỉ trả tin nhắn.",
+  "mong_doi": "Giữ tui/ông, đang kiểm tra và chưa biết khôi phục được không, nhờ ngừng ghi dữ liệu; không cười, không hứa khôi phục.",
+  "kiem": {
+   "must_keep": [
+    "tui",
+    "ông",
+    "dữ liệu"
+   ],
+   "must_not": [
+    ":v",
+    ")))"
+   ],
+   "max_words": 70
+  }
+ },
+ {
+  "id": "spoken-thoi-the",
+  "che_do": "sửa",
+  "tin_nhan": "Sửa nhẹ cho tự nhiên, chỉ trả bản sửa: \"Mai lúc anh đến thì em đang họp, chưa chắc nghe máy được. Em đã gửi tài liệu rồi, anh xem trước giúp em nhé.\"",
+  "mong_doi": "Giữ việc đang họp vào lúc anh đến, chưa chắc nghe máy và đã gửi tài liệu. Không đổi thành mai mới gửi hay chắc chắn không nghe máy.",
+  "kiem": {
+   "must_keep": [
+    [
+     "Mai",
+     "mai"
+    ],
+    "họp",
+    [
+     "tài liệu",
+     "Tài liệu"
+    ]
+   ],
+   "max_words": 65
+  }
+ },
+ {
+  "id": "spoken-phu-dinh",
+  "che_do": "sửa",
+  "tin_nhan": "Sửa nhẹ tin này cho tự nhiên, đừng đổi ý, chỉ trả bản sửa: \"Không phải ai cũng cần đổi lịch đâu chị. Chỉ nhóm em chưa chốt được, còn nhóm anh Nam vẫn họp chiều thứ Sáu.\"",
+  "mong_doi": "Phủ định việc tất cả đều cần đổi, không phủ định tất cả mọi người. Chỉ nhóm em chưa chốt, nhóm Nam vẫn họp thứ Sáu.",
+  "kiem": {
+   "must_keep": [
+    "Nam",
+    "thứ Sáu",
+    "chưa"
+   ],
+   "max_words": 65
+  }
+ },
+ {
+  "id": "spoken-cau-tu-nhien",
+  "che_do": "sửa",
+  "tin_nhan": "Đọc giúp hai câu này, chỗ nào tự nhiên rồi thì giữ nguyên. Chỉ trả văn bản: \"Máy chạy chậm quá. Số liệu cho thấy doanh thu giảm, nhưng chưa rõ nguyên nhân.\"",
+  "mong_doi": "Không đổi chủ ngữ máy/số liệu chỉ vì là vật vô tri, không thêm thì/là/mà, giữ chưa rõ nguyên nhân.",
+  "kiem": {
+   "must_keep": [
+    "chưa",
+    "doanh thu"
+   ],
+   "max_words": 45
+  }
+ },
+ {
+  "id": "spoken-chep-loi",
+  "che_do": "sửa",
+  "tin_nhan": "Đây là bản chép lời, chỉ thêm dấu câu cho dễ đọc, giữ nguyên từ kể cả chỗ tự sửa: \"ừ để em xem đã à không chiều mai em mới xem được chị cứ gửi trước nhé\"",
+  "mong_doi": "Giữ nguyên từ và thứ tự, gồm ừ, à không, đã, mới, nhé; không gọt thành lời hứa xử lý vào mai.",
+  "kiem": {
+   "must_keep": [
+    [
+     "ừ",
+     "Ừ"
+    ],
+    "đã",
+    [
+     "à không",
+     "À không"
+    ],
+    "mới",
+    "nhé"
+   ],
+   "max_words": 45
+  }
+ },
+ {
+  "id": "chat-cung-nhom-khac-vai",
+  "che_do": "chat",
+  "tin_nhan": "Trong cùng nhóm có mình (Minh), Khoa là bạn thân và chị Hạnh là trưởng nhóm lớn tuổi hơn. Mẫu mình nhắn Khoa: \"ok ông, tui gửi r :v\"; nhắn chị Hạnh: \"Dạ chị, em gửi rồi ạ\"; nhắn cả nhóm: \"Em gửi mọi người bản mới ạ\". Soạn ba tin riêng: trả lời Khoa, trả lời chị Hạnh, gửi cả nhóm. Cùng ý: mình sửa xong tài liệu, nhờ xem giúp trước 17h. Giữ đúng giọng với từng người trong nhóm.",
+  "mong_doi": "Khoa: tui/ông, nhờ tự nhiên. Chị Hạnh: em/chị, lễ phép qua cả câu, không chỉ thêm ạ vào lời suồng sã. Cả nhóm: em/mọi người theo mẫu, không gọi cả nhóm là ông. Giữ hạn 17h cả ba tin, không gán chức vụ hoặc tuổi khác.",
+  "kiem": {
+   "must_keep": [
+    "17h",
+    "chị",
+    "ạ",
+    "mọi người"
+   ],
+   "max_words": 180
+  }
+ },
+ {
+  "id": "chat-nhom-tra-loi-sep",
+  "che_do": "chat",
+  "tep": "evals/inputs/chat-nhom-nam-nguoi.md",
+  "tin_nhan": "Mình là Nam. Rep giúp mình tin cuối của anh Tuấn trong nhóm này, theo giọng mình: {tep}\nÝ là: lỗi trùng đơn đã sửa trong bản 2.3, đã test trên staging, nhưng còn một trường hợp mạng chập chờn chưa tái hiện được nên chưa dám chắc hết hẳn. Tối thứ Năm vẫn release như lịch.",
+  "mong_doi": "Phần lớn tin của Nam trong nhóm là giọng suồng sã với Khoa (tui/ông, r, =)), :v), nhưng tin này trả lời anh Tuấn nên theo mẫu Nam nhắn anh Tuấn: Dạ, em/anh, ạ, viết hoa đầu câu. Không cười, không viết tắt kiểu nhắn Khoa. Giữ 2.3, staging, trường hợp chưa tái hiện được, thứ Năm.",
+  "kiem": {
+   "must_keep": [
+    "2.3",
+    "staging",
+    "thứ Năm",
+    "chưa",
+    "anh"
+   ],
+   "must_not": [
+    ":v",
+    "=))",
+    "tui",
+    "ông",
+    " r "
+   ],
+   "max_words": 120
+  }
+ },
+ {
+  "id": "chat-nhom-tra-loi-hai-nguoi",
+  "che_do": "chat",
+  "tep": "evals/inputs/chat-nhom-nam-nguoi.md",
+  "tin_nhan": "Mình là Nam. Soạn giúp mình một tin gửi vào nhóm này, trả lời cả chị Hà và Khoa: {tep}\nÝ là: hai ticket còn lại thì một cái đóng rồi, cái kia mai đóng; icon app vẫn chưa chốt, design hẹn thứ Sáu gửi lại.",
+  "mong_doi": "Một tin, gọi riêng từng người: phần cho chị Hà theo mẫu Nam nhắn chị (Dạ, em/chị, ạ); phần cho Khoa có thể giữ giọng bạn bè nhưng không đùa cợt quá đà trước anh Tuấn và chị Hà. Không gọi cả nhóm là ông, không xưng tui với chị Hà. Giữ một ticket đã đóng, một ticket mai đóng, icon chưa chốt, thứ Sáu.",
+  "kiem": {
+   "must_keep": [
+    "chị",
+    "mai",
+    "thứ Sáu",
+    "icon"
+   ],
+   "must_not": [
+    ":v"
+   ],
+   "max_words": 120
+  }
  }
 ]

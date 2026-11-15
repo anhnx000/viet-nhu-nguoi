@@ -9,23 +9,24 @@ Human voice for Vietnamese (chống giọng văn AI): let AI draft it and still 
 
 ![Before: AI-written Vietnamese scores 84/100. After: a plain human rewrite scores 0/100.](assets/banner.png)
 
-AI drafts slides, emails and reports quickly, and Vietnamese readers spot the result just as quickly. The slide titles say "Tổng quan" (*Overview*) and "Thách thức" (*Challenges*). The email opens with "Trong bối cảnh hiện nay" (*in today's context*) and closes with "Hy vọng thông tin trên hữu ích!" (*Hope this helps!*). Fine for a team chat. For your boss or a customer, you end up rewriting it by hand.
+AI drafts slides, emails and reports quickly, and Vietnamese readers spot the result just as quickly. Every deck has "Tổng quan" (*Overview*) and "Thách thức" (*Challenges*), and the email opens with "Trong bối cảnh hiện nay" (*in today's context*) and closes with "Hy vọng thông tin trên hữu ích!" (*Hope this helps!*). Before it goes to a boss or a customer, someone rewrites it by hand.
 
-Viết như người ("write like a person") is a skill (an add-on pack of instructions) for Claude and other AI assistants. Once installed, the assistant writes Vietnamese more like a working person does. Slide titles state the conclusion, emails use the right pronouns of address, sentences aren't padded, and the numbers you gave are left alone. The skill is free and open source.
+Viết như người ("write like a person") is a skill, an add-on pack of instructions for Claude Code, Codex, Cursor and other AI assistants. Once installed, slide titles state the conclusion, emails use the right pronouns of address, sentences aren't padded, and your numbers are left alone. Free and open source.
 
-English works too, based on Wikipedia's [Signs of AI writing](https://en.wikipedia.org/wiki/Wikipedia:Signs_of_AI_writing) and [blader/humanizer](https://github.com/blader/humanizer). Most of the work went into Vietnamese, because generic humanizers miss what makes Vietnamese AI text sound off: it reads like it was written in English and translated.
+English works too, based on Wikipedia's [Signs of AI writing](https://en.wikipedia.org/wiki/Wikipedia:Signs_of_AI_writing) and [blader/humanizer](https://github.com/blader/humanizer). Most of the work went into Vietnamese, because generic humanizers miss what makes Vietnamese AI text sound off: it reads like English that was translated word by word.
 
-Contents: [Install, no coding needed](#install-in-a-few-minutes-no-coding-needed) · [Everyday use](#everyday-use) · [Before and after](#before-and-after) · [What the skill fixes](#what-the-skill-fixes) · [Command line](#for-command-line-users)
+Contents: [Install](#install-no-coding-needed) · [Usage](#usage) · [Before and after](#before-and-after) · [What the skill fixes](#what-the-skill-fixes) · [Command line](#command-line)
 
 ## What people use it for
 
-- In report and proposal decks, every title is a conclusion, so your manager can skim the titles and know what to decide. Missing numbers are marked `[cần xác nhận]` (*to confirm*), never made up.
-- An email to a boss or a customer leads with the request, uses the right pronouns of address (anh/chị/em, quý khách) and never switches to a default "bạn".
-- In reports and documents translated from English, the skill removes calqued sentences such as "được... bởi" (*was ... by*), "Điều này cho phép" (*This allows*) and "thông qua việc" (*through the act of*).
-- For Facebook, LinkedIn and blog posts, AI drafts, the voice stays yours, and each post tells just one story.
-- Before you send something, the skill points at the places that sound like AI, and you decide what to change.
+- Report and proposal decks: every title is a conclusion, so a manager can skim the titles and know what to decide. Missing numbers are marked `[cần xác nhận]` (*to confirm*) for you to fill in.
+- Emails to a boss or a customer: request first, the right pair of pronouns (anh/chị/em, quý khách), never a default "bạn".
+- Documents translated from English: calqued sentences such as "được... bởi" (*was ... by*) and "Điều này cho phép" (*This allows*) are rewritten.
+- Facebook, LinkedIn and blog posts: AI drafts, the voice stays yours, one story per post.
+- Chat replies in your voice: forms of address, abbreviations and laugh style come from messages you sent to that same person. Within one group chat, a close friend gets the casual voice and a boss or an older colleague gets the polite one.
+- A check before sending: the skill points at what sounds like AI, and you decide what to change.
 
-## Install in a few minutes, no coding needed
+## Install, no coding needed
 
 You don't type any commands. You ask your AI assistant to install it, the way you would ask a colleague from IT.
 
@@ -41,15 +42,7 @@ You don't type any commands. You ask your AI assistant to install it, the way yo
 
 (*"Write like a person: draft an email asking my boss for three more days on the report; I address myself as em."*) If the email comes back short, gets to the request at once and keeps "em" all the way through, the skill is working.
 
-Whatever you need later, you also just say it to the assistant.
-
-| You want to | You type |
-| --- | --- |
-| Check it is installed | "Do I have the viet-nhu-nguoi skill installed?" |
-| Get the latest version | "Update the viet-nhu-nguoi skill to the latest version" |
-| Remove it | "Uninstall the viet-nhu-nguoi skill" |
-
-If the assistant reports an error while installing, take a screenshot and [open an issue](https://github.com/anhnx000/viet-nhu-nguoi/issues) (the project's bug-report page). I'll take a look.
+To check, update or remove it, ask the assistant the same way: "Do I have the viet-nhu-nguoi skill installed?", "Update the viet-nhu-nguoi skill", "Uninstall the viet-nhu-nguoi skill". If installing fails, take a screenshot and [open an issue](https://github.com/anhnx000/viet-nhu-nguoi/issues).
 
 <details>
 <summary>For an AI assistant that was asked to install this skill</summary>
@@ -95,7 +88,7 @@ The command asks which agents to install for. Pass `-a claude-code` (or `-a '*'`
 
 </details>
 
-## Everyday use
+## Usage
 
 Talk to it the way you would brief a colleague. There is no syntax to remember.
 
@@ -104,60 +97,43 @@ Talk to it the way you would brief a colleague. There is no syntax to remember.
 | "Làm slide báo cáo tiến độ dự án tuần này để sếp duyệt" (*make this week's progress deck for my boss to approve*) | Asks who is watching, what they must decide, and whether it is presented live or sent to read, then builds the deck |
 | "Sửa file bao-cao-q3.pptx cho bớt giọng AI" (*make this deck sound less like AI*) | Reads the text and speaker notes on every slide, fixes titles, bullets and notes |
 | "Viết email xin sếp lùi deadline 3 ngày, xưng em" (*email my boss for a three-day extension*) | Writes a short email, request first, with "em"/"anh" kept consistent throughout |
-| "Viết bài Facebook kể về dự án của mình, khoảng 300 chữ" (*a 300-word Facebook post about my project*) | Asks you for one or two things that really happened, then tells one story. No section headings, no background lecture |
+| "Viết bài Facebook kể về dự án của mình, khoảng 300 chữ" (*a 300-word Facebook post about my project*) | Asks for one or two things that really happened, then tells one story, with no section headings |
 | "Soi giúp đoạn này chỗ nào giọng AI" (*where does this sound like AI?*) | Lists each spot with the reason and a suggested fix, and rewrites nothing |
-| Paste an email you wrote yourself | Picks up your sentence rhythm, connectives and pronouns of address, then writes to match |
+| "Rep giúp mình tin anh Tuấn trong nhóm này" (*reply to Tuấn in this group for me*) plus the chat log | Replies in the voice you use with Tuấn, even if you joke around with others in the same group |
 
-For better results:
+For closer results, say who will read it and who you are to them: "to my department head, I'm em" produces a different email from "to a customer, we are chúng tôi". Paste a passage you wrote yourself and the skill picks up your sentence rhythm and favourite words. Give it the real numbers, names and dates, and it asks about whatever is missing. When a phrase feels off, say "mình không nói thế" (*I don't talk like that*) and it adjusts for the rest of the conversation.
 
-1. Say who will read it and who you are to them. "To my department head, I'm em" produces a different email from "to a customer, we are chúng tôi".
-2. Paste a passage you wrote yourself, the same kind of text as the one you need. The skill copies your sentence length and the words you favour.
-3. Give it the real numbers, names and dates. If something is missing the skill asks or leaves a blank, and it does not make things up. Ask for a personal post without telling it any story and it asks a few questions first; it will not invent memories for you.
-4. When a phrase feels off, say "mình không nói thế" (*I don't talk like that*). The skill adjusts and remembers for the rest of the conversation.
-
-Other ways to use it:
-
-- Type `/viet-nhu-nguoi` to turn it on for the whole conversation. Every reply then follows the rules, short ones included.
-- The skill turns itself on when you ask for an email, message or post that you will send under your name.
-- You can pick a voice by name: *đời thường* (casual), *công việc* (work), *kỹ thuật* (technical), *ấm áp* (warm), *thẳng* (blunt). The voice changes style only, while pronouns of address and content stay put.
-- Text you wrote yourself only gets a light edit.
-- For an important deck, the skill has another AI assistant, one that knows nothing about the context, read it and score it on seven criteria out of 70. The skill then puts the feedback in a table so you can accept or reject each item.
+Type `/viet-nhu-nguoi` to turn it on for the whole conversation, short replies included. It turns itself on when you ask for an email, message or post that goes out under your name. Text you wrote yourself only gets a light edit. For an important deck, a second assistant that knows nothing about the context reads it and scores it on seven criteria, and you choose which comments to accept.
 
 ## Before and after
 
-The scores below come from the scanner bundled with the skill, on a 0-100 scale. The higher the score, the more template habits the text has.
+The scores come from the scanner bundled with the skill, on a 0-100 scale. The more template habits a text has, the higher the score.
 
 ### Slides
-
-The [`examples/`](examples) folder has two sample decks, one made by AI and one made with the skill. These are their titles:
 
 ![Slide titles. Made by AI, 48/100: Digital transformation: a journey of value creation; Overview; Challenges; 3 pillars of the solution; Benefits; Conclusion; Thank you. Made with the skill, 0/100: Proposal: hire one more QA for Q1 2027; Both Q3 releases slipped because we lacked testers; One QA costs less than the penalty for each delay; Please approve by 30/11 so we can hire in time.](assets/vi-du-slide.en.png)
 
 *AI deck: "Digital transformation: a journey of value creation; Overview; Challenges; 3 pillars of the solution; Benefits; Conclusion; Thank you." Skill deck: "Proposal: hire one more QA for Q1 2027; both Q3 releases slipped because we lacked testers; one QA costs less than the penalty for each delay; please approve by 30/11 so we can hire in time."*
 
-The four titles of the second deck are enough to follow the whole proposal. The scanner gives it 0/100 and the first deck 48/100.
+The AI deck has seven titles that are all labels. The four titles of the second deck are enough to follow the whole proposal. Both `.pptx` files are in [`examples/`](examples).
 
 ### Emails and reports
 
-![Emails and reports. The AI draft scores 84/100; it opens with "In today's context" and closes with "Hope this helps!". After the skill, 0/100: Our team has moved to the new project management system, so tracking projects is now faster and less work, and customers find it easier to work with us. With details supplied, 0/100: Since March we track projects in the new system.](assets/vi-du-email.en.png)
+![Emails and reports. The AI draft scores 84/100; it opens with "In today's context" and closes with "Hope this helps!". After the skill, 0/100: Our team has moved to the new project management system, so tracking projects is now faster and less work, and customers find it easier to work with us. With details you supplied, 0/100: Since March we track projects in the new system.](assets/vi-du-email.en.png)
 
 *AI draft, roughly: "In today's context, applying AI is not only a trend but also a key factor that elevates business performance. This is proven by many studies showing productivity can increase significantly. In addition, our team proceeded to carry out the deployment of a new system for the purpose of delivering a seamless experience. It makes project management easier, faster and more efficient. Hope this helps!"*
 
 *After the skill: "Our team has moved to the new project management system, so tracking projects is now faster and less work, and customers find it easier to work with us." With details: "Since March we track projects in the new system. Customers check progress themselves instead of messaging us, and the team saves about half a day of reporting each week."*
 
-The AI draft scores 84/100 with 17 tells, the parts marked red in the image. The version after the skill is short because the skill does not invent numbers. If you want detail, the skill asks you and writes with only what you gave it, as in the third version. Both rewrites score 0/100. The three texts are in [`examples/truoc.md`](examples/truoc.md), [`examples/sau.md`](examples/sau.md) and [`examples/sau-co-chi-tiet.md`](examples/sau-co-chi-tiet.md).
+The scanner flags 17 phrases in the AI draft, the parts marked red. The original has no numbers, so the version after the skill is short and adds none. Supply details and you get the third version. The texts are in [`examples/truoc.md`](examples/truoc.md), [`sau.md`](examples/sau.md) and [`sau-co-chi-tiet.md`](examples/sau-co-chi-tiet.md).
 
 ### A long post
-
-Version 2.2 of the skill came out of a real post. [The original](examples/bai-dang-truoc.md) runs 1,740 Vietnamese words under nine all-caps headings. Most of the familiar AI vocabulary was already gone, so the previous scanner scored it 3/100. Readers still spotted it at once, because the whole post keeps repeating a few sentence shapes.
 
 ![A long post. Original, 55/100: 1,740 words, ten "not X but Y" sentences, six sentences opening with a label, a colon in 19 of 88 sentences. Rewrite, 0/100: 373 words, one job, inviting people to join the project.](assets/vi-du-bai-dang.en.png)
 
 *The three quoted lines: "To be honest: progress isn't easy." "The hardest part isn't the code, it's choosing what to work on." "I don't need you to be good at kernels. I need you to be patient with logs."*
 
-Since version 2.2 the scanner counts across the whole text, so this post scores 55/100. It has ten "not X but Y" sentences, six sentences that open with a label such as "nói gọn" (*put briefly*) or "nói cho thật" (*to be honest*), and a colon in 19 of 88 sentences.
-
-[The rewrite](examples/bai-dang-sau.md) is 373 words and does one job, inviting people to join the project. The scanner gives it 0/100, and it adds no fact that the original lacks. The operating-system primer, the microkernel history and the security statistics are left for other posts.
+[The original](examples/bai-dang-truoc.md) has almost none of the familiar AI vocabulary, yet readers spot it at once, because a few sentence shapes repeat from start to finish. The scanner counts those shapes and scores it 55/100. [The rewrite](examples/bai-dang-sau.md) is 373 words, keeps only the invitation to join the project, and adds no facts. The operating-system primer, the microkernel history and the security statistics are left for other posts.
 
 ## What the skill fixes
 
@@ -175,37 +151,25 @@ The skill has a catalog of 65 AI-writing patterns, each with a before and after 
 | Pronouns of address | "bạn" all the way through a message to your boss; mixing "bạn" and "quý vị" | one pair that fits the relationship |
 | English glosses in brackets | hiệu suất (performance) | hiệu suất |
 
-Harder to spot is word-for-word translation: every word is Vietnamese, but the sentence still follows English. It tends to show in these places:
+Harder to spot is word-for-word translation: every word is Vietnamese, but the sentence still follows English. Such text opens sentences with "Bạn" (*you*), "Với..." (*With...*) or "Để..., bạn cần..." (*To..., you need...*), hangs "của bạn" (*your*) on nouns, and scatters "một" (*a*), "các" (plural), "đã", "sẽ" (tense markers) everywhere. The skill rewrites it from the idea instead of swapping phrases one by one.
 
-- "bạn" (*you*) opens every sentence and "của bạn" (*your*) follows every noun
-- "một" (*a*), "các", "những" (plural markers) stand in front of every noun
-- passives that never say who acted ("số liệu được giữ nguyên", *the figures are kept*), and objects as grammatical subjects ("Bảng này cho thấy", *This table shows*)
-- "đã", "đang", "sẽ" (tense markers) and "có thể" (*can*) scattered everywhere
-- sentences that open with "Với..." (*With/For...*) or "Để..., bạn cần..." (*To..., you need...*), and "và" (*and*) joining every clause
-- idioms and headings translated literally ("tin tốt là", *the good news is*; "Bắt đầu nhanh", *Quick start*)
+Some patterns only show when counted across the whole text, even after each sentence is fine:
 
-For text like this the skill rewrites from the idea, the way Vietnamese speakers would say it, instead of swapping phrases one by one.
-
-Some patterns only show when you read the whole text, even after each sentence is fine:
-
-- sentences that open with a label ("nói gọn", "nói cho thật:")
-- the "not X but Y" shape used three times or more
+- the "not X but Y" shape, repeated
+- sentences that open with a label ("nói gọn", *put briefly*; "nói cho thật:", *to be honest:*)
 - every paragraph closing on a line that sounds like a proverb
-- colons everywhere
-- the filler words of translated text ("một", "các", "được", "sẽ", "của bạn", the leftovers of English articles, plurals, tenses and possessives) thick across the whole text
-- full stops that chop one thought into several short sentences, or the reverse, one sentence joined from too many clauses
-- a post split into sections with emoji, closing on a call for comments or a slogan that would fit any post
-- a long post that covers every topic
+- colons everywhere, or full stops that chop one thought into several short sentences
+- a post split into sections with emoji that ends by asking for comments
 
-Slides and long documents have their own group. The skill catches titles that are only labels ("Tổng quan", "Kết luận"), titles that count points ("3 trụ cột", *3 pillars*), exactly three bullets on every slide, empty promises ("chi tiết sẽ trao đổi sau", *details to be discussed later*) and speaker notes that read like a memo. The slide-writing guide is in [references/slides.md](skills/viet-nhu-nguoi/references/slides.md) (in Vietnamese).
+Slides have their own group: titles that are only labels, titles that count points ("3 trụ cột", *3 pillars*), exactly three bullets on every slide, speaker notes that read like a memo. Guide: [slides.md](skills/viet-nhu-nguoi/references/slides.md) (in Vietnamese).
 
-Chat replies get personalized icons and tone. The skill reads up to the last 30 turns of the conversation it can access, picks up your capitalization, punctuation, laugh style (":v", ")))"), emoji, particles and forms of address, and keeps that voice for every later reply in the conversation. Slang or a regional dialect is used only when those turns show it or you name the region. The scanner flags drafts that pile three or four slang words into one message ("u là trời", "đỉnh nóc kịch trần", "slay") or mix Northern, Central and Southern markers ("giời ơi", "rứa", "nghen") in one sentence. Guide: [references/chat.md](skills/viet-nhu-nguoi/references/chat.md) (in Vietnamese).
+For chat replies, icons, laugh style and abbreviations come from up to the last 30 turns the skill can read, and the voice changes with each recipient. Particles such as "à", "nhé", "ạ" must keep what the speaker was doing: asking, requesting or promising. The scanner flags drafts that pile three or four slang words into one message or mix Northern, Central and Southern markers ("giời ơi", "rứa", "nghen") in one sentence. Guides: [chat.md](skills/viet-nhu-nguoi/references/chat.md) and [spoken.md](skills/viet-nhu-nguoi/references/spoken.md) (in Vietnamese).
 
-The remaining groups apply to both Vietnamese and English: false contrasts, one-line punchlines, lists forced to three items, em dashes, inflated significance, vague authorities, decorative bold and emoji, chatbot filler, and re-explaining what the reader already knows.
+The remaining groups apply to English as well: false contrasts, one-line punchlines, lists forced to three items, em dashes, inflated significance, vague authorities, decorative bold and emoji, chatbot filler.
 
-There are also things the skill does not touch: regional dialect, colloquial speech, Sino-Vietnamese terms used correctly, passives in technical docs, and small words whose removal changes the meaning ("vẫn" *still*, "chưa" *not yet*, "chỉ" *only*, "có thể" *may*).
+The skill leaves alone regional dialect, colloquial speech, Sino-Vietnamese terms used correctly, passives in technical docs, and small words whose removal changes the meaning ("vẫn" *still*, "chưa" *not yet*, "chỉ" *only*, "có thể" *may*).
 
-## For command-line users
+## Command line
 
 The repo has two scripts you can run by hand. Both use only the Python standard library.
 
@@ -238,7 +202,7 @@ For a piece the AI wrote from scratch, compare it with your brief. Save the note
 python3 -I skills/viet-nhu-nguoi/scripts/check_facts.py --brief brief.txt draft.md
 ```
 
-Output for two of the sample files:
+Output for one of the sample files:
 
 ```text
 $ python3 -I skills/viet-nhu-nguoi/scripts/scan.py examples/truoc.md
@@ -253,43 +217,34 @@ $ python3 -I skills/viet-nhu-nguoi/scripts/scan.py examples/truoc.md
 [uy tín mơ hồ] 1         nhiều nghiên cứu chỉ ra
 [lời chatbot] 1          hy vọng những thông tin trên
 [chữ đệm dịch dày] 1     145 chữ đệm trên 1.000 chữ
-
-$ python3 -I skills/viet-nhu-nguoi/scripts/scan.py examples/slide-truoc.pptx
-Điểm 48/100 (nhiều dấu hiệu): 21 dấu hiệu trong 7 slide, 176 chữ.
-[từ vựng AI (vi)] 7
-[tiêu đề dạng nhãn] 4        slide 2: Tổng quan, slide 3: Thách thức, slide 5: Lợi ích, slide 6: Kết luận
-[hứa suông] 1                slide 5, ghi chú: chi tiết sẽ được trao đổi sau
-[tiêu đề đếm số ý] 1         slide 4: 3 trụ cột giải pháp
-[câu khó nói (ghi chú)] 1    slide 2, ghi chú: Như chúng ta có thể thấy, ...
-[số gạch đầu dòng đều] 1     5/5 slide có đúng 3 ý
-...
 ```
 
 ## Good to know
 
-The skill does not send your text anywhere new. The text only goes to the AI model your assistant already uses. The skill itself is Markdown files plus a few Python scripts that use only the standard library, with no network calls, no data collection and no account.
+The skill does not send your text anywhere except to the AI model your assistant already uses. It is Markdown files plus a few Python scripts with no network calls, no data collection and no account.
 
-The score is only a guide. It tells you how many template habits a text has and whether its sentences are too uniform, and it cannot tell you whether AI wrote the text. Some people write in a uniform rhythm, and AI detectors are known to misfire on people writing in a second language. Treat a high score as a list of places to reread.
+The score tells you how many template habits a text has. It cannot tell you whether AI wrote the text, since some people write in a uniform rhythm. Treat a high score as a list of places to reread.
 
-The skill makes text more natural and easier to read. It does not promise to get past AI detectors and does not use evasion tricks such as deliberate typos or hidden characters. Please don't use it to do a student's coursework for them or to impersonate anyone, and don't use the pattern list to conclude that someone used AI. People guessing by feel do only a little better than chance.
+The skill does not promise to get past AI detectors and does not use evasion tricks such as deliberate typos or hidden characters. Please don't use it to do a student's coursework or to impersonate anyone, and don't use the pattern list to conclude that someone used AI.
 
 ## What's in the repo
 
 ```text
 skills/viet-nhu-nguoi/
-├── SKILL.md                 main rules, loaded by Claude when invoked
+├── SKILL.md                 main rules, read by the assistant on every use
 ├── references/patterns.md   65 patterns with before/after examples
 ├── references/slides.md     slides, speaker notes, fresh-reader test
-├── references/chat.md       personalized icons and tone for chat replies
-├── references/sources.md    references: articles, research, style guides, other skills
-├── scripts/scan.py          scanner with a 0-100 score, no third-party packages
-├── scripts/check_facts.py   checks a rewrite kept numbers, dates, times, links, code
-├── scripts/slides.py        reads slide text and notes from .pptx, standard library only
+├── references/chat.md       chat replies in the user's voice, per recipient
+├── references/spoken.md     particles, requests, promises, transcripts
+├── references/sources.md    references
+├── scripts/scan.py          scanner with a 0-100 score
+├── scripts/check_facts.py   compares numbers, dates, links, code between two versions
+├── scripts/slides.py        reads slide text and notes from .pptx
 └── LICENSE-humanizer        MIT license of blader/humanizer
-assets/                      banner, example images and the script that redraws them (make_images.py)
-examples/                    before/after text and .pptx decks used in the README and tests
-tests/test_scan.py           python3 -m unittest discover -s tests
-tests/fixtures/              model-written and human-written texts the tests keep apart
+assets/                      banner, example images, the script that redraws them (make_images.py)
+examples/                    before/after text and .pptx decks
+evals/                       behaviour scenarios for the skill, see evals/README.md
+tests/                       python3 -m unittest discover -s tests
 ```
 
 ## Contributing

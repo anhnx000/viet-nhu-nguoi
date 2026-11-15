@@ -273,7 +273,7 @@ T = {
     "vi": {
         "sfx": "", "ai": "AI viết", "skill": "Qua skill", "detail": "Có thêm chi tiết bạn đưa",
         "email_title": "Email, báo cáo", "email_sub": "Ba bản cùng một nội dung, chỗ tô đỏ là cụm từ máy quét bắt được.",
-        "email_note": "Bản này ngắn vì skill không tự bịa thêm số liệu.",
+        "email_note": "Bài gốc không có số liệu nào, skill không tự thêm.",
         "slide_title": "Tiêu đề slide", "slide_sub": "Đọc lướt tiêu đề có biết cần quyết gì không?",
         "slide_ai": "AI làm", "slide_skill": "Làm theo skill",
         "slide_note_ai": "Cả bảy tiêu đề đều chỉ là nhãn, không cái nào nói ra kết luận.",
@@ -283,13 +283,13 @@ T = {
         "stats_before": [("1.740", "chữ, chia thành chín mục có tiêu đề viết hoa"), ("10", 'câu kiểu "không phải X mà là Y"'),
                          ("6", 'câu mở bằng nhãn "nói gọn", "nói cho thật"'), ("19/88", "câu có dấu hai chấm")],
         "stats_after": [("373", "chữ, viết liền, không chia mục"), ("1", "việc duy nhất là rủ người vào làm cùng")],
-        "post_old": "Máy quét bản cũ chỉ chấm bài này 3/100, vì bài đã bỏ gần hết các từ AI quen mặt.",
+        "post_old": "Từ AI quen mặt gần như không còn, cái lộ ra là vài kiểu câu lặp lại.",
         "post_new": "Bản viết lại không thêm dữ kiện nào ngoài bài gốc.",
     },
     "en": {
         "sfx": ".en", "ai": "AI draft", "skill": "After the skill", "detail": "With details you supplied",
         "email_title": "Emails and reports", "email_sub": "Three versions of the same content; the red marks are what the scanner flags.",
-        "email_note": "Short, because the skill does not invent numbers.",
+        "email_note": "The original has no numbers, and the skill adds none.",
         "slide_title": "Slide titles", "slide_sub": "Can you tell what to decide from the titles alone?",
         "slide_ai": "Made by AI", "slide_skill": "Made with the skill",
         "slide_note_ai": "All seven titles are topic labels; none states a conclusion.",
@@ -299,7 +299,7 @@ T = {
         "stats_before": [("1,740", "words split into nine sections with all-caps headings"), ("10", '"not X but Y" sentences'),
                          ("6", 'sentences opening with a label ("nói gọn")'), ("19/88", "sentences with a colon")],
         "stats_after": [("373", "words in plain paragraphs, no headings"), ("1", "thing it does: invite people to join")],
-        "post_old": "The old scanner gave it 3/100: the familiar AI words were already gone.",
+        "post_old": "The familiar AI words are gone. What shows is the repeated sentence shapes.",
         "post_new": "The rewrite adds no fact that the original lacks.",
     },
 }
@@ -310,11 +310,11 @@ def banner():
               "Bên cạnh đó, đội ngũ của chúng tôi đã tiến hành thực hiện việc triển khai hệ thống mới nhằm mục đích "
               "mang lại trải nghiệm liền mạch cho khách hàng... Hy vọng những thông tin trên sẽ hữu ích cho bạn!")
     compose(
-        "banner.png", "Viết như người", "Skill giúp Claude và các trợ lý AI khác viết tiếng Việt bớt giọng AI",
+        "banner.png", "Viết như người", "Nhờ AI viết tiếng Việt mà đọc lên vẫn ra giọng mình",
         [Card("Trước: văn AI", "bad", [Para(before, EMAIL_TELLS, size=21)], "84/100")],
         [Card("Sau: giọng người", "good",
               [Para(read("examples/sau.md"), size=21, after=18),
-               Para("Skill bỏ câu sáo rỗng, giữ đúng ý và không thêm số liệu nào.", size=16, color=MUTED, after=4)], "0/100")],
+               Para("Bỏ câu sáo, giữ đúng ý, không thêm số liệu nào.", size=16, color=MUTED, after=4)], "0/100")],
         footer=['Skill sửa văn dịch, chữ "việc/sự/một cách" dùng tràn lan, giọng công văn, lời chatbot và xưng hô sai vai.',
                 "github.com/anhnx000/viet-nhu-nguoi · MIT"],
         title_size=56)

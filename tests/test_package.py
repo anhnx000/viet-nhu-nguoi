@@ -58,6 +58,22 @@ class Evals(unittest.TestCase):
                 self.assertTrue((ROOT / sc["tep"]).exists(), sc["tep"])
                 self.assertIn("{tep}", sc["tin_nhan"], sid)
 
+    def test_refs_accept_capitals_and_comma_lists(self):
+        scenario = {"kiem": {"min_refs": 3}}
+        for reply in ("Mục 4, 50, 45", "mục 4, mục 50, mục 45", "(4, 50, 45)"):
+            self.assertEqual(self.check.check(scenario, reply), [])
+        self.assertTrue(self.check.check(scenario, "Mục 4, 4, 4"))
+        self.assertTrue(self.check.check(scenario, "Có 4, 50, 45 người."))
+
+    def test_questions_do_not_require_numbering(self):
+        scenario = {"kiem": {"min_questions": 2, "max_questions": 2}}
+        for reply in ("Quán ở đâu? Bài đăng ở đâu?",
+                      "- Quán ở đâu?\n- Bài đăng ở đâu?",
+                      "1. Quán ở đâu?\n2. Bài đăng ở đâu?",
+                      "Quán ở đâu??? Bài đăng ở đâu?"):
+            self.assertEqual(self.check.check(scenario, reply), [])
+        self.assertTrue(self.check.check(scenario, "1. Quán rất đẹp.\n2. Món uống rất ngon."))
+
     def test_asking_passes_and_fill_in_frame_fails(self):
         sc = self.scenarios["viet-bai-thieu-chuyen-rieng"]
         asks = ("Bài kiểu này cần chuyện thật của bạn, mình hỏi mấy câu, trả lời tắt cũng được:\n"

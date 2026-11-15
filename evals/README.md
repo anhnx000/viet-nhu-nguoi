@@ -1,6 +1,6 @@
 # Bộ đề thử skill
 
-Ba mươi tư tình huống thường gặp, dùng để xem một bản `SKILL.md` mới có làm hỏng hành vi cũ không. Bộ đề này rút từ các lượt thử của bản 2.7.0, kết quả từng lượt ghi trong `CHANGELOG.md`.
+Bốn mươi lăm tình huống thường gặp, dùng để xem một bản `SKILL.md` mới có làm hỏng hành vi cũ không. Bộ đề này rút từ các lượt thử của bản 2.7.0, kết quả từng lượt ghi trong `CHANGELOG.md`.
 
 ## Chạy một đề
 
@@ -29,3 +29,20 @@ Năm đề `chat-giong-*` thử phần cá nhân hóa trên năm giọng khác n
 Ba đề `luot-hai-*` thử lượt hai của chế độ viết mới: người dùng đã trả lời các câu skill hỏi, giờ skill phải viết bài từ đúng những gì họ kể. Phần đọc tay ở ba đề này là chỗ quan trọng nhất: bài có thêm cảnh, lời thoại hay cảm nghĩ nào người dùng chưa kể không.
 
 File đầu vào trong `inputs/` là văn viết ra để thử, tên người và số liệu đều bịa.
+
+Tám đề `spoken-*` thử sắc thái lời nói: trợ từ, phạm vi phủ định, mức chắc chắn, lời nhờ, bản chép lời, câu vốn tự nhiên không được sửa.
+
+Bốn đề nhóm chat thử việc đổi giọng theo người nhận. `chat-cung-nhom-khac-vai` đưa sẵn mẫu cho bạn thân, trưởng nhóm lớn tuổi và cả nhóm. `chat-nhom-tra-loi-sep` và `chat-nhom-tra-loi-hai-nguoi` dùng một đoạn chat năm người, trong đó phần lớn tin của người dùng là giọng suồng sã với bạn, chỉ vài tin lễ phép với sếp và chị lớn tuổi hơn. Đọc tay ở các đề này là xem tin gửi người trên có lẫn "tui", "ông", ":v" của giọng bạn bè không.
+
+## Kết quả bản 2.7.6
+
+Bản này chưa có lượt nào chạy đủ 45 đề trên cùng một bản `SKILL.md`. Các đề chạy theo từng đợt trong lúc sửa, bằng hai mô hình (Claude và Codex), nên không gộp thành một tỉ lệ qua.
+
+- Tám đề `spoken-*` chạy trên cả ba bản 2.7.1, 2.7.2, 2.7.3 và bản mới. Bản cũ đã giữ đúng ý ở cả tám đề, nên chưa có căn cứ nói bản mới hơn ở nhóm này.
+- Đề giới thiệu quán chỉ có tên và địa điểm: cả ba bản cũ dựng bài có nhiều ô trống. Sau khi sửa, bốn đề thiếu dữ kiện (bài PM, chạy bộ, quán, studio) đều hỏi thêm, không dựng bài, mỗi đề một lượt.
+- Nhóm chat: năm lượt Opus mức medium trên ba đề (`chat-nhom-tra-loi-sep` hai lượt, `chat-nhom-tra-loi-hai-nguoi` hai lượt, `chat-tra-loi-pm` một lượt) đều qua phần đếm và đúng vai khi đọc tay. Tin gửi sếp và chị lớn tuổi dùng "Dạ", "em", "ạ", phần gửi bạn giữ "ông". Hai lượt Codex về đổi người nhận giữa chừng và chưa rõ gửi cho ai cũng đúng.
+- Lỗi còn thấy: mẫu giọng có gạch ngang thì lượt giữ lượt bỏ, tin chat có lúc chuẩn hóa dấu câu hơn mẫu, bài kể dài có lượt tự thêm một câu diễn giải ở đoạn kết dù đủ số liệu. Bài kể trải nghiệm vẫn cần người đứng tên đọc lại từng chi tiết.
+
+`check.py` đổi hai chỗ: `min_questions` nhận cả câu hỏi không đánh số, `min_refs` nhận "Mục" viết hoa và danh sách số sau từ đó. `max_questions` vẫn chỉ đếm mục đánh số, vì dấu hỏi trong email soạn hộ có thể là lời nhờ người nhận.
+
+Câu trả lời thô của các lượt chạy để ở máy người chạy (`evals/results/`, đã nằm trong `.gitignore`) vì log của công cụ có lẫn cấu hình máy.

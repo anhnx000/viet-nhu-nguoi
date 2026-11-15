@@ -226,7 +226,7 @@ Văn AI tiếng Việt thường là văn "nghĩ bằng tiếng Anh rồi dịch
 ### 31. Danh hóa: "việc", "sự", "một cách" đầy câu
 **Dấu hiệu:** "Việc áp dụng X giúp việc quản lý trở nên dễ dàng"; "sự phát triển của", "sự thay đổi" ở nhiều câu liền; "một cách nhanh chóng / hiệu quả / dễ dàng / toàn diện"; "trở nên + tính từ"; "có khả năng + động từ".
 **Sửa:** Dùng động từ làm vị ngữ. Bỏ "một cách" ("nhanh", "dễ" là đủ). "Trở nên dễ dàng hơn" → "dễ hơn". "Có khả năng xử lý" → "xử lý được".
-**Giữ:** Danh hóa trong văn học thuật, pháp lý khi nó là thuật ngữ ("việc thu thập dữ liệu cá nhân" trong một điều khoản).
+**Giữ:** "Có khả năng" chỉ mức chắc chắn, "trở nên" chỉ sự thay đổi thì không bỏ phần nghĩa đó. Danh hóa trong văn học thuật, pháp lý khi nó là thuật ngữ ("việc thu thập dữ liệu cá nhân" trong một điều khoản).
 **Trước:**
 > Việc áp dụng AI một cách hiệu quả giúp cho việc quản lý dự án trở nên dễ dàng hơn.
 **Sau:**
@@ -401,7 +401,7 @@ Cách đọc nhóm này: đếm trên cả bài. Một lần thì có thể là 
 **Sửa:** Hỏi người dùng một hai chuyện thật: lần nào kernel không boot, mất bao lâu, vì lỗi gì, lúc đó nghĩ gì. Dùng đúng lời họ kể. Không có thì giữ bài ngắn và trung tính. Không bịa kỷ niệm, và không đưa khung điền chỗ trống có tình tiết dựng sẵn.
 
 ### 54. Câu vụn: dấu chấm chặt một ý thành nhiều câu
-**Dấu hiệu:** hai ba câu ngắn liền nhau cùng nói một ý; câu sau lặp chủ ngữ của câu trước ("Skill giúp văn bản dễ đọc hơn. Skill không cam kết..."); câu chỉ là một cụm bổ sung đứng riêng ("Thường mất chưa tới một phút.", "Codex, Cursor cũng được."); gạch đầu dòng mở bằng một cụm cụt rồi chấm ("Soi lại trước khi gửi. Skill chỉ ra..."); cả bài chừng một phần ba số câu dài không quá mười chữ (`scan.py` báo từ 30%).
+**Dấu hiệu:** hai ba câu ngắn liền nhau cùng nói một ý; câu sau lặp chủ ngữ của câu trước ("Skill giúp văn bản dễ đọc hơn. Skill không cam kết..."); câu chỉ là một cụm bổ sung đứng riêng ("Thường mất chưa tới một phút.", "Codex, Cursor cũng được."); gạch đầu dòng mở bằng một cụm cụt rồi chấm ("Soi lại trước khi gửi. Skill chỉ ra..."); cả bài chừng một phần ba số câu dài không quá mười chữ (`scan.py` báo từ 30%). Đây là gợi ý đọc lại; tin nhắn và đối thoại có nhiều câu ngắn vẫn tự nhiên.
 **Vấn đề:** Đây là mặt trái của lời khuyên "viết câu ngắn". Tiếng Anh chấm câu sau mỗi mệnh đề độc lập, còn tiếng Việt nối các vế bằng dấu phẩy và "nên", "thì", "mà", "còn", "rồi". Chấm dày thì quan hệ giữa các vế biến mất, người đọc phải tự nối lại, câu nghe giật như phụ đề.
 **Trước:**
 > Điểm số chỉ để tham khảo. Điểm cho biết bài có bao nhiêu thói quen viết theo khuôn. Điểm không nói bài do AI viết. Có người vốn viết câu đều nhịp.
@@ -420,7 +420,7 @@ Cách đọc nhóm này: đếm trên cả bài. Một lần thì có thể là 
 
 ## K. Văn dịch sâu: câu nghĩ bằng tiếng Anh, viết bằng chữ Việt
 
-Nhóm G bắt các cụm dịch dễ thấy. Nhóm này bắt thứ khó thấy hơn: không cụm nào sai, nhưng câu giữ nguyên trật tự và mấy chữ đệm của tiếng Anh nên đọc lên vẫn như dịch từng chữ. Phép thử chung là dịch ngược: câu nào dịch từng chữ sang tiếng Anh mà ra ngay câu tiếng Anh trôi chảy thì viết lại từ ý.
+Nhóm G bắt các cụm dịch dễ thấy. Nhóm này bắt thứ khó thấy hơn: không cụm nào sai, nhưng câu giữ nguyên trật tự và mấy chữ đệm của tiếng Anh nên đọc lên vẫn như dịch từng chữ. Đọc câu độc lập với nguồn, chỉ sửa chỗ gượng hoặc dùng từ sai. Dịch ngược sang tiếng Anh trôi chảy không đủ để kết luận câu bị dịch sát.
 
 ### 56. Chủ ngữ và sở hữu chép từ "you", "we", "your"
 **Dấu hiệu:** câu nào cũng mở bằng "Bạn", "Chúng tôi", hoặc tên sản phẩm; "của bạn", "của chúng tôi" đi sau mọi danh từ ("trợ lý của bạn", "máy tính của bạn", "đội ngũ của chúng tôi"); "Bạn có thể...", "Bạn không cần...", "Bạn sẽ thấy..." lặp cả bài.
@@ -442,12 +442,12 @@ Nhóm G bắt các cụm dịch dễ thấy. Nhóm này bắt thứ khó thấy 
 
 ### 58. Bị động không nói ai làm, đồ vật làm chủ ngữ
 **Dấu hiệu:** "số liệu được giữ nguyên", "skill được cập nhật", "bài được chấm 55/100", "được thiết kế để"; "Điểm cho biết...", "Bảng dưới đây cho thấy...", "Công cụ này cho phép bạn...", "Tính năng này giúp bạn...", "Kết quả mang lại...".
-**Vấn đề:** Nhóm G mới bắt "được... bởi". Bị động không tác nhân và chủ ngữ là đồ vật cũng là khuôn tiếng Anh. Tiếng Việt quen đưa người làm lên, hoặc nêu đề rồi nói về nó.
+**Vấn đề:** Nhóm G mới bắt "được... bởi". Bị động hoặc chủ ngữ chỉ sự vật không tự nó là lỗi. Chỉ đổi khi câu vòng vo, mơ hồ hoặc lặp khuôn; "Máy chạy chậm" và "Số liệu cho thấy doanh thu giảm" đều tự nhiên.
 **Trước:**
 > Điểm cho biết bài có bao nhiêu thói quen viết theo khuôn. Số liệu bạn đưa được giữ nguyên. Công cụ này cho phép bạn so hai bản.
 **Sau:**
-> Nhìn điểm thì biết bài viết theo khuôn nhiều hay ít. Số liệu đã đưa thì để nguyên. Muốn so hai bản thì dùng công cụ này.
-**Sửa:** Đổi sang chủ động, hoặc dùng khung "X thì...". Giữ bị động quen dùng trong văn hành chính, kỹ thuật ("được cấp phép", "bị lỗi") và khi người làm thật sự không quan trọng.
+> Nhìn điểm thì biết bài viết theo khuôn nhiều hay ít. Số liệu bạn đưa được giữ nguyên. Công cụ này so được hai bản.
+**Sửa:** Khi cần làm rõ người làm, đổi sang chủ động; không ép mọi câu về khung "X thì...". Giữ bị động quen dùng trong văn hành chính, kỹ thuật ("được cấp phép", "bị lỗi") và khi người làm thật sự không quan trọng.
 
 ### 59. "đã", "đang", "sẽ", "có thể" rải theo thì và trợ động từ tiếng Anh
 **Dấu hiệu:** động từ nào cũng kèm "đã", "đang", "sẽ" dù câu đã có mốc thời gian; "có thể" dịch "can/may" ở mọi chỗ ("bạn có thể gõ", "skill có thể nhờ"); "sẽ" trong câu nói chuyện thường xảy ra ("skill sẽ hỏi lại").
@@ -455,7 +455,7 @@ Nhóm G bắt các cụm dịch dễ thấy. Nhóm này bắt thứ khó thấy 
 > Hôm qua đội đã họp và đã quyết định sẽ lùi hạn. Khi bạn gõ lệnh, skill sẽ đọc file và bạn có thể xem kết quả.
 **Sau:**
 > Hôm qua đội họp, quyết định lùi hạn. Gõ lệnh xong thì skill đọc file rồi cho xem kết quả.
-**Sửa:** Ngữ cảnh đã rõ thì bỏ "đã", "đang", "sẽ". "Có thể" chỉ giữ khi thật sự chưa chắc hoặc đang nói về khả năng; còn nghĩa cho phép thì viết "cũng được", "được". Đừng bỏ "đã", "chưa", "sẽ" ở chỗ nó phân biệt việc xong với việc chưa làm.
+**Sửa:** Chỉ lược "đã", "đang", "sẽ" nếu vẫn rõ việc đã xong, đang diễn ra hay mới dự định. Mốc thời gian chưa đủ để quyết định. "Có thể" chỉ giữ khi thật sự chưa chắc hoặc đang nói về khả năng; còn nghĩa cho phép thì viết "cũng được", "được". Đừng bỏ "đã", "chưa", "sẽ" ở chỗ nó phân biệt việc xong với việc chưa làm.
 
 ### 60. Giới từ và từ nối dịch thẳng: "với", "để", "khi", "và", "trong"
 **Dấu hiệu:** "Với X, ..." mở câu (For/With X); "Để X, bạn cần Y" (To X, you need Y); "Bằng cách..."; "Đối với..."; "Thông qua..."; "Dựa trên..."; "khi" cho mọi chữ "when"; "và" nối mọi cặp vế, "và cũng"; "trong" cho mọi chữ "in" ("trong Claude Code", "trong trường hợp này"); "nơi mà", "người mà", "điều mà", "lý do mà".
@@ -480,7 +480,7 @@ Nhóm G bắt các cụm dịch dễ thấy. Nhóm này bắt thứ khó thấy 
 
 ## L. Tin nhắn thân mật: icon và ngữ điệu lạc giọng người gửi
 
-Tin nhắn trả lời bạn bè, đồng nghiệp thân thì người nhận biết rõ giọng người gửi, nên chỉ cần lệch một chút là lộ. Icon và ngữ điệu phải lấy từ tối đa 30 lượt trò chuyện gần nhất và giữ nguyên suốt cuộc trò chuyện. Cách làm nằm ở `references/chat.md`. Chạy `scan.py --chat` để máy quét kiểm thêm phần định dạng.
+Tin nhắn trả lời bạn bè, đồng nghiệp thân thì người nhận biết rõ giọng người gửi, nên chỉ cần lệch một chút là lộ. Icon và ngữ điệu lấy từ tối đa 30 lượt trò chuyện gần nhất; điều chỉnh tiếng cười và cách đùa theo tình huống. Cách làm nằm ở `references/chat.md`. Chạy `scan.py --chat` để máy quét kiểm thêm phần định dạng.
 
 ### 63. Tin nhắn viết như email
 **Dấu hiệu:** tin trả lời mở bằng "Cảm ơn bạn đã góp ý", "Chào bạn"; câu đủ chủ vị, viết hoa, chấm cuối; có gạch đầu dòng, in đậm; hứa "sẽ cân nhắc trong thời gian tới"; dài gấp mấy lần tin người kia gửi.
@@ -513,6 +513,6 @@ Tin nhắn trả lời bạn bè, đồng nghiệp thân thì người nhận bi
 - Cảm xúc lẫn lộn, chưa ngã ngũ: "Tôi thấy nhìn chung ổn, nhưng có gì đó cứ cấn cấn mà chưa nói rõ được."
 - Tiếng lóng, meme, chuyện riêng của một thời, một nhóm.
 - Câu chêm, ngoặc đơn, tự sửa giữa chừng: "(Định viết 'gần như' nhưng thật ra là chắc chắn.)"
-- Văn bản viết trước 30/11/2022: không phải văn AI, đừng lấy danh mục này ra sửa.
+- Không suy nguồn gốc văn bản từ ngày đăng; văn cũ vẫn có thể sửa nếu người dùng yêu cầu.
 - Giọng vùng miền, từ địa phương, "má", "tui", "hông" có sẵn trong bản gốc. Không chuẩn hóa, cũng không tự rải thêm.
 - Từ Hán Việt là thuật ngữ đúng, hoặc đúng giọng văn bản (công văn, hợp đồng, học thuật).
