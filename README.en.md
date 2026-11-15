@@ -139,7 +139,7 @@ The scanner flags 17 phrases in the AI draft, the parts marked red. The original
 
 ## Signs of AI writing
 
-The skill has a catalog of 65 AI-writing patterns, each with a before and after example ([full list](skills/viet-nhu-nguoi/references/patterns.md), in Vietnamese). The Vietnamese-only group includes these easy-to-spot patterns:
+The skill keeps a growing catalog of AI-writing patterns, each with a before and after example ([full list](skills/viet-nhu-nguoi/references/patterns.md), in Vietnamese). The Vietnamese-only group includes these easy-to-spot patterns:
 
 | Pattern | Example | Becomes |
 | --- | --- | --- |
@@ -236,7 +236,7 @@ The skill does not promise to get past AI detectors and does not use evasion tri
 ```text
 skills/viet-nhu-nguoi/
 ├── SKILL.md                 main rules, read by the assistant on every use
-├── references/patterns.md   65 patterns with before/after examples
+├── references/patterns.md   patterns with before/after examples
 ├── references/slides.md     slides, speaker notes, fresh-reader test
 ├── references/chat.md       chat replies in the user's voice, per recipient
 ├── references/spoken.md     particles, requests, promises, transcripts

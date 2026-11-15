@@ -111,7 +111,7 @@ Bài gốc không có số liệu nào nên bản qua skill cũng không có. V�
 
 ## Dấu hiệu văn AI
 
-Danh mục có 65 dấu hiệu, mỗi cái kèm ví dụ trước và sau ([xem đủ](skills/viet-nhu-nguoi/references/patterns.md)). Mấy cái hay gặp trong tiếng Việt:
+Danh mục dấu hiệu vẫn đang thêm dần, cái nào cũng kèm ví dụ trước và sau ([xem đủ](skills/viet-nhu-nguoi/references/patterns.md)). Mấy cái hay gặp trong tiếng Việt:
 
 | Dấu hiệu | Ví dụ | Sửa thành |
 | --- | --- | --- |
@@ -194,7 +194,7 @@ Gặp câu AI tiếng Việt skill chưa bắt, hay skill sửa hỏng một câ
 ```text
 skills/viet-nhu-nguoi/
 ├── SKILL.md                 quy tắc chính, trợ lý đọc mỗi lần dùng skill
-├── references/patterns.md   65 dấu hiệu, ví dụ trước/sau
+├── references/patterns.md   các dấu hiệu, ví dụ trước/sau
 ├── references/slides.md     slide, lời thuyết trình
 ├── references/chat.md       tin nhắn theo giọng người dùng
 ├── references/spoken.md     trợ từ, lời nhờ, lời hứa

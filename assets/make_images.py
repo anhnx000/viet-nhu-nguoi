@@ -22,7 +22,6 @@ from PIL import Image, ImageDraw, ImageFont
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 OUT = ROOT / "assets"
 SCAN = ROOT / "skills/viet-nhu-nguoi/scripts/scan.py"
-PATTERNS = ROOT / "skills/viet-nhu-nguoi/references/patterns.md"
 FONT_DIR = os.environ.get("INTER_DIR", "/usr/share/fonts/opentype/inter")
 MONO_DIRS = [os.environ.get("MONO_DIR", ""), "/usr/share/fonts/truetype/jetbrains-mono",
              os.path.expanduser("~/.local/share/fonts/JetBrainsMonoNerdFont")]
@@ -77,10 +76,6 @@ def scan(rel):
     m = re.search(r"Điểm (\d+)/100", out)
     n = re.search(r"(\d+) dấu hiệu", out)
     return int(m.group(1)), int(n.group(1)) if n else 0
-
-
-def pattern_count():
-    return len(re.findall(r"^### \d+\.", PATTERNS.read_text(encoding="utf-8"), re.M))
 
 
 def background(w, h):
@@ -404,7 +399,7 @@ EXCERPT = ("Trong bối cảnh hiện nay, việc ứng dụng AI không chỉ l
 
 
 def selling_points():
-    return [f"{pattern_count()} dấu hiệu văn AI", "Bộ kiểm tra, thang điểm 0-100", "Không bịa số liệu",
+    return ["Bỏ giọng văn dịch", "Bộ kiểm tra, thang điểm 0-100", "Không bịa số liệu",
             "Slide, email, bài đăng, tin nhắn", "Miễn phí, MIT"]
 
 

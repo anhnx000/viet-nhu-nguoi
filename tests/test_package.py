@@ -1,4 +1,4 @@
-"""Kiểm gói skill: phiên bản khớp nhau, danh mục đánh số liền, README ghi đúng số dấu hiệu, SKILL.md không phình."""
+"""Kiểm gói skill: phiên bản khớp nhau, danh mục đánh số liền, SKILL.md không phình."""
 
 import importlib.util
 import json
@@ -27,11 +27,6 @@ class Package(unittest.TestCase):
     def test_patterns_numbered_without_gaps(self):
         nums = [int(n) for n in re.findall(r"^### (\d+)\.", PATTERNS.read_text(encoding="utf-8"), re.M)]
         self.assertEqual(nums, list(range(1, len(nums) + 1)))
-
-    def test_readmes_state_pattern_count(self):
-        count = len(re.findall(r"^### \d+\.", PATTERNS.read_text(encoding="utf-8"), re.M))
-        self.assertIn(f"{count} dấu hiệu", read("README.md"))
-        self.assertIn(f"{count} AI-writing patterns", read("README.en.md"))
 
     def test_readme_scores_match_scanner(self):
         """Điểm ví dụ ghi trong README (và vẽ trong ảnh assets/) phải đúng điểm bộ kiểm tra chấm bây giờ."""
