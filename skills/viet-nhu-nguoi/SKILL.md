@@ -13,7 +13,7 @@ description: |
   "Signs of AI writing", skill humanizer (MIT) và các skill humanize tiếng Việt mã nguồn mở.
 license: MIT
 metadata:
-  version: "2.7.6"
+  version: "2.7.7"
 ---
 
 # Viết như người (Vietnamese humanizer): chống giọng văn AI

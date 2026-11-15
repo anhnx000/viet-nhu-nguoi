@@ -174,6 +174,9 @@ def read(path):
 
 
 def main():
+    for stream in (sys.stdin, sys.stdout, sys.stderr):
+        if hasattr(stream, "reconfigure"):
+            stream.reconfigure(encoding="utf-8")  # Windows mặc định cp1252, in chữ có dấu sẽ lỗi
     args = sys.argv[1:]
     brief = "--brief" in args
     args = [a for a in args if a != "--brief"]

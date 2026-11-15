@@ -728,6 +728,9 @@ def titles_of(text, deck):
 
 
 def main():
+    for stream in (sys.stdin, sys.stdout, sys.stderr):
+        if hasattr(stream, "reconfigure"):
+            stream.reconfigure(encoding="utf-8")  # Windows mặc định cp1252, in chữ có dấu sẽ lỗi
     ap = argparse.ArgumentParser(description="Quét dấu hiệu văn AI bề mặt (Việt/Anh), đọc được cả .pptx.")
     ap.add_argument("file", nargs="?", help="file cần quét (.md, .txt, .pptx); bỏ trống thì đọc stdin")
     ap.add_argument("--json", action="store_true", help="in kết quả dạng JSON")

@@ -96,6 +96,9 @@ def check(scenario, reply, root=ROOT):
 
 
 def main():
+    for stream in (sys.stdin, sys.stdout, sys.stderr):
+        if hasattr(stream, "reconfigure"):
+            stream.reconfigure(encoding="utf-8")  # Windows mặc định cp1252, in chữ có dấu sẽ lỗi
     if len(sys.argv) != 2:
         sys.exit(__doc__)
     out = pathlib.Path(sys.argv[1])

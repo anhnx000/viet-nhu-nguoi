@@ -1,5 +1,10 @@
 # Changelog
 
+## 2.7.7 (2026-11-16)
+
+- `scan.py`, `check_facts.py` và `evals/check.py` đọc, in bằng UTF-8 trên mọi máy. Trước đây máy Windows còn để bảng mã cp1252 thì script dừng ngay ở chữ có dấu đầu tiên (`UnicodeEncodeError`). Có thêm test cho lỗi này.
+- GitHub Actions chạy test trên Python 3.10, 3.12, 3.14 (Ubuntu), cùng macOS và Windows, rồi cài thử `install.sh` vào một thư mục HOME tạm trên Ubuntu và macOS. Đổi phiên bản rồi đẩy lên `main` thì có sẵn release kèm file zip thư mục skill, ghi chú lấy từ CHANGELOG. Dependabot nhắc cập nhật các action mỗi tháng.
+
 ## 2.7.6 (2026-11-15)
 
 Gộp ba bản 2.7.4-2.7.6 sửa liền nhau trong một ngày, chưa bản nào phát hành riêng.

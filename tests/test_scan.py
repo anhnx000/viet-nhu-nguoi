@@ -3,6 +3,7 @@
 Chạy: python3 -m unittest discover -s tests
 """
 import importlib.util
+import os
 import pathlib
 import re
 import subprocess
@@ -105,6 +106,15 @@ class Score(unittest.TestCase):
         self.assertEqual(subprocess.run(cmd, capture_output=True).returncode, 0)
 
 
+    def test_output_survives_legacy_console_encoding(self):
+        env = dict(os.environ, PYTHONIOENCODING="cp1252")
+        for script in (SCAN_PATH, FACTS_PATH):
+            args = [str(ROOT / "examples/truoc.md")] * (2 if script == FACTS_PATH else 1)
+            r = subprocess.run([sys.executable, str(script), *args], capture_output=True, env=env)
+            self.assertNotIn(b"UnicodeEncodeError", r.stderr, script.name)
+            self.assertIn(r.returncode, (0, 1))
+
+
 class CheckFacts(unittest.TestCase):
     def run_check(self, old, new):
         with tempfile.TemporaryDirectory() as d:
@@ -112,7 +122,7 @@ class CheckFacts(unittest.TestCase):
             a.write_text(old, encoding="utf-8")
             b.write_text(new, encoding="utf-8")
             return subprocess.run([sys.executable, "-I", str(FACTS_PATH), str(a), str(b)],
-                                  capture_output=True, text=True)
+                                  capture_output=True, text=True, encoding="utf-8")
 
     def test_same_facts_pass(self):
         r = self.run_check("Bản 2.3 được phát hành bởi đội Android lúc 15:00 ngày 30/4.",
@@ -443,15 +453,15 @@ class Slides(unittest.TestCase):
         self.assertEqual(scan.score(text, hits, burst=False)["score"], 0)
 
     def test_cli_labels_and_titles(self):
-        r = subprocess.run([sys.executable, "-I", str(SCAN_PATH), str(DECK_AI)], capture_output=True, text=True)
+        r = subprocess.run([sys.executable, "-I", str(SCAN_PATH), str(DECK_AI)], capture_output=True, text=True, encoding="utf-8")
         self.assertIn("slide 2, ghi chú", r.stdout)
         r = subprocess.run([sys.executable, "-I", str(SCAN_PATH), "--titles", str(DECK_HUMAN)],
-                           capture_output=True, text=True)
+                           capture_output=True, text=True, encoding="utf-8")
         self.assertIn("2. Hai bản phát hành quý 3 đều trễ", r.stdout)
 
     def test_cli_text_dump(self):
         r = subprocess.run([sys.executable, "-I", str(SCAN_PATH), "--text", str(DECK_AI)],
-                           capture_output=True, text=True)
+                           capture_output=True, text=True, encoding="utf-8")
         self.assertEqual(r.returncode, 0, r.stderr)
         block = r.stdout.split("=== Slide 2")[1].split("=== Slide 3")[0]
         self.assertIn("Tiêu đề: Tổng quan", block)
@@ -459,10 +469,10 @@ class Slides(unittest.TestCase):
 
     def test_check_facts_on_pptx(self):
         same = subprocess.run([sys.executable, "-I", str(FACTS_PATH), str(DECK_HUMAN), str(DECK_HUMAN)],
-                              capture_output=True, text=True)
+                              capture_output=True, text=True, encoding="utf-8")
         self.assertEqual(same.returncode, 0, same.stdout)
         diff = subprocess.run([sys.executable, "-I", str(FACTS_PATH), str(DECK_HUMAN), str(DECK_AI)],
-                              capture_output=True, text=True)
+                              capture_output=True, text=True, encoding="utf-8")
         self.assertEqual(diff.returncode, 1)
         self.assertIn("30/11", diff.stdout)
 
