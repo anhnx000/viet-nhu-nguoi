@@ -7,6 +7,11 @@ Thoát mã 1 nếu số, link hoặc code bị mất hay được thêm. Các m�
 bằng chữ, thứ trong tuần, tháng, và các từ giữ nghĩa ("chưa", "vẫn", "chỉ", "có thể", "khoảng"...).
 
 Số được so theo giá trị: "1.250" và "1250", "12,5%" và "12.5%", "3 khách" và "ba khách" coi là một.
+
+Bài viết mới thì so với lời dặn: python3 -I check_facts.py --brief LOI_DAN.txt BAI.md
+LOI_DAN là ghi chú, tin nhắn hay dàn ý người dùng đưa cho trợ lý. Script liệt kê những gì có trong bài mà
+không có trong lời dặn (số liệu, ngày giờ, tên riêng, lời người khác nói), tức là chi tiết trợ lý tự thêm.
+Thoát mã 1 nếu bài có số liệu hay link không có trong lời dặn.
 """
 import os
 import re
@@ -80,6 +85,45 @@ def facts(text):
 
 
 SOFT = {"tên riêng", "thứ, tháng"}
+# Lời người khác nói trích trong ngoặc kép: sau động từ nói, hoặc một câu hỏi, câu cảm
+SPEECH = re.compile(
+    r'\b(?:nói|bảo|dặn|hỏi|la|hét|kể|cười|nhắn|đáp|trả lời|khuyên|thì thầm|gọi)\b[^."“”\n]{0,25}["“]([^"“”\n]{10,160})["”]|'
+    r'["“]([^"“”\n]{10,160}[?!])["”]')
+
+
+LIST_NUMBER = re.compile(r"(?m)^[\s#>*_-]*\d{1,2}[.)](?=\s)")
+
+
+def added(brief, draft):
+    """Bài viết mới so với lời dặn: trả về (danh sách dòng báo, bài có số liệu hay link tự thêm không)."""
+    lines, failed = [], False
+    # số thứ tự đầu dòng của danh sách không phải dữ kiện
+    draft = facts(LIST_NUMBER.sub("", draft["_raw"]))
+    for kind in ("số", "link"):
+        new = sorted(draft[kind] - brief[kind])
+        if kind == "số":
+            new = [draft["_numbers"][n] for n in new if n not in brief["_quantities"]]
+        if new:
+            failed = True
+            lines.append(f"[LỖI] {kind} không có trong lời dặn: {', '.join(new)}")
+    words = sorted(w for v, w in draft["_quantities"].items() if v not in brief["_quantities"] and v not in brief["số"])
+    if words:
+        lines.append(f"[xem lại] số viết bằng chữ không có trong lời dặn: {', '.join(words)}")
+    low = brief["_low"]
+    for kind in ("thứ, tháng", "tên riêng", "viết tắt"):
+        # chữ viết hoa mà chỗ khác trong bài viết thường ("Hãy", "Nơi") là chữ đầu câu, không phải tên riêng
+        new = sorted(x for x in draft[kind] - brief[kind]
+                     if x.lower() not in low and not re.search(rf"\b{re.escape(x.lower())}\b", draft["_raw"]))
+        if new:
+            lines.append(f"[xem lại] {kind} không có trong lời dặn: {', '.join(new)}")
+    said = [m.group(1) or m.group(2) for m in SPEECH.finditer(draft["_raw"])]
+    said = [q for q in said if q.lower().strip(" .!?") not in low]
+    if said:
+        lines.append("[xem lại] lời thoại không có trong lời dặn: " + "; ".join(f'"{q}"' for q in said))
+    missing = sorted(brief["_numbers"][n] for n in brief["số"] - draft["số"] if n not in draft["_quantities"])
+    if missing:
+        lines.append(f"[xem lại] số trong lời dặn chưa vào bài: {', '.join(missing)}")
+    return lines, failed
 
 
 def compare(old, new):
@@ -131,12 +175,16 @@ def read(path):
 
 
 def main():
-    if len(sys.argv) != 3:
+    args = sys.argv[1:]
+    brief = "--brief" in args
+    args = [a for a in args if a != "--brief"]
+    if len(args) != 2:
         sys.exit(__doc__)
-    lines, failed = compare(facts(read(sys.argv[1])), facts(read(sys.argv[2])))
+    old, new = facts(read(args[0])), facts(read(args[1]))
+    lines, failed = added(old, new) if brief else compare(old, new)
     print("\n".join(lines)) if lines else None
     if not failed:
-        print("Số liệu, link, code khớp với bản gốc.")
+        print("Bài không có số liệu hay link nào ngoài lời dặn." if brief else "Số liệu, link, code khớp với bản gốc.")
     sys.exit(1 if failed else 0)
 
 

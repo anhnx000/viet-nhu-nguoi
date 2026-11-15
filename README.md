@@ -228,6 +228,12 @@ Chuyện bịa thì máy quét không chấm được. Bài xưng "mình", "tôi
 python3 -I skills/viet-nhu-nguoi/scripts/check_facts.py goc.md moi.md
 ```
 
+Bài nhờ AI viết mới thì so với lời dặn. Lưu ghi chú hay tin nhắn bạn đã đưa cho AI vào một file, thêm `--brief`, script liệt kê những gì có trong bài mà bạn chưa hề đưa, gồm số liệu, ngày giờ, tên riêng và lời người khác nói. Đó là chỗ AI tự thêm, cần soát trước khi đăng dưới tên mình:
+
+```bash
+python3 -I skills/viet-nhu-nguoi/scripts/check_facts.py --brief loi-dan.txt bai.md
+```
+
 Kết quả quét hai file mẫu:
 
 ```text

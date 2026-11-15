@@ -48,7 +48,8 @@ class Evals(unittest.TestCase):
 
     def test_scenarios_are_well_formed(self):
         known = {"min_words", "max_words", "min_questions", "max_questions", "max_placeholders", "max_bold",
-                 "must_keep", "must_not", "min_refs", "min_overlap", "max_overlap", "scan_max"}
+                 "must_keep", "must_not", "min_refs", "min_overlap", "max_overlap", "scan_max",
+                 "max_added_numbers"}
         self.assertGreaterEqual(len(self.scenarios), 16)
         for sid, sc in self.scenarios.items():
             self.assertTrue(sc["tin_nhan"] and sc["mong_doi"], sid)
@@ -66,6 +67,14 @@ class Evals(unittest.TestCase):
         frame = asks + "\n\nTrong lúc chờ, đây là bản khung:\n" + "\n".join(
             f"{i}. Bài học {i}: [chuyện của bạn]" for i in range(4, 9))
         self.assertTrue(self.check.check(sc, frame))
+
+    def test_invented_number_fails(self):
+        sc = self.scenarios["viet-email-du-du-kien"]
+        good = ("Anh Dũng ơi, máy em (mã LT-0412) không lên nguồn từ sáng thứ Ba 8/12, "
+                "anh cho em mượn máy tạm trong lúc chờ sửa được không ạ? Em cảm ơn anh. Lan")
+        self.assertEqual(self.check.check(sc, good), [])
+        padded = good.replace("không lên nguồn", "đã bấm nút nguồn 5 lần vẫn không lên nguồn")
+        self.assertTrue(any("tự thêm số" in e for e in self.check.check(sc, padded)))
 
     def test_lost_fact_fails(self):
         sc = self.scenarios["viet-tin-cat-nuoc"]

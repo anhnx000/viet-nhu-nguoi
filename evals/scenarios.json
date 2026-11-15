@@ -12,7 +12,8 @@
     "Dũng"
    ],
    "max_placeholders": 0,
-   "scan_max": 9
+   "scan_max": 9,
+   "max_added_numbers": 0
   }
  },
  {
@@ -29,7 +30,8 @@
     "0900 000 000"
    ],
    "max_words": 120,
-   "max_placeholders": 2
+   "max_placeholders": 2,
+   "max_added_numbers": 0
   }
  },
  {
@@ -280,7 +282,8 @@
     ]
    ],
    "max_words": 120,
-   "max_questions": 0
+   "max_questions": 0,
+   "max_added_numbers": 0
   }
  },
  {
@@ -297,7 +300,8 @@
     "dữ liệu mẫu",
     "chưa"
    ],
-   "max_words": 190
+   "max_words": 190,
+   "max_added_numbers": 0
   }
  },
  {
@@ -316,7 +320,8 @@
     "chưa hỗ trợ PostgreSQL",
     "MySQL 8"
    ],
-   "min_words": 60
+   "min_words": 60,
+   "max_added_numbers": 0
   }
  },
  {
@@ -366,7 +371,8 @@
    ],
    "max_bold": 0,
    "max_words": 150,
-   "max_questions": 0
+   "max_questions": 0,
+   "max_added_numbers": 0
   }
  },
  {
@@ -387,7 +393,8 @@
     "Dưới đây là"
    ],
    "max_bold": 2,
-   "max_words": 130
+   "max_words": 130,
+   "max_added_numbers": 0
   }
  },
  {

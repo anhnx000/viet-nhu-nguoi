@@ -6,7 +6,7 @@ THU_MUC_KET_QUA chứa mỗi đề một file <id>.md, là nguyên văn câu tr�
 Cách chạy từng đề và phần phải đọc tay nằm ở evals/README.md.
 
 Script chỉ kiểm những thứ đếm được: số câu hỏi đánh số, số chỗ trống trong ngoặc vuông, dữ kiện còn đủ,
-độ dài, điểm scan.py, tỉ lệ chữ giữ nguyên so với bài gốc. Giọng văn có tự nhiên không thì vẫn phải đọc.
+độ dài, điểm scan.py, tỉ lệ chữ giữ nguyên so với bài gốc, số liệu tự thêm ngoài lời dặn. Giọng văn có tự nhiên không thì vẫn phải đọc.
 Thoát mã 1 nếu có đề trượt hoặc thiếu file.
 """
 import difflib
@@ -17,6 +17,7 @@ import sys
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "skills/viet-nhu-nguoi/scripts"))
+import check_facts  # noqa: E402
 import scan  # noqa: E402
 
 QUESTION = re.compile(r"(?m)^\s*\d+[.)]\s")
@@ -79,6 +80,12 @@ def check(scenario, reply, root=ROOT):
             need(ratio >= rules["min_overlap"], f"chỉ giữ {ratio:.0%} số chữ gốc, cần từ {rules['min_overlap']:.0%}")
         if "max_overlap" in rules:
             need(ratio <= rules["max_overlap"], f"chép lại {ratio:.0%} bài gốc, quá {rules['max_overlap']:.0%}")
+    if "max_added_numbers" in rules:
+        # số có trong câu trả lời mà không có trong lời người dùng hay file đầu vào: chi tiết trợ lý tự thêm
+        brief = check_facts.facts(scenario["tin_nhan"] + "\n" + source)
+        lines, _ = check_facts.added(brief, check_facts.facts(reply))
+        extra = [n for line in lines if line.startswith("[LỖI] số") for n in line.split(": ", 1)[1].split(", ")]
+        need(len(extra) <= rules["max_added_numbers"], f"tự thêm số không có trong lời dặn: {', '.join(extra)}")
     if "scan_max" in rules:
         score = scan.score(reply, scan.scan(reply)[0])["score"]
         need(score <= rules["scan_max"], f"scan.py chấm {score}, quá {rules['scan_max']}")

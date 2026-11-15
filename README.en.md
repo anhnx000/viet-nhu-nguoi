@@ -232,6 +232,12 @@ The scanner cannot tell an invented story from a real one. For first-person text
 python3 -I skills/viet-nhu-nguoi/scripts/check_facts.py original.md rewrite.md
 ```
 
+For a piece the AI wrote from scratch, compare it with your brief. Save the notes or the message you gave the AI to a file and add `--brief`. The script lists what is in the piece but not in your brief: numbers, dates, proper names and quoted speech. Those are the details the AI added, and they need checking before the piece goes out under your name:
+
+```bash
+python3 -I skills/viet-nhu-nguoi/scripts/check_facts.py --brief brief.txt draft.md
+```
+
 Output for two of the sample files:
 
 ```text

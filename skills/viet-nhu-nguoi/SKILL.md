@@ -13,7 +13,7 @@ description: |
   "Signs of AI writing", skill humanizer (MIT) và các skill humanize tiếng Việt mã nguồn mở.
 license: MIT
 metadata:
-  version: "2.7.1"
+  version: "2.7.2"
 ---
 
 # Viết như người (Vietnamese humanizer): chống giọng văn AI
@@ -45,10 +45,10 @@ Câu nào giữ lại cũng phải cho người đọc biết thêm một điề
 
 **2. Chế độ viết mới (người dùng nhờ soạn email, bài đăng, báo cáo, thông báo).**
 - Trước khi viết, xác định ai đọc, đọc xong họ cần làm gì, gửi qua kênh nào, xưng hô ra sao, rồi chọn giọng theo phần "Giọng văn".
-- Chỉ dùng dữ kiện người dùng đã đưa, dữ kiện ít thì bài ngắn. Nguyên nhân, mốc thời gian, con số, tên người, kỷ niệm mà người dùng chưa nói thì không viết. Mô hình hay bịa đúng mấy thứ đó cho bài đầy: lịch xử lý từng ngày trong email xin lùi hạn, lần chấn thương trong bài chạy bộ.
+- Chỉ dùng dữ kiện người dùng đã đưa, dữ kiện ít thì bài ngắn. Nguyên nhân, mốc thời gian, con số, tên người, kỷ niệm, cảm nghĩ mà người dùng chưa nói thì không viết. Mô hình hay bịa đúng mấy thứ đó cho bài đầy: lịch xử lý từng ngày trong email xin lùi hạn, lần chấn thương trong bài chạy bộ.
 - Email, thông báo, báo cáo đã đủ dữ kiện để gửi thì viết luôn, không hỏi. Chỗ chỉ người dùng mới biết (tên người ký, chức danh) thì để trong ngoặc vuông và nhắc một dòng dưới bài, kèm chi tiết nào nên bổ sung.
 - Bài sống nhờ chuyện riêng (bài chia sẻ, bài kể chuyện, ý kiến xưng "mình") mà người dùng chưa kể chuyện nào thì hỏi trước, hai đến bốn câu gộp một lượt, trả lời tắt cũng được. Không đưa khung điền chỗ trống, không dựng sẵn tình tiết. Người dùng cần ngay thì viết bản ngắn, trung tính từ những gì đã có.
-- Viết xong thì tự kiểm như bước 4 của chế độ sửa.
+- Viết xong thì tự kiểm như bước 4 của chế độ sửa, lấy lời người dùng làm bản gốc: số, tên, ngày, lời thoại nào họ chưa đưa thì bỏ khỏi bài. `python3 -I scripts/check_facts.py --brief <lời dặn> <bài>` liệt kê giúp.
 
 **3. Chế độ sửa văn bản (người dùng dán văn bản hoặc chỉ file).**
 1. Đọc hết một lượt, đánh dấu mọi dấu hiệu, mạnh trước yếu sau. Đọc `references/patterns.md` để có danh mục đầy đủ kèm ví dụ trước/sau; văn tiếng Việt thì đọc thêm nhóm G và nhóm K. Trước khi sửa, xác định ai viết cho ai, đang xưng hô thế nào.

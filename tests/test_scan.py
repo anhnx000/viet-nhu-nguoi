@@ -18,6 +18,9 @@ SPEC = importlib.util.spec_from_file_location("scan", SCAN_PATH)
 scan = importlib.util.module_from_spec(SPEC)
 SPEC.loader.exec_module(scan)
 slides = scan.slides_mod
+FACTS_SPEC = importlib.util.spec_from_file_location("check_facts", FACTS_PATH)
+check_facts = importlib.util.module_from_spec(FACTS_SPEC)
+FACTS_SPEC.loader.exec_module(check_facts)
 DECK_AI = ROOT / "examples/slide-truoc.pptx"
 DECK_HUMAN = ROOT / "examples/slide-sau.pptx"
 
@@ -725,6 +728,40 @@ class ChatVoice(unittest.TestCase):
 
     def test_chat_checks_off_by_default(self):
         self.assertNotIn("tin nhắn khách sáo", groups(self.STIFF))
+
+
+class BriefCheck(unittest.TestCase):
+    """check_facts.py --brief: bài viết mới so với lời dặn, liệt kê chi tiết trợ lý tự thêm."""
+
+    BRIEF = ("Viết bài Facebook kể chuyện mình tự chạy xe máy từ Sài Gòn về Bến Tre lần đầu, "
+             "sáng thứ Bảy, khoảng 90 cây số, má đứng chờ ở cổng.")
+
+    def added(self, draft):
+        return check_facts.added(check_facts.facts(self.BRIEF), check_facts.facts(draft))
+
+    def test_invented_numbers_names_and_speech_are_listed(self):
+        draft = ("Sáng thứ Bảy mình dậy từ 5 giờ, chạy khoảng 90 cây số về Bến Tre. Tới Trung Lương mình ghé quán nước, "
+                 'ông chủ quán dặn "qua cầu nhớ chạy chậm, gió lớn lắm con". Gần 10 giờ thì tới, má đứng chờ ở cổng.')
+        lines, failed = self.added(draft)
+        text = "\n".join(lines)
+        self.assertTrue(failed)
+        self.assertIn("5", text.split("\n")[0])
+        self.assertIn("10", text.split("\n")[0])
+        self.assertNotIn("90", text.split("\n")[0])
+        self.assertIn("Lương, Trung", text)  # tên riêng báo theo từng chữ viết hoa
+        self.assertNotIn("Bến", text)
+        self.assertIn("qua cầu nhớ chạy chậm", text)
+
+    def test_faithful_draft_is_clean(self):
+        draft = "Sáng thứ Bảy mình tự chạy xe máy từ Sài Gòn về Bến Tre, khoảng 90 cây số. Tới nơi thấy má đứng chờ ở cổng."
+        lines, failed = self.added(draft)
+        self.assertFalse(failed)
+        self.assertEqual(lines, [])
+
+    def test_number_written_as_word_in_brief_is_not_new(self):
+        brief = check_facts.facts("Nhóm có ba người, làm trong hai tuần.")
+        draft = check_facts.facts("Nhóm 3 người làm xong trong 2 tuần.")
+        self.assertEqual(check_facts.added(brief, draft), ([], False))
 
 
 if __name__ == "__main__":

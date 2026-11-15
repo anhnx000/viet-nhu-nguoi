@@ -1,5 +1,16 @@
 # Changelog
 
+## 2.7.2 (2026-11-15)
+
+Chi tiết tự thêm thì máy quét không chấm được khi chỉ có bài viết. Có cả lời dặn của người dùng thì so được, nên bản này thêm phép so đó.
+
+- `check_facts.py --brief <lời dặn> <bài>` so bài viết mới với ghi chú hay tin nhắn người dùng đã đưa, liệt kê thứ có trong bài mà không có trong lời dặn: số liệu, ngày giờ, link (báo lỗi), tên riêng, số viết bằng chữ, thứ trong tuần, lời người khác nói trích trong ngoặc kép (nhắc xem lại). Số thứ tự đầu dòng của danh sách và chữ viết hoa đầu câu không tính.
+- Đo trên chín đề viết mới của bộ `evals/`, mỗi đề một bài Opus mức medium viết không bật skill. Bốn bài có số liệu ngoài lời dặn: báo cáo quảng cáo tự tính thêm "tăng 31%", "0,5 điểm phần trăm", "202.000 đồng/đơn" vào thân bài, bài năm bài học có "tỷ lệ rời bỏ tăng 20%" và chuyện "dồn ba tháng cho một tính năng", bài chạy bộ có "500m", "chạy 1 phút, đi bộ 2 phút", "sáng Chủ nhật vừa rồi", còn tin cắt nước chỉ thêm ngày "thứ Tư 16/12" ở lời gợi ý dưới bài. Hai bài có câu trong ngoặc kép không có trong lời dặn, trong đó một bài cho ông thợ nói thêm "đồ hồi xưa làm kỹ". Cùng các đề đó khi bật skill: ba đề thiếu chuyện riêng thì skill hỏi lại chứ không viết, sáu đề còn lại chạy 15 lượt, một lượt có một con số ngoài lời dặn (chi phí mỗi đơn, nằm ở ghi chú dưới bài để người dùng quyết có đưa vào không), không lượt nào có lời thoại tự dựng.
+- `evals/check.py` có thêm điều kiện `max_added_numbers`, bảy đề dùng điều kiện này. Đề viết từ nguồn tiếng Anh không dùng vì ngày tháng đổi cách viết ("Dec 2" thành "2/12").
+- `SKILL.md`, chế độ viết mới: bước tự kiểm lấy lời người dùng làm bản gốc và nhắc tới `--brief`.
+- Đề viết theo mẫu giọng (ba dữ kiện, hai đoạn mẫu) lộ ra một chỗ hở: 3 trong 4 lượt trợ lý tự thêm một câu cảm nghĩ cuối đoạn mà người dùng không nói ("tính ra cũng hời", "nghĩ bụng vậy là nó còn ở với mình lâu hơn mình tính"), một lượt không báo. `SKILL.md` thêm "cảm nghĩ" vào danh sách thứ không tự viết. Chạy lại ba lượt: cả ba chỉ viết ba dữ kiện đã cho và hỏi người dùng lúc đó nghĩ gì.
+- Chín đề thêm ở bản 2.7.1 chạy thêm lượt hai, bốn đề cần phán đoán (mẫu giọng, bài 1.500 chữ, qua máy dò, bài nộp cho trường) chạy thêm lượt ba: mọi lượt đều qua phần tự động và đúng mong đợi khi đọc tay.
+
 ## 2.7.1 (2026-11-15)
 
 Xem lại những bài mô hình viết mà máy quét bản 2.7.0 còn chấm dưới 10 điểm, để biết còn bắt thêm được gì.
