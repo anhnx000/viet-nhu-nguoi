@@ -87,27 +87,31 @@ Nhờ soạn thứ gì đứng tên bạn thì skill tự bật. Gõ `/viet-nhu-
 
 ## Ví dụ trước và sau
 
-Điểm do bộ kiểm tra đi kèm skill chấm theo thang điểm 0-100, văn càng theo khuôn thì điểm càng cao.
+Điểm do bộ kiểm tra đi kèm skill chấm theo thang điểm 0-100, văn càng theo khuôn thì điểm càng cao. Văn bản và file `.pptx` gốc nằm trong [`examples/`](examples).
 
-![Tiêu đề slide. Bộ AI làm, 48/100: Chuyển đổi số: Hành trình kiến tạo giá trị; Tổng quan; Thách thức; 3 trụ cột giải pháp; Lợi ích; Kết luận; Cảm ơn. Bộ làm theo skill, 0/100: Đề xuất thuê thêm 1 QA cho quý 1/2027; Hai bản phát hành quý 3 đều trễ vì thiếu người test; Thuê 1 QA tốn ít hơn tiền phạt mỗi lần trễ hạn; Cần anh duyệt trước 30/11 để kịp tuyển người.](assets/vi-du-slide.png)
+### Slide
 
-<details>
-<summary>Email, từ 84 xuống 0 điểm</summary>
+![Tiêu đề slide. Bộ AI làm, 48/100, bảy tiêu đề đều là nhãn. Bộ làm theo skill, 0/100, mỗi tiêu đề là một câu kết luận.](assets/vi-du-slide.png)
 
-![Email, báo cáo. Bản AI viết, 84/100, mở bằng "Trong bối cảnh hiện nay" và kết bằng "Hy vọng những thông tin trên sẽ hữu ích cho bạn!". Qua skill, 0/100: Đội mình đã chuyển sang hệ thống quản lý dự án mới, nên giờ theo dõi dự án nhanh và đỡ vất vả hơn, khách hàng làm việc với đội cũng thuận tiện hơn trước. Có thêm chi tiết bạn đưa, 0/100: Từ tháng 3, đội mình chuyển việc theo dõi dự án sang hệ thống mới.](assets/vi-du-email.png)
+Tiêu đề nào cũng là một câu kết luận, sếp lướt bốn tiêu đề là biết phải duyệt gì. Skill sửa thẳng trong file `.pptx`.
 
-Bài gốc không có số liệu nào nên bản qua skill cũng không có. Văn bản ở [`examples/`](examples).
+### Email
 
-</details>
+![Email AI viết, 84/100. Qua skill, 0/100. Có thêm chi tiết bạn đưa thì bản thứ ba cụ thể hơn, vẫn 0/100.](assets/vi-du-email.png)
 
-<details>
-<summary>Bài đăng 1.740 chữ, từ 59 xuống 0 điểm</summary>
+Bỏ câu sáo mà vẫn giữ đúng ý. Bản gốc không có số liệu thì skill cũng không thêm.
 
-![Bài đăng dài. Bài gốc, 59/100: 1.740 chữ, mười câu kiểu "không phải X mà là Y", sáu câu mở bằng nhãn, 19 trên 88 câu có dấu hai chấm. Bản viết lại, 0/100: 373 chữ, chỉ rủ người vào làm cùng.](assets/vi-du-bai-dang.png)
+### Bài đăng dài
 
-[Bài gốc](examples/bai-dang-truoc.md) gần như không có từ AI quen mặt, nhưng vài kiểu câu lặp từ đầu tới cuối, bộ kiểm tra đếm ra và chấm 59/100. [Bản viết lại](examples/bai-dang-sau.md) chỉ giữ việc rủ người vào làm cùng, không thêm dữ kiện nào.
+![Bài đăng dài. Bài gốc, 59/100, 1.740 chữ. Bản viết lại, 0/100, 373 chữ.](assets/vi-du-bai-dang.png)
 
-</details>
+Từng câu đều ổn mà đọc vẫn ra giọng AI, vì vài kiểu câu lặp từ đầu tới cuối. Skill đếm ra các kiểu đó rồi viết lại, chỉ giữ việc rủ người vào làm cùng.
+
+### Kết quả bộ kiểm tra
+
+![Chạy scan.py trên email AI viết: 84/100, 17 dấu hiệu trong 110 chữ, liệt kê theo nhóm và theo dòng.](assets/vi-du-bo-kiem-tra.png)
+
+Chỉ ra từng chỗ dính kèm số dòng. Chấm được file `.md`, `.txt` và `.pptx`.
 
 ## Dấu hiệu văn AI
 
@@ -150,8 +154,6 @@ Hai script chỉ dùng thư viện chuẩn của Python. `scan.py` chấm file `
 ```bash
 python3 -I skills/viet-nhu-nguoi/scripts/scan.py file.md
 ```
-
-![Chạy scan.py trên email AI viết ở examples/truoc.md: 84/100, 17 dấu hiệu trong 110 chữ, liệt kê từng nhóm và từng dòng dính.](assets/vi-du-bo-kiem-tra.png)
 
 | Tùy chọn | Tác dụng |
 | --- | --- |

@@ -41,7 +41,6 @@ class Package(unittest.TestCase):
         readme = read("README.md")
         self.assertIn(f"AI viết được {score('truoc.md')}/100", readme)
         self.assertIn(f"Bài gốc, {score('bai-dang-truoc.md')}/100", readme)
-        self.assertIn(f"chấm {score('bai-dang-truoc.md')}/100", readme)
         self.assertIn(f"Original, {score('bai-dang-truoc.md')}/100", read("README.en.md"))
         for name in ("sau.md", "sau-co-chi-tiet.md", "bai-dang-sau.md"):
             self.assertEqual(score(name), 0, name)
