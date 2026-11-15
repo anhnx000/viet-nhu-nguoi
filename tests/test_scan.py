@@ -184,6 +184,13 @@ class SocialPostTells(unittest.TestCase):
         self.assertIn("mời tương tác", found)
         self.assertIn("kết bài mời tương tác", found)
 
+    def test_story_ending_in_advice_to_reader(self):
+        for text in ("Nếu bạn đang ở một ngã rẽ tương tự, đừng đợi tới lúc thấy sẵn sàng.",
+                     'Nếu bạn đang nghĩ "mình không phải người chạy bộ", thì một năm trước mình cũng nghĩ vậy.'):
+            self.assertIn("mời tương tác", groups(text), text)
+        for text in ("Nếu anh đang bận thì chiều em gọi lại.", "Bạn Lan đang nghỉ phép, tuần sau mới đi làm."):
+            self.assertNotIn("mời tương tác", groups(text), text)
+
     def test_real_questions_not_bait(self):
         for text in ("Bạn đã gửi báo cáo cho chị Lan chưa?", "Mai họp lúc 9h, mọi người thấy sao?",
                      "Anh xem rồi phản hồi giúp em trước thứ Sáu."):

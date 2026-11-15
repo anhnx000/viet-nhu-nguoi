@@ -81,6 +81,8 @@ PATTERNS = {
         r"(chia sẻ|để lại|comment|bình luận|kể)\b[^.!?\n]{0,50}(bình luận|comment|cmt|bên dưới|phía dưới)",
         r"\bbạn (nghĩ sao|thấy sao|thì sao)\b", r"\bcòn bạn\??\s*$", r"(^|[.!?]\s+)còn bạn,[^.!?\n]{0,80}\?",
         r"nếu bạn (cũng )?(đang|từng)[^.!?\n]{0,80}(nhắn|inbox|kể|chia sẻ)",
+        # bài kể chuyện mình rồi cuối bài quay sang khuyên người đọc: "Nếu bạn đang ở ngã rẽ tương tự, hãy..."
+        r"nếu bạn (cũng )?(đang|từng|còn)[^.!?\n]{0,90}(?<!nhắn)(?<!kể)[,:]? (hãy|cứ|đừng|thì)\b(?! (nhắn|inbox|kể|chia sẻ))",
         r"bạn đã (từng|bao giờ) [^.!?\n]{1,50} chưa\?", r"kể (cho )?(mình|tôi) nghe", r"hãy (tiếp tục )?(theo dõi|đồng hành cùng)",
         r"điều gì (bạn|anh chị)[^.!?\n]{0,50}\?\s*$", r"(tag|gắn thẻ) (ngay )?(một )?(người|ai đó|bạn bè)",
         r"(follow|theo dõi) (mình|tôi|page|trang)[^.!?\n]{0,20} để", r"\bwhat do you think\?",
