@@ -1,6 +1,6 @@
 # Viết như người · Vietnamese Humanizer
 
-**Chống giọng văn AI cho tiếng Việt. Nhờ AI viết mà đọc lên vẫn ra giọng mình.**
+Chống giọng văn AI cho tiếng Việt: nhờ AI viết mà đọc lên vẫn ra giọng mình.
 
 [![test](https://github.com/anhnx000/viet-nhu-nguoi/actions/workflows/test.yml/badge.svg)](https://github.com/anhnx000/viet-nhu-nguoi/actions/workflows/test.yml)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
@@ -15,33 +15,31 @@
 
 Nhờ AI làm slide, viết email, viết báo cáo thì nhanh thật, có điều ai đọc cũng nhận ra ngay. Slide nào cũng có tiêu đề "Tổng quan", "Thách thức". Email thì mở bằng "Trong bối cảnh hiện nay", kết bằng "Hy vọng thông tin trên hữu ích!". Gửi trong nhóm thì không sao, chứ gửi sếp hay gửi khách thì lại phải ngồi sửa.
 
-Viết như người là một skill, tức là gói hướng dẫn cài thêm cho Claude và các trợ lý AI khác. Cài rồi thì AI viết tiếng Việt giống người đi làm hơn: tiêu đề slide nói thẳng kết luận, email xưng hô đúng vai, câu không rườm, số liệu đưa sao để vậy. Skill miễn phí, mã nguồn mở.
+Viết như người là skill, tức là gói hướng dẫn cài thêm cho Claude và các trợ lý AI khác. Cài rồi thì AI viết tiếng Việt giống người đi làm hơn: tiêu đề slide nói thẳng kết luận, email xưng hô đúng vai, câu không rườm, số liệu đưa sao để vậy. Skill miễn phí, mã nguồn mở.
 
-**Mục lục:** [Cài, không cần biết lập trình](#cài-mất-vài-phút-không-cần-biết-lập-trình) · [Cách dùng hằng ngày](#cách-dùng-hằng-ngày) · [Văn AI và bản đã sửa](#văn-ai-và-bản-đã-sửa) · [Skill sửa những lỗi nào](#skill-sửa-những-lỗi-nào) · [Dòng lệnh](#chạy-bằng-dòng-lệnh)
+Mục lục: [Cài, không cần biết lập trình](#cài-mất-vài-phút-không-cần-biết-lập-trình) · [Cách dùng hằng ngày](#cách-dùng-hằng-ngày) · [Văn AI và bản đã sửa](#văn-ai-và-bản-đã-sửa) · [Skill sửa những lỗi nào](#skill-sửa-những-lỗi-nào) · [Dòng lệnh](#chạy-bằng-dòng-lệnh)
 
 ## Dùng vào việc gì
 
-- Làm slide báo cáo, đề xuất. Tiêu đề nào cũng là câu kết luận, sếp lướt qua tiêu đề là biết cần quyết gì. Chỗ nào thiếu số liệu thì skill ghi `[cần xác nhận]`, không bịa cho đầy.
-- Viết email gửi sếp, gửi khách. Email vào việc trước, xưng hô đúng vai (anh/chị/em, quý khách), không tự đổi thành "bạn".
+- Làm slide báo cáo, đề xuất thì tiêu đề nào cũng là câu kết luận, sếp lướt qua tiêu đề là biết cần quyết gì. Chỗ nào thiếu số liệu thì skill ghi `[cần xác nhận]`, không bịa cho đầy.
+- Viết email gửi sếp, gửi khách thì email vào việc trước, xưng hô đúng vai (anh/chị/em, quý khách), không tự đổi thành "bạn".
 - Sửa báo cáo, tài liệu dịch từ tiếng Anh, bỏ mấy kiểu câu dịch như "được... bởi", "Điều này cho phép", "thông qua việc".
-- Viết bài Facebook, LinkedIn, blog. AI viết nháp nhưng vẫn ra giọng bạn, mỗi bài kể một chuyện thôi.
-- Soi lại bài trước khi gửi. Skill chỉ ra chỗ nào nghe giống AI, còn sửa hay không là tùy bạn.
+- Viết bài Facebook, LinkedIn, blog: AI viết nháp nhưng vẫn ra giọng bạn, mỗi bài kể một chuyện thôi.
+- Soi lại bài trước khi gửi: skill chỉ ra chỗ nào nghe giống AI, còn sửa hay không là tùy bạn.
 
 ## Cài mất vài phút, không cần biết lập trình
 
 Không phải gõ lệnh gì cả, cứ nhờ trợ lý AI cài hộ, như nhờ bạn IT ngồi cạnh.
 
-**Bước 1. Mở trợ lý AI chạy trên máy tính.** Chẳng hạn ứng dụng Claude Code bản cho máy tính, dùng chuột như phần mềm bình thường. Codex, Cursor, Gemini CLI, OpenCode cũng được, còn Claude hay ChatGPT mở trên trình duyệt thì không cài được gì vào máy.
+1. Mở trợ lý AI chạy trên máy tính, chẳng hạn ứng dụng Claude Code bản cho máy tính, dùng chuột như phần mềm bình thường. Codex, Cursor, Gemini CLI, OpenCode cũng được, còn Claude hay ChatGPT mở trên trình duyệt thì không cài được gì vào máy.
+2. Dán câu này vào ô chat:
 
-**Bước 2. Dán câu này vào ô chat:**
+   > Cài giúp tôi skill viet-nhu-nguoi từ https://github.com/anhnx000/viet-nhu-nguoi
 
-> Cài giúp tôi skill viet-nhu-nguoi từ https://github.com/anhnx000/viet-nhu-nguoi
+3. Bấm đồng ý khi trợ lý xin phép tải và cài, thường chưa tới một phút là xong.
+4. Mở cuộc trò chuyện mới rồi thử:
 
-**Bước 3. Bấm đồng ý** khi trợ lý xin phép tải và cài. Thường chưa tới một phút là xong.
-
-**Bước 4. Mở cuộc trò chuyện mới rồi thử:**
-
-> Viết như người: soạn giúp tôi email xin sếp lùi hạn nộp báo cáo 3 ngày, xưng em
+   > Viết như người: soạn giúp tôi email xin sếp lùi hạn nộp báo cáo 3 ngày, xưng em
 
 Email trả về mà ngắn, vào việc ngay, xưng "em" từ đầu tới cuối là skill chạy rồi.
 
@@ -175,29 +173,29 @@ Danh mục của skill có 65 dấu hiệu văn AI, dấu hiệu nào cũng kèm
 
 Khó thấy hơn là văn dịch từng chữ: chữ nào cũng là tiếng Việt mà câu vẫn theo khuôn tiếng Anh. Kiểu này hay lộ ở mấy chỗ:
 
-- câu nào cũng mở bằng "Bạn", danh từ nào cũng kèm "của bạn";
-- "một", "các", "những" đứng trước mọi danh từ;
-- bị động không nói ai làm ("số liệu được giữ nguyên"), đồ vật làm chủ ngữ ("Bảng này cho thấy");
-- "đã", "đang", "sẽ", "có thể" rải khắp bài;
-- "Với...", "Để..., bạn cần..." mở câu, "và" nối mọi vế;
-- thành ngữ và tiêu đề dịch thẳng ("tin tốt là", "Bắt đầu nhanh").
+- câu nào cũng mở bằng "Bạn", danh từ nào cũng kèm "của bạn"
+- "một", "các", "những" đứng trước mọi danh từ
+- bị động không nói ai làm ("số liệu được giữ nguyên"), đồ vật làm chủ ngữ ("Bảng này cho thấy")
+- "đã", "đang", "sẽ", "có thể" rải khắp bài
+- "Với...", "Để..., bạn cần..." mở câu, "và" nối mọi vế
+- thành ngữ và tiêu đề dịch thẳng ("tin tốt là", "Bắt đầu nhanh")
 
 Gặp văn như vậy, skill không thay từng cụm mà viết lại từ ý, như người Việt vẫn nói.
 
 Có dấu hiệu phải đọc cả bài mới thấy, dù từng câu đã ổn:
 
-- câu mở bằng nhãn ("nói gọn", "nói cho thật:");
-- kiểu "không phải X mà là Y" lặp từ ba lần;
-- đoạn nào cũng kết bằng một câu nghe như châm ngôn;
-- dấu hai chấm dày đặc;
-- cả bài dày những chữ đệm của văn dịch như "một", "các", "được", "sẽ", "của bạn";
-- dấu chấm chặt một ý thành nhiều câu vụn, hoặc ngược lại, một câu gộp quá nhiều vế;
-- bài đăng chia mục bằng emoji, kết bằng câu mời bình luận hoặc một câu hô hào gắn vào bài nào cũng được;
-- bài đăng dài ôm đủ mọi chủ đề.
+- câu mở bằng nhãn ("nói gọn", "nói cho thật:")
+- kiểu "không phải X mà là Y" lặp từ ba lần
+- đoạn nào cũng kết bằng một câu nghe như châm ngôn
+- dấu hai chấm dày đặc
+- cả bài dày chữ đệm của văn dịch như "một", "các", "được", "sẽ", "của bạn"
+- dấu chấm chặt một ý thành nhiều câu vụn, hoặc ngược lại, một câu gộp quá nhiều vế
+- bài đăng chia mục bằng emoji, kết bằng câu mời bình luận hoặc một câu hô hào gắn vào bài nào cũng được
+- bài đăng dài ôm đủ mọi chủ đề
 
 Slide và tài liệu nhiều trang có nhóm riêng: tiêu đề chỉ là nhãn ("Tổng quan", "Kết luận"), tiêu đề đếm số ý ("3 trụ cột"), slide nào cũng đúng ba ý, hứa suông ("chi tiết sẽ trao đổi sau"), ghi chú thuyết trình viết như công văn. Cách viết slide có hướng dẫn riêng ở [references/slides.md](skills/viet-nhu-nguoi/references/slides.md).
 
-Tin nhắn trả lời thì skill cá nhân hóa icon và ngữ điệu. Skill đọc tối đa 30 lượt trò chuyện gần nhất mà nó truy cập được, học cách bạn viết hoa, chấm câu, cười (":v", ")))"), dùng emoji, trợ từ, xưng hô, rồi giữ đúng giọng đó cho mọi tin sau trong cuộc trò chuyện. Tiếng lóng hay giọng miền chỉ dùng khi các lượt đó có, hoặc khi bạn nói rõ muốn giọng vùng nào. Bản nháp nào dồn ba bốn chữ lóng vào một tin ("u là trời", "đỉnh nóc kịch trần", "slay") hay trộn "rứa", "nghen", "giời ơi" trong cùng một câu thì máy quét báo. Hướng dẫn ở [references/chat.md](skills/viet-nhu-nguoi/references/chat.md).
+Tin nhắn trả lời thì skill cá nhân hóa icon và ngữ điệu. Skill đọc tối đa 30 lượt trò chuyện gần nhất đọc được, học cách bạn viết hoa, chấm câu, cười (":v", ")))"), dùng emoji, trợ từ, xưng hô, rồi giữ đúng giọng đó cho mọi tin sau trong cuộc trò chuyện. Tiếng lóng hay giọng miền chỉ dùng khi các lượt đó có, hoặc khi bạn nói rõ muốn giọng vùng nào. Bản nháp nào dồn ba bốn chữ lóng vào một tin ("u là trời", "đỉnh nóc kịch trần", "slay") hay trộn "rứa", "nghen", "giời ơi" trong cùng một câu thì máy quét báo. Hướng dẫn ở [references/chat.md](skills/viet-nhu-nguoi/references/chat.md).
 
 Các nhóm còn lại thì tiếng Việt hay tiếng Anh đều gặp: đối lập giả, câu chốt một dòng, liệt kê ép cho đủ ba, gạch ngang dài, thổi phồng, mượn uy tín mơ hồ, in đậm và emoji trang trí, lời chatbot, giải thích lại điều người đọc biết rồi.
 
@@ -222,9 +220,9 @@ python3 -I skills/viet-nhu-nguoi/scripts/scan.py file.md
 | `--chat` | văn bản là tin nhắn trả lời: báo thêm gạch đầu dòng, in đậm, câu khách sáo, tin quá dài |
 | `--text` | in hết chữ và ghi chú từng slide trong file `.pptx` |
 
-Chuyện bịa thì máy quét không chấm được. Với bài xưng "mình", "tôi", nó in thêm một dòng liệt kê các chi tiết riêng có con số ("tháng thứ tư", "5h15", "3 công ty") để bạn soát lại: bài nhờ AI viết hộ hay tự thêm đúng loại chi tiết này. Dòng đó không tính vào điểm.
+Chuyện bịa thì máy quét không chấm được. Bài xưng "mình", "tôi" thì máy quét in thêm một dòng liệt kê các chi tiết riêng có con số ("tháng thứ tư", "5h15", "3 công ty") để bạn soát lại, vì bài nhờ AI viết hộ hay tự thêm đúng loại chi tiết này. Dòng đó không tính vào điểm.
 
-`check_facts.py` so bản gốc với bản sửa, so hai file `.pptx` cũng được. Số liệu, ngày giờ, link hay code bị mất hoặc tự thêm vào thì script báo lỗi. Số được so theo giá trị, nên "1.250" với "1250", "3 khách" với "ba khách" coi là một. Tên riêng, số viết bằng chữ, thứ trong tuần và mấy chữ như "chưa", "vẫn", "chỉ", "có thể" bị rơi thì script nhắc xem lại:
+`check_facts.py` so bản gốc với bản sửa, so hai file `.pptx` cũng được. Số liệu, ngày giờ, link hay code bị mất hoặc tự thêm vào thì script báo lỗi. Script so số theo giá trị, nên "1.250" với "1250", "3 khách" với "ba khách" coi là một. Tên riêng, số viết bằng chữ, thứ trong tuần và mấy chữ như "chưa", "vẫn", "chỉ", "có thể" bị rơi thì script nhắc xem lại:
 
 ```bash
 python3 -I skills/viet-nhu-nguoi/scripts/check_facts.py goc.md moi.md
@@ -259,9 +257,9 @@ $ python3 -I skills/viet-nhu-nguoi/scripts/scan.py examples/slide-truoc.pptx
 
 ## Lưu ý
 
-Skill không gửi văn bản đi đâu cả, ngoài mô hình AI mà trợ lý vốn đang dùng. Skill chỉ gồm file Markdown và vài script Python dùng thư viện chuẩn, không kết nối mạng, không thu thập dữ liệu, không cần tài khoản.
+Skill không gửi văn bản đi đâu cả, ngoài mô hình AI mà trợ lý vốn đang dùng. Trong skill chỉ có file Markdown và vài script Python dùng thư viện chuẩn, script không kết nối mạng, không thu thập dữ liệu, cũng không cần tài khoản.
 
-Điểm số chỉ để tham khảo. Nhìn điểm thì biết bài viết theo khuôn nhiều hay ít, câu có đều quá không, còn bài có phải AI viết hay không thì không biết được. Có người vốn viết câu đều nhịp. Máy dò AI cũng hay bắt nhầm người viết bằng ngoại ngữ. Bài bị điểm cao thì cứ đọc lại mấy chỗ máy quét báo.
+Điểm số chỉ để tham khảo, vì nhìn điểm chỉ biết bài viết theo khuôn nhiều hay ít, câu có đều quá không, còn bài có phải AI viết hay không thì không biết được. Có người vốn viết câu đều nhịp, và máy dò AI cũng hay bắt nhầm người viết bằng ngoại ngữ. Bài bị điểm cao thì cứ đọc lại mấy chỗ máy quét báo.
 
 Dùng skill thì văn tự nhiên, dễ đọc hơn, nhưng không dám hứa bài sẽ lọt máy dò AI. Skill cũng không chơi mẹo lừa máy dò như cố ý sai chính tả hay chèn ký tự ẩn. Xin đừng dùng skill để làm bài hộ người học hay giả danh người khác. Cũng đừng cầm danh sách dấu hiệu đi kết luận ai đó dùng AI, vì đoán bằng cảm giác thì cũng chỉ nhỉnh hơn đoán mò một chút.
 
@@ -269,7 +267,7 @@ Dùng skill thì văn tự nhiên, dễ đọc hơn, nhưng không dám hứa b�
 
 ```text
 skills/viet-nhu-nguoi/
-├── SKILL.md                 quy tắc chính, Claude nạp khi skill được gọi
+├── SKILL.md                 quy tắc chính, Claude nạp khi gọi skill
 ├── references/patterns.md   65 dấu hiệu, ví dụ trước/sau
 ├── references/slides.md     cách viết slide, lời thuyết trình, nhờ người đọc thử
 ├── references/chat.md       cá nhân hóa icon, ngữ điệu khi trả lời tin nhắn
