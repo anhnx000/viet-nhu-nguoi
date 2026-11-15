@@ -74,6 +74,8 @@ PATTERNS = {
         # "PM không phải là A. PM là B."; "không có nghĩa là A, mà là B"; "Đừng A, hãy B"; "Không có A, chỉ có B"
         r"(\w+) không phải (là )?[^.!?\n]{1,60}[.!?]\s+\1 là\b", r"không có nghĩa là\b[^.!?\n]{0,60}?\bmà là\b",
         r"(^|[.!?*]\s*)đừng [^.!?\n,]{1,40}, hãy\b", r"\bkhông có [^.!?\n,]{1,40}, chỉ có\b",
+        # "Không ồn ào, không chạy theo trend, chỉ kể một câu chuyện": hai lần phủ định dọn đường cho vế chốt
+        r"(^|[.!?]\s+)không [^.,!?\n]{2,30}, không [^.,!?\n]{2,30}(, (chỉ|nhưng|vậy mà)\b|\.\s+(chỉ|nhưng|vậy mà)\b)",
         r"\bnot (just|only|merely)\b.{0,80}?\bbut\b", r"\bit'?s not\b.{0,60}?\bit'?s\b",
     ],
     # Câu kết mời bình luận, mời theo dõi: khuôn của bài mạng xã hội viết để kéo tương tác.
@@ -83,6 +85,8 @@ PATTERNS = {
         r"nếu bạn (cũng )?(đang|từng)[^.!?\n]{0,80}(nhắn|inbox|kể|chia sẻ)",
         # bài kể chuyện mình rồi cuối bài quay sang khuyên người đọc: "Nếu bạn đang ở ngã rẽ tương tự, hãy..."
         r"nếu bạn (cũng )?(đang|từng|còn)[^.!?\n]{0,90}(?<!nhắn)(?<!kể)[,:]? (hãy|cứ|đừng|thì)\b(?! (nhắn|inbox|kể|chia sẻ))",
+        r"\bai [^.!?\n]{2,50}?(chia sẻ|cho (mình|em|tớ) xin (thêm )?(kinh nghiệm|ý kiến|cảm nhận|review)|mách (mình|em))[^.!?\n]{0,40}(nhé|nha|với)\b\s*([.!?]|$)",
+        r"(^|[.!?]\s+)ai (đang|có|sắp|định|muốn|còn) [^.!?\n]{3,70} thì (cứ|hãy|đừng|nhớ)\b",
         r"bạn đã (từng|bao giờ) [^.!?\n]{1,50} chưa\?", r"kể (cho )?(mình|tôi) nghe", r"hãy (tiếp tục )?(theo dõi|đồng hành cùng)",
         r"điều gì (bạn|anh chị)[^.!?\n]{0,50}\?\s*$", r"(tag|gắn thẻ) (ngay )?(một )?(người|ai đó|bạn bè)",
         r"(follow|theo dõi) (mình|tôi|page|trang)[^.!?\n]{0,20} để", r"\bwhat do you think\?",
@@ -101,6 +105,8 @@ PATTERNS = {
         r"câu trả lời (ngắn gọn )?(là|không đơn giản)", r"không hề dễ dàng", r"siêu năng lực",
         r"(hành trình|chặng đường|con đường) phía trước còn (dài|nhiều)", r"(điều|thứ) gì đó có ý nghĩa",
         r"ước gì (mình |tôi )?(được )?biết sớm hơn", r"đây là câu chuyện của (mình|tôi)", r"không (bao giờ là|phải là) quá muộn",
+        r"đằng sau (mỗi|những|từng) [^.!?\n]{2,40} là\b", r"(hãy|nên) (luôn )?nhớ rằng",
+        r"không hứa [^.!?\n]{3,60}, nhưng [^.!?\n]{0,15}hứa",
         r"tin (tưởng )?vào tầm nhìn", r"\bthe future belongs to\b", r"\bthis is just the beginning\b",
     ],
     # Câu công văn dùng trong email, tin nhắn thường ngày
@@ -222,7 +228,7 @@ PATTERNS = {
         r"giới quan sát", r"experts (believe|argue|say)", r"industry reports",
     ],
     "né là/có": [
-        r"đóng vai trò là", r"tự hào (có|sở hữu)", r"\bserves as\b", r"\bstands as\b",
+        r"đóng vai trò là", r"tự hào (có|sở hữu)", r"\bnằm ở sự\b", r"\bserves as\b", r"\bstands as\b",
     ],
     "giới hạn kiến thức": [
         r"tính đến thời điểm (cập nhật|huấn luyện)", r"dựa trên thông tin hiện có",
@@ -515,13 +521,17 @@ _UNIT = (r"(năm|tháng|tuần|ngày|giờ|tiếng|phút|km|mét|kg|công ty|ng�
 PERSONAL_DETAIL = re.compile(
     rf"\b\d+(?:[.,]\d+)?\s?(?:{_UNIT}\b|%)|\b(?:tháng|năm|tuần|ngày|lần|km|lớp) thứ \w+|\blớp \d+|\b\d{{1,2}}h\d{{0,2}}\b|"
     rf"\b(?:hai|ba|bốn|sáu|bảy|tám|chín|mười) {_UNIT}\b|\bnăm (?:năm|tuần|lần|buổi|công ty|người)\b")
+# Lời người khác nói, trích trong ngoặc kép: đứng sau động từ nói, hoặc là một câu hỏi, câu cảm.
+QUOTED_SPEECH = re.compile(
+    r'\b(?:nói|bảo|dặn|hỏi|la|hét|kể|cười|nhắn|đáp|trả lời|khuyên|thì thầm|gọi)\b[^."“”\n]{0,25}["“]([^"“”\n]{10,160})["”]|'
+    r'["“]([^"“”\n]{10,160}[?!])["”]')
 
 
 def personal_details(text):
-    """Chi tiết có con số trong bài xưng "mình", "tôi": máy không biết thật hay bịa, chỉ liệt kê để hỏi lại.
+    """Chi tiết riêng trong bài xưng "mình", "tôi": máy không biết thật hay bịa, chỉ liệt kê để hỏi lại.
 
-    Bài mô hình viết hộ hay tự thêm đúng loại chi tiết này ("sau 5 năm, 3 công ty", "tháng thứ tư", "5h15").
-    Không tính điểm.
+    Bài mô hình viết hộ hay tự thêm đúng loại chi tiết này: con số ("sau 5 năm, 3 công ty", "tháng thứ tư",
+    "5h15") và lời người khác nói ('ông chủ quán dặn "qua cầu nhớ chạy chậm"'). Không tính điểm.
     """
     lines = [(no, s) for no, s in prose_lines(text) if s.strip()]
     if len(FIRST_PERSON.findall(" ".join(s for _, s in lines).lower())) < 3:
@@ -534,6 +544,9 @@ def personal_details(text):
             if m.group(0) not in seen:
                 seen.add(m.group(0))
                 out.append((no, m.group(0)))
+        for m in QUOTED_SPEECH.finditer(s):
+            said = (m.group(1) or m.group(2)).strip()
+            out.append((no, 'lời "' + (said if len(said) <= 40 else said[:40].rsplit(" ", 1)[0] + "...") + '"'))
     return out if len(out) >= 2 else []
 
 

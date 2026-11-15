@@ -1,6 +1,6 @@
 # Viết như người · Vietnamese Humanizer
 
-**Human voice for Vietnamese (chống giọng văn AI). Let AI draft it, and still sound like you.**
+Human voice for Vietnamese (chống giọng văn AI): let AI draft it and still sound like you.
 
 [![test](https://github.com/anhnx000/viet-nhu-nguoi/actions/workflows/test.yml/badge.svg)](https://github.com/anhnx000/viet-nhu-nguoi/actions/workflows/test.yml)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
@@ -15,31 +15,29 @@ Viết như người ("write like a person") is a skill (an add-on pack of instr
 
 English works too, based on Wikipedia's [Signs of AI writing](https://en.wikipedia.org/wiki/Wikipedia:Signs_of_AI_writing) and [blader/humanizer](https://github.com/blader/humanizer). Most of the work went into Vietnamese, because generic humanizers miss what makes Vietnamese AI text sound off: it reads like it was written in English and translated.
 
-**Contents:** [Install, no coding needed](#install-in-a-few-minutes-no-coding-needed) · [Everyday use](#everyday-use) · [Before and after](#before-and-after) · [What the skill fixes](#what-the-skill-fixes) · [Command line](#for-command-line-users)
+Contents: [Install, no coding needed](#install-in-a-few-minutes-no-coding-needed) · [Everyday use](#everyday-use) · [Before and after](#before-and-after) · [What the skill fixes](#what-the-skill-fixes) · [Command line](#for-command-line-users)
 
 ## What people use it for
 
-- Building report and proposal decks. Every title is a conclusion, so your manager can skim the titles and know what to decide. Missing numbers are marked `[cần xác nhận]` (*to confirm*), never made up.
-- Writing emails to a boss or a customer. The email leads with the request, uses the right pronouns of address (anh/chị/em, quý khách) and never switches to a default "bạn".
-- Fixing reports and documents translated from English. The skill removes calqued sentences such as "được... bởi" (*was ... by*), "Điều này cho phép" (*This allows*) and "thông qua việc" (*through the act of*).
-- Writing Facebook, LinkedIn and blog posts. AI drafts, the voice stays yours, and each post tells just one story.
-- Checking before you send. The skill points at the places that sound like AI, and you decide what to change.
+- In report and proposal decks, every title is a conclusion, so your manager can skim the titles and know what to decide. Missing numbers are marked `[cần xác nhận]` (*to confirm*), never made up.
+- An email to a boss or a customer leads with the request, uses the right pronouns of address (anh/chị/em, quý khách) and never switches to a default "bạn".
+- In reports and documents translated from English, the skill removes calqued sentences such as "được... bởi" (*was ... by*), "Điều này cho phép" (*This allows*) and "thông qua việc" (*through the act of*).
+- For Facebook, LinkedIn and blog posts, AI drafts, the voice stays yours, and each post tells just one story.
+- Before you send something, the skill points at the places that sound like AI, and you decide what to change.
 
 ## Install in a few minutes, no coding needed
 
 You don't type any commands. You ask your AI assistant to install it, the way you would ask a colleague from IT.
 
-**Step 1. Open an AI assistant that runs on your computer.** For example the Claude Code desktop app, which you use with a mouse like any other program. Codex, Cursor, Gemini CLI and OpenCode work too. Claude or ChatGPT opened in a browser cannot install anything on your machine.
+1. Open an AI assistant that runs on your computer, for example the Claude Code desktop app, which you use with a mouse like any other program. Codex, Cursor, Gemini CLI and OpenCode work too. Claude or ChatGPT opened in a browser cannot install anything on your machine.
+2. Paste this into the chat box:
 
-**Step 2. Paste this into the chat box:**
+   > Install the viet-nhu-nguoi skill for me from https://github.com/anhnx000/viet-nhu-nguoi
 
-> Install the viet-nhu-nguoi skill for me from https://github.com/anhnx000/viet-nhu-nguoi
+3. Click approve when the assistant asks permission to download and install. It usually takes under a minute.
+4. Start a new conversation and try it:
 
-**Step 3. Click approve** when the assistant asks permission to download and install. It usually takes under a minute.
-
-**Step 4. Start a new conversation and try it:**
-
-> Viết như người: soạn giúp tôi email xin sếp lùi hạn nộp báo cáo 3 ngày, xưng em
+   > Viết như người: soạn giúp tôi email xin sếp lùi hạn nộp báo cáo 3 ngày, xưng em
 
 (*"Write like a person: draft an email asking my boss for three more days on the report; I address myself as em."*) If the email comes back short, gets to the request at once and keeps "em" all the way through, the skill is working.
 
@@ -179,25 +177,25 @@ The skill has a catalog of 65 AI-writing patterns, each with a before and after 
 
 Harder to spot is word-for-word translation: every word is Vietnamese, but the sentence still follows English. It tends to show in these places:
 
-- "bạn" (*you*) opens every sentence and "của bạn" (*your*) follows every noun;
-- "một" (*a*), "các", "những" (plural markers) stand in front of every noun;
-- passives that never say who acted ("số liệu được giữ nguyên", *the figures are kept*), and objects as grammatical subjects ("Bảng này cho thấy", *This table shows*);
-- "đã", "đang", "sẽ" (tense markers) and "có thể" (*can*) scattered everywhere;
-- sentences that open with "Với..." (*With/For...*) or "Để..., bạn cần..." (*To..., you need...*), and "và" (*and*) joining every clause;
-- idioms and headings translated literally ("tin tốt là", *the good news is*; "Bắt đầu nhanh", *Quick start*).
+- "bạn" (*you*) opens every sentence and "của bạn" (*your*) follows every noun
+- "một" (*a*), "các", "những" (plural markers) stand in front of every noun
+- passives that never say who acted ("số liệu được giữ nguyên", *the figures are kept*), and objects as grammatical subjects ("Bảng này cho thấy", *This table shows*)
+- "đã", "đang", "sẽ" (tense markers) and "có thể" (*can*) scattered everywhere
+- sentences that open with "Với..." (*With/For...*) or "Để..., bạn cần..." (*To..., you need...*), and "và" (*and*) joining every clause
+- idioms and headings translated literally ("tin tốt là", *the good news is*; "Bắt đầu nhanh", *Quick start*)
 
 For text like this the skill rewrites from the idea, the way Vietnamese speakers would say it, instead of swapping phrases one by one.
 
 Some patterns only show when you read the whole text, even after each sentence is fine:
 
-- sentences that open with a label ("nói gọn", "nói cho thật:");
-- the "not X but Y" shape used three times or more;
-- every paragraph closing on a line that sounds like a proverb;
-- colons everywhere;
-- the filler words of translated text ("một", "các", "được", "sẽ", "của bạn", the leftovers of English articles, plurals, tenses and possessives) thick across the whole text;
-- full stops that chop one thought into several short sentences, or the reverse, one sentence joined from too many clauses;
-- a post split into sections with emoji, closing on a call for comments or a slogan that would fit any post;
-- a long post that covers every topic.
+- sentences that open with a label ("nói gọn", "nói cho thật:")
+- the "not X but Y" shape used three times or more
+- every paragraph closing on a line that sounds like a proverb
+- colons everywhere
+- the filler words of translated text ("một", "các", "được", "sẽ", "của bạn", the leftovers of English articles, plurals, tenses and possessives) thick across the whole text
+- full stops that chop one thought into several short sentences, or the reverse, one sentence joined from too many clauses
+- a post split into sections with emoji, closing on a call for comments or a slogan that would fit any post
+- a long post that covers every topic
 
 Slides and long documents have their own group. The skill catches titles that are only labels ("Tổng quan", "Kết luận"), titles that count points ("3 trụ cột", *3 pillars*), exactly three bullets on every slide, empty promises ("chi tiết sẽ trao đổi sau", *details to be discussed later*) and speaker notes that read like a memo. The slide-writing guide is in [references/slides.md](skills/viet-nhu-nguoi/references/slides.md) (in Vietnamese).
 
@@ -226,7 +224,7 @@ python3 -I skills/viet-nhu-nguoi/scripts/scan.py file.md
 | `--chat` | the text is a chat reply: also flag bullets, bold, stock politeness, overlong messages |
 | `--text` | dump every slide's text and notes from a `.pptx` |
 
-The scanner cannot tell an invented story from a real one. For first-person text it prints one extra line listing personal details that carry a number ("tháng thứ tư", *the fourth month*; "5h15"; "3 công ty", *three companies*) so you can check them: these are exactly what a model adds when it writes a post on your behalf. That line does not count toward the score.
+The scanner cannot tell an invented story from a real one. For first-person text it prints one extra line listing personal details that carry a number ("tháng thứ tư", *the fourth month*; "5h15"; "3 công ty", *three companies*) and any quoted speech, so you can check them: these are exactly what a model adds when it writes a post on your behalf. That line does not count toward the score.
 
 `check_facts.py` compares an original with its rewrite (two `.pptx` files work too). It fails if a number, date, time, link or code span was lost or added. Numbers are compared by value, so "1.250" and "1250", or "3 khách" and "ba khách" (*three customers*), count as the same. It warns about missing proper names, spelled-out numbers, weekdays, and dropped qualifiers such as "chưa" (*not yet*), "vẫn" (*still*), "chỉ" (*only*), "có thể" (*may*):
 

@@ -191,6 +191,35 @@ class SocialPostTells(unittest.TestCase):
         for text in ("Nếu anh đang bận thì chiều em gọi lại.", "Bạn Lan đang nghỉ phép, tuần sau mới đi làm."):
             self.assertNotIn("mời tương tác", groups(text), text)
 
+    def test_who_else_invites_and_advice(self):
+        for text in ("Ai xem rồi vào chia sẻ cảm nhận với mình nhé.",
+                     "Ai cũng hay chạy xe về quê thì cho mình xin thêm kinh nghiệm nhé!",
+                     "Ai có con đang tập xe thì cứ kiên nhẫn nhé, đến lúc con sẵn sàng thì con tự đi được."):
+            self.assertIn("mời tương tác", groups(text), text)
+        for text in ("Ai chưa nộp báo cáo thì gửi cho chị Lan trước 5 giờ.",
+                     "Hôm qua ai chia sẻ file này với khách vậy?",
+                     "Ai có chìa khóa phòng họp thì mang lên tầng 3 giúp em.",
+                     # nhờ đúng người góp ý cho bản nháp là việc thật, không phải câu kéo tương tác
+                     "Ai làm OS rồi, hoặc ai đang làm chip ở Việt Nam, cho mình xin góp ý với."):
+            self.assertNotIn("mời tương tác", groups(text), text)
+
+    def test_double_negation_setup(self):
+        for text in ("Không ồn ào, không chạy theo trend, chỉ kể một câu chuyện gia đình.",
+                     "Không biển hiệu, không số điện thoại, nhưng người trong phố ai cũng biết."):
+            self.assertIn("đối lập giả", groups(text), text)
+        for text in ("Không có điện, không có nước, cả xóm phải dắt nhau đi sơ tán.",
+                     "Phòng không có cửa sổ, không có điều hòa nên rất bí."):
+            self.assertNotIn("đối lập giả", groups(text), text)
+
+    def test_stock_reflections(self):
+        for text in ("Đằng sau mỗi con số là một câu chuyện.", "Cuối cùng, hãy nhớ rằng CV không cần hoàn hảo.",
+                     "Anh không hứa mọi thứ sẽ luôn dễ dàng, nhưng anh hứa sẽ luôn ở bên em."):
+            self.assertIn("khẩu hiệu", groups(text), text)
+        self.assertIn("né là/có", groups("Tay nghề của ông nằm ở sự tỉ mỉ."))
+        for text in ("Đằng sau nhà là một vườn chuối.", "Em nhớ rằng hôm đó trời mưa.",
+                     "Kho hàng nằm ở sau chợ, đi xe máy mất năm phút."):
+            self.assertFalse({"khẩu hiệu", "né là/có"} & set(groups(text)), text)
+
     def test_real_questions_not_bait(self):
         for text in ("Bạn đã gửi báo cáo cho chị Lan chưa?", "Mai họp lúc 9h, mọi người thấy sao?",
                      "Anh xem rồi phản hồi giúp em trước thứ Sáu."):
@@ -281,6 +310,17 @@ class WeakSignsAndDetails(unittest.TestCase):
         for detail in ("800 mét", "21km", "tháng thứ tư", "5h15"):
             self.assertIn(detail, found)
         self.assertEqual(scan.score(post, scan.scan(post)[0])["score"], 0)
+
+    def test_quoted_speech_listed_for_confirmation(self):
+        post = ("Sáng thứ Bảy mình tự chạy xe về quê. Đến ngã ba mình tấp vào quán nước.\n\n"
+                'Ông chủ quán nghe mình kể thì cười, dặn "qua cầu nhớ chạy chậm, gió lớn lắm con".\n\n'
+                'Tới nhà, má mình la: "Trời ơi, chạy xe chi cho cực vậy con!"')
+        found = [m for _, m in scan.personal_details(post)]
+        self.assertIn('lời "qua cầu nhớ chạy chậm, gió lớn lắm con"', found)
+        self.assertTrue(any(m.startswith('lời "Trời ơi') for m in found), found)
+        # ngoặc kép quanh một cụm từ, không phải lời ai nói, thì không liệt kê
+        note = 'Mình hay bị gọi là "người kỹ tính" trong nhóm. Tôi thì thấy mình chỉ "cẩn thận vừa đủ" thôi, mình nghĩ vậy.'
+        self.assertEqual(scan.personal_details(note), [])
 
     def test_dialogue_colons_not_counted(self):
         line = 'Bà Tư ngó nó rồi nói: "Mầy đi đâu về đó?" Thằng Tý cúi mặt đáp: "Dạ con đi coi hát." Ông Ba la lớn: "Vô nhà!"'

@@ -220,7 +220,7 @@ python3 -I skills/viet-nhu-nguoi/scripts/scan.py file.md
 | `--chat` | văn bản là tin nhắn trả lời: báo thêm gạch đầu dòng, in đậm, câu khách sáo, tin quá dài |
 | `--text` | in hết chữ và ghi chú từng slide trong file `.pptx` |
 
-Chuyện bịa thì máy quét không chấm được. Bài xưng "mình", "tôi" thì máy quét in thêm một dòng liệt kê các chi tiết riêng có con số ("tháng thứ tư", "5h15", "3 công ty") để bạn soát lại, vì bài nhờ AI viết hộ hay tự thêm đúng loại chi tiết này. Dòng đó không tính vào điểm.
+Chuyện bịa thì máy quét không chấm được. Bài xưng "mình", "tôi" thì máy quét in thêm một dòng liệt kê các chi tiết riêng có con số ("tháng thứ tư", "5h15", "3 công ty") và lời người khác nói trích trong ngoặc kép để bạn soát lại, vì bài nhờ AI viết hộ hay tự thêm đúng loại chi tiết này. Dòng đó không tính vào điểm.
 
 `check_facts.py` so bản gốc với bản sửa, so hai file `.pptx` cũng được. Số liệu, ngày giờ, link hay code bị mất hoặc tự thêm vào thì script báo lỗi. Script so số theo giá trị, nên "1.250" với "1250", "3 khách" với "ba khách" coi là một. Tên riêng, số viết bằng chữ, thứ trong tuần và mấy chữ như "chưa", "vẫn", "chỉ", "có thể" bị rơi thì script nhắc xem lại:
 
