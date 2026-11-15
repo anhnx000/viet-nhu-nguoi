@@ -10,7 +10,7 @@ Dùng: python3 -I scan.py FILE      hoặc      cat FILE | python3 -I scan.py
 FILE có thể là .md, .txt hoặc .pptx. Với .pptx, bộ kiểm tra đọc tiêu đề, nội dung, bảng và ghi chú
 thuyết trình của từng slide, và chạy thêm các kiểm riêng cho slide.
 
-Điểm 0-100 đo mật độ dấu hiệu bề mặt và độ đều của câu. Điểm cao nghĩa là văn bản có
+Điểm theo thang 0-100, đo mật độ dấu hiệu bề mặt và độ đều của câu. Điểm cao nghĩa là văn bản có
 nhiều thói quen viết theo khuôn, không phải xác suất văn bản do AI viết.
 Chỉ bắt dấu hiệu bề mặt. Cấu trúc (bộ ba, câu chốt, sai người đọc) phải tự đọc.
 
@@ -207,6 +207,9 @@ PATTERNS = {
         r"\bmáy (dò|quét|phát hiện)( văn| văn bản| nội dung| bài)? (ai|gpt|chatgpt)\b", r"\bmáy dò (đạo văn|văn|giọng)",
         r"\b(lọt|qua được|qua mặt|vượt qua|lừa|đánh lừa|né|chạy|chạy thử) (các |mọi |những )?máy (dò|quét)\b",
         r"\bmáy (dò|quét) (chấm|bắt được|báo nhầm|báo|đếm|cho điểm|gắn cờ|đánh dấu)\b",
+        # "scores 0-100" dịch cụt thành "chấm 0-100", "điểm số 0-100"; người Việt nói "thang điểm 0-100"
+        r"(?<!thang )\b(chấm|chấm điểm|cho điểm) (số )?[01] ?[-–] ?(5|10|100)\b(?! ?(điểm|sao))",
+        r"(?<!thang )(?<!chấm )(?<!cho )\bđiểm (số )?[01] ?[-–] ?(5|10|100)\b(?! ?điểm)",
     ],
     "bị động dịch sát": [
         r"\b((sẽ|đã|đang|cần|phải|nên|có thể) )?được (giữ nguyên|cập nhật|cài đặt|thiết kế|xây dựng|phát triển|tạo ra|"
@@ -771,7 +774,7 @@ def prose_only(text):
 
 
 def score(text, hits, burst=True):
-    """Điểm 0-100: mật độ dấu hiệu có trọng số trên 100 chữ, cộng phần phạt khi câu dài đều nhau.
+    """Điểm theo thang 0-100: mật độ dấu hiệu có trọng số trên 100 chữ, cộng phần phạt khi câu dài đều nhau.
 
     burst=False bỏ phần phạt câu đều (dùng cho slide, vì gạch đầu dòng vốn ngắn và đều).
     """

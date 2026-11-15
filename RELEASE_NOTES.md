@@ -2,6 +2,13 @@
 
 English notes for each GitHub release. The release workflow publishes the section that matches the version in `SKILL.md`. The full development log, in Vietnamese, is in [CHANGELOG.md](CHANGELOG.md).
 
+## 2.7.13
+
+"Thang điểm 0-100" instead of "chấm 0-100".
+
+- "Chấm 0-100" is a clipped calque of "scores 0-100"; Vietnamese says "chấm theo thang điểm 0-100". The repo description, READMEs, `SKILL.md`, plugin metadata, scanner docstrings and README images now use the full phrase.
+- `scan.py` flags "chấm", "chấm điểm", "cho điểm" or "điểm số" right before a 0-5, 0-10, 0-100, 1-5, 1-10 or 1-100 range as translationese. It skips "thang điểm 0-100", ranges followed by "điểm" or "sao", and "cho" without "điểm". Fixture scores are unchanged.
+
 ## 2.7.12
 
 Plain Vietnamese for "scanner" and "AI detector".

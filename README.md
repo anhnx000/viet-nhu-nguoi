@@ -87,7 +87,7 @@ Nhờ soạn thứ gì đứng tên bạn thì skill tự bật. Gõ `/viet-nhu-
 
 ## Ví dụ trước và sau
 
-Điểm do bộ kiểm tra đi kèm skill chấm, 0-100, viết càng theo khuôn càng cao.
+Điểm do bộ kiểm tra đi kèm skill chấm theo thang điểm 0-100, văn càng theo khuôn thì điểm càng cao.
 
 ![Tiêu đề slide. Bộ AI làm, 48/100: Chuyển đổi số: Hành trình kiến tạo giá trị; Tổng quan; Thách thức; 3 trụ cột giải pháp; Lợi ích; Kết luận; Cảm ơn. Bộ làm theo skill, 0/100: Đề xuất thuê thêm 1 QA cho quý 1/2027; Hai bản phát hành quý 3 đều trễ vì thiếu người test; Thuê 1 QA tốn ít hơn tiền phạt mỗi lần trễ hạn; Cần anh duyệt trước 30/11 để kịp tuyển người.](assets/vi-du-slide.png)
 
@@ -199,7 +199,7 @@ skills/viet-nhu-nguoi/
 ├── references/chat.md       tin nhắn theo giọng người dùng
 ├── references/spoken.md     trợ từ, lời nhờ, lời hứa
 ├── references/sources.md    nguồn tham khảo
-├── scripts/scan.py          bộ kiểm tra, chấm 0-100
+├── scripts/scan.py          bộ kiểm tra, thang điểm 0-100
 ├── scripts/check_facts.py   so dữ kiện giữa hai bản
 └── scripts/slides.py        đọc chữ và ghi chú trong .pptx
 assets/                      ảnh README, script vẽ lại (make_images.py)

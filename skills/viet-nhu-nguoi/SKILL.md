@@ -13,7 +13,7 @@ description: |
   "Signs of AI writing", skill humanizer (MIT) và các skill humanize tiếng Việt mã nguồn mở.
 license: MIT
 metadata:
-  version: "2.7.12"
+  version: "2.7.13"
 ---
 
 # Viết như người (Vietnamese humanizer): chống giọng văn AI
@@ -50,7 +50,7 @@ Câu nào có tác dụng trong cuộc trao đổi thì giữ, kể cả lời x
 
 **3. Chế độ sửa văn bản (người dùng dán văn bản hoặc chỉ file).**
 1. Đọc hết một lượt, đánh dấu mọi dấu hiệu, mạnh trước yếu sau. Đọc `references/patterns.md` để có danh mục đầy đủ kèm ví dụ trước/sau. Nhóm G và nhóm K là phần riêng của tiếng Việt, đọc kỹ. Trước khi sửa, xác định ai viết cho ai, đang xưng hô thế nào.
-2. Có thể chạy `python3 -I scripts/scan.py <file>` (đường dẫn tính từ thư mục skill; file `.md`, `.txt` hoặc `.pptx`) để quét nhanh từ ngữ và dấu câu. Script cho điểm 0-100 theo mật độ dấu hiệu và độ đều của câu, cộng điểm cố định cho dấu hiệu cả bài. Điểm đo thói quen viết theo khuôn, không phải xác suất bài do AI viết. Văn bản bàn về chính các dấu hiệu (tài liệu hướng dẫn, README có trích ví dụ) thì thêm `--meta` để phần trích dẫn không bị tính. Script chỉ bắt dấu hiệu bề mặt, cấu trúc phải tự đọc. Chuyện bịa thì script không chấm được: với bài xưng "mình", "tôi", nó liệt kê các chi tiết riêng có con số ("tháng thứ tư", "5h15") và lời người khác nói để hỏi lại người đứng tên.
+2. Có thể chạy `python3 -I scripts/scan.py <file>` (đường dẫn tính từ thư mục skill, nhận `.md`, `.txt`, `.pptx`) để quét nhanh từ ngữ, dấu câu. Script chấm theo thang điểm 0-100, dựa trên mật độ dấu hiệu và độ đều của câu, cộng điểm cố định cho dấu hiệu cả bài. Điểm đo thói quen viết theo khuôn, không phải xác suất bài do AI viết. Văn bản bàn về chính các dấu hiệu (tài liệu hướng dẫn, README có trích ví dụ) thì thêm `--meta` cho khỏi tính phần trích dẫn. Script chỉ bắt dấu hiệu bề mặt, cấu trúc phải tự đọc. Chuyện bịa thì script không chấm được: với bài xưng "mình", "tôi", nó liệt kê các chi tiết riêng có con số ("tháng thứ tư", "5h15") và lời người khác nói để hỏi lại người đứng tên.
 3. Viết lại, sửa cấu trúc trước rồi mới thay từ. Mức sửa theo nguồn gốc bài: bài người dùng tự viết thì sửa nhẹ, sửa quá khoảng một phần ba số câu thì rà lại từng chỗ, chỗ nào không chỉ ra được dấu hiệu cụ thể thì trả về câu gốc, câu chỉ hơi gượng thì nêu trong ghi chú để người viết tự quyết; bài gần như do AI viết cả thì cứ viết lại nhiều hơn, và chi tiết riêng nào nghe tròn trịa quá ("ba người, một chiếc laptop cũ") thì hỏi lại người dùng xem có thật không. Câu đã ổn thì giữ, không sửa chỉ vì nó có trong danh mục. Giữ mọi ý có căn cứ, còn rút gọn, gộp, tách đoạn thì cứ làm. Không thêm tên, số liệu, ngày tháng, trích dẫn hay nguồn nào không có trong bản gốc hoặc lời người dùng. Thiếu chi tiết thì hỏi hoặc viết câu đơn giản hơn.
 4. Tự kiểm theo thứ tự:
    - **Dữ kiện.** Bản mới có làm mất hay đổi tên, số liệu, ngày tháng, trích dẫn, thứ hạng không, có biến hai việc vốn xảy ra cùng lúc thành trước sau không. Dữ kiện hay mất nhất ở chỗ vừa bỏ bộ ba, bỏ rào đón hay gỡ nhãn in đậm. Mất hay đổi một ý mà không có dấu hiệu nào đòi cắt thì là lỗi. Có file gốc và file mới (kể cả `.pptx`) thì chạy `python3 -I scripts/check_facts.py <gốc> <mới>`. Script báo số liệu, ngày giờ, link, code bị mất hoặc tự thêm, và nhắc xem lại tên riêng, số viết bằng chữ, các từ "chưa", "vẫn", "chỉ", "có thể" bị rơi.

@@ -404,7 +404,7 @@ EXCERPT = ("Trong bối cảnh hiện nay, việc ứng dụng AI không chỉ l
 
 
 def selling_points():
-    return [f"{pattern_count()} dấu hiệu văn AI", "Bộ kiểm tra chấm 0-100", "Không bịa số liệu",
+    return [f"{pattern_count()} dấu hiệu văn AI", "Bộ kiểm tra, thang điểm 0-100", "Không bịa số liệu",
             "Slide, email, bài đăng, tin nhắn", "Miễn phí, MIT"]
 
 
@@ -425,7 +425,7 @@ def banner():
               good, "cùng nội dung, giọng người")],
         footer=["Skill cho Claude Code, Codex, Cursor. Cài bằng cách dán link repo vào ô chat.", REPO],
         title_size=56, gap=72, arrow=True,
-        after=(40, lambda d, y: chips(d, PAD, y, selling_points(), size=15)))
+        after=(40, lambda d, y: chips(d, PAD, y, selling_points(), size=14)))
 
 
 def social():
@@ -459,8 +459,8 @@ def social():
     d.ellipse([(cx - r) * sc, (cy - r) * sc, (cx + r) * sc, (cy + r) * sc], fill=CHIP, outline=ACCENT, width=2 * sc)
     f = font("Bold", 30, sc)
     d.text(((cx - tw("↓", f, sc) / 2) * sc, (cy - 19) * sc), "↓", font=f, fill=ACCENT)
-    d.text((rx * sc, 500 * sc), "Điểm do bộ kiểm tra đi kèm skill chấm,", font=font("Regular", 17, sc), fill=FAINT)
-    d.text((rx * sc, 524 * sc), "càng viết theo khuôn càng cao.", font=font("Regular", 17, sc), fill=FAINT)
+    d.text((rx * sc, 500 * sc), "Bộ kiểm tra đi kèm skill chấm theo", font=font("Regular", 17, sc), fill=FAINT)
+    d.text((rx * sc, 524 * sc), "thang điểm 0-100, càng theo khuôn càng cao.", font=font("Regular", 17, sc), fill=FAINT)
     save(img.resize((sw, sh), Image.LANCZOS), "social.png")
 
 

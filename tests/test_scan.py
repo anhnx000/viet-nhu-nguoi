@@ -721,6 +721,17 @@ class DeepTranslationese(unittest.TestCase):
                      "Bộ kiểm tra bắt được 17 chỗ trong email."):
             self.assertNotIn("văn dịch (vi)", groups(text), text)
 
+    def test_clipped_score_range(self):
+        for text in ("Bộ kiểm tra chấm 0-100 cho mỗi bài.",
+                     "Script cho điểm 0-100 theo mật độ dấu hiệu.",
+                     "Mỗi bài có điểm số 0-10 ở cuối."):
+            self.assertIn("văn dịch (vi)", groups(text), text)
+        for text in ("Bộ kiểm tra chấm theo thang điểm 0-100.",
+                     "Cô chấm 9-10 điểm cho cả lớp.",
+                     "Điểm từ 0 đến 100, càng thấp càng tốt.",
+                     "Bàn này cho 1-10 người ngồi."):
+            self.assertNotIn("văn dịch (vi)", groups(text), text)
+
     def test_calqued_report_and_explainer(self):
         for text in ("Tiến về phía trước, nhóm tập trung mở rộng quy mô.",
                      "Quý này nhóm đã đạt được những tiến bộ đáng kể.",

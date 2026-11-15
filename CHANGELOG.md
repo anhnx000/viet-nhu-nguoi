@@ -1,5 +1,13 @@
 # Changelog
 
+## 2.7.13 (2026-11-16)
+
+"Chấm 0-100" thành "thang điểm 0-100".
+
+- "Chấm 0-100", "cho điểm 0-100" là "scores 0-100" dịch cụt, người Việt nói "chấm theo thang điểm 0-100". Đã sửa ở mô tả repo, README, `SKILL.md`, mô tả plugin, chú thích trong `scan.py` và ảnh README. Nhãn trên ảnh giờ là "Bộ kiểm tra, thang điểm 0-100".
+- `scan.py` xếp các cụm này vào nhóm "văn dịch": "chấm", "chấm điểm", "cho điểm" hay "điểm số" đứng ngay trước khoảng 0-5, 0-10, 0-100 hoặc 1-5, 1-10, 1-100. Không tính khi có "thang" đứng trước, khi sau đó là "điểm" hay "sao" ("chấm 9-10 điểm"), hay khi "cho" không đi với "điểm" ("cho 1-10 người"). Không bài nào trong `tests/fixtures` có các cụm này, nên điểm hai bộ thử giữ nguyên.
+- Mục 61 trong danh mục thêm ví dụ này. `SKILL.md` vẫn đúng 6.000 chữ.
+
 ## 2.7.12 (2026-11-16)
 
 Đổi "máy quét" thành "bộ kiểm tra", và coi "máy dò AI", "máy quét AI" là văn dịch.
@@ -274,7 +282,7 @@ Slide và thuyết trình.
 
 ## 1.2.0 (2026-11-07)
 
-- Điểm 0-100 có trọng số theo độ mạnh của dấu hiệu, cộng phần phạt khi câu dài đều nhau; `--json`, `--max N` để chặn trong CI.
+- Thang điểm 0-100, có trọng số theo độ mạnh của dấu hiệu, cộng phần phạt khi câu dài đều nhau; `--json`, `--max N` để chặn trong CI.
 - `check_facts.py` kiểm bản sửa còn giữ số liệu, ngày giờ, link, code.
 - Chế độ soi lỗi (chỉ liệt kê, không sửa), giọng theo tên, tự chấm năm tiêu chí.
 - `references/sources.md` liệt kê nguồn, ghi rõ nguồn dùng trực tiếp và nguồn đọc thêm.
