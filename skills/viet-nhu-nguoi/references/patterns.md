@@ -1,12 +1,12 @@
 # Danh mục dấu hiệu văn AI (Việt + Anh)
 
-Sắp từ mạnh đến yếu. Nhóm A và nhóm E chỉ cần gặp một lần là sửa. Nhóm G (mục 30-38) dành riêng cho tiếng Việt. Nhóm H (mục 39-44) dành cho slide, lời thuyết trình và tài liệu nhiều trang; hướng dẫn đầy đủ ở `slides.md`. Nhóm K (mục 56-62) là văn dịch ở tầng sâu hơn nhóm G: từng chữ đều là tiếng Việt nhưng câu vẫn theo khuôn tiếng Anh; văn tiếng Việt nào cũng nên rà nhóm này. Nhóm I (mục 45-55) là những dấu hiệu chỉ thấy khi nhìn cả bài, thường vẫn còn sau khi đã sửa sạch từng câu; bài dài và bài đăng mạng xã hội thì đọc nhóm này trước. Mục ghi *yếu* chỉ sửa khi đi cùng dấu hiệu khác trong cùng đoạn. Vài khối "Sau" có chi tiết cụ thể mà khối "Trước" không có (tên người, con số): đó là chi tiết giả định người viết đã cung cấp, còn khi sửa bài thật thì không tự thêm.
+Sắp từ mạnh đến yếu. Nhóm A và nhóm E chỉ cần gặp một lần là sửa. Nhóm G (mục 30-38) dành riêng cho tiếng Việt. Nhóm H (mục 39-44) dành cho slide, lời thuyết trình và tài liệu nhiều trang, hướng dẫn đầy đủ ở `slides.md`. Nhóm K (mục 56-62) là văn dịch ở tầng sâu hơn nhóm G: từng chữ đều là tiếng Việt nhưng câu vẫn theo khuôn tiếng Anh. Văn tiếng Việt nào cũng nên rà nhóm này. Nhóm I (mục 45-55) là những dấu hiệu chỉ thấy khi nhìn cả bài, thường vẫn còn sau khi đã sửa sạch từng câu. Bài dài và bài đăng mạng xã hội thì đọc nhóm này trước. Mục ghi *yếu* chỉ sửa khi đi cùng dấu hiệu khác trong cùng đoạn. Vài khối "Sau" có chi tiết cụ thể mà khối "Trước" không có (tên người, con số): đó là chi tiết giả định người viết đã cung cấp, còn khi sửa bài thật thì không tự thêm.
 
 ## A. Dàn dựng thay vì nói thẳng
 
 ### 1. Đối lập giả: "không phải X mà là Y"
 **Dấu hiệu:** không chỉ... mà còn; không phải X, mà là Y; X chứ không phải Y; không đơn thuần là; it's not X, it's Y; not just X but Y; X rather than Y; tách thành hai câu ("Điều này không có nghĩa là X. Nó có nghĩa là Y."; "Đây không chỉ là một con số. Đây là sự công nhận."; "PM không phải là người có câu trả lời đúng. PM là người đặt câu hỏi đúng."); "X là A, không phải B" ("Kỹ sư là đồng đội, không phải người nhận việc"); "Đừng A, hãy B" ("Đừng yêu giải pháp, hãy yêu vấn đề"); "Không có A, chỉ có B"; hai lần phủ định dọn đường cho vế chốt ("Không ồn ào, không chạy theo trend, chỉ kể một câu chuyện gia đình"); đuôi phủ định cụt ("..., không cần đoán").
-**Vấn đề:** Vế phủ định bác bỏ điều không ai nói, để vế sau nghe kêu hơn. Nói thẳng vế sau. Chỉ giữ khi người đọc đúng là đang nghĩ như vế đầu, và cả bài chỉ một lần; xem mục 46.
+**Vấn đề:** Vế phủ định bác bỏ điều không ai nói, để vế sau nghe kêu hơn. Cách sửa là nói thẳng vế sau. Chỉ giữ mẫu này khi người đọc đúng là đang nghĩ như vế đầu, và cả bài chỉ dùng một lần (xem mục 46).
 **Trước:**
 > Đây không chỉ là một bản cập nhật, mà là một cuộc cách mạng trong cách đội ngũ làm việc.
 **Sau:**
@@ -18,7 +18,7 @@ Sắp từ mạnh đến yếu. Nhóm A và nhóm E chỉ cần gặp một lầ
 
 ### 2. Câu chốt một dòng, câu cụt kịch tính
 **Dấu hiệu:** đoạn một câu nhắc lại đoạn trước; "Đó mới là điều quan trọng."; "Điều đó nói lên tất cả."; "Hãy suy ngẫm điều đó."; "Let that sink in."; "That is the real win."; chuỗi câu cụt ("Không phô trương. Không màu mè. Chỉ hiệu quả."); câu tổng kết sau một ví dụ ("Điều này cho thấy tầm quan trọng của...", "Bài học ở đây rất rõ:"); một chữ VIẾT HOA để nhấn, hoặc chấm sau từng chữ ("từng. ngày. một.").
-**Sửa:** Bỏ câu chốt nhắc lại, kể cả câu giải nghĩa ví dụ người đọc vừa thấy. Câu nào nói thêm được hệ quả mà ví dụ chưa cho thấy thì giữ. Gộp chuỗi câu cụt thành một câu có ý cụ thể. Câu ngắn mà có thêm sự việc mới thì giữ. Câu chốt gắn vào cuối đoạn cũng tính; xem mục 47.
+**Sửa:** Bỏ câu chốt nhắc lại, kể cả câu giải nghĩa ví dụ người đọc vừa thấy. Câu nào nói thêm được hệ quả mà ví dụ chưa cho thấy thì giữ. Gộp chuỗi câu cụt thành một câu có ý cụ thể. Câu ngắn mà có thêm sự việc mới thì giữ. Câu chốt gắn vào cuối đoạn cũng tính (xem mục 47).
 **Trước:**
 > Cache giảm việc lặp lại.
 >
@@ -36,7 +36,7 @@ Sắp từ mạnh đến yếu. Nhóm A và nhóm E chỉ cần gặp một lầ
 
 ### 4. Câu dẫn trước khi vào ý
 **Dấu hiệu:** Hãy cùng tìm hiểu; Dưới đây là những điều bạn cần biết; Chúng ta hãy cùng khám phá; Nói thẳng ra thì; Thành thật mà nói?; Ít ai biết rằng; Không ai nói cho bạn biết điều này, nhưng; Let's dive in; Here's the thing; Honestly?; Real talk.
-**Sửa:** Bỏ phần dẫn, vào thẳng ý. Đừng thay bằng cụm cùng kiểu ("Nói cho thật:", "Nói gọn thì"); xem mục 45.
+**Sửa:** Bỏ phần dẫn, vào thẳng ý. Đừng thay bằng cụm cùng kiểu ("Nói cho thật:", "Nói gọn thì"), xem mục 45.
 **Trước:**
 > Hãy cùng tìm hiểu cách cache hoạt động trong Next.js. Dưới đây là những điều bạn cần biết.
 **Sau:**
@@ -126,7 +126,7 @@ Sắp từ mạnh đến yếu. Nhóm A và nhóm E chỉ cần gặp một lầ
 
 ### 17. Mượn uy tín mơ hồ
 **Dấu hiệu:** các chuyên gia cho rằng; nhiều nghiên cứu chỉ ra; theo giới quan sát; được nhiều báo chí đưa tin; experts believe; industry reports; featured in [danh sách báo].
-**Sửa:** Có nguồn cụ thể thì nêu nguồn và nguồn nói gì. Không có thì bỏ.
+**Sửa:** Có nguồn cụ thể thì nêu tên và điều nguồn đó nói. Không có nguồn thì bỏ cả câu.
 
 ### 18. Liên hệ mơ hồ
 **Dấu hiệu:** gắn liền với; liên quan đến; có mối liên hệ với; associated with; linked to.
@@ -170,7 +170,7 @@ Sắp từ mạnh đến yếu. Nhóm A và nhóm E chỉ cần gặp một lầ
 
 ### 24. Nói về giới hạn kiến thức rồi đoán
 **Dấu hiệu:** tính đến thời điểm cập nhật dữ liệu; dựa trên thông tin hiện có; thông tin này chưa được công bố rộng rãi; có lẽ ông/bà đã...; it is believed that; as of my last update.
-**Sửa:** Nói rõ là nguồn không có, hoặc bỏ câu. Không đoán.
+**Sửa:** Nói rõ là nguồn không có, hoặc bỏ câu, không đoán thay.
 
 ### 25. Tiêu đề rồi câu nhắc lại tiêu đề
 **Trước:**
@@ -274,7 +274,7 @@ Văn AI tiếng Việt thường là văn "nghĩ bằng tiếng Anh rồi dịch
 
 ### 37. Chêm tiếng Anh trong ngoặc
 **Dấu hiệu:** "hiệu suất (performance)", "trải nghiệm người dùng (user experience)", "chiến lược (strategy)" sau mỗi từ thường.
-**Sửa:** Từ nào ai cũng hiểu thì bỏ phần ngoặc. Giữ tiếng Anh cho thuật ngữ dân trong nghề vẫn nói ("deploy", "PR", "deadline", "KPI", "prompt"); đừng dịch gượng những từ đó sang Hán Việt. Lần đầu nhắc một thuật ngữ lạ với người đọc thì chú thích một lần, không lặp.
+**Sửa:** Từ nào ai cũng hiểu thì bỏ phần ngoặc. Giữ tiếng Anh cho thuật ngữ dân trong nghề vẫn nói ("deploy", "PR", "deadline", "KPI", "prompt"), đừng dịch gượng những từ đó sang Hán Việt. Lần đầu nhắc một thuật ngữ lạ với người đọc thì chú thích một lần, không lặp.
 
 ### 38. Câu đều nhịp, từ nối đầu câu
 **Dấu hiệu:** đoạn mà câu nào cũng 25-35 chữ, cùng có một dấu phẩy ở giữa; đoạn nào cũng mở bằng "Bên cạnh đó", "Ngoài ra", "Đồng thời", "Hơn nữa", "Không những thế", "Qua đó", "Từ đó"; đoạn nào cũng kết bằng câu "cần / nên".
@@ -308,7 +308,7 @@ Câu ngắn hơn chưa chắc đúng hơn. Kiểm lại sau khi sửa:
 
 ### 41. Tiêu đề đếm số ý, mọi thứ chia đều ba
 **Dấu hiệu:** "3 trụ cột", "4 giải pháp then chốt", "5 lý do"; slide nào cũng đúng 3 gạch đầu dòng; deck nào cũng đủ "3 thách thức, 3 giải pháp, 3 lợi ích".
-**Sửa:** Gọi tên các ý thay cho con số. Có mấy ý thật thì viết mấy ý; số gạch đầu dòng giữa các slide lệch nhau cũng được. Nếu giữ con số trong tiêu đề thì số đó phải khớp với nội dung.
+**Sửa:** Gọi tên các ý thay cho con số. Có mấy ý thật thì viết mấy ý, số gạch đầu dòng giữa các slide lệch nhau cũng được. Nếu giữ con số trong tiêu đề thì số đó phải khớp với nội dung.
 
 ### 42. Mạch dựng sẵn và tên khung lộ ra slide
 **Dấu hiệu:** deck nào cũng "Tổng quan → Thách thức → Giải pháp → Lợi ích → Kết luận" dù chủ đề khác nhau; tên khung tư duy hiện trên slide ("Situation - Complication - Resolution", "Hiện trạng → Nguyên nhân → Giải pháp"); chữ của quy trình làm slide còn sót ("Phương án A", "bản an toàn", "template").
@@ -362,7 +362,7 @@ Cách đọc nhóm này: đếm trên cả bài. Một lần thì có thể là 
 
 ### 47. Câu chốt gắn ở cuối đoạn
 **Dấu hiệu:** đoạn nào cũng kết bằng một câu ngắn, cân đối, nghe như châm ngôn: "Máy đã nhanh rồi, giờ cái đắt là một lỗ hổng."; "Cùng một nhân, chỉ khác là AI giỏi lên."; "Kernel càng to thì càng khó chứng minh nó không có lỗi."; "Nhưng hướng đi thì đã rõ, và tiền đã đổ vào."
-**Vấn đề:** Mục 2 cấm câu chốt đứng riêng một dòng, nên câu chốt chui vào cuối đoạn. Một câu thì hay. Mỗi mục một câu thì thành khuôn: sự việc, sự việc, câu đúc kết.
+**Vấn đề:** Mục 2 cấm câu chốt đứng riêng một dòng, nên câu chốt chui vào cuối đoạn. Cả bài có một câu như vậy thì hay, còn đoạn nào cũng có thì thành khuôn: sự việc, sự việc, câu đúc kết.
 **Sửa:** Đọc riêng câu cuối của từng đoạn. Câu nào không thêm sự việc mới thì bỏ, để đoạn kết ở sự việc. Cả bài giữ một hai câu đúc kết ở chỗ đáng nhất.
 
 ### 48. Nêu sự việc xong giải nghĩa hộ, hai chấm dồn dập
@@ -376,13 +376,13 @@ Cách đọc nhóm này: đếm trên cả bài. Một lần thì có thể là 
 
 ### 49. Bài ôm hết mọi thứ
 **Dấu hiệu:** một bài đăng mà có định nghĩa cơ bản, lịch sử, thống kê, lý do kỹ thuật, tin thời sự, hướng dẫn tham gia và lời kêu gọi; bảy tám mục có tiêu đề; mở bằng giải thích từ số không ("Hệ điều hành là lớp phần mềm nằm giữa app và phần cứng") cho người đọc đang được rủ vào viết kernel; quá 800 chữ trên kênh mà người ta lướt.
-**Vấn đề:** Mô hình viết cho đủ mọi kiểu người đọc, nên phần nào cũng có, phần nào cũng vừa đủ. Người thật đăng bài thì có một chuyện muốn kể, bỏ qua thứ người đọc tự tra được, và hay lệch hẳn về phần họ thích. Bài dài không sao. Bài dài mà phần nào cũng tròn trịa như nhau mới lộ.
+**Vấn đề:** Mô hình viết cho đủ mọi kiểu người đọc, nên phần nào cũng có, phần nào cũng vừa đủ. Người thật đăng bài thì có một chuyện muốn kể, bỏ qua thứ người đọc tự tra được, và hay lệch hẳn về phần họ thích. Bài dài thì không sao, dài mà phần nào cũng tròn trịa như nhau mới lộ.
 **Sửa:** Hỏi xem đọc xong bài này người đọc cần làm gì, rồi chỉ giữ phần giúp được việc đó. Phần kiến thức nền đổi thành một câu và một link. Phần còn lại đề xuất tách thành bài khác. Khi sửa bài của người dùng, không lặng lẽ cắt: nói rõ đề xuất bỏ phần nào và để họ quyết. Phép thử: xóa một mục mà bài không hụt thì mục đó nên để cho bài khác.
 
 ### 50. Bài tự kể dàn ý, mục "KẾT", tiêu đề giả hội thoại
 **Dấu hiệu:** "Bài này mình viết để kể..., rủ..., và kể..."; "Cuối bài có phần dành cho..."; "Trong bài này mình sẽ..."; mục cuối tên "KẾT", "Lời kết", "Tóm lại"; tiêu đề mục là câu hỏi dẫn chuyện ("Còn hiện tại thì sao", "Phần mềm thì sao?") hoặc một câu trích dựng lên để bác ("Có người nói X chậm"); tiêu đề rồi câu đầu nối tiếp tiêu đề ("Hệ điều hành cũng là phần mềm" / "Nên nó cũng có test..."); câu kết mời tương tác ("Còn bạn, bài học lớn nhất của bạn là gì? Chia sẻ dưới comment nhé 👇", "Nếu bạn cũng đang ở ngã rẽ như mình, cứ nhắn cho mình nhé", "Ai xem rồi vào chia sẻ cảm nhận với mình nhé", "Ai có con đang tập xe thì cứ kiên nhẫn nhé", "Hãy tiếp tục theo dõi và đồng hành cùng chúng tôi").
 **Vấn đề:** Bài đăng của người thật ít khi có mục lục nói bằng lời. Đây là mục 26 (văn bản tự nói về mình) ở dạng thân mật.
-**Sửa:** Bỏ đoạn kể dàn ý. Bỏ tiêu đề "KẾT", để đoạn cuối tự kết. Bỏ câu mời tương tác; cần người đọc làm một việc thật (ứng tuyển, đăng ký, góp ý về một điểm cụ thể) thì nói đúng việc đó. Bài dưới chừng 600 chữ thì bỏ hết tiêu đề mục. Tiêu đề còn giữ thì gọi tên nội dung.
+**Sửa:** Bỏ đoạn kể dàn ý. Bỏ tiêu đề "KẾT", để đoạn cuối tự kết. Bỏ câu mời tương tác. Cần người đọc làm một việc thật (ứng tuyển, đăng ký, góp ý về một điểm cụ thể) thì nói đúng việc đó. Bài dưới chừng 600 chữ thì bỏ hết tiêu đề mục. Tiêu đề còn giữ thì gọi tên nội dung.
 
 ### 51. Đoạn ngắn đều nhau
 **Dấu hiệu:** cả bài toàn đoạn hai ba câu, không đoạn nào quá bốn câu (bài mẫu: 38 trên 40 đoạn); câu nào cũng trọn vẹn, đủ chủ vị, không câu nào bỏ lửng hay chêm ngang.
@@ -397,17 +397,17 @@ Cách đọc nhóm này: đếm trên cả bài. Một lần thì có thể là 
 ### 53. Xưng "mình" mà không có chuyện của mình
 **Dấu hiệu:** bài chia sẻ cá nhân, xưng "mình", "tôi", nhưng mọi chi tiết đều là số tổng kết (số dòng code, số test, số commit) và kiến thức tra được; không có một lần hỏng, một đêm, một lỗi cụ thể, một người cụ thể; "mình nghĩ" chỉ gắn với nhận định chung về ngành.
 **Vấn đề:** Bỏ dấu hiệu thì bài mới sạch, chứ chưa có hơi người. Bài như vậy đọc giống bản tóm tắt dự án do người khác viết hộ.
-**Mặt trái:** nhờ viết hộ một bài chia sẻ mà chỉ cho đề bài, mô hình tự bịa chuyện cho có hơi người, chi tiết nào cũng tròn trịa: "sau 5 năm, 3 công ty", "mất 2 tháng xây một tính năng không ai dùng", "tháng thứ tư đau ống đồng, nghỉ gần một tháng", "đặt báo thức 5h15". Người đọc không biết, nhưng người đứng tên thì biết đó không phải chuyện của mình. Máy quét không phân biệt được chuyện thật với chuyện bịa; `scan.py` chỉ liệt kê các chi tiết có con số trong bài xưng "mình", "tôi" để hỏi lại.
+**Mặt trái:** nhờ viết hộ một bài chia sẻ mà chỉ cho đề bài, mô hình tự bịa chuyện cho có hơi người, chi tiết nào cũng tròn trịa: "sau 5 năm, 3 công ty", "mất 2 tháng xây một tính năng không ai dùng", "tháng thứ tư đau ống đồng, nghỉ gần một tháng", "đặt báo thức 5h15". Người đọc không biết, nhưng người đứng tên thì biết đó không phải chuyện của mình. Máy quét không phân biệt được chuyện thật với chuyện bịa, `scan.py` chỉ liệt kê các chi tiết có con số trong bài xưng "mình", "tôi" để hỏi lại.
 **Sửa:** Hỏi người dùng một hai chuyện thật: lần nào kernel không boot, mất bao lâu, vì lỗi gì, lúc đó nghĩ gì. Dùng đúng lời họ kể. Không có thì giữ bài ngắn và trung tính. Không bịa kỷ niệm, và không đưa khung điền chỗ trống có tình tiết dựng sẵn.
 
 ### 54. Câu vụn: dấu chấm chặt một ý thành nhiều câu
-**Dấu hiệu:** hai ba câu ngắn liền nhau cùng nói một ý; câu sau lặp chủ ngữ của câu trước ("Skill giúp văn bản dễ đọc hơn. Skill không cam kết..."); câu chỉ là một cụm bổ sung đứng riêng ("Thường mất chưa tới một phút.", "Codex, Cursor cũng được."); gạch đầu dòng mở bằng một cụm cụt rồi chấm ("Soi lại trước khi gửi. Skill chỉ ra..."); cả bài chừng một phần ba số câu dài không quá mười chữ (`scan.py` báo từ 30%). Đây là gợi ý đọc lại; tin nhắn và đối thoại có nhiều câu ngắn vẫn tự nhiên.
+**Dấu hiệu:** hai ba câu ngắn liền nhau cùng nói một ý; câu sau lặp chủ ngữ của câu trước ("Skill giúp văn bản dễ đọc hơn. Skill không cam kết..."); câu chỉ là một cụm bổ sung đứng riêng ("Thường mất chưa tới một phút.", "Codex, Cursor cũng được."); gạch đầu dòng mở bằng một cụm cụt rồi chấm ("Soi lại trước khi gửi. Skill chỉ ra..."); cả bài chừng một phần ba số câu dài không quá mười chữ (`scan.py` báo từ 30%). Con số này chỉ gợi ý đọc lại, vì tin nhắn và đối thoại nhiều câu ngắn vẫn tự nhiên.
 **Vấn đề:** Đây là mặt trái của lời khuyên "viết câu ngắn". Tiếng Anh chấm câu sau mỗi mệnh đề độc lập, còn tiếng Việt nối các vế bằng dấu phẩy và "nên", "thì", "mà", "còn", "rồi". Chấm dày thì quan hệ giữa các vế biến mất, người đọc phải tự nối lại, câu nghe giật như phụ đề.
 **Trước:**
 > Điểm số chỉ để tham khảo. Điểm cho biết bài có bao nhiêu thói quen viết theo khuôn. Điểm không nói bài do AI viết. Có người vốn viết câu đều nhịp.
 **Sau:**
 > Điểm số chỉ để tham khảo, vì nhìn điểm chỉ biết bài viết theo khuôn nhiều hay ít, chưa biết được bài có do AI viết hay không. Có người vốn viết câu đều nhịp.
-**Sửa:** Gộp các câu cùng ý bằng dấu phẩy và từ nối đúng quan hệ (vì, nên, còn, rồi, thì). Bỏ chủ ngữ lặp. Chỉ chấm khi hết ý. Giữ câu ngắn ở chỗ cần nhấn, và đừng gộp quá tay thành câu năm sáu vế. Chữ trên slide, ghi chú thuyết trình, tin nhắn chat thì câu ngắn là bình thường. *Yếu* khi chỉ gặp một hai chỗ.
+**Sửa:** Gộp các câu cùng ý bằng dấu phẩy và từ nối đúng quan hệ (vì, nên, còn, rồi, thì). Bỏ chủ ngữ lặp, hết ý mới chấm. Giữ câu ngắn ở chỗ cần nhấn, và đừng gộp quá tay thành câu năm sáu vế. Chữ trên slide, ghi chú thuyết trình, tin nhắn chat thì câu ngắn là bình thường. *Yếu* khi chỉ gặp một hai chỗ.
 
 ### 55. Câu gộp quá tay: chuỗi vế nối bằng dấu phẩy
 **Dấu hiệu:** câu dài bốn năm vế nối nhau bằng dấu phẩy, đọc hết hơi mới tới dấu chấm; hai vế không liên quan dán vào nhau ("Bấm đồng ý khi trợ lý xin phép, thường mất chưa tới một phút, sau đó mở cuộc trò chuyện mới"); từ nối dùng để dán chứ không chỉ quan hệ ("trong đó", "đồng thời", "và" nối hai câu vốn độc lập); ý chính nằm trong ngoặc đơn; câu quá chừng 40 chữ mà không phải câu liệt kê.
@@ -416,7 +416,7 @@ Cách đọc nhóm này: đếm trên cả bài. Một lần thì có thể là 
 > Slide và tài liệu nhiều trang có nhóm riêng, trong đó skill bắt tiêu đề chỉ là nhãn, tiêu đề đếm số ý, slide nào cũng đúng ba ý, lời hứa suông và ghi chú thuyết trình viết như công văn, hướng dẫn viết slide nằm ở file riêng.
 **Sau:**
 > Slide và tài liệu nhiều trang có nhóm riêng. Ở nhóm này skill bắt tiêu đề chỉ là nhãn, tiêu đề đếm số ý, slide nào cũng đúng ba ý, lời hứa suông và ghi chú thuyết trình viết như công văn. Hướng dẫn viết slide nằm ở file riêng.
-**Sửa:** Mỗi câu một ý, nhiều nhất hai ba vế có quan hệ rõ. Tìm chỗ đổi ý để chấm. Câu liệt kê thì dài cũng được, nhưng phần dẫn vào danh sách phải ngắn. Đọc thành tiếng: chỗ nào hụt hơi mà chưa hết ý thì câu đang quá dài. `scan.py` chỉ báo câu từ 60 chữ; ngắn hơn phải tự đọc.
+**Sửa:** Mỗi câu một ý, nhiều nhất hai ba vế có quan hệ rõ. Tìm chỗ đổi ý để chấm. Câu liệt kê thì dài cũng được, nhưng phần dẫn vào danh sách phải ngắn. Đọc thành tiếng: chỗ nào hụt hơi mà chưa hết ý thì câu đang quá dài. `scan.py` chỉ báo câu từ 60 chữ, câu ngắn hơn thì phải tự đọc.
 
 ## K. Văn dịch sâu: câu nghĩ bằng tiếng Anh, viết bằng chữ Việt
 
@@ -442,12 +442,12 @@ Nhóm G bắt các cụm dịch dễ thấy. Nhóm này bắt thứ khó thấy 
 
 ### 58. Bị động không nói ai làm, đồ vật làm chủ ngữ
 **Dấu hiệu:** "số liệu được giữ nguyên", "skill được cập nhật", "bài được chấm 55/100", "được thiết kế để"; "Điểm cho biết...", "Bảng dưới đây cho thấy...", "Công cụ này cho phép bạn...", "Tính năng này giúp bạn...", "Kết quả mang lại...".
-**Vấn đề:** Nhóm G mới bắt "được... bởi". Bị động hoặc chủ ngữ chỉ sự vật không tự nó là lỗi. Chỉ đổi khi câu vòng vo, mơ hồ hoặc lặp khuôn; "Máy chạy chậm" và "Số liệu cho thấy doanh thu giảm" đều tự nhiên.
+**Vấn đề:** Nhóm G mới bắt "được... bởi". Bị động hoặc chủ ngữ chỉ sự vật không tự nó là lỗi. Chỉ đổi khi câu vòng vo, mơ hồ hoặc lặp khuôn. "Máy chạy chậm" và "Số liệu cho thấy doanh thu giảm" đều tự nhiên.
 **Trước:**
 > Điểm cho biết bài có bao nhiêu thói quen viết theo khuôn. Số liệu bạn đưa được giữ nguyên. Công cụ này cho phép bạn so hai bản.
 **Sau:**
 > Nhìn điểm thì biết bài viết theo khuôn nhiều hay ít. Số liệu bạn đưa được giữ nguyên. Công cụ này so được hai bản.
-**Sửa:** Khi cần làm rõ người làm, đổi sang chủ động; không ép mọi câu về khung "X thì...". Giữ bị động quen dùng trong văn hành chính, kỹ thuật ("được cấp phép", "bị lỗi") và khi người làm thật sự không quan trọng.
+**Sửa:** Cần làm rõ người làm thì đổi sang chủ động, không ép mọi câu về khung "X thì...". Giữ bị động quen dùng trong văn hành chính, kỹ thuật ("được cấp phép", "bị lỗi") và khi người làm thật sự không quan trọng.
 
 ### 59. "đã", "đang", "sẽ", "có thể" rải theo thì và trợ động từ tiếng Anh
 **Dấu hiệu:** động từ nào cũng kèm "đã", "đang", "sẽ" dù câu đã có mốc thời gian; "có thể" dịch "can/may" ở mọi chỗ ("bạn có thể gõ", "skill có thể nhờ"); "sẽ" trong câu nói chuyện thường xảy ra ("skill sẽ hỏi lại").
@@ -455,7 +455,7 @@ Nhóm G bắt các cụm dịch dễ thấy. Nhóm này bắt thứ khó thấy 
 > Hôm qua đội đã họp và đã quyết định sẽ lùi hạn. Khi bạn gõ lệnh, skill sẽ đọc file và bạn có thể xem kết quả.
 **Sau:**
 > Hôm qua đội họp, quyết định lùi hạn. Gõ lệnh xong thì skill đọc file rồi cho xem kết quả.
-**Sửa:** Chỉ lược "đã", "đang", "sẽ" nếu vẫn rõ việc đã xong, đang diễn ra hay mới dự định. Mốc thời gian chưa đủ để quyết định. "Có thể" chỉ giữ khi thật sự chưa chắc hoặc đang nói về khả năng; còn nghĩa cho phép thì viết "cũng được", "được". Đừng bỏ "đã", "chưa", "sẽ" ở chỗ nó phân biệt việc xong với việc chưa làm.
+**Sửa:** Chỉ lược "đã", "đang", "sẽ" nếu vẫn rõ việc đã xong, đang diễn ra hay mới dự định. Mốc thời gian chưa đủ để quyết định. "Có thể" chỉ giữ khi thật sự chưa chắc hoặc đang nói về khả năng, còn nghĩa cho phép thì viết "cũng được", "được". Đừng bỏ "đã", "chưa", "sẽ" ở chỗ nó phân biệt việc xong với việc chưa làm.
 
 ### 60. Giới từ và từ nối dịch thẳng: "với", "để", "khi", "và", "trong"
 **Dấu hiệu:** "Với X, ..." mở câu (For/With X); "Để X, bạn cần Y" (To X, you need Y); "Bằng cách..."; "Đối với..."; "Thông qua..."; "Dựa trên..."; "khi" cho mọi chữ "when"; "và" nối mọi cặp vế, "và cũng"; "trong" cho mọi chữ "in" ("trong Claude Code", "trong trường hợp này"); "nơi mà", "người mà", "điều mà", "lý do mà".
@@ -480,7 +480,7 @@ Nhóm G bắt các cụm dịch dễ thấy. Nhóm này bắt thứ khó thấy 
 
 ## L. Tin nhắn thân mật: icon và ngữ điệu lạc giọng người gửi
 
-Tin nhắn trả lời bạn bè, đồng nghiệp thân thì người nhận biết rõ giọng người gửi, nên chỉ cần lệch một chút là lộ. Icon và ngữ điệu lấy từ tối đa 30 lượt trò chuyện gần nhất; điều chỉnh tiếng cười và cách đùa theo tình huống. Cách làm nằm ở `references/chat.md`. Chạy `scan.py --chat` để máy quét kiểm thêm phần định dạng.
+Tin nhắn trả lời bạn bè, đồng nghiệp thân thì người nhận biết rõ giọng người gửi, nên chỉ cần lệch một chút là lộ. Icon và ngữ điệu lấy từ tối đa 30 lượt trò chuyện gần nhất, riêng tiếng cười và cách đùa thì đổi theo tình huống. Cách làm nằm ở `references/chat.md`. Chạy `scan.py --chat` để máy quét kiểm thêm phần định dạng.
 
 ### 63. Tin nhắn viết như email
 **Dấu hiệu:** tin trả lời mở bằng "Cảm ơn bạn đã góp ý", "Chào bạn"; câu đủ chủ vị, viết hoa, chấm cuối; có gạch đầu dòng, in đậm; hứa "sẽ cân nhắc trong thời gian tới"; dài gấp mấy lần tin người kia gửi.
@@ -513,6 +513,6 @@ Tin nhắn trả lời bạn bè, đồng nghiệp thân thì người nhận bi
 - Cảm xúc lẫn lộn, chưa ngã ngũ: "Tôi thấy nhìn chung ổn, nhưng có gì đó cứ cấn cấn mà chưa nói rõ được."
 - Tiếng lóng, meme, chuyện riêng của một thời, một nhóm.
 - Câu chêm, ngoặc đơn, tự sửa giữa chừng: "(Định viết 'gần như' nhưng thật ra là chắc chắn.)"
-- Không suy nguồn gốc văn bản từ ngày đăng; văn cũ vẫn có thể sửa nếu người dùng yêu cầu.
+- Không suy nguồn gốc văn bản từ ngày đăng. Văn cũ được nhờ sửa thì vẫn sửa.
 - Giọng vùng miền, từ địa phương, "má", "tui", "hông" có sẵn trong bản gốc. Không chuẩn hóa, cũng không tự rải thêm.
 - Từ Hán Việt là thuật ngữ đúng, hoặc đúng giọng văn bản (công văn, hợp đồng, học thuật).
