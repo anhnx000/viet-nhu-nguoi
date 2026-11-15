@@ -231,5 +231,33 @@
    "max_words": 450,
    "max_bold": 2
   }
+ },
+ {
+  "id": "chat-ba-nguoi-nhan",
+  "che_do": "chat",
+  "tep": "evals/inputs/chat-ba-noi.md",
+  "tin_nhan": "Mình là Minh. Ba đoạn chat của mình với ba chỗ ở file {tep}. Soạn giúp mình ba tin theo giọng mình, cùng một ý, mỗi chỗ một tin: mình sửa xong tài liệu thiết kế rồi, nhờ bên đó xem lại giúp trước 5 giờ chiều nay, có gì sai thì báo mình sửa.",
+  "mong_doi": "Mỗi người nhận một hồ sơ: với Khoa xưng \"a\" gọi \"e\", với chị Hạnh xưng \"em\" và có \"ạ\", với nhóm bạn xưng \"t\" gọi \"bọn m\". Chữ thường, không chấm câu như mẫu. \"=))\" chỉ được có ở tin gửi nhóm bạn.",
+  "kiem": {
+   "must_keep": [
+    [
+     "5h",
+     "17h",
+     "5 giờ"
+    ],
+    [
+     "bọn m",
+     "tụi m"
+    ],
+    "ạ",
+    [
+     "e xem",
+     "e check",
+     "e coi",
+     "e đọc"
+    ]
+   ],
+   "max_words": 200
+  }
  }
 ]
