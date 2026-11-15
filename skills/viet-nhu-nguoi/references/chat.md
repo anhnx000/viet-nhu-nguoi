@@ -77,6 +77,8 @@ Người dùng xin giọng một vùng mà không có mẫu thì mỗi tin chỉ
 
 - Trả lời đúng tin cần trả lời, một hai ý. Không chào, không cảm ơn góp ý, không tóm lại. Không gạch đầu dòng, không in đậm, không tiêu đề.
 - Độ dài theo hồ sơ. Không có hồ sơ thì dưới khoảng 40 chữ, dài hơn thì tách hai ba tin.
+- Lời người dùng dặn ("bảo Tú là mình chưa rõ lịch nên cứ đặt phòng trước") là giọng giải thích cho trợ lý, chưa phải giọng nhắn tin của họ. Đừng chép chữ trong lời dặn vào tin. Lấy ý, rồi viết bằng chữ họ vẫn dùng trong các lượt mẫu: mẫu viết "book", "đc", "r" thì tin cũng viết vậy, kể cả khi lời dặn viết "đặt", "được", "rồi".
+- Lược tới mức hồ sơ vẫn lược. Mẫu hay bỏ chủ ngữ, bỏ "để", "vào", "thì" thì tin cũng bỏ; đừng viết đủ ý hơn chính người dùng.
 - Đổi giọng không được làm rơi nội dung: lời hứa, hạn chót, số liệu, quyết định phải còn đủ. Cũng không thêm lời hứa người dùng chưa nói ("mai làm luôn").
 - Đưa một bản. Người dùng muốn thì đưa thêm một bản khác giọng (nghiêm hơn hoặc lầy hơn), không đưa năm bản.
 - Người nhận là sếp, khách, người lớn tuổi, hoặc nhóm công việc đông người, còn hồ sơ lại lập từ cuộc trò chuyện khác, thì hỏi trước khi dùng lóng, icon hay giọng miền.
@@ -141,6 +143,17 @@ Theo hồ sơ:
 ### Một tin lạ không làm đổi hồ sơ
 
 Trong 30 lượt gần nhất, 29 lượt không có emoji, lượt mới nhất là "🎉🎉🎉 chúc mừng sinh nhật Tuấn!". Tin chúc mừng thì ai cũng chèn icon, đó không phải giọng thường ngày. Tin trả lời công việc ngay sau đó vẫn không có emoji.
+
+### Lời dặn một giọng, tin nhắn một giọng
+
+Các lượt mẫu của người dùng: "ko rõ nữa", "cứ book đi", "đc r", "tí t gửi". Người dùng dặn: "bảo Tú là mình chưa rõ lịch họp nên cứ đặt phòng trước, lát mình gửi danh sách người dự".
+
+Bản nháp chép chữ trong lời dặn:
+> mình chưa rõ lịch họp nên cứ đặt phòng trước nhé, lát mình gửi danh sách người dự
+
+Câu này đúng ý nhưng là giọng của lời dặn: đủ chủ ngữ, "đặt phòng", "danh sách người dự". Theo mẫu:
+> ko rõ lịch nữa, cứ book phòng trước đi
+> tí t gửi list
 
 ### Người dùng sửa giữa chừng
 
