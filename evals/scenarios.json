@@ -439,5 +439,111 @@
    "max_placeholders": 0,
    "max_words": 300
   }
+ },
+ {
+  "id": "chat-giong-mien-tay",
+  "che_do": "chat",
+  "tep": "evals/inputs/chat-mien-tay.md",
+  "tin_nhan": "Mình là Thảo. Rep giúp mình tin của chị Sáu ở cuối đoạn chat này, theo giọng mình: {tep}\nÝ là: Mai giao được, khoảng 3 giờ chiều. Xoài cát đợt này giá 65 nghìn một ký, 5 ký là 325 nghìn, chưa tính phí giao hàng 20 nghìn.",
+  "mong_doi": "Giọng miền Tây của Thảo (dạ, nha, chị), không chép \"nghen\" của chị Sáu, không thêm từ địa phương Thảo chưa dùng. Lời dặn xưng \"tôi\" và viết trang trọng, tin trả lời không chép giọng đó.",
+  "kiem": {
+   "must_keep": [
+    [
+     "3 giờ",
+     "3h"
+    ],
+    "65",
+    "325",
+    "20"
+   ],
+   "must_not": [
+    "Tôi "
+   ],
+   "max_words": 140
+  }
+ },
+ {
+  "id": "chat-giong-nghe-an",
+  "che_do": "chat",
+  "tep": "evals/inputs/chat-nghe-an.md",
+  "tin_nhan": "Mình là Hùng. Rep giúp mình tin của Tuấn ở cuối đoạn chat này, theo giọng mình: {tep}\nÝ là: Tôi về quê ngày 27 tháng Chạp. Mùng 4 tham gia họp lớp được, nhưng mùng 5 phải quay lại Hà Nội nên không ở lại qua đêm.",
+  "mong_doi": "Xưng \"tau\" như Hùng vẫn nhắn trong nhóm, từ Nghệ dùng thưa như mẫu, không trộn giọng vùng khác. Lời dặn xưng \"tôi\" và viết trang trọng, tin trả lời không chép giọng đó.",
+  "kiem": {
+   "must_keep": [
+    "27",
+    "mùng 4",
+    "mùng 5",
+    "Hà Nội"
+   ],
+   "must_not": [
+    "Tôi "
+   ],
+   "max_words": 140
+  }
+ },
+ {
+  "id": "chat-giong-teencode",
+  "che_do": "chat",
+  "tep": "evals/inputs/chat-teencode.md",
+  "tin_nhan": "Mình là Vy. Rep giúp mình tin của Khánh ở cuối đoạn chat này, theo giọng mình: {tep}\nÝ là: Tôi chưa hoàn thành, còn 3 slide phần kết quả khảo sát. 9 giờ tối tôi sẽ gửi. Nhờ Khánh gửi lại template vì bản tôi đang dùng bị lỗi font.",
+  "mong_doi": "Chữ thường, viết tắt đúng kiểu Vy (t, m, ko), tin ngắn tách dòng; không dồn teencode Vy chưa dùng. Lời dặn xưng \"tôi\" và viết trang trọng, tin trả lời không chép giọng đó.",
+  "kiem": {
+   "must_keep": [
+    "3 slide",
+    [
+     "9h",
+     "9 giờ"
+    ],
+    "template",
+    "font"
+   ],
+   "must_not": [
+    "Tôi "
+   ],
+   "max_words": 140
+  }
+ },
+ {
+  "id": "chat-giong-co-giao",
+  "che_do": "chat",
+  "tep": "evals/inputs/chat-co-giao.md",
+  "tin_nhan": "Mình là cô Lan. Rep giúp mình tin của mẹ bé Nam ở cuối đoạn chat này, theo giọng mình: {tep}\nÝ là: Xe khởi hành lúc 7 giờ 15 tại cổng trường, học sinh cần có mặt trước 7 giờ. Nhà trường chuẩn bị cơm trưa. Học sinh mang theo nước uống và mũ. Dự kiến về tới trường khoảng 16 giờ 30.",
+  "mong_doi": "Câu đầy đủ, viết hoa, chấm câu cẩn thận như cô Lan; gọi \"chị\", \"con\"; không viết tắt, không icon. Lời dặn xưng \"tôi\" và viết trang trọng, tin trả lời không chép giọng đó.",
+  "kiem": {
+   "must_keep": [
+    [
+     "7 giờ 15",
+     "7h15"
+    ],
+    [
+     "16 giờ 30",
+     "16h30"
+    ],
+    "cơm trưa",
+    "mũ"
+   ],
+   "must_not": [
+    "Tôi "
+   ],
+   "max_words": 140
+  }
+ },
+ {
+  "id": "chat-giong-van-phong",
+  "che_do": "chat",
+  "tep": "evals/inputs/chat-van-phong.md",
+  "tin_nhan": "Mình là Quân. Rep giúp mình tin của Linh ở cuối đoạn chat này, theo giọng mình: {tep}\nÝ là: Tôi đã xem bản thiết kế, nhìn chung ổn. Có 2 góp ý: nút bỏ qua ở bước 2 quá nhỏ, và màn hình cuối thiếu trạng thái lỗi mạng. Nếu sửa xong trong ngày mai thì thứ Năm chốt được.",
+  "mong_doi": "Chữ thường, xưng anh gọi em, chêm tiếng Anh chuyên môn ở mức Quân vẫn dùng; đủ hai góp ý và mốc thứ Năm. Lời dặn xưng \"tôi\" và viết trang trọng, tin trả lời không chép giọng đó.",
+  "kiem": {
+   "must_keep": [
+    "bước 2",
+    "lỗi mạng",
+    "thứ Năm"
+   ],
+   "must_not": [
+    "Tôi "
+   ],
+   "max_words": 140
+  }
  }
 ]
