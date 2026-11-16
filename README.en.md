@@ -115,25 +115,66 @@ The scores come from the scanner bundled with the skill, on a 0-100 scale. The m
 
 ![Slide titles. AI deck, 48/100: seven titles that are all labels. Skill deck, 0/100: each title states a conclusion.](assets/vi-du-slide.en.png)
 
-Every title states a conclusion, so a boss skimming four titles knows what to approve. The skill edits the `.pptx` file directly.
+<details>
+<summary>Every title states a conclusion, so a boss skimming four titles knows what to approve.</summary>
+
+The AI deck (48/100) has seven titles, all of them labels: "Digital transformation: a journey of value creation", "Overview", "Challenges", "3 pillars of the solution", "Benefits", "Conclusion", "Thank you".
+
+The skill deck (0/100) has four titles, and reading them in a row gives the whole proposal:
+
+1. Proposal: hire one more QA for Q1 2027
+2. Both Q3 releases slipped because we lacked testers
+3. One QA costs less than the penalty for each delay
+4. Please approve by 30/11 so we can hire in time
+
+The skill edits the `.pptx` file directly: titles, bullets and speaker notes. Both files are in [`examples/`](examples).
+
+</details>
 
 ### Emails and reports
 
 ![An AI-written email scores 84/100. After the skill, 0/100. With details you supply, a third and more specific version, still 0/100.](assets/vi-du-email.en.png)
 
-Clichés go, the meaning stays. The original has no numbers, so the skill adds none.
+<details>
+<summary>Clichés go and the meaning stays, from 84 points down to 0.</summary>
+
+*AI draft, roughly: "In today's context, applying AI is not only a trend but also a key factor that elevates business performance. This is proven by many studies showing productivity can increase significantly. In addition, our team proceeded to carry out the deployment of a new system for the purpose of delivering a seamless experience. It makes project management easier, faster and more efficient. Hope this helps!"*
+
+*After the skill: "Our team has moved to the new project management system, so tracking projects is now faster and less work, and customers find it easier to work with us." With details: "Since March we track projects in the new system. Customers check progress themselves instead of messaging us, and the team saves about half a day of reporting each week."*
+
+The scanner flags 17 phrases in the AI draft, the parts marked red. The original has no numbers, so the version after the skill is short and adds none. Supply details and you get the third version. The texts are in [`examples/truoc.md`](examples/truoc.md), [`sau.md`](examples/sau.md) and [`sau-co-chi-tiet.md`](examples/sau-co-chi-tiet.md).
+
+</details>
 
 ### A long post
 
 ![A long post. Original, 59/100, 1,740 words. Rewrite, 0/100, 373 words.](assets/vi-du-bai-dang.en.png)
 
-Each sentence looks fine, yet the post still reads as AI because a few sentence shapes repeat from start to finish. The skill counts those shapes and rewrites the post around its one job, inviting people to join the project.
+<details>
+<summary>Each sentence looks fine, yet the post reads as AI because a few sentence shapes repeat from start to finish.</summary>
+
+*The three quoted lines in the image: "To be honest: progress isn't easy." "The hardest part isn't the code, it's choosing what to work on." "I don't need you to be good at kernels. I need you to be patient with logs."*
+
+[The original](examples/bai-dang-truoc.md) has 1,740 words and almost none of the familiar AI vocabulary. The scanner counts ten "not X but Y" sentences, six sentences opening with a label such as "to be honest", and a colon in 19 of 88 sentences, and scores it 59/100. [The rewrite](examples/bai-dang-sau.md) is 373 words, keeps only the invitation to join the project, and adds no facts. The operating-system primer and the statistics are left for other posts.
+
+</details>
 
 ### Scanner output
 
 ![scan.py run on the AI-written email: 84/100, 17 flags in 110 words, listed by group and line.](assets/vi-du-bo-kiem-tra.png)
 
-Every flag comes with its line number. Works on `.md`, `.txt` and `.pptx` files.
+<details>
+<summary>Every flag comes with its line number. Works on .md, .txt and .pptx files.</summary>
+
+The image shows the output of:
+
+```bash
+python3 -I skills/viet-nhu-nguoi/scripts/scan.py examples/truoc.md
+```
+
+Flags are grouped, each with its line number and the matched phrase. The score measures template habits, not the probability that AI wrote the text. One flag on its own means little; several groups at once are worth fixing. Options and the fact checker are described below.
+
+</details>
 
 ## Signs of AI writing
 

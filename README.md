@@ -93,25 +93,70 @@ Nhờ soạn thứ gì đứng tên bạn thì skill tự bật. Gõ `/viet-nhu-
 
 ![Tiêu đề slide. Bộ AI làm, 48/100, bảy tiêu đề đều là nhãn. Bộ làm theo skill, 0/100, mỗi tiêu đề là một câu kết luận.](assets/vi-du-slide.png)
 
-Tiêu đề nào cũng là một câu kết luận, sếp lướt bốn tiêu đề là biết phải duyệt gì. Skill sửa thẳng trong file `.pptx`.
+<details>
+<summary>Tiêu đề nào cũng là một câu kết luận, sếp lướt bốn tiêu đề là biết phải duyệt gì.</summary>
+
+Bộ AI làm (48/100) có bảy tiêu đề, cái nào cũng chỉ là nhãn: "Chuyển đổi số: Hành trình kiến tạo giá trị", "Tổng quan", "Thách thức", "3 trụ cột giải pháp", "Lợi ích", "Kết luận", "Cảm ơn".
+
+Bộ làm theo skill (0/100) còn bốn tiêu đề, đọc liền là ra cả đề xuất:
+
+1. Đề xuất thuê thêm 1 QA cho quý 1/2027
+2. Hai bản phát hành quý 3 đều trễ vì thiếu người test
+3. Thuê 1 QA tốn ít hơn tiền phạt mỗi lần trễ hạn
+4. Cần anh duyệt trước 30/11 để kịp tuyển người
+
+Skill sửa thẳng trong file `.pptx`, cả tiêu đề, gạch đầu dòng lẫn ghi chú thuyết trình. Hai file ở [`slide-truoc.pptx`](examples/slide-truoc.pptx) và [`slide-sau.pptx`](examples/slide-sau.pptx).
+
+</details>
 
 ### Email
 
 ![Email AI viết, 84/100. Qua skill, 0/100. Có thêm chi tiết bạn đưa thì bản thứ ba cụ thể hơn, vẫn 0/100.](assets/vi-du-email.png)
 
-Bỏ câu sáo mà vẫn giữ đúng ý. Bản gốc không có số liệu thì skill cũng không thêm.
+<details>
+<summary>Bỏ câu sáo mà vẫn giữ đúng ý, từ 84 xuống 0 điểm.</summary>
+
+Bản AI viết ([`truoc.md`](examples/truoc.md)) có 110 chữ mà bộ kiểm tra bắt 17 chỗ, là những chỗ tô đỏ trong ảnh. Mở bài bằng "Trong bối cảnh hiện nay", kết bài bằng "Hy vọng những thông tin trên sẽ hữu ích cho bạn!".
+
+Qua skill ([`sau.md`](examples/sau.md)):
+
+> Đội mình đã chuyển sang hệ thống quản lý dự án mới, nên giờ theo dõi dự án nhanh và đỡ vất vả hơn, khách hàng làm việc với đội cũng thuận tiện hơn trước.
+
+Bản gốc không có số liệu nào nên bản này cũng không có. Bạn đưa thêm chi tiết thì được bản thứ ba ([`sau-co-chi-tiet.md`](examples/sau-co-chi-tiet.md)):
+
+> Từ tháng 3, đội mình chuyển việc theo dõi dự án sang hệ thống mới. Giờ khách hàng tự vào xem được tiến độ, không phải nhắn hỏi như trước, và mỗi tuần đội đỡ được khoảng nửa ngày làm báo cáo.
+
+</details>
 
 ### Bài đăng dài
 
 ![Bài đăng dài. Bài gốc, 59/100, 1.740 chữ. Bản viết lại, 0/100, 373 chữ.](assets/vi-du-bai-dang.png)
 
-Từng câu đều ổn mà đọc vẫn ra giọng AI, vì vài kiểu câu lặp từ đầu tới cuối. Skill đếm ra các kiểu đó rồi viết lại, chỉ giữ việc rủ người vào làm cùng.
+<details>
+<summary>Từng câu đều ổn mà đọc vẫn ra giọng AI, vì vài kiểu câu lặp từ đầu tới cuối.</summary>
+
+[Bài gốc](examples/bai-dang-truoc.md) dài 1.740 chữ, gần như không có từ AI quen mặt. Bộ kiểm tra đếm ra mười câu kiểu "không phải X mà là Y", sáu câu mở bằng nhãn như "nói gọn", "nói cho thật", và 19 trên 88 câu có dấu hai chấm, chấm 59/100.
+
+[Bản viết lại](examples/bai-dang-sau.md) còn 373 chữ, chỉ giữ việc rủ người vào làm cùng, không thêm dữ kiện nào. Phần giải thích hệ điều hành là gì và các con số thống kê thì để dành cho bài khác.
+
+</details>
 
 ### Kết quả bộ kiểm tra
 
 ![Chạy scan.py trên email AI viết: 84/100, 17 dấu hiệu trong 110 chữ, liệt kê theo nhóm và theo dòng.](assets/vi-du-bo-kiem-tra.png)
 
-Chỉ ra từng chỗ dính kèm số dòng. Chấm được file `.md`, `.txt` và `.pptx`.
+<details>
+<summary>Chỉ ra từng chỗ dính kèm số dòng, chấm được file .md, .txt và .pptx.</summary>
+
+Ảnh trên là kết quả của lệnh này:
+
+```bash
+python3 -I skills/viet-nhu-nguoi/scripts/scan.py examples/truoc.md
+```
+
+Dấu hiệu xếp theo nhóm, nhóm nào cũng kèm số dòng và cụm bị bắt. Điểm cao nghĩa là văn viết theo khuôn, chưa chắc bài do AI viết. Một dấu hiệu lẻ chưa nói lên gì, nhiều nhóm cùng lúc mới đáng sửa. Tùy chọn của bộ kiểm tra và script so dữ kiện xem ở mục bên dưới.
+
+</details>
 
 ## Dấu hiệu văn AI
 
