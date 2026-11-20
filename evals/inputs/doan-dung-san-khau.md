@@ -1,0 +1,1 @@
+Dùng chung một thư mục build cho nhiều nhánh gần như ổn. Bài này nói về phần không ổn. Phần chậm nhất là cài dependency, mỗi lần mất khoảng 4 phút. Một cách dễ nghĩ tới là xóa cache trước mỗi lần build, nhưng làm vậy còn chậm hơn. Nhóm mình chuyển sang cache theo hash của file lock, thời gian build giảm còn 90 giây. Nhìn chung, cache đúng chỗ mới là chìa khóa.

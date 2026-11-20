@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
 """Chấm phần tự động của bộ đề thử skill.
 
-Dùng: python3 -I evals/check.py THU_MUC_KET_QUA
+Dùng: python3 -I evals/check.py THU_MUC_KET_QUA [--held-out]
 THU_MUC_KET_QUA chứa mỗi đề một file <id>.md, là nguyên văn câu trả lời của trợ lý khi skill đang bật.
 Cách chạy từng đề và phần phải đọc tay nằm ở evals/README.md.
 
 Script chỉ kiểm những thứ đếm được: số câu hỏi có dấu hỏi, số chỗ trống trong ngoặc vuông, dữ kiện còn đủ,
-độ dài, điểm scan.py, tỉ lệ chữ giữ nguyên so với bài gốc, số liệu tự thêm ngoài lời dặn. Giọng văn có tự nhiên không thì vẫn phải đọc.
+việc chính có nằm ở đầu tin không, độ dài, điểm scan.py, tỉ lệ chữ giữ nguyên so với bài gốc, số liệu tự thêm ngoài lời dặn. Giọng văn có tự nhiên không thì vẫn phải đọc.
 Thoát mã 1 nếu có đề trượt hoặc thiếu file.
 """
 import difflib
@@ -25,6 +25,7 @@ QUESTION = re.compile(r"[?？]+")
 PLACEHOLDER = re.compile(r"\[(?![ xX]\])[^\]\n]{2,60}\](?!\()")
 # Số mục trong danh mục: "mục 45", hoặc dãy số trong ngoặc như "(45, 3, 1)"
 REF = re.compile(r"\bmục (\d{1,2}(?:, ?\d{1,2})*)\b|\(((?:mục )?\d{1,2}(?:, ?\d{1,2})*)\)", re.IGNORECASE)
+LEAD_WORDS = 25
 BOLD = re.compile(r"\*\*[^*\n]+\*\*")
 
 
@@ -35,6 +36,13 @@ def overlap(source, reply):
         return 0.0
     blocks = difflib.SequenceMatcher(None, a, b, autojunk=False).get_matching_blocks()
     return sum(m.size for m in blocks) / len(a)
+
+
+def contains(text, term):
+    """Cụm bắt đầu và kết thúc bằng chữ thì phải đứng riêng: "ông" không khớp trong "không"."""
+    if term[:1].isalnum() and term[-1:].isalnum():
+        return re.search(rf"(?<!\w){re.escape(term)}(?!\w)", text) is not None
+    return term in text
 
 
 def check(scenario, reply, root=ROOT):
@@ -69,11 +77,17 @@ def check(scenario, reply, root=ROOT):
         bold = len(BOLD.findall(reply))
         need(bold <= rules["max_bold"], f"{bold} chỗ in đậm, quá {rules['max_bold']}")
     for fact in rules.get("must_keep", []):
-        # một dữ kiện có thể viết theo vài cách ("21h" hay "9h tối"): đưa vào dạng danh sách
+        # một dữ kiện có thể viết theo vài cách ("21h" hay "9h tối"): đưa vào dạng danh sách.
+        # Không phân biệt hoa thường: "Mùng 4" đầu tin vẫn là "mùng 4".
         options = fact if isinstance(fact, list) else [fact]
-        need(any(o in reply for o in options), f"mất dữ kiện \"{options[0]}\"")
+        need(any(o.casefold() in reply.casefold() for o in options), f"mất dữ kiện \"{options[0]}\"")
+    # Việc người nhận cần làm phải nằm ở đầu tin: tìm trong LEAD_WORDS chữ đầu tiên.
+    lead = " ".join(reply.split()[:LEAD_WORDS]).casefold()
+    for fact in rules.get("lead_keep", []):
+        options = fact if isinstance(fact, list) else [fact]
+        need(any(o.casefold() in lead for o in options), f"\"{options[0]}\" không nằm trong {LEAD_WORDS} chữ đầu")
     for bad in rules.get("must_not", []):
-        need(bad not in reply, f"còn \"{bad}\"")
+        need(not contains(reply, bad), f"còn \"{bad}\"")
     if "min_refs" in rules:
         refs = len({n for a, b in REF.findall(reply) for n in re.findall(r"\d+", a or b)})
         need(refs >= rules["min_refs"], f"dẫn {refs} mục trong danh mục, cần từ {rules['min_refs']}")
@@ -99,10 +113,11 @@ def main():
     for stream in (sys.stdin, sys.stdout, sys.stderr):
         if hasattr(stream, "reconfigure"):
             stream.reconfigure(encoding="utf-8")  # Windows mặc định cp1252, in chữ có dấu sẽ lỗi
-    if len(sys.argv) != 2:
+    if len(sys.argv) < 2 or sys.argv[2:] not in ([], ["--held-out"]):
         sys.exit(__doc__)
     out = pathlib.Path(sys.argv[1])
-    scenarios = json.loads((ROOT / "evals/scenarios.json").read_text(encoding="utf-8"))
+    filename = "held-out.json" if "--held-out" in sys.argv[2:] else "scenarios.json"
+    scenarios = json.loads((ROOT / "evals" / filename).read_text(encoding="utf-8"))
     failed = 0
     for sc in scenarios:
         path = out / f"{sc['id']}.md"
@@ -117,7 +132,7 @@ def main():
         else:
             print(f"QUA    {sc['id']}")
     print(f"\n{len(scenarios) - failed}/{len(scenarios)} đề qua phần tự động. "
-          "Phần còn lại đọc tay theo cột \"mong_doi\" trong scenarios.json.")
+          "Phần còn lại đọc tay theo cột \"mong_doi\" trong file đề.")
     sys.exit(1 if failed else 0)
 
 

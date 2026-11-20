@@ -4,16 +4,17 @@ Repo này là một skill viết bằng Markdown, kèm hai script Python chỉ d
 
 ## File chính
 
-- `skills/viet-nhu-nguoi/SKILL.md`: quy tắc. Mỗi lần dùng skill, trợ lý đọc hết file này, nên thêm chữ nào cũng phải đáng. Test chặn file dài quá 6.000 chữ.
+- `skills/viet-nhu-nguoi/SKILL.md`: quy tắc. Mỗi lần dùng skill, trợ lý đọc hết file này, nên thêm chữ nào cũng phải đáng.
 - `skills/viet-nhu-nguoi/references/patterns.md`: danh mục dấu hiệu, đánh số liền từ 1, mỗi mục có ví dụ trước và sau.
 - `skills/viet-nhu-nguoi/scripts/scan.py`, `check_facts.py`: bộ kiểm tra và công cụ so dữ kiện.
-- `tests/`: `test_scan.py` cho bộ kiểm tra, `test_package.py` cho phiên bản, cách đánh số danh mục, độ dài `SKILL.md`.
-- `evals/`: 46 đề thử hành vi của skill (`scenarios.json`), file đầu vào và `check.py` chấm phần đếm được. Sửa `SKILL.md` hay file trong `references/` thì chạy lại các đề liên quan theo `evals/README.md`.
+- `skills/viet-nhu-nguoi/agents/openai.yaml`: tên hiển thị và lời gọi mẫu Codex dùng. Lời gọi mẫu phải trỏ đúng `$viet-nhu-nguoi`.
+- `tests/`: `test_scan.py` cho bộ kiểm tra, `test_package.py` kiểm phiên bản, cách đánh số danh mục và điểm ví dụ trong README.
+- `evals/`: 63 đề thử hành vi của skill (`scenarios.json`), file đầu vào và `check.py` chấm phần đếm được. Sửa `SKILL.md` hay file trong `references/` thì chạy lại các đề liên quan theo `evals/README.md`. Thêm repo vào bảng top-20 trong `references/sources.md` thì thêm chỗ áp dụng vào `LESSONS` trong `tests/test_package.py`.
 - `README.md` (tiếng Việt, bản chính), `README.en.md`, `CHANGELOG.md`, `RELEASE_NOTES.md` (tiếng Anh).
 
 ## Khi sửa
 
-- Dấu hiệu mới: trước hết xem có gộp được vào mục đã có không. README và ảnh không ghi tổng số dấu hiệu, vì danh mục còn thêm dần.
+- Dấu hiệu mới: trước hết xem có gộp được vào mục đã có không. README và ảnh không ghi tổng số dấu hiệu, vì danh mục còn thêm dần. Đổi số mục thì sửa mọi chỗ dẫn số mục trong `SKILL.md`, `references/` và `evals/`. Mục cũ trong `CHANGELOG.md` giữ số mục theo bản lúc đó.
 - Kiểm tra mới trong `scan.py` phải có test cả hai chiều: bắt được văn có dấu hiệu, không báo nhầm văn người viết.
 - Thêm hay chỉnh ngưỡng trong `scan.py` thì đo trên hai phía rồi ghi số vào `CHANGELOG.md`: bài mô hình viết theo đề bài thường gặp mà không bật skill, và bài người viết đăng trước 11/2022. Đề bài dùng để chỉnh thì không dùng lại để báo kết quả, viết đề mới.
 - Điểm của các file trong `examples/` mà đổi thì sửa mọi chỗ dẫn lại: README hai thứ tiếng, ảnh trong `assets/` (vẽ lại bằng `python3 assets/make_images.py`), test.

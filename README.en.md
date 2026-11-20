@@ -105,7 +105,9 @@ Talk to it the way you would brief a colleague. There is no syntax to remember.
 
 For closer results, say who will read it and who you are to them: "to my department head, I'm em" produces a different email from "to a customer, we are chúng tôi". Paste a passage you wrote yourself and the skill picks up your sentence rhythm and favourite words. Give it the real numbers, names and dates, and it asks about whatever is missing. When a phrase feels off, say "mình không nói thế" (*I don't talk like that*) and it adjusts for the rest of the conversation.
 
-Type `/viet-nhu-nguoi` to turn it on for the whole conversation, short replies included. It turns itself on when you ask for an email, message or post that goes out under your name. Text you wrote yourself only gets a light edit. For an important deck, a second assistant that knows nothing about the context reads it and scores it on seven criteria, and you choose which comments to accept.
+To reuse a voice across sessions, ask the assistant to save a Markdown note with the audience and an approved example. Give it the note and the new facts when you draft the next issue.
+
+Type `/viet-nhu-nguoi` to turn it on for the whole conversation, short replies included. It turns itself on when you ask for an email, message or post that goes out under your name. Text you wrote yourself only gets a light edit. Messages, comments and angry reviews keep their lowercase, abbreviations and bluntness; the skill only strips leftover chatbot lines. For an important deck, a second assistant that knows nothing about the context reads it and scores it on seven criteria, and you choose which comments to accept.
 
 ## Before and after
 

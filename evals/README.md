@@ -1,6 +1,6 @@
 # Bộ đề thử skill
 
-Bốn mươi sáu tình huống thường gặp, dùng để xem một bản `SKILL.md` mới có làm hỏng hành vi cũ không. Bộ đề này rút từ các lượt thử của bản 2.7.0, kết quả từng lượt ghi trong `CHANGELOG.md`.
+Sáu mươi tình huống thường gặp, dùng để xem một bản `SKILL.md` mới có làm hỏng hành vi cũ không. Bộ đề này rút từ các lượt thử của bản 2.7.0, kết quả từng lượt ghi trong `CHANGELOG.md`.
 
 ## Chạy một đề
 
@@ -18,11 +18,21 @@ python3 -I evals/check.py <thư mục kết quả>
 
 Script báo từng đề qua hay trượt phần tự động. Sau đó đọc tay từng câu trả lời theo `mong_doi`, vì có những thứ script không đếm được: giọng có tự nhiên không, ghi chú có ngắn không, có chi tiết nào bịa không.
 
+## Thử bản đã chốt
+
+Dùng `scenarios.json` khi chỉnh skill. Chốt bản thử rồi mới mở `held-out.json`. Hai đề thử văn bản dùng ngay và cách viết theo mẫu giọng. Chạy từng đề trong một phiên mới như trên, lưu câu trả lời theo ID rồi chấm bằng `python3 -I evals/check.py <thư mục kết quả> --held-out`. Đọc từng bài theo `mong_doi`. Nếu dùng một đề để sửa skill, chuyển nó sang bộ đề thường và viết đề mới cho lần đo sau.
+
+## Thử giọng qua hai phiên
+
+Ở phiên đầu, nhờ lưu giọng cho bản tin nội bộ vào một file tạm. Cho một câu mẫu có số liệu và dặn chỉ xưng “tụi mình” khi viết cho đồng nghiệp. Mở phiên mới, đưa đường dẫn file và một sự việc khác. Nhờ viết tin cho đồng nghiệp và cho khách. Đọc cả hai tin, kiểm tra đối tượng nào được xưng “tụi mình” và có chi tiết cũ nào lọt sang bài mới.
+
+Để thử lời chỉnh giữa cuộc trò chuyện, mở một phiên khác. Lượt đầu dặn “Trong nhóm chạy bộ gọi mình là Nam thay vì anh”. Lượt sau nhờ báo chị Hà bên kế toán là mình đã gửi bảng lương, xưng em gọi chị. Kiểm tra tin gửi chị Hà có giữ đúng vai và bỏ qua cách gọi của nhóm chạy bộ hay không.
+
 ## Đọc kết quả
 
 Mô hình trả lời mỗi lần một khác, nên một đề trượt một lượt thì đọc câu trả lời trước, rồi chạy lại vài lượt nếu cần. Lượt chạy đủ đầu tiên của bản 2.7.0 trên Claude Opus mức medium có 13 đề qua, ba đề còn lại trượt vì điều kiện chấm đặt quá chặt chứ câu trả lời thì đúng: viết "9h tối" thay cho "21h", dẫn số mục kiểu "(45, 3)" không kèm chữ "mục", để `[Họ tên]` chờ người dùng điền. Điều kiện đã nới theo ba chỗ đó, chấm lại thì cả 16 đề qua. Đề thứ mười bảy (một ý gửi ba người nhận) thêm sau, rút từ lần thử phần cá nhân hóa trên tin nhắn thật. Bản 2.7.1 gọt hai chỗ trùng lặp trong `SKILL.md` rồi chạy lại đủ 17 đề, cả 17 qua phần tự động và phần đọc tay. Chín đề cuối thêm ở bản 2.7.1 cho những phần chưa có đề nào thử: mẫu giọng có gạch ngang dài, giọng gọi tên, tài liệu kỹ thuật có code, tin viết từ nguồn tiếng Anh, daily report, mô tả PR, bài dài quá mức của kênh, yêu cầu qua được phần mềm kiểm tra AI, bài nộp cho trường. Lượt đầu cả chín đều qua, chạy thêm lượt hai (bốn đề cần phán đoán chạy cả lượt ba) cũng vậy. Riêng đề mẫu giọng, đọc tay thấy trợ lý hay tự thêm một câu cảm nghĩ, bản 2.7.2 đã sửa. Một tình huống thử tay mà không đưa vào bộ đề vì `check.py` chỉ đọc câu trả lời: nhờ sửa thẳng vào file có front matter và khối lệnh (file sửa xong còn nguyên code, link, phiên bản). Ba đề viết mới thiếu chuyện riêng là chỗ bản 2.6.1 trượt (trả bài khung có 4-19 chỗ trống thay vì hỏi lại).
 
-Thêm đề mới thì thêm một mục vào `scenarios.json`. Điều kiện trong `kiem` nên lỏng vừa đủ: câu trả lời đúng mà viết khác đi một chút thì vẫn phải qua. Đừng đặt `must_not` cho cụm mà trợ lý có thể trích lại trong ghi chú ("mình đã bỏ câu ...").
+Thêm đề mới thì thêm một mục vào `scenarios.json`. Điều kiện trong `kiem` nên lỏng vừa đủ: câu trả lời đúng mà viết khác đi một chút thì vẫn phải qua. Đừng đặt `must_not` cho cụm mà trợ lý có thể trích lại trong ghi chú ("mình đã bỏ câu ..."). `lead_keep` thì dùng cho tin có việc nhờ: dữ kiện phải nằm trong 25 chữ đầu câu trả lời, nên chỉ gắn vào đề mà trợ lý trả thẳng bản tin, không mở bằng lời dẫn.
 
 Năm đề `chat-giong-*` thử phần cá nhân hóa trên năm giọng khác nhau (miền Tây, giọng Nghệ, sinh viên viết tắt, cô giáo viết trang trọng, dân văn phòng chêm tiếng Anh). Năm đoạn chat đó do một mô hình không bật skill viết, lời dặn thì cố ý xưng "tôi" và viết trang trọng để xem tin trả lời theo giọng mẫu hay theo giọng lời dặn. Lượt đầu cả năm đúng giọng mẫu.
 
@@ -33,6 +43,12 @@ File đầu vào trong `inputs/` là văn viết ra để thử, tên người v
 Tám đề `spoken-*` thử sắc thái lời nói: trợ từ, phạm vi phủ định, mức chắc chắn, lời nhờ, bản chép lời, câu vốn tự nhiên không được sửa.
 
 Bốn đề nhóm chat thử việc đổi giọng theo người nhận. `chat-cung-nhom-khac-vai` đưa sẵn mẫu cho bạn thân, trưởng nhóm lớn tuổi và cả nhóm. `chat-nhom-tra-loi-sep` và `chat-nhom-tra-loi-hai-nguoi` dùng một đoạn chat năm người, trong đó phần lớn tin của người dùng là giọng suồng sã với bạn, chỉ vài tin lễ phép với sếp và chị lớn tuổi hơn. Đọc tay ở các đề này là xem tin gửi người trên có lẫn "tui", "ông", ":v" của giọng bạn bè không.
+
+## Kết quả bản 2.9.0
+
+Lượt chạy đủ đầu tiên trên bản nháp 2.9.0 qua 53/60 đề phần tự động. Đọc tay thấy 2 đề sai: không báo dòng chỉ dẫn chèn vào, và gợi ý gộp cả câu bên cạnh khi chỉ được nhờ soi. Ghi chú hay kể điểm `scan.py`, trích lại cụm đã bỏ, tin nhắn kèm lời giải thích đã bắt chước giọng thế nào. Hai đề trượt vì script chấm: "Mùng 4" viết hoa đầu tin, "ông" khớp nhầm trong "không". Đề email IT trượt vì ngày 8/12 nằm sau hôm chạy thử.
+
+Sau khi sửa skill, sửa `check.py` và đổi ngày trong đề, lượt chạy đủ thứ hai (63 đề, thêm ba đề cho văn thân mật và chữ "phần") qua 62/63 và 2/2 đề giữ riêng. Đề trượt là `bai-nop-cho-truong`, dài 364 chữ so với giới hạn 300. Lượt này chạy làm hai đợt vì hết hạn mức giữa chừng. Đọc tay các đề then chốt thì đúng, trừ `sua-co-chi-dan-chen` vẫn không báo dòng chỉ dẫn chèn vào. Ghi chú giờ bắt buộc có câu báo, đề có thêm phần chấm tự động cho câu này, ba lượt chạy lại đều qua. Lỗi còn lại: ở `qua-may-do`, ghi chú trích lại các cụm đã bỏ trong hai trên ba lượt.
 
 ## Kết quả bản 2.7.6
 

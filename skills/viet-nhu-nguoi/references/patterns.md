@@ -4,6 +4,8 @@ Sắp từ mạnh đến yếu. Nhóm A và nhóm E chỉ cần gặp một lầ
 
 ## A. Dàn dựng thay vì nói thẳng
 
+Câu báo hiệu "điều này quan trọng" mà không thêm sự việc nào. Đây là nhóm mạnh nhất và hay gặp nhất trong văn mô hình viết bây giờ, gặp một lần là sửa. Khuôn này có ở mọi thứ tiếng, nên dạng tiếng Việt tương đương cũng tính.
+
 ### 1. Đối lập giả: "không phải X mà là Y"
 **Dấu hiệu:** không chỉ... mà còn; không phải X, mà là Y; X chứ không phải Y; không đơn thuần là; "câu hỏi không còn là X mà là Y"; "giá trị không nằm ở X, mà nằm ở Y"; "Không phải vì X." mở câu rồi mới nói lý do thật; tách thành hai câu ("Điều này không có nghĩa là X. Nó có nghĩa là Y."; "Đây không chỉ là một con số. Đây là sự công nhận."; "PM không phải là người có câu trả lời đúng. PM là người đặt câu hỏi đúng."); "X là A, không phải B" ("Kỹ sư là đồng đội, không phải người nhận việc"); "Đừng A, hãy B" ("Đừng yêu giải pháp, hãy yêu vấn đề"); "Không có A, chỉ có B"; hai lần phủ định dọn đường cho vế chốt ("Không ồn ào, không chạy theo trend, chỉ kể một câu chuyện gia đình"); đuôi phủ định cụt ("..., không cần đoán").
 **Vấn đề:** Vế phủ định bác bỏ điều không ai nói, để vế sau nghe kêu hơn. Cách sửa là nói thẳng vế sau. Chỉ giữ mẫu này khi người đọc đúng là đang nghĩ như vế đầu, và cả bài chỉ dùng một lần (xem mục 46).
@@ -12,8 +14,20 @@ Sắp từ mạnh đến yếu. Nhóm A và nhóm E chỉ cần gặp một lầ
 **Sau:**
 > Bản cập nhật này đổi cách đội duyệt code: review giờ chạy song song thay vì tuần tự.
 
+**Trước (tách hai câu):**
+> Điều này không có nghĩa là lựa chọn nào cũng như nhau. Nó có nghĩa là không có hệ thống bên ngoài nào xác nhận lựa chọn nào là đúng.
+
+**Sau:**
+> Các lựa chọn có hơn có kém, có điều không ai đứng ngoài chỉ ra được cái nào đúng.
+
+**Trước (đuôi phủ định cụt):**
+> Danh sách lấy từ mục đang chọn, không cần đoán.
+
+**Sau:**
+> Danh sách lấy từ mục đang chọn nên người dùng không phải đoán.
+
 ### 2. Câu chốt một dòng, câu cụt kịch tính
-**Dấu hiệu:** đoạn một câu nhắc lại đoạn trước; "Đó mới là điều quan trọng."; "Điều đó nói lên tất cả."; "Hãy suy ngẫm điều đó."; chuỗi câu cụt liệt kê thông số mở bài ("6 triệu tham số. Chạy trên CPU. Tự train được."); chuỗi câu cụt ("Không phô trương. Không màu mè. Chỉ hiệu quả."); câu tổng kết sau một ví dụ ("Điều này cho thấy tầm quan trọng của...", "Bài học ở đây rất rõ:"); một chữ VIẾT HOA để nhấn, hoặc chấm sau từng chữ ("từng. ngày. một.").
+**Dấu hiệu:** đoạn một câu nhắc lại đoạn trước; "Đó mới là điều quan trọng."; "Điều đó nói lên tất cả."; "Hãy suy ngẫm điều đó."; chuỗi câu cụt liệt kê thông số mở bài ("6 triệu tham số. Chạy trên CPU. Tự train được."); chuỗi câu cụt ("Không phô trương. Không màu mè. Chỉ hiệu quả."); câu tổng kết sau một ví dụ ("Điều này cho thấy tầm quan trọng của...", "Bài học ở đây rất rõ:"); một chữ VIẾT HOA để nhấn, hoặc chấm sau từng chữ ("từng. ngày. một."); câu "Nhìn chung", "Rốt cuộc", "Tóm lại" cuối đoạn nhắc lại nhận định đoạn đó đã nêu; cùng một câu chốt lặp sau nhiều mục.
 **Sửa:** Bỏ câu chốt nhắc lại, kể cả câu giải nghĩa ví dụ người đọc vừa thấy. Câu nào nói thêm được hệ quả mà ví dụ chưa cho thấy thì giữ. Gộp chuỗi câu cụt thành một câu có ý cụ thể. Câu ngắn mà có thêm sự việc mới thì giữ. Câu chốt gắn vào cuối đoạn cũng tính (xem mục 47).
 **Trước:**
 > Cache giảm việc lặp lại.
@@ -22,25 +36,59 @@ Sắp từ mạnh đến yếu. Nhóm A và nhóm E chỉ cần gặp một lầ
 **Sau:**
 > Cache giảm việc lặp lại.
 
+**Trước (chuỗi câu cụt):**
+> Rồi AlphaEvolve xuất hiện. Không thiên vị đối xứng. Không định kiến thẩm mỹ. Không hoài niệm gu của con người. Luật cũ không còn nữa.
+
+**Sau:**
+> AlphaEvolve không ưa đối xứng, cũng không chuộng kiểu thiết kế trông như người làm, nên luật cũ hết đúng.
+
 ### 3. Câu nghe sâu sắc mà rỗng
-**Dấu hiệu:** câu hỏi thật sự là; xét cho cùng; suy cho cùng; cốt lõi của vấn đề; điều thực sự quan trọng; X là ngôn ngữ của Y; at its core; the real question is; the heart of the matter. Châm ngôn truyền cảm hứng gắn vào bài nào cũng được: "tương lai thuộc về những người..."; "đây mới chỉ là khởi đầu"; "không bao giờ là quá muộn"; "hành trình phía trước còn dài"; "mọi mục tiêu lớn đều bắt đầu từ những bước nhỏ"; "viết rõ ràng là siêu năng lực"; "hãy bắt đầu ngay hôm nay".
+**Dấu hiệu:** câu hỏi thật sự là; xét cho cùng; suy cho cùng; cốt lõi của vấn đề; điều thực sự quan trọng; X là ngôn ngữ của Y; X là đồng tiền của Y; X là kiến trúc của Y; X trở thành cái bẫy; X không phải công cụ mà là tấm gương; at its core; the real question is; the heart of the matter. Châm ngôn truyền cảm hứng gắn vào bài nào cũng được: "tương lai thuộc về những người..."; "đây mới chỉ là khởi đầu"; "không bao giờ là quá muộn"; "hành trình phía trước còn dài"; "mọi mục tiêu lớn đều bắt đầu từ những bước nhỏ"; "viết rõ ràng là siêu năng lực"; "hãy bắt đầu ngay hôm nay".
 **Sửa:** Thay câu châm ngôn bằng nhận định cụ thể. Phép thử: chép câu đó sang một bài về chủ đề khác mà vẫn đúng thì câu đó rỗng, bỏ đi.
 **Trước:**
 > Suy cho cùng, sự tin tưởng là ngôn ngữ chung của mọi đội nhóm.
 **Sau:**
 > Đội nào tin nhau thì ít phải họp để kiểm tra tiến độ.
 
+**Trước (châm ngôn):**
+> Đối xứng là ngôn ngữ của niềm tin. Hiệu quả trở thành cái bẫy khi đội ngũ quên đi yếu tố con người.
+
+**Sau:**
+> Bố cục đối xứng thường khiến người dùng thấy dễ đoán hơn. Đội tối ưu quy trình quá tay thì dễ bỏ sót cách người ta dùng thật.
+
 ### 4. Câu dẫn trước khi vào ý
-**Dấu hiệu:** Hãy cùng tìm hiểu; Dưới đây là những điều bạn cần biết; Chúng ta hãy cùng khám phá; Nói thẳng ra thì; Thành thật mà nói?; Ít ai biết rằng; khen trước rồi mới nói ("Điều điên rồ nhất là:", "Đây là điểm mình thấy ấn tượng nhất", "Kết quả ấn tượng:", "tin mình đi", "đây là toàn bộ... từ A-Z"); Không ai nói cho bạn biết điều này, nhưng; Let's dive in; Here's the thing; Honestly?; Real talk.
-**Sửa:** Bỏ phần dẫn, vào thẳng ý. Đừng thay bằng cụm cùng kiểu ("Nói cho thật:", "Nói gọn thì"), xem mục 45.
+**Dấu hiệu:** Hãy cùng tìm hiểu; Dưới đây là những điều bạn cần biết; Chúng ta hãy cùng khám phá; Nói thẳng ra thì; Thành thật mà nói?; Ít ai biết rằng; khen trước rồi mới nói ("Điều điên rồ nhất là:", "Đây là điểm mình thấy ấn tượng nhất", "Kết quả ấn tượng:", "tin mình đi", "đây là toàn bộ... từ A-Z"); Không ai nói cho bạn biết điều này, nhưng; dạng đời thường ("có một chỗ mình dính rồi, để ý nhé"); chữ "phần" đứng thay cho thứ có tên: "Phần khó là...", "Điểm mới là...", "Cái hay nằm ở chỗ...", "phần đáng nói", "phần đáng chia sẻ"; Let's dive in; Here's the thing; Honestly?; Real talk; The hard part is.
+**Sửa:** Bỏ phần dẫn, vào thẳng ý. Bỏ cả động tác dẫn, không chỉ đổi giọng của nó. Đừng thay bằng cụm cùng kiểu ("Nói cho thật:", "Nói gọn thì"), xem mục 45. "Thật ra", "nói thật" nằm giữa một câu đời thường thì bình thường, dấu hiệu là khi nó đứng riêng trước một ý thường. "Phần khó là X" dựng sân khấu cho X, còn "phần đáng chia sẻ" trỏ tới một thứ bài không bao giờ gọi tên: gọi tên thứ đó, hoặc nói thẳng X. Phần thật thì giữ ("phần 2 của khóa học", "phần trả trước").
 **Trước:**
 > Hãy cùng tìm hiểu cách cache hoạt động trong Next.js. Dưới đây là những điều bạn cần biết.
 **Sau:**
 > Next.js cache dữ liệu ở nhiều tầng: request memoization, data cache và router cache.
 
+**Trước (giả vờ thật lòng):**
+> Có đáng tiền không? Thật lòng mà nói? Còn tùy bạn dùng nhiều hay ít.
+
+**Sau:**
+> Đáng tiền hay không thì tùy dùng nhiều hay ít.
+
+**Trước (chữ "phần"):**
+> Dùng chung một thư mục build gần như ổn. Bài này nói về phần không ổn. Phần chậm là dependency.
+
+**Sau:**
+> Dùng chung một thư mục build thì đỡ tốn chỗ, có điều bản checkout này có thể chạy nhầm code của bản checkout khác. Thời gian build phần lớn dồn vào cài dependency.
+
 ### 5. Cãi với người không tồn tại
-**Dấu hiệu:** Điều này không có nghĩa là; Tôi không nói rằng; Nói cho rõ thì; Đừng hiểu lầm; Có thể bạn sẽ nghĩ... nhưng; Một cách làm dễ thấy là... nhưng; To be clear; Don't get me wrong; A tempting approach would be.
-**Sửa:** Bỏ phần phòng thủ. Trong đó có ý thật thì nói thẳng ý đó.
+**Dấu hiệu:** Điều này không có nghĩa là; Tôi không nói rằng; Nói cho rõ thì; Đừng hiểu lầm; Có thể bạn sẽ nghĩ... nhưng; Có người sẽ bảo... nhưng; Một cách làm dễ thấy là... nhưng; Một cách dễ nghĩ tới là...; Ai cũng muốn chỉ việc...; To be clear; Don't get me wrong; A tempting approach would be; It would be easy to just.
+**Vấn đề:** Văn bản trả lời một lời phản bác, hoặc gạt đi một phương án, mà không chỗ nào khác nhắc tới. Thường đó là phần thừa của bản nháp trước.
+**Sửa:** Bỏ phần phòng thủ. Trong đó có ý thật thì nói thẳng ý đó. Phản bác có ghi rõ của ai hoặc được trả lời đầy đủ thì giữ, phương án người đọc thật sự sẽ cân nhắc thì giữ. Nhiều lời gạt đi không liên quan nhau đứng liền nhau là dấu hiệu mạnh hơn một lời.
+**Trước:**
+> Chuyện này chủ yếu không nằm ở độ dài prompt, và tôi không nói tài liệu là không quan trọng. Có thể xếp vấn đề theo cách khác, nhưng điều cần xét là agent có dùng được chỉ dẫn lúc làm việc hay không.
+**Sau:**
+> Điều cần xét là agent có dùng được chỉ dẫn lúc làm việc hay không.
+
+**Trước (phương án giả):**
+> Token phiên được đổi mỗi 24 giờ. Một cách dễ nghĩ tới là khởi động lại dịch vụ xác thực bằng cron job, nhưng làm vậy sẽ ngắt mọi phiên đang mở. Việc đổi token diễn ra tại chỗ và client tự làm mới một cách trong suốt.
+**Sau:**
+> Token phiên tự đổi tại chỗ mỗi 24 giờ, client tự làm mới mà người dùng không thấy gì.
 
 ### 6. Câu hỏi tu từ tự hỏi tự trả lời
 **Dấu hiệu:** "Và điều hay nhất là gì? ..."; "Kết quả thì sao? ..."; câu hỏi mồi đầu mục ("Nghe vô lý?", "X là gì mà mới ra bốn ngày đã nổi vậy?", "Khoan đã... nó có điểm yếu không?", "Hãy thử nghĩ xem", "Lựa chọn của bạn là gì?")
@@ -52,6 +100,8 @@ Sắp từ mạnh đến yếu. Nhóm A và nhóm E chỉ cần gặp một lầ
 
 ## B. Nhịp theo luật
 
+Khuôn câu và dấu câu dùng khắp nơi, dù ý không cần tới.
+
 ### 7. Bộ ba ép buộc
 **Vấn đề:** Cái gì cũng kể đủ ba thứ cho nghe đầy đủ ("nhanh chóng, tiện lợi và an toàn"), kể cả ở cấp đoạn văn (ba ví dụ song song rồi một câu bài học).
 **Sửa:** Mỗi mục phải là một ý riêng. Gộp, bỏ, hoặc chỉ giữ mục mạnh nhất rồi viết kỹ hơn. Giữ ba khi thật có ba.
@@ -60,9 +110,19 @@ Sắp từ mạnh đến yếu. Nhóm A và nhóm E chỉ cần gặp một lầ
 **Sau:**
 > Sự kiện có các bài nói và phiên thảo luận, giữa các phiên có thời gian giao lưu.
 
+**Trước (cấp đoạn):**
+> Một sự nghiệp có thể đầy hứa hẹn rồi thất bại. Một mối quan hệ có thể quan trọng rồi kết thúc. Một kỹ năng có thể mất nhiều năm rồi vô dụng. Những quyết định này hiếm khi tự giải thích.
+
+**Sau:**
+> Sự nghiệp đầy hứa hẹn vẫn có thể hỏng, mối quan hệ hay kỹ năng học mất mấy năm cũng vậy. Lúc quyết thì hiếm khi biết được mình chọn đúng hay sai.
+
 ### 8. Câu mở đầu lặp lại
 **Vấn đề:** Nhiều câu liền nhau mở bằng cùng một chủ ngữ ("Anh ấy... Anh ấy... Anh ấy..."), hoặc đoạn nào cũng mở bằng "Bên cạnh đó", "Ngoài ra".
-**Sửa:** Gộp câu, đổi chủ ngữ, hoặc bắt đầu bằng hành động.
+**Sửa:** Gộp câu, đổi chủ ngữ, hoặc bắt đầu bằng hành động. Đừng cấm hẳn chữ lặp: câu còn lại vẫn có thể mở bằng "Chị". Người viết cũng lặp có chủ ý để tạo nhịp ("Tôi đến. Tôi thấy. Tôi thắng."), xem phần "Khi nào không sửa" trong `SKILL.md`.
+**Trước:**
+> Chị để ý cánh cửa. Chị để ý cái khóa trên cửa. Chị ghi nhớ cả hai.
+**Sau:**
+> Chị để ý cánh cửa và cái khóa trên đó, rồi ghi nhớ cả hai.
 
 ### 9. Gạch ngang dài khắp nơi
 **Quy tắc:** Bản cuối không có — hoặc – dùng để nối mệnh đề, trừ khi mẫu văn của người dùng có. Thay bằng dấu chấm, phẩy, hai chấm hoặc ngoặc đơn. Gồm cả " -- " dùng thay gạch ngang. Giữ gạch trong code, lệnh, URL. Khoảng số thì đổi sang gạch nối (2020–2024 thì viết lại thành 2020-2024 hoặc "từ 2020 đến 2024").
@@ -73,8 +133,9 @@ Sắp từ mạnh đến yếu. Nhóm A và nhóm E chỉ cần gặp một lầ
 > Chính sách mới công bố không báo trước, ảnh hưởng tới hàng nghìn người.
 
 ### 10. Rào đón chồng chất
-**Dấu hiệu:** có thể phần nào; có lẽ có khả năng; trong một số trường hợp nhất định có thể; could potentially; might arguably; it could be argued that.
-**Sửa:** Một từ rào đón là đủ, mà cũng chỉ dùng khi thật sự chưa chắc. *Yếu.*
+**Dấu hiệu:** có thể phần nào; có lẽ có khả năng; trong một số trường hợp nhất định có thể; công bằng mà nói; cũng có khả năng là; đây chỉ là suy luận; could potentially; might arguably; it could be argued that.
+**Vấn đề:** Sửa đi sửa lại thì rào đón chồng lên nhau tới mức nhận định nào cũng nghe như chưa chắc. Thường là để làm mềm một câu nói quá ở bản trước, không phải vì người viết nghi ngờ thật.
+**Sửa:** Một từ rào đón là đủ, mà cũng chỉ dùng khi nguồn cho thấy chưa chắc thật. Giữ phạm vi áp dụng, cảnh báo pháp lý và an toàn, lời đính chính thật. "Chắc", "hình như", "thường thì" là cách nói quen của người, không phải dấu hiệu. *Yếu.*
 **Trước:**
 > Có thể phần nào cho rằng chính sách này có khả năng ảnh hưởng đến kết quả.
 **Sau:**
@@ -90,21 +151,40 @@ Sắp từ mạnh đến yếu. Nhóm A và nhóm E chỉ cần gặp một lầ
 
 ## C. Thổi phồng và mượn uy tín
 
+Sự việc bên dưới thường vẫn đúng. Giữ sự việc, bỏ lớp áo khoác ngoài.
+
 ### 13. Từ vựng AI
-**Dấu hiệu (tránh khi không có lý do, nhất là khi xuất hiện nhiều cùng lúc):** đóng vai trò quan trọng/then chốt/chủ chốt; không thể phủ nhận; minh chứng (sống động) cho; bức tranh (toàn cảnh); hành trình; khám phá; nâng tầm; tối ưu hóa (nghĩa bóng); một cách hiệu quả/toàn diện/bền vững; đáng chú ý là; bên cạnh đó; ngoài ra; trong bối cảnh hiện nay; trong thời đại số; kỷ nguyên số; không ngừng thay đổi; điều quan trọng cần lưu ý là; mang lại giá trị; góp phần thúc đẩy; đa dạng và phong phú; sâu sắc; tinh tế; vượt trội; đột phá; vô cùng; cực kỳ; hơn bao giờ hết.
-**Lưu ý:** Một hai từ có thể là ngẫu nhiên. Nhiều từ cùng lúc là dấu hiệu mạnh. Từ đồng nghĩa với các từ trên thì chưa chắc là dấu hiệu.
+**Dấu hiệu (tránh khi không có lý do, nhất là khi xuất hiện nhiều cùng lúc):** đóng vai trò quan trọng/then chốt/chủ chốt; không thể phủ nhận; minh chứng (sống động) cho; bức tranh (toàn cảnh); hành trình; khám phá; nâng tầm; tối ưu hóa (nghĩa bóng); một cách hiệu quả/toàn diện/bền vững; đáng chú ý là; bên cạnh đó; ngoài ra; trong bối cảnh hiện nay; trong thời đại số; kỷ nguyên số; không ngừng thay đổi; điều quan trọng cần lưu ý là; mang lại giá trị; góp phần thúc đẩy; đa dạng và phong phú; sâu sắc; tinh tế; vượt trội; đột phá; vô cùng; cực kỳ; hơn bao giờ hết; âm thầm, lặng lẽ (nghĩa bóng: "âm thầm thay đổi cách chúng ta làm việc"); mạnh mẽ (nghĩa bóng: "phát triển mạnh mẽ"); làm nổi bật; đi sâu vào; đan xen, sự đan xen giữa; sống động (nghĩa bóng); tỉ mỉ, chỉn chu (khen chung chung); củng cố vị thế, củng cố niềm tin; bền bỉ; thực sự (dùng dày); delve; tapestry; testament; underscore; pivotal; meticulous; vibrant; intricate; interplay; showcase; garner; quietly.
+**Lưu ý:** Các cụm ở mục 14 tới 19 là dấu hiệu vì cách dùng. Từ trong mục này thì gặp ở đâu cũng đáng xem, nhất là khi nhiều từ đi cùng nhau. Một hai từ có thể là ngẫu nhiên. Từ đồng nghĩa với các từ trên, hay từ trang trọng không có trong danh sách, thì tự nó chưa phải dấu hiệu. Từ ngữ quen tay đổi theo từng đời mô hình, nên danh sách này cũ nhanh hơn các mục về cấu trúc.
 
 ### 14. Thổi phồng ý nghĩa
-**Dấu hiệu:** đánh dấu bước ngoặt; cột mốc quan trọng; để lại dấu ấn sâu đậm; mở ra kỷ nguyên mới; khẳng định vị thế; tương lai đầy hứa hẹn; chặng đường phía trước; "Dù còn nhiều thách thức, X vẫn không ngừng phát triển"; mục "Thách thức và triển vọng"; stands as a testament; marking a pivotal moment; the future looks bright.
-**Sửa:** Giữ sự việc, bỏ phần ý nghĩa. Kết ở sự việc cụ thể cuối cùng.
+**Dấu hiệu:** đánh dấu bước ngoặt; cột mốc quan trọng; để lại dấu ấn sâu đậm; mở ra kỷ nguyên mới; khẳng định vị thế; tương lai đầy hứa hẹn; chặng đường phía trước; "Dù còn nhiều thách thức, X vẫn không ngừng phát triển"; mục "Thách thức và triển vọng", "Tầm nhìn tương lai", "Giải thưởng và ghi nhận"; một bước đi đúng hướng; phản ánh xu hướng rộng hơn; đặt nền móng cho; những ngày thú vị phía trước; stands as a testament; marking a pivotal moment; the future looks bright; exciting times ahead.
+**Vấn đề:** Một chi tiết bình thường bị nói thành bước ngoặt, minh chứng cho di sản, hay lời hứa về tương lai. Thói này hiện ra ở một cụm từ, ở một mục "thách thức và triển vọng" dựng sẵn, hoặc ở đoạn kết.
+**Sửa:** Giữ sự việc, bỏ phần ý nghĩa. Kết ở sự việc cụ thể cuối cùng, hoặc ở kế hoạch thật nếu nguồn có nói.
 **Trước:**
 > Năm 2019, công ty mở văn phòng tại Lam Châu, đánh dấu một bước ngoặt quan trọng trên hành trình vươn ra khu vực.
 **Sau:**
 > Năm 2019, công ty mở văn phòng tại Lam Châu.
 
+**Trước (mục dựng sẵn):**
+> Dù phát triển mạnh về công nghiệp, phường Lam Hà vẫn đối mặt với những thách thức chung của đô thị như ùn tắc giao thông và thiếu nước. Dù vậy, với vị trí chiến lược và nhiều sáng kiến, Lam Hà vẫn không ngừng phát triển như một phần không thể thiếu của thành phố.
+
+**Sau:**
+> Phường Lam Hà hay ùn tắc và thiếu nước.
+
+**Trước (đoạn kết):**
+> Tương lai của công ty đầy hứa hẹn. Chặng đường phía trước còn nhiều điều thú vị đang chờ đón.
+
+**Sau:**
+> (Bỏ cả đoạn, kết ở sự việc cụ thể cuối cùng.)
+
 ### 15. Đuôi bình luận hời hợt
 **Dấu hiệu:** ..., góp phần thúc đẩy...; ..., qua đó khẳng định...; ..., thể hiện...; ..., phản ánh...; ..., highlighting/underscoring/reflecting/showcasing/fostering...
-**Sửa:** Giữ sự việc. Chỉ giữ phần đuôi nếu nguồn thật sự nói vậy.
+**Sửa:** Giữ sự việc. Chỉ giữ phần đuôi nếu nguồn thật sự nói vậy. Gán vế đuôi cho một người có tên ("nhà phê bình X nhấn mạnh...") cũng không làm nó đúng hơn.
+**Trước:**
+> Ngôi chùa sơn ba màu lam, lục và vàng, hòa quyện cùng vẻ đẹp thiên nhiên của vùng, tượng trưng cho biển cả, đồng lúa và nắng miền Trung, thể hiện sự gắn bó sâu sắc của cộng đồng với quê hương.
+**Sau:**
+> Chùa sơn ba màu lam, lục và vàng, tượng trưng cho biển, đồng lúa và nắng miền Trung.
 
 ### 16. Giọng quảng cáo
 **Dấu hiệu:** nằm giữa lòng; tọa lạc tại vị trí đắc địa; tuyệt đẹp; ngỡ ngàng; đẳng cấp; hàng đầu; điểm đến không thể bỏ qua; điểm dừng chân lý tưởng; đậm chất thơ; đắm mình trong; giữa nhịp sống vội vã; mang đến trải nghiệm trọn vẹn; được pha chế tỉ mỉ; sở hữu bộ sưu tập; nestled; breathtaking; must-visit; renowned; rich heritage.
@@ -117,15 +197,24 @@ Sắp từ mạnh đến yếu. Nhóm A và nhóm E chỉ cần gặp một lầ
 > Bản Mây là xã vùng cao ở tỉnh Đông Lam, nổi tiếng nhờ đồi chè và mùa hoa mận.
 
 ### 17. Mượn uy tín mơ hồ
-**Dấu hiệu:** các chuyên gia cho rằng; nhiều nghiên cứu chỉ ra; theo giới quan sát; được nhiều báo chí đưa tin; experts believe; industry reports; featured in [danh sách báo].
-**Sửa:** Có nguồn cụ thể thì nêu tên và điều nguồn đó nói. Không có nguồn thì bỏ cả câu.
+**Dấu hiệu:** các chuyên gia cho rằng; nhiều nghiên cứu chỉ ra; theo giới quan sát; một số nhà phê bình; báo cáo trong ngành; được nhiều báo chí đưa tin; từng được trích trên [một dãy tên báo]; báo chí độc lập; có mặt tích cực trên mạng xã hội; hơn N người theo dõi; experts believe; industry reports; featured in [danh sách báo].
+**Vấn đề:** Một cái tên, hay một người có uy tín không tên, đứng thay cho điều họ đã nói. Chuyên gia không tên đỡ cho một nhận định, dãy tên báo đỡ cho một con người.
+**Sửa:** Biết nguồn thật và nguồn đó nói gì thì nêu ra. Không biết thì bỏ nhận định hoặc bỏ dãy tên báo. Thiếu dẫn nguồn thì tự nó chưa phải dấu hiệu, vì phần lớn văn bản đều không dẫn nguồn.
+**Trước (dãy tên báo):**
+> Quan điểm của chị từng được trích trên VnExpress, Tuổi Trẻ, Thanh Niên và BBC Tiếng Việt. Chị có mặt tích cực trên mạng xã hội với hơn 500.000 người theo dõi.
+**Sau:**
+> (Bỏ cả hai câu. Người dùng có bài phỏng vấn cụ thể thì nêu chị nói gì trong bài đó.)
 
 ### 18. Liên hệ mơ hồ
 **Dấu hiệu:** gắn liền với; liên quan đến; có mối liên hệ với; associated with; linked to.
-**Sửa:** Nói rõ quan hệ (sáng lập, điều hành, tham gia) nếu nguồn có. Không có thì giữ cách nói mơ hồ, không bịa.
+**Sửa:** Nói rõ quan hệ (sáng lập, điều hành, tham gia) nếu nguồn có. Không có thì giữ cách nói mơ hồ, không bịa. "Ông gắn liền với Tập đoàn X" không cho biết ông là tổng giám đốc, thành viên hội đồng quản trị hay cố vấn.
+**Trước:**
+> Ông gắn liền với dàn nhạc Lam Giang, do chính ông sáng lập và chỉ huy. Các buổi hòa nhạc được tổ chức trong khuôn khổ có liên quan tới lễ kỷ niệm 50 năm thành lập tỉnh.
+**Sau:**
+> Ông sáng lập và chỉ huy dàn nhạc Lam Giang. Các buổi hòa nhạc nằm trong lễ kỷ niệm 50 năm thành lập tỉnh.
 
 ### 19. Né "là" và "có"
-**Dấu hiệu:** đóng vai trò là; giữ vai trò như; sở hữu; tự hào có; được biết đến như là; serves as; stands as; boasts; features.
+**Dấu hiệu:** đóng vai trò là; giữ vai trò như; hoạt động như; sở hữu; tự hào có; mang đến (với nghĩa "có"); được biết đến như là; được gọi là (với nghĩa "là"); serves as; stands as; boasts; features; offers.
 **Sửa:** Dùng "là", "có".
 **Trước:**
 > Phòng 825 đóng vai trò là không gian triển lãm và sở hữu bốn khu vực riêng biệt.
@@ -133,6 +222,8 @@ Sắp từ mạnh đến yếu. Nhóm A và nhóm E chỉ cần gặp một lầ
 > Phòng 825 là không gian triển lãm, có bốn khu.
 
 ## D. Trình bày theo luật
+
+Bản mẫu và trình soạn thảo cũng tạo ra trình bày gọn gàng. Dấu hiệu là mục nào cũng được trang trí như nhau.
 
 ### 20. In đậm trang trí, danh sách có nhãn
 **Vấn đề:** Từ ngữ in đậm không lý do. Danh sách mà mục nào cũng có nhãn in đậm và dấu hai chấm. Đăng lên mạng xã hội thì dấu in đậm mất, còn lại dãy gạch kiểu "Nhãn: câu" ("- Nhỏ: ...", "- Nhanh: ...", "- Dữ liệu sạch: ..."), vẫn là khuôn đó. Theo Pangram, văn AI in đậm nhiều gấp khoảng 12 lần văn người, gạch đầu dòng gấp khoảng 9 lần.
@@ -157,7 +248,8 @@ Sắp từ mạnh đến yếu. Nhóm A và nhóm E chỉ cần gặp một lầ
 ## E. Đồ thừa của chat và bản nháp (sửa ngay khi gặp)
 
 ### 23. Lời chatbot
-**Dấu hiệu:** Chắc chắn rồi!; Tất nhiên rồi!; Câu hỏi rất hay!; Bạn nói hoàn toàn đúng!; Dưới đây là...; Hy vọng điều này hữu ích!; Nếu bạn cần thêm thông tin, đừng ngần ngại...; Bạn có muốn tôi...?; Certainly!; Great question!; I hope this helps; Let me know if...; As an AI language model.
+**Dấu hiệu:** Chắc chắn rồi!; Tất nhiên rồi!; Câu hỏi rất hay!; Bạn nói hoàn toàn đúng!; Dưới đây là...; Đây là bản...; Hy vọng điều này hữu ích!; Nếu bạn cần thêm thông tin, đừng ngần ngại...; Bạn có muốn tôi...?; Bạn có muốn mình viết thêm...?; Mình làm tiếp phần sau nhé?; Có cần mình chỉnh thêm gì không?; Certainly!; Of course!; Great question!; I hope this helps; Would you like...; Should I continue?; Let me know if...; As an AI language model.
+**Vấn đề:** Lời chào, lời khen, lời mời làm thêm hay câu chào kết của chatbot còn sót trong văn bản lẽ ra phải tự đứng được. Đây là dấu hiệu rõ nhất trong danh mục, và dễ sót nhất khi nó bọc quanh nội dung thật. Riêng "có gì báo mình nhé", "anh xem giúp em" trong tin nhắn thì người ta vẫn viết từ trước khi có chatbot.
 **Sửa:** Bỏ lời rào đầu đuôi, giữ nội dung.
 **Trước:**
 > Câu hỏi rất hay! Dưới đây là tổng quan về Cách mạng Pháp. Cách mạng bắt đầu năm 1789 khi khủng hoảng tài chính và thiếu lương thực gây bất ổn. Hy vọng điều này hữu ích!
@@ -165,8 +257,18 @@ Sắp từ mạnh đến yếu. Nhóm A và nhóm E chỉ cần gặp một lầ
 > Cách mạng Pháp bắt đầu năm 1789 khi khủng hoảng tài chính và thiếu lương thực gây bất ổn.
 
 ### 24. Nói về giới hạn kiến thức rồi đoán
-**Dấu hiệu:** tính đến thời điểm cập nhật dữ liệu; dựa trên thông tin hiện có; thông tin này chưa được công bố rộng rãi; có lẽ ông/bà đã...; it is believed that; as of my last update.
+**Dấu hiệu:** tính đến thời điểm cập nhật dữ liệu; dựa trên thông tin hiện có; thông tin này chưa được công bố rộng rãi; không được ghi chép nhiều trong các nguồn sẵn có; trong các nguồn được cung cấp; giữ kín đời tư; là người kín tiếng; có lẽ ông/bà đã (lớn lên, theo học, bắt đầu)...; được cho là; it is believed that; as of my last update; while specific details are limited.
+**Vấn đề:** Văn bản nhắc tới chỗ hiểu biết của mô hình dừng lại, hoặc thừa nhận không tìm được nguồn rồi lấp chỗ trống bằng một phỏng đoán nghe hợp lý.
 **Sửa:** Nói rõ là nguồn không có, hoặc bỏ câu, không đoán thay.
+**Trước:**
+> Dù thông tin về thời điểm thành lập công ty không được ghi chép nhiều trong các nguồn sẵn có, có vẻ công ty ra đời vào khoảng những năm 1990.
+**Sau:**
+> Các nguồn không ghi năm thành lập công ty. (Hoặc bỏ câu.)
+
+**Trước (đoán):**
+> Thông tin về thời thơ ấu của bà không được công khai, cho thấy bà là người kín tiếng. Có lẽ bà lớn lên trong một gia đình trung lưu, điều đã hình thành mối quan tâm của bà với cải cách giáo dục.
+**Sau:**
+> Các nguồn không nói gì về thời nhỏ của bà. (Hoặc bỏ cả phần này.)
 
 ### 25. Tiêu đề rồi câu nhắc lại tiêu đề
 **Trước:**
@@ -182,7 +284,16 @@ Sắp từ mạnh đến yếu. Nhóm A và nhóm E chỉ cần gặp một lầ
 
 ### 26. Văn bản tự nói về mình
 **Dấu hiệu:** "Bảng dưới đây so sánh..."; "Phần này được tổ chức theo..."; "Hàm này được thêm vào để thay thế cách cũ..."; "Thông tin chưa xác nhận đã được đánh dấu"; "Số liệu dưới đây tổng hợp từ...".
-**Sửa:** Nói về chủ đề, không nói về cách viết tài liệu. Lịch sử thay đổi chỉ đưa vào changelog, release notes. Nguồn mà người đọc lần theo được thì giữ, chuyện mình đã làm thế nào thì bỏ. Lưu ý nào làm người đọc phải làm khác đi thì giữ. Một câu tự nói về văn bản đứng riêng thì *yếu*.
+**Sửa:** Nói về chủ đề, không nói về cách viết tài liệu. Lịch sử thay đổi chỉ đưa vào changelog, release notes. Nguồn mà người đọc lần theo được thì giữ, chuyện mình đã làm thế nào thì bỏ. Lưu ý nào làm người đọc phải làm khác đi thì giữ. Một câu tự nói về văn bản đứng riêng thì *yếu*. Quy ước nào người đọc không tự suy ra được thì nói một lần.
+**Trước:**
+> Hàm này được thêm vào để thay thế cách cũ là duyệt qua toàn bộ phần tử, vốn tốn O(n²).
+**Sau:**
+> Hàm tra bằng hash map, mỗi lần O(1), khỏi phải duyệt hết phần tử với chi phí O(n²).
+
+**Trước (kể cách làm):**
+> Số liệu dưới đây được tổng hợp từ bảng giá công bố của từng nhà cung cấp; thông tin nào chưa xác nhận được đã được đánh dấu thay vì phỏng đoán.
+**Sau:**
+> Giá là giá niêm yết của từng nhà cung cấp. Hai bên không công bố giá, muốn biết thì gọi hỏi.
 
 ### 27. Dấu vết công cụ
 **Dấu hiệu:** `contentReference`, `oaicite`, `turn0search0`, `[cite: 1]`, `:::writing`, placeholder `[Tên công ty]`, `<Điền ngày>` còn sót.
@@ -190,9 +301,11 @@ Sắp từ mạnh đến yếu. Nhóm A và nhóm E chỉ cần gặp một lầ
 
 ## F. Viết sai người đọc
 
+Mô hình viết cho người đọc không biết gì về chuyện đang bàn, vì như vậy hợp với nhiều trường hợp nhất. Tin trả lời trong một cuộc trao đổi thì người đọc đã biết bối cảnh. Chỉ áp nhóm này khi thấy được cuộc trao đổi quanh đó hoặc văn bản rõ là tin trả lời, không thì hỏi hoặc để nguyên.
+
 ### 28. Giải thích lại điều người đọc đã biết
-**Dấu hiệu:** Tin trả lời mà viết lại vấn đề, nêu chẩn đoán, đưa bằng chứng, rồi mới tới quyết định ở câu cuối.
-**Sửa:** Nêu quyết định trước. Lý do thì chỉ giữ cái nào đủ làm người đọc đổi ý, thường là một việc họ chưa biết, kèm link để họ làm tiếp.
+**Dấu hiệu:** Tin trả lời mà viết lại vấn đề, nêu chẩn đoán, đưa bằng chứng, rồi mới tới quyết định ở câu cuối; câu lệnh, truy vấn hay bảng số chèn vào để chứng minh kế hoạch chạy được; nhắc lại bối cảnh mà chính người kia đã viết hoặc đã đồng ý.
+**Sửa:** Nêu quyết định trước. Lý do thì chỉ giữ cái nào đủ làm người đọc đổi ý, thường là một việc họ chưa biết, kèm link để họ làm tiếp. Chẩn đoán và bằng chứng để dành cho ticket hay tài liệu sau: người review nêu một chuyện chưa chắc đã muốn đọc cả bản phân tích. Từng câu đọc riêng đều ổn, nên lỗi này còn nguyên sau khi đã sửa sạch từng câu.
 **Trước:**
 > Dạ em đã xem log. Lỗi xảy ra do service A gọi B khi B đang restart, dẫn đến timeout, sau đó retry thất bại vì token hết hạn. Em đã thử tăng timeout nhưng không được. Vì vậy em đề xuất mình rollback bản deploy hôm qua.
 **Sau:**
@@ -284,6 +397,8 @@ Câu ngắn hơn chưa chắc đúng hơn. Kiểm lại sau khi sửa:
 - Giữ thuật ngữ: "phê duyệt" không thành "đồng ý", "tối ưu hóa" trong toán không thành "làm tốt hơn".
 - "Điều này" có nhiều cách hiểu (đổi lịch hay đổi phí?) thì hỏi, không tự chọn.
 
+<a id="nhom-h"></a>
+
 ## H. Slide và tài liệu nhiều trang
 
 ### 39. Hứa làm sau mà không nói ai, khi nào
@@ -321,6 +436,8 @@ Câu ngắn hơn chưa chắc đúng hơn. Kiểm lại sau khi sửa:
 > Như chúng ta có thể thấy, việc chuyển đổi số không chỉ là xu hướng mà còn là yếu tố then chốt giúp doanh nghiệp tối ưu hóa nguồn lực một cách hiệu quả (theo nhiều chuyên gia).
 **Sau:**
 > Làm chuyển đổi số thì doanh nghiệp dùng người, dùng tiền đỡ lãng phí hơn.
+
+<a id="nhom-i"></a>
 
 ## I. Cả bài: dấu hiệu còn lại sau khi từng câu đã sạch
 
@@ -414,6 +531,8 @@ Cách đọc nhóm này: đếm trên cả bài. Một lần thì có thể là 
 > Slide và tài liệu nhiều trang có nhóm riêng. Ở nhóm này skill bắt tiêu đề chỉ là nhãn, tiêu đề đếm số ý, slide nào cũng đúng ba ý, lời hứa suông và ghi chú thuyết trình viết như công văn. Hướng dẫn viết slide nằm ở file riêng.
 **Sửa:** Mỗi câu một ý, nhiều nhất hai ba vế có quan hệ rõ. Tìm chỗ đổi ý để chấm. Câu liệt kê thì dài cũng được, nhưng phần dẫn vào danh sách phải ngắn. Đọc thành tiếng: chỗ nào hụt hơi mà chưa hết ý thì câu đang quá dài. `scan.py` chỉ báo câu từ 60 chữ, câu ngắn hơn thì phải tự đọc.
 
+<a id="nhom-k"></a>
+
 ## K. Văn dịch sâu: câu nghĩ bằng tiếng Anh, viết bằng chữ Việt
 
 Nhóm G bắt các cụm dịch dễ thấy. Nhóm này bắt thứ khó thấy hơn: không cụm nào sai, nhưng câu giữ nguyên trật tự và mấy chữ đệm của tiếng Anh nên đọc lên vẫn như dịch từng chữ. Đọc câu độc lập với nguồn, chỉ sửa chỗ gượng hoặc dùng từ sai. Dịch ngược sang tiếng Anh trôi chảy không đủ để kết luận câu bị dịch sát.
@@ -474,6 +593,8 @@ Nhóm G bắt các cụm dịch dễ thấy. Nhóm này bắt thứ khó thấy 
 > Bài tự viết thì skill chỉ sửa nhẹ, số liệu để nguyên, còn sửa hay không là do bạn.
 **Sửa:** Đưa cái đang bàn lên đầu câu. Đưa thời gian, nơi chốn lên trước ("Thứ Ba đội họp ở phòng 3"). Dùng "thì", "còn", "mà", "chứ" đúng chỗ, đừng rải cho có.
 
+<a id="nhom-l"></a>
+
 ## L. Tin nhắn thân mật: icon và ngữ điệu lạc giọng người gửi
 
 Tin nhắn trả lời bạn bè, đồng nghiệp thân thì người nhận biết rõ giọng người gửi, nên chỉ cần lệch một chút là lộ. Icon và ngữ điệu lấy từ tối đa 30 lượt trò chuyện gần nhất, riêng tiếng cười và cách đùa thì đổi theo tình huống. Cách làm nằm ở `references/chat.md`. Chạy `scan.py --chat` để bộ kiểm tra kiểm thêm phần định dạng.
@@ -509,6 +630,8 @@ Tin nhắn trả lời bạn bè, đồng nghiệp thân thì người nhận bi
 - Cảm xúc lẫn lộn, chưa ngã ngũ: "Tôi thấy nhìn chung ổn, nhưng có gì đó cứ cấn cấn mà chưa nói rõ được."
 - Tiếng lóng, meme, chuyện riêng của một thời, một nhóm.
 - Câu chêm, ngoặc đơn, tự sửa giữa chừng: "(Định viết 'gần như' nhưng thật ra là chắc chắn.)"
+- Một lựa chọn riêng mà người viết nói được lý do: "Tôi chọn ở lại công ty nhỏ vì muốn tự tay làm cả sản phẩm."
+- Văn thân mật đã đúng giọng: viết thường, viết tắt, câu cụt, độ gắt của bài chê. Xem phần "Khi nào không sửa" trong `SKILL.md`.
 - Không suy nguồn gốc văn bản từ ngày đăng. Văn cũ được nhờ sửa thì vẫn sửa.
 - Giọng vùng miền, từ địa phương, "má", "tui", "hông" có sẵn trong bản gốc. Không chuẩn hóa, cũng không tự rải thêm.
 - Từ Hán Việt là thuật ngữ đúng, hoặc đúng giọng văn bản (công văn, hợp đồng, học thuật).

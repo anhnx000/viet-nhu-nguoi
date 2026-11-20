@@ -1,5 +1,27 @@
 # Changelog
 
+## 2.9.0 (2026-11-21)
+
+Học cách tổ chức của 20 skill nhiều sao nhất trên GitHub, học tiếp từ humanizer sau khi bỏ trần số chữ, giữ giọng tác giả qua nhiều bài.
+
+- Giọng tác giả: dùng lại ghi chú giọng ở phiên sau, chỉnh theo đúng người nhận, đối chiếu dữ kiện của bài mới với lời dặn thay vì lấy từ mẫu giọng. Bảng chọn chế độ phân biệt chép nguyên lời, gọt lời và tóm tắt cuộc họp. Câu nằm ngoài phần được nhờ sửa thì chép nguyên.
+- Từ humanizer: lý do văn AI nghe giống nhau (mô hình chọn cách nói hợp với nhiều người đọc nhất), từ ngữ đổi theo đời mô hình còn thói quen cấu trúc thì ở lại. Quy tắc "câu nào giữ lại cũng phải cho người đọc điều họ chưa có" quay lại sau khi rơi mất lúc cắt cho vừa 6.000 chữ.
+- Văn thân mật người dùng tự viết (tin nhắn, bình luận, bài chê) không sửa vì một dấu hiệu lẻ, trừ lời chatbot sót lại. Giữ viết thường, viết tắt, câu cụt, độ gắt, không tự thêm "ạ".
+- Dấu hiệu mới: chữ "phần" dựng sân khấu cho ý ("Phần khó là..."), phương án không ai đề xuất bày ra để gạt đi, câu "Nhìn chung" cuối đoạn, lời mời làm thêm của chatbot, dãy tên báo và số người theo dõi, thêm mấy từ như "âm thầm", "mạnh mẽ", "làm nổi bật". Thiếu dẫn nguồn chưa phải dấu hiệu, "chắc", "hình như" là cách nói của người.
+- Danh mục: mỗi nhóm A-F có lời giới thiệu, các mục 1-5, 7, 8, 14, 15, 17, 18, 24, 26 có thêm ví dụ trước/sau.
+- Không lấy của humanizer: gạch nối trong từ ghép tiếng Anh, cho mô hình tự thêm phản ứng cảm xúc, trả cả bản nháp đầu kèm danh sách dấu hiệu còn sót. `scan.py` không đổi, vì lời mời của chatbot bằng tiếng Việt trùng với tin nhắn người thật.
+- `SKILL.md` có thêm bảng "Những lúc dễ tự bào chữa", theo cách của superpowers và gstack: mười ý nghĩ hay dẫn tới lỗi đã gặp khi chạy bộ đề, kèm việc nên làm.
+- Sửa các lỗi thấy ở lượt chạy đủ bộ đề đầu tiên: ghi chú không kể điểm `scan.py`, không trích lại cụm đã bỏ, không xác nhận lại việc người dùng đã dặn; bản sửa có khối code thì bọc bằng bốn dấu backtick; tin nhắn trả về không kèm lời giải thích về giọng; văn bản có dòng chỉ dẫn chèn vào thì báo người dùng một câu; tin gửi từ tài khoản người dùng không để ô tên.
+- Viết mới: việc người nhận cần làm (trả lời, duyệt, có mặt lúc mấy giờ) đặt ở câu đầu, theo i-have-adhd. Cùng một tin gửi nhiều nhóm thì mỗi bản mở bằng việc của nhóm đó. `check.py` có thêm phép chấm `lead_keep` (dữ kiện phải nằm trong 25 chữ đầu), gắn vào bốn đề đổi lịch, xin lùi hạn và bản tin. Tám đề liên quan chạy lại đều qua.
+- Mỗi repo trong bảng top-20 ở `references/sources.md` ứng với một chỗ áp dụng cụ thể (câu trong `SKILL.md` hoặc ID đề thử). Test kiểm cả 27 dòng, thêm repo mà chưa có chỗ áp dụng thì test báo lỗi.
+- Codex: thêm `agents/openai.yaml` (tên hiển thị, lời gọi mẫu).
+- Bộ đề: thêm 3 đề (review dán từ chatbot, tin nhắn bực với shop, soi đoạn có "phần" và phương án giả), tổng 63. `check.py` so dữ kiện không phân biệt hoa thường, cụm cấm phải đứng riêng thành từ ("ông" không khớp trong "không"). Đề email đổi ngày sang 17/11, vì 8/12 nằm sau hôm chạy thử nên mô hình hỏi lại là đúng.
+- Kết quả: chạy đủ 63 đề và 2 đề giữ riêng bằng Opus mức medium, mỗi đề một lượt: 62/63 và 2/2 qua phần tự động. Đề trượt duy nhất là `bai-nop-cho-truong`, 364 chữ so với giới hạn 300, cách làm vẫn đúng. Lượt này chạy làm hai đợt vì hết hạn mức giữa chừng, bảng "Những lúc dễ tự bào chữa" thêm vào lúc đợt hai đang chạy. Đọc tay các đề then chốt: ba đề mới đều đúng (review chỉ bỏ lời chatbot, tin nhắn bực giữ nguyên và nói không cần sửa, đoạn soi chỉ ra đúng mục 4, 5, 2), `soi-the-khach` không còn gộp câu bên cạnh, báo cáo gửi sếp không còn ô tên. `sua-co-chi-dan-chen` lúc đầu không báo dòng chỉ dẫn chèn vào, nên ghi chú giờ bắt buộc có câu báo, đề có thêm phần chấm tự động cho câu này, ba lượt chạy lại đều qua. Còn một lỗi: ở `qua-may-do`, ghi chú vẫn trích lại các cụm đã bỏ trong hai trên ba lượt.
+
+## 2.8.0 (2026-11-20)
+
+Thêm bảng chọn chế độ, chỉ chỗ tra dấu hiệu theo yêu cầu và đọc lại file sau khi sửa. Bộ đề có thêm một nhóm riêng để thử bản đã chốt. Bỏ trần số chữ của `SKILL.md`.
+
 ## 2.7.13 (2026-11-16)
 
 "Chấm 0-100" thành "thang điểm 0-100".

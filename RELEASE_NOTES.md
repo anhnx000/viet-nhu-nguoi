@@ -2,6 +2,22 @@
 
 English notes for each GitHub release. The release workflow publishes the section that matches the version in `SKILL.md`. The full development log, in Vietnamese, is in [CHANGELOG.md](CHANGELOG.md).
 
+## 2.9.0
+
+Design lessons from the 20 most-starred skills on GitHub, a third pass over blader/humanizer, and author voice across sessions.
+
+- Reuse a saved voice note for the right audience; keep sentences outside the requested edit verbatim; separate transcription, light editing and meeting summaries.
+- From humanizer: why AI text converges (the model picks what fits the most readers), word habits change per model while structure persists, and every kept sentence must add something. Informal text (messages, comments, angry reviews) keeps its lowercase, abbreviations and bluntness; only leftover chatbot lines are removed.
+- New tells: staging with "phần" ("Phần khó là..."), fake alternatives set up to be dismissed, closing "Nhìn chung" lines, chatbot offers, outlet lists and follower counts. More before/after examples across the catalog.
+- A "rationalizations" table in `SKILL.md`, after superpowers and gstack, built from mistakes seen in the eval run.
+- New messages put the recipient's action in the first sentence (after i-have-adhd); `evals/check.py` gains a `lead_keep` rule for it. A test ties every repo in the top-20 study to a concrete rule or eval case.
+- Codex metadata in `agents/openai.yaml`; three new behavior cases (63 total); stricter whole-word matching in `evals/check.py`.
+- Results: 62/63 cases and 2/2 held-out cases pass the automatic checks (Opus, medium effort, one run each); the only miss is a 364-word answer to a 300-word school essay. Manual reading found one regression, a missing notice about injected instructions, now required and checked automatically (3/3 reruns pass). Known issue: in the detector-evasion case the note still quotes removed phrases in 2 of 3 runs.
+
+## 2.8.0
+
+Route requests by editing intent, look up patterns by topic, and verify saved edits. Add held-out behavior cases and remove the skill word cap.
+
 ## 2.7.13
 
 "Thang điểm 0-100" instead of "chấm 0-100".

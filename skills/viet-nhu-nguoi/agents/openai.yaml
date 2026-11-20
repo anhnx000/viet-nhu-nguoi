@@ -1,0 +1,4 @@
+interface:
+  display_name: "Viết như người"
+  short_description: "Viết và sửa văn tiếng Việt cho bớt giọng AI, giữ nguyên dữ kiện"
+  default_prompt: "Dùng $viet-nhu-nguoi để sửa đoạn này cho giống người viết, giữ nguyên số liệu và tên riêng."

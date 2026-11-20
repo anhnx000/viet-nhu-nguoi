@@ -78,10 +78,11 @@ Nhờ soạn thứ gì đứng tên bạn thì skill tự bật. Gõ `/viet-nhu-
 <summary>Mẹo dùng</summary>
 
 - Nói rõ ai đọc và vai vế: "gửi chị trưởng phòng, xưng em" ra email khác hẳn "gửi khách hàng, xưng chúng tôi".
-- Dán kèm một đoạn bạn tự viết cùng loại, skill học nhịp câu và chữ bạn hay dùng.
+- Dán kèm một đoạn bạn tự viết cùng loại. Muốn dùng lại ở phiên sau, nhờ lưu giọng vào một file Markdown. Lần sau đưa đường dẫn đó cùng dữ kiện của bài mới.
 - Số liệu, tên, ngày tháng đưa bản thật, thiếu thì skill hỏi lại.
 - Câu nào không giống mình thì bảo "mình không nói thế", skill nhớ tới hết cuộc trò chuyện.
 - Bài bạn tự viết thì skill chỉ sửa nhẹ.
+- Tin nhắn, bình luận, bài chê do bạn tự viết thì giữ nguyên chữ viết thường, viết tắt và độ gắt. Skill chỉ bỏ lời chatbot còn sót, như "Chắc chắn rồi! Đây là bài review...".
 
 </details>
 

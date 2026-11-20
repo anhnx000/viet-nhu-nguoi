@@ -1,0 +1,31 @@
+[
+ {
+  "id": "bang-gui-xe",
+  "che_do": "sửa",
+  "tin_nhan": "Cho tôi câu này để in lên vé xe, sửa cho dễ đọc: “Xin vui lòng tiến hành giữ lại vé này đến khi lấy xe.”",
+  "mong_doi": "Chỉ có lời nhắc in được, lịch sự, giữ đúng thời điểm lấy xe.",
+  "kiem": {
+   "max_words": 18,
+   "must_keep": [
+    "vé",
+    "lấy xe"
+   ]
+  }
+ },
+ {
+  "id": "loi-ke-mau",
+  "che_do": "viết mới",
+  "tin_nhan": "Tôi hay nhắn nhóm đọc sách: “Tụi mình vừa đọc hết 42 trang đầu. Hẹn thứ Bảy nhé.” Viết theo giọng đó để tôi gửi ngay. Lần này chỉ nhắc mọi người mang sách đến thư viện.",
+  "mong_doi": "Chỉ đưa lời nhắn. Giữ giọng quen, không lấy số trang, ngày hẹn hay sự việc đọc sách từ tin cũ.",
+  "kiem": {
+   "max_words": 28,
+   "must_keep": [
+    "thư viện"
+   ],
+   "must_not": [
+    "42",
+    "thứ Bảy"
+   ]
+  }
+ }
+]

@@ -2,13 +2,13 @@
  {
   "id": "viet-email-du-du-kien",
   "che_do": "viết mới",
-  "tin_nhan": "Viết giúp mình email gửi phòng IT: máy tính của mình (mã tài sản LT-0412) không lên nguồn từ sáng thứ Ba 8/12, mình xin mượn máy tạm trong lúc chờ sửa. Mình tên Huệ, phòng Kế toán, gửi anh Huân bên IT, xưng em.",
+  "tin_nhan": "Viết giúp mình email gửi phòng IT: máy tính của mình (mã tài sản LT-0412) không lên nguồn từ sáng thứ Ba 17/11, mình xin mượn máy tạm trong lúc chờ sửa. Mình tên Huệ, phòng Kế toán, gửi anh Huân bên IT, xưng em.",
   "mong_doi": "Đủ dữ kiện thì viết luôn, không hỏi lại, không thêm chi tiết.",
   "kiem": {
    "max_questions": 0,
    "must_keep": [
     "LT-0412",
-    "8/12",
+    "17/11",
     "Huân"
    ],
    "max_placeholders": 0,
@@ -114,7 +114,15 @@
   "kiem": {
    "must_keep": [
     "42",
-    "28/11"
+    "28/11",
+    [
+     "chỉ dẫn",
+     "system message",
+     "operator",
+     "chèn",
+     "dòng lạ",
+     "lệnh lạ"
+    ]
    ],
    "must_not": [
     "example.com/khuyen-mai"
@@ -301,7 +309,16 @@
     "chưa"
    ],
    "max_words": 190,
-   "max_added_numbers": 0
+   "max_added_numbers": 0,
+   "lead_keep": [
+    [
+     "lùi",
+     "dời",
+     "hoãn",
+     "chuyển"
+    ],
+    "15/12"
+   ]
   }
  },
  {
@@ -824,6 +841,264 @@
     "## Good to know"
    ],
    "max_added_numbers": 0
+  }
+ },
+ {
+  "id": "sua-rieng-cau-ba",
+  "che_do": "sửa",
+  "tin_nhan": "Chỉ sửa câu thứ ba rồi gửi lại nguyên email, giữ từng chữ ở các câu khác. Chào An. Mình gửi lịch trực. Việc xác nhận lịch cần được thực hiện bởi tổ trưởng. Bạn xem file đính kèm nhé. Cảm ơn An.",
+  "mong_doi": "Bốn câu ngoài phạm vi giữ nguyên, đúng thứ tự. Câu ba nêu tổ trưởng cần xác nhận lịch.",
+  "kiem": {
+   "must_keep": [
+    "Chào An. Mình gửi lịch trực.",
+    "Bạn xem file đính kèm nhé. Cảm ơn An."
+   ],
+   "must_not": [
+    "được thực hiện bởi"
+   ]
+  }
+ },
+ {
+  "id": "hop-chep",
+  "che_do": "chép nguyên văn",
+  "tin_nhan": "Chép nguyên lời Mai, chỉ trả lời thoại. Mai nói: “Ờ, bên mình có thể giao thứ Sáu, còn chờ kho xác nhận. Chốt gửi bản vẽ hôm nay nhé.”",
+  "mong_doi": "Giữ nguyên toàn bộ lời Mai.",
+  "kiem": {
+   "must_keep": [
+    "Ờ, bên mình có thể giao thứ Sáu, còn chờ kho xác nhận. Chốt gửi bản vẽ hôm nay nhé."
+   ]
+  }
+ },
+ {
+  "id": "hop-got",
+  "che_do": "sửa",
+  "tin_nhan": "Gọt lời Mai cho dễ đọc, vẫn để Mai nói. Mai nói: “Ờ, bên mình có thể giao thứ Sáu, còn chờ kho xác nhận. Chốt gửi bản vẽ hôm nay nhé.”",
+  "mong_doi": "Giữ ngôi nói và hai việc, bỏ tiếng đệm.",
+  "kiem": {
+   "must_keep": [
+    "thứ Sáu",
+    "bản vẽ"
+   ],
+   "must_not": [
+    "Ờ,"
+   ]
+  }
+ },
+ {
+  "id": "hop-tom",
+  "che_do": "tóm tắt",
+  "tin_nhan": "Tóm tắt phần đã chốt và phần đang chờ. Mai nói: “Ờ, bên mình có thể giao thứ Sáu, còn chờ kho xác nhận. Chốt gửi bản vẽ hôm nay nhé.”",
+  "mong_doi": "Gửi bản vẽ đã chốt, lịch giao còn chờ kho.",
+  "kiem": {
+   "must_keep": [
+    "thứ Sáu",
+    "bản vẽ"
+   ]
+  }
+ },
+ {
+  "id": "doi-lich-nguoi-du",
+  "che_do": "viết mới",
+  "tin_nhan": "Cuộc họp dời từ 9h sang 14h vì phòng đang sửa. Viết tin gửi người dự.",
+  "mong_doi": "Dòng đầu cho biết giờ mới.",
+  "kiem": {
+   "must_keep": [
+    [
+     "14h",
+     "14 giờ",
+     "2 giờ chiều"
+    ]
+   ],
+   "lead_keep": [
+    [
+     "14h",
+     "14 giờ",
+     "2 giờ chiều"
+    ]
+   ]
+  }
+ },
+ {
+  "id": "doi-lich-dat-phong",
+  "che_do": "viết mới",
+  "tin_nhan": "Cuộc họp dời từ 9h sang 14h vì phòng đang sửa. Viết tin gửi anh phụ trách đặt phòng.",
+  "mong_doi": "Dòng đầu nhờ đổi hoặc đặt lại phòng.",
+  "kiem": {
+   "must_keep": [
+    [
+     "14h",
+     "14 giờ",
+     "2 giờ chiều"
+    ]
+   ],
+   "lead_keep": [
+    [
+     "phòng"
+    ],
+    [
+     "14h",
+     "14 giờ",
+     "2 giờ chiều"
+    ]
+   ]
+  }
+ },
+ {
+  "id": "lap-giu",
+  "che_do": "sửa",
+  "tin_nhan": "Rà lời đọc tưởng niệm sau, giữ nhịp và chỉ gửi bản cuối. Tôi nhớ bến nước. Tôi nhớ cây cầu. Tôi nhớ tiếng dép của mẹ.",
+  "mong_doi": "Giữ nguyên điệp ngữ của lời đọc tưởng niệm.",
+  "kiem": {
+   "must_keep": [
+    "Tôi nhớ bến nước. Tôi nhớ cây cầu. Tôi nhớ tiếng dép của mẹ."
+   ]
+  }
+ },
+ {
+  "id": "lap-got",
+  "che_do": "sửa",
+  "tin_nhan": "Biên tập bản tin giao hàng cho gọn. Về tiến độ, kho đã đóng hàng. Về tiến độ, xe đã tới. Về tiến độ, cổng vẫn khóa.",
+  "mong_doi": "Bỏ nhãn lặp của bản tin, giữ cả ba việc.",
+  "kiem": {
+   "must_not": [
+    "Về tiến độ, xe",
+    "Về tiến độ, cổng"
+   ]
+  }
+ },
+ {
+  "id": "ban-tin-mau-giong",
+  "che_do": "viết mới",
+  "tin_nhan": "Bản tin trước mình viết: “Tụi mình vừa thay 12 bóng đèn ở kho. Ai trực tối ghé xem nhé.” Viết bản tin tuần này theo giọng đó. Tuần này chỉ có việc dời chỗ nhận thư sang quầy lễ tân.",
+  "mong_doi": "Mở bằng việc mới, giữ giọng đồng nghiệp. Không mang việc cũ sang.",
+  "kiem": {
+   "must_not": [
+    "12",
+    "bóng đèn"
+   ],
+   "must_keep": [
+    "lễ tân"
+   ],
+   "lead_keep": [
+    "lễ tân"
+   ]
+  }
+ },
+ {
+  "id": "doi-nhom-sau-loi-chinh",
+  "che_do": "viết mới",
+  "tin_nhan": "Lượt trước mình dặn trong nhóm chạy bộ gọi mình là Nam, đừng gọi là anh nữa. Giờ soạn tin cho chị Hà trưởng nhóm kế toán, mình vẫn xưng em gọi chị. Báo mình đã gửi bảng lương.",
+  "mong_doi": "Giữ vai em với chị Hà, không áp lời chỉnh của nhóm chạy bộ.",
+  "kiem": {
+   "must_keep": [
+    [
+     "em",
+     "Em"
+    ],
+    [
+     "chị",
+     "Chị"
+    ],
+    "bảng lương"
+   ]
+  }
+ },
+ {
+  "id": "soi-thong-bao",
+  "che_do": "soi lỗi",
+  "tin_nhan": "Thông báo này nghe gượng ở đâu? Chỉ nhận xét giúp mình. “Việc triển khai bản vá đã được thực hiện bởi tổ trực. Cổng mở lại lúc 14h.”",
+  "mong_doi": "Chỉ ra bị động ở câu đầu, dẫn mục phù hợp và gợi ý sửa tại chỗ. Giữ câu thứ hai.",
+  "kiem": {
+   "min_refs": 1
+  }
+ },
+ {
+  "id": "sua-thong-bao",
+  "che_do": "sửa",
+  "tin_nhan": "Sửa câu đầu rồi gửi lại nguyên thông báo giúp mình. “Việc triển khai bản vá đã được thực hiện bởi tổ trực. Cổng mở lại lúc 14h.”",
+  "mong_doi": "Dùng tổ trực làm chủ ngữ, giữ ý đã triển khai bản vá và giữ nguyên câu thứ hai.",
+  "kiem": {
+   "must_keep": [
+    "Cổng mở lại lúc 14h."
+   ]
+  }
+ },
+ {
+  "id": "soi-the-khach",
+  "che_do": "soi lỗi",
+  "tin_nhan": "Chỗ nào trong lời nhắc này nghe như công văn? Nhận xét giúp. “Đề nghị tiến hành việc hoàn trả thẻ khách. Hộp đựng thẻ ở bàn bảo vệ.”",
+  "mong_doi": "Chỉ ra cụm gượng ở câu đầu, gợi ý tại chỗ. Câu chỉ vị trí đã rõ. Không đưa một bản thay thế cả lời nhắc.",
+  "kiem": {
+   "min_refs": 1
+  }
+ },
+ {
+  "id": "sua-the-khach",
+  "che_do": "sửa",
+  "tin_nhan": "Sửa câu đầu cho dễ nghe. Trả lại cả lời nhắc để mình in. “Đề nghị tiến hành việc hoàn trả thẻ khách. Hộp đựng thẻ ở bàn bảo vệ.”",
+  "mong_doi": "Trả đúng hai câu dùng được ngay. Giữ lời nhờ trả thẻ và nguyên văn vị trí hộp.",
+  "kiem": {
+   "must_keep": [
+    "Hộp đựng thẻ ở bàn bảo vệ."
+   ],
+   "must_not": [
+    "tiến hành việc"
+   ]
+  }
+ },
+ {
+  "id": "sua-review-than-mat",
+  "che_do": "sửa",
+  "tep": "evals/inputs/review-dan-tu-chat.md",
+  "tin_nhan": "Sửa giúp mình bài review này cho bớt giọng AI rồi mình đăng Google Maps: {tep} (đưa bản sửa trong câu trả lời).",
+  "mong_doi": "Bỏ lời chatbot ở đầu và cuối, giữ gần như nguyên phần review: viết thường, câu cụt \"Không quay lại.\", độ gắt \"dở tệ\", lời nhân viên. Không làm bài lịch sự hơn, không thêm chi tiết.",
+  "kiem": {
+   "must_keep": [
+    "dở tệ",
+    "45k",
+    "bên em pha vậy á chị",
+    "Không quay lại"
+   ],
+   "must_not": [
+    "Chắc chắn rồi",
+    "Hy vọng",
+    "nhẹ nhàng hơn"
+   ],
+   "min_overlap": 0.55,
+   "max_words": 130
+  }
+ },
+ {
+  "id": "sua-tin-gian-giu-nguyen",
+  "che_do": "sửa",
+  "tep": "evals/inputs/tin-gian-shop.md",
+  "tin_nhan": "Sửa giúp tin này cho tự nhiên hơn, mình gửi shop trên Shopee: {tep}",
+  "mong_doi": "Nói tin đã tự nhiên, trả nguyên hoặc gần nguyên: giữ viết thường, \"ko\", \"??\", \"vô lý thật sự\", lời dọa báo sàn. Không thêm \"ạ\", không đổi sang giọng khiếu nại trang trọng.",
+  "kiem": {
+   "must_keep": [
+    "lần 2",
+    "báo sàn",
+    "vô lý"
+   ],
+   "must_not": [
+    "ạ",
+    "Quý shop",
+    "Kính gửi",
+    "rất mong"
+   ],
+   "min_overlap": 0.85,
+   "max_words": 90
+  }
+ },
+ {
+  "id": "soi-dung-san-khau",
+  "che_do": "soi lỗi",
+  "tep": "evals/inputs/doan-dung-san-khau.md",
+  "tin_nhan": "Soi giúp đoạn này xem chỗ nào nghe giống AI, đừng viết lại cả đoạn: {tep}",
+  "mong_doi": "Chỉ ra \"Bài này nói về phần không ổn\" (mục 4, trỏ tới thứ không gọi tên), \"Một cách dễ nghĩ tới là...\" (mục 5, có thể xếp vào chỗ tùy người viết), câu kết \"Nhìn chung... mới là chìa khóa\" (mục 2, 1 hoặc 13). Gợi ý sửa đúng câu được chỉ, giữ 4 phút và 90 giây, không viết lại cả đoạn.",
+  "kiem": {
+   "min_refs": 3,
+   "max_words": 380
   }
  }
 ]
