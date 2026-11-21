@@ -61,7 +61,7 @@ Xong thì kiểm tra có `SKILL.md` trong thư mục đích, báo đường dẫ
 
 ## Cách dùng
 
-Cứ nói như nhờ đồng nghiệp.
+Cứ nói như nhờ đồng nghiệp. Cùng một đoạn, “sửa để mình gửi” sẽ trả bản dùng ngay, còn “chỉ soi giúp” sẽ chỉ ra câu gượng và dẫn số mục. Skill tự chọn hướng dẫn theo lời nhờ.
 
 | Gõ thế này | Skill làm gì |
 | --- | --- |
@@ -193,9 +193,9 @@ Tin nhắn thì icon, kiểu cười, viết tắt học từ 30 lượt chat g�
 </details>
 
 <details>
-<summary>Bộ kiểm tra và script so dữ kiện</summary>
+<summary>Tra dấu hiệu, quét file và so dữ kiện</summary>
 
-Hai script chỉ dùng thư viện chuẩn của Python. `scan.py` chấm file `.md`, `.txt`, `.pptx`:
+Từ thư mục repo, chạy `python3 -I skills/viet-nhu-nguoi/scripts/patterns.py 46` để lấy ví dụ ở mục 46. Thay số bằng chữ `H` để tra nhóm slide, bỏ đối số để xem các tiêu đề. Các script chỉ dùng thư viện chuẩn của Python. `scan.py` chấm file `.md`, `.txt`, `.pptx`:
 
 ```bash
 python3 -I skills/viet-nhu-nguoi/scripts/scan.py file.md
@@ -241,12 +241,16 @@ Gặp câu AI tiếng Việt skill chưa bắt, hay skill sửa hỏng một câ
 
 ```text
 skills/viet-nhu-nguoi/
-├── SKILL.md                 quy tắc chính, trợ lý đọc mỗi lần dùng skill
-├── references/patterns.md   các dấu hiệu, ví dụ trước/sau
-├── references/slides.md     slide, lời thuyết trình
-├── references/chat.md       tin nhắn theo giọng người dùng
-├── references/spoken.md     trợ từ, lời nhờ, lời hứa
-├── references/sources.md    nguồn tham khảo
+├── SKILL.md                 quy tắc chung và bảng chọn theo lời nhờ
+├── references/
+│   ├── draft.md, edit*.md, review.md       viết mới, sửa, soi lỗi
+│   ├── patterns.md                        tra dấu hiệu theo số mục
+│   ├── voice.md, spoken.md                mẫu giọng, lời thoại và lời họp
+│   ├── vietnamese.md, long-form.md        văn dịch, bài dài
+│   ├── chat*.md                           nhắn tin, đổi người nhận, giọng miền
+│   ├── slides*.md                         soạn slide, soát file, đọc thử
+│   └── sources.md                         nguồn và bảng đối chiếu 20 repo
+├── scripts/patterns.py      tra ví dụ theo số mục hoặc nhóm
 ├── scripts/scan.py          bộ kiểm tra, thang điểm 0-100
 ├── scripts/check_facts.py   so dữ kiện giữa hai bản
 └── scripts/slides.py        đọc chữ và ghi chú trong .pptx

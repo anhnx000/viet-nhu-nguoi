@@ -4,6 +4,8 @@ import importlib.util
 import json
 import pathlib
 import re
+import subprocess
+import sys
 import unittest
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
@@ -11,10 +13,10 @@ SKILL = ROOT / "skills/viet-nhu-nguoi/SKILL.md"
 PATTERNS = ROOT / "skills/viet-nhu-nguoi/references/patterns.md"
 
 # Mỗi repo trong bảng "Cách tổ chức skill trong các repo nhiều sao" (references/sources.md) ứng với một chỗ
-# áp dụng: câu trong SKILL.md hoặc ID đề thử. Thêm repo vào bảng thì phải thêm dòng ở đây.
+# áp dụng: câu trong hướng dẫn mà trợ lý mở được hoặc ID đề thử. Thêm repo vào bảng thì phải thêm dòng ở đây.
 LESSONS = {
     "mattpocock/skills": "hai đến bốn câu gộp một lượt",
-    "obra/superpowers": "## Những lúc dễ tự bào chữa",
+    "obra/superpowers": "Sau khi ghi, đọc lại phần vừa sửa trên đĩa",
     "multica-ai/andrej-karpathy-skills": "chép nguyên những câu nằm ngoài phần được nhờ sửa",
     "anthropics/skills": "eval:sua-tin-gian-giu-nguyen",
     "DietrichGebert/ponytail": "chỗ nào không chỉ ra được dấu hiệu cụ thể thì trả về câu gốc",
@@ -69,7 +71,23 @@ class Package(unittest.TestCase):
         repos = re.findall(r"^\| \d+ \| \[([^\]]+)\]", table, re.M)
         self.assertGreaterEqual(len(repos), 20)
         self.assertEqual(set(repos), set(LESSONS))
-        skill = SKILL.read_text(encoding="utf-8")
+        # Chỉ tính hướng dẫn đi tới được từ file chính, bỏ bảng nguồn tự mô tả.
+        pending = [SKILL]
+        visited = {}
+        while pending:
+            path = pending.pop()
+            if path in visited:
+                continue
+            content = path.read_text(encoding="utf-8")
+            visited[path] = content
+            for link in re.findall(r"\]\(([^():#]+\.md)(?:#[^)]*)?\)", content):
+                target = (path.parent / link).resolve()
+                self.assertTrue(target.is_file(), f"{path.name} dẫn sai tới {link}")
+                if target.name != "sources.md":
+                    pending.append(target)
+        guides = set(PATTERNS.parent.rglob("*.md")) - {PATTERNS.with_name("sources.md")}
+        self.assertEqual(set(visited), guides | {SKILL})
+        skill = "\n".join(visited.values())
         ids = {s["id"] for s in json.loads(read("evals/scenarios.json"))}
         for repo, anchor in LESSONS.items():
             if anchor.startswith("eval:"):
@@ -80,6 +98,31 @@ class Package(unittest.TestCase):
     def test_patterns_numbered_without_gaps(self):
         nums = [int(n) for n in re.findall(r"^### (\d+)\.", PATTERNS.read_text(encoding="utf-8"), re.M)]
         self.assertEqual(nums, list(range(1, len(nums) + 1)))
+
+    def test_lookup_returns_only_requested_patterns(self):
+        script = SKILL.parent / "scripts/patterns.py"
+
+        def lookup(*keys):
+            return subprocess.run(
+                [sys.executable, "-I", str(script), *keys], cwd=ROOT,
+                capture_output=True, text=True, encoding="utf-8",
+            )
+
+        catalog = PATTERNS.read_text(encoding="utf-8")
+        index = lookup()
+        self.assertEqual(index.stdout.splitlines(), re.findall(r"^#{2,3} (?:[A-Z]|\d+)\. .+", catalog, re.M))
+        result = lookup("55", "l")
+        self.assertEqual(result.returncode, 0, result.stderr)
+        group_l = catalog.split("\n## L. ", 1)[1].split("\n## ", 1)[0]
+        numbers = r"^### (\d+)\."
+        self.assertEqual(re.findall(numbers, result.stdout, re.M), ["55", *re.findall(numbers, group_l, re.M)])
+        self.assertNotIn("## Giữ lại", result.stdout)
+        self.assertNotIn("<a id=", result.stdout)
+        self.assertIn("**Trước", result.stdout)
+        self.assertIn("**Sau", result.stdout)
+        error = lookup("1", "0")
+        self.assertNotEqual(error.returncode, 0)
+        self.assertEqual(error.stdout, "")
 
     def test_readme_scores_match_scanner(self):
         """Điểm ví dụ ghi trong README (và vẽ trong ảnh assets/) phải đúng điểm bộ kiểm tra chấm bây giờ."""

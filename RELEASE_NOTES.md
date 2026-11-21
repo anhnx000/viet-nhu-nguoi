@@ -2,6 +2,10 @@
 
 English notes for each GitHub release. The release workflow publishes the section that matches the version in `SKILL.md`. The full development log, in Vietnamese, is in [CHANGELOG.md](CHANGELOG.md).
 
+## 2.10.0
+
+Load writing, editing, review, chat and slide guidance on demand. Look up a numbered pattern or check an existing presentation directly from the entry point.
+
 ## 2.9.0
 
 Design lessons from the 20 most-starred skills on GitHub, a third pass over blader/humanizer, and author voice across sessions.

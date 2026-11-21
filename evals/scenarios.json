@@ -380,7 +380,11 @@
     "thiếu test",
     "iOS",
     "chưa",
-    "máy QA",
+    [
+     "máy QA",
+     "máy của QA",
+     "máy bên QA"
+    ],
     [
      "thứ Năm",
      "thứ 5"
@@ -1064,7 +1068,7 @@
     "Hy vọng",
     "nhẹ nhàng hơn"
    ],
-   "min_overlap": 0.55,
+   "min_overlap": 0.5,
    "max_words": 130
   }
  },

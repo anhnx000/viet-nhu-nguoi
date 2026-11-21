@@ -13,3 +13,7 @@ Với tin nhắn, hội thoại và lời đọc thành tiếng, xem cả việc
 Lời thuyết trình thì đọc thử xem người nghe có theo được mà không cần nhìn giấy không. Đại từ dễ gây lẫn thì gọi lại tên đối tượng trước khi chuyển ý. Giữ từ nối chỉ nguyên nhân, điều kiện, thứ tự. Không tự thêm tiếng đệm để giả lời nói. Người dùng cần kịch bản đọc thành tiếng thì ghi kèm cách đọc cho chữ viết tắt, số và đơn vị khó đọc, giá trị và thuật ngữ vẫn để nguyên.
 
 Giữ đúng ai làm và ai nói. "Đã test trên staging" không tự đổi thành "em đã test", "bên vận chuyển báo mai tới" không đổi thành "mai em giao". Chuyển lời kể thành tin gửi thì chỉ đổi đại từ khi biết rõ đang nói tới ai. Không thêm lời xin lỗi, lý do từ chối hay lời hứa đền bù mà người gửi chưa đưa.
+
+## Lời họp
+
+Với cùng một đoạn họp, “chép nguyên lời” thì giữ cả từ đệm và chỗ ngập ngừng. Nếu chỉ xin lời thoại, trả đúng lời người nói, kể cả khi bản nguồn không dùng ngoặc kép. Gọt lời cho dễ đọc thì được bỏ tiếng đệm. Khi tóm tắt quyết định, ghi riêng việc đã chốt và việc còn chờ. Giữ người nói, lời phủ định và mức chắc chắn ở cả ba cách.

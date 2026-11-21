@@ -15,7 +15,7 @@ Viết như người ("write like a person") is a skill, an add-on pack of instr
 
 The skill is written for Vietnamese. It builds on Wikipedia's [Signs of AI writing](https://en.wikipedia.org/wiki/Wikipedia:Signs_of_AI_writing) and [blader/humanizer](https://github.com/blader/humanizer), and English text still gets the structural rules, but there is no English-specific section. The work went into Vietnamese because generic humanizers miss what makes Vietnamese AI text sound off: it reads like English that was translated word by word.
 
-Contents: [Install](#install) · [Usage](#usage) · [Before and after](#before-and-after) · [Signs of AI writing](#signs-of-ai-writing) · [Scanner and fact checker](#scanner-and-fact-checker)
+Contents: [Install](#install) · [Usage](#usage) · [Before and after](#before-and-after) · [Signs of AI writing](#signs-of-ai-writing) · [Pattern lookup and checks](#pattern-lookup-scanner-and-fact-checker)
 
 ## Use cases
 
@@ -93,6 +93,8 @@ The command asks which agents to install for. Pass `-a claude-code` (or `-a '*'`
 ## Usage
 
 Talk to it the way you would brief a colleague. There is no syntax to remember.
+
+For the same paragraph, ask “sửa để mình gửi” for a send-ready edit or “chỉ soi giúp” for comments with pattern numbers. The assistant opens the guide for that task.
 
 | You type | What the skill does |
 | --- | --- |
@@ -212,9 +214,11 @@ The remaining groups apply to English as well: false contrasts, one-line punchli
 
 The skill leaves alone regional dialect, colloquial speech, Sino-Vietnamese terms used correctly, passives in technical docs, and small words whose removal changes the meaning ("vẫn" *still*, "chưa" *not yet*, "chỉ" *only*, "có thể" *may*).
 
-## Scanner and fact checker
+<a id="scanner-and-fact-checker"></a>
 
-The repo has two scripts you can run by hand. Both use only the Python standard library.
+## Pattern lookup, scanner and fact checker
+
+From the repo root, run `python3 -I skills/viet-nhu-nguoi/scripts/patterns.py 46` for entry 46. Use `H` for the slide group, or omit the argument to list headings. The scripts use the Python standard library.
 
 `scan.py` scores a `.md`, `.txt` or `.pptx` file and prints a 0-100 score with every match:
 
@@ -274,12 +278,16 @@ The skill does not promise to get past AI detectors and does not use evasion tri
 
 ```text
 skills/viet-nhu-nguoi/
-├── SKILL.md                 main rules, read by the assistant on every use
-├── references/patterns.md   patterns with before/after examples
-├── references/slides.md     slides, speaker notes, fresh-reader test
-├── references/chat.md       chat replies in the user's voice, per recipient
-├── references/spoken.md     particles, requests, promises, transcripts
-├── references/sources.md    references
+├── SKILL.md                 shared rules and task selection
+├── references/
+│   ├── draft.md, edit*.md, review.md       draft, revise or review
+│   ├── patterns.md                        look up numbered examples
+│   ├── voice.md, spoken.md                voice samples, dialogue and transcripts
+│   ├── vietnamese.md, long-form.md        translated prose and long pieces
+│   ├── chat*.md                           replies, group chats and regional voice
+│   ├── slides*.md                         draft, check or read-test a deck
+│   └── sources.md                         sources and survey of 20 repositories
+├── scripts/patterns.py      look up examples by number or group
 ├── scripts/scan.py          scanner with a 0-100 score
 ├── scripts/check_facts.py   compares numbers, dates, links, code between two versions
 ├── scripts/slides.py        reads slide text and notes from .pptx

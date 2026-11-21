@@ -1,5 +1,23 @@
 # Changelog
 
+## 2.10.0 (2026-11-21)
+
+Tách phần viết mới, sửa, soi lỗi và các việc chuyên biệt khỏi file chính. Tin nhắn chỉ mở thêm hướng dẫn nhóm hoặc giọng miền khi cần. Khi soát PPTX có thể đi thẳng tới lệnh đọc chữ và kiểm dữ kiện.
+
+Token của phần hướng dẫn trên từng đường đọc, đếm bằng `o200k_base` trên toàn bộ file Markdown cần cho tác vụ, kể cả frontmatter. Mỗi file tính một lần. Số này chưa gồm lời nhờ, nội dung người dùng, kết quả công cụ và câu trả lời.
+
+| Tác vụ | 2.9.0 | 2.10.0 |
+|---|---:|---:|
+| Hỏi thông thường | 11.886 | 927 |
+| Soạn email từ dữ kiện | 11.886 | 1.433 |
+| Soạn tin theo giọng trong cuộc trò chuyện | 15.855 | 1.316 |
+| Trả lời một người trong nhóm nhiều vai | 15.855 | 1.903 |
+| Soát chữ trong PPTX | 14.436 | 1.146 |
+
+Tra riêng một mục bằng `python3 -I scripts/patterns.py 46`, hoặc truyền nhiều số và chữ cái của nhóm trong cùng lệnh. Script lấy nguyên văn từ danh mục. Bảng đối chiếu 20 repo trong `references/sources.md` có liên kết tới thư mục ở đúng commit đã xem.
+
+Bộ đề: `sua-review-than-mat` hạ `min_overlap` từ 0,55 xuống 0,5, vì bản sửa đúng ý đề (bỏ hai câu của chatbot, giữ nguyên phần review) chỉ giữ 53% số chữ gốc. `daily-report` nhận cả "máy của QA". Chạy lại qua lệnh `/viet-nhu-nguoi` trên bản này: 63/63 đề qua phần tự động, 2/2 đề để riêng.
+
 ## 2.9.0 (2026-11-21)
 
 Học cách tổ chức của 20 skill nhiều sao nhất trên GitHub, học tiếp từ humanizer sau khi bỏ trần số chữ, giữ giọng tác giả qua nhiều bài.

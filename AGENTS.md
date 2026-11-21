@@ -1,11 +1,11 @@
 # Hướng dẫn cho trợ lý AI sửa repo này
 
-Repo này là một skill viết bằng Markdown, kèm hai script Python chỉ dùng thư viện chuẩn. `skills/viet-nhu-nguoi/SKILL.md` là phần trợ lý đọc mỗi lần dùng skill, nên đó là sản phẩm chính.
+Repo này là một skill viết bằng Markdown, kèm các script Python chỉ dùng thư viện chuẩn. `skills/viet-nhu-nguoi/SKILL.md` là phần trợ lý đọc mỗi lần dùng skill, nên đó là sản phẩm chính.
 
 ## File chính
 
 - `skills/viet-nhu-nguoi/SKILL.md`: quy tắc. Mỗi lần dùng skill, trợ lý đọc hết file này, nên thêm chữ nào cũng phải đáng.
-- `skills/viet-nhu-nguoi/references/patterns.md`: danh mục dấu hiệu, đánh số liền từ 1, mỗi mục có ví dụ trước và sau.
+- `skills/viet-nhu-nguoi/references/patterns.md`: danh mục dấu hiệu, đánh số liền từ 1, mỗi mục có ví dụ trước và sau. `scripts/patterns.py` đọc thẳng file này để tra theo số hoặc nhóm.
 - `skills/viet-nhu-nguoi/scripts/scan.py`, `check_facts.py`: bộ kiểm tra và công cụ so dữ kiện.
 - `skills/viet-nhu-nguoi/agents/openai.yaml`: tên hiển thị và lời gọi mẫu Codex dùng. Lời gọi mẫu phải trỏ đúng `$viet-nhu-nguoi`.
 - `tests/`: `test_scan.py` cho bộ kiểm tra, `test_package.py` kiểm phiên bản, cách đánh số danh mục và điểm ví dụ trong README.

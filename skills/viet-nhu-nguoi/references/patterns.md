@@ -1,10 +1,10 @@
 # Danh mục dấu hiệu văn AI trong tiếng Việt
 
-Sắp từ mạnh đến yếu. Nhóm A và nhóm E chỉ cần gặp một lần là sửa. Nhóm G (mục 30-38) dành riêng cho tiếng Việt. Nhóm H (mục 39-44) dành cho slide, lời thuyết trình và tài liệu nhiều trang, hướng dẫn đầy đủ ở `slides.md`. Nhóm K (mục 56-62) là văn dịch ở tầng sâu hơn nhóm G: từng chữ đều là tiếng Việt nhưng câu vẫn theo khuôn tiếng Anh. Văn tiếng Việt nào cũng nên rà nhóm này. Nhóm I (mục 45-55) là những dấu hiệu chỉ thấy khi nhìn cả bài, thường vẫn còn sau khi đã sửa sạch từng câu. Bài dài và bài đăng mạng xã hội thì đọc nhóm này trước. Mục ghi *yếu* chỉ sửa khi đi cùng dấu hiệu khác trong cùng đoạn. Vài khối "Sau" có chi tiết cụ thể mà khối "Trước" không có (tên người, con số): đó là chi tiết giả định người viết đã cung cấp, còn khi sửa bài thật thì không tự thêm.
+Sắp từ mạnh đến yếu. Ở nhóm A và E, chỉ sửa câu sáo hoặc thừa trong ngữ cảnh. Nhóm G (mục 30-38) dành riêng cho tiếng Việt. Nhóm H (mục 39-44) dành cho slide, lời thuyết trình và tài liệu nhiều trang, hướng dẫn đầy đủ ở `slides.md`. Nhóm K (mục 56-62) là văn dịch ở tầng sâu hơn nhóm G: từng chữ đều là tiếng Việt nhưng câu vẫn theo khuôn tiếng Anh. Văn tiếng Việt nào cũng nên rà nhóm này. Nhóm I (mục 45-55) là những dấu hiệu chỉ thấy khi nhìn cả bài, thường vẫn còn sau khi đã sửa sạch từng câu. Bài dài và bài đăng mạng xã hội thì đọc nhóm này trước. Mục ghi *yếu* chỉ sửa khi đi cùng dấu hiệu khác trong cùng đoạn. Vài khối "Sau" có chi tiết cụ thể mà khối "Trước" không có (tên người, con số): đó là chi tiết giả định người viết đã cung cấp, còn khi sửa bài thật thì không tự thêm.
 
 ## A. Dàn dựng thay vì nói thẳng
 
-Câu báo hiệu "điều này quan trọng" mà không thêm sự việc nào. Đây là nhóm mạnh nhất và hay gặp nhất trong văn mô hình viết bây giờ, gặp một lần là sửa. Khuôn này có ở mọi thứ tiếng, nên dạng tiếng Việt tương đương cũng tính.
+Câu báo hiệu "điều này quan trọng" mà không thêm sự việc nào. Đây là nhóm mạnh nhất và hay gặp nhất trong văn mô hình viết bây giờ, sửa khi vế dẫn thừa trong ngữ cảnh. Khuôn này có ở mọi thứ tiếng, nên dạng tiếng Việt tương đương cũng tính.
 
 ### 1. Đối lập giả: "không phải X mà là Y"
 **Dấu hiệu:** không chỉ... mà còn; không phải X, mà là Y; X chứ không phải Y; không đơn thuần là; "câu hỏi không còn là X mà là Y"; "giá trị không nằm ở X, mà nằm ở Y"; "Không phải vì X." mở câu rồi mới nói lý do thật; tách thành hai câu ("Điều này không có nghĩa là X. Nó có nghĩa là Y."; "Đây không chỉ là một con số. Đây là sự công nhận."; "PM không phải là người có câu trả lời đúng. PM là người đặt câu hỏi đúng."); "X là A, không phải B" ("Kỹ sư là đồng đội, không phải người nhận việc"); "Đừng A, hãy B" ("Đừng yêu giải pháp, hãy yêu vấn đề"); "Không có A, chỉ có B"; hai lần phủ định dọn đường cho vế chốt ("Không ồn ào, không chạy theo trend, chỉ kể một câu chuyện gia đình"); đuôi phủ định cụt ("..., không cần đoán").
@@ -118,7 +118,7 @@ Khuôn câu và dấu câu dùng khắp nơi, dù ý không cần tới.
 
 ### 8. Câu mở đầu lặp lại
 **Vấn đề:** Nhiều câu liền nhau mở bằng cùng một chủ ngữ ("Anh ấy... Anh ấy... Anh ấy..."), hoặc đoạn nào cũng mở bằng "Bên cạnh đó", "Ngoài ra".
-**Sửa:** Gộp câu, đổi chủ ngữ, hoặc bắt đầu bằng hành động. Đừng cấm hẳn chữ lặp: câu còn lại vẫn có thể mở bằng "Chị". Người viết cũng lặp có chủ ý để tạo nhịp ("Tôi đến. Tôi thấy. Tôi thắng."), xem phần "Khi nào không sửa" trong `SKILL.md`.
+**Sửa:** Gộp câu, đổi chủ ngữ, hoặc bắt đầu bằng hành động. Đừng cấm hẳn chữ lặp: câu còn lại vẫn có thể mở bằng "Chị". Người viết cũng lặp có chủ ý để tạo nhịp ("Tôi đến. Tôi thấy. Tôi thắng."), xem phần “Khi nào giữ nguyên” trong [hướng dẫn sửa](edit.md).
 **Trước:**
 > Chị để ý cánh cửa. Chị để ý cái khóa trên cửa. Chị ghi nhớ cả hai.
 **Sau:**
@@ -631,7 +631,7 @@ Tin nhắn trả lời bạn bè, đồng nghiệp thân thì người nhận bi
 - Tiếng lóng, meme, chuyện riêng của một thời, một nhóm.
 - Câu chêm, ngoặc đơn, tự sửa giữa chừng: "(Định viết 'gần như' nhưng thật ra là chắc chắn.)"
 - Một lựa chọn riêng mà người viết nói được lý do: "Tôi chọn ở lại công ty nhỏ vì muốn tự tay làm cả sản phẩm."
-- Văn thân mật đã đúng giọng: viết thường, viết tắt, câu cụt, độ gắt của bài chê. Xem phần "Khi nào không sửa" trong `SKILL.md`.
+- Văn thân mật đã đúng giọng: viết thường, viết tắt, câu cụt, độ gắt của bài chê. Xem phần “Khi nào giữ nguyên” trong [hướng dẫn sửa](edit.md).
 - Không suy nguồn gốc văn bản từ ngày đăng. Văn cũ được nhờ sửa thì vẫn sửa.
 - Giọng vùng miền, từ địa phương, "má", "tui", "hông" có sẵn trong bản gốc. Không chuẩn hóa, cũng không tự rải thêm.
 - Từ Hán Việt là thuật ngữ đúng, hoặc đúng giọng văn bản (công văn, hợp đồng, học thuật).

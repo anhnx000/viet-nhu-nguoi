@@ -1,0 +1,5 @@
+# Soi giọng văn
+
+Không viết lại cả bài ở chế độ soi lỗi. Gợi ý thay đúng cụm hoặc câu vừa chỉ ra. Câu bên cạnh đã ổn thì để nguyên, kể cả khi cả bài chỉ dài hai câu. Liệt kê từng chỗ: trích đoạn, số mục trong [danh mục dấu hiệu](patterns.md), lý do, gợi ý sửa ngắn. Sắp mạnh trước yếu sau, tách rõ chỗ chắc chắn nên sửa và chỗ tùy người viết (có thể là chủ ý). Không kết luận văn bản do AI viết, cũng không lấy chi tiết cụ thể làm bằng chứng bài do người viết: mô hình bịa được chi tiết y như thật, nên bài nhờ AI viết hộ thì nhắc người dùng soát lại các chi tiết đó. Bài ít dấu hiệu thì nói vậy ngay câu đầu và nêu nhiều nhất ba chỗ đáng xem, không kéo thành bản biên tập.
+
+Từ thư mục skill, chạy `python3 -I scripts/patterns.py` để xem tiêu đề. Khi đã biết số hoặc nhóm, tra một lượt, ví dụ `python3 -I scripts/patterns.py 4 46` hoặc `python3 -I scripts/patterns.py K`. Nếu chỉ có công cụ đọc file, tìm tiêu đề trong danh mục rồi đọc đến trước tiêu đề kế. Rà đủ mọi dấu hiệu khi người dùng yêu cầu. Khi cần xét nhịp lặp giữa các đoạn trong bài dài, xem [cách rà cả bài](long-form.md).
