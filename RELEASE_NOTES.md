@@ -2,6 +2,15 @@
 
 English notes for each GitHub release. The release workflow publishes the section that matches the version in `SKILL.md`. The full development log, in Vietnamese, is in [CHANGELOG.md](CHANGELOG.md).
 
+## 2.13.0
+
+Evals on real Codex, and fixes for three mistakes only Codex made.
+
+- `evals/run.py --codex` runs each case through `codex exec` without MCP servers, plugins or personal skills, and stops early if the Codex sandbox cannot run a shell command or the workspace is out of credits. Ubuntu 24.04 needs an AppArmor profile for bubblewrap; see `evals/README.md`.
+- The description now says the skill is not for code, factual or arithmetic questions. With the old description Codex (gpt-6.2-sol, medium) loaded the skill for 18/30 runs of 10 new near-miss prompts; with the new one, 0/20 on the same prompts, while should-trigger prompts stayed at 44/44. Claude never false-triggered and triggered on 48/48.
+- Posts in the user's own name with no story, lessons or opinions of their own now get two to four questions instead of an invented draft. Already-natural casual messages are returned verbatim even when the user asks to "make it more natural".
+- Codex, one run: 55/63 to 59/63 main cases, 7/13 to 10/13 held-out cases. Claude: 60/63 main, 10/13 held-out; the 11 drafting cases passed 33/33 runs after the final wording.
+
 ## 2.12.0
 
 Trigger tests, a wider skill description, and a Codex-style eval mode.

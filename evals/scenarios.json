@@ -718,7 +718,11 @@
   "mong_doi": "Kể lại đúng các mốc người dùng đưa, không khuyên ai, không thêm cảnh hay cảm nghĩ họ chưa kể.",
   "kiem": {
    "must_keep": [
-    "600m",
+    [
+     "600m",
+     "600 m",
+     "600 mét"
+    ],
     [
      "3 tuần",
      "ba tuần"

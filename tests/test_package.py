@@ -339,13 +339,21 @@ class Evals(unittest.TestCase):
                 (root / run / "nen.json").write_text(json.dumps({"tools": [skill] if run == "1" else [other]}))
                 (root / run / "khong.json").write_text(json.dumps({"tools": [other]}))
                 (root / run / "tuy.json").write_text(json.dumps({"tools": [codex]}))
+                for sid in ("nen", "khong", "tuy"):
+                    (root / run / f"{sid}.md").write_text("trả lời")
+            # Lượt hết hạn mức chỉ có vết, không có câu trả lời: báo thiếu, không đếm là không bật.
+            cases.append({"id": "loi", "bat": True})
+            (root / "1" / "loi.json").write_text(json.dumps({"tools": [], "error": "out of credits"}))
+            (root / "2" / "loi.json").write_text(json.dumps({"tools": [skill]}))
+            (root / "2" / "loi.md").write_text("trả lời")
             out = io.StringIO()
             with contextlib.redirect_stdout(out):
-                self.assertEqual(self.check.report_trigger(cases, self.check.run_dirs(root)), 1)
+                self.assertEqual(self.check.report_trigger(cases, self.check.run_dirs(root)), 2)
             text = out.getvalue()
+            self.assertIn("THIẾU  loi (nên bật): bật 1/1 lượt", text)
             self.assertIn("SAI    nen (nên bật): bật 1/2 lượt", text)
             self.assertIn("ĐÚNG   khong (không nên bật): bật 0/2 lượt", text)
-            self.assertIn("Nên bật: bật 1/2 lượt", text)
+            self.assertIn("Nên bật: bật 2/3 lượt", text)
             self.assertIn("Tùy: bật 2/2 lượt.", text)
 
     def test_codex_output_is_parsed_like_claude_traces(self):
@@ -372,6 +380,11 @@ class Evals(unittest.TestCase):
         self.assertEqual(self.check.opened(tools), {})  # lệnh lỗi không tính là đã đọc
         broken = {"type": "item.completed", "item": {"type": "agent_message", "text": "Lỗi `bwrap: setting up uid map`"}}
         self.assertTrue(run.parse_codex(json.dumps(broken))[1]["sandbox_broken"])
+
+    def test_kept_facts_ignore_line_breaks(self):
+        sc = self.scenarios["lap-giu"]
+        self.assertEqual(self.check.check(sc, "Tôi nhớ bến nước.  \nTôi nhớ cây cầu.\nTôi nhớ tiếng dép của mẹ."), [])
+        self.assertTrue(self.check.check(sc, "Tôi nhớ bến nước. Tôi nhớ tiếng dép của mẹ."))
 
     def test_reference_answers_pass(self):
         """Mỗi đề có một đáp án mẫu trong evals/dap-an/ và đáp án ấy phải qua check.py.

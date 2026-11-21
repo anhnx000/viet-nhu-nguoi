@@ -71,6 +71,12 @@ def load_trace(path):
     return [(t[0], t[1] if len(t) > 1 else {}, t[2] if len(t) > 2 else True) for t in tools]
 
 
+def trace_error(path):
+    """Lỗi Codex hay Claude ghi trong vết (hết hạn mức, mất mạng), rỗng nếu lượt chạy xong."""
+    data = json.loads(pathlib.Path(path).read_text(encoding="utf-8"))
+    return data.get("error") if isinstance(data, dict) and not data.get("tools") else None
+
+
 def opened(trace):
     """File của skill mà trợ lý đã mở: {tên: True nếu đọc trọn, False nếu chỉ đọc một phần hoặc là script đã chạy}.
 
@@ -160,9 +166,11 @@ def check(scenario, reply, root=ROOT):
         need(bold <= rules["max_bold"], f"{bold} chỗ in đậm, quá {rules['max_bold']}")
     for fact in rules.get("must_keep", []):
         # một dữ kiện có thể viết theo vài cách ("21h" hay "9h tối"): đưa vào dạng danh sách.
-        # Không phân biệt hoa thường: "Mùng 4" đầu tin vẫn là "mùng 4".
+        # Không phân biệt hoa thường: "Mùng 4" đầu tin vẫn là "mùng 4". Bỏ qua cách xuống dòng:
+        # tách ba câu điệp ngữ thành ba dòng vẫn là giữ nguyên câu.
         options = fact if isinstance(fact, list) else [fact]
-        need(any(o.casefold() in reply.casefold() for o in options), f"mất dữ kiện \"{options[0]}\"")
+        flat = " ".join(reply.split()).casefold()
+        need(any(" ".join(o.split()).casefold() in flat for o in options), f"mất dữ kiện \"{options[0]}\"")
     # Việc người nhận cần làm phải nằm ở đầu tin: tìm trong LEAD_WORDS chữ đầu tiên.
     lead = " ".join(reply.split()[:LEAD_WORDS]).casefold()
     for fact in rules.get("lead_keep", []):
@@ -241,14 +249,15 @@ def report_trigger(cases, folders):
     """In số lượt bật skill của từng lời nhờ và tỉ lệ đúng; trả về số đề có lượt sai hoặc thiếu."""
     total, failed, tally = len(folders), 0, {True: [0, 0], False: [0, 0], None: [0, 0]}
     for case in cases:
-        hits = [used_skill(load_trace(f / f"{case['id']}.json")) for f in folders
-                if (f / f"{case['id']}.json").exists()]
+        # Lượt lỗi (hết hạn mức, mất mạng) tính là thiếu, không tính là không bật.
+        paths = [f / f"{case['id']}.json" for f in folders if (f / f"{case['id']}.json").exists()]
+        hits = [used_skill(load_trace(p)) for p in paths if not trace_error(p)]
         want = case.get("bat")
         on = sum(hits)
         tally[want][0] += on
         tally[want][1] += len(hits)
         label = {True: "nên bật", False: "không nên bật", None: "tùy"}[want]
-        wrong = len(hits) < total or (want is True and on < total) or (want is False and on > 0)
+        wrong = len(hits) < total or (want is True and on < len(hits)) or (want is False and on > 0)
         failed += wrong
         mark = "THIẾU " if len(hits) < total else "SAI   " if wrong else "ĐÚNG  "
         print(f"{mark} {case['id']} ({label}): bật {on}/{len(hits)} lượt")

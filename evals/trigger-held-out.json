@@ -80,5 +80,85 @@
   "id": "doi-dinh-dang-ngay",
   "bat": false,
   "tin_nhan": "Đổi các ngày dạng 2026-12-06 trong file CSV sang 06/12/2026 bằng Python."
+ },
+ {
+  "id": "thong-bao-nghi-tet",
+  "bat": true,
+  "tin_nhan": "Soạn giúp thông báo nghỉ Tết Dương lịch gửi toàn công ty: nghỉ ngày 1/1 và 2/1, đi làm lại ngày 4/1, ai trực thì báo trưởng phòng trước 28/12."
+ },
+ {
+  "id": "sua-caption-sen",
+  "bat": true,
+  "tin_nhan": "Sửa caption này cho đỡ sến giúp mình: \"Hành trình vạn dặm bắt đầu từ một bước chân, cảm ơn tất cả mọi người đã luôn đồng hành cùng mình trên con đường này.\""
+ },
+ {
+  "id": "tin-xin-nghi-con-om",
+  "bat": true,
+  "tin_nhan": "Nhắn sếp xin nghỉ chiều nay vì con ốm, viết giúp mình tin ngắn thôi."
+ },
+ {
+  "id": "dich-email-cam-on",
+  "bat": true,
+  "tin_nhan": "Dịch sang tiếng Việt để gửi đối tác: \"Thank you for hosting us last week. We look forward to discussing the next steps with your team.\""
+ },
+ {
+  "id": "sua-mo-ta-tuyen-dung",
+  "bat": true,
+  "tin_nhan": "Viết lại đoạn tuyển dụng này cho đỡ khô: \"Ứng viên có khả năng làm việc độc lập và làm việc nhóm hiệu quả, chịu được áp lực cao, có tinh thần cầu tiến.\""
+ },
+ {
+  "id": "soi-doan-thuong-hieu",
+  "bat": true,
+  "tin_nhan": "Đoạn này đọc có giọng máy không, chỉ ra chỗ nào: \"Trong bối cảnh thị trường không ngừng biến động, việc xây dựng thương hiệu cá nhân trở nên quan trọng hơn bao giờ hết.\""
+ },
+ {
+  "id": "docker-may-ao",
+  "bat": false,
+  "tin_nhan": "Docker với máy ảo khác nhau chỗ nào?"
+ },
+ {
+  "id": "loi-npm-eresolve",
+  "bat": false,
+  "tin_nhan": "npm install báo lỗi ERESOLVE unable to resolve dependency tree, xử lý sao?"
+ },
+ {
+  "id": "cong-thuc-sumif",
+  "bat": false,
+  "tin_nhan": "Công thức Excel nào cộng cột B ở những dòng mà cột A là \"Hà Nội\"?"
+ },
+ {
+  "id": "go-file-env-git",
+  "bat": false,
+  "tin_nhan": "Lỡ commit nhầm file .env lên git, giờ gỡ nó khỏi lịch sử thế nào?"
+ },
+ {
+  "id": "doi-do-f-sang-c",
+  "bat": false,
+  "tin_nhan": "Đổi 72 độ F sang độ C giúp mình."
+ },
+ {
+  "id": "ngay-dien-bien-phu",
+  "bat": false,
+  "tin_nhan": "Chiến dịch Điện Biên Phủ kết thúc ngày nào?"
+ },
+ {
+  "id": "sap-xep-dict-python",
+  "bat": false,
+  "tin_nhan": "Sắp xếp list các dict theo key 'tuoi' giảm dần trong Python thế nào?"
+ },
+ {
+  "id": "lai-kep-gui-tiet-kiem",
+  "bat": false,
+  "tin_nhan": "Gửi 100 triệu, lãi 6%/năm, nhập lãi hằng tháng thì sau 3 năm được bao nhiêu?"
+ },
+ {
+  "id": "let-const-js",
+  "bat": false,
+  "tin_nhan": "let với const trong JavaScript khác nhau thế nào?"
+ },
+ {
+  "id": "awk-cot-thu-ba",
+  "bat": false,
+  "tin_nhan": "Viết lệnh awk lấy cột thứ 3 của file CSV ngăn cách bằng dấu chấm phẩy."
  }
 ]

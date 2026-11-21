@@ -1,5 +1,16 @@
 # Changelog
 
+## 2.13.0 (2026-11-22)
+
+Chạy bộ đề trên Codex thật, sửa ba lỗi chỉ Codex mắc.
+
+- `evals/run.py --codex` chạy từng đề bằng `codex exec` với mô hình trong `~/.codex/config.toml`, không nạp MCP, plugin hay skill cá nhân. Trước mỗi đợt, script nhờ Codex `cat` một chuỗi ngẫu nhiên. Sandbox hỏng hay hết credit thì dừng ngay, vì khi đó Codex vẫn trả lời như thường mà không đọc được file nào. Trên Ubuntu 24.04 cần một profile AppArmor cho bubblewrap, cách làm ghi trong `evals/README.md`.
+- `description` thêm "Không dùng cho câu hỏi về code, kiến thức hay phép tính". Ở bản cũ, Codex (gpt-6.2-sol, mức medium) đọc skill cho 9/15 lời nhờ không nên bật trong `trigger.json`. Trên 16 lời nhờ mới viết trước khi sửa và chưa dùng để chỉnh, ba lượt: bản cũ bật nhầm 18/30 lượt, bản mới 0/20, lời nhờ nên bật vẫn bật 18/18 rồi 44/44 trên cả 32 lời nhờ để riêng. Claude không bật nhầm lượt nào ở cả hai bản và bật đúng 48/48.
+- Bài đăng dưới tên người dùng mà họ chưa kể chuyện, bài học hay ý riêng nào thì hỏi hai đến bốn câu rồi dừng. Câu này nằm trong `SKILL.md`, phạm vi trong `draft.md` mở rộng sang bài trang cá nhân, LinkedIn, blog. Xin hơn 800 chữ cho Facebook hay LinkedIn thì hỏi luôn độ dài. Trước đó Codex tự nghĩ ra năm bài học cho bài "5 năm làm product manager".
+- Tin thân mật đã tự nhiên thì trả nguyên văn, kể cả khi được nhờ "sửa cho tự nhiên hơn". Phần "Khi nào giữ nguyên" trong `edit.md` chuyển lên trước các bước sửa.
+- Codex, một lượt: 55/63 lên 59/63 đề chính, 7/13 lên 10/13 đề để riêng. Claude: 60/63 đề chính, 10/13 đề để riêng. Bản đầu của câu hỏi trước làm Claude hỏi 6 câu mà không mở `draft.md`; thêm "hai đến bốn câu" thì 11 đề viết mới qua 33/33 lượt. Codex chưa chạy lại với chữ này vì hết credit.
+- `check.py` bỏ qua cách xuống dòng khi tìm cụm phải giữ, nhận "600 mét" như "600m", và không đếm lượt lỗi (hết credit, hết hạn mức) là lượt không bật skill. Các lượt Claude trong bản này, quy theo giá API mà `claude -p` báo (`cost_usd`), tương đương khoảng 25 USD. Chạy bằng gói thuê bao thì chỉ tốn hạn mức; lượt Codex tính vào credit ChatGPT, không có giá.
+
 ## 2.12.0 (2026-11-21)
 
 Thử skill có tự bật đúng lúc không, và chạy bộ đề theo cách Codex nạp skill.

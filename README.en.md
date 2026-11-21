@@ -15,7 +15,7 @@ Viết như người ("write like a person") is a skill, an add-on pack of instr
 
 The skill is written for Vietnamese. It builds on Wikipedia's [Signs of AI writing](https://en.wikipedia.org/wiki/Wikipedia:Signs_of_AI_writing) and [blader/humanizer](https://github.com/blader/humanizer), and English text still gets the structural rules, but there is no English-specific section. The work went into Vietnamese because generic humanizers miss what makes Vietnamese AI text sound off: it reads like English that was translated word by word.
 
-Contents: [Install](#install) · [Usage](#usage) · [Before and after](#before-and-after) · [Signs of AI writing](#signs-of-ai-writing) · [Pattern lookup and checks](#pattern-lookup-scanner-and-fact-checker)
+Contents: [Install](#install) · [Usage](#usage) · [Before and after](#before-and-after) · [How it is tested](#how-it-is-tested) · [Signs of AI writing](#signs-of-ai-writing) · [Pattern lookup and checks](#pattern-lookup-scanner-and-fact-checker)
 
 ## Use cases
 
@@ -179,6 +179,19 @@ python3 -I skills/viet-nhu-nguoi/scripts/scan.py examples/truoc.md
 Flags are grouped, each with its line number and the matched phrase. The score measures template habits, not the probability that AI wrote the text. One flag on its own means little; several groups at once are worth fixing. Options and the fact checker are described below.
 
 </details>
+
+## How it is tested
+
+Every release reruns 63 common cases and 13 held-out cases that are never used to tune the skill. Each case runs in a temp folder that holds only the skill and its input files. A script grades what can be counted (facts that must survive, invented numbers, length, follow-up questions, checker score); the rest is read by hand. Another 73 prompts test whether the skill loads on its own when it should, and stays out of code and factual questions.
+
+| Release 2.13.0, Opus and GPT at medium effort | Claude Code | Codex |
+| --- | --- | --- |
+| 63 common cases | 60/63 | 59/63 |
+| 13 held-out cases | 10/13 | 10/13 |
+| Loads when it should | 68/68 runs | 104/104 runs |
+| Loads when it shouldn't | 0/63 runs | 2/83 runs |
+
+Failures, per-case notes and the commands to rerun everything are in [evals/README.md](evals/README.md) (Vietnamese). The checker only counts surface patterns; on AI-rewritten news it still misses more than half.
 
 ## Signs of AI writing
 

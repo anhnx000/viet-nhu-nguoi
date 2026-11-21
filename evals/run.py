@@ -171,9 +171,9 @@ def codex_shell_works(args):
             proc = subprocess.run(cmd, cwd=temp, capture_output=True, text=True, encoding="utf-8", timeout=180,
                                   stdin=subprocess.DEVNULL)
         except subprocess.TimeoutExpired:
-            return False, "quá 180 giây"
+            return False, "quá 180 giây", None
         answer, trace = parse_codex(proc.stdout)
-        return token in answer, trace.get("error") or answer[:200]
+        return token in answer, answer[:200], trace.get("error")
 
 
 def description():
@@ -262,6 +262,10 @@ def run_one(scenario, out, args):
             if trace.get("sandbox_broken"):
                 return ("LỖI sandbox của Codex không chạy được lệnh shell (bubblewrap bị chặn). "
                         "Xem phần Codex trong evals/README.md.")
+        if args.trigger and not trace["tools"] and (proc.returncode or trace.get("error")):
+            # Hết hạn mức hay lỗi mạng: không lưu vết, để check.py báo thiếu thay vì đếm là không bật.
+            # Lượt bị cắt vì hết số bước thì đã có lệnh trong vết nên không rơi vào đây.
+            return "LỖI " + (trace.get("error") or answer or proc.stderr or "không có câu trả lời")[:200].replace("\n", " ")
         # Bỏ đường dẫn thư mục tạm để vết chỉ còn đường dẫn tương đối như references/chat.md
         text = json.dumps(trace, ensure_ascii=False, indent=1).replace(str(work) + "/", "")
         (out / f"{scenario['id']}.json").write_text(text + "\n", encoding="utf-8")
@@ -317,7 +321,9 @@ def main():
     if args.ids:
         cases = [c for c in cases if c["id"] in args.ids]
     if args.codex:
-        ok, detail = codex_shell_works(args)
+        ok, detail, error = codex_shell_works(args)
+        if error:
+            sys.exit("Codex báo lỗi trước khi chạy đề: " + error)
         if not ok:
             sys.exit("Codex không chạy được lệnh shell trong sandbox " + args.codex_sandbox + ", nên không đọc được skill "
                      "hay file đầu vào. Codex trả lời: " + detail.replace("\n", " ") +

@@ -1,6 +1,6 @@
-# Viết như người
+# Viết như người · Vietnamese Humanizer
 
-Skill cho Claude Code, Codex, Cursor: nhờ AI viết tiếng Việt mà đọc lên vẫn ra giọng mình. Bỏ câu sáo, xưng hô đúng vai, số liệu đưa sao để vậy.
+Skill cho Claude Code, Codex, Cursor: nhờ AI viết tiếng Việt mà đọc lên vẫn ra giọng mình. Bỏ câu sáo, xưng hô đúng vai, số liệu đưa sao để vậy. Bản mới nhất đã chạy 76 đề thử trên cả Claude lẫn Codex, [kết quả ở dưới](#đo-bằng-bộ-đề).
 
 [![test](https://github.com/anhnx000/viet-nhu-nguoi/actions/workflows/test.yml/badge.svg)](https://github.com/anhnx000/viet-nhu-nguoi/actions/workflows/test.yml)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
@@ -158,6 +158,19 @@ python3 -I skills/viet-nhu-nguoi/scripts/scan.py examples/truoc.md
 Dấu hiệu xếp theo nhóm, nhóm nào cũng kèm số dòng và cụm bị bắt. Điểm cao nghĩa là văn viết theo khuôn, chưa chắc bài do AI viết. Một dấu hiệu lẻ chưa nói lên gì, nhiều nhóm cùng lúc mới đáng sửa. Tùy chọn của bộ kiểm tra và script so dữ kiện xem ở mục bên dưới.
 
 </details>
+
+## Đo bằng bộ đề
+
+Mỗi bản chạy lại 63 đề thường gặp và 13 đề để riêng (không dùng để chỉnh skill), mỗi đề trong một thư mục tạm chỉ có skill và file đầu vào. Script chấm phần đếm được: cụm phải giữ, số liệu tự thêm, số chữ, số câu hỏi lại, điểm của bộ kiểm tra. Phần còn lại đọc tay. Một bộ 73 lời nhờ khác thử xem skill có tự bật đúng lúc không, kể cả không bật cho câu hỏi về code hay kiến thức.
+
+| Bản 2.13.0, Opus và GPT mức medium | Claude Code | Codex |
+| --- | --- | --- |
+| 63 đề thường gặp | 60/63 | 59/63 |
+| 13 đề để riêng | 10/13 | 10/13 |
+| Tự bật khi nên bật | 68/68 lượt | 104/104 lượt |
+| Bật nhầm | 0/63 lượt | 2/83 lượt |
+
+Đề trượt và câu trả lời của từng đề ghi ở [evals/README.md](evals/README.md), lệnh chạy lại cũng ở đó. Bộ kiểm tra chỉ đếm dấu hiệu bề mặt: với tin tức do AI viết lại, nó vẫn bỏ sót hơn một nửa.
 
 ## Dấu hiệu văn AI
 

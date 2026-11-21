@@ -1,6 +1,6 @@
 # Bộ đề thử skill
 
-`scenarios.json` có 63 tình huống thường gặp, dùng khi chỉnh skill. `held-out.json` có 13 đề để riêng, chỉ chạy trên bản đã chốt. Mỗi đề có `tin_nhan` là lời người dùng, `tep` (nếu có) là file đầu vào, `mong_doi` là điều người đọc cần thấy trong câu trả lời, `kiem` là phần script đếm được. `trigger.json` có 41 lời nhờ để thử skill có tự bật đúng lúc không. File trong `inputs/` là văn viết ra để thử, tên người và số liệu đều bịa.
+`scenarios.json` có 63 tình huống thường gặp, dùng khi chỉnh skill. `held-out.json` có 13 đề để riêng, chỉ chạy trên bản đã chốt. Mỗi đề có `tin_nhan` là lời người dùng, `tep` (nếu có) là file đầu vào, `mong_doi` là điều người đọc cần thấy trong câu trả lời, `kiem` là phần script đếm được. `trigger.json` có 41 lời nhờ để thử skill có tự bật đúng lúc không, `trigger-held-out.json` có 32 lời nhờ để riêng cho phần này. File trong `inputs/` là văn viết ra để thử, tên người và số liệu đều bịa.
 
 ## Chạy
 
@@ -10,6 +10,7 @@ python3 -I evals/run.py evals/results/<bản>-held-out --held-out --runs 3
 python3 -I evals/run.py evals/results/<bản>-khong-skill --khong-skill   # cùng đề, không bật skill
 python3 -I evals/run.py evals/results/trigger-<bản> --trigger --runs 3   # skill có tự bật đúng lúc không
 python3 -I evals/run.py evals/results/<bản>-codex --kieu-codex           # nạp skill theo cách của Codex
+python3 -I evals/run.py evals/results/<bản>-codex-that --codex            # chạy thật trên Codex CLI
 ```
 
 `run.py` gọi `claude -p` cho từng đề trong một thư mục tạm ngoài repo. Thư mục đó chỉ có bản sao skill và file đầu vào. Lệnh chỉ nạp cài đặt của thư mục ấy, không nạp MCP, nên skill cá nhân và plugin đã cài trên máy không lẫn vào. Mỗi lượt ghi lại danh sách skill, plugin đã nạp để kiểm. Trợ lý được đọc file, chạy ba script của skill và ghi file nháp vào `/tmp`, không ghi được vào file đầu vào. Mặc định dùng Opus mức medium. Lệnh chạy lại sẽ bỏ qua đề đã có câu trả lời, nên hết hạn mức giữa chừng thì chạy lại đúng lệnh cũ. Kết quả thô nằm trong `evals/results/` (đã có trong `.gitignore`).
@@ -78,7 +79,7 @@ EOF
 sudo apparmor_parser -r /etc/apparmor.d/codex-bwrap
 ```
 
-Profile này nới giới hạn của Ubuntu cho đúng hai file bubblewrap. Cài lại Codex bằng npm ở chỗ khác thì đường dẫn đổi, phải sửa profile. Không muốn đụng AppArmor thì có thể chạy với `--codex-sandbox danger-full-access`: lệnh của Codex không còn sandbox, chỉ nên làm khi tự chạy và đã đọc các file trong `inputs/`.
+Đã thử trên Ubuntu 24.04.5 với Codex CLI 0.171: sau khi nạp profile, sandbox `workspace-write` chạy được lệnh shell, kể cả khi chính Codex được gọi từ trong sandbox của Claude Code. Profile này nới giới hạn của Ubuntu cho đúng hai file bubblewrap. Cài lại Codex bằng npm ở chỗ khác thì đường dẫn đổi, phải sửa profile. Không muốn đụng AppArmor thì có thể chạy với `--codex-sandbox danger-full-access`: lệnh của Codex không còn sandbox, chỉ nên làm khi tự chạy và đã đọc các file trong `inputs/`.
 
 Cách chấm dựa theo:
 
@@ -104,6 +105,25 @@ Ba đề `luot-hai-*` thử lượt hai của chế độ viết mới: người
 Tám đề `spoken-*` thử sắc thái lời nói: trợ từ, phạm vi phủ định, mức chắc chắn, lời nhờ, bản chép lời, câu vốn tự nhiên không được sửa.
 
 Bốn đề nhóm chat thử việc đổi giọng theo người nhận. `chat-cung-nhom-khac-vai` đưa sẵn mẫu cho bạn thân, trưởng nhóm lớn tuổi và cả nhóm. `chat-nhom-tra-loi-sep` và `chat-nhom-tra-loi-hai-nguoi` dùng một đoạn chat năm người, trong đó phần lớn tin của người dùng là giọng suồng sã với bạn, chỉ vài tin lễ phép với sếp và chị lớn tuổi hơn. Đọc tay ở các đề này là xem tin gửi người trên có lẫn "tui", "ông", ":v" của giọng bạn bè không.
+
+## Kết quả bản 2.13.0
+
+Chạy thật trên Codex CLI 0.171 (gpt-6.2-sol, mức medium, một lượt mỗi đề chính) và trên Claude (Opus mức medium).
+
+| | Codex, bản 2.12.0 | Codex, bản 2.13.0 | Claude, bản 2.13.0 |
+|---|---|---|---|
+| 63 đề chính | 55/63 | 59/63 | 60/63, rồi 33/33 lượt ở 11 đề viết mới sau khi sửa |
+| 13 đề để riêng | 7/13 | 10/13 | 10/13 |
+| Bật đúng, `trigger.json` | 20/20 | 60/60 (3 lượt) | 20/20 |
+| Bật nhầm, `trigger.json` | 9/15 | 1/45 (3 lượt) | 0/15 |
+| Bật đúng, 32 lời nhờ để riêng | 18/18 (16 lời nhờ mới) | 44/44 | 48/48 |
+| Bật nhầm, 32 lời nhờ để riêng | 18/30 (16 lời nhờ mới) | 1/38 | 0/48 |
+
+Lời nhờ để riêng của phần bật skill có 16 câu mới, viết và chạy trên bản 2.12.0 trước khi sửa `description`. Ở bản cũ, Codex đọc skill cho 60% câu hỏi về code, kiến thức hay phép tính (Claude 0%). Lượt thứ ba của 14 lời nhờ mới trên Codex bị mất vì hết credit nên không tính. Bản 2.12.0 trên Codex được chấm lại bằng `check.py` mới (bỏ qua cách xuống dòng, nhận "600 mét"), từ 53 lên 55 đề.
+
+Trước khi sửa, Codex tự nghĩ ra năm bài học cho bài LinkedIn "5 năm làm product manager", viết 1.300 chữ khi được nhờ bài Facebook 1.500 chữ, và sửa tin nhắn viết thường đã tự nhiên thành giọng chỉnh tề. Câu hỏi trước rồi dừng đưa lên `SKILL.md` thì Claude hỏi 6 câu mà không mở `draft.md`, nên thêm "hai đến bốn câu". Codex chưa được chạy lại với chữ này vì hết credit. Các đề hỏi trước giờ qua mà không mở `draft.md`, nên đường đọc của chúng báo thiếu dù câu trả lời đúng.
+
+Còn trượt trên Codex: `slide-chua-co-so-lieu` hỏi bằng câu nhờ không có dấu hỏi, `giong-ten-thang` đưa ngày mới vào chữ thứ 27, `daily-report` đổi "thiếu test" thành "cần bổ sung test", `sua-tieu-de-readme` tự thêm "tháng 10". Trên Claude: `luot-hai-bai-quan` (`scan.py` chấm 11).
 
 ## Kết quả bản 2.12.0
 

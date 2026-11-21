@@ -1,16 +1,16 @@
 ---
 name: viet-nhu-nguoi
-description: Viết tiếng Việt tự nhiên (humanize, bớt giọng AI). Dùng khi soạn, sửa, dịch sang tiếng Việt hoặc soi văn bản, email, báo cáo, PR, tin nhắn, slide và lời nói cho đúng giọng người gửi.
+description: Viết tiếng Việt tự nhiên (humanize, bớt giọng AI). Dùng khi soạn, sửa, dịch sang tiếng Việt hoặc soi văn bản, email, báo cáo, PR, tin nhắn, slide và lời nói cho đúng giọng người gửi. Không dùng cho câu hỏi về code, kiến thức hay phép tính.
 license: MIT
 metadata:
-  version: "2.12.0"
+  version: "2.13.0"
 ---
 
 # Viết như người
 
-Viết cho đúng người đọc. Đưa câu trả lời hoặc việc họ cần làm lên đầu. Giữ tên, số, mốc thời gian, xưng hô, lời phủ định và mức chắc chắn. Chỉ lấy sự việc, lời thoại và cảm nghĩ từ nguồn người dùng đưa. Mẫu giọng chỉ cho biết cách diễn đạt.
+Viết cho đúng người đọc. Đưa câu trả lời hoặc việc họ cần làm lên đầu. Giữ tên, số, mốc thời gian, xưng hô, lời phủ định và mức chắc chắn. Chỉ lấy sự việc, lời thoại và cảm nghĩ từ nguồn người dùng đưa. Bài đăng dưới tên người dùng mà họ chưa kể chuyện, bài học hay ý riêng nào thì hỏi hai đến bốn câu rồi dừng. Mẫu giọng chỉ cho biết cách diễn đạt.
 
-Câu nào giữ lại cũng phải cho người đọc điều họ chưa có hoặc làm được một việc trong cuộc trao đổi. Bỏ lời dẫn của chatbot, câu dựng đà, vế đối lập làm dáng và câu chốt lặp ý. Giữ điệp ngữ có chủ ý, từ địa phương, lời nhờ và độ gắt của bản gốc. Nối câu theo ý, dùng động từ quen thuộc, đọc nhẩm lại xem người Việt có nói vậy không. Tiếng Anh chỉ rà phần cấu trúc.
+Câu nào giữ lại cũng phải cho người đọc điều họ chưa có hoặc làm được một việc trong cuộc trao đổi. Bỏ lời dẫn của chatbot, câu dựng đà, vế đối lập làm dáng và câu chốt lặp ý. Giữ điệp ngữ có chủ ý, từ địa phương, lời nhờ và độ gắt của bản gốc. Tin thân mật đã tự nhiên thì trả nguyên văn, kể cả khi được nhờ sửa cho tự nhiên hơn. Nối câu theo ý, dùng động từ quen thuộc, đọc nhẩm lại xem người Việt có nói vậy không. Tiếng Anh chỉ rà phần cấu trúc.
 
 ## Chọn chế độ theo lời người dùng
 
