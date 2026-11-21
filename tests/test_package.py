@@ -340,12 +340,12 @@ class Evals(unittest.TestCase):
                 (root / run / "khong.json").write_text(json.dumps({"tools": [other]}))
                 (root / run / "tuy.json").write_text(json.dumps({"tools": [codex]}))
                 for sid in ("nen", "khong", "tuy"):
-                    (root / run / f"{sid}.md").write_text("trả lời")
+                    (root / run / f"{sid}.md").write_text("trả lời", encoding="utf-8")
             # Lượt hết hạn mức chỉ có vết, không có câu trả lời: báo thiếu, không đếm là không bật.
             cases.append({"id": "loi", "bat": True})
             (root / "1" / "loi.json").write_text(json.dumps({"tools": [], "error": "out of credits"}))
             (root / "2" / "loi.json").write_text(json.dumps({"tools": [skill]}))
-            (root / "2" / "loi.md").write_text("trả lời")
+            (root / "2" / "loi.md").write_text("trả lời", encoding="utf-8")
             out = io.StringIO()
             with contextlib.redirect_stdout(out):
                 self.assertEqual(self.check.report_trigger(cases, self.check.run_dirs(root)), 2)
