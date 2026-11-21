@@ -348,6 +348,31 @@ class Evals(unittest.TestCase):
             self.assertIn("Nên bật: bật 1/2 lượt", text)
             self.assertIn("Tùy: bật 2/2 lượt.", text)
 
+    def test_codex_output_is_parsed_like_claude_traces(self):
+        spec = importlib.util.spec_from_file_location("evals_run", ROOT / "evals/run.py")
+        run = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(run)
+        self.assertEqual(run.unwrap("/bin/bash -lc 'sed -n 1,80p references/edit.md'"), "sed -n 1,80p references/edit.md")
+        self.assertEqual(run.unwrap("cat a.md"), "cat a.md")
+        events = [
+            {"type": "item.completed", "item": {"type": "agent_message", "text": "Mình dùng skill."}},
+            {"type": "item.completed", "item": {"type": "command_execution", "status": "completed", "exit_code": 0,
+                                                "command": "/bin/bash -lc 'cat .agents/skills/viet-nhu-nguoi/SKILL.md'"}},
+            {"type": "item.completed", "item": {"type": "command_execution", "status": "failed", "exit_code": 1,
+                                                "command": "/bin/bash -lc 'cat references/edit.md'"}},
+            {"type": "item.completed", "item": {"type": "agent_message", "text": "Bản sửa"}},
+            {"type": "turn.completed", "usage": {"input_tokens": 10}},
+        ]
+        answer, trace = run.parse_codex("\n".join(json.dumps(e) for e in events) + "\nkhông phải JSON\n")
+        self.assertEqual(answer, "Bản sửa")
+        self.assertEqual(trace["usage"], {"input_tokens": 10})
+        self.assertFalse(trace["sandbox_broken"])
+        tools = [tuple(t) for t in trace["tools"]]
+        self.assertTrue(self.check.used_skill(tools))
+        self.assertEqual(self.check.opened(tools), {})  # lệnh lỗi không tính là đã đọc
+        broken = {"type": "item.completed", "item": {"type": "agent_message", "text": "Lỗi `bwrap: setting up uid map`"}}
+        self.assertTrue(run.parse_codex(json.dumps(broken))[1]["sandbox_broken"])
+
     def test_reference_answers_pass(self):
         """Mỗi đề có một đáp án mẫu trong evals/dap-an/ và đáp án ấy phải qua check.py.
 

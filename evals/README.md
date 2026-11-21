@@ -50,7 +50,35 @@ Người dùng thường không gõ `/viet-nhu-nguoi`, nên skill chỉ có ích
 
 ## Kiểu Codex
 
-`--kieu-codex` để skill ở `.agents/skills/`, bỏ công cụ Skill và thêm vào lời nhắc hệ thống phần hướng dẫn skill chép từ Codex CLI 0.171 (danh sách skill kèm đường dẫn, luật "tên skill được nhắc hoặc việc khớp mô tả thì phải dùng, đọc trọn `SKILL.md`, đường dẫn tương đối tính từ thư mục skill"). Lời nhờ mở bằng `$viet-nhu-nguoi` như cách gọi trong Codex. Mô hình vẫn là Claude, nên chế độ này chỉ thử phần skill mang sang được: đường dẫn, cách tìm file trong `references/`, script, khi không có công cụ Skill. Muốn thử mô hình GPT thì chạy thẳng `codex exec`.
+`--kieu-codex` để skill ở `.agents/skills/`, bỏ công cụ Skill và thêm vào lời nhắc hệ thống phần hướng dẫn skill chép từ Codex CLI 0.171 (danh sách skill kèm đường dẫn, luật "tên skill được nhắc hoặc việc khớp mô tả thì phải dùng, đọc trọn `SKILL.md`, đường dẫn tương đối tính từ thư mục skill"). Lời nhờ mở bằng `$viet-nhu-nguoi` như cách gọi trong Codex. Mô hình vẫn là Claude, nên chế độ này chỉ thử phần skill mang sang được: đường dẫn, cách tìm file trong `references/`, script, khi không có công cụ Skill. Muốn thử mô hình GPT thì dùng `--codex`.
+
+## Chạy trên Codex
+
+```bash
+python3 -I evals/run.py evals/results/<bản>-codex-that --codex
+python3 -I evals/run.py evals/results/trigger-<bản>-codex-that --codex --trigger
+```
+
+`--codex` gọi `codex exec` với mô hình và mức suy luận trong `~/.codex/config.toml` (ghi `--model`, `--effort` để đổi). Skill nằm ở `.agents/skills/` của thư mục tạm. Lệnh không nạp `config.toml` (nên không có MCP), tắt plugin, app, trình duyệt, hook, và tắt các skill cá nhân trong `~/.codex/skills` và `~/.agents/skills`, chỉ còn skill hệ thống của Codex nằm cạnh. Lệnh shell chạy trong sandbox `workspace-write` của Codex. Trước khi chạy cả bộ, `run.py` nhờ Codex `cat` một file có chuỗi ngẫu nhiên. Nếu shell không chạy, script dừng ngay, vì khi đó Codex không đọc được skill lẫn file đầu vào mà vẫn trả lời như thường, kiểu "bạn dán nội dung vào đây nhé".
+
+Trên Ubuntu 24.04 trở lên, sandbox của Codex thường hỏng với lỗi `bwrap: setting up uid map: Permission denied` hay `bwrap: loopback: Failed RTM_NEWADDR`, vì AppArmor chặn chương trình chưa có profile tạo user namespace (`kernel.apparmor_restrict_unprivileged_userns = 1`). Cách thường dùng là cho riêng bubblewrap một profile:
+
+```bash
+BWRAP="$(npm root -g)/@openai/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/codex-resources/bwrap"
+sudo tee /etc/apparmor.d/codex-bwrap >/dev/null <<EOF
+abi <abi/4.0>,
+include <tunables/global>
+profile codex-bwrap "$BWRAP" flags=(unconfined) {
+  userns,
+}
+profile system-bwrap /usr/bin/bwrap flags=(unconfined) {
+  userns,
+}
+EOF
+sudo apparmor_parser -r /etc/apparmor.d/codex-bwrap
+```
+
+Profile này nới giới hạn của Ubuntu cho đúng hai file bubblewrap. Cài lại Codex bằng npm ở chỗ khác thì đường dẫn đổi, phải sửa profile. Không muốn đụng AppArmor thì có thể chạy với `--codex-sandbox danger-full-access`: lệnh của Codex không còn sandbox, chỉ nên làm khi tự chạy và đã đọc các file trong `inputs/`.
 
 Cách chấm dựa theo:
 
