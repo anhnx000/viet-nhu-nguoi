@@ -1,5 +1,15 @@
 # Changelog
 
+## 2.12.0 (2026-11-21)
+
+Thử skill có tự bật đúng lúc không, và chạy bộ đề theo cách Codex nạp skill.
+
+- `description` thêm "dịch sang tiếng Việt" và "báo cáo". Trước khi sửa, đo trên `evals/trigger.json` (41 lời nhờ không gọi tên skill, Opus mức medium, ba lượt): lời nhờ nên bật thì bật 56/63 lượt, lời nhờ gần giống mà không nên bật thì không lần nào bật nhầm (0/45). Bỏ lỡ: "viết daily report" (0/3; không có skill, trợ lý tự thêm "Vướng mắc: Không có", nhãn in đậm, lời mời chatbot), "dịch sang tiếng Việt cho tự nhiên" (2/3), và lời nhờ tiếng Anh sửa bài LinkedIn cho bớt giọng AI (0/3). Câu tiếng Anh chuyển sang loại "tùy", vì skill chỉ nhắm tiếng Việt từ bản 2.7.8.
+- Đo lại trên 16 lời nhờ viết sau khi sửa (`trigger-held-out.json`, chưa dùng để chỉnh), ba lượt mỗi bản: mô tả cũ bật 24/30 lượt nên bật, bỏ cả 6 lượt của hai lời nhờ dịch sang tiếng Việt; mô tả mới bật 30/30. Cả hai bản đều 0/18 lượt bật nhầm. Trên 41 lời nhờ cũ, mô tả mới bật 60/60 và 0/45 lượt bật nhầm.
+- `evals/run.py --trigger` gửi lời nhờ như người dùng gõ thường, dừng sau 4 bước; `check.py --trigger` đếm lượt gọi skill hay mở `SKILL.md`. Máy chạy thử có khoảng 20 skill dựng sẵn của Claude Code bên cạnh, máy người dùng thường nhiều hơn, nên tỉ lệ thật có thể thấp hơn.
+- `run.py --kieu-codex` nạp skill như Codex: để ở `.agents/skills/`, không có công cụ Skill, lời nhắc hệ thống chép phần hướng dẫn skill của Codex CLI 0.171, lời nhờ mở bằng `$viet-nhu-nguoi`. Chạy thẳng `codex exec` không được vì workspace hết credit, nên mô hình vẫn là Claude: chế độ này thử đường dẫn tương đối và cách tìm file trong `references/`, không thử mô hình GPT. Kết quả một lượt: 58/63 đề chính, 10/13 đề để riêng, đường đọc đúng 72/76 lượt; bật skill 20/20 lượt nên bật, 0/15 bật nhầm (luật của Codex bắt dùng skill khi việc khớp mô tả, nên 5/6 lượt "tùy" cũng bật). Lỗi riêng của kiểu này: ở `sua-co-chi-dan-chen` trợ lý không mở `edit.md`, bỏ dòng chỉ dẫn chèn vào mà không báo (bản thường qua 3/3 lượt); các lỗi khác trùng với bản thường.
+- `run.py` nhận ID đề đặt sau tùy chọn. Các lượt chạy trong bản này hết khoảng 37 USD.
+
 ## 2.11.0 (2026-11-21)
 
 Bộ đề chấm tự động và chạy nhiều lượt, dấu hiệu mới lấy từ báo và blog tiếng Việt năm 2025-2026, đo bộ kiểm tra trên vài nghìn tin báo.

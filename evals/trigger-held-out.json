@@ -1,0 +1,84 @@
+[
+ {
+  "id": "bao-cao-tuan",
+  "bat": true,
+  "tin_nhan": "Tổng hợp giúp mình báo cáo tuần gửi sếp: tuần này chốt hợp đồng với 2 khách mới, doanh số đạt 85% chỉ tiêu, tuần sau đi Đà Nẵng gặp đối tác."
+ },
+ {
+  "id": "dich-email-khach",
+  "bat": true,
+  "tin_nhan": "Khách gửi email tiếng Anh này, dịch sang tiếng Việt để mình chuyển cho phòng kho đọc: \"Please be advised that the shipment scheduled for December 3 has been delayed due to customs inspection. We apologize for any inconvenience.\""
+ },
+ {
+  "id": "bien-ban-hop",
+  "bat": true,
+  "tin_nhan": "Viết lại biên bản họp cho gọn từ mấy ý này: họp 9h sáng thứ Hai, có anh Quang, chị Mai, em Long; chốt ra mắt bản 3.2 ngày 15/12; Long lo phần kiểm thử."
+ },
+ {
+  "id": "thu-xin-viec",
+  "bat": true,
+  "tin_nhan": "Soạn thư xin việc vị trí nhân viên kế toán ở công ty may Thành Công, mình có 3 năm kinh nghiệm làm kế toán kho."
+ },
+ {
+  "id": "loi-moi-sinh-nhat",
+  "bat": true,
+  "tin_nhan": "Viết giúp lời mời sinh nhật con gái 5 tuổi gửi nhóm phụ huynh lớp mẫu giáo, tiệc 17h thứ Bảy 6/12 ở nhà mình."
+ },
+ {
+  "id": "sua-mo-ta-san-pham",
+  "bat": true,
+  "tin_nhan": "Mô tả sản phẩm này đọc như văn quảng cáo máy viết, sửa cho thật hơn: \"Nồi chiên không dầu X5 – giải pháp hoàn hảo cho căn bếp hiện đại, mang đến trải nghiệm nấu nướng đẳng cấp và tiện lợi vượt trội.\""
+ },
+ {
+  "id": "update-tuan-slack",
+  "bat": true,
+  "tin_nhan": "viết update tuần cho channel #team-mobile: đã ship tính năng quét mã QR, crash rate giảm còn 0.3%, tuần sau làm dark mode"
+ },
+ {
+  "id": "tra-loi-email-sep",
+  "bat": true,
+  "tin_nhan": "Sếp hỏi qua email sao dự án trễ 1 tuần. Soạn giúp mình email trả lời: do bên đối tác giao API muộn 5 ngày, mình đã làm thêm cuối tuần, dự kiến xong 12/12."
+ },
+ {
+  "id": "dich-huong-dan-app",
+  "bat": true,
+  "tin_nhan": "Translate this into natural Vietnamese for our app users: \"Tap Settings, then Privacy, and turn off Location Sharing.\""
+ },
+ {
+  "id": "soi-email-nghe-gia",
+  "bat": true,
+  "tin_nhan": "Email này đọc thấy sao sao, chỉ ra giúp mình chỗ nào nghe giả: {tep}",
+  "tep": "evals/inputs/email-xin-loi-ai.md"
+ },
+ {
+  "id": "dich-sang-tieng-nhat",
+  "bat": false,
+  "tin_nhan": "Dịch câu \"Cảm ơn anh đã hỗ trợ\" sang tiếng Nhật."
+ },
+ {
+  "id": "nghia-thanh-ngu",
+  "bat": false,
+  "tin_nhan": "\"Nước đổ đầu vịt\" nghĩa là gì?"
+ },
+ {
+  "id": "docstring-tieng-anh",
+  "bat": false,
+  "tin_nhan": "Viết docstring tiếng Anh cho hàm này:\n```python\ndef tinh_thue(thu_nhap):\n    return max(0, thu_nhap - 11_000_000) * 0.05\n```"
+ },
+ {
+  "id": "dem-dong-file",
+  "bat": false,
+  "tin_nhan": "File {tep} có bao nhiêu dòng?",
+  "tep": "evals/inputs/cong-van.md"
+ },
+ {
+  "id": "toan-giam-gia",
+  "bat": false,
+  "tin_nhan": "Một cửa hàng giảm giá 20% rồi giảm thêm 10% trên giá đã giảm, tổng cộng giảm bao nhiêu phần trăm?"
+ },
+ {
+  "id": "doi-dinh-dang-ngay",
+  "bat": false,
+  "tin_nhan": "Đổi các ngày dạng 2026-12-06 trong file CSV sang 06/12/2026 bằng Python."
+ }
+]

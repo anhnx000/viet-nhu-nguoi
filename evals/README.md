@@ -1,6 +1,6 @@
 # Bộ đề thử skill
 
-`scenarios.json` có 63 tình huống thường gặp, dùng khi chỉnh skill. `held-out.json` có 13 đề để riêng, chỉ chạy trên bản đã chốt. Mỗi đề có `tin_nhan` là lời người dùng, `tep` (nếu có) là file đầu vào, `mong_doi` là điều người đọc cần thấy trong câu trả lời, `kiem` là phần script đếm được. File trong `inputs/` là văn viết ra để thử, tên người và số liệu đều bịa.
+`scenarios.json` có 63 tình huống thường gặp, dùng khi chỉnh skill. `held-out.json` có 13 đề để riêng, chỉ chạy trên bản đã chốt. Mỗi đề có `tin_nhan` là lời người dùng, `tep` (nếu có) là file đầu vào, `mong_doi` là điều người đọc cần thấy trong câu trả lời, `kiem` là phần script đếm được. `trigger.json` có 41 lời nhờ để thử skill có tự bật đúng lúc không. File trong `inputs/` là văn viết ra để thử, tên người và số liệu đều bịa.
 
 ## Chạy
 
@@ -8,6 +8,8 @@
 python3 -I evals/run.py evals/results/<bản> --runs 3            # 63 đề, mỗi đề 3 lượt
 python3 -I evals/run.py evals/results/<bản>-held-out --held-out --runs 3
 python3 -I evals/run.py evals/results/<bản>-khong-skill --khong-skill   # cùng đề, không bật skill
+python3 -I evals/run.py evals/results/trigger-<bản> --trigger --runs 3   # skill có tự bật đúng lúc không
+python3 -I evals/run.py evals/results/<bản>-codex --kieu-codex           # nạp skill theo cách của Codex
 ```
 
 `run.py` gọi `claude -p` cho từng đề trong một thư mục tạm ngoài repo. Thư mục đó chỉ có bản sao skill và file đầu vào. Lệnh chỉ nạp cài đặt của thư mục ấy, không nạp MCP, nên skill cá nhân và plugin đã cài trên máy không lẫn vào. Mỗi lượt ghi lại danh sách skill, plugin đã nạp để kiểm. Trợ lý được đọc file, chạy ba script của skill và ghi file nháp vào `/tmp`, không ghi được vào file đầu vào. Mặc định dùng Opus mức medium. Lệnh chạy lại sẽ bỏ qua đề đã có câu trả lời, nên hết hạn mức giữa chừng thì chạy lại đúng lệnh cũ. Kết quả thô nằm trong `evals/results/` (đã có trong `.gitignore`).
@@ -36,7 +38,19 @@ Chỉ dùng lỗi ở `scenarios.json` để sửa skill. Đề trong `held-out.
 
 Thêm một mục vào `scenarios.json` và một đáp án mẫu. Điều kiện trong `kiem` nên lỏng vừa đủ: câu trả lời đúng mà viết khác đi một chút thì vẫn phải qua. Đừng đặt `must_not` cho cụm mà trợ lý có thể trích lại trong ghi chú ("mình đã bỏ câu ..."), khi đó dùng `max_overlap`. `lead_keep` dùng cho tin có việc nhờ: dữ kiện phải nằm trong 25 chữ đầu. `max_added_numbers` không dùng cho đề có nguồn tiếng Anh, vì "March 1, 2027" và "1/3/2027" bị tính là hai số khác nhau.
 
-Bộ đề chưa thử skill có tự bật đúng lúc không (lời nhờ nên bật và lời nhờ gần giống mà không nên bật), cũng chưa chạy trên Codex.
+## Skill có tự bật đúng lúc không
+
+Người dùng thường không gõ `/viet-nhu-nguoi`, nên skill chỉ có ích khi trợ lý tự nhận ra lời nhờ cần đến nó. `trigger.json` chia lời nhờ làm ba loại:
+
+- 21 lời nhờ nên bật: soạn email, tin nhắn, mô tả PR, slide, lời phát biểu, dịch sang tiếng Việt, soi hay sửa văn có giọng máy, cả lời nhờ tiếng Anh sửa bài cho bớt giọng AI.
+- 15 lời nhờ gần giống mà không nên bật: dịch sang tiếng Anh, hỏi kiến thức bằng tiếng Việt, code có chữ Việt, đếm chữ trong file văn bản, tóm tắt tiếng Anh.
+- 5 lời nhờ để tùy (`"bat": null`), như soát chính tả, commit message, tóm tắt cho chính người hỏi.
+
+`run.py --trigger` gửi lời nhờ như người dùng gõ thường và dừng sau 4 bước, `check.py --trigger` đếm số lượt trợ lý gọi skill hoặc mở `SKILL.md`. Thư mục chạy thử có sẵn khoảng 20 skill dựng sẵn của Claude Code bên cạnh skill này, nhưng máy người dùng thường có nhiều skill hơn, nên tỉ lệ bật thật có thể thấp hơn. Sửa `description` theo kết quả thì viết lời nhờ mới để báo kết quả, đừng dùng lại lời nhờ đã dùng để sửa.
+
+## Kiểu Codex
+
+`--kieu-codex` để skill ở `.agents/skills/`, bỏ công cụ Skill và thêm vào lời nhắc hệ thống phần hướng dẫn skill chép từ Codex CLI 0.171 (danh sách skill kèm đường dẫn, luật "tên skill được nhắc hoặc việc khớp mô tả thì phải dùng, đọc trọn `SKILL.md`, đường dẫn tương đối tính từ thư mục skill"). Lời nhờ mở bằng `$viet-nhu-nguoi` như cách gọi trong Codex. Mô hình vẫn là Claude, nên chế độ này chỉ thử phần skill mang sang được: đường dẫn, cách tìm file trong `references/`, script, khi không có công cụ Skill. Muốn thử mô hình GPT thì chạy thẳng `codex exec`.
 
 Cách chấm dựa theo:
 
@@ -62,6 +76,12 @@ Ba đề `luot-hai-*` thử lượt hai của chế độ viết mới: người
 Tám đề `spoken-*` thử sắc thái lời nói: trợ từ, phạm vi phủ định, mức chắc chắn, lời nhờ, bản chép lời, câu vốn tự nhiên không được sửa.
 
 Bốn đề nhóm chat thử việc đổi giọng theo người nhận. `chat-cung-nhom-khac-vai` đưa sẵn mẫu cho bạn thân, trưởng nhóm lớn tuổi và cả nhóm. `chat-nhom-tra-loi-sep` và `chat-nhom-tra-loi-hai-nguoi` dùng một đoạn chat năm người, trong đó phần lớn tin của người dùng là giọng suồng sã với bạn, chỉ vài tin lễ phép với sếp và chị lớn tuổi hơn. Đọc tay ở các đề này là xem tin gửi người trên có lẫn "tui", "ông", ":v" của giọng bạn bè không.
+
+## Kết quả bản 2.12.0
+
+Bật skill, Opus mức medium, ba lượt. Mô tả cũ trên `trigger.json`: bật 56/63 lượt nên bật, 0/45 lượt bật nhầm, bỏ lỡ daily report và lời nhờ dịch sang tiếng Việt. Mô tả mới (thêm "dịch sang tiếng Việt", "báo cáo") trên 16 lời nhờ viết sau khi sửa: 30/30 và 0/18, trong khi mô tả cũ chỉ được 24/30 trên cùng các lời nhờ đó. Trên `trigger.json`: 60/60 và 0/45.
+
+Kiểu Codex, một lượt: 58/63 đề chính, 10/13 đề để riêng, đường đọc đúng 72/76 lượt, bật skill 20/20 và 0/15 bật nhầm. Lỗi chỉ thấy ở kiểu này: `sua-co-chi-dan-chen` không mở `edit.md` và không báo dòng chỉ dẫn chèn vào.
 
 ## Kết quả bản 2.11.0
 

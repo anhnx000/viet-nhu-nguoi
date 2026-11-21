@@ -2,6 +2,14 @@
 
 English notes for each GitHub release. The release workflow publishes the section that matches the version in `SKILL.md`. The full development log, in Vietnamese, is in [CHANGELOG.md](CHANGELOG.md).
 
+## 2.12.0
+
+Trigger tests, a wider skill description, and a Codex-style eval mode.
+
+- The description now mentions translating into Vietnamese and reports. On 16 new prompts written after the change, the skill triggered on 30/30 runs that should trigger (24/30 with the old description, which missed every translation prompt) and on 0/18 near-miss runs. On the 41 original prompts: 60/60 and 0/45.
+- `evals/run.py --trigger` sends ordinary prompts without naming the skill; `check.py --trigger` counts runs where the skill was loaded. The trigger set has 21 should-trigger, 15 near-miss and 5 either-way prompts, plus 16 held-out ones.
+- `run.py --kieu-codex` loads the skill the way Codex does (`.agents/skills/`, no Skill tool, Codex CLI 0.171 skill instructions, `$viet-nhu-nguoi`). The model is still Claude, because the Codex workspace was out of credits. One run: 58/63 main cases, 10/13 held-out cases, 20/20 triggers and no false triggers.
+
 ## 2.11.0
 
 An automated, repeatable eval suite, new tells from 2025-2026 Vietnamese press coverage, and the checker measured on a few thousand news articles.

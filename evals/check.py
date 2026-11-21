@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Chấm phần tự động của bộ đề thử skill.
 
-Dùng: python3 -I evals/check.py THU_MUC [THU_MUC ...] [--held-out]
+Dùng: python3 -I evals/check.py THU_MUC [THU_MUC ...] [--held-out] [--trigger]
 THU_MUC chứa mỗi đề một file <id>.md, là nguyên văn câu trả lời của trợ lý khi skill đang bật.
 Nếu THU_MUC chỉ có các thư mục con 1/, 2/, 3/ (evals/run.py chạy nhiều lượt) thì chấm từng lượt, báo tỉ lệ qua
 kèm khoảng tin cậy 95% và số đề qua cả mọi lượt.
@@ -12,6 +12,9 @@ việc chính có nằm ở đầu tin không, độ dài, điểm scan.py, tỉ
 Nếu cạnh câu trả lời có <id>.json (vết công cụ do run.py ghi), script chấm riêng phần đường đọc: trợ lý đã mở
 file hướng dẫn nào (must_read, must_not_read, max_refs; không đề nào được đọc trọn patterns.md hay sources.md trừ khi
 đề ghi allow_read). Đường đọc chỉ để xem skill dẫn đường đúng không, không quyết định đề qua hay trượt.
+--trigger chấm lượt chạy trigger.json (run.py --trigger): skill có tự bật ở lời nhờ nên bật và không bật ở lời nhờ
+gần giống mà không nên bật. Đề "bat": null chỉ báo số lượt bật, không tính đúng sai. Thêm --held-out thì chấm
+trigger-held-out.json.
 Thoát mã 1 nếu có đề trượt hoặc thiếu file.
 """
 import difflib
@@ -193,7 +196,7 @@ def run_dirs(path):
     path = pathlib.Path(path)
     if not path.is_dir() or any(path.glob("*.md")):
         return [path]
-    runs = [p for p in path.iterdir() if p.is_dir() and any(p.glob("*.md"))]
+    runs = [p for p in path.iterdir() if p.is_dir() and (any(p.glob("*.md")) or any(p.glob("*.json")))]
     return sorted(runs, key=lambda p: (len(p.name), p.name)) or [path]
 
 
@@ -222,6 +225,43 @@ def wilson(k, n, z=1.96):
     center = (p + z * z / (2 * n)) / d
     half = z * math.sqrt(p * (1 - p) / n + z * z / (4 * n * n)) / d
     return max(0.0, center - half), min(1.0, center + half)
+
+
+def used_skill(trace):
+    """Trợ lý có bật skill không: gọi công cụ Skill, hoặc mở SKILL.md của skill (cách Codex và các trợ lý khác)."""
+    for tool, data, _ok in trace:
+        if tool == "Skill" and "viet-nhu-nguoi" in str((data or {}).get("skill", "")):
+            return True
+        if "viet-nhu-nguoi/SKILL.md" in json.dumps(data, ensure_ascii=False):
+            return True
+    return False
+
+
+def report_trigger(cases, folders):
+    """In số lượt bật skill của từng lời nhờ và tỉ lệ đúng; trả về số đề có lượt sai hoặc thiếu."""
+    total, failed, tally = len(folders), 0, {True: [0, 0], False: [0, 0], None: [0, 0]}
+    for case in cases:
+        hits = [used_skill(load_trace(f / f"{case['id']}.json")) for f in folders
+                if (f / f"{case['id']}.json").exists()]
+        want = case.get("bat")
+        on = sum(hits)
+        tally[want][0] += on
+        tally[want][1] += len(hits)
+        label = {True: "nên bật", False: "không nên bật", None: "tùy"}[want]
+        wrong = len(hits) < total or (want is True and on < total) or (want is False and on > 0)
+        failed += wrong
+        mark = "THIẾU " if len(hits) < total else "SAI   " if wrong else "ĐÚNG  "
+        print(f"{mark} {case['id']} ({label}): bật {on}/{len(hits)} lượt")
+    for want, name in ((True, "Nên bật"), (False, "Không nên bật")):
+        k, n = tally[want]
+        if n:
+            low, high = wilson(k, n)
+            print(f"\n{name}: bật {k}/{n} lượt ({k / n:.0%}, khoảng tin cậy 95%: {low * 100:.0f}-{high:.0%}).", end="")
+    k, n = tally[None]
+    if n:
+        print(f"\nTùy: bật {k}/{n} lượt.", end="")
+    print()
+    return failed
 
 
 def report(scenarios, folders):
@@ -272,11 +312,15 @@ def main():
     args = sys.argv[1:]
     dirs = [a for a in args if not a.startswith("--")]
     flags = [a for a in args if a.startswith("--")]
-    if not dirs or flags not in ([], ["--held-out"]):
+    if not dirs or not set(flags) <= {"--held-out", "--trigger"} or len(set(flags)) != len(flags):
         sys.exit(__doc__)
-    filename = "held-out.json" if flags else "scenarios.json"
+    trigger = "--trigger" in flags
+    filename = ("trigger" if trigger else "") + ("-held-out" if "--held-out" in flags else "") + ".json"
+    filename = {".json": "scenarios.json", "-held-out.json": "held-out.json"}.get(filename, filename)
     scenarios = json.loads((ROOT / "evals" / filename).read_text(encoding="utf-8"))
     folders = [run for d in dirs for run in run_dirs(d)]
+    if trigger:
+        sys.exit(1 if report_trigger(scenarios, folders) else 0)
     sys.exit(1 if report(scenarios, folders) else 0)
 
 

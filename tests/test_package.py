@@ -308,6 +308,46 @@ class Evals(unittest.TestCase):
             self.assertIn("Đường đọc đúng ở 2/3 lượt có vết.", text)
             self.assertEqual([round(x, 2) for x in self.check.wilson(3, 3)], [0.44, 1.0])
 
+    def test_trigger_set_is_well_formed(self):
+        cases = json.loads(read("evals/trigger.json"))
+        held = json.loads(read("evals/trigger-held-out.json"))
+        ids = [c["id"] for c in cases + held]
+        self.assertEqual(len(set(ids)), len(ids), "trùng ID đề bật skill")
+        for c in cases + held:
+            self.assertIn(c["bat"], (True, False, None), c["id"])
+            self.assertTrue(c["tin_nhan"], c["id"])
+            self.assertNotIn("viet-nhu-nguoi", c["tin_nhan"], "lời nhờ không được gọi tên skill")
+            if "tep" in c:
+                self.assertTrue((ROOT / c["tep"]).exists(), c["tep"])
+                self.assertIn("{tep}", c["tin_nhan"], c["id"])
+        wants = [c["bat"] for c in cases]
+        self.assertGreaterEqual(wants.count(True), 15)
+        self.assertGreaterEqual(wants.count(False), 10)
+
+    def test_trigger_grading(self):
+        skill = ["Skill", {"skill": "viet-nhu-nguoi"}, True]
+        codex = ["Bash", {"command": "cat .agents/skills/viet-nhu-nguoi/SKILL.md"}, True]
+        other = ["Read", {"file_path": "cong-van.md"}, True]
+        self.assertTrue(self.check.used_skill([tuple(skill)]))
+        self.assertTrue(self.check.used_skill([tuple(codex)]))
+        self.assertFalse(self.check.used_skill([tuple(other)]))
+        with tempfile.TemporaryDirectory() as tmp:
+            root = pathlib.Path(tmp)
+            cases = [{"id": "nen", "bat": True}, {"id": "khong", "bat": False}, {"id": "tuy", "bat": None}]
+            for run in ("1", "2"):
+                (root / run).mkdir()
+                (root / run / "nen.json").write_text(json.dumps({"tools": [skill] if run == "1" else [other]}))
+                (root / run / "khong.json").write_text(json.dumps({"tools": [other]}))
+                (root / run / "tuy.json").write_text(json.dumps({"tools": [codex]}))
+            out = io.StringIO()
+            with contextlib.redirect_stdout(out):
+                self.assertEqual(self.check.report_trigger(cases, self.check.run_dirs(root)), 1)
+            text = out.getvalue()
+            self.assertIn("SAI    nen (nên bật): bật 1/2 lượt", text)
+            self.assertIn("ĐÚNG   khong (không nên bật): bật 0/2 lượt", text)
+            self.assertIn("Nên bật: bật 1/2 lượt", text)
+            self.assertIn("Tùy: bật 2/2 lượt.", text)
+
     def test_reference_answers_pass(self):
         """Mỗi đề có một đáp án mẫu trong evals/dap-an/ và đáp án ấy phải qua check.py.
 

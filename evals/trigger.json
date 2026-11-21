@@ -1,0 +1,216 @@
+[
+ {
+  "id": "viet-email-xin-nghi",
+  "bat": true,
+  "tin_nhan": "Viết giúp mình email xin nghỉ phép thứ Sáu này gửi chị Hạnh trưởng phòng, lý do con bị sốt, việc dở mình đã bàn giao cho Tuấn."
+ },
+ {
+  "id": "sua-doan-giong-chatgpt",
+  "bat": true,
+  "tin_nhan": "Đoạn này đọc cứ như ChatGPT viết, sửa lại giúp mình: \"Trong bối cảnh chuyển đổi số mạnh mẽ hiện nay, việc ứng dụng công nghệ không chỉ là xu hướng mà còn là yếu tố then chốt giúp doanh nghiệp nâng cao năng lực cạnh tranh.\""
+ },
+ {
+  "id": "soi-file-giong-may",
+  "bat": true,
+  "tin_nhan": "Đọc giúp mình file {tep} xem có chỗ nào nghe như máy viết không.",
+  "tep": "evals/inputs/bai-ai-quan.md"
+ },
+ {
+  "id": "tin-zalo-quy-lop",
+  "bat": true,
+  "tin_nhan": "soạn tin nhắn zalo nhắc cả lớp nộp quỹ 200k trước thứ 7 nha, giọng vui vui thôi"
+ },
+ {
+  "id": "mo-ta-pr-tieng-viet",
+  "bat": true,
+  "tin_nhan": "Viết mô tả PR bằng tiếng Việt cho thay đổi này: thêm cache Redis cho API bảng giá, thời gian phản hồi giảm từ 800ms xuống 120ms, cache hết hạn sau 5 phút."
+ },
+ {
+  "id": "sua-thong-bao-cung",
+  "bat": true,
+  "tin_nhan": "Thông báo này đọc cứng quá, viết lại cho tự nhiên giúp mình: {tep}",
+  "tep": "evals/inputs/thong-bao-cham-cong.md"
+ },
+ {
+  "id": "dich-sang-tieng-viet",
+  "bat": true,
+  "tin_nhan": "Dịch sang tiếng Việt cho tự nhiên, đừng để giọng dịch: \"We're excited to announce that our new dashboard is now live. It's faster, cleaner, and designed with you in mind.\""
+ },
+ {
+  "id": "phat-bieu-chia-tay",
+  "bat": true,
+  "tin_nhan": "Viết giúp mình lời phát biểu khoảng 2 phút ở buổi chia tay anh Tùng nghỉ hưu, anh làm ở phòng kế toán 28 năm."
+ },
+ {
+  "id": "tra-loi-khach-phan-nan",
+  "bat": true,
+  "tin_nhan": "Khách nhắn phàn nàn là đơn giao chậm 4 ngày. Soạn giúp mình câu trả lời lịch sự mà không khúm núm, bên mình sẽ hoàn phí ship."
+ },
+ {
+  "id": "daily-report",
+  "bat": true,
+  "tin_nhan": "viết daily report hôm nay giúp mình: fix bug đăng nhập, review 2 PR, mai làm tiếp màn thanh toán"
+ },
+ {
+  "id": "thu-cam-on-thay",
+  "bat": true,
+  "tin_nhan": "Viết thư cảm ơn thầy hướng dẫn sau khi mình bảo vệ luận văn thạc sĩ xong, thầy tên Phạm Văn Lộc."
+ },
+ {
+  "id": "bot-giong-ai-bai-luan",
+  "bat": true,
+  "tin_nhan": "Bài này mình nhờ AI viết nháp, sửa giúp cho đỡ giống AI: {tep}",
+  "tep": "evals/inputs/bai-ai-quan.md"
+ },
+ {
+  "id": "linkedin-tieng-viet",
+  "bat": true,
+  "tin_nhan": "Viết bài đăng LinkedIn bằng tiếng Việt báo tin mình chuyển sang làm data engineer ở một công ty logistics."
+ },
+ {
+  "id": "loi-thoai-video",
+  "bat": true,
+  "tin_nhan": "Viết lời thoại cho video TikTok 30 giây giới thiệu app ghi chi tiêu, giọng nói chuyện bình thường."
+ },
+ {
+  "id": "linkedin-tieng-anh",
+  "bat": null,
+  "tin_nhan": "Can you make this LinkedIn post sound less like AI? {tep}",
+  "tep": "evals/inputs/linkedin-en.md"
+ },
+ {
+  "id": "gop-y-readme",
+  "bat": true,
+  "tin_nhan": "Góp ý văn phong cho README tiếng Việt này giúp mình, mấy cái tiêu đề nghe sao sao: {tep}",
+  "tep": "evals/inputs/readme-tieu-de.md"
+ },
+ {
+  "id": "slide-tien-do",
+  "bat": true,
+  "tin_nhan": "Lên nội dung 5 slide báo cáo tiến độ dự án tháng 11 cho ban giám đốc: xong 3/5 hạng mục, chậm 2 tuần ở phần tích hợp thanh toán, cần thêm 1 người backend."
+ },
+ {
+  "id": "tin-tom-tat-hop",
+  "bat": true,
+  "tin_nhan": "Từ bản chép lời họp này, viết giúp một tin nhắn gửi nhóm tóm các việc ai làm gì: {tep}",
+  "tep": "evals/inputs/chep-loi-hop-phat-hanh.md"
+ },
+ {
+  "id": "xin-loi-ban-than",
+  "bat": true,
+  "tin_nhan": "nhắn giúp mình tin xin lỗi đứa bạn vì lỡ hẹn tối qua, tụi mình thân lắm nên đừng sến"
+ },
+ {
+  "id": "caption-quan-bun",
+  "bat": true,
+  "tin_nhan": "Viết caption Facebook cho quán bún chả mới mở của nhà mình ở Hà Đông, mở 6h sáng tới 2h chiều."
+ },
+ {
+  "id": "giai-thich-cho-me",
+  "bat": true,
+  "tin_nhan": "Viết giúp mình mấy dòng giải thích cho mẹ (không rành công nghệ) vì sao không được bấm link lạ trong tin nhắn ngân hàng, để mình gửi mẹ."
+ },
+ {
+  "id": "dich-sang-tieng-anh",
+  "bat": false,
+  "tin_nhan": "Dịch câu này sang tiếng Anh: \"Anh xem giúp em phần chiết khấu ở trang 2 nhé.\""
+ },
+ {
+  "id": "hoi-tcp-udp",
+  "bat": false,
+  "tin_nhan": "TCP với UDP khác nhau thế nào?"
+ },
+ {
+  "id": "sua-bug-python",
+  "bat": false,
+  "tin_nhan": "Hàm này lỗi IndexError, sửa giúp mình:\n```python\ndef cuoi(ds):\n    return ds[len(ds)]\n```"
+ },
+ {
+  "id": "regex-so-dien-thoai",
+  "bat": false,
+  "tin_nhan": "Viết regex bắt số điện thoại di động Việt Nam 10 số."
+ },
+ {
+  "id": "ham-chuan-hoa-nfc",
+  "bat": false,
+  "tin_nhan": "Viết hàm Python chuẩn hóa chuỗi tiếng Việt về dạng NFC và bỏ khoảng trắng thừa."
+ },
+ {
+  "id": "dem-chu-file",
+  "bat": false,
+  "tin_nhan": "Đếm số chữ trong file {tep} giúp mình.",
+  "tep": "evals/inputs/cong-van.md"
+ },
+ {
+  "id": "tinh-tra-gop",
+  "bat": false,
+  "tin_nhan": "Vay 500 triệu trong 20 năm, lãi 8%/năm, trả góp đều thì mỗi tháng trả bao nhiêu?"
+ },
+ {
+  "id": "phan-tich-ngu-phap",
+  "bat": false,
+  "tin_nhan": "Câu \"Tôi ăn cơm rồi\" có chủ ngữ, vị ngữ là gì? Phân tích giúp mình."
+ },
+ {
+  "id": "css-can-giua",
+  "bat": false,
+  "tin_nhan": "Nút đăng nhập bị lệch trái, CSS căn giữa nó thế nào?"
+ },
+ {
+  "id": "bo-dau",
+  "bat": false,
+  "tin_nhan": "Chuyển đoạn này sang không dấu giúp mình: \"Hẹn gặp lại các bạn vào thứ Bảy.\""
+ },
+ {
+  "id": "luat-luc-bat",
+  "bat": false,
+  "tin_nhan": "Thể thơ lục bát có luật bằng trắc thế nào?"
+ },
+ {
+  "id": "tom-tat-tieng-anh",
+  "bat": false,
+  "tin_nhan": "Summarize this release note in three English bullet points: {tep}",
+  "tep": "evals/inputs/release-notes-en.md"
+ },
+ {
+  "id": "dat-ten-bien",
+  "bat": false,
+  "tin_nhan": "Đặt tên biến cho số tiền đơn hàng sau khi trừ khuyến mãi, code JavaScript."
+ },
+ {
+  "id": "liet-ke-tinh",
+  "bat": false,
+  "tin_nhan": "Liệt kê 5 tỉnh có diện tích lớn nhất Việt Nam."
+ },
+ {
+  "id": "toi-uu-sql",
+  "bat": false,
+  "tin_nhan": "Câu SQL này chạy chậm, tối ưu giúp: SELECT * FROM don_hang WHERE YEAR(ngay_tao) = 2026;"
+ },
+ {
+  "id": "email-tieng-anh-moi",
+  "bat": null,
+  "tin_nhan": "Write a short email to my manager asking for Friday off, my kid is sick."
+ },
+ {
+  "id": "soat-chinh-ta",
+  "bat": null,
+  "tin_nhan": "Soát lỗi chính tả đoạn này giúp mình: \"Chúng tôi xin chân thành cám ơn quí khách đã tin tưởng sữ dụng dịch vụ.\""
+ },
+ {
+  "id": "commit-message",
+  "bat": null,
+  "tin_nhan": "Viết commit message cho thay đổi: thêm cache Redis cho API bảng giá."
+ },
+ {
+  "id": "tom-tat-cho-minh",
+  "bat": null,
+  "tin_nhan": "Tóm tắt giúp mình nội dung file {tep} trong 3 ý.",
+  "tep": "evals/inputs/huong-dan-cai.md"
+ },
+ {
+  "id": "dat-ten-tiem",
+  "bat": null,
+  "tin_nhan": "Nghĩ giúp 10 cái tên cho tiệm bánh mì của mình."
+ }
+]
