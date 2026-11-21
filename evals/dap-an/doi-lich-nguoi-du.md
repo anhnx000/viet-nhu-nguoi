@@ -1,0 +1,1 @@
+Cuộc họp dời từ 9h sang 14h vì phòng họp đang sửa. Mọi người sắp xếp lại giờ giúp mình nhé.

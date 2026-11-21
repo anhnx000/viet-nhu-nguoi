@@ -1,5 +1,7 @@
 # Nguồn tham khảo
 
+Mục lục: Danh mục dấu hiệu văn AI; Bài viết tiếng Việt về dấu hiệu văn AI; Văn phong tiếng Việt do người viết; Nghiên cứu ngôn ngữ và độ tin cậy của phần mềm kiểm tra AI; Hướng dẫn giọng văn; Skill và công cụ mã nguồn mở; Bài thực tế; Giới hạn; Cách tổ chức skill trong các repo nhiều sao.
+
 Skill học từ các nguồn dưới đây, kèm vài thứ nên đọc thêm. Nguồn có nhắc tới một từ hay một cấu trúc thì chưa chắc đó đã là lỗi, câu sửa mà nguồn đề xuất cũng chưa chắc đã hay hơn. Danh mục dấu hiệu, ví dụ trước/sau và quy tắc trong skill đều viết lại bằng lời riêng, không chép nguyên văn bài nào.
 
 Ngày 07-11-2026 đã kiểm, link nào cũng còn mở được. Mỗi mục ghi rõ mức dùng:
@@ -29,6 +31,10 @@ Ngày 07-11-2026 đã kiểm, link nào cũng còn mở được. Mỗi mục gh
 - Upcontent, [Kiểm tra văn bản AI](https://upcontent.vn/kiem-tra-van-ban-ai/), 23-10-2026. **Đọc thêm** (longhang2004). Phép thử thay tên: bỏ tên sản phẩm đi mà nhận xét vẫn đúng với sản phẩm khác thì bài thiếu dữ kiện riêng.
 - Hoà Lương, [Hiểu về dấu gạch ngang](https://hoaluong.com/hieu-ve-dau-gach-ngang-de-khong-con-hoang-mang/). **Đọc thêm** (longhang2004). Chức năng của dấu gạch ngang trong tiếng Việt; lý do skill không cấm gạch ngang khi dùng đúng chức năng (lượt thoại, khoảng số).
 - VOZ, [Cảm thấy khó chịu với content từ AI](https://voz.vn/t/cam-thay-kho-chiu-voi-content-tu-ai.1104978/), 05-2025. **Đọc thêm** (longhang2004). Phản hồi của người đọc Việt về văn dài, lặp, chen quảng cáo.
+- Dân trí, [Tưởng đã xóa hết dấu vết AI, sinh viên bất ngờ khi bị phát hiện (Kỳ 1)](https://dantri.com.vn/cong-nghe/tuong-da-xoa-het-dau-vet-ai-sinh-vien-bat-ngo-khi-bi-phat-hien-ky-1-20260511193311011.htm), 12-05-2026, và [Kỳ 2](https://dantri.com.vn/cong-nghe/tuong-da-xoa-het-dau-vet-ai-sinh-vien-bat-ngo-khi-bi-phat-hien-ky-2-20260512145030540.htm), 13-05-2026. **Dùng trực tiếp.** Giảng viên kể cách nhận ra bài sinh viên nhờ AI: link tài liệu còn đuôi `?utm_source=chatgpt.com`, tài liệu tham khảo không có DOI và tra không ra (mục 17, 27, kiểm trong `scan.py`), trộn hai loại gạch ngang, chia quá nhiều đề mục nhỏ.
+- Thanh Niên, [Sinh viên dùng thủ thuật để... che dấu AI](https://thanhnien.vn/sinh-vien-dung-thu-thuat-de-che-dau-ai-185251211185713308.htm), 12-12-2025. **Dùng trực tiếp.** "không chỉ… mà còn…", "thêm vào đó", "hơn nữa", câu "tóm lại" khiên cưỡng ở cuối, nguồn trích dẫn không tồn tại.
+- Finhay, [Hướng dẫn mẹo dùng ChatGPT không bị văn mẫu (Robotic)](https://www.finhay.com.vn/meo-dung-chatgpt-khong-bi-van-mau-robotic), 29-05-2026. **Dùng trực tiếp**, chỉ lấy phần dấu hiệu: "Trong thế giới ngày nay", "Hơn thế nữa", nhịp đoạn một câu mở, ba câu khai triển dài bằng nhau, một câu chốt (mục 12). Bài còn khuyên chèn câu cực ngắn và dấu chấm lửng cho có vẻ tự nhiên, đúng kiểu mục 54 cảnh báo, nên phần đó không dùng.
+- Hoàng Lan Chi, [Làm thế nào nhận ra "mùi AI"](https://chungtoimuontudo2.wordpress.com/2026/05/03/hlc-lam-the-nao-nhan-ra-mui-ai-may-42026/), 03-05-2026. **Dùng trực tiếp.** Bài blog dán lại cả câu trả lời của ChatGPT, còn nguyên lời mời "Nếu bạn muốn, mình có thể phân tích sâu hơn" (mục 23). Người viết tả bài ChatGPT là "dài ngoằng, xuống hàng liên tục, icon tràn lan"; châm ngôn "mang trong mình một bài học quý giá" (mục 3).
 
 ## Văn phong tiếng Việt do người viết
 
@@ -43,6 +49,8 @@ Ngày 07-11-2026 đã kiểm, link nào cũng còn mở được. Mỗi mục gh
 - Huang và Tsai, [Evaluating Pragmatic Appropriateness in English–Vietnamese Machine Translation with Dyadic Profiles](https://aclanthology.org/2026.wmt-main.16/), WMT 2026. **Đọc thêm** (longhang2004). Câu đúng ngữ pháp chưa chắc hợp quan hệ người gửi và người nhận; liên quan tới mục 36 (xưng hô).
 - Nguyen và Nguyen, [A Large-Scale Benchmark for Vietnamese Sentence Paraphrases](https://aclanthology.org/2025.findings-naacl.59/), Findings of NAACL 2025. **Đọc thêm** (longhang2004). Cách đánh giá nhiều cách diễn đạt cùng một ý trong tiếng Việt.
 - [ViLexNorm: A Lexical Normalization Corpus for Vietnamese Social Media Text](https://aclanthology.org/2024.eacl-long.85/), EACL 2024. **Đọc thêm** (cuongducle). Văn mạng xã hội khác văn chuẩn; lý do skill không ép mọi cuộc trò chuyện về giọng chuẩn.
+- Wang và cộng sự, [Is Human-Like Text Liked by Humans? Multilingual Human Detection and Preference Against AI](https://arxiv.org/abs/2502.11614), 2025. **Dùng trực tiếp.** Người chấm phân biệt được 80% cặp tóm tắt tin Lao Động (người viết) với bản GPT-4o, nhưng chỉ 51% với đoạn mở đầu Wikipedia. Tin người viết có ngày, nơi, chi tiết riêng, còn GPT-4o tóm chung chung, câu ngắn hơn câu của nhà báo. Đoạn Wikipedia của GPT-4o chen câu quảng bá ("góp phần vào sự phát triển bền vững của thành phố", mục 15).
+- Bộ dữ liệu [trieunh/vietnamese.human.ai.news.sets](https://huggingface.co/datasets/trieunh/vietnamese.human.ai.news.sets) (Apache-2.0; tin báo tới 7-2022) và [ICCIES-2025-DetectAI/vietnamese_news_human_ai](https://huggingface.co/datasets/ICCIES-2025-DetectAI/vietnamese_news_human_ai) (chỉ dùng cho nghiên cứu; tin do GPT-4o mini, Gemini, Llama, DeepSeek viết lại). **Dùng trực tiếp**, chỉ đo ở máy, không chép chữ vào repo vì chữ báo thuộc tòa soạn. Số đo cụm từ và điểm bộ kiểm tra ghi ở CHANGELOG bản 2.11.0.
 
 ## Hướng dẫn giọng văn
 
@@ -62,6 +70,7 @@ Skill tiếng Anh:
 - [zarazhangrui/frontend-slides](https://github.com/zarazhangrui/frontend-slides), MIT. **Dùng trực tiếp**, lấy ý tưởng: chia mật độ chữ theo cách trình bày (nói trực tiếp hay gửi đọc), tách slide thay vì thu nhỏ chữ, danh sách hình thức "AI slop" (gradient tím, lưới thẻ icon, bố cục rập khuôn), không để chữ của quy trình làm slide sót lại trên slide.
 - Anthropic, skill `doc-coauthoring` trong [anthropics/skills](https://github.com/anthropics/skills), Apache 2.0. **Dùng trực tiếp**, lấy ý tưởng: hỏi gộp bối cảnh trước khi viết, câu hỏi đánh số để trả lời tắt được, nhờ một agent mới, không biết bối cảnh, đọc thử tài liệu.
 - [jurigis/avoid-ai-writing-multilingual](https://github.com/jurigis/avoid-ai-writing-multilingual). **Đọc thêm** (cuongducle). Cách tách quy tắc theo từng ngôn ngữ.
+- [dangnk146/vietnamese-academic-writing](https://github.com/dangnk146/vietnamese-academic-writing). **Dùng trực tiếp**, chỉ lấy ý vì repo chưa có giấy phép: "khai phá tiềm năng", "đóng góp một phần không nhỏ" trong văn học thuật. Hai cụm đã đo lại trên tin báo trước khi đưa vào mục 13.
 
 Skill tiếng Việt, đều MIT. Dùng để đối chiếu danh mục; quy tắc và ví dụ ở đây viết lại theo cách riêng:
 
@@ -76,7 +85,7 @@ Skill tiếng Việt, đều MIT. Dùng để đối chiếu danh mục; quy t�
 
 ## Giới hạn
 
-Ví dụ trước/sau trong skill do người làm skill tự viết, chưa có nhóm người Việt nào đọc và chấm độc lập. Ngưỡng điểm của `scan.py` mới chỉnh theo vài văn bản mẫu, chưa đo trên một tập lớn. Phải có thêm phản hồi theo vùng miền, ngành, kênh thì mới dám nói skill cải thiện được bao nhiêu. Thấy nguồn nào bị dẫn sai ý thì mở issue giúp.
+Ví dụ trước/sau trong skill do người làm skill tự viết, chưa có nhóm người Việt nào đọc và chấm độc lập. Ngưỡng điểm của `scan.py` chỉnh theo vài văn bản mẫu. Đo lại trên tin báo (bản 2.11.0): 3,2% trong 1.800 tin người viết trước 7-2022 được từ 10 điểm, so với 45% trong 2.000 tin GPT-4o mini, Gemini, Llama, DeepSeek viết lại. Nghĩa là bộ kiểm tra bỏ sót hơn nửa số bài máy viết theo giọng báo, và cũng chưa đo trên email, bài mạng xã hội người viết. Phải có thêm phản hồi theo vùng miền, ngành, kênh thì mới dám nói skill cải thiện được bao nhiêu. Thấy nguồn nào bị dẫn sai ý thì mở issue giúp.
 
 ## Cách tổ chức skill trong các repo nhiều sao
 

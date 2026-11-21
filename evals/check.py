@@ -1,16 +1,22 @@
 #!/usr/bin/env python3
 """Chấm phần tự động của bộ đề thử skill.
 
-Dùng: python3 -I evals/check.py THU_MUC_KET_QUA [--held-out]
-THU_MUC_KET_QUA chứa mỗi đề một file <id>.md, là nguyên văn câu trả lời của trợ lý khi skill đang bật.
+Dùng: python3 -I evals/check.py THU_MUC [THU_MUC ...] [--held-out]
+THU_MUC chứa mỗi đề một file <id>.md, là nguyên văn câu trả lời của trợ lý khi skill đang bật.
+Nếu THU_MUC chỉ có các thư mục con 1/, 2/, 3/ (evals/run.py chạy nhiều lượt) thì chấm từng lượt, báo tỉ lệ qua
+kèm khoảng tin cậy 95% và số đề qua cả mọi lượt.
 Cách chạy từng đề và phần phải đọc tay nằm ở evals/README.md.
 
 Script chỉ kiểm những thứ đếm được: số câu hỏi có dấu hỏi, số chỗ trống trong ngoặc vuông, dữ kiện còn đủ,
 việc chính có nằm ở đầu tin không, độ dài, điểm scan.py, tỉ lệ chữ giữ nguyên so với bài gốc, số liệu tự thêm ngoài lời dặn. Giọng văn có tự nhiên không thì vẫn phải đọc.
+Nếu cạnh câu trả lời có <id>.json (vết công cụ do run.py ghi), script chấm riêng phần đường đọc: trợ lý đã mở
+file hướng dẫn nào (must_read, must_not_read, max_refs; không đề nào được đọc trọn patterns.md hay sources.md trừ khi
+đề ghi allow_read). Đường đọc chỉ để xem skill dẫn đường đúng không, không quyết định đề qua hay trượt.
 Thoát mã 1 nếu có đề trượt hoặc thiếu file.
 """
 import difflib
 import json
+import math
 import pathlib
 import re
 import sys
@@ -27,6 +33,16 @@ PLACEHOLDER = re.compile(r"\[(?![ xX]\])[^\]\n]{2,60}\](?!\()")
 REF = re.compile(r"\bmục (\d{1,2}(?:, ?\d{1,2})*)\b|\(((?:mục )?\d{1,2}(?:, ?\d{1,2})*)\)", re.IGNORECASE)
 LEAD_WORDS = 25
 BOLD = re.compile(r"\*\*[^*\n]+\*\*")
+# "slide 2", "mục 45, 46": chỉ chỗ trong bài hay trong danh mục, không phải số liệu trợ lý tự thêm
+POINTER = re.compile(r"\b(?:slide|mục)\s+\d{1,3}(?:\s*(?:[-–,]|và|đến|tới)\s*\d{1,3})*", re.IGNORECASE)
+
+# Vết công cụ: file hướng dẫn và script của skill mà trợ lý đã mở
+REF_FILE = re.compile(r"references/([\w-]+\.md)")
+SCRIPT = re.compile(r"scripts/([\w-]+\.py)")
+BARE_MD = re.compile(r"(?<![\w/.-])([\w-]+\.md)\b")
+PARTIAL_COMMANDS = {"grep", "rg", "sed", "head", "tail", "awk"}
+# SKILL.md dặn tra đúng mục trong danh mục và chỉ mở nguồn tham khảo khi cần tra nguồn.
+NO_FULL_READ = ("patterns.md", "sources.md")
 
 
 def overlap(source, reply):
@@ -45,18 +61,81 @@ def contains(text, term):
     return term in text
 
 
+def load_trace(path):
+    """Đọc vết run.py ghi. Nhận cả dạng cũ: danh sách [tên công cụ, tham số], coi như lệnh nào cũng chạy được."""
+    data = json.loads(pathlib.Path(path).read_text(encoding="utf-8"))
+    tools = data.get("tools", []) if isinstance(data, dict) else data
+    return [(t[0], t[1] if len(t) > 1 else {}, t[2] if len(t) > 2 else True) for t in tools]
+
+
+def opened(trace):
+    """File của skill mà trợ lý đã mở: {tên: True nếu đọc trọn, False nếu chỉ đọc một phần hoặc là script đã chạy}.
+
+    Lệnh bị chặn hoặc lỗi không tính. Read có limit/offset, Grep, sed/head/grep trên file thì là đọc một phần.
+    """
+    files = {}
+
+    def mark(name, full):
+        files[name] = files.get(name, False) or full
+
+    for tool, data, ok in trace:
+        if not ok or not isinstance(data, dict):
+            continue
+        if tool == "Read":
+            for name in REF_FILE.findall(str(data.get("file_path", ""))):
+                mark(name, "limit" not in data and "offset" not in data)
+        elif tool == "Grep":
+            for name in REF_FILE.findall(str(data.get("path", ""))):
+                mark(name, False)
+        elif tool == "Bash":
+            command = str(data.get("command", ""))
+            inside = re.search(r"\bcd\s+\S*references/?(?:\s|$)", command)
+            for part in re.split(r"&&|\|\||[;|\n]", command):
+                words = part.split()
+                if not words or words[0] == "cd":
+                    continue
+                refs = REF_FILE.findall(part) or (BARE_MD.findall(part) if inside else [])
+                for name in refs:
+                    mark(name, words[0] not in PARTIAL_COMMANDS)
+                for name in SCRIPT.findall(part):
+                    mark(name, False)
+    return files
+
+
+def check_trace(rules, trace):
+    """Lỗi về việc mở file hướng dẫn, theo vết công cụ."""
+    files, errors = opened(trace), []
+    for item in rules.get("must_read", []):
+        options = item if isinstance(item, list) else [item]
+        if not any(o in files for o in options):
+            errors.append(f"không mở {' hay '.join(options)}")
+    for name in rules.get("must_not_read", []):
+        if name in files:
+            errors.append(f"mở {name} dù đề không cần")
+    for name in NO_FULL_READ:
+        if files.get(name) and name not in rules.get("allow_read", []):
+            errors.append(f"đọc trọn {name} thay vì tra phần cần")
+    refs = sorted(n for n in files if n.endswith(".md"))
+    if "max_refs" in rules and len(refs) > rules["max_refs"]:
+        errors.append(f"mở {len(refs)} file hướng dẫn ({', '.join(refs)}), quá {rules['max_refs']}")
+    return errors
+
+
 def check(scenario, reply, root=ROOT):
-    """Trả về danh sách lỗi (rỗng nghĩa là qua phần tự động)."""
+    """Trả về danh sách lỗi phần nội dung (rỗng nghĩa là qua phần tự động)."""
     rules, errors = scenario.get("kiem", {}), []
     words = len(reply.split())
+    if not words:
+        return ["câu trả lời rỗng"]
     questions = len(QUESTION.findall(reply))
     # Giới hạn hỏi lại chỉ xét danh sách đánh số: dấu ? trong email soạn hộ
     # có thể là lời nhờ người nhận, không phải hỏi lại người dùng. Đọc tay phần này.
     numbered_questions = len(re.findall(r"(?m)^\s*\d+[.)]\s", reply))
     placeholders = len(PLACEHOLDER.findall(reply))
     source = ""
-    if scenario.get("tep"):
-        source = (root / scenario["tep"]).read_text(encoding="utf-8")
+    needs_source = {"min_overlap", "max_overlap", "max_added_numbers"} & set(rules)
+    if scenario.get("tep") and needs_source:
+        source = check_facts.read(str(root / scenario["tep"]))  # đọc được cả .pptx
 
     def need(ok, message):
         if not ok:
@@ -100,7 +179,7 @@ def check(scenario, reply, root=ROOT):
     if "max_added_numbers" in rules:
         # số có trong câu trả lời mà không có trong lời người dùng hay file đầu vào: chi tiết trợ lý tự thêm
         brief = check_facts.facts(scenario["tin_nhan"] + "\n" + source)
-        lines, _ = check_facts.added(brief, check_facts.facts(reply))
+        lines, _ = check_facts.added(brief, check_facts.facts(POINTER.sub(" ", reply)))
         extra = [n for line in lines if line.startswith("[LỖI] số") for n in line.split(": ", 1)[1].split(", ")]
         need(len(extra) <= rules["max_added_numbers"], f"tự thêm số không có trong lời dặn: {', '.join(extra)}")
     if "scan_max" in rules:
@@ -109,31 +188,96 @@ def check(scenario, reply, root=ROOT):
     return errors
 
 
+def run_dirs(path):
+    """Một thư mục kết quả, hoặc các lượt 1/, 2/, 3/... bên trong nó."""
+    path = pathlib.Path(path)
+    if not path.is_dir() or any(path.glob("*.md")):
+        return [path]
+    runs = [p for p in path.iterdir() if p.is_dir() and any(p.glob("*.md"))]
+    return sorted(runs, key=lambda p: (len(p.name), p.name)) or [path]
+
+
+def grade(scenario, folder):
+    """(lỗi nội dung, lỗi đường đọc) của một đề trong một lượt; None nếu thiếu câu trả lời.
+
+    Lỗi đường đọc là None khi không có vết, hoặc khi lượt chạy không bật skill (run.py --khong-skill).
+    """
+    answer = folder / f"{scenario['id']}.md"
+    if not answer.exists():
+        return None
+    route = None
+    trace_path = folder / f"{scenario['id']}.json"
+    if trace_path.exists():
+        data = json.loads(trace_path.read_text(encoding="utf-8"))
+        if not (isinstance(data, dict) and data.get("skill") is False):
+            route = check_trace(scenario.get("kiem", {}), load_trace(trace_path))
+    return check(scenario, answer.read_text(encoding="utf-8")), route
+
+
+def wilson(k, n, z=1.96):
+    """Khoảng tin cậy Wilson cho tỉ lệ k/n. Với 3 lượt, 3/3 vẫn chỉ là 44-100%."""
+    if not n:
+        return 0.0, 1.0
+    p, d = k / n, 1 + z * z / n
+    center = (p + z * z / (2 * n)) / d
+    half = z * math.sqrt(p * (1 - p) / n + z * z / (4 * n * n)) / d
+    return max(0.0, center - half), min(1.0, center + half)
+
+
+def report(scenarios, folders):
+    """In kết quả từng đề và dòng tổng; trả về số đề có lượt trượt hoặc thiếu."""
+    total = len(folders)
+    failed = passed_runs = all_runs = route_ok = route_runs = 0
+    for sc in scenarios:
+        results = [grade(sc, f) for f in folders]
+        ok = sum(r is not None and not r[0] for r in results)
+        passed_runs += ok
+        all_runs += ok == total
+        prefix = (lambda f: f"lượt {f.name}: ") if total > 1 else (lambda f: "")
+        routes = [(f, r[1]) for f, r in zip(folders, results) if r is not None and r[1] is not None]
+        route_runs += len(routes)
+        route_ok += sum(not errors for _, errors in routes)
+        wrong = [prefix(f) + "; ".join(errors) for f, errors in routes if errors]
+        count = f" ({ok}/{total})" if total > 1 else ""
+        road = ("  · đường đọc: " + " | ".join(wrong)) if wrong else ""
+        if ok == total:
+            print(f"QUA    {sc['id']}{count}{road}")
+            continue
+        failed += 1
+        notes = []
+        for folder, result in zip(folders, results):
+            if result is None:
+                notes.append(prefix(folder) + f"không thấy {sc['id']}.md")
+            elif result[0]:
+                notes.append(prefix(folder) + "; ".join(result[0]))
+        label = "THIẾU " if all(r is None for r in results) else "TRƯỢT "
+        print(f"{label} {sc['id']}{count}: " + " | ".join(notes) + road)
+    n = len(scenarios)
+    if total == 1:
+        print(f"\n{n - failed}/{n} đề qua phần tự động.")
+    else:
+        low, high = wilson(passed_runs, n * total)
+        print(f"\n{passed_runs}/{n * total} lượt qua phần tự động ({passed_runs / (n * total):.0%}, "
+              f"khoảng tin cậy 95%: {low * 100:.0f}-{high:.0%}). {all_runs}/{n} đề qua cả {total} lượt.")
+    if route_runs:
+        print(f"Đường đọc đúng ở {route_ok}/{route_runs} lượt có vết.")
+    print("Phần còn lại đọc tay theo cột \"mong_doi\" trong file đề.")
+    return failed
+
+
 def main():
     for stream in (sys.stdin, sys.stdout, sys.stderr):
         if hasattr(stream, "reconfigure"):
             stream.reconfigure(encoding="utf-8")  # Windows mặc định cp1252, in chữ có dấu sẽ lỗi
-    if len(sys.argv) < 2 or sys.argv[2:] not in ([], ["--held-out"]):
+    args = sys.argv[1:]
+    dirs = [a for a in args if not a.startswith("--")]
+    flags = [a for a in args if a.startswith("--")]
+    if not dirs or flags not in ([], ["--held-out"]):
         sys.exit(__doc__)
-    out = pathlib.Path(sys.argv[1])
-    filename = "held-out.json" if "--held-out" in sys.argv[2:] else "scenarios.json"
+    filename = "held-out.json" if flags else "scenarios.json"
     scenarios = json.loads((ROOT / "evals" / filename).read_text(encoding="utf-8"))
-    failed = 0
-    for sc in scenarios:
-        path = out / f"{sc['id']}.md"
-        if not path.exists():
-            print(f"THIẾU  {sc['id']}: không thấy {path.name}")
-            failed += 1
-            continue
-        errors = check(sc, path.read_text(encoding="utf-8"))
-        if errors:
-            failed += 1
-            print(f"TRƯỢT  {sc['id']}: " + "; ".join(errors))
-        else:
-            print(f"QUA    {sc['id']}")
-    print(f"\n{len(scenarios) - failed}/{len(scenarios)} đề qua phần tự động. "
-          "Phần còn lại đọc tay theo cột \"mong_doi\" trong file đề.")
-    sys.exit(1 if failed else 0)
+    folders = [run for d in dirs for run in run_dirs(d)]
+    sys.exit(1 if report(scenarios, folders) else 0)
 
 
 if __name__ == "__main__":

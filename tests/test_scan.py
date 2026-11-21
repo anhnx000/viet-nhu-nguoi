@@ -59,6 +59,23 @@ class DetectsAiTells(unittest.TestCase):
     def test_chatbot_closing(self):
         self.assertIn("lời chatbot", groups("Hy vọng những thông tin trên sẽ hữu ích cho bạn!"))
 
+    def test_chatgpt_link_tail(self):
+        self.assertIn("dấu vết công cụ", groups("Theo [báo cáo](https://example.vn/a?utm_source=chatgpt.com), lãi tăng."))
+        self.assertIn("dấu vết công cụ", groups("Nguồn: https://example.vn/a?id=3&utm_source=chatgpt.com"))
+
+    def test_chatbot_offer_to_go_deeper(self):
+        self.assertIn("lời chatbot", groups("Nếu bạn muốn, mình có thể phân tích sâu hơn về cách nhận ra bài AI."))
+
+    def test_measured_ai_phrases(self):
+        for text in ("Dự án là một bước tiến mới của ngành.", "Mỗi thất bại mang trong mình một bài học quý giá.",
+                     "Công ty có tầm nhìn chiến lược.", "Đội đã đóng góp một phần không nhỏ.",
+                     "Giá rẻ. Thêm vào đó, quán gần trường."):
+            self.assertIn("từ vựng AI (vi)", groups(text), text)
+
+    def test_not_only_but_also(self):
+        # tin máy viết lại dùng dày gấp gần 30 lần tin người viết (CHANGELOG 2.11.0)
+        self.assertIn("đối lập giả", groups("Ứng dụng không chỉ nhanh mà còn tiết kiệm pin."))
+
     def test_em_dash(self):
         self.assertIn("gạch ngang dài", groups("Kết quả — như dự đoán — rất tốt."))
 
@@ -82,6 +99,25 @@ class KeepsHumanText(unittest.TestCase):
 
     def test_code_block_ignored(self):
         self.assertEqual(groups("```\nx = 'được gọi bởi' — tiến hành\n```"), set())
+
+    def test_ordinary_links_and_offers(self):
+        self.assertNotIn("dấu vết công cụ", groups("Xem https://example.vn/a?utm_source=facebook nhé."))
+        self.assertNotIn("dấu vết công cụ", groups("Đuôi `?utm_source=chatgpt.com` là dấu vết cần xóa."))
+        self.assertEqual(groups("Nếu bạn muốn thì mai mình gửi file luôn."), set())
+
+    def test_plain_not_only(self):
+        self.assertEqual(groups("Không chỉ mình anh đâu, cả phòng cũng về muộn."), set())
+        self.assertEqual(groups("Thêm vào đó một thìa đường rồi khuấy đều."), set())
+
+    def test_long_marker_line_does_not_hang(self):
+        # dòng lặp vòng của mô hình nhỏ: regex cũ thử lùi theo cấp số mũ, chạy hàng phút
+        import time
+        start = time.time()
+        scan.scan("Tin chính.\n" + "** " * 150 + "\n" + "- " * 200 + "x")
+        self.assertLess(time.time() - start, 2)
+
+    def test_emoji_after_list_marker(self):
+        self.assertIn("emoji đầu dòng", groups("- 🚀 Ra mắt bản mới hôm nay\n- ✅ Sửa lỗi đăng nhập cũ"))
 
     def test_examples_after(self):
         for name in ("sau.md", "sau-co-chi-tiet.md"):
@@ -237,6 +273,16 @@ class CheckFacts(unittest.TestCase):
     def test_caps_heading_is_not_acronym(self):
         r = self.run_check("TẠI SAO LÀM KERNEL\n\nMình dùng RAM 8 GB.", "Mình dùng RAM 8 GB.")
         self.assertEqual(r.returncode, 0, r.stdout)
+
+    def test_date_without_year_is_soft(self):
+        # Bỏ năm hay thêm số 0 ở đầu vẫn là ngày đó; đổi ngày thì vẫn là lỗi
+        r = self.run_check("Máy ngừng sau ngày 31/12/2026. Họp lúc 01/03/2027.",
+                           "Máy ngừng sau 31/12. Họp lúc 1/3/2027.")
+        self.assertEqual(r.returncode, 0, r.stdout)
+        self.assertIn("ngày bỏ năm: 31/12/2026", r.stdout)
+        r = self.run_check("Hạn cài ứng dụng là 28/12/2026.", "Hạn cài ứng dụng là 29/12.")
+        self.assertEqual(r.returncode, 1, r.stdout)
+        self.assertIn("29/12", r.stdout)
 
     def test_code_moved_into_block_passes(self):
         r = self.run_check("Chạy `npm test` (hoặc `npm run lint`) trước khi push.",
@@ -882,6 +928,17 @@ class BriefCheck(unittest.TestCase):
         lines, failed = self.added(draft)
         self.assertFalse(failed)
         self.assertEqual(lines, [])
+
+    def test_date_without_year_is_not_new(self):
+        brief = check_facts.facts("Máy vân tay ngừng sau ngày 31/12/2026, cài ứng dụng trước 28/12/2026.")
+        self.assertEqual(check_facts.added(brief, check_facts.facts("Máy ngừng sau 31/12, cài trước 28/12.")),
+                         ([], False))
+        lines, failed = check_facts.added(brief, check_facts.facts("Máy ngừng sau 31/12, cài trước 27/12."))
+        self.assertTrue(failed)
+        self.assertIn("27/12", lines[0])
+        # thêm năm khi lời dặn không ghi năm là chi tiết mới
+        lines, failed = check_facts.added(check_facts.facts("Hạn nộp 28/12."), check_facts.facts("Hạn nộp 28/12/2026."))
+        self.assertTrue(failed)
 
     def test_number_written_as_word_in_brief_is_not_new(self):
         brief = check_facts.facts("Nhóm có ba người, làm trong hai tuần.")

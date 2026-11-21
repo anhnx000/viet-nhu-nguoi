@@ -1,0 +1,1 @@
+Máy chạy chậm quá. Số liệu cho thấy doanh thu giảm, nhưng chưa rõ nguyên nhân.

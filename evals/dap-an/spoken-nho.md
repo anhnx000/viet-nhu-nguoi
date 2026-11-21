@@ -1,0 +1,1 @@
+Anh xem giúp em bản này trước chiều mai được không ạ? Anh bận thì em hỏi chị Huệ cũng được ạ.

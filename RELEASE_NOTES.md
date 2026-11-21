@@ -2,6 +2,16 @@
 
 English notes for each GitHub release. The release workflow publishes the section that matches the version in `SKILL.md`. The full development log, in Vietnamese, is in [CHANGELOG.md](CHANGELOG.md).
 
+## 2.11.0
+
+An automated, repeatable eval suite, new tells from 2025-2026 Vietnamese press coverage, and the checker measured on a few thousand news articles.
+
+- `evals/run.py` runs each case through `claude -p` in an isolated temp folder (also `--khong-skill` for a no-skill baseline). `check.py` grades which reference files were read as a separate indicator and reports pass rates with Wilson 95% intervals over several runs. Every case has a reference answer that must pass; empty answers and copied inputs must fail. 11 new held-out cases (13 total).
+- New tells merged into existing items: links ending in `utm_source=chatgpt.com`, references that cannot be found, "if you want, I can go deeper" offers, and phrases such as "mang trong mình", "bước tiến", "tầm nhìn chiến lược". Each was checked against 1,800 human news articles from before July 2022 and 2,000 AI rewrites ("không chỉ… mà còn": 0.9 vs 25.3 per 10,000 words). "Đồng thời" and "Từ đó" turned out to be more common in human text and were left out.
+- Checker results: human news unchanged (3.2% score 10 or more); AI rewrites from 43.2% to 45.0%. The checker still misses more than half of AI news-style text. Fixed a regex that hung for minutes on long lines of repeated markers.
+- `check_facts.py` treats "31/12" and "31/12/2026" as the same date. Already-natural casual messages are no longer "lightly fixed" for capitals and abbreviations.
+- Results (Opus, medium effort, 3 runs): 181/189 runs pass on the 63 main cases (96%, CI 92-98%) vs 32/63 cases without the skill; held-out 34/39 runs after loosening six over-strict checks (23/39 before), vs 2/13 cases without the skill.
+
 ## 2.10.0
 
 Load writing, editing, review, chat and slide guidance on demand. Look up a numbered pattern or check an existing presentation directly from the entry point.

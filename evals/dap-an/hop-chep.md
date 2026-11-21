@@ -1,0 +1,1 @@
+Ờ, bên mình có thể giao thứ Sáu, còn chờ kho xác nhận. Chốt gửi bản vẽ hôm nay nhé.

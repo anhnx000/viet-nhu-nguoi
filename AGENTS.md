@@ -9,7 +9,7 @@ Repo này là một skill viết bằng Markdown, kèm các script Python chỉ 
 - `skills/viet-nhu-nguoi/scripts/scan.py`, `check_facts.py`: bộ kiểm tra và công cụ so dữ kiện.
 - `skills/viet-nhu-nguoi/agents/openai.yaml`: tên hiển thị và lời gọi mẫu Codex dùng. Lời gọi mẫu phải trỏ đúng `$viet-nhu-nguoi`.
 - `tests/`: `test_scan.py` cho bộ kiểm tra, `test_package.py` kiểm phiên bản, cách đánh số danh mục và điểm ví dụ trong README.
-- `evals/`: 63 đề thử hành vi của skill (`scenarios.json`), file đầu vào và `check.py` chấm phần đếm được. Sửa `SKILL.md` hay file trong `references/` thì chạy lại các đề liên quan theo `evals/README.md`. Thêm repo vào bảng top-20 trong `references/sources.md` thì thêm chỗ áp dụng vào `LESSONS` trong `tests/test_package.py`.
+- `evals/`: 63 đề thử hành vi của skill (`scenarios.json`) và 13 đề để riêng (`held-out.json`), file đầu vào, đáp án mẫu (`dap-an/`), `run.py` chạy đề qua `claude -p`, `check.py` chấm phần đếm được. Sửa `SKILL.md` hay file trong `references/` thì chạy lại các đề liên quan theo `evals/README.md`. Sửa `kiem` của đề nào thì đáp án mẫu của đề đó vẫn phải qua. Không sửa skill theo lỗi ở đề để riêng. Thêm repo vào bảng top-20 trong `references/sources.md` thì thêm chỗ áp dụng vào `LESSONS` trong `tests/test_package.py`.
 - `README.md` (tiếng Việt, bản chính), `README.en.md`, `CHANGELOG.md`, `RELEASE_NOTES.md` (tiếng Anh).
 
 ## Khi sửa

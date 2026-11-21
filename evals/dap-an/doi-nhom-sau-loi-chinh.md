@@ -1,0 +1,1 @@
+Chị Hà ơi, em gửi bảng lương rồi ạ.

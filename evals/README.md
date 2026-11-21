@@ -1,26 +1,49 @@
 # Bộ đề thử skill
 
-Sáu mươi tình huống thường gặp, dùng để xem một bản `SKILL.md` mới có làm hỏng hành vi cũ không. Bộ đề này rút từ các lượt thử của bản 2.7.0, kết quả từng lượt ghi trong `CHANGELOG.md`.
+`scenarios.json` có 63 tình huống thường gặp, dùng khi chỉnh skill. `held-out.json` có 13 đề để riêng, chỉ chạy trên bản đã chốt. Mỗi đề có `tin_nhan` là lời người dùng, `tep` (nếu có) là file đầu vào, `mong_doi` là điều người đọc cần thấy trong câu trả lời, `kiem` là phần script đếm được. File trong `inputs/` là văn viết ra để thử, tên người và số liệu đều bịa.
 
-## Chạy một đề
-
-Mỗi đề là một mục trong `scenarios.json`: `tin_nhan` là lời người dùng, `tep` (nếu có) là file đầu vào, `mong_doi` là điều một người đọc cần thấy trong câu trả lời, `kiem` là phần script đếm được.
-
-1. Mở một phiên trợ lý mới, chưa biết gì về repo, và bật skill (hoặc dặn nó đọc `skills/viet-nhu-nguoi/SKILL.md` rồi làm theo).
-2. Gửi đúng `tin_nhan` của đề, thay `{tep}` bằng đường dẫn tới file đầu vào.
-3. Lưu nguyên văn câu trả lời vào `<thư mục kết quả>/<id>.md`.
-
-Chạy đủ các đề rồi chấm:
+## Chạy
 
 ```bash
-python3 -I evals/check.py <thư mục kết quả>
+python3 -I evals/run.py evals/results/<bản> --runs 3            # 63 đề, mỗi đề 3 lượt
+python3 -I evals/run.py evals/results/<bản>-held-out --held-out --runs 3
+python3 -I evals/run.py evals/results/<bản>-khong-skill --khong-skill   # cùng đề, không bật skill
 ```
 
-Script báo từng đề qua hay trượt phần tự động. Sau đó đọc tay từng câu trả lời theo `mong_doi`, vì có những thứ script không đếm được: giọng có tự nhiên không, ghi chú có ngắn không, có chi tiết nào bịa không.
+`run.py` gọi `claude -p` cho từng đề trong một thư mục tạm ngoài repo. Thư mục đó chỉ có bản sao skill và file đầu vào. Lệnh chỉ nạp cài đặt của thư mục ấy, không nạp MCP, nên skill cá nhân và plugin đã cài trên máy không lẫn vào. Mỗi lượt ghi lại danh sách skill, plugin đã nạp để kiểm. Trợ lý được đọc file, chạy ba script của skill và ghi file nháp vào `/tmp`, không ghi được vào file đầu vào. Mặc định dùng Opus mức medium. Lệnh chạy lại sẽ bỏ qua đề đã có câu trả lời, nên hết hạn mức giữa chừng thì chạy lại đúng lệnh cũ. Kết quả thô nằm trong `evals/results/` (đã có trong `.gitignore`).
 
-## Thử bản đã chốt
+## Chấm
 
-Dùng `scenarios.json` khi chỉnh skill. Chốt bản thử rồi mới mở `held-out.json`. Hai đề thử văn bản dùng ngay và cách viết theo mẫu giọng. Chạy từng đề trong một phiên mới như trên, lưu câu trả lời theo ID rồi chấm bằng `python3 -I evals/check.py <thư mục kết quả> --held-out`. Đọc từng bài theo `mong_doi`. Nếu dùng một đề để sửa skill, chuyển nó sang bộ đề thường và viết đề mới cho lần đo sau.
+```bash
+python3 -I evals/check.py evals/results/<bản> [--held-out]
+```
+
+Phần nội dung quyết định đề qua hay trượt, gồm số chữ, cụm phải giữ, cụm cấm, số liệu tự thêm, điểm `scan.py`. Đường đọc (`must_read`, `must_not_read`, `max_refs`, tức trợ lý có mở đúng file trong `references/` không) chấm riêng thành một chỉ số, không làm đề trượt, vì câu trả lời đúng thì quan trọng hơn đường đi tới nó. Đường đọc vẫn đáng xem, vì nó cho biết câu trả lời đúng là nhờ skill hay nhờ mô hình tự biết.
+
+Thư mục có nhiều lượt (`1/`, `2/`, `3/`) thì báo tỉ lệ lượt qua kèm khoảng tin cậy 95% (Wilson), và số đề qua cả ba lượt. Ba lượt qua cả ba chỉ cho biết tỉ lệ thật của đề đó nằm trong khoảng 44-100%, nên đừng đọc một đề trượt một lượt thành hỏng: đọc câu trả lời trước, rồi xem điều kiện chấm. Hai bản so với nhau thì so từng đề.
+
+Sau phần tự động, đọc tay từng câu trả lời theo `mong_doi`, xem giọng có tự nhiên không, ghi chú có ngắn không, có chi tiết nào bịa không.
+
+## Đáp án mẫu
+
+Mỗi đề có một đáp án mẫu trong `dap-an/<id>.md`, phải qua `check.py`. `tests/test_package.py` kiểm điều này, và kiểm thêm chiều ngược lại: câu trả lời rỗng phải trượt mọi đề, chép nguyên file đầu vào phải trượt mọi đề có file (trừ ba đề mà bản gốc vốn đã tự nhiên). Sửa `kiem` mà đáp án mẫu trượt thì xem lại điều kiện trước khi sửa đáp án.
+
+## Đề để riêng
+
+Chỉ dùng lỗi ở `scenarios.json` để sửa skill. Đề trong `held-out.json` chạy sau khi đã chốt bản. Nếu dùng một đề để riêng làm căn cứ sửa skill, chuyển nó sang `scenarios.json` và viết đề mới thay vào.
+
+## Thêm đề
+
+Thêm một mục vào `scenarios.json` và một đáp án mẫu. Điều kiện trong `kiem` nên lỏng vừa đủ: câu trả lời đúng mà viết khác đi một chút thì vẫn phải qua. Đừng đặt `must_not` cho cụm mà trợ lý có thể trích lại trong ghi chú ("mình đã bỏ câu ..."), khi đó dùng `max_overlap`. `lead_keep` dùng cho tin có việc nhờ: dữ kiện phải nằm trong 25 chữ đầu. `max_added_numbers` không dùng cho đề có nguồn tiếng Anh, vì "March 1, 2027" và "1/3/2027" bị tính là hai số khác nhau.
+
+Bộ đề chưa thử skill có tự bật đúng lúc không (lời nhờ nên bật và lời nhờ gần giống mà không nên bật), cũng chưa chạy trên Codex.
+
+Cách chấm dựa theo:
+
+- Anthropic, [Demystifying evals for AI agents](https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents): đáp án mẫu, chấm kết quả trước đường đi, pass^k.
+- [Establishing Best Practices for Building Rigorous Agentic Benchmarks](https://arxiv.org/abs/2507.02825): câu trả lời rỗng phải trượt.
+- [Position: Don't Use the CLT in LLM Evals With Fewer Than a Few Hundred Datapoints](https://arxiv.org/abs/2503.01747): khoảng tin cậy Wilson khi ít đề.
+- [Agent Skills best practices](https://platform.claude.com/docs/en/agents-and-tools/agent-skills/best-practices): đo cả khi không bật skill.
 
 ## Thử giọng qua hai phiên
 
@@ -32,17 +55,21 @@ Dùng `scenarios.json` khi chỉnh skill. Chốt bản thử rồi mới mở `h
 
 Mô hình trả lời mỗi lần một khác, nên một đề trượt một lượt thì đọc câu trả lời trước, rồi chạy lại vài lượt nếu cần. Lượt chạy đủ đầu tiên của bản 2.7.0 trên Claude Opus mức medium có 13 đề qua, ba đề còn lại trượt vì điều kiện chấm đặt quá chặt chứ câu trả lời thì đúng: viết "9h tối" thay cho "21h", dẫn số mục kiểu "(45, 3)" không kèm chữ "mục", để `[Họ tên]` chờ người dùng điền. Điều kiện đã nới theo ba chỗ đó, chấm lại thì cả 16 đề qua. Đề thứ mười bảy (một ý gửi ba người nhận) thêm sau, rút từ lần thử phần cá nhân hóa trên tin nhắn thật. Bản 2.7.1 gọt hai chỗ trùng lặp trong `SKILL.md` rồi chạy lại đủ 17 đề, cả 17 qua phần tự động và phần đọc tay. Chín đề cuối thêm ở bản 2.7.1 cho những phần chưa có đề nào thử: mẫu giọng có gạch ngang dài, giọng gọi tên, tài liệu kỹ thuật có code, tin viết từ nguồn tiếng Anh, daily report, mô tả PR, bài dài quá mức của kênh, yêu cầu qua được phần mềm kiểm tra AI, bài nộp cho trường. Lượt đầu cả chín đều qua, chạy thêm lượt hai (bốn đề cần phán đoán chạy cả lượt ba) cũng vậy. Riêng đề mẫu giọng, đọc tay thấy trợ lý hay tự thêm một câu cảm nghĩ, bản 2.7.2 đã sửa. Một tình huống thử tay mà không đưa vào bộ đề vì `check.py` chỉ đọc câu trả lời: nhờ sửa thẳng vào file có front matter và khối lệnh (file sửa xong còn nguyên code, link, phiên bản). Ba đề viết mới thiếu chuyện riêng là chỗ bản 2.6.1 trượt (trả bài khung có 4-19 chỗ trống thay vì hỏi lại).
 
-Thêm đề mới thì thêm một mục vào `scenarios.json`. Điều kiện trong `kiem` nên lỏng vừa đủ: câu trả lời đúng mà viết khác đi một chút thì vẫn phải qua. Đừng đặt `must_not` cho cụm mà trợ lý có thể trích lại trong ghi chú ("mình đã bỏ câu ..."). `lead_keep` thì dùng cho tin có việc nhờ: dữ kiện phải nằm trong 25 chữ đầu câu trả lời, nên chỉ gắn vào đề mà trợ lý trả thẳng bản tin, không mở bằng lời dẫn.
-
 Năm đề `chat-giong-*` thử phần cá nhân hóa trên năm giọng khác nhau (miền Tây, giọng Nghệ, sinh viên viết tắt, cô giáo viết trang trọng, dân văn phòng chêm tiếng Anh). Năm đoạn chat đó do một mô hình không bật skill viết, lời dặn thì cố ý xưng "tôi" và viết trang trọng để xem tin trả lời theo giọng mẫu hay theo giọng lời dặn. Lượt đầu cả năm đúng giọng mẫu.
 
 Ba đề `luot-hai-*` thử lượt hai của chế độ viết mới: người dùng đã trả lời các câu skill hỏi, giờ skill phải viết bài từ đúng những gì họ kể. Phần đọc tay ở ba đề này là chỗ quan trọng nhất: bài có thêm cảnh, lời thoại hay cảm nghĩ nào người dùng chưa kể không.
 
-File đầu vào trong `inputs/` là văn viết ra để thử, tên người và số liệu đều bịa.
-
 Tám đề `spoken-*` thử sắc thái lời nói: trợ từ, phạm vi phủ định, mức chắc chắn, lời nhờ, bản chép lời, câu vốn tự nhiên không được sửa.
 
 Bốn đề nhóm chat thử việc đổi giọng theo người nhận. `chat-cung-nhom-khac-vai` đưa sẵn mẫu cho bạn thân, trưởng nhóm lớn tuổi và cả nhóm. `chat-nhom-tra-loi-sep` và `chat-nhom-tra-loi-hai-nguoi` dùng một đoạn chat năm người, trong đó phần lớn tin của người dùng là giọng suồng sã với bạn, chỉ vài tin lễ phép với sếp và chị lớn tuổi hơn. Đọc tay ở các đề này là xem tin gửi người trên có lẫn "tui", "ông", ":v" của giọng bạn bè không.
+
+## Kết quả bản 2.11.0
+
+Chạy bằng `run.py`, Opus mức medium, mỗi đề ba lượt, hết khoảng 27 USD cho cả bốn đợt.
+
+63 đề chính: 181/189 lượt qua phần tự động (96%, khoảng tin cậy 95%: 92-98%), 56/63 đề qua cả ba lượt. Đường đọc đúng ở 186/189 lượt. Không bật skill thì 32/63 đề qua. Bảy đề trượt một lượt trở lên: ba đề quá giới hạn chữ vài chữ (341/330, 96/90, 383 và 399/380), `tieng-anh-linkedin` một lượt còn emoji, `tra-loi-cau-hoi-thuong` một lượt in đậm bốn chỗ, `soi-bai-ai` một lượt không dẫn số mục, `giong-mau-gach-ngang` một lượt không mở `voice.md` và bỏ mất gạch ngang dài. `sua-tin-gian-giu-nguyen`, đề trượt ở 2.10.0, giờ cả ba lượt đều giữ nguyên tin, lượt trượt chỉ vì ghi chú dài 96 chữ.
+
+13 đề để riêng: lần chấm đầu 23/39 lượt qua (59%, khoảng 43-73%). Đọc từng câu trả lời trượt thì sáu đề trượt vì điều kiện chấm đặt chặt hơn đáp án đúng cần: giới hạn chữ thấp hơn độ dài một bài soát có dẫn chứng, cấm "hai mươi" trong khi ghi chú phải trích câu "hai mươi mốt năm" để giải thích vì sao bỏ, đếm "7" trong "bảy tiêu đề" là số tự thêm. Nới sáu điều kiện đó (đáp án mẫu vẫn qua, skill không đổi) rồi chấm lại đúng các câu trả lời cũ: 34/39 (87%, khoảng 73-94%), 10/13 đề qua cả ba lượt. Không bật skill: 2/13. Lỗi thật còn lại: `slide-ket-qua-quy` cả ba lượt tự tính ngược doanh thu quý 3 từ mức tăng 8% (có ghi là số tính ra, nhưng người dùng không đưa số này), `soi-email-xin-loi` một lượt không dẫn số mục, `sua-thong-bao-cham-cong` một lượt để tên ứng dụng ra ngoài 25 chữ đầu. Theo luật đề để riêng, skill chưa sửa theo các lỗi này.
 
 ## Kết quả bản 2.9.0
 

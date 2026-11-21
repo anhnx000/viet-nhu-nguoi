@@ -13,7 +13,11 @@
    ],
    "max_placeholders": 0,
    "scan_max": 9,
-   "max_added_numbers": 0
+   "max_added_numbers": 0,
+   "must_read": [
+    "draft.md"
+   ],
+   "max_refs": 3
   }
  },
  {
@@ -31,7 +35,8 @@
    ],
    "max_words": 120,
    "max_placeholders": 2,
-   "max_added_numbers": 0
+   "max_added_numbers": 0,
+   "max_refs": 1
   }
  },
  {
@@ -47,7 +52,11 @@
     "2,1%",
     "1,6%"
    ],
-   "scan_max": 9
+   "scan_max": 9,
+   "must_read": [
+    "draft.md"
+   ],
+   "max_refs": 3
   }
  },
  {
@@ -59,7 +68,11 @@
    "min_questions": 2,
    "max_questions": 5,
    "max_placeholders": 0,
-   "max_words": 260
+   "max_words": 260,
+   "must_read": [
+    "draft.md"
+   ],
+   "max_refs": 3
   }
  },
  {
@@ -71,7 +84,11 @@
    "min_questions": 2,
    "max_questions": 5,
    "max_placeholders": 4,
-   "max_words": 260
+   "max_words": 260,
+   "must_read": [
+    "draft.md"
+   ],
+   "max_refs": 3
   }
  },
  {
@@ -83,7 +100,11 @@
    "min_questions": 2,
    "max_questions": 5,
    "max_placeholders": 0,
-   "max_words": 260
+   "max_words": 260,
+   "must_read": [
+    "draft.md"
+   ],
+   "max_refs": 3
   }
  },
  {
@@ -102,7 +123,12 @@
    ],
    "must_not": [
     "ngày 15 tháng 11 năm 2026"
-   ]
+   ],
+   "max_overlap": 0.9,
+   "must_read": [
+    "edit.md"
+   ],
+   "max_refs": 3
   }
  },
  {
@@ -127,7 +153,11 @@
    "must_not": [
     "example.com/khuyen-mai"
    ],
-   "min_words": 30
+   "min_words": 30,
+   "must_read": [
+    "edit.md"
+   ],
+   "max_refs": 3
   }
  },
  {
@@ -141,7 +171,11 @@
     "3 công ty",
     "2 tháng"
    ],
-   "scan_max": 14
+   "scan_max": 14,
+   "must_read": [
+    "edit.md"
+   ],
+   "max_refs": 3
   }
  },
  {
@@ -151,7 +185,11 @@
   "tin_nhan": "Bài này mình tự viết. Bạn xem giúp có chỗ nào nghe giống AI viết không rồi sửa giúp: {tep} (đừng ghi đè file gốc, đưa bản sửa trong câu trả lời).",
   "mong_doi": "Bài người viết: nói rõ là ít dấu hiệu, sửa rất nhẹ hoặc không sửa.",
   "kiem": {
-   "min_overlap": 0.8
+   "min_overlap": 0.8,
+   "must_read": [
+    "edit.md"
+   ],
+   "max_refs": 3
   }
  },
  {
@@ -166,7 +204,11 @@
    "must_not": [
     "bài này do AI viết",
     "chắc chắn do AI"
-   ]
+   ],
+   "must_read": [
+    "review.md"
+   ],
+   "max_refs": 3
   }
  },
  {
@@ -177,7 +219,11 @@
   "mong_doi": "Nói ngay câu đầu là bài ít dấu hiệu; nêu nhiều nhất ba chỗ; không kéo thành bản biên tập.",
   "kiem": {
    "max_words": 560,
-   "max_overlap": 0.6
+   "max_overlap": 0.6,
+   "must_read": [
+    "review.md"
+   ],
+   "max_refs": 3
   }
  },
  {
@@ -190,7 +236,11 @@
    "must_not": [
     "Slide 1:",
     "**Slide 1"
-   ]
+   ],
+   "must_read": [
+    "slides.md"
+   ],
+   "max_refs": 3
   }
  },
  {
@@ -209,7 +259,11 @@
     "staging",
     "10"
    ],
-   "max_words": 160
+   "max_words": 160,
+   "must_read": [
+    "chat.md"
+   ],
+   "max_refs": 3
   }
  },
  {
@@ -228,7 +282,11 @@
     "🚀",
     "✅",
     "👇"
-   ]
+   ],
+   "must_read": [
+    "edit.md"
+   ],
+   "max_refs": 3
   }
  },
  {
@@ -239,7 +297,8 @@
   "kiem": {
    "scan_max": 9,
    "max_words": 450,
-   "max_bold": 2
+   "max_bold": 2,
+   "max_refs": 0
   }
  },
  {
@@ -267,7 +326,11 @@
      "e đọc"
     ]
    ],
-   "max_words": 200
+   "max_words": 200,
+   "must_read": [
+    "chat.md"
+   ],
+   "max_refs": 3
   }
  },
  {
@@ -291,7 +354,11 @@
    ],
    "max_words": 120,
    "max_questions": 0,
-   "max_added_numbers": 0
+   "max_added_numbers": 0,
+   "must_read": [
+    "voice.md"
+   ],
+   "max_refs": 3
   }
  },
  {
@@ -318,7 +385,11 @@
      "chuyển"
     ],
     "15/12"
-   ]
+   ],
+   "must_read": [
+    "edit.md"
+   ],
+   "max_refs": 3
   }
  },
  {
@@ -338,7 +409,12 @@
     "MySQL 8"
    ],
    "min_words": 60,
-   "max_added_numbers": 0
+   "max_added_numbers": 0,
+   "max_overlap": 0.9,
+   "must_read": [
+    "edit.md"
+   ],
+   "max_refs": 3
   }
  },
  {
@@ -365,7 +441,12 @@
    ],
    "max_words": 260,
    "scan_max": 9,
-   "max_bold": 2
+   "max_bold": 2,
+   "must_read": [
+    "draft.md",
+    "vietnamese.md"
+   ],
+   "max_refs": 3
   }
  },
  {
@@ -393,7 +474,11 @@
    "max_bold": 0,
    "max_words": 150,
    "max_questions": 0,
-   "max_added_numbers": 0
+   "max_added_numbers": 0,
+   "must_read": [
+    "draft.md"
+   ],
+   "max_refs": 3
   }
  },
  {
@@ -415,7 +500,11 @@
    ],
    "max_bold": 2,
    "max_words": 130,
-   "max_added_numbers": 0
+   "max_added_numbers": 0,
+   "must_read": [
+    "draft.md"
+   ],
+   "max_refs": 3
   }
  },
  {
@@ -427,7 +516,11 @@
    "min_questions": 2,
    "max_questions": 5,
    "max_placeholders": 0,
-   "max_words": 300
+   "max_words": 300,
+   "must_read": [
+    "draft.md"
+   ],
+   "max_refs": 3
   }
  },
  {
@@ -447,7 +540,11 @@
     "thứ Sáu"
    ],
    "min_words": 50,
-   "scan_max": 9
+   "scan_max": 9,
+   "must_read": [
+    "edit.md"
+   ],
+   "max_refs": 3
   }
  },
  {
@@ -458,7 +555,8 @@
   "kiem": {
    "min_questions": 1,
    "max_placeholders": 0,
-   "max_words": 300
+   "max_words": 300,
+   "max_refs": 3
   }
  },
  {
@@ -480,7 +578,11 @@
    "must_not": [
     "Tôi "
    ],
-   "max_words": 140
+   "max_words": 140,
+   "must_read": [
+    "chat.md"
+   ],
+   "max_refs": 3
   }
  },
  {
@@ -499,7 +601,11 @@
    "must_not": [
     "Tôi "
    ],
-   "max_words": 140
+   "max_words": 140,
+   "must_read": [
+    "chat.md"
+   ],
+   "max_refs": 3
   }
  },
  {
@@ -521,7 +627,11 @@
    "must_not": [
     "Tôi "
    ],
-   "max_words": 140
+   "max_words": 140,
+   "must_read": [
+    "chat.md"
+   ],
+   "max_refs": 3
   }
  },
  {
@@ -549,7 +659,11 @@
    "must_not": [
     "Tôi "
    ],
-   "max_words": 140
+   "max_words": 140,
+   "must_read": [
+    "chat.md"
+   ],
+   "max_refs": 3
   }
  },
  {
@@ -567,7 +681,11 @@
    "must_not": [
     "Tôi "
    ],
-   "max_words": 140
+   "max_words": 140,
+   "must_read": [
+    "chat.md"
+   ],
+   "max_refs": 3
   }
  },
  {
@@ -586,7 +704,11 @@
    "max_placeholders": 0,
    "min_words": 120,
    "max_words": 420,
-   "scan_max": 9
+   "scan_max": 9,
+   "must_read": [
+    "draft.md"
+   ],
+   "max_refs": 3
   }
  },
  {
@@ -611,7 +733,11 @@
    "max_placeholders": 0,
    "min_words": 60,
    "max_words": 330,
-   "scan_max": 9
+   "scan_max": 9,
+   "must_read": [
+    "draft.md"
+   ],
+   "max_refs": 3
   }
  },
  {
@@ -632,7 +758,11 @@
    "max_placeholders": 0,
    "min_words": 90,
    "max_words": 330,
-   "scan_max": 9
+   "scan_max": 9,
+   "must_read": [
+    "draft.md"
+   ],
+   "max_refs": 3
   }
  },
  {
@@ -645,7 +775,8 @@
     "chiều mai",
     "Huệ"
    ],
-   "max_words": 65
+   "max_words": 65,
+   "max_refs": 1
   }
  },
  {
@@ -661,7 +792,8 @@
     ],
     "chưa"
    ],
-   "max_words": 70
+   "max_words": 70,
+   "max_refs": 1
   }
  },
  {
@@ -674,7 +806,8 @@
     "mai",
     "xem"
    ],
-   "max_words": 60
+   "max_words": 60,
+   "max_refs": 1
   }
  },
  {
@@ -692,7 +825,8 @@
     ":v",
     ")))"
    ],
-   "max_words": 70
+   "max_words": 70,
+   "max_refs": 1
   }
  },
  {
@@ -712,7 +846,8 @@
      "Tài liệu"
     ]
    ],
-   "max_words": 65
+   "max_words": 65,
+   "max_refs": 1
   }
  },
  {
@@ -726,7 +861,8 @@
     "thứ Sáu",
     "chưa"
    ],
-   "max_words": 65
+   "max_words": 65,
+   "max_refs": 1
   }
  },
  {
@@ -739,7 +875,8 @@
     "chưa",
     "doanh thu"
    ],
-   "max_words": 45
+   "max_words": 45,
+   "max_refs": 1
   }
  },
  {
@@ -761,7 +898,8 @@
     "mới",
     "nhé"
    ],
-   "max_words": 45
+   "max_words": 45,
+   "max_refs": 1
   }
  },
  {
@@ -776,7 +914,12 @@
     "ạ",
     "mọi người"
    ],
-   "max_words": 180
+   "max_words": 180,
+   "must_read": [
+    "chat.md",
+    "chat-group.md"
+   ],
+   "max_refs": 3
   }
  },
  {
@@ -800,7 +943,11 @@
     "ông",
     " r "
    ],
-   "max_words": 120
+   "max_words": 120,
+   "must_read": [
+    "chat.md"
+   ],
+   "max_refs": 3
   }
  },
  {
@@ -819,7 +966,12 @@
    "must_not": [
     ":v"
    ],
-   "max_words": 120
+   "max_words": 120,
+   "must_read": [
+    "chat.md",
+    "chat-group.md"
+   ],
+   "max_refs": 3
   }
  },
  {
@@ -844,7 +996,11 @@
     "## Lệnh, tùy chọn, mẹo, lỗi hay gặp",
     "## Good to know"
    ],
-   "max_added_numbers": 0
+   "max_added_numbers": 0,
+   "must_read": [
+    "edit.md"
+   ],
+   "max_refs": 3
   }
  },
  {
@@ -859,7 +1015,8 @@
    ],
    "must_not": [
     "được thực hiện bởi"
-   ]
+   ],
+   "max_refs": 1
   }
  },
  {
@@ -870,7 +1027,8 @@
   "kiem": {
    "must_keep": [
     "Ờ, bên mình có thể giao thứ Sáu, còn chờ kho xác nhận. Chốt gửi bản vẽ hôm nay nhé."
-   ]
+   ],
+   "max_refs": 1
   }
  },
  {
@@ -885,7 +1043,11 @@
    ],
    "must_not": [
     "Ờ,"
-   ]
+   ],
+   "must_read": [
+    "spoken.md"
+   ],
+   "max_refs": 3
   }
  },
  {
@@ -897,7 +1059,8 @@
    "must_keep": [
     "thứ Sáu",
     "bản vẽ"
-   ]
+   ],
+   "max_refs": 3
   }
  },
  {
@@ -919,7 +1082,8 @@
      "14 giờ",
      "2 giờ chiều"
     ]
-   ]
+   ],
+   "max_refs": 1
   }
  },
  {
@@ -944,7 +1108,8 @@
      "14 giờ",
      "2 giờ chiều"
     ]
-   ]
+   ],
+   "max_refs": 1
   }
  },
  {
@@ -955,7 +1120,8 @@
   "kiem": {
    "must_keep": [
     "Tôi nhớ bến nước. Tôi nhớ cây cầu. Tôi nhớ tiếng dép của mẹ."
-   ]
+   ],
+   "max_refs": 1
   }
  },
  {
@@ -967,7 +1133,8 @@
    "must_not": [
     "Về tiến độ, xe",
     "Về tiến độ, cổng"
-   ]
+   ],
+   "max_refs": 1
   }
  },
  {
@@ -985,7 +1152,8 @@
    ],
    "lead_keep": [
     "lễ tân"
-   ]
+   ],
+   "max_refs": 1
   }
  },
  {
@@ -1004,7 +1172,8 @@
      "Chị"
     ],
     "bảng lương"
-   ]
+   ],
+   "max_refs": 1
   }
  },
  {
@@ -1013,7 +1182,11 @@
   "tin_nhan": "Thông báo này nghe gượng ở đâu? Chỉ nhận xét giúp mình. “Việc triển khai bản vá đã được thực hiện bởi tổ trực. Cổng mở lại lúc 14h.”",
   "mong_doi": "Chỉ ra bị động ở câu đầu, dẫn mục phù hợp và gợi ý sửa tại chỗ. Giữ câu thứ hai.",
   "kiem": {
-   "min_refs": 1
+   "min_refs": 1,
+   "must_read": [
+    "review.md"
+   ],
+   "max_refs": 3
   }
  },
  {
@@ -1024,7 +1197,8 @@
   "kiem": {
    "must_keep": [
     "Cổng mở lại lúc 14h."
-   ]
+   ],
+   "max_refs": 1
   }
  },
  {
@@ -1033,7 +1207,11 @@
   "tin_nhan": "Chỗ nào trong lời nhắc này nghe như công văn? Nhận xét giúp. “Đề nghị tiến hành việc hoàn trả thẻ khách. Hộp đựng thẻ ở bàn bảo vệ.”",
   "mong_doi": "Chỉ ra cụm gượng ở câu đầu, gợi ý tại chỗ. Câu chỉ vị trí đã rõ. Không đưa một bản thay thế cả lời nhắc.",
   "kiem": {
-   "min_refs": 1
+   "min_refs": 1,
+   "must_read": [
+    "review.md"
+   ],
+   "max_refs": 3
   }
  },
  {
@@ -1047,7 +1225,8 @@
    ],
    "must_not": [
     "tiến hành việc"
-   ]
+   ],
+   "max_refs": 1
   }
  },
  {
@@ -1069,7 +1248,11 @@
     "nhẹ nhàng hơn"
    ],
    "min_overlap": 0.5,
-   "max_words": 130
+   "max_words": 130,
+   "must_read": [
+    "edit.md"
+   ],
+   "max_refs": 3
   }
  },
  {
@@ -1091,7 +1274,11 @@
     "rất mong"
    ],
    "min_overlap": 0.85,
-   "max_words": 90
+   "max_words": 90,
+   "must_read": [
+    "edit.md"
+   ],
+   "max_refs": 3
   }
  },
  {
@@ -1102,7 +1289,11 @@
   "mong_doi": "Chỉ ra \"Bài này nói về phần không ổn\" (mục 4, trỏ tới thứ không gọi tên), \"Một cách dễ nghĩ tới là...\" (mục 5, có thể xếp vào chỗ tùy người viết), câu kết \"Nhìn chung... mới là chìa khóa\" (mục 2, 1 hoặc 13). Gợi ý sửa đúng câu được chỉ, giữ 4 phút và 90 giây, không viết lại cả đoạn.",
   "kiem": {
    "min_refs": 3,
-   "max_words": 380
+   "max_words": 380,
+   "must_read": [
+    "review.md"
+   ],
+   "max_refs": 3
   }
  }
 ]

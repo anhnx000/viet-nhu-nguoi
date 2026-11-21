@@ -1,0 +1,1 @@
+ông đừng ghi thêm dữ liệu gì vào nha, tui đang kiểm tra bản sao lưu, chưa biết khôi phục được không

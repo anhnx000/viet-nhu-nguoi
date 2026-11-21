@@ -1,0 +1,1 @@
+Dạ chị, bản hotfix lên production lúc 21h tối nay ạ, Khải trực deploy. Rủi ro thấp chị ơi, bản này chỉ đụng module thanh toán và đã test trên staging rồi. Nếu có lỗi thì bên em rollback về bản cũ trong 10 phút ạ.

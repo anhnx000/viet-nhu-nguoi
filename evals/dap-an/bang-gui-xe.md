@@ -1,0 +1,1 @@
+Vui lòng giữ vé này đến khi lấy xe.

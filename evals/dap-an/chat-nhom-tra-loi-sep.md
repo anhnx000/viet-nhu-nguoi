@@ -1,0 +1,1 @@
+Dạ lỗi trùng đơn đã sửa trong bản 2.3 rồi anh, đã test trên staging. Còn một trường hợp mạng chập chờn em chưa tái hiện được nên chưa dám chắc là hết hẳn ạ. Tối thứ Năm vẫn release như lịch anh nhé

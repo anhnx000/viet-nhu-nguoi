@@ -1,0 +1,1 @@
+Tiến độ giao hàng: kho đã đóng hàng, xe đã tới, nhưng cổng vẫn khóa.

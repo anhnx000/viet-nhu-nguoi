@@ -1,0 +1,1 @@
+Thưa các anh chị, năm nay tôi lại xin phép viết vài dòng, ngắn thôi (vì biết ai cũng bận). Buổi gặp mặt năm nay không ở trường cũ như mọi năm, vì trường đang sửa; hội ta sẽ gặp nhau ở nhà hàng Hương Sen, vào tối 14/2. Mỗi người góp 300 nghìn.

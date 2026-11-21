@@ -1,0 +1,1 @@
+Không phải ai cũng cần đổi lịch đâu chị. Chỉ nhóm em là chưa chốt được thôi, nhóm anh Vĩnh vẫn họp chiều thứ Sáu như cũ.

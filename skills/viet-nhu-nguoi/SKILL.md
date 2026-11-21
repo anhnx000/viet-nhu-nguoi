@@ -3,7 +3,7 @@ name: viet-nhu-nguoi
 description: Viết tiếng Việt tự nhiên (humanize, bớt giọng AI). Dùng khi soạn, sửa hoặc soi văn bản, email, PR, tin nhắn, slide và lời nói cho đúng giọng người gửi.
 license: MIT
 metadata:
-  version: "2.10.0"
+  version: "2.11.0"
 ---
 
 # Viết như người

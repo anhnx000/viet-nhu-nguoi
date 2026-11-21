@@ -1,0 +1,1 @@
+Chiều mai em có thể gửi được, nhưng chưa chắc đâu anh. Em chưa nhận làm nhé, để em xem lại lịch đã.

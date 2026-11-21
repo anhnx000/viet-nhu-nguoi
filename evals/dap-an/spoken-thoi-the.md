@@ -1,0 +1,1 @@
+Mai anh đến thì em đang họp, chưa chắc nghe máy được. Em gửi tài liệu rồi, anh xem trước giúp em nhé.

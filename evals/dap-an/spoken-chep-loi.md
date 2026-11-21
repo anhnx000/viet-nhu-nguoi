@@ -1,0 +1,1 @@
+Ừ, để em xem đã… À không, chiều mai em mới xem được. Chị cứ gửi trước nhé.

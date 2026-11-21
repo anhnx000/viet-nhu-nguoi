@@ -1,0 +1,1 @@
+Chào An. Mình gửi lịch trực. Tổ trưởng cần xác nhận lịch. Bạn xem file đính kèm nhé. Cảm ơn An.

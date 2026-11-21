@@ -1,0 +1,1 @@
+Ủa, chị gửi rồi à? Em tưởng mai chị mới gửi. Để em xem đã nhé.

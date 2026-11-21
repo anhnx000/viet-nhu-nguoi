@@ -40,6 +40,8 @@ PATTERNS = {
     "lời chatbot": [
         r"chắc chắn rồi", r"tất nhiên rồi", r"câu hỏi (rất )?hay", r"hoàn toàn đúng",
         r"hy vọng (điều này|(những )?thông tin (này|trên)|bài viết)", r"đừng ngần ngại", r"bạn có muốn tôi",
+        # lời mời làm tiếp còn sót cuối câu trả lời: "Nếu bạn muốn, mình có thể phân tích sâu hơn"
+        r"nếu bạn muốn,? (mình|tôi|em) có thể (phân tích|viết|soạn|tóm tắt|gợi ý|giúp|mở rộng|đi sâu|liệt kê|chỉnh|làm thêm)",
         r"dưới đây là", r"\bcertainly!", r"\bof course!", r"great question",
         r"you'?re absolutely right", r"i hope this helps", r"let me know if",
         r"as an ai language model", r"here is an? ",
@@ -172,6 +174,9 @@ PATTERNS = {
         r"góp phần thúc đẩy", r"đa dạng và phong phú", r"chìa khóa", r"đòn bẩy", r"bệ phóng",
         r"kiến tạo", r"\bđồng hành\b", r"lan tỏa", r"hệ sinh thái", r"giá trị cốt lõi",
         r"mở ra cánh cửa", r"tiềm năng to lớn", r"\bvô vàn\b", r"không còn là xu hướng",
+        # đo trên tin người viết trước 7/2022 và tin máy viết lại (xem CHANGELOG 2.11.0)
+        r"tầm nhìn chiến lược", r"góp (một )?phần không nhỏ", r"\bbước tiến\b", r"mang trong mình",
+        r"bài học quý (giá|báu)", r"(^|[.!?]\s+)\s*thêm vào đó,",
     ],
     "văn dịch (vi)": [
         r"\b(được|bị)\b[^.!?\n]{1,60}?\bbởi\b", r"mở khóa tiềm năng", r"điều hướng (sự|những) phức tạp",
@@ -252,7 +257,7 @@ PATTERNS = {
     "quảng cáo": [
         r"nằm giữa lòng", r"(góc|chốn|khoảng|ốc đảo|không gian)[^.,\n]{0,25} giữa lòng",
         r"vị trí đắc địa", r"ngỡ ngàng", r"không thể bỏ qua", r"đẳng cấp",
-        r"điểm (dừng chân|đến|hẹn) lý tưởng", r"đắm mình", r"nhịp sống (vội vã|hối hả)", r"đậm chất", r"mộng mơ",
+        r"điểm (dừng chân|đến|hẹn) (lý tưởng|hấp dẫn)", r"đắm mình", r"nhịp sống (vội vã|hối hả)", r"đậm chất", r"mộng mơ",
         r"trải nghiệm (trọn vẹn|khó quên|tuyệt vời|đáng nhớ)", r"khoảng lặng",
         r"thiên đường (nghỉ dưỡng|mua sắm|ẩm thực|du lịch|sống ảo)", r"(pha chế|chăm chút|chế tác|lựa chọn) (một cách )?(tỉ mỉ|kỹ lưỡng)", r"thành phố ngàn hoa",
         r"\bsở hữu (bộ sưu tập|không gian|vị trí|đội ngũ|hệ thống|thiết kế|tầm nhìn|vẻ đẹp)",
@@ -284,10 +289,12 @@ PATTERNS = {
 }
 
 DASH = re.compile(r"[—–]| -- ")
+CHATGPT_LINK = re.compile(r"utm_source=chatgpt\.com", re.IGNORECASE)
 CURLY = re.compile(r"[“”‘’]")
 BOLD_LABEL = re.compile(r"^\s*([-*+]|\d+\.)\s+(\S+\s+)?\*\*[^*]+:?\*\*:?")
 EMOJI = re.compile(r"[\U0001F300-\U0001FAFF\u2600-\u27BF\u2B50\u2B06\u2B07\u20E3→]")
-EMOJI_LEAD = re.compile(r"^\s*(?:[-*+#>]+\s*)*(?:\d\ufe0f?\u20e3|[\U0001F300-\U0001FAFF\u2600-\u27BF\u2B50])")
+# Mỗi vòng chỉ ăn một ký hiệu: "(?:[-*+#>]+\s*)*" lồng hai lượng từ, treo trên dòng "** ** ** ..." dài.
+EMOJI_LEAD = re.compile(r"^\s*(?:[-*+#>]\s*)*(?:\d\ufe0f?\u20e3|[\U0001F300-\U0001FAFF\u2600-\u27BF\u2B50])")
 # Dòng chỉ có chữ in đậm, hoặc đoạn mở bằng một cụm in đậm kết bằng dấu câu ("**Văn phong đơn giản.** Tác giả...")
 BOLD_HEADING = re.compile(r"^\s*\*\*[^*\n]{2,80}\*\*:?\s*$|^\s*\*\*[^*\n]{2,60}[:.!?]\*\*\s+\S")
 FENCE = re.compile(r"^\s*```")
@@ -337,6 +344,9 @@ def scan(text, doc=True, meta=False):
             continue
         if in_code:
             continue
+        # Link chép từ câu trả lời ChatGPT còn đuôi ?utm_source=chatgpt.com. Xét trước khi bỏ URL.
+        for m in CHATGPT_LINK.finditer(re.sub(r"`[^`]*`", "", line)):
+            hits.setdefault("dấu vết công cụ", []).append((no, m.group(0)))
         prose = re.sub(r"`[^`]*`|https?://\S+", "", line)
         low = prose.lower()
         vietnamese = len(VI_LETTER.findall(low)) >= 3

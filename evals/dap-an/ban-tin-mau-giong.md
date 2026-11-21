@@ -1,0 +1,1 @@
+Tụi mình vừa dời chỗ nhận thư sang quầy lễ tân. Ai có thư thì ghé đó lấy nhé.

@@ -9,7 +9,8 @@
    "must_keep": [
     "vé",
     "lấy xe"
-   ]
+   ],
+   "max_refs": 1
   }
  },
  {
@@ -25,7 +26,259 @@
    "must_not": [
     "42",
     "thứ Bảy"
-   ]
+   ],
+   "max_refs": 1
+  }
+ },
+ {
+  "id": "chat-nhom-phu-huynh",
+  "che_do": "chat",
+  "tep": "evals/inputs/chat-nhom-phu-huynh.md",
+  "tin_nhan": "Mình là mẹ Bin. Soạn giúp mình một tin gửi vào nhóm này: {tep}\nÝ là: báo cô Thu là Bin đi tham quan được, chiều nay mình chuyển tiền; nhắn bà Hạnh là mai mình đón Bin được rồi, khỏi đón giùm.",
+  "mong_doi": "Một tin, gọi riêng từng người. Phần cho cô Thu lễ phép (Dạ, em/cô, ạ), không xưng tui hay gọi bà. Phần cho chị Hạnh giữ được giọng bạn thân nhưng không đùa quá đà trước cô giáo. Đủ ý: Bin đi tham quan, chiều nay chuyển tiền, mai tự đón Bin.",
+  "kiem": {
+   "must_keep": [
+    "Bin",
+    "chiều nay",
+    "mai",
+    "đón"
+   ],
+   "must_not": [
+    "Kính gửi"
+   ],
+   "max_words": 70,
+   "must_read": [
+    "chat.md",
+    "chat-group.md"
+   ],
+   "max_refs": 3
+  }
+ },
+ {
+  "id": "thong-bao-app-tu-tieng-anh",
+  "che_do": "viết mới",
+  "tep": "evals/inputs/release-notes-app-en.md",
+  "tin_nhan": "Dựa vào release notes này, viết giúp mình bài thông báo đăng fanpage của app cho người dùng phổ thông, ngắn thôi: {tep}",
+  "mong_doi": "Tiếng Việt viết từ ý, không dịch từng dòng. Việc người dùng phải làm (tạo bản sao lưu mới trước 1/3/2027) nói rõ, không chìm cuối bài. Giữ 3.2, Excel, Android 12, bản tổng kết ngày 1 hằng tháng. Không thêm tính năng hay số liệu.",
+  "kiem": {
+   "must_keep": [
+    "3.2",
+    "Excel",
+    "Android 12",
+    [
+     "1/3/2027",
+     "01/03/2027",
+     "1/3"
+    ],
+    "sao lưu"
+   ],
+   "max_words": 220,
+   "scan_max": 9,
+   "must_read": [
+    "draft.md",
+    "vietnamese.md"
+   ],
+   "max_refs": 3
+  }
+ },
+ {
+  "id": "sua-thong-bao-cham-cong",
+  "che_do": "sửa",
+  "tep": "evals/inputs/thong-bao-cham-cong.md",
+  "tin_nhan": "Sửa giúp thông báo này cho bớt giọng công văn, mình gửi email nội bộ cho khoảng 80 người: {tep}",
+  "mong_doi": "Việc cần làm (cài ChamCong+, đăng nhập bằng email công ty trước 28/12) lên đầu. Giữ 4/1/2027, 31/12, 28/12, máy lẻ 214. Bỏ câu mở 'Nhằm nâng cao...' và câu chốt 'không chỉ... mà còn...'. Không thêm chi tiết.",
+  "kiem": {
+   "must_keep": [
+    "ChamCong+",
+    [
+     "4/1/2027",
+     "04/01/2027",
+     "4/1"
+    ],
+    "31/12",
+    "28/12",
+    "214",
+    "email"
+   ],
+   "lead_keep": [
+    "ChamCong+"
+   ],
+   "must_not": [
+    "Nhằm nâng cao",
+    "không chỉ",
+    "trân trọng thông báo"
+   ],
+   "max_added_numbers": 0,
+   "max_words": 200,
+   "must_read": [
+    "edit.md"
+   ],
+   "max_refs": 3
+  }
+ },
+ {
+  "id": "soi-email-xin-loi",
+  "che_do": "soi lỗi",
+  "tep": "evals/inputs/email-xin-loi-ai.md",
+  "tin_nhan": "Email xin lỗi khách này đọc cứ thấy sao sao. Chỉ nhận xét giúp chỗ nào nghe như máy viết, đừng viết lại: {tep}",
+  "mong_doi": "Không viết lại cả email; dẫn số mục trong danh mục; chỉ ra câu xin lỗi chung chung, 'không chỉ... mà còn...', bộ ba 'sự hài lòng, niềm tin và sự đồng hành', câu chốt; không kết luận email do AI viết.",
+  "kiem": {
+   "min_refs": 3,
+   "max_overlap": 0.6,
+   "must_not": [
+    "email này do AI viết",
+    "chắc chắn do AI"
+   ],
+   "must_read": [
+    "review.md"
+   ],
+   "max_refs": 3
+  }
+ },
+ {
+  "id": "slide-ket-qua-quy",
+  "che_do": "slide",
+  "tin_nhan": "Làm giúp mình dàn ý 5 slide báo cáo kết quả quý 4 cho ban giám đốc. Số liệu: doanh thu 12,4 tỷ, tăng 8% so với quý 3; khách hàng mới 320; tỷ lệ rời bỏ 6%, quý trước 4%. Mình muốn đề xuất tăng ngân sách chăm sóc khách hàng.",
+  "mong_doi": "Đủ người xem, mục đích và số liệu nên làm luôn dàn ý. Tiêu đề là câu kết luận, không phải nhãn như 'Tổng quan', 'Kết luận'. Dùng đúng số đã cho; không tự đặt số tiền ngân sách, mục tiêu hay số tự tính; chỗ thiếu thì ghi cần xác nhận hoặc hỏi.",
+  "kiem": {
+   "must_keep": [
+    "12,4",
+    "8%",
+    "320",
+    "6%",
+    "4%"
+   ],
+   "max_added_numbers": 0,
+   "max_words": 600,
+   "must_read": [
+    "slides.md"
+   ],
+   "max_refs": 3
+  }
+ },
+ {
+  "id": "tom-tat-hop-phat-hanh",
+  "che_do": "tóm tắt",
+  "tep": "evals/inputs/chep-loi-hop-phat-hanh.md",
+  "tin_nhan": "Tóm tắt giúp mình cuộc họp này thành tin gửi nhóm: việc đã chốt, ai làm gì, việc còn chờ: {tep}",
+  "mong_doi": "Đã chốt: dời phát hành từ 15/12 sang 18/12 vì cổng thanh toán chưa test xong; Linh gọi ngân hàng thứ Hai. Còn chờ: bản iOS chờ duyệt, Phúc chưa chắc qua; ngân sách quảng cáo chưa chốt, Tuấn hỏi sếp. Không biến 'chắc là qua' thành chắc chắn.",
+  "kiem": {
+   "must_keep": [
+    "15/12",
+    "18/12",
+    "Linh",
+    "thứ Hai",
+    "Phúc",
+    "iOS",
+    "ngân sách"
+   ],
+   "max_words": 150,
+   "max_added_numbers": 0,
+   "must_not": [
+    "ờ thì"
+   ],
+   "must_read": [
+    "spoken.md"
+   ],
+   "max_refs": 3
+  }
+ },
+ {
+  "id": "giong-thu-hoi-cuu-hoc-sinh",
+  "che_do": "viết mới",
+  "tin_nhan": "Đây là đoạn mở đầu thư tôi gửi hội cựu học sinh năm ngoái: “Thưa các anh chị, năm nay hội ta tròn hai mươi năm; tôi xin phép viết vài dòng, ngắn thôi (vì biết ai cũng bận). Buổi gặp mặt sẽ ở trường cũ, như mọi năm.” Viết giúp tôi đoạn mở đầu thư năm nay theo đúng giọng đó: buổi gặp dời sang nhà hàng Hương Sen vì trường đang sửa, vào tối 14/2, mỗi người góp 300 nghìn.",
+  "mong_doi": "Giữ giọng mẫu: xưng tôi, 'Thưa các anh chị', câu có chấm phẩy, ngoặc đơn chen ý. Đủ ba dữ kiện mới. Không lấy 'hai mươi năm' từ thư cũ, không tự tính ra số năm mới, không thêm giờ hay chi tiết khác.",
+  "kiem": {
+   "must_keep": [
+    "Hương Sen",
+    "14/2",
+    [
+     "300 nghìn",
+     "300.000",
+     "300k"
+    ],
+    "tôi"
+   ],
+   "must_not": [
+    "21"
+   ],
+   "max_added_numbers": 0,
+   "max_words": 140,
+   "must_read": [
+    "voice.md"
+   ],
+   "max_refs": 3
+  }
+ },
+ {
+  "id": "phat-bieu-dam-cuoi",
+  "che_do": "viết mới",
+  "tin_nhan": "Viết giúp mình bài phát biểu khoảng 3 phút cho đám cưới em gái mình vào cuối tuần này.",
+  "mong_doi": "Chưa có chuyện riêng: hỏi vài câu (tên cô dâu chú rể, kỷ niệm, giọng muốn nói), không đưa bài mẫu điền chỗ trống, không tự bịa kỷ niệm.",
+  "kiem": {
+   "min_questions": 2,
+   "max_questions": 5,
+   "max_placeholders": 0,
+   "max_words": 260,
+   "must_read": [
+    "draft.md"
+   ],
+   "max_refs": 3
+  }
+ },
+ {
+  "id": "hoi-ma-loi-http",
+  "che_do": "trả lời",
+  "tin_nhan": "Giải thích ngắn giúp mình mã HTTP 401 với 403 khác nhau chỗ nào, lúc nào trả mã nào?",
+  "mong_doi": "Vào thẳng câu trả lời: 401 là chưa xác thực, 403 là đã biết là ai nhưng không có quyền; nói lúc dùng mỗi mã rồi dừng. Không in đậm làm tiêu đề, không câu mở khen hay câu kết mời hỏi thêm.",
+  "kiem": {
+   "must_keep": [
+    "401",
+    "403"
+   ],
+   "scan_max": 9,
+   "max_words": 300,
+   "max_bold": 2,
+   "max_refs": 0
+  }
+ },
+ {
+  "id": "soat-tieu-de-pptx",
+  "che_do": "slide",
+  "tep": "examples/slide-truoc.pptx",
+  "tin_nhan": "Xem giúp mạch các tiêu đề trong bộ slide này có ổn không, chỉ nhận xét, chưa sửa: {tep}",
+  "mong_doi": "Đọc tiêu đề bằng scan.py; chỉ ra các tiêu đề chỉ là nhãn (Tổng quan, Thách thức, Lợi ích, Kết luận) nên đọc liền không thành lập luận; có thể gợi ý hướng viết tiêu đề thành câu kết luận nhưng không bịa số liệu và không viết lại cả deck.",
+  "kiem": {
+   "must_keep": [
+    "Tổng quan",
+    "Lợi ích"
+   ],
+   "max_words": 650,
+   "max_overlap": 0.6,
+   "must_read": [
+    "slides-review.md"
+   ],
+   "max_refs": 3
+  }
+ },
+ {
+  "id": "sua-tin-nhan-sep",
+  "che_do": "sửa",
+  "tep": "evals/inputs/tin-nhan-sep.md",
+  "tin_nhan": "Sửa giúp mình tin này cho tự nhiên hơn, mình nhắn sếp qua Zalo: {tep}",
+  "mong_doi": "Tin đã tự nhiên và đúng mực: nói vậy, trả nguyên hoặc gần nguyên. Giữ Dạ, ạ, trang 2, chiều nay. Không thêm lời chào, lời cảm ơn hay câu rào đón.",
+  "kiem": {
+   "must_keep": [
+    "Dạ anh",
+    "trang 2",
+    "chiều nay"
+   ],
+   "min_overlap": 0.85,
+   "max_words": 100,
+   "must_read": [
+    "edit.md"
+   ],
+   "max_refs": 3
   }
  }
 ]

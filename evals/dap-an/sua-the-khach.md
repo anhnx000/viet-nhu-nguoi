@@ -1,0 +1,1 @@
+Vui lòng trả lại thẻ khách. Hộp đựng thẻ ở bàn bảo vệ.

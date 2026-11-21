@@ -1,0 +1,1 @@
+Xe khởi hành lúc 7 giờ 15 ở cổng trường chị nhé, con có mặt trước 7 giờ. Cơm trưa nhà trường chuẩn bị rồi, chị không cần cho con mang. Chị nhớ cho con mang theo nước uống và mũ. Dự kiến khoảng 16 giờ 30 xe về tới trường.

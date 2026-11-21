@@ -1,0 +1,1 @@
+Anh ơi, phòng đang sửa nên cuộc họp dời từ 9h sang 14h. Anh đổi giúp em lịch đặt phòng sang 14h nhé. Em cảm ơn anh!

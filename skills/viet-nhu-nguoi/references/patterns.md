@@ -1,5 +1,7 @@
 # Danh mục dấu hiệu văn AI trong tiếng Việt
 
+Mục lục: A Dàn dựng thay vì nói thẳng (1-6); B Nhịp theo luật (7-12); C Thổi phồng và mượn uy tín (13-19); D Trình bày theo luật (20-22); E Đồ thừa của chat và bản nháp (sửa ngay khi gặp) (23-27); F Viết sai người đọc (28-29); G Riêng tiếng Việt (30-38); H Slide và tài liệu nhiều trang (39-44); I Cả bài: dấu hiệu còn lại sau khi từng câu đã sạch (45-55); K Văn dịch sâu: câu nghĩ bằng tiếng Anh, viết bằng chữ Việt (56-62); L Tin nhắn thân mật: icon và ngữ điệu lạc giọng người gửi (63-65); cuối file là phần Giữ lại.
+
 Sắp từ mạnh đến yếu. Ở nhóm A và E, chỉ sửa câu sáo hoặc thừa trong ngữ cảnh. Nhóm G (mục 30-38) dành riêng cho tiếng Việt. Nhóm H (mục 39-44) dành cho slide, lời thuyết trình và tài liệu nhiều trang, hướng dẫn đầy đủ ở `slides.md`. Nhóm K (mục 56-62) là văn dịch ở tầng sâu hơn nhóm G: từng chữ đều là tiếng Việt nhưng câu vẫn theo khuôn tiếng Anh. Văn tiếng Việt nào cũng nên rà nhóm này. Nhóm I (mục 45-55) là những dấu hiệu chỉ thấy khi nhìn cả bài, thường vẫn còn sau khi đã sửa sạch từng câu. Bài dài và bài đăng mạng xã hội thì đọc nhóm này trước. Mục ghi *yếu* chỉ sửa khi đi cùng dấu hiệu khác trong cùng đoạn. Vài khối "Sau" có chi tiết cụ thể mà khối "Trước" không có (tên người, con số): đó là chi tiết giả định người viết đã cung cấp, còn khi sửa bài thật thì không tự thêm.
 
 ## A. Dàn dựng thay vì nói thẳng
@@ -43,7 +45,7 @@ Câu báo hiệu "điều này quan trọng" mà không thêm sự việc nào. 
 > AlphaEvolve không ưa đối xứng, cũng không chuộng kiểu thiết kế trông như người làm, nên luật cũ hết đúng.
 
 ### 3. Câu nghe sâu sắc mà rỗng
-**Dấu hiệu:** câu hỏi thật sự là; xét cho cùng; suy cho cùng; cốt lõi của vấn đề; điều thực sự quan trọng; X là ngôn ngữ của Y; X là đồng tiền của Y; X là kiến trúc của Y; X trở thành cái bẫy; X không phải công cụ mà là tấm gương; at its core; the real question is; the heart of the matter. Châm ngôn truyền cảm hứng gắn vào bài nào cũng được: "tương lai thuộc về những người..."; "đây mới chỉ là khởi đầu"; "không bao giờ là quá muộn"; "hành trình phía trước còn dài"; "mọi mục tiêu lớn đều bắt đầu từ những bước nhỏ"; "viết rõ ràng là siêu năng lực"; "hãy bắt đầu ngay hôm nay".
+**Dấu hiệu:** câu hỏi thật sự là; xét cho cùng; suy cho cùng; cốt lõi của vấn đề; điều thực sự quan trọng; X là ngôn ngữ của Y; X là đồng tiền của Y; X là kiến trúc của Y; X trở thành cái bẫy; X không phải công cụ mà là tấm gương; at its core; the real question is; the heart of the matter. Châm ngôn truyền cảm hứng gắn vào bài nào cũng được: "tương lai thuộc về những người..."; "đây mới chỉ là khởi đầu"; "không bao giờ là quá muộn"; "hành trình phía trước còn dài"; "mọi mục tiêu lớn đều bắt đầu từ những bước nhỏ"; "viết rõ ràng là siêu năng lực"; "hãy bắt đầu ngay hôm nay"; "mỗi trở ngại đều mang trong mình một bài học quý giá".
 **Sửa:** Thay câu châm ngôn bằng nhận định cụ thể. Phép thử: chép câu đó sang một bài về chủ đề khác mà vẫn đúng thì câu đó rỗng, bỏ đi.
 **Trước:**
 > Suy cho cùng, sự tin tưởng là ngôn ngữ chung của mọi đội nhóm.
@@ -146,7 +148,7 @@ Khuôn câu và dấu câu dùng khắp nơi, dù ý không cần tới.
 **Sửa:** Nếu có quan điểm thì nói ra và nói vì sao. Nếu thật sự tùy trường hợp thì nói tùy vào điều gì cụ thể.
 
 ### 12. Câu và đoạn đều nhau
-**Vấn đề:** Đoạn nào cũng 3 đến 5 câu, câu nào cũng 15 đến 20 từ, không lỗi, không ngắt nhịp.
+**Vấn đề:** Đoạn nào cũng 3 đến 5 câu, câu nào cũng 15 đến 20 từ, không lỗi, không ngắt nhịp. Khuôn hay gặp: một câu mở đoạn, ba câu khai triển dài bằng nhau, một câu chốt.
 **Sửa:** Để câu và đoạn dài ngắn theo nội dung: ý đơn thì ngắn, ý có nguyên nhân hay điều kiện thì dài hơn. Đừng xen câu ngắn câu dài cho có nhịp (mục 38, 54, 55).
 
 ## C. Thổi phồng và mượn uy tín
@@ -154,7 +156,7 @@ Khuôn câu và dấu câu dùng khắp nơi, dù ý không cần tới.
 Sự việc bên dưới thường vẫn đúng. Giữ sự việc, bỏ lớp áo khoác ngoài.
 
 ### 13. Từ vựng AI
-**Dấu hiệu (tránh khi không có lý do, nhất là khi xuất hiện nhiều cùng lúc):** đóng vai trò quan trọng/then chốt/chủ chốt; không thể phủ nhận; minh chứng (sống động) cho; bức tranh (toàn cảnh); hành trình; khám phá; nâng tầm; tối ưu hóa (nghĩa bóng); một cách hiệu quả/toàn diện/bền vững; đáng chú ý là; bên cạnh đó; ngoài ra; trong bối cảnh hiện nay; trong thời đại số; kỷ nguyên số; không ngừng thay đổi; điều quan trọng cần lưu ý là; mang lại giá trị; góp phần thúc đẩy; đa dạng và phong phú; sâu sắc; tinh tế; vượt trội; đột phá; vô cùng; cực kỳ; hơn bao giờ hết; âm thầm, lặng lẽ (nghĩa bóng: "âm thầm thay đổi cách chúng ta làm việc"); mạnh mẽ (nghĩa bóng: "phát triển mạnh mẽ"); làm nổi bật; đi sâu vào; đan xen, sự đan xen giữa; sống động (nghĩa bóng); tỉ mỉ, chỉn chu (khen chung chung); củng cố vị thế, củng cố niềm tin; bền bỉ; thực sự (dùng dày); delve; tapestry; testament; underscore; pivotal; meticulous; vibrant; intricate; interplay; showcase; garner; quietly.
+**Dấu hiệu (tránh khi không có lý do, nhất là khi xuất hiện nhiều cùng lúc):** đóng vai trò quan trọng/then chốt/chủ chốt; không thể phủ nhận; minh chứng (sống động) cho; bức tranh (toàn cảnh); hành trình; khám phá; nâng tầm; tối ưu hóa (nghĩa bóng); một cách hiệu quả/toàn diện/bền vững; đáng chú ý là; bên cạnh đó; ngoài ra; trong bối cảnh hiện nay; trong thế giới ngày nay; trong thời đại số; kỷ nguyên số; không ngừng thay đổi; điều quan trọng cần lưu ý là; mang lại giá trị; góp phần thúc đẩy; góp một phần không nhỏ; bước tiến (vững chắc); tầm nhìn chiến lược; mang trong mình; khai phá tiềm năng; đa dạng và phong phú; sâu sắc; tinh tế; vượt trội; đột phá; vô cùng; cực kỳ; hơn bao giờ hết; âm thầm, lặng lẽ (nghĩa bóng: "âm thầm thay đổi cách chúng ta làm việc"); mạnh mẽ (nghĩa bóng: "phát triển mạnh mẽ"); làm nổi bật; đi sâu vào; đan xen, sự đan xen giữa; sống động (nghĩa bóng); tỉ mỉ, chỉn chu (khen chung chung); củng cố vị thế, củng cố niềm tin; bền bỉ; thực sự (dùng dày); delve; tapestry; testament; underscore; pivotal; meticulous; vibrant; intricate; interplay; showcase; garner; quietly.
 **Lưu ý:** Các cụm ở mục 14 tới 19 là dấu hiệu vì cách dùng. Từ trong mục này thì gặp ở đâu cũng đáng xem, nhất là khi nhiều từ đi cùng nhau. Một hai từ có thể là ngẫu nhiên. Từ đồng nghĩa với các từ trên, hay từ trang trọng không có trong danh sách, thì tự nó chưa phải dấu hiệu. Từ ngữ quen tay đổi theo từng đời mô hình, nên danh sách này cũ nhanh hơn các mục về cấu trúc.
 
 ### 14. Thổi phồng ý nghĩa
@@ -179,7 +181,7 @@ Sự việc bên dưới thường vẫn đúng. Giữ sự việc, bỏ lớp �
 > (Bỏ cả đoạn, kết ở sự việc cụ thể cuối cùng.)
 
 ### 15. Đuôi bình luận hời hợt
-**Dấu hiệu:** ..., góp phần thúc đẩy...; ..., qua đó khẳng định...; ..., thể hiện...; ..., phản ánh...; ..., highlighting/underscoring/reflecting/showcasing/fostering...
+**Dấu hiệu:** ..., góp phần thúc đẩy...; ..., góp phần vào sự phát triển bền vững của...; ..., qua đó khẳng định...; ..., thể hiện...; ..., phản ánh...; ..., highlighting/underscoring/reflecting/showcasing/fostering...
 **Sửa:** Giữ sự việc. Chỉ giữ phần đuôi nếu nguồn thật sự nói vậy. Gán vế đuôi cho một người có tên ("nhà phê bình X nhấn mạnh...") cũng không làm nó đúng hơn.
 **Trước:**
 > Ngôi chùa sơn ba màu lam, lục và vàng, hòa quyện cùng vẻ đẹp thiên nhiên của vùng, tượng trưng cho biển cả, đồng lúa và nắng miền Trung, thể hiện sự gắn bó sâu sắc của cộng đồng với quê hương.
@@ -197,9 +199,9 @@ Sự việc bên dưới thường vẫn đúng. Giữ sự việc, bỏ lớp �
 > Bản Mây là xã vùng cao ở tỉnh Đông Lam, nổi tiếng nhờ đồi chè và mùa hoa mận.
 
 ### 17. Mượn uy tín mơ hồ
-**Dấu hiệu:** các chuyên gia cho rằng; nhiều nghiên cứu chỉ ra; theo giới quan sát; một số nhà phê bình; báo cáo trong ngành; được nhiều báo chí đưa tin; từng được trích trên [một dãy tên báo]; báo chí độc lập; có mặt tích cực trên mạng xã hội; hơn N người theo dõi; experts believe; industry reports; featured in [danh sách báo].
+**Dấu hiệu:** các chuyên gia cho rằng; nhiều nghiên cứu chỉ ra; theo giới quan sát; một số nhà phê bình; báo cáo trong ngành; được nhiều báo chí đưa tin; từng được trích trên [một dãy tên báo]; báo chí độc lập; có mặt tích cực trên mạng xã hội; hơn N người theo dõi; experts believe; industry reports; featured in [danh sách báo]. Tài liệu tham khảo không tra ra được: tên bài, tên tác giả nghe hợp lý nhưng không có DOI hay link, tìm tên bài không thấy.
 **Vấn đề:** Một cái tên, hay một người có uy tín không tên, đứng thay cho điều họ đã nói. Chuyên gia không tên đỡ cho một nhận định, dãy tên báo đỡ cho một con người.
-**Sửa:** Biết nguồn thật và nguồn đó nói gì thì nêu ra. Không biết thì bỏ nhận định hoặc bỏ dãy tên báo. Thiếu dẫn nguồn thì tự nó chưa phải dấu hiệu, vì phần lớn văn bản đều không dẫn nguồn.
+**Sửa:** Biết nguồn thật và nguồn đó nói gì thì nêu ra. Không biết thì bỏ nhận định hoặc bỏ dãy tên báo. Thiếu dẫn nguồn thì tự nó chưa phải dấu hiệu, vì phần lớn văn bản đều không dẫn nguồn. Danh mục tài liệu tham khảo thì tra từng mục; mục không tra ra thì báo người dùng, không tự điền DOI hay số trang.
 **Trước (dãy tên báo):**
 > Quan điểm của chị từng được trích trên VnExpress, Tuổi Trẻ, Thanh Niên và BBC Tiếng Việt. Chị có mặt tích cực trên mạng xã hội với hơn 500.000 người theo dõi.
 **Sau:**
@@ -248,7 +250,7 @@ Bản mẫu và trình soạn thảo cũng tạo ra trình bày gọn gàng. D�
 ## E. Đồ thừa của chat và bản nháp (sửa ngay khi gặp)
 
 ### 23. Lời chatbot
-**Dấu hiệu:** Chắc chắn rồi!; Tất nhiên rồi!; Câu hỏi rất hay!; Bạn nói hoàn toàn đúng!; Dưới đây là...; Đây là bản...; Hy vọng điều này hữu ích!; Nếu bạn cần thêm thông tin, đừng ngần ngại...; Bạn có muốn tôi...?; Bạn có muốn mình viết thêm...?; Mình làm tiếp phần sau nhé?; Có cần mình chỉnh thêm gì không?; Certainly!; Of course!; Great question!; I hope this helps; Would you like...; Should I continue?; Let me know if...; As an AI language model.
+**Dấu hiệu:** Chắc chắn rồi!; Tất nhiên rồi!; Câu hỏi rất hay!; Bạn nói hoàn toàn đúng!; Dưới đây là...; Đây là bản...; Hy vọng điều này hữu ích!; Nếu bạn cần thêm thông tin, đừng ngần ngại...; Bạn có muốn tôi...?; Bạn có muốn mình viết thêm...?; Nếu bạn muốn, mình có thể phân tích sâu hơn...; Mình làm tiếp phần sau nhé?; Có cần mình chỉnh thêm gì không?; Certainly!; Of course!; Great question!; I hope this helps; Would you like...; Should I continue?; Let me know if...; As an AI language model.
 **Vấn đề:** Lời chào, lời khen, lời mời làm thêm hay câu chào kết của chatbot còn sót trong văn bản lẽ ra phải tự đứng được. Đây là dấu hiệu rõ nhất trong danh mục, và dễ sót nhất khi nó bọc quanh nội dung thật. Riêng "có gì báo mình nhé", "anh xem giúp em" trong tin nhắn thì người ta vẫn viết từ trước khi có chatbot.
 **Sửa:** Bỏ lời rào đầu đuôi, giữ nội dung.
 **Trước:**
@@ -296,8 +298,8 @@ Bản mẫu và trình soạn thảo cũng tạo ra trình bày gọn gàng. D�
 > Giá là giá niêm yết của từng nhà cung cấp. Hai bên không công bố giá, muốn biết thì gọi hỏi.
 
 ### 27. Dấu vết công cụ
-**Dấu hiệu:** `contentReference`, `oaicite`, `turn0search0`, `[cite: 1]`, `:::writing`, placeholder `[Tên công ty]`, `<Điền ngày>` còn sót.
-**Sửa:** Xóa hoặc thay bằng nội dung thật do người dùng cung cấp.
+**Dấu hiệu:** `contentReference`, `oaicite`, `turn0search0`, `[cite: 1]`, `:::writing`, placeholder `[Tên công ty]`, `<Điền ngày>` còn sót; link còn đuôi `?utm_source=chatgpt.com` (chép từ câu trả lời có tìm web của ChatGPT).
+**Sửa:** Xóa hoặc thay bằng nội dung thật do người dùng cung cấp. Với link, bỏ đuôi `utm_source`, và chỉ giữ link khi đã mở thử thấy đúng nguồn.
 
 ## F. Viết sai người đọc
 
@@ -386,7 +388,7 @@ Văn AI tiếng Việt thường là văn "nghĩ bằng tiếng Anh rồi dịch
 **Sửa:** Từ nào ai cũng hiểu thì bỏ phần ngoặc. Giữ tiếng Anh cho thuật ngữ dân trong nghề vẫn nói ("deploy", "PR", "deadline", "KPI", "prompt"), đừng dịch gượng những từ đó sang Hán Việt. Lần đầu nhắc một thuật ngữ lạ với người đọc thì chú thích một lần, không lặp.
 
 ### 38. Câu đều nhịp, từ nối đầu câu
-**Dấu hiệu:** đoạn mà câu nào cũng 25-35 chữ, cùng có một dấu phẩy ở giữa; đoạn nào cũng mở bằng "Bên cạnh đó", "Ngoài ra", "Đồng thời", "Hơn nữa", "Không những thế", "Qua đó", "Từ đó"; đoạn nào cũng kết bằng câu "cần / nên".
+**Dấu hiệu:** đoạn mà câu nào cũng 25-35 chữ, cùng có một dấu phẩy ở giữa; đoạn nào cũng mở bằng "Bên cạnh đó", "Ngoài ra", "Đồng thời", "Hơn nữa", "Hơn thế nữa", "Thêm vào đó", "Không những thế", "Qua đó", "Từ đó"; đoạn nào cũng kết bằng câu "cần / nên". Riêng "Đồng thời", "Từ đó" thì tin báo người viết trước 2022 dùng còn dày hơn tin máy viết lại, nên chỉ đáng xem khi đoạn nào cũng mở bằng chúng.
 **Sửa:** Để độ dài câu đi theo ý: ý đơn viết ngắn, ý có nguyên nhân hay điều kiện viết dài hơn. Bỏ từ nối khi quan hệ đã rõ. Đừng cố tạo nhịp dài ngắn xen kẽ máy móc, đừng rải câu cụt cho có vẻ tự nhiên (mục 54), cũng đừng gộp cho dài (mục 55). *Yếu*.
 
 ### Đừng làm sai nghĩa khi sửa tiếng Việt

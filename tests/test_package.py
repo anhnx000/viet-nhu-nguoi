@@ -1,11 +1,14 @@
 """Kiểm gói skill: phiên bản, số mục trong danh mục và điểm ví dụ trong README."""
 
+import contextlib
 import importlib.util
+import io
 import json
 import pathlib
 import re
 import subprocess
 import sys
+import tempfile
 import unittest
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
@@ -156,7 +159,7 @@ class Evals(unittest.TestCase):
     def test_scenarios_are_well_formed(self):
         known = {"min_words", "max_words", "min_questions", "max_questions", "max_placeholders", "max_bold",
                  "must_keep", "must_not", "min_refs", "min_overlap", "max_overlap", "scan_max",
-                 "max_added_numbers", "lead_keep"}
+                 "max_added_numbers", "lead_keep", "must_read", "must_not_read", "allow_read", "max_refs"}
         self.assertGreaterEqual(len(self.scenarios), 16)
         for sid, sc in self.scenarios.items():
             self.assertTrue(sc["tin_nhan"] and sc["mong_doi"], sid)
@@ -233,6 +236,99 @@ class Evals(unittest.TestCase):
         audit = dict(self.scenarios["soi-bai-ai"], kiem={"min_refs": 3})
         self.assertEqual(self.check.check(audit, "1. Câu mở (45, 3). 2. Câu kết (mục 50)."), [])
         self.assertTrue(self.check.check(audit, "Bài có vài chỗ nghe giống AI."))
+
+    def test_opened_files_from_trace(self):
+        trace = [("Read", {"file_path": ".claude/skills/viet-nhu-nguoi/references/chat.md"}, True),
+                 ("Read", {"file_path": "s/references/patterns.md", "offset": 120, "limit": 40}, True),
+                 ("Bash", {"command": "cd .claude/skills/viet-nhu-nguoi && cat references/voice.md"}, True),
+                 ("Bash", {"command": "cat references/slides.md"}, False),
+                 ("Bash", {"command": "cd s/references && sed -n 1,30p sources.md"}, True),
+                 ("Bash", {"command": "python3 -I scripts/scan.py review-dan-tu-chat.md"}, True),
+                 ("Read", {"file_path": "review-dan-tu-chat.md"}, True)]
+        self.assertEqual(self.check.opened(trace), {"chat.md": True, "patterns.md": False, "voice.md": True,
+                                                    "sources.md": False, "scan.py": False})
+
+    def test_routing_rules(self):
+        rules = {"must_read": ["chat-group.md"], "must_not_read": ["slides.md"], "max_refs": 2}
+        route = self.check.check_trace
+        chat = ("Read", {"file_path": "s/references/chat.md"}, True)
+        group = ("Read", {"file_path": "s/references/chat-group.md"}, True)
+        self.assertEqual(route(rules, [chat, group]), [])
+        self.assertTrue(route(rules, [chat]))
+        self.assertTrue(route(rules, [chat, group[:2] + (False,)]))  # lệnh bị chặn không tính
+        self.assertTrue(route(rules, [chat, group, ("Bash", {"command": "cat references/slides.md"}, True)]))
+        lookup = {"must_read": [["patterns.py", "patterns.md"]], "max_refs": 0}
+        self.assertEqual(route(lookup, [("Bash", {"command": "python3 -I scripts/patterns.py 46"}, True)]), [])
+
+    def test_full_catalog_read_needs_allow_read(self):
+        full = [("Read", {"file_path": "s/references/patterns.md"}, True)]
+        part = [("Read", {"file_path": "s/references/patterns.md", "offset": 300, "limit": 30}, True)]
+        self.assertTrue(self.check.check_trace({}, full))
+        self.assertEqual(self.check.check_trace({}, part), [])
+        self.assertEqual(self.check.check_trace({"allow_read": ["patterns.md"]}, full), [])
+
+    def test_slide_and_catalog_pointers_are_not_invented_numbers(self):
+        sc = {"tin_nhan": "Doanh thu 12,4 tỷ, tăng 8%.", "kiem": {"max_added_numbers": 0}}
+        self.assertEqual(self.check.check(sc, "Slide 2 và slide 3-5 chưa có số. Câu mở rơi vào mục 45, 46. Doanh thu 12,4 tỷ."), [])
+        self.assertTrue(self.check.check(sc, "Slide 2: doanh thu 12,4 tỷ, lãi 15%."))
+
+    def test_bad_answers_fail(self):
+        """Câu trả lời rỗng trượt mọi đề; chép nguyên bài gốc trượt mọi đề có file, trừ đề mà bài gốc đã ổn."""
+        source_is_fine = {"sua-nhe-bai-nguoi-viet", "sua-tin-gian-giu-nguyen", "sua-tin-nhan-sep"}
+        for sid, sc in self.scenarios.items():
+            with self.subTest(sid):
+                self.assertTrue(self.check.check(sc, ""))
+                if "tep" in sc and sid not in source_is_fine:
+                    source = self.check.check_facts.read(str(ROOT / sc["tep"]))
+                    self.assertTrue(self.check.check(sc, source), "chép nguyên bài gốc mà vẫn qua")
+
+    def test_old_traces_and_pass_rate_over_runs(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = pathlib.Path(tmp)
+            (root / "old.json").write_text(json.dumps([["Read", {"file_path": "s/references/chat.md"}]]))
+            self.assertEqual(self.check.load_trace(root / "old.json"), [("Read", {"file_path": "s/references/chat.md"}, True)])
+            scenarios = [{"id": "a", "kiem": {"must_keep": ["15h"]}}, {"id": "b", "kiem": {"must_read": ["chat.md"]}}]
+            chat = {"tools": [["Read", {"file_path": "s/references/chat.md"}, True]]}
+            for run, reply in (("1", "15h"), ("2", "16h"), ("3", "15h")):
+                (root / run).mkdir()
+                (root / run / "a.md").write_text(reply)
+                (root / run / "b.md").write_text("ok")
+                (root / run / "b.json").write_text(json.dumps(chat if run != "3" else {"tools": []}))
+            # lượt không bật skill: không chấm đường đọc
+            (root / "1" / "a.json").write_text(json.dumps({"skill": False, "tools": []}))
+            folders = self.check.run_dirs(root)
+            self.assertEqual([f.name for f in folders], ["1", "2", "3"])
+            out = io.StringIO()
+            with contextlib.redirect_stdout(out):
+                self.assertEqual(self.check.report(scenarios, folders), 1)
+            text = out.getvalue()
+            self.assertIn("TRƯỢT  a (2/3): lượt 2: mất dữ kiện", text)
+            self.assertIn("QUA    b (3/3)  · đường đọc: lượt 3: không mở chat.md", text)  # đường đọc không làm đề trượt
+            self.assertIn("5/6 lượt qua phần tự động (83%, khoảng tin cậy 95%: 44-97%). 1/2 đề qua cả 3 lượt.", text)
+            self.assertIn("Đường đọc đúng ở 2/3 lượt có vết.", text)
+            self.assertEqual([round(x, 2) for x in self.check.wilson(3, 3)], [0.44, 1.0])
+
+    def test_reference_answers_pass(self):
+        """Mỗi đề có một đáp án mẫu trong evals/dap-an/ và đáp án ấy phải qua check.py.
+
+        Điều kiện chấm đặt sai (câu trả lời đúng mà vẫn trượt) thì test báo ngay, không đợi tới lượt chạy thật.
+        """
+        folder = ROOT / "evals/dap-an"
+        for sid, sc in self.scenarios.items():
+            with self.subTest(sid):
+                path = folder / f"{sid}.md"
+                self.assertTrue(path.exists(), f"thiếu đáp án mẫu {path.name}")
+                self.assertEqual(self.check.check(sc, path.read_text(encoding="utf-8")), [])
+        self.assertFalse({p.stem for p in folder.glob("*.md")} - set(self.scenarios), "đáp án không ứng với đề nào")
+
+    def test_routing_rules_name_real_files(self):
+        skill = ROOT / "skills/viet-nhu-nguoi"
+        names = {p.name for p in (skill / "references").glob("*.md")} | {p.name for p in (skill / "scripts").glob("*.py")}
+        for sid, sc in self.scenarios.items():
+            for key in ("must_read", "must_not_read", "allow_read"):
+                for item in sc["kiem"].get(key, []):
+                    for name in item if isinstance(item, list) else [item]:
+                        self.assertIn(name, names, f"{sid}: {key} nhắc tới {name}")
 
 
 if __name__ == "__main__":

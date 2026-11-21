@@ -1,0 +1,1 @@
+Tổ trực đã triển khai bản vá. Cổng mở lại lúc 14h.
