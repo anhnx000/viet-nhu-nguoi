@@ -1,6 +1,6 @@
 # Viết như người · Vietnamese Humanizer
 
-Skill cho Claude Code, Codex, Cursor: nhờ AI viết tiếng Việt mà đọc lên vẫn ra giọng mình. Bỏ câu sáo, xưng hô đúng vai, số liệu đưa sao để vậy. Bản mới nhất đã chạy 76 đề thử trên cả Claude lẫn Codex, [kết quả ở dưới](#đo-bằng-bộ-đề).
+Skill cho Claude Code, Codex, Cursor: nhờ AI viết tiếng Việt mà đọc lên vẫn ra giọng mình. Bỏ câu sáo, xưng hô đúng vai, số liệu đưa sao để vậy. Bản mới nhất đã chạy 76 đề của bộ Vietnamese Humanizer Benchmark trên cả Claude lẫn Codex, [kết quả ở dưới](#vietnamese-humanizer-benchmark).
 
 [![test](https://github.com/anhnx000/viet-nhu-nguoi/actions/workflows/test.yml/badge.svg)](https://github.com/anhnx000/viet-nhu-nguoi/actions/workflows/test.yml)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
@@ -159,18 +159,39 @@ Dấu hiệu xếp theo nhóm, nhóm nào cũng kèm số dòng và cụm bị b
 
 </details>
 
-## Đo bằng bộ đề
+## Vietnamese Humanizer Benchmark
 
-Mỗi bản chạy lại 63 đề thường gặp và 13 đề để riêng (không dùng để chỉnh skill), mỗi đề trong một thư mục tạm chỉ có skill và file đầu vào. Script chấm phần đếm được: cụm phải giữ, số liệu tự thêm, số chữ, số câu hỏi lại, điểm của bộ kiểm tra. Phần còn lại đọc tay. Một bộ 73 lời nhờ khác thử xem skill có tự bật đúng lúc không, kể cả không bật cho câu hỏi về code hay kiến thức.
+Repo kèm một bộ đề để đo trợ lý AI viết tiếng Việt theo hai ý: bài viết ra có đọc như người Việt viết không, và tên, số, ngày, lời phủ định của người nhờ có còn nguyên không. Skill đổi chỗ nào thì chạy lại cả bộ. Bộ đề cũng chạy được khi không bật skill, để biết mô hình tự viết được tới đâu.
 
-| Bản 2.13.0, Opus và GPT mức medium | Claude Code | Codex |
-| --- | --- | --- |
-| 63 đề thường gặp | 60/63 | 59/63 |
-| 13 đề để riêng | 10/13 | 10/13 |
-| Tự bật khi nên bật | 68/68 lượt | 104/104 lượt |
-| Bật nhầm | 0/63 lượt | 2/83 lượt |
+- 63 đề thường gặp: 21 đề sửa bài, 19 đề viết mới, 14 đề trả lời tin nhắn theo giọng người gửi, 5 đề soi lỗi, thêm tóm tắt, slide, câu hỏi thường và một đề phải chép nguyên văn.
+- 13 đề để riêng, không dùng khi chỉnh skill, để biết skill có học thuộc bộ đề hay không.
+- 73 lời nhờ thử xem skill có tự bật đúng lúc không, trong đó có câu hỏi về code, kiến thức, phép tính mà skill phải đứng ngoài.
+- File đầu vào viết riêng cho bộ đề, tên người và số liệu đều bịa. Đề nào cũng có đáp án mẫu, và đáp án mẫu phải qua mọi điều kiện chấm của đề đó.
 
-Skill viết bằng tiếng Việt. Bản dịch lời dặn sang tiếng Anh đã chạy thử trên Sonnet 5 và Sonnet 5.5, không làm tốt hơn. Đề trượt và câu trả lời của từng đề ghi ở [evals/README.md](evals/README.md), lệnh chạy lại cũng ở đó. Bộ kiểm tra chỉ đếm dấu hiệu bề mặt: với tin tức do AI viết lại, nó vẫn bỏ sót hơn một nửa.
+Mỗi đề chạy qua `claude -p` hoặc `codex exec` trong một thư mục tạm chỉ có skill và file đầu vào. Script chấm `evals/check.py` chỉ dùng thư viện chuẩn của Python và đếm những gì đếm được: cụm phải giữ, số tự thêm, câu sáo còn sót, số chữ, số câu hỏi lại, chỗ để trống, phần giữ nguyên bản gốc, file hướng dẫn trợ lý đã mở, điểm của bộ kiểm tra. Còn giọng có tự nhiên không thì đọc tay, hoặc nhờ một mô hình khác chấm mù từng cặp bài.
+
+| Bản 2.13.0, mức effort medium | Lượt mỗi đề | 63 đề thường gặp | 13 đề để riêng |
+| --- | --- | --- | --- |
+| Claude Opus 5.5, có skill | 1 | 60/63 | 10/13 |
+| GPT-6.2-sol qua Codex, có skill | 1 | 59/63 | 10/13 |
+| Claude Sonnet 5, có skill | 3 | 160/189 (85%) | 24/39 (62%) |
+| Claude Sonnet 5.5, có skill | 3 | 156/189 (83%) | 26/39 (67%) |
+| Claude Sonnet 5.5, không skill | 1 | 36/63 | 2/13 |
+| Claude Opus 5.5, không skill | 1 | 33/63 | 2/13 |
+
+Bật đúng lúc: Claude bật 68/68 lượt nên bật và không bật nhầm lượt nào trong 63 lượt, Codex bật 104/104 lượt và bật nhầm 2/83 lượt. Dòng Opus không skill là câu trả lời chạy ở bản 2.11.0, chấm lại bằng script hiện tại, vì lời nhờ và file đầu vào không đổi từ đó.
+
+Chạy lại trên máy mình (cần Claude Code hoặc Codex CLI):
+
+```bash
+python3 -I evals/run.py evals/results/thu --runs 3              # 63 đề, mỗi đề 3 lượt
+python3 -I evals/run.py evals/results/thu-goc --khong-skill     # cùng đề, không bật skill
+python3 -I evals/check.py evals/results/thu                     # chấm
+```
+
+`--model sonnet` đổi mô hình, `--codex` chạy trên Codex, `--skill-dir` thử một bản skill khác. Đề trượt, câu trả lời từng đề và cách đọc kết quả ghi ở [evals/README.md](evals/README.md).
+
+Skill viết bằng tiếng Việt. Bản dịch lời dặn sang tiếng Anh đã chạy thử trên Sonnet 5 và Sonnet 5.5, không làm tốt hơn. Bộ kiểm tra chỉ đếm dấu hiệu bề mặt: với tin tức do AI viết lại, nó vẫn bỏ sót hơn một nửa.
 
 ## Dấu hiệu văn AI
 

@@ -118,7 +118,7 @@ Câu hỏi đặt ra: viết lời dặn của skill bằng tiếng Anh thì mô
 | Đường đọc đúng, đề chính | 157/189 | 154/189 | 156/189 | 161/189 |
 | Điểm `scan.py` trung bình | 3,2 | 2,8 | 3,3 | 2,9 |
 
-Không bật skill, Sonnet 5.5 qua 36/63 đề chính.
+Không bật skill, Sonnet 5.5 qua 36/63 đề chính và 2/13 đề để riêng.
 
 Để chấm giọng, Opus đọc mù từng cặp câu trả lời của cùng một đề ở các đề viết, sửa, chat, slide và tóm tắt. Thứ tự hai bản trong cặp đảo theo đề, và Opus không biết bản nào dùng lời dặn tiếng gì. Mỗi cặp, Opus chọn bản đọc như người Việt viết hơn và bản làm đúng lời nhờ hơn, hoặc cho ngang. Trên 402 cặp của hai mô hình, về giọng thì lời dặn tiếng Việt hơn 131 cặp, tiếng Anh hơn 134, ngang 137. Về đúng việc, tiếng Việt hơn 112, tiếng Anh hơn 96, ngang 194.
 

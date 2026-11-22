@@ -1,6 +1,6 @@
 # Viết như người · Vietnamese Humanizer
 
-Human voice for Vietnamese (chống giọng văn AI): let AI draft it and still sound like you.
+Human voice for Vietnamese (chống giọng văn AI): let AI draft it and still sound like you. Ships the Vietnamese Humanizer Benchmark, 76 cases run on Claude and GPT, [results below](#vietnamese-humanizer-benchmark).
 
 [![test](https://github.com/anhnx000/viet-nhu-nguoi/actions/workflows/test.yml/badge.svg)](https://github.com/anhnx000/viet-nhu-nguoi/actions/workflows/test.yml)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
@@ -15,7 +15,7 @@ Viết như người ("write like a person") is a skill, an add-on pack of instr
 
 The skill is written for Vietnamese. It builds on Wikipedia's [Signs of AI writing](https://en.wikipedia.org/wiki/Wikipedia:Signs_of_AI_writing) and [blader/humanizer](https://github.com/blader/humanizer), and English text still gets the structural rules, but there is no English-specific section. The work went into Vietnamese because generic humanizers miss what makes Vietnamese AI text sound off: it reads like English that was translated word by word.
 
-Contents: [Install](#install) · [Usage](#usage) · [Before and after](#before-and-after) · [How it is tested](#how-it-is-tested) · [Signs of AI writing](#signs-of-ai-writing) · [Pattern lookup and checks](#pattern-lookup-scanner-and-fact-checker)
+Contents: [Install](#install) · [Usage](#usage) · [Before and after](#before-and-after) · [Benchmark](#vietnamese-humanizer-benchmark) · [Signs of AI writing](#signs-of-ai-writing) · [Pattern lookup and checks](#pattern-lookup-scanner-and-fact-checker)
 
 ## Use cases
 
@@ -180,18 +180,39 @@ Flags are grouped, each with its line number and the matched phrase. The score m
 
 </details>
 
-## How it is tested
+## Vietnamese Humanizer Benchmark
 
-Every release reruns 63 common cases and 13 held-out cases that are never used to tune the skill. Each case runs in a temp folder that holds only the skill and its input files. A script grades what can be counted (facts that must survive, invented numbers, length, follow-up questions, checker score); the rest is read by hand. Another 73 prompts test whether the skill loads on its own when it should, and stays out of code and factual questions.
+The repo ships a benchmark for AI assistants writing Vietnamese. It checks two things: whether the output reads like a Vietnamese person wrote it, and whether the requester's names, numbers, dates and negations survive. It is rerun whenever the skill changes, and it also runs with the skill off, to show what the model does on its own.
 
-| Release 2.13.0, Opus and GPT at medium effort | Claude Code | Codex |
-| --- | --- | --- |
-| 63 common cases | 60/63 | 59/63 |
-| 13 held-out cases | 10/13 | 10/13 |
-| Loads when it should | 68/68 runs | 104/104 runs |
-| Loads when it shouldn't | 0/63 runs | 2/83 runs |
+- 63 common cases: 21 edits, 19 new drafts, 14 chat replies in the sender's voice, 5 reviews, plus a summary, a slide deck, a plain question and one case that must come back word for word.
+- 13 held-out cases that are never used to tune the skill, to catch overfitting to the main set.
+- 73 prompts that test whether the skill loads on its own when it should, including code, factual and math questions where it must stay out.
+- Input files written for the benchmark, with made-up names and numbers. Every case has a reference answer, and that answer must pass all of the case's checks.
 
-The instructions are written in Vietnamese. An English translation of them was run on Sonnet 5 and Sonnet 5.5 and scored no better. Failures, per-case notes and the commands to rerun everything are in [evals/README.md](evals/README.md) (Vietnamese). The checker only counts surface patterns; on AI-rewritten news it still misses more than half.
+Each case runs through `claude -p` or `codex exec` in a temp folder that holds only the skill and the input files. The grader, `evals/check.py`, uses only the Python standard library and counts what can be counted: facts that must survive, invented numbers, leftover stock phrases, length, follow-up questions, blanks left for the user, overlap with the original, which instruction files the assistant opened, and the checker score. Whether the voice sounds natural is read by hand, or judged blind in pairs by another model.
+
+| Release 2.13.0, medium effort | Runs per case | 63 common cases | 13 held-out cases |
+| --- | --- | --- | --- |
+| Claude Opus 5.5, with skill | 1 | 60/63 | 10/13 |
+| GPT-6.2-sol via Codex, with skill | 1 | 59/63 | 10/13 |
+| Claude Sonnet 5, with skill | 3 | 160/189 (85%) | 24/39 (62%) |
+| Claude Sonnet 5.5, with skill | 3 | 156/189 (83%) | 26/39 (67%) |
+| Claude Sonnet 5.5, no skill | 1 | 36/63 | 2/13 |
+| Claude Opus 5.5, no skill | 1 | 33/63 | 2/13 |
+
+Loading: Claude loaded the skill in 68/68 runs where it should and in none of 63 where it shouldn't; Codex in 104/104 and 2/83. The Opus no-skill row reuses answers from the 2.11.0 run, regraded with the current grader; the prompts and input files have not changed since.
+
+To rerun it (needs Claude Code or the Codex CLI):
+
+```bash
+python3 -I evals/run.py evals/results/try --runs 3              # 63 cases, 3 runs each
+python3 -I evals/run.py evals/results/try-base --khong-skill    # same cases, skill off
+python3 -I evals/check.py evals/results/try                     # grade
+```
+
+`--model sonnet` switches the model, `--codex` runs on Codex, `--skill-dir` tests another copy of the skill. Failures, per-case answers and how to read the results are in [evals/README.md](evals/README.md) (Vietnamese).
+
+The instructions are written in Vietnamese. An English translation of them was run on Sonnet 5 and Sonnet 5.5 and scored no better. The checker only counts surface patterns; on AI-rewritten news it still misses more than half.
 
 ## Signs of AI writing
 
