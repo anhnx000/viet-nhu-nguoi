@@ -11,6 +11,7 @@ python3 -I evals/run.py evals/results/<bản>-khong-skill --khong-skill   # cùn
 python3 -I evals/run.py evals/results/trigger-<bản> --trigger --runs 3   # skill có tự bật đúng lúc không
 python3 -I evals/run.py evals/results/<bản>-codex --kieu-codex           # nạp skill theo cách của Codex
 python3 -I evals/run.py evals/results/<bản>-codex-that --codex            # chạy thật trên Codex CLI
+python3 -I evals/run.py evals/results/<bản>-sonnet --model sonnet --skill-dir <thư mục>   # thử một bản skill khác, ví dụ bản dịch
 ```
 
 `run.py` gọi `claude -p` cho từng đề trong một thư mục tạm ngoài repo. Thư mục đó chỉ có bản sao skill và file đầu vào. Lệnh chỉ nạp cài đặt của thư mục ấy, không nạp MCP, nên skill cá nhân và plugin đã cài trên máy không lẫn vào. Mỗi lượt ghi lại danh sách skill, plugin đã nạp để kiểm. Trợ lý được đọc file, chạy ba script của skill và ghi file nháp vào `/tmp`, không ghi được vào file đầu vào. Mặc định dùng Opus mức medium. Lệnh chạy lại sẽ bỏ qua đề đã có câu trả lời, nên hết hạn mức giữa chừng thì chạy lại đúng lệnh cũ. Kết quả thô nằm trong `evals/results/` (đã có trong `.gitignore`).
@@ -105,6 +106,25 @@ Ba đề `luot-hai-*` thử lượt hai của chế độ viết mới: người
 Tám đề `spoken-*` thử sắc thái lời nói: trợ từ, phạm vi phủ định, mức chắc chắn, lời nhờ, bản chép lời, câu vốn tự nhiên không được sửa.
 
 Bốn đề nhóm chat thử việc đổi giọng theo người nhận. `chat-cung-nhom-khac-vai` đưa sẵn mẫu cho bạn thân, trưởng nhóm lớn tuổi và cả nhóm. `chat-nhom-tra-loi-sep` và `chat-nhom-tra-loi-hai-nguoi` dùng một đoạn chat năm người, trong đó phần lớn tin của người dùng là giọng suồng sã với bạn, chỉ vài tin lễ phép với sếp và chị lớn tuổi hơn. Đọc tay ở các đề này là xem tin gửi người trên có lẫn "tui", "ông", ":v" của giọng bạn bè không.
+
+## Lời dặn tiếng Việt hay tiếng Anh
+
+Câu hỏi đặt ra: viết lời dặn của skill bằng tiếng Anh thì mô hình yếu hơn Opus có làm tốt hơn không. Bản thử dịch toàn bộ `SKILL.md` và `references/` sang tiếng Anh, còn ví dụ trước và sau, cụm cần tìm, câu trích thì để nguyên tiếng Việt. Chạy ngày 22/11/2026 trên bản 2.13.0, bằng `--skill-dir`, mỗi đề ba lượt.
+
+| | Sonnet 5.5, lời dặn tiếng Việt | Sonnet 5.5, tiếng Anh | Sonnet 5, tiếng Việt | Sonnet 5, tiếng Anh |
+|---|---|---|---|---|
+| 63 đề chính | 156/189 | 162/189 | 160/189 | 160/189 |
+| 13 đề để riêng | 26/39 | 29/39 | 24/39 | 24/39 |
+| Đường đọc đúng, đề chính | 157/189 | 154/189 | 156/189 | 161/189 |
+| Điểm `scan.py` trung bình | 3,2 | 2,8 | 3,3 | 2,9 |
+
+Không bật skill, Sonnet 5.5 qua 36/63 đề chính.
+
+Để chấm giọng, Opus đọc mù từng cặp câu trả lời của cùng một đề ở các đề viết, sửa, chat, slide và tóm tắt. Thứ tự hai bản trong cặp đảo theo đề, và Opus không biết bản nào dùng lời dặn tiếng gì. Mỗi cặp, Opus chọn bản đọc như người Việt viết hơn và bản làm đúng lời nhờ hơn, hoặc cho ngang. Trên 402 cặp của hai mô hình, về giọng thì lời dặn tiếng Việt hơn 131 cặp, tiếng Anh hơn 134, ngang 137. Về đúng việc, tiếng Việt hơn 112, tiếng Anh hơn 96, ngang 194.
+
+Không chênh lệch nào vượt sai số (kiểm định dấu, p từ 0,2 trở lên). Bản tiếng Anh có 3 câu trả lời quay sang nói tiếng Anh với người dùng, kiểu "I'll draft the ready-to-use PR description now"; bản tiếng Việt có 1. Cả bốn đều trên Sonnet 5.
+
+Skill vì vậy giữ tiếng Việt. Bản dịch không giúp Sonnet làm tốt hơn, có thêm nó chỉ thêm một bản phải sửa cho khớp. Gemini chưa được thử.
 
 ## Kết quả bản 2.13.0
 

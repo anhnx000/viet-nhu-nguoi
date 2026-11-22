@@ -225,7 +225,7 @@ def run_one(scenario, out, args):
         work = pathlib.Path(temp)
         home = work / (".agents" if args.kieu_codex or args.codex else ".claude") / "skills/viet-nhu-nguoi"
         if not args.khong_skill:
-            shutil.copytree(SKILL, home, ignore=shutil.ignore_patterns("__pycache__"))
+            shutil.copytree(args.skill_dir, home, ignore=shutil.ignore_patterns("__pycache__"))
         prompt = scenario["tin_nhan"]
         if scenario.get("tep"):
             dest = work / pathlib.Path(scenario["tep"]).name
@@ -255,6 +255,8 @@ def run_one(scenario, out, args):
             return f"LỖI quá {limit} giây"
         answer, trace = (parse_codex if args.codex else parse)(proc.stdout)
         trace["skill"] = not args.khong_skill
+        if args.skill_dir != SKILL:
+            trace["skill_dir"] = str(args.skill_dir)
         if args.kieu_codex:
             trace["kieu"] = "codex"
         if args.codex:
@@ -298,10 +300,15 @@ def main():
     parser.add_argument("--khong-skill", action="store_true", help="chạy không có skill, để so")
     parser.add_argument("--kieu-codex", action="store_true", help="nạp skill theo cách của Codex")
     parser.add_argument("--codex", action="store_true", help="chạy thẳng codex exec thay cho claude -p")
+    parser.add_argument("--skill-dir", type=pathlib.Path, default=SKILL,
+                        help="thư mục skill để thử thay cho skills/viet-nhu-nguoi, ví dụ một bản dịch")
     parser.add_argument("--codex-sandbox", default="workspace-write",
                         choices=["read-only", "workspace-write", "danger-full-access"],
                         help="sandbox của Codex (mặc định workspace-write)")
     args = parser.parse_intermixed_args()
+    args.skill_dir = args.skill_dir.resolve()
+    if not (args.skill_dir / "SKILL.md").exists():
+        sys.exit(f"Không thấy SKILL.md trong {args.skill_dir}.")
     if args.khong_skill and (args.kieu_codex or args.trigger):
         sys.exit("--khong-skill không đi cùng --kieu-codex hay --trigger.")
     if args.codex and args.kieu_codex:

@@ -191,7 +191,7 @@ Every release reruns 63 common cases and 13 held-out cases that are never used t
 | Loads when it should | 68/68 runs | 104/104 runs |
 | Loads when it shouldn't | 0/63 runs | 2/83 runs |
 
-Failures, per-case notes and the commands to rerun everything are in [evals/README.md](evals/README.md) (Vietnamese). The checker only counts surface patterns; on AI-rewritten news it still misses more than half.
+The instructions are written in Vietnamese. An English translation of them was run on Sonnet 5 and Sonnet 5.5 and scored no better. Failures, per-case notes and the commands to rerun everything are in [evals/README.md](evals/README.md) (Vietnamese). The checker only counts surface patterns; on AI-rewritten news it still misses more than half.
 
 ## Signs of AI writing
 

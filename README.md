@@ -170,7 +170,7 @@ Mỗi bản chạy lại 63 đề thường gặp và 13 đề để riêng (kh�
 | Tự bật khi nên bật | 68/68 lượt | 104/104 lượt |
 | Bật nhầm | 0/63 lượt | 2/83 lượt |
 
-Đề trượt và câu trả lời của từng đề ghi ở [evals/README.md](evals/README.md), lệnh chạy lại cũng ở đó. Bộ kiểm tra chỉ đếm dấu hiệu bề mặt: với tin tức do AI viết lại, nó vẫn bỏ sót hơn một nửa.
+Skill viết bằng tiếng Việt. Bản dịch lời dặn sang tiếng Anh đã chạy thử trên Sonnet 5 và Sonnet 5.5, không làm tốt hơn. Đề trượt và câu trả lời của từng đề ghi ở [evals/README.md](evals/README.md), lệnh chạy lại cũng ở đó. Bộ kiểm tra chỉ đếm dấu hiệu bề mặt: với tin tức do AI viết lại, nó vẫn bỏ sót hơn một nửa.
 
 ## Dấu hiệu văn AI
 
