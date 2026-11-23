@@ -11,11 +11,11 @@ Human voice for Vietnamese (chống giọng văn AI): let AI draft it and still 
 
 AI drafts slides, emails and reports quickly, and Vietnamese readers spot the result just as quickly. Every deck has "Tổng quan" (*Overview*) and "Thách thức" (*Challenges*), and the email opens with "Trong bối cảnh hiện nay" (*in today's context*) and closes with "Hy vọng thông tin trên hữu ích!" (*Hope this helps!*). Before it goes to a boss or a customer, someone rewrites it by hand.
 
-Viết như người ("write like a person") is a skill, an add-on pack of instructions for Claude Code, Codex, Cursor and other AI assistants. Once installed, slide titles state the conclusion, emails use the right pronouns of address, sentences aren't padded, and your numbers are left alone. Free and open source.
+Viết như người ("write like a person") is a skill, an add-on pack of instructions for Claude Code, Codex, Cursor and other AI assistants. Once installed, slide titles state the conclusion, emails use the right pronouns of address, sentences aren't padded, and your numbers are left alone. Free and open source under Apache 2.0; if you share or build on it, credit the original ([License](#license)).
 
 The skill is written for Vietnamese. It builds on Wikipedia's [Signs of AI writing](https://en.wikipedia.org/wiki/Wikipedia:Signs_of_AI_writing) and [blader/humanizer](https://github.com/blader/humanizer), and English text still gets the structural rules, but there is no English-specific section. The work went into Vietnamese because generic humanizers miss what makes Vietnamese AI text sound off: it reads like English that was translated word by word.
 
-Contents: [Install](#install) · [Usage](#usage) · [Before and after](#before-and-after) · [Benchmark](#vietnamese-humanizer-benchmark) · [Signs of AI writing](#signs-of-ai-writing) · [Pattern lookup and checks](#pattern-lookup-scanner-and-fact-checker)
+Contents: [Install](#install) · [Usage](#usage) · [Before and after](#before-and-after) · [Benchmark](#vietnamese-humanizer-benchmark) · [Signs of AI writing](#signs-of-ai-writing) · [Pattern lookup and checks](#pattern-lookup-scanner-and-fact-checker) · [License](#license)
 
 ## Use cases
 

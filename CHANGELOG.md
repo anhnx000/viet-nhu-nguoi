@@ -5,7 +5,7 @@
 Đổi giấy phép từ MIT sang Apache License 2.0, bắt ghi nguồn bản gốc.
 
 - `LICENSE` là Apache License 2.0. File `NOTICE` mới ghi tên dự án, người giữ bản quyền và link bản gốc. Ai chia sẻ lại, fork, dịch, sửa hay đưa skill, danh mục, bộ kiểm tra, bộ đề vào sản phẩm khác thì phải giữ `NOTICE` và ghi rõ file đã sửa (điều 4 của giấy phép). MIT chỉ bắt giữ dòng bản quyền trong bản chép, không bắt ghi nguồn ở chỗ người dùng thấy.
-- `LICENSE` và `NOTICE` chép thêm vào `skills/viet-nhu-nguoi/`, vì cài bằng `install.sh` hay `npx` chỉ lấy thư mục này. Test kiểm hai bản giống nhau. `SKILL.md` và `.claude-plugin/plugin.json` ghi `Apache-2.0`, README hai thứ tiếng có mục Giấy phép, huy hiệu đổi theo. Ảnh banner bỏ chữ "MIT", chỉ còn "Miễn phí", vì "Miễn phí, Apache 2.0" tràn khỏi ảnh.
+- `LICENSE` và `NOTICE` chép thêm vào `skills/viet-nhu-nguoi/`, vì cài bằng `install.sh` hay `npx` chỉ lấy thư mục này. Test kiểm hai bản giống nhau. `SKILL.md` và `.claude-plugin/plugin.json` ghi `Apache-2.0`, README hai thứ tiếng có mục Giấy phép, đoạn mở đầu nói rõ Apache 2.0 và việc ghi nguồn, huy hiệu đổi theo. Mô tả repo trên GitHub bỏ chữ "MIT", thay bằng Apache-2.0. Ảnh banner bỏ chữ "MIT", chỉ còn "Miễn phí", vì "Miễn phí, Apache 2.0" tràn khỏi ảnh.
 - Các bản tới 2.14.0 vẫn là MIT với ai đã lấy chúng. Phần chuyển thể từ blader/humanizer giữ giấy phép MIT của nó trong `LICENSE-humanizer`.
 - Gỡ `.github/dependabot.yml`, từ nay nâng phiên bản GitHub Actions bằng tay. Dependabot từng có một PR được merge (#1) trước khi gộp lịch sử ngày 16/11/2026. Nhánh `main` giờ chỉ còn commit của anhnx000, API contributors cũng chỉ trả về một người; bot còn hiện ở thanh bên trang repo là do GitHub chưa tính lại danh sách.
 

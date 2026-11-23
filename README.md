@@ -1,6 +1,6 @@
 # Viết như người · Vietnamese Humanizer
 
-Skill cho Claude Code, Codex, Cursor: nhờ AI viết tiếng Việt mà đọc lên vẫn ra giọng mình. Bỏ câu sáo, xưng hô đúng vai, số liệu đưa sao để vậy. Bản 2.13.0 đã chạy 76 đề của bộ Vietnamese Humanizer Benchmark trên cả Claude lẫn Codex, [kết quả ở dưới](#vietnamese-humanizer-benchmark).
+Skill cho Claude Code, Codex, Cursor: nhờ AI viết tiếng Việt mà đọc lên vẫn ra giọng mình. Bỏ câu sáo, xưng hô đúng vai, số liệu đưa sao để vậy. Bản 2.13.0 đã chạy 76 đề của bộ Vietnamese Humanizer Benchmark trên cả Claude lẫn Codex, [kết quả ở dưới](#vietnamese-humanizer-benchmark). Miễn phí, mã nguồn mở theo Apache 2.0: chia sẻ lại hay làm bản khác thì ghi nguồn bản gốc, [xem mục Giấy phép](#giấy-phép).
 
 [![test](https://github.com/anhnx000/viet-nhu-nguoi/actions/workflows/test.yml/badge.svg)](https://github.com/anhnx000/viet-nhu-nguoi/actions/workflows/test.yml)
 [![License: Apache 2.0](https://img.shields.io/badge/license-Apache%202.0-blue.svg)](LICENSE)
