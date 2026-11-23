@@ -1,6 +1,6 @@
 # Danh mục dấu hiệu văn AI trong tiếng Việt
 
-Mục lục: A Dàn dựng thay vì nói thẳng (1-6); B Nhịp theo luật (7-12); C Thổi phồng và mượn uy tín (13-19); D Trình bày theo luật (20-22); E Đồ thừa của chat và bản nháp (sửa ngay khi gặp) (23-27); F Viết sai người đọc (28-29); G Riêng tiếng Việt (30-38); H Slide và tài liệu nhiều trang (39-44); I Cả bài: dấu hiệu còn lại sau khi từng câu đã sạch (45-55); K Văn dịch sâu: câu nghĩ bằng tiếng Anh, viết bằng chữ Việt (56-62); L Tin nhắn thân mật: icon và ngữ điệu lạc giọng người gửi (63-65); cuối file là phần Giữ lại.
+Mục lục: A Dàn dựng thay vì nói thẳng (1-6); B Nhịp theo luật (7-12); C Thổi phồng và mượn uy tín (13-19); D Trình bày theo luật (20-22); E Đồ thừa của chat và bản nháp (sửa ngay khi gặp) (23-27); F Viết sai người đọc (28-29); G Riêng tiếng Việt (30-38); H Slide và tài liệu nhiều trang (39-44); I Cả bài: dấu hiệu còn lại sau khi từng câu đã sạch (45-55); K Văn dịch sâu: câu nghĩ bằng tiếng Anh, viết bằng chữ Việt (56-62); L Tin nhắn: lạc giọng người gửi, lặp câu qua các tin (63-66); cuối file là phần Giữ lại.
 
 Sắp từ mạnh đến yếu. Ở nhóm A và E, chỉ sửa câu sáo hoặc thừa trong ngữ cảnh. Nhóm G (mục 30-38) dành riêng cho tiếng Việt. Nhóm H (mục 39-44) dành cho slide, lời thuyết trình và tài liệu nhiều trang, hướng dẫn đầy đủ ở `slides.md`. Nhóm K (mục 56-62) là văn dịch ở tầng sâu hơn nhóm G: từng chữ đều là tiếng Việt nhưng câu vẫn theo khuôn tiếng Anh. Văn tiếng Việt nào cũng nên rà nhóm này. Nhóm I (mục 45-55) là những dấu hiệu chỉ thấy khi nhìn cả bài, thường vẫn còn sau khi đã sửa sạch từng câu. Bài dài và bài đăng mạng xã hội thì đọc nhóm này trước. Mục ghi *yếu* chỉ sửa khi đi cùng dấu hiệu khác trong cùng đoạn. Vài khối "Sau" có chi tiết cụ thể mà khối "Trước" không có (tên người, con số): đó là chi tiết giả định người viết đã cung cấp, còn khi sửa bài thật thì không tự thêm.
 
@@ -597,9 +597,9 @@ Nhóm G bắt các cụm dịch dễ thấy. Nhóm này bắt thứ khó thấy 
 
 <a id="nhom-l"></a>
 
-## L. Tin nhắn thân mật: icon và ngữ điệu lạc giọng người gửi
+## L. Tin nhắn: lạc giọng người gửi, lặp câu qua các tin
 
-Tin nhắn trả lời bạn bè, đồng nghiệp thân thì người nhận biết rõ giọng người gửi, nên chỉ cần lệch một chút là lộ. Icon và ngữ điệu lấy từ tối đa 30 lượt trò chuyện gần nhất, riêng tiếng cười và cách đùa thì đổi theo tình huống. Cách làm nằm ở `references/chat.md`. Chạy `scan.py --chat` để bộ kiểm tra kiểm thêm phần định dạng.
+Tin nhắn trả lời bạn bè, đồng nghiệp thân thì người nhận biết rõ giọng người gửi, nên chỉ cần lệch một chút là lộ. Người nhận còn đọc cả chuỗi tin, nên tin nào cũng kết bằng cùng một câu nhờ thì cũng lộ. Icon và ngữ điệu lấy từ tối đa 30 lượt trò chuyện gần nhất, riêng tiếng cười và cách đùa thì đổi theo tình huống. Cách làm nằm ở `references/chat.md`. Chạy `scan.py --chat` để bộ kiểm tra kiểm thêm phần định dạng.
 
 ### 63. Tin nhắn viết như email
 **Dấu hiệu:** tin trả lời mở bằng "Cảm ơn bạn đã góp ý", "Chào bạn"; câu đủ chủ vị, viết hoa, chấm cuối; có gạch đầu dòng, in đậm; hứa "sẽ cân nhắc trong thời gian tới"; dài gấp mấy lần tin người kia gửi.
@@ -624,6 +624,22 @@ Tin nhắn trả lời bạn bè, đồng nghiệp thân thì người nhận bi
 **Sau:**
 > ủa vậy hả, chiều dìa sớm nha, hông kịp thì nhắn tui
 **Sửa:** Theo đúng vùng trong mẫu của người dùng, mỗi tin một hai dấu hiệu, chủ yếu ở trợ từ cuối câu. Không có mẫu thì không viết giọng miền. Mẫu vốn lẫn nhiều vùng thì giữ như mẫu.
+
+### 66. Tin sau chép câu nhờ, câu báo của tin trước
+**Dấu hiệu:** mấy tin liền nhau của cùng một người kết bằng cùng một câu nhờ ("chị xem giúp em nhé", "anh duyệt giúp em nha"), cùng lời cảm ơn, cùng câu báo tình trạng, dù người nhận đã biết và đang làm. Hay gặp khi mỗi tin được soạn riêng theo mẫu giọng mà không đọc lại những tin vừa gửi.
+**Trước:**
+> em gửi chị báo cáo tháng 10 rồi ạ, chị xem giúp em nhé
+>
+> em sửa bảng chi phí theo ý chị rồi ạ, số liệu khớp rồi, chị xem giúp em nhé
+>
+> em cảm ơn chị đã duyệt ạ. em gửi thêm phụ lục B, số liệu khớp rồi, chị xem giúp em nhé
+**Sau:**
+> em gửi chị báo cáo tháng 10 rồi ạ, chị xem giúp em nhé
+>
+> bảng chi phí e sửa theo ý c r ạ
+>
+> cảm ơn c ạ. còn phụ lục B nữa, c xem nốt giúp e nhé
+**Sửa:** Đọc lại ba tin gần nhất của chính người gửi trước khi viết tin mới. Câu nhờ, lời cảm ơn, câu báo nào đã có thì không dùng lại, đổi một hai chữ vẫn là lặp. Chỉ báo phần mới; phải nhờ lại thì nói cách khác, ngắn hơn. Tin trên Teams thì gõ tắt chừng một nửa số chữ có dạng tắt quen như khối Sau, cách làm ở `references/chat.md`.
 
 ## Giữ lại
 

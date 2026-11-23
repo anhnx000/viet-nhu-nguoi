@@ -979,6 +979,98 @@
   }
  },
  {
+  "id": "chat-teams-khong-lap",
+  "che_do": "chat",
+  "tep": "evals/inputs/chat-teams-mr.md",
+  "tin_nhan": "Mình là Thư. Rep giúp mình tin cuối của anh Quân trong đoạn chat Teams này: {tep}\nÝ là: cảm ơn anh đã merge, em đã mở MR !13 đưa release/2.4 về dev, không có code mới, pipeline xanh, nhờ anh duyệt.",
+  "mong_doi": "Tin ngắn kiểu chat Teams: cảm ơn, MR !13 đưa release/2.4 về dev, không có code mới, nhờ duyệt hoặc merge. Ba tin gần nhất của Thư đều kết bằng \"anh duyệt giúp em nha\", nên tin này không lặp câu đó, kể cả đổi \"nha\" thành \"nhé\" hay \"em\" thành \"e\"; nhờ bằng cách khác, ngắn hơn. Gõ tắt chừng một nửa số chữ có dạng tắt quen (a, e, r, ko...), không tắt hết, giữ nguyên số MR và tên nhánh.",
+  "kiem": {
+   "must_keep": [
+    "!13",
+    "2.4",
+    "dev",
+    "code"
+   ],
+   "must_not": [
+    "duyệt giúp em nha",
+    "duyệt giúp e nha",
+    "duyệt giúp em nhé",
+    "duyệt giúp e nhé",
+    "chạy lại cũng xanh"
+   ],
+   "must_word": [
+    [
+     "ko",
+     "k",
+     "đc",
+     "dc",
+     "r",
+     "vs",
+     "j",
+     "a",
+     "e",
+     "c",
+     "mn",
+     "cx",
+     "trc",
+     "bh",
+     "hnay"
+    ]
+   ],
+   "max_words": 60,
+   "must_read": [
+    "chat.md"
+   ],
+   "max_refs": 3
+  }
+ },
+ {
+  "id": "chat-teams-khach",
+  "che_do": "chat",
+  "tep": "evals/inputs/chat-teams-khach.md",
+  "tin_nhan": "Mình là Tùng. Rep giúp mình tin cuối của anh Vũ bên khách hàng trên Teams: {tep}\nÝ là: nâng cấp tối thứ Bảy này, 22h đến 2h sáng Chủ nhật, app dừng trong khoảng đó, xong sẽ báo qua email, nếu kéo dài sẽ gọi trực tiếp.",
+  "mong_doi": "Tin gửi khách hàng ngoài công ty nên viết đủ chữ, lễ phép như các tin trước của Tùng (Dạ, em, ạ), không gõ tắt kiểu chat nội bộ dù là Teams. Đủ tối thứ Bảy, 22h đến 2h sáng Chủ nhật, app dừng, báo qua email, kéo dài thì gọi.",
+  "kiem": {
+   "must_keep": [
+    [
+     "thứ Bảy",
+     "thứ 7",
+     "T7"
+    ],
+    [
+     "22h",
+     "22 giờ",
+     "10h tối",
+     "10 giờ tối"
+    ],
+    [
+     "2h sáng",
+     "2 giờ sáng"
+    ],
+    "mail",
+    "gọi"
+   ],
+   "must_not": [
+    "ko",
+    "k",
+    "đc",
+    "dc",
+    "r",
+    "vs",
+    "j",
+    "a",
+    "e",
+    "mn",
+    "cx"
+   ],
+   "max_words": 90,
+   "must_read": [
+    "chat.md"
+   ],
+   "max_refs": 3
+  }
+ },
+ {
   "id": "sua-tieu-de-readme",
   "che_do": "sửa",
   "tep": "evals/inputs/readme-tieu-de.md",

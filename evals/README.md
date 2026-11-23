@@ -1,11 +1,11 @@
 # Bộ đề thử skill
 
-`scenarios.json` có 63 tình huống thường gặp, dùng khi chỉnh skill. `held-out.json` có 13 đề để riêng, chỉ chạy trên bản đã chốt. Mỗi đề có `tin_nhan` là lời người dùng, `tep` (nếu có) là file đầu vào, `mong_doi` là điều người đọc cần thấy trong câu trả lời, `kiem` là phần script đếm được. `trigger.json` có 41 lời nhờ để thử skill có tự bật đúng lúc không, `trigger-held-out.json` có 32 lời nhờ để riêng cho phần này. File trong `inputs/` là văn viết ra để thử, tên người và số liệu đều bịa.
+`scenarios.json` có 65 tình huống thường gặp, dùng khi chỉnh skill. `held-out.json` có 14 đề để riêng, chỉ chạy trên bản đã chốt. Mỗi đề có `tin_nhan` là lời người dùng, `tep` (nếu có) là file đầu vào, `mong_doi` là điều người đọc cần thấy trong câu trả lời, `kiem` là phần script đếm được. `trigger.json` có 41 lời nhờ để thử skill có tự bật đúng lúc không, `trigger-held-out.json` có 32 lời nhờ để riêng cho phần này. File trong `inputs/` là văn viết ra để thử, tên người và số liệu đều bịa.
 
 ## Chạy
 
 ```bash
-python3 -I evals/run.py evals/results/<bản> --runs 3            # 63 đề, mỗi đề 3 lượt
+python3 -I evals/run.py evals/results/<bản> --runs 3            # 65 đề, mỗi đề 3 lượt
 python3 -I evals/run.py evals/results/<bản>-held-out --held-out --runs 3
 python3 -I evals/run.py evals/results/<bản>-khong-skill --khong-skill   # cùng đề, không bật skill
 python3 -I evals/run.py evals/results/trigger-<bản> --trigger --runs 3   # skill có tự bật đúng lúc không
@@ -38,7 +38,7 @@ Chỉ dùng lỗi ở `scenarios.json` để sửa skill. Đề trong `held-out.
 
 ## Thêm đề
 
-Thêm một mục vào `scenarios.json` và một đáp án mẫu. Điều kiện trong `kiem` nên lỏng vừa đủ: câu trả lời đúng mà viết khác đi một chút thì vẫn phải qua. Đừng đặt `must_not` cho cụm mà trợ lý có thể trích lại trong ghi chú ("mình đã bỏ câu ..."), khi đó dùng `max_overlap`. `lead_keep` dùng cho tin có việc nhờ: dữ kiện phải nằm trong 25 chữ đầu. `max_added_numbers` không dùng cho đề có nguồn tiếng Anh, vì "March 1, 2027" và "1/3/2027" bị tính là hai số khác nhau.
+Thêm một mục vào `scenarios.json` và một đáp án mẫu. Điều kiện trong `kiem` nên lỏng vừa đủ: câu trả lời đúng mà viết khác đi một chút thì vẫn phải qua. Đừng đặt `must_not` cho cụm mà trợ lý có thể trích lại trong ghi chú ("mình đã bỏ câu ..."), khi đó dùng `max_overlap`. `lead_keep` dùng cho tin có việc nhờ: dữ kiện phải nằm trong 25 chữ đầu. `must_word` tìm chữ đứng riêng, dùng cho chữ tắt một hai ký tự như "a", "r", "ko", vì `must_keep` sẽ khớp nhầm "a" trong "anh". `max_added_numbers` không dùng cho đề có nguồn tiếng Anh, vì "March 1, 2027" và "1/3/2027" bị tính là hai số khác nhau.
 
 ## Skill có tự bật đúng lúc không
 
@@ -125,6 +125,19 @@ Không bật skill, Sonnet 5.5 qua 36/63 đề chính và 2/13 đề để riên
 Không chênh lệch nào vượt sai số (kiểm định dấu, p từ 0,2 trở lên). Bản tiếng Anh có 3 câu trả lời quay sang nói tiếng Anh với người dùng, kiểu "I'll draft the ready-to-use PR description now"; bản tiếng Việt có 1. Cả bốn đều trên Sonnet 5.
 
 Skill vì vậy giữ tiếng Việt. Bản dịch không giúp Sonnet làm tốt hơn, có thêm nó chỉ thêm một bản phải sửa cho khớp. Gemini chưa được thử.
+
+## Kết quả bản 2.14.0
+
+Bản này thêm hai quy tắc cho tin nhắn trên Teams: gõ tắt chừng một nửa số chữ có dạng tắt quen, và đọc lại ba tin gần nhất của người gửi để không chép lại câu nhờ cũ. Ba đề mới dùng đoạn chat Teams bịa. Chạy bằng Opus mức medium, ba lượt mỗi đề, so với bản 2.13.0 bằng `--skill-dir`.
+
+| | Bản 2.13.0 | Bản 2.14.0 |
+|---|---|---|
+| `chat-teams-khong-lap` | 0/3 | 3/3 |
+| `chat-teams-khach` | 3/3 | 3/3 |
+| `chat-teams-bao-tien-do` (để riêng) | 0/3 | 3/3 |
+| 14 đề chat cũ, một lượt | | 14/14 |
+
+Ở `chat-teams-khong-lap`, ba tin trước của người gửi đều kết bằng "anh duyệt giúp em nha". Bản cũ lượt nào cũng kết đúng câu đó và viết đủ chữ. Bản mới đổi câu nhờ ("a duyệt hộ em với ạ", "anh approve cho e với ạ", "A xem giúp e với ạ") và gõ tắt xen chữ đủ, có một lượt tắt gần hết. `chat-teams-khach` là tin gửi khách hàng ngoài công ty, cả hai bản đều viết đủ chữ. Đề để riêng chạy sau khi chốt bản. Bản cũ trượt chỉ vì không gõ tắt: lời dặn không nhắc tới file tiến độ nên không lượt nào chép câu "em cập nhật file tiến độ rồi". Đọc tay 14 đề chat cũ thì tin gửi sếp, chị PM vẫn viết đủ chữ, có "Dạ", "ạ", phần gửi bạn vẫn giữ chữ tắt theo mẫu. Lỗi chưa sửa: tin gửi khách có lượt tự thêm ngày "28/11" cho "thứ Bảy này".
 
 ## Kết quả bản 2.13.0
 

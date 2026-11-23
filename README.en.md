@@ -1,6 +1,6 @@
 # Viết như người · Vietnamese Humanizer
 
-Human voice for Vietnamese (chống giọng văn AI): let AI draft it and still sound like you. Ships the Vietnamese Humanizer Benchmark, 76 cases run on Claude and GPT, [results below](#vietnamese-humanizer-benchmark).
+Human voice for Vietnamese (chống giọng văn AI): let AI draft it and still sound like you. Ships the Vietnamese Humanizer Benchmark; release 2.13.0 ran its 76 cases on Claude and GPT, [results below](#vietnamese-humanizer-benchmark).
 
 [![test](https://github.com/anhnx000/viet-nhu-nguoi/actions/workflows/test.yml/badge.svg)](https://github.com/anhnx000/viet-nhu-nguoi/actions/workflows/test.yml)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
@@ -184,8 +184,8 @@ Flags are grouped, each with its line number and the matched phrase. The score m
 
 The repo ships a benchmark for AI assistants writing Vietnamese. It checks two things: whether the output reads like a Vietnamese person wrote it, and whether the requester's names, numbers, dates and negations survive. It is rerun whenever the skill changes, and it also runs with the skill off, to show what the model does on its own.
 
-- 63 common cases: 21 edits, 19 new drafts, 14 chat replies in the sender's voice, 5 reviews, plus a summary, a slide deck, a plain question and one case that must come back word for word.
-- 13 held-out cases that are never used to tune the skill, to catch overfitting to the main set.
+- 65 common cases: 21 edits, 19 new drafts, 16 chat replies in the sender's voice, 5 reviews, plus a summary, a slide deck, a plain question and one case that must come back word for word.
+- 14 held-out cases that are never used to tune the skill, to catch overfitting to the main set.
 - 73 prompts that test whether the skill loads on its own when it should, including code, factual and math questions where it must stay out.
 - Input files written for the benchmark, with made-up names and numbers. Every case has a reference answer, and that answer must pass all of the case's checks.
 
@@ -200,12 +200,12 @@ Each case runs through `claude -p` or `codex exec` in a temp folder that holds o
 | Claude Sonnet 5.5, no skill | 1 | 36/63 | 2/13 |
 | Claude Opus 5.5, no skill | 1 | 33/63 | 2/13 |
 
-Loading: Claude loaded the skill in 68/68 runs where it should and in none of 63 where it shouldn't; Codex in 104/104 and 2/83. The Opus no-skill row reuses answers from the 2.11.0 run, regraded with the current grader; the prompts and input files have not changed since.
+Loading: Claude loaded the skill in 68/68 runs where it should and in none of 63 where it shouldn't; Codex in 104/104 and 2/83. The Opus no-skill row reuses answers from the 2.11.0 run, regraded with the current grader; the prompts and input files have not changed since. The table covers the 2.13.0 case set; the three Teams chat cases added in 2.14.0 are reported in [evals/README.md](evals/README.md) (in Vietnamese).
 
 To rerun it (needs Claude Code or the Codex CLI):
 
 ```bash
-python3 -I evals/run.py evals/results/try --runs 3              # 63 cases, 3 runs each
+python3 -I evals/run.py evals/results/try --runs 3              # 65 cases, 3 runs each
 python3 -I evals/run.py evals/results/try-base --khong-skill    # same cases, skill off
 python3 -I evals/check.py evals/results/try                     # grade
 ```
@@ -242,7 +242,7 @@ Some patterns only show when counted across the whole text, even after each sent
 
 Slides have their own group: titles that are only labels, titles that count points ("3 trụ cột", *3 pillars*), exactly three bullets on every slide, speaker notes that read like a memo. Guide: [slides.md](skills/viet-nhu-nguoi/references/slides.md) (in Vietnamese).
 
-For chat replies, icons, laugh style and abbreviations come from up to the last 30 turns the skill can read, and the voice changes with each recipient. Particles such as "à", "nhé", "ạ" must keep what the speaker was doing: asking, requesting or promising. The scanner flags drafts that pile three or four slang words into one message or mix Northern, Central and Southern markers ("giời ơi", "rứa", "nghen") in one sentence. Guides: [chat.md](skills/viet-nhu-nguoi/references/chat.md) and [spoken.md](skills/viet-nhu-nguoi/references/spoken.md) (in Vietnamese).
+For chat replies, icons, laugh style and abbreviations come from up to the last 30 turns the skill can read, and the voice changes with each recipient. Particles such as "à", "nhé", "ạ" must keep what the speaker was doing: asking, requesting or promising. On Teams, about half of the words that have a common short form get abbreviated ("ko", "đc", "r", "a", "e"); messages to customers stay unabbreviated. Before writing, the skill rereads your last three messages so the new one does not repeat the same request, as when every message ends in "anh duyệt giúp em nha" (*please approve it for me*). The scanner flags drafts that pile three or four slang words into one message or mix Northern, Central and Southern markers ("giời ơi", "rứa", "nghen") in one sentence. Guides: [chat.md](skills/viet-nhu-nguoi/references/chat.md) and [spoken.md](skills/viet-nhu-nguoi/references/spoken.md) (in Vietnamese).
 
 The remaining groups apply to English as well: false contrasts, one-line punchlines, lists forced to three items, em dashes, inflated significance, vague authorities, decorative bold and emoji, chatbot filler.
 

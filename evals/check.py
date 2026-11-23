@@ -8,7 +8,7 @@ kèm khoảng tin cậy 95% và số đề qua cả mọi lượt.
 Cách chạy từng đề và phần phải đọc tay nằm ở evals/README.md.
 
 Script chỉ kiểm những thứ đếm được: số câu hỏi có dấu hỏi, số chỗ trống trong ngoặc vuông, dữ kiện còn đủ,
-việc chính có nằm ở đầu tin không, độ dài, điểm scan.py, tỉ lệ chữ giữ nguyên so với bài gốc, số liệu tự thêm ngoài lời dặn. Giọng văn có tự nhiên không thì vẫn phải đọc.
+chữ phải có đứng riêng (chữ viết tắt như "ko", "a"), việc chính có nằm ở đầu tin không, độ dài, điểm scan.py, tỉ lệ chữ giữ nguyên so với bài gốc, số liệu tự thêm ngoài lời dặn. Giọng văn có tự nhiên không thì vẫn phải đọc.
 Nếu cạnh câu trả lời có <id>.json (vết công cụ do run.py ghi), script chấm riêng phần đường đọc: trợ lý đã mở
 file hướng dẫn nào (must_read, must_not_read, max_refs; không đề nào được đọc trọn patterns.md hay sources.md trừ khi
 đề ghi allow_read). Đường đọc chỉ để xem skill dẫn đường đúng không, không quyết định đề qua hay trượt.
@@ -178,6 +178,10 @@ def check(scenario, reply, root=ROOT):
         need(any(o.casefold() in lead for o in options), f"\"{options[0]}\" không nằm trong {LEAD_WORDS} chữ đầu")
     for bad in rules.get("must_not", []):
         need(not contains(reply, bad), f"còn \"{bad}\"")
+    # Chữ phải đứng riêng: chữ tắt "a", "r" không được khớp nhầm trong "anh", "rồi" như must_keep.
+    for item in rules.get("must_word", []):
+        options = item if isinstance(item, list) else [item]
+        need(any(contains(reply.casefold(), o.casefold()) for o in options), f"thiếu chữ \"{options[0]}\" đứng riêng")
     if "min_refs" in rules:
         refs = len({n for a, b in REF.findall(reply) for n in re.findall(r"\d+", a or b)})
         need(refs >= rules["min_refs"], f"dẫn {refs} mục trong danh mục, cần từ {rules['min_refs']}")

@@ -1,5 +1,16 @@
 # Changelog
 
+## 2.14.0 (2026-11-24)
+
+Tin nhắn trên Teams: gõ tắt như dân văn phòng, không chép lại câu nhờ của mấy tin vừa gửi.
+
+- `references/chat.md`: trước khi viết, đọc lại ba tin gần nhất của chính người gửi, tính cả tin trợ lý vừa soạn hộ. Câu nhờ, lời cảm ơn, đuôi tin hay câu báo tình trạng đã có ở đó thì tin mới không dùng lại, đổi một hai chữ vẫn tính là lặp. Lỗi lấy từ một cuộc chat Teams thật của chủ repo (nội dung không đưa vào repo): bốn tin soạn hộ liền nhau đều kết bằng "anh duyệt giúp em nha", ba tin có "pipeline xanh". Mỗi tin soạn riêng, chép đúng câu nhờ trong mẫu giọng. `scan.py --chat` chưa bắt kiểu lặp này vì chỉ chấm từng tin.
+- Tin trên Teams gõ tắt chừng một nửa số chữ có dạng tắt quen (ko, đc, r, vs, j, trc, bh, hnay, cx, mn, và a, e, c khi xưng hô), chọn chỗ ngẫu nhiên, cùng một chữ có chỗ tắt chỗ không. Không tắt tên, số, giờ, link, mã MR, thuật ngữ; nhắn người trên vẫn giữ "dạ", "ạ"; không thêm teencode mà mẫu không có. Tin gửi khách hàng, đối tác, thông báo chung, hoặc người dùng dặn viết đủ thì không tắt. Người dùng đã chỉ rõ cuộc cần trả lời thì đọc cuộc đó, cuộc khác vẫn hỏi trước.
+- Danh mục thêm mục 66, "Tin sau chép câu nhờ, câu báo của tin trước". Nhóm L đổi tên thành "Tin nhắn: lạc giọng người gửi, lặp câu qua các tin".
+- Bộ đề thêm hai đề chính và một đề để riêng, đều là đoạn chat Teams bịa: `chat-teams-khong-lap` (ba tin trước của người gửi đều kết bằng "anh duyệt giúp em nha"), `chat-teams-khach` (nhắn khách hàng ngoài công ty, không được gõ tắt), `chat-teams-bao-tien-do` (để riêng). `check.py` có thêm `must_word`: chữ phải đứng riêng, để "a", "r" không khớp nhầm trong "anh", "rồi".
+- Kết quả, Opus mức medium, ba lượt mỗi đề. `chat-teams-khong-lap`: bản 2.13.0 trượt 3/3, lượt nào cũng kết bằng "anh duyệt giúp em nha" và viết đủ chữ; bản mới qua 3/3, câu nhờ thành "a duyệt hộ em với ạ", "anh approve cho e với ạ", "A xem giúp e với ạ". `chat-teams-khach`: cả hai bản qua 3/3, tin gửi khách viết đủ chữ. Đề để riêng chạy sau khi chốt bản: bản cũ trượt 3/3 vì không gõ tắt (không lượt nào chép câu cũ, vì lời dặn không nhắc tới file tiến độ), bản mới qua 3/3. 14 đề chat cũ chạy lại một lượt đều qua, tin gửi sếp và chị PM không lẫn chữ tắt. Các lượt này hết khoảng 3 USD theo giá API mà `claude -p` báo.
+- Lỗi còn thấy: một lượt gõ tắt gần hết các chữ có dạng tắt thay vì chừng một nửa; tin gửi khách ở cả hai bản có lượt tự thêm ngày "28/11" cho "thứ Bảy này", người dùng không đưa ngày này.
+
 ## 2.13.0 (2026-11-22)
 
 Chạy bộ đề trên Codex thật, sửa ba lỗi chỉ Codex mắc.

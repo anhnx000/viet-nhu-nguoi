@@ -159,7 +159,7 @@ class Evals(unittest.TestCase):
     def test_scenarios_are_well_formed(self):
         known = {"min_words", "max_words", "min_questions", "max_questions", "max_placeholders", "max_bold",
                  "must_keep", "must_not", "min_refs", "min_overlap", "max_overlap", "scan_max",
-                 "max_added_numbers", "lead_keep", "must_read", "must_not_read", "allow_read", "max_refs"}
+                 "max_added_numbers", "lead_keep", "must_word", "must_read", "must_not_read", "allow_read", "max_refs"}
         self.assertGreaterEqual(len(self.scenarios), 16)
         for sid, sc in self.scenarios.items():
             self.assertTrue(sc["tin_nhan"] and sc["mong_doi"], sid)
@@ -229,6 +229,23 @@ class Evals(unittest.TestCase):
         self.assertEqual(self.check.check(sc, "Mùng 4 tau đi được, không ở lại đêm"), [])
         self.assertTrue(self.check.check(sc, "Mùng 4 ông đi không"))
         self.assertTrue(self.check.check(sc, "mùng 4 nha =))"))
+
+    def test_short_forms_must_stand_alone(self):
+        sc = {"kiem": {"must_word": [["ko", "r", "a", "e"]]}}
+        for reply in ("e đổi r a", "Ko có code mới", "merge xong r"):
+            self.assertEqual(self.check.check(sc, reply), [], reply)
+        for reply in ("em đổi rồi anh", "không có code mới", "kéo release về dev"):
+            self.assertTrue(self.check.check(sc, reply), reply)
+
+    def test_teams_reply_does_not_repeat_the_last_request(self):
+        sc = self.scenarios["chat-teams-khong-lap"]
+        self.assertEqual(self.check.check(sc, "tks a, e mở !13 kéo release/2.4 về dev r, ko có code mới, a xem giúp e với"), [])
+        # lặp câu nhờ của ba tin trước, chỉ đổi "em" thành "e"
+        self.assertTrue(self.check.check(sc, "cảm ơn a, e mở !13 kéo release/2.4 về dev, ko có code mới, a duyệt giúp e nha"))
+        # không lặp nhưng viết đủ chữ như văn bản
+        self.assertTrue(self.check.check(sc, "Em cảm ơn anh. Em mở MR !13 đưa release/2.4 về dev, không có code mới, anh merge giúp em."))
+        customer = self.scenarios["chat-teams-khach"]
+        self.assertTrue(self.check.check(customer, "dạ a, tối thứ Bảy 22h-2h sáng CN bên e nâng cấp, xong e báo qua mail, lâu thì e gọi a"))
 
     def test_alternative_wording_and_reference_styles(self):
         chat = self.scenarios["chat-tra-loi-pm"]

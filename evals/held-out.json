@@ -55,6 +55,61 @@
   }
  },
  {
+  "id": "chat-teams-bao-tien-do",
+  "che_do": "chat",
+  "tep": "evals/inputs/chat-teams-tien-do.md",
+  "tin_nhan": "Mình là Nam. Rep chị Hà giúp mình trên Teams, đoạn chat đây: {tep}\nÝ là: API thanh toán code xong rồi, đang chờ đối tác gửi khóa test, có khóa thì test 2 ngày, dự kiến xong thứ Sáu.",
+  "mong_doi": "Tin trả lời chị Hà: API thanh toán đã code xong, chờ đối tác gửi khóa test, có khóa thì test 2 ngày, dự kiến thứ Sáu. Ba tin trước của Nam đều có \"em cập nhật file tiến độ rồi\" và \"chị xem giúp em nhé\"; lời dặn không nhắc file tiến độ, nên tin này không chép hai câu đó. Vẫn \"Dạ\", \"ạ\" với chị Hà, gõ tắt chừng một nửa số chữ có dạng tắt quen.",
+  "kiem": {
+   "must_keep": [
+    [
+     "thứ Sáu",
+     "thứ 6",
+     "T6"
+    ],
+    [
+     "2 ngày",
+     "hai ngày"
+    ],
+    [
+     "khóa test",
+     "khoá test",
+     "key test"
+    ],
+    "đối tác"
+   ],
+   "must_not": [
+    "file tiến độ",
+    "xem giúp em nhé",
+    "xem giúp e nhé"
+   ],
+   "must_word": [
+    [
+     "ko",
+     "k",
+     "đc",
+     "dc",
+     "r",
+     "vs",
+     "j",
+     "a",
+     "e",
+     "c",
+     "mn",
+     "cx",
+     "trc",
+     "bh",
+     "hnay"
+    ]
+   ],
+   "max_words": 70,
+   "must_read": [
+    "chat.md"
+   ],
+   "max_refs": 3
+  }
+ },
+ {
   "id": "thong-bao-app-tu-tieng-anh",
   "che_do": "viết mới",
   "tep": "evals/inputs/release-notes-app-en.md",

@@ -2,6 +2,15 @@
 
 English notes for each GitHub release. The release workflow publishes the section that matches the version in `SKILL.md`. The full development log, in Vietnamese, is in [CHANGELOG.md](CHANGELOG.md).
 
+## 2.14.0
+
+Teams chat replies: abbreviations the way Vietnamese office workers type, and no repeated requests.
+
+- Before writing a chat reply, the skill rereads the sender's last three messages, including ones it drafted itself, and does not reuse a request, thank-you, sign-off or status line from them, even with a word or two changed. The bug came from a real Teams thread where four drafted messages in a row ended in "anh duyệt giúp em nha" (*please approve it for me*).
+- On Teams, about half of the words that have a common short form get abbreviated (ko, đc, r, a, e...), at random spots. Names, numbers, links, MR numbers and technical terms stay as they are; messages to customers, partners or the whole company are not abbreviated.
+- New catalog item 66, and three new Teams chat cases (two main, one held-out). `evals/check.py` gains `must_word` for whole-word matches of one- or two-letter abbreviations.
+- Opus, medium effort, 3 runs each: the repeated-request case went from 0/3 on 2.13.0 to 3/3; the customer case stayed at 3/3 with no abbreviations; the held-out case went from 0/3 to 3/3. The 14 existing chat cases still pass.
+
 ## 2.13.0
 
 Evals on real Codex, and fixes for three mistakes only Codex made.
