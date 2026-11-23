@@ -1,5 +1,14 @@
 # Changelog
 
+## 2.16.0 (2026-11-24)
+
+Quay về MIT, link bản gốc nằm ngay trong dòng bản quyền.
+
+- Apache 2.0 bắt kèm `NOTICE` và ghi rõ file đã sửa, nặng hơn mức cần. Nay `LICENSE` là MIT, dòng bản quyền ghi `Copyright (c) 2026 anhnx000 - https://github.com/anhnx000/viet-nhu-nguoi`. MIT bắt mọi bản chép giữ dòng này, nên bản fork nào cũng mang link bản gốc, người dùng lại không phải làm gì thêm.
+- Gỡ `NOTICE` ở thư mục gốc và trong `skills/viet-nhu-nguoi/`. `LICENSE` vẫn chép vào thư mục skill, test kiểm hai bản giống nhau và có link.
+- `SKILL.md`, `.claude-plugin/plugin.json`, huy hiệu, đoạn mở đầu và mục Giấy phép của README hai thứ tiếng, mô tả repo trên GitHub đổi về MIT. Ảnh banner trở lại chip "Miễn phí, MIT".
+- Ai đã lấy bản 2.15.0 thì bản đó vẫn theo Apache 2.0.
+
 ## 2.15.0 (2026-11-24)
 
 Đổi giấy phép từ MIT sang Apache License 2.0, bắt ghi nguồn bản gốc.

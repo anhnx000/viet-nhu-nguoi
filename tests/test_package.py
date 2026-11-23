@@ -98,14 +98,13 @@ class Package(unittest.TestCase):
             else:
                 self.assertIn(anchor, skill, repo)
 
-    def test_license_and_notice_ship_with_the_skill(self):
-        for name in ("LICENSE", "NOTICE"):
-            self.assertEqual(read(name), (SKILL.parent / name).read_text(encoding="utf-8"), name)
-        self.assertIn("Apache License", read("LICENSE"))
-        self.assertIn("https://github.com/anhnx000/viet-nhu-nguoi", read("NOTICE"))
+    def test_license_ships_with_the_skill_and_links_the_original(self):
+        self.assertEqual(read("LICENSE"), (SKILL.parent / "LICENSE").read_text(encoding="utf-8"))
+        self.assertIn("MIT License", read("LICENSE"))
+        self.assertIn("Copyright (c) 2026 anhnx000 - https://github.com/anhnx000/viet-nhu-nguoi", read("LICENSE"))
         plugin = json.loads(read(".claude-plugin/plugin.json"))
-        self.assertEqual(plugin["license"], "Apache-2.0")
-        self.assertIn("\nlicense: Apache-2.0\n", SKILL.read_text(encoding="utf-8"))
+        self.assertEqual(plugin["license"], "MIT")
+        self.assertIn("\nlicense: MIT\n", SKILL.read_text(encoding="utf-8"))
 
     def test_patterns_numbered_without_gaps(self):
         nums = [int(n) for n in re.findall(r"^### (\d+)\.", PATTERNS.read_text(encoding="utf-8"), re.M)]

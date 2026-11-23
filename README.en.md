@@ -3,7 +3,7 @@
 Human voice for Vietnamese (chống giọng văn AI): let AI draft it and still sound like you. Ships the Vietnamese Humanizer Benchmark; release 2.13.0 ran its 76 cases on Claude and GPT, [results below](#vietnamese-humanizer-benchmark).
 
 [![test](https://github.com/anhnx000/viet-nhu-nguoi/actions/workflows/test.yml/badge.svg)](https://github.com/anhnx000/viet-nhu-nguoi/actions/workflows/test.yml)
-[![License: Apache 2.0](https://img.shields.io/badge/license-Apache%202.0-blue.svg)](LICENSE)
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
 [Tiếng Việt](README.md) · **English**
 
@@ -11,7 +11,7 @@ Human voice for Vietnamese (chống giọng văn AI): let AI draft it and still 
 
 AI drafts slides, emails and reports quickly, and Vietnamese readers spot the result just as quickly. Every deck has "Tổng quan" (*Overview*) and "Thách thức" (*Challenges*), and the email opens with "Trong bối cảnh hiện nay" (*in today's context*) and closes with "Hy vọng thông tin trên hữu ích!" (*Hope this helps!*). Before it goes to a boss or a customer, someone rewrites it by hand.
 
-Viết như người ("write like a person") is a skill, an add-on pack of instructions for Claude Code, Codex, Cursor and other AI assistants. Once installed, slide titles state the conclusion, emails use the right pronouns of address, sentences aren't padded, and your numbers are left alone. Free and open source under Apache 2.0; if you share or build on it, credit the original ([License](#license)).
+Viết như người ("write like a person") is a skill, an add-on pack of instructions for Claude Code, Codex, Cursor and other AI assistants. Once installed, slide titles state the conclusion, emails use the right pronouns of address, sentences aren't padded, and your numbers are left alone. Free and open source under MIT; copies keep the credit line ([License](#license)).
 
 The skill is written for Vietnamese. It builds on Wikipedia's [Signs of AI writing](https://en.wikipedia.org/wiki/Wikipedia:Signs_of_AI_writing) and [blader/humanizer](https://github.com/blader/humanizer), and English text still gets the structural rules, but there is no English-specific section. The work went into Vietnamese because generic humanizers miss what makes Vietnamese AI text sound off: it reads like English that was translated word by word.
 
@@ -325,7 +325,7 @@ skills/viet-nhu-nguoi/
 ├── scripts/scan.py          scanner with a 0-100 score
 ├── scripts/check_facts.py   compares numbers, dates, links, code between two versions
 ├── scripts/slides.py        reads slide text and notes from .pptx
-├── LICENSE, NOTICE          license and attribution notice, copied from the repo root
+├── LICENSE                  MIT license with a link to the original, copied from the repo root
 └── LICENSE-humanizer        MIT license of blader/humanizer
 assets/                      banner, link preview image (social.png), example images, a terminal shot of the scanner, the script that redraws them (make_images.py)
 examples/                    before/after text and .pptx decks
@@ -347,4 +347,4 @@ If you find a Vietnamese AI phrasing the skill misses, or a natural sentence it 
 
 ## License
 
-[Apache License 2.0](LICENSE), with a [NOTICE](NOTICE) file. If you redistribute, fork, translate or modify the skill, or include the skill, its pattern catalog, checker or eval suite in another product, keep the NOTICE file, credit the original at https://github.com/anhnx000/viet-nhu-nguoi and state which files you changed. Installing the skill for your own use needs nothing extra, and text you write with it needs no credit. Releases up to 2.14.0 were published under MIT and remain available under MIT to anyone who got them.
+[MIT](LICENSE). You may use, modify, redistribute and sell it. Copies and modified versions only need to keep the LICENSE file, whose copyright line links to the original at https://github.com/anhnx000/viet-nhu-nguoi. Text you write with the skill needs no credit. Release 2.15.0 alone was published under Apache 2.0.

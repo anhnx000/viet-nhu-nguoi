@@ -1,9 +1,9 @@
 # Viết như người · Vietnamese Humanizer
 
-Skill cho Claude Code, Codex, Cursor: nhờ AI viết tiếng Việt mà đọc lên vẫn ra giọng mình. Bỏ câu sáo, xưng hô đúng vai, số liệu đưa sao để vậy. Bản 2.13.0 đã chạy 76 đề của bộ Vietnamese Humanizer Benchmark trên cả Claude lẫn Codex, [kết quả ở dưới](#vietnamese-humanizer-benchmark). Miễn phí, mã nguồn mở theo Apache 2.0: chia sẻ lại hay làm bản khác thì ghi nguồn bản gốc, [xem mục Giấy phép](#giấy-phép).
+Skill cho Claude Code, Codex, Cursor: nhờ AI viết tiếng Việt mà đọc lên vẫn ra giọng mình. Bỏ câu sáo, xưng hô đúng vai, số liệu đưa sao để vậy. Bản 2.13.0 đã chạy 76 đề của bộ Vietnamese Humanizer Benchmark trên cả Claude lẫn Codex, [kết quả ở dưới](#vietnamese-humanizer-benchmark). Miễn phí, mã nguồn mở theo MIT, bản chép lại giữ nguyên dòng ghi nguồn, [xem mục Giấy phép](#giấy-phép).
 
 [![test](https://github.com/anhnx000/viet-nhu-nguoi/actions/workflows/test.yml/badge.svg)](https://github.com/anhnx000/viet-nhu-nguoi/actions/workflows/test.yml)
-[![License: Apache 2.0](https://img.shields.io/badge/license-Apache%202.0-blue.svg)](LICENSE)
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
 **Tiếng Việt** · [English](README.en.md)
 
@@ -288,7 +288,7 @@ skills/viet-nhu-nguoi/
 ├── scripts/scan.py          bộ kiểm tra, thang điểm 0-100
 ├── scripts/check_facts.py   so dữ kiện giữa hai bản
 ├── scripts/slides.py        đọc chữ và ghi chú trong .pptx
-├── LICENSE, NOTICE          giấy phép và lời ghi nguồn, chép từ thư mục gốc
+├── LICENSE                  giấy phép MIT kèm link bản gốc, chép từ thư mục gốc
 └── LICENSE-humanizer        giấy phép MIT của blader/humanizer
 assets/                      ảnh README, script vẽ lại (make_images.py)
 examples/                    văn mẫu và deck .pptx trước/sau
@@ -311,4 +311,4 @@ tests/                       python3 -m unittest discover -s tests
 
 ## Giấy phép
 
-[Apache License 2.0](LICENSE), kèm file [NOTICE](NOTICE). Chia sẻ lại, fork, dịch, sửa, hay đưa skill, danh mục dấu hiệu, bộ kiểm tra hoặc bộ đề vào sản phẩm khác thì phải giữ file NOTICE, ghi nguồn là bản gốc https://github.com/anhnx000/viet-nhu-nguoi và ghi rõ file nào đã sửa. Cài skill để tự dùng thì không phải làm gì thêm, bài và tin nhắn soạn ra khi dùng skill cũng không cần ghi nguồn. Các bản tới 2.14.0 phát hành theo MIT, ai đã lấy các bản đó vẫn dùng được theo MIT.
+[MIT](LICENSE). Dùng, sửa, chia sẻ lại, đưa vào sản phẩm thương mại đều được. Bản chép lại hay bản sửa chỉ cần giữ file LICENSE, trong đó dòng bản quyền có link bản gốc https://github.com/anhnx000/viet-nhu-nguoi. Bài và tin nhắn soạn ra khi dùng skill không cần ghi nguồn. Riêng bản 2.15.0 phát hành theo Apache 2.0.

@@ -400,7 +400,7 @@ EXCERPT = ("Trong bối cảnh hiện nay, việc ứng dụng AI không chỉ l
 
 def selling_points():
     return ["Bỏ giọng văn dịch", "Bộ kiểm tra, thang điểm 0-100", "Không bịa số liệu",
-            "Slide, email, bài đăng, tin nhắn", "Miễn phí"]
+            "Slide, email, bài đăng, tin nhắn", "Miễn phí, MIT"]
 
 
 def banner():

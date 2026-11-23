@@ -2,6 +2,14 @@
 
 English notes for each GitHub release. The release workflow publishes the section that matches the version in `SKILL.md`. The full development log, in Vietnamese, is in [CHANGELOG.md](CHANGELOG.md).
 
+## 2.16.0
+
+Back to MIT, with the credit link in the copyright line.
+
+- `LICENSE` is MIT again. Its copyright line reads `Copyright (c) 2026 anhnx000 - https://github.com/anhnx000/viet-nhu-nguoi`, and MIT requires every copy to keep it, so forks carry a link to the original without the `NOTICE` and change-marking duties of Apache 2.0.
+- `NOTICE` is removed. `LICENSE` still ships inside `skills/viet-nhu-nguoi/`.
+- Release 2.15.0 remains available under Apache 2.0.
+
 ## 2.15.0
 
 License change: MIT to Apache License 2.0, with attribution required.
