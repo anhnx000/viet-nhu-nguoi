@@ -3,7 +3,7 @@
 Skill cho Claude Code, Codex, Cursor: nhờ AI viết tiếng Việt mà đọc lên vẫn ra giọng mình. Bỏ câu sáo, xưng hô đúng vai, số liệu đưa sao để vậy. Bản 2.13.0 đã chạy 76 đề của bộ Vietnamese Humanizer Benchmark trên cả Claude lẫn Codex, [kết quả ở dưới](#vietnamese-humanizer-benchmark).
 
 [![test](https://github.com/anhnx000/viet-nhu-nguoi/actions/workflows/test.yml/badge.svg)](https://github.com/anhnx000/viet-nhu-nguoi/actions/workflows/test.yml)
-[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+[![License: Apache 2.0](https://img.shields.io/badge/license-Apache%202.0-blue.svg)](LICENSE)
 
 **Tiếng Việt** · [English](README.en.md)
 
@@ -287,7 +287,9 @@ skills/viet-nhu-nguoi/
 ├── scripts/patterns.py      tra ví dụ theo số mục hoặc nhóm
 ├── scripts/scan.py          bộ kiểm tra, thang điểm 0-100
 ├── scripts/check_facts.py   so dữ kiện giữa hai bản
-└── scripts/slides.py        đọc chữ và ghi chú trong .pptx
+├── scripts/slides.py        đọc chữ và ghi chú trong .pptx
+├── LICENSE, NOTICE          giấy phép và lời ghi nguồn, chép từ thư mục gốc
+└── LICENSE-humanizer        giấy phép MIT của blader/humanizer
 assets/                      ảnh README, script vẽ lại (make_images.py)
 examples/                    văn mẫu và deck .pptx trước/sau
 evals/                       bộ đề thử hành vi của skill
@@ -306,3 +308,7 @@ tests/                       python3 -m unittest discover -s tests
 - Đủ nguồn ở [sources.md](skills/viet-nhu-nguoi/references/sources.md).
 
 </details>
+
+## Giấy phép
+
+[Apache License 2.0](LICENSE), kèm file [NOTICE](NOTICE). Chia sẻ lại, fork, dịch, sửa, hay đưa skill, danh mục dấu hiệu, bộ kiểm tra hoặc bộ đề vào sản phẩm khác thì phải giữ file NOTICE, ghi nguồn là bản gốc https://github.com/anhnx000/viet-nhu-nguoi và ghi rõ file nào đã sửa. Cài skill để tự dùng thì không phải làm gì thêm, bài và tin nhắn soạn ra khi dùng skill cũng không cần ghi nguồn. Các bản tới 2.14.0 phát hành theo MIT, ai đã lấy các bản đó vẫn dùng được theo MIT.

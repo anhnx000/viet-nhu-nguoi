@@ -2,6 +2,15 @@
 
 English notes for each GitHub release. The release workflow publishes the section that matches the version in `SKILL.md`. The full development log, in Vietnamese, is in [CHANGELOG.md](CHANGELOG.md).
 
+## 2.15.0
+
+License change: MIT to Apache License 2.0, with attribution required.
+
+- The repo is now under the Apache License 2.0 with a `NOTICE` file. Redistributions and derivative works (forks, translations, modified copies, products that include the skill, its catalog, checker or eval suite) must keep `NOTICE`, which credits the original project at https://github.com/anhnx000/viet-nhu-nguoi, and state which files were changed.
+- `LICENSE` and `NOTICE` are also shipped inside `skills/viet-nhu-nguoi/`, since some installs copy only that folder.
+- Releases up to 2.14.0 remain available under MIT. The parts adapted from blader/humanizer keep their MIT license in `LICENSE-humanizer`.
+- Dependabot is no longer configured.
+
 ## 2.14.0
 
 Teams chat replies: abbreviations the way Vietnamese office workers type, and no repeated requests.

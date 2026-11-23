@@ -3,7 +3,7 @@
 Human voice for Vietnamese (chống giọng văn AI): let AI draft it and still sound like you. Ships the Vietnamese Humanizer Benchmark; release 2.13.0 ran its 76 cases on Claude and GPT, [results below](#vietnamese-humanizer-benchmark).
 
 [![test](https://github.com/anhnx000/viet-nhu-nguoi/actions/workflows/test.yml/badge.svg)](https://github.com/anhnx000/viet-nhu-nguoi/actions/workflows/test.yml)
-[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+[![License: Apache 2.0](https://img.shields.io/badge/license-Apache%202.0-blue.svg)](LICENSE)
 
 [Tiếng Việt](README.md) · **English**
 
@@ -325,6 +325,7 @@ skills/viet-nhu-nguoi/
 ├── scripts/scan.py          scanner with a 0-100 score
 ├── scripts/check_facts.py   compares numbers, dates, links, code between two versions
 ├── scripts/slides.py        reads slide text and notes from .pptx
+├── LICENSE, NOTICE          license and attribution notice, copied from the repo root
 └── LICENSE-humanizer        MIT license of blader/humanizer
 assets/                      banner, link preview image (social.png), example images, a terminal shot of the scanner, the script that redraws them (make_images.py)
 examples/                    before/after text and .pptx decks
@@ -344,4 +345,6 @@ If you find a Vietnamese AI phrasing the skill misses, or a natural sentence it 
 - The slide guidance borrows ideas, rewritten in our own words, from [carnot-tech/jinba-consulting-pptx-skill](https://github.com/carnot-tech/jinba-consulting-pptx-skill) (MIT), [zarazhangrui/frontend-slides](https://github.com/zarazhangrui/frontend-slides) (MIT) and the `doc-coauthoring` skill in [anthropics/skills](https://github.com/anthropics/skills) (Apache 2.0).
 - [references/sources.md](skills/viet-nhu-nguoi/references/sources.md) (in Vietnamese) lists every source: articles, books and research on Vietnamese, research on detector reliability, style guides and other skills. It marks which ones the skill builds on directly.
 
-MIT licensed.
+## License
+
+[Apache License 2.0](LICENSE), with a [NOTICE](NOTICE) file. If you redistribute, fork, translate or modify the skill, or include the skill, its pattern catalog, checker or eval suite in another product, keep the NOTICE file, credit the original at https://github.com/anhnx000/viet-nhu-nguoi and state which files you changed. Installing the skill for your own use needs nothing extra, and text you write with it needs no credit. Releases up to 2.14.0 were published under MIT and remain available under MIT to anyone who got them.
