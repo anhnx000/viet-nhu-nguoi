@@ -1,11 +1,11 @@
 # Bộ đề thử skill
 
-`scenarios.json` có 65 tình huống thường gặp, dùng khi chỉnh skill. `held-out.json` có 14 đề để riêng, chỉ chạy trên bản đã chốt. Mỗi đề có `tin_nhan` là lời người dùng, `tep` (nếu có) là file đầu vào, `mong_doi` là điều người đọc cần thấy trong câu trả lời, `kiem` là phần script đếm được. `trigger.json` có 41 lời nhờ để thử skill có tự bật đúng lúc không, `trigger-held-out.json` có 32 lời nhờ để riêng cho phần này. File trong `inputs/` là văn viết ra để thử, tên người và số liệu đều bịa.
+`scenarios.json` có 68 tình huống thường gặp, dùng khi chỉnh skill. `held-out.json` có 14 đề để riêng, chỉ chạy trên bản đã chốt. Mỗi đề có `tin_nhan` là lời người dùng, `tep` (nếu có) là file đầu vào, `mong_doi` là điều người đọc cần thấy trong câu trả lời, `kiem` là phần script đếm được. `trigger.json` có 41 lời nhờ để thử skill có tự bật đúng lúc không, `trigger-held-out.json` có 32 lời nhờ để riêng cho phần này. File trong `inputs/` là văn viết ra để thử, tên người và số liệu đều bịa.
 
 ## Chạy
 
 ```bash
-python3 -I evals/run.py evals/results/<bản> --runs 3            # 65 đề, mỗi đề 3 lượt
+python3 -I evals/run.py evals/results/<bản> --runs 3            # 68 đề, mỗi đề 3 lượt
 python3 -I evals/run.py evals/results/<bản>-held-out --held-out --runs 3
 python3 -I evals/run.py evals/results/<bản>-khong-skill --khong-skill   # cùng đề, không bật skill
 python3 -I evals/run.py evals/results/trigger-<bản> --trigger --runs 3   # skill có tự bật đúng lúc không
@@ -125,6 +125,19 @@ Không bật skill, Sonnet 5.5 qua 36/63 đề chính và 2/13 đề để riên
 Không chênh lệch nào vượt sai số (kiểm định dấu, p từ 0,2 trở lên). Bản tiếng Anh có 3 câu trả lời quay sang nói tiếng Anh với người dùng, kiểu "I'll draft the ready-to-use PR description now"; bản tiếng Việt có 1. Cả bốn đều trên Sonnet 5.
 
 Skill vì vậy giữ tiếng Việt. Bản dịch không giúp Sonnet làm tốt hơn, có thêm nó chỉ thêm một bản phải sửa cho khớp. Gemini chưa được thử.
+
+## Kết quả bản 2.17.0
+
+Bản này học thêm từ mattpocock/skills. Ba ý được thử: soi bài theo hai phần tách riêng là đúng lời dặn và giọng văn (`code-review`), email hỏi người khác thì mỗi câu một ý, việc quyết định hỏi trước (`to-questionnaire`), và mô tả PR nói rõ thay đổi không lùi lại được (`pr`). Theo `writing-for-agents`, mỗi ý có đề trước, chạy bản 2.16.0 trước khi viết quy tắc. Opus mức medium, ba lượt mỗi đề.
+
+| | Bản 2.16.0 | Bản 2.17.0 |
+|---|---|---|
+| `soi-ban-ai-theo-loi-dan` | 3/3 | |
+| `viet-email-hoi-nha-cung-cap` | 3/3 | |
+| `mo-ta-pr-xoa-cot` | 0/3 | 3/3 |
+| `mo-ta-pr` | | 3/3 |
+
+Hai đề đầu bản cũ đã qua cả ba lượt: bản soi tự tách mục "sai hoặc thiếu so với lời dặn" (phòng 302 bị đổi, số 30% tự thêm, mất lời nhờ báo nhóm kế toán) lên trước lỗi giọng, email tự đánh số bốn câu hỏi. Thêm quy tắc cho hai việc này chỉ tốn chữ, nên skill không đổi, hai đề giữ lại làm chốt chặn. Ở `mo-ta-pr-xoa-cot`, bản cũ có đủ số test trước/sau và lỗi API v1 nhưng không lượt nào nói migration xóa cột thì revert không lấy lại được dữ liệu. Bản mới cả ba lượt nói rõ và chỉ cách lùi là khôi phục từ backup. `mo-ta-pr` (thêm retry, lùi lại được) không bị thêm câu cảnh báo nào.
 
 ## Kết quả bản 2.14.0
 

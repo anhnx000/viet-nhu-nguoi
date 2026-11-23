@@ -6,6 +6,6 @@ Bài đăng dưới tên người dùng (trang cá nhân, LinkedIn, blog), bài 
 
 Đọc lại từng vế của bài xưng “mình”, “tôi”. Kết quả “về tới nhà” chưa cho biết họ về bằng gì hay thấy thế nào. Giữ chuyện, lời thoại, cảm nghĩ và động cơ có trong nguồn. Dữ kiện ít thì viết ngắn. Kết ở sự việc cuối, chỉ rút bài học khi tác giả đã nói hoặc nhờ rút ra. Với hai file, dùng `python3 -I scripts/check_facts.py --brief <lời-dặn> <bài>` để soát.
 
-Email gửi khách giữ cách xưng hô của người gửi. Báo cáo tiến độ ghi mỗi việc một dòng, dùng động từ chỉ việc đã làm. Giữ cách gọi của nhóm. Để nhãn thường hoặc bỏ nhãn nếu các dòng đã rõ. Trong mô tả PR, viết thẳng phần sẽ dán vào PR, giữ link và thuật ngữ của nhóm. Dùng một đoạn hoặc vài gạch. Tách phần còn thiếu nếu người dùng có nhắc. Văn bản trang trọng giữ đúng thể thức, chỗ thiếu ngày ký hay người ký thì để người gửi điền.
+Email gửi khách giữ cách xưng hô của người gửi. Báo cáo tiến độ ghi mỗi việc một dòng, dùng động từ chỉ việc đã làm. Giữ cách gọi của nhóm. Để nhãn thường hoặc bỏ nhãn nếu các dòng đã rõ. Trong mô tả PR, viết thẳng phần sẽ dán vào PR, giữ link và thuật ngữ của nhóm. Dùng một đoạn hoặc vài gạch. Tách phần còn thiếu nếu người dùng có nhắc. Thay đổi mà revert không đưa về như cũ (migration xóa cột, xóa hay đổi dữ liệu đã lưu) thì thêm một câu nói rõ không lùi lại được và vì sao. Văn bản trang trọng giữ đúng thể thức, chỗ thiếu ngày ký hay người ký thì để người gửi điền.
 
 Sau khi đã có bản thảo dài hoặc bài đăng mạng xã hội, [rà nhịp và đoạn kết](long-form.md).

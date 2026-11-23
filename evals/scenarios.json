@@ -21,6 +21,33 @@
   }
  },
  {
+  "id": "viet-email-hoi-nha-cung-cap",
+  "che_do": "viết mới",
+  "tin_nhan": "Viết email gửi anh Phong bên nhà cung cấp nội thất, hỏi về đơn 200 bộ bàn ghế: giao được trước 15/12 không, giá báo đã gồm VAT và công lắp đặt chưa, giao trễ thì bên đó bồi thường thế nào, cần đặt cọc bao nhiêu. Bên mình cần chốt nhà cung cấp trong tuần này. Xưng em, ký Minh Anh, phòng Hành chính.",
+  "mong_doi": "Mỗi câu hỏi một ý, có dấu hỏi riêng, câu ảnh hưởng tới việc chốt (giao trước 15/12) đặt trước. Nói rõ cần trả lời trong tuần. Không tự thêm số.",
+  "kiem": {
+   "must_keep": [
+    "200",
+    "15/12",
+    "VAT",
+    [
+     "đặt cọc",
+     "cọc"
+    ]
+   ],
+   "min_questions": 4,
+   "max_questions": 4,
+   "max_placeholders": 0,
+   "max_added_numbers": 0,
+   "scan_max": 9,
+   "max_words": 170,
+   "must_read": [
+    "draft.md"
+   ],
+   "max_refs": 3
+  }
+ },
+ {
   "id": "viet-tin-cat-nuoc",
   "che_do": "viết mới",
   "tin_nhan": "Viết giúp mình tin nhắn gửi nhóm Zalo cư dân tòa B: cắt nước từ 9h đến 15h thứ Năm 17/12 để sửa bể ngầm, mọi người nhớ trữ nước, có gì gọi ban quản lý 0900 000 000. Mình là trưởng ban quản lý, xưng tôi cũng được.",
@@ -205,6 +232,30 @@
     "bài này do AI viết",
     "chắc chắn do AI"
    ],
+   "must_read": [
+    "review.md"
+   ],
+   "max_refs": 3
+  }
+ },
+ {
+  "id": "soi-ban-ai-theo-loi-dan",
+  "che_do": "soi lỗi",
+  "tep": "evals/inputs/soi-email-theo-loi-dan.md",
+  "tin_nhan": "Mình nhờ AI viết email theo lời dặn ở đầu file. Soi giúp bản AI viết xem còn chỗ nào chưa ổn trước khi gửi, chưa cần sửa: {tep}",
+  "mong_doi": "Báo riêng hai phần: đúng lời dặn (phòng 302 bị đổi thành phòng họp lớn tầng 5, con số 30% tự thêm, thiếu lời nhờ báo lại nhóm kế toán) và giọng văn (dẫn số mục). Phần sai ý không bị chìm giữa các lỗi giọng. Không viết lại cả email.",
+  "kiem": {
+   "must_keep": [
+    "302",
+    "30%",
+    [
+     "báo lại",
+     "nhờ chị báo",
+     "nhóm kế toán"
+    ]
+   ],
+   "min_refs": 2,
+   "max_overlap": 0.6,
    "must_read": [
     "review.md"
    ],
@@ -501,6 +552,43 @@
    "max_bold": 2,
    "max_words": 130,
    "max_added_numbers": 0,
+   "must_read": [
+    "draft.md"
+   ],
+   "max_refs": 3
+  }
+ },
+ {
+  "id": "mo-ta-pr-xoa-cot",
+  "che_do": "viết mới",
+  "tin_nhan": "Viết mô tả PR, tiếng Việt: gộp hai cột first_name và last_name của bảng customers thành full_name. Migration 0042 chép dữ liệu sang cột mới rồi xóa hai cột cũ. Trước khi sửa, 3 test trong tests/test_customer.py đỏ; giờ chạy cả bộ 128 test đều xanh. API v1 vẫn trả first_name sẽ lỗi, mình đã báo nhóm mobile.",
+  "mong_doi": "Chỉ trả mô tả PR. Có kết quả test trước/sau. Nói rõ migration xóa cột là thay đổi khó lùi lại (cần sao lưu hoặc không rollback được bằng cách revert), và API v1 sẽ lỗi. Không tự thêm số.",
+  "kiem": {
+   "must_keep": [
+    "0042",
+    "128",
+    "first_name",
+    "mobile",
+    [
+     "không lùi",
+     "khó lùi",
+     "không hoàn tác",
+     "không thể hoàn tác",
+     "không khôi phục",
+     "không rollback",
+     "không thể rollback",
+     "khó rollback",
+     "không revert",
+     "một chiều",
+     "sao lưu",
+     "backup"
+    ]
+   ],
+   "must_not": [
+    "Dưới đây là"
+   ],
+   "max_added_numbers": 0,
+   "max_words": 170,
    "must_read": [
     "draft.md"
    ],

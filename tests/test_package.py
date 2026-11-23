@@ -18,7 +18,7 @@ PATTERNS = ROOT / "skills/viet-nhu-nguoi/references/patterns.md"
 # Mỗi repo trong bảng "Cách tổ chức skill trong các repo nhiều sao" (references/sources.md) ứng với một chỗ
 # áp dụng: câu trong hướng dẫn mà trợ lý mở được hoặc ID đề thử. Thêm repo vào bảng thì phải thêm dòng ở đây.
 LESSONS = {
-    "mattpocock/skills": "hai đến bốn câu gộp một lượt",
+    "mattpocock/skills": ("hai đến bốn câu gộp một lượt", "không lùi lại được", "eval:mo-ta-pr-xoa-cot"),
     "obra/superpowers": "Sau khi ghi, đọc lại phần vừa sửa trên đĩa",
     "multica-ai/andrej-karpathy-skills": "chép nguyên những câu nằm ngoài phần được nhờ sửa",
     "anthropics/skills": "eval:sua-tin-gian-giu-nguyen",
@@ -92,11 +92,12 @@ class Package(unittest.TestCase):
         self.assertEqual(set(visited), guides | {SKILL})
         skill = "\n".join(visited.values())
         ids = {s["id"] for s in json.loads(read("evals/scenarios.json"))}
-        for repo, anchor in LESSONS.items():
-            if anchor.startswith("eval:"):
-                self.assertIn(anchor[5:], ids, repo)
-            else:
-                self.assertIn(anchor, skill, repo)
+        for repo, anchors in LESSONS.items():
+            for anchor in (anchors if isinstance(anchors, tuple) else (anchors,)):
+                if anchor.startswith("eval:"):
+                    self.assertIn(anchor[5:], ids, repo)
+                else:
+                    self.assertIn(anchor, skill, repo)
 
     def test_license_ships_with_the_skill_and_links_the_original(self):
         self.assertEqual(read("LICENSE"), (SKILL.parent / "LICENSE").read_text(encoding="utf-8"))

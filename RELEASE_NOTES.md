@@ -2,6 +2,14 @@
 
 English notes for each GitHub release. The release workflow publishes the section that matches the version in `SKILL.md`. The full development log, in Vietnamese, is in [CHANGELOG.md](CHANGELOG.md).
 
+## 2.17.0
+
+More lessons from mattpocock/skills, kept only where they measurably helped.
+
+- PR descriptions now state when a change cannot be undone by a revert, such as a migration that drops columns or rewrites stored data (from the `pr` skill). New case `mo-ta-pr-xoa-cot`: 0/3 before, 3/3 after; the existing PR case stays 3/3 with no added warning.
+- Two other ideas were tested first and needed no rule: reviewing a draft against its brief separately from its voice (`code-review`), and one question per line in emails that ask for answers (`to-questionnaire`). Release 2.16.0 already passed both new cases 3/3, so they stay as regression cases. The suite now has 68 cases.
+- `AGENTS.md` adopts the `writing-for-agents` habit: write the case first, add a rule only if the current skill fails it, and phrase rules as what to do.
+
 ## 2.16.0
 
 Back to MIT, with the credit link in the copyright line.

@@ -1,5 +1,14 @@
 # Changelog
 
+## 2.17.0 (2026-11-24)
+
+Học thêm từ mattpocock/skills, chỉ giữ quy tắc đo được là có ích.
+
+- Mô tả PR: thay đổi mà revert không đưa về như cũ (migration xóa cột, xóa hay đổi dữ liệu đã lưu) thì thêm một câu nói rõ không lùi lại được và vì sao (`references/draft.md`, theo skill `pr`). Đề mới `mo-ta-pr-xoa-cot` từ 0/3 lên 3/3; `mo-ta-pr` vẫn 3/3, không bị thêm cảnh báo.
+- Thử thêm hai ý nữa: soi bài theo hai phần tách riêng là đúng lời dặn và giọng văn (`code-review`), email hỏi người khác thì mỗi câu một ý (`to-questionnaire`). Bản 2.16.0 đã qua 3/3 ở cả hai đề mới (`soi-ban-ai-theo-loi-dan`, `viet-email-hoi-nha-cung-cap`), nên không thêm quy tắc, chỉ giữ đề làm chốt chặn. Bộ đề lên 68.
+- `AGENTS.md` thêm cách làm lấy từ `writing-for-agents`: quy tắc mới phải có đề, chạy bản hiện tại trước, đã qua thì không thêm chữ; viết điều cần làm thay cho lời cấm.
+- Dòng mattpocock/skills trong bảng top-20 của `references/sources.md` ghi thêm hai bài học. `LESSONS` trong test nhận nhiều chỗ áp dụng cho một repo.
+
 ## 2.16.0 (2026-11-24)
 
 Quay về MIT, link bản gốc nằm ngay trong dòng bản quyền.
