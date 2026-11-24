@@ -1,5 +1,14 @@
 # Changelog
 
+## 2.19.0 (2026-11-24)
+
+Tìm thêm dấu hiệu văn AI tiếng Việt: một quy tắc mới, bảy đề chốt chặn.
+
+- Cách tìm: cho Opus và GPT viết 24 đề bài thường gặp mà không bật skill (văn nghị luận, lời chúc cưới, caption bán hàng, review quán, email xin nghỉ, thư xin việc, truyện ngắn...), đọc cả 48 bài, rồi tìm thêm bài báo, bài nghiên cứu mới. Mỗi dấu hiệu tìm được có đề thử, chạy bản hiện tại trước.
+- Thư gửi một người mà chưa biết gọi anh hay chị thì chọn một, dùng suốt thư, rồi dặn người dùng đổi trong một câu ngoài thư (`references/draft.md`). Tiếng Anh chỉ có "you", nên mô hình rải "anh/chị" khắp thư: email xin nghỉ gửi sếp có bốn chỗ "anh/chị", người dùng quên sửa một chỗ là sếp thấy ngay. Đề mới `viet-email-nghi-phep` từ 0/3 lên 3/3. Bảy đề viết mới khác vẫn qua.
+- Bảy dấu hiệu khác skill đã xử lý được, nên chỉ giữ đề làm chốt chặn, không thêm chữ. Đó là kỷ niệm điển hình team nào cũng có ("những deadline căng thẳng, những buổi brainstorm đến tối muộn và cả những bữa trưa rôm rả"), truyện trộn tên gọi miền Nam với cảnh, món miền Bắc, thư soạn sẵn còn "anh/chị", câu trả lời khách dịch từ khuôn tiếng Anh, giọng tư vấn tâm lý trong tin xin lỗi, lời chúc nhắc tới thiệp, quà không có, và sáo ngữ tuyển dụng. Mỗi dấu hiệu một đề, đều qua 3/3. Bộ đề lên 78.
+- `references/sources.md` thêm bài Tuổi Trẻ về lời chúc chép từ ChatGPT, bài "Tiếng Việt sáo ngữ" trên VnExpress và nghiên cứu StoryScope về truyện AI, đều ở mức đọc thêm.
+
 ## 2.18.0 (2026-11-24)
 
 Tìm dấu hiệu từ cách Turnitin kiểm tra văn AI, thêm một mục vào danh mục.

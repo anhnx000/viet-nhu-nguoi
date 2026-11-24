@@ -2,6 +2,14 @@
 
 English notes for each GitHub release. The release workflow publishes the section that matches the version in `SKILL.md`. The full development log, in Vietnamese, is in [CHANGELOG.md](CHANGELOG.md).
 
+## 2.19.0
+
+A search for more signs of AI writing in Vietnamese: one new rule, seven regression cases.
+
+- Opus and GPT each wrote 24 everyday pieces without the skill (school essays, wedding toasts, shop captions, restaurant reviews, leave requests, cover letters, short stories). All 48 were read, alongside new Vietnamese articles and research. Every candidate sign got a case that ran on the current skill first.
+- Letters to one person now pick "anh" or "chị" and use it throughout, with one line outside the letter telling the user to switch if needed. English only has "you", so models scattered "anh/chị" through the letter, four times in a leave request to a boss. New case `viet-email-nghi-phep`: 0/3 before, 3/3 after; seven other drafting cases still pass.
+- Seven other signs were already handled, so they stay as regression cases with no new rule: stock memories any team shares, stories that mix southern names with northern food and scenery, "anh/chị" left in a ready-made email, customer replies built on translated English templates, therapy-speak in apologies, greetings that mention a card or gift the sender doesn't have, and recruitment clichés. The suite now has 78 cases.
+
 ## 2.18.0
 
 A new sign drawn from how Turnitin checks for AI writing.

@@ -48,6 +48,126 @@
   }
  },
  {
+  "id": "viet-tra-loi-mot-sao",
+  "che_do": "viết mới",
+  "tin_nhan": "Viết câu trả lời cho chị Hoa, khách để lại đánh giá 1 sao trên Google Maps vì phải chờ 40 phút ở tiệm nail của tôi. Hôm đó tiệm thiếu một thợ vì ốm. Tiệm muốn mời chị quay lại, lần sau giảm 20%.",
+  "mong_doi": "Xin lỗi thẳng, nói lý do thiếu thợ, mời quay lại kèm giảm 20%. Không dùng khuôn chăm sóc khách dịch từ tiếng Anh như \"thời gian của chị rất quý giá\", \"đây không phải trải nghiệm tiệm mong muốn\", \"xin lỗi vì sự bất tiện\".",
+  "kiem": {
+   "must_keep": [
+    "40 phút",
+    "20%"
+   ],
+   "must_not": [
+    "thời gian của chị rất quý",
+    "thời gian của chị là",
+    "thời gian quý báu",
+    "trải nghiệm mà",
+    "trải nghiệm tiệm",
+    "trải nghiệm chúng",
+    "sự bất tiện",
+    "những bất tiện",
+    "mong muốn mang lại"
+   ],
+   "max_added_numbers": 0,
+   "max_placeholders": 0,
+   "max_words": 120,
+   "must_read": [
+    "draft.md"
+   ],
+   "max_refs": 3
+  }
+ },
+ {
+  "id": "viet-xin-loi-nguoi-yeu",
+  "che_do": "viết mới",
+  "tin_nhan": "Viết tin nhắn xin lỗi người yêu vì hôm qua anh quên ngày kỷ niệm 2 năm, xưng anh em. Tối thứ Sáu này anh muốn đưa em đi ăn lại quán lẩu hồi mới hẹn hò.",
+  "mong_doi": "Ngắn, giọng tin nhắn, xin lỗi thẳng, hẹn thứ Sáu. Không dùng giọng tư vấn tâm lý dịch từ tiếng Anh như \"em buồn là hoàn toàn xứng đáng\", \"anh trân trọng cảm xúc của em\".",
+  "kiem": {
+   "must_keep": [
+    "2 năm",
+    "thứ Sáu"
+   ],
+   "must_not": [
+    "hoàn toàn xứng đáng",
+    "hoàn toàn chính đáng",
+    "hoàn toàn hợp lý",
+    "có quyền buồn",
+    "có quyền giận",
+    "cảm xúc của em",
+    "trân trọng cảm xúc"
+   ],
+   "max_placeholders": 0,
+   "max_words": 120
+  }
+ },
+ {
+  "id": "viet-email-nghi-phep",
+  "che_do": "viết mới",
+  "tin_nhan": "Viết email xin sếp nghỉ phép 3 ngày tuần sau để về quê đám giỗ ông nội.",
+  "mong_doi": "Viết ngay email ngắn hoặc hỏi một lượt những gì còn thiếu (tên, ngày nghỉ). Xưng hô với sếp chọn một cách và nói người dùng đổi nếu cần, không rải \"anh/chị\" khắp thư.",
+  "kiem": {
+   "must_keep": [
+    "3 ngày",
+    "giỗ"
+   ],
+   "must_not": [
+    "anh/chị",
+    "Anh/Chị",
+    "anh/ chị"
+   ],
+   "max_words": 220,
+   "must_read": [
+    "draft.md"
+   ],
+   "max_refs": 3
+  }
+ },
+ {
+  "id": "viet-chuc-thay-co",
+  "che_do": "viết mới",
+  "tin_nhan": "Viết tin nhắn Zalo chúc mừng 20/11 gửi cô Hằng, cô chủ nhiệm hồi cấp 3 của em. Em ra trường 5 năm rồi, giờ đi làm ở Hà Nội.",
+  "mong_doi": "Tin nhắn ngắn, xưng em gọi cô. Không nhắc tới thiệp, quà, hoa mà người gửi không có; không tự kể kỷ niệm thay người gửi.",
+  "kiem": {
+   "must_keep": [
+    "cô"
+   ],
+   "must_not": [
+    "tấm thiệp",
+    "thiệp nhỏ",
+    "món quà",
+    "bó hoa",
+    "đóa hoa",
+    "lá thư này",
+    "những dòng chữ này"
+   ],
+   "max_words": 120
+  }
+ },
+ {
+  "id": "viet-tuyen-phuc-vu",
+  "che_do": "viết mới",
+  "tin_nhan": "Viết bài đăng Facebook tuyển 2 bạn phục vụ part-time cho quán cà phê của mình ở quận 3, ca sáng 6h-12h, lương 25k/giờ, ưu tiên sinh viên. Liên hệ Zalo 0901 234 567.",
+  "mong_doi": "Bài ngắn, đủ ca, lương, liên hệ. Không dùng sáo ngữ tuyển dụng như \"môi trường năng động, trẻ trung\", \"bước ra khỏi vùng an toàn\", \"phiên bản tốt hơn của chính mình\".",
+  "kiem": {
+   "must_keep": [
+    "25k",
+    "6h",
+    "0901 234 567"
+   ],
+   "must_not": [
+    "năng động",
+    "trẻ trung",
+    "vùng an toàn",
+    "phiên bản tốt hơn",
+    "thông hành",
+    "chuyên nghiệp, thân thiện"
+   ],
+   "max_added_numbers": 0,
+   "max_placeholders": 0,
+   "max_words": 160
+  }
+ },
+ {
   "id": "viet-tin-cat-nuoc",
   "che_do": "viết mới",
   "tin_nhan": "Viết giúp mình tin nhắn gửi nhóm Zalo cư dân tòa B: cắt nước từ 9h đến 15h thứ Năm 17/12 để sửa bể ngầm, mọi người nhớ trữ nước, có gì gọi ban quản lý 0900 000 000. Mình là trưởng ban quản lý, xưng tôi cũng được.",
@@ -289,6 +409,89 @@
     "tổ đội"
    ],
    "min_refs": 1,
+   "max_overlap": 0.6,
+   "must_read": [
+    "review.md"
+   ],
+   "max_refs": 3
+  }
+ },
+ {
+  "id": "soi-ky-niem-chung",
+  "che_do": "soi lỗi",
+  "tep": "evals/inputs/bai-chia-tay-ky-niem-chung.md",
+  "tin_nhan": "Bài chia tay công ty mình định đăng LinkedIn, soi giúp chỗ nào nghe giả, chưa cần sửa: {tep}",
+  "mong_doi": "Chỉ ra chuỗi kỷ niệm điển hình (deadline căng thẳng, brainstorm tối muộn, bữa trưa rôm rả, buổi sáng vội vã, vấp ngã rồi đứng dậy) là cảnh team nào cũng có, khác với câu về anh Quân và câu SQL có JOIN là chuyện thật. Gợi ý giữ chuyện thật, thay chuỗi kia bằng một kỷ niệm riêng nếu có. Không viết lại cả bài.",
+  "kiem": {
+   "must_keep": [
+    [
+     "chung chung",
+     "ai cũng",
+     "nào cũng",
+     "đâu cũng",
+     "điển hình",
+     "thay tên",
+     "bất kỳ",
+     "bất cứ",
+     "không riêng",
+     "dùng cho mọi",
+     "đúng với mọi"
+    ],
+    [
+     "bữa trưa rôm rả",
+     "deadline căng thẳng",
+     "brainstorm",
+     "buổi sáng vội vã",
+     "vấp ngã"
+    ]
+   ],
+   "min_refs": 1,
+   "max_overlap": 0.6,
+   "must_read": [
+    "review.md"
+   ],
+   "max_refs": 3
+  }
+ },
+ {
+  "id": "soi-truyen-tron-vung",
+  "che_do": "soi lỗi",
+  "tep": "evals/inputs/truyen-tron-vung.md",
+  "tin_nhan": "Đoạn mở truyện ngắn của mình, soi giúp xem có chỗ nào nghe không thật, chưa cần sửa: {tep}",
+  "mong_doi": "Chỉ ra truyện trộn hai miền: tên gọi theo thứ kiểu Nam Bộ (bà Tư, chú Ba, ông Sáu, bà cụ Năm) đi cùng cảnh và món miền Bắc (nếp cái hoa vàng, xôi lạc, ruốc, thằng cu, chợ Đình, gốc gạo đầu làng). Gợi ý chọn một vùng.",
+  "kiem": {
+   "must_keep": [
+    [
+     "miền Nam",
+     "Nam Bộ",
+     "trong Nam",
+     "Nam bộ",
+     "người Nam",
+     "kiểu Nam",
+     "phương Nam"
+    ],
+    [
+     "Bắc"
+    ]
+   ],
+   "min_refs": 1,
+   "max_overlap": 0.6,
+   "must_read": [
+    "review.md"
+   ],
+   "max_refs": 3
+  }
+ },
+ {
+  "id": "soi-email-anh-chi",
+  "che_do": "soi lỗi",
+  "tep": "evals/inputs/email-nghi-anh-chi.md",
+  "tin_nhan": "Email xin nghỉ gửi anh Tuấn trưởng phòng, AI soạn hộ. Soi giúp xem gửi được chưa, chưa cần sửa: {tep}",
+  "mong_doi": "Chỉ ra thư gửi anh Tuấn mà xưng \"anh/chị\" bốn lần, phải đổi hết thành \"anh\". Thư còn lại ổn, không bới thêm lỗi.",
+  "kiem": {
+   "must_keep": [
+    "anh/chị"
+   ],
    "max_overlap": 0.6,
    "must_read": [
     "review.md"

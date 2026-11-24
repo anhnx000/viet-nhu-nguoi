@@ -163,7 +163,7 @@ Dấu hiệu xếp theo nhóm, nhóm nào cũng kèm số dòng và cụm bị b
 
 Repo kèm một bộ đề để đo trợ lý AI viết tiếng Việt theo hai ý: bài viết ra có đọc như người Việt viết không, và tên, số, ngày, lời phủ định của người nhờ có còn nguyên không. Skill đổi chỗ nào thì chạy lại cả bộ. Bộ đề cũng chạy được khi không bật skill, để biết mô hình tự viết được tới đâu.
 
-- 70 đề thường gặp: 22 đề sửa bài, 21 đề viết mới, 16 đề trả lời tin nhắn theo giọng người gửi, 7 đề soi lỗi, thêm tóm tắt, slide, câu hỏi thường và một đề phải chép nguyên văn.
+- 78 đề thường gặp: 22 đề sửa bài, 26 đề viết mới, 16 đề trả lời tin nhắn theo giọng người gửi, 10 đề soi lỗi, thêm tóm tắt, slide, câu hỏi thường và một đề phải chép nguyên văn.
 - 14 đề để riêng, không dùng khi chỉnh skill, để biết skill có học thuộc bộ đề hay không.
 - 73 lời nhờ thử xem skill có tự bật đúng lúc không, trong đó có câu hỏi về code, kiến thức, phép tính mà skill phải đứng ngoài.
 - File đầu vào viết riêng cho bộ đề, tên người và số liệu đều bịa. Đề nào cũng có đáp án mẫu, và đáp án mẫu phải qua mọi điều kiện chấm của đề đó.
@@ -184,7 +184,7 @@ Bật đúng lúc: Claude bật 68/68 lượt nên bật và không bật nhầm
 Chạy lại trên máy mình (cần Claude Code hoặc Codex CLI):
 
 ```bash
-python3 -I evals/run.py evals/results/thu --runs 3              # 70 đề, mỗi đề 3 lượt
+python3 -I evals/run.py evals/results/thu --runs 3              # 78 đề, mỗi đề 3 lượt
 python3 -I evals/run.py evals/results/thu-goc --khong-skill     # cùng đề, không bật skill
 python3 -I evals/check.py evals/results/thu                     # chấm
 ```

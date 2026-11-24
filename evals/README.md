@@ -1,11 +1,11 @@
 # Bộ đề thử skill
 
-`scenarios.json` có 70 tình huống thường gặp, dùng khi chỉnh skill. `held-out.json` có 14 đề để riêng, chỉ chạy trên bản đã chốt. Mỗi đề có `tin_nhan` là lời người dùng, `tep` (nếu có) là file đầu vào, `mong_doi` là điều người đọc cần thấy trong câu trả lời, `kiem` là phần script đếm được. `trigger.json` có 41 lời nhờ để thử skill có tự bật đúng lúc không, `trigger-held-out.json` có 32 lời nhờ để riêng cho phần này. File trong `inputs/` là văn viết ra để thử, tên người và số liệu đều bịa.
+`scenarios.json` có 78 tình huống thường gặp, dùng khi chỉnh skill. `held-out.json` có 14 đề để riêng, chỉ chạy trên bản đã chốt. Mỗi đề có `tin_nhan` là lời người dùng, `tep` (nếu có) là file đầu vào, `mong_doi` là điều người đọc cần thấy trong câu trả lời, `kiem` là phần script đếm được. `trigger.json` có 41 lời nhờ để thử skill có tự bật đúng lúc không, `trigger-held-out.json` có 32 lời nhờ để riêng cho phần này. File trong `inputs/` là văn viết ra để thử, tên người và số liệu đều bịa.
 
 ## Chạy
 
 ```bash
-python3 -I evals/run.py evals/results/<bản> --runs 3            # 70 đề, mỗi đề 3 lượt
+python3 -I evals/run.py evals/results/<bản> --runs 3            # 78 đề, mỗi đề 3 lượt
 python3 -I evals/run.py evals/results/<bản>-held-out --held-out --runs 3
 python3 -I evals/run.py evals/results/<bản>-khong-skill --khong-skill   # cùng đề, không bật skill
 python3 -I evals/run.py evals/results/trigger-<bản> --trigger --runs 3   # skill có tự bật đúng lúc không
@@ -125,6 +125,23 @@ Không bật skill, Sonnet 5.5 qua 36/63 đề chính và 2/13 đề để riên
 Không chênh lệch nào vượt sai số (kiểm định dấu, p từ 0,2 trở lên). Bản tiếng Anh có 3 câu trả lời quay sang nói tiếng Anh với người dùng, kiểu "I'll draft the ready-to-use PR description now"; bản tiếng Việt có 1. Cả bốn đều trên Sonnet 5.
 
 Skill vì vậy giữ tiếng Việt. Bản dịch không giúp Sonnet làm tốt hơn, có thêm nó chỉ thêm một bản phải sửa cho khớp. Gemini chưa được thử.
+
+## Kết quả bản 2.19.0
+
+Tìm thêm dấu hiệu văn AI tiếng Việt. Opus và GPT mỗi bên viết 24 đề bài thường gặp không có skill, đọc cả 48 bài để tìm ứng viên, thêm vài ứng viên từ báo chí. Mỗi ứng viên một đề, chạy bản hiện tại trước. Opus mức medium, ba lượt mỗi đề.
+
+| | Bản hiện tại | Bản 2.19.0 |
+|---|---|---|
+| `viet-email-nghi-phep` | 0/3 | 3/3 |
+| `soi-ky-niem-chung` | 3/3 | |
+| `soi-truyen-tron-vung` | 3/3 | |
+| `soi-email-anh-chi` | 3/3 | |
+| `viet-tra-loi-mot-sao` | 3/3 | |
+| `viet-xin-loi-nguoi-yeu` | 3/3 | |
+| `viet-chuc-thay-co` | 3/3 | |
+| `viet-tuyen-phuc-vu` | 3/3 | |
+
+Chỉ `viet-email-nghi-phep` trượt: cả ba lượt viết "anh/chị" bốn lần trong thư gửi sếp. Thêm một câu vào `draft.md` thì cả ba lượt gọi "anh" suốt thư và dặn đổi thành "chị" nếu cần. Bảy đề viết mới khác chạy lại một lượt vẫn qua. Bảy đề còn lại qua trước khi thêm quy tắc, nên giữ làm chốt chặn. Vài lượt đầu bị chấm trượt vì phần chấm sai, đã sửa trước khi báo số: danh sách chữ khóa hẹp (bản soi viết "rất Bắc" thay cho "miền Bắc"), chặn câu vẫn tự nhiên ("anh không có lý do gì để bào chữa"), cấm chỗ trống cần thiết ("[tên]" khi cô giáo có thể không nhớ học trò cũ). Đề viết truyện ở chợ quê Thái Bình bị bỏ: lượt "trượt" chỉ có một chữ "bà Tư" trong truyện toàn chất Bắc, mà ngoài Bắc vẫn có người gọi như vậy.
 
 ## Kết quả bản 2.18.0
 

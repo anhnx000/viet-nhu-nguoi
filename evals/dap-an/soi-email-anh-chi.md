@@ -1,0 +1,1 @@
+Chưa gửi được, vướng đúng một chỗ: thư gửi anh Tuấn mà gọi người nhận là "anh/chị" bốn lần (lời chào, "Mong anh/chị duyệt", "anh/chị cứ gọi em", "Em cảm ơn anh/chị"), mục 36. Đọc vào là biết thư mẫu chưa điền. Đổi cả bốn chỗ thành "anh", lời chào viết "Chào anh Tuấn,". Phần còn lại ổn, gửi được.

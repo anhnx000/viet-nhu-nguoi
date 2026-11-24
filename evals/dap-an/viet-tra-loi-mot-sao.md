@@ -1,0 +1,1 @@
+Tiệm xin lỗi chị Hoa vì hôm đó để chị chờ tới 40 phút. Hôm ấy tiệm thiếu một thợ vì ốm mà không báo trước cho khách, lỗi ở tiệm. Mong chị cho tiệm thêm một lần nữa, lần sau chị ghé tiệm giảm 20% cho chị ạ.

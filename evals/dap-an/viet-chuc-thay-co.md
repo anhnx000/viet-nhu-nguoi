@@ -1,0 +1,1 @@
+Em chào cô Hằng ạ. Nhân ngày 20/11 em chúc cô thật nhiều sức khỏe, vẫn vui với nghề như hồi dạy lớp em. Em ra trường 5 năm rồi, giờ đi làm ở Hà Nội, vẫn hay nhớ mấy năm cô chủ nhiệm. Dịp nào về quê em qua thăm cô ạ.
