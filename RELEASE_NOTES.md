@@ -2,6 +2,15 @@
 
 English notes for each GitHub release. The release workflow publishes the section that matches the version in `SKILL.md`. The full development log, in Vietnamese, is in [CHANGELOG.md](CHANGELOG.md).
 
+## 2.18.0
+
+A new sign drawn from how Turnitin checks for AI writing.
+
+- Turnitin publishes no list of signs: its FAQ (November 2026) says a trained model scores each sentence and is not hand-coded for perplexity or burstiness. It does not check Vietnamese, and its paraphraser and humanizer detection covers English only. Paraphrased text tends to swap familiar words for odd synonyms, a sign Wikipedia also lists. The skill copies none of Turnitin's scoring and adds no tricks for getting past it.
+- New pattern 67 (group M): one thing called by several names, and common phrases swapped for rare synonyms. Edit only when the new word is clearer; keep deliberate variation such as a full name followed by a short name.
+- Two new cases were written and run on 2.17.0 first. The edit case passed 3/3 before and after. In the review case the old release found the problem but said all three times that the catalog had no item for it; the new release cites pattern 67 every time (0/3 to 3/3 on that check). The suite now has 70 cases.
+- `evals/check.py` now counts pattern references written as "#45".
+
 ## 2.17.0
 
 More lessons from mattpocock/skills, kept only where they measurably helped.

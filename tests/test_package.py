@@ -179,10 +179,11 @@ class Evals(unittest.TestCase):
 
     def test_refs_accept_capitals_and_comma_lists(self):
         scenario = {"kiem": {"min_refs": 3}}
-        for reply in ("Mục 4, 50, 45", "mục 4, mục 50, mục 45", "(4, 50, 45)"):
+        for reply in ("Mục 4, 50, 45", "mục 4, mục 50, mục 45", "(4, 50, 45)", "(#4, nhãn) và #50, #45"):
             self.assertEqual(self.check.check(scenario, reply), [])
         self.assertTrue(self.check.check(scenario, "Mục 4, 4, 4"))
         self.assertTrue(self.check.check(scenario, "Có 4, 50, 45 người."))
+        self.assertTrue(self.check.check(scenario, "Xem issue&#4; PR#50 và C#45."))
 
     def test_questions_do_not_require_numbering(self):
         scenario = {"kiem": {"min_questions": 2, "max_questions": 2}}

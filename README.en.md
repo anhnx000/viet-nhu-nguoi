@@ -184,7 +184,7 @@ Flags are grouped, each with its line number and the matched phrase. The score m
 
 The repo ships a benchmark for AI assistants writing Vietnamese. It checks two things: whether the output reads like a Vietnamese person wrote it, and whether the requester's names, numbers, dates and negations survive. It is rerun whenever the skill changes, and it also runs with the skill off, to show what the model does on its own.
 
-- 68 common cases: 21 edits, 21 new drafts, 16 chat replies in the sender's voice, 6 reviews, plus a summary, a slide deck, a plain question and one case that must come back word for word.
+- 70 common cases: 22 edits, 21 new drafts, 16 chat replies in the sender's voice, 7 reviews, plus a summary, a slide deck, a plain question and one case that must come back word for word.
 - 14 held-out cases that are never used to tune the skill, to catch overfitting to the main set.
 - 73 prompts that test whether the skill loads on its own when it should, including code, factual and math questions where it must stay out.
 - Input files written for the benchmark, with made-up names and numbers. Every case has a reference answer, and that answer must pass all of the case's checks.
@@ -205,7 +205,7 @@ Loading: Claude loaded the skill in 68/68 runs where it should and in none of 63
 To rerun it (needs Claude Code or the Codex CLI):
 
 ```bash
-python3 -I evals/run.py evals/results/try --runs 3              # 68 cases, 3 runs each
+python3 -I evals/run.py evals/results/try --runs 3              # 70 cases, 3 runs each
 python3 -I evals/run.py evals/results/try-base --khong-skill    # same cases, skill off
 python3 -I evals/check.py evals/results/try                     # grade
 ```

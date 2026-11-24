@@ -33,7 +33,7 @@ QUESTION = re.compile(r"[?？]+")
 # [địa chỉ], [Họ tên]... nhưng không tính link Markdown [chữ](url) và ô đánh dấu [x], [ ]
 PLACEHOLDER = re.compile(r"\[(?![ xX]\])[^\]\n]{2,60}\](?!\()")
 # Số mục trong danh mục: "mục 45", hoặc dãy số trong ngoặc như "(45, 3, 1)"
-REF = re.compile(r"\bmục (\d{1,2}(?:, ?\d{1,2})*)\b|\(((?:mục )?\d{1,2}(?:, ?\d{1,2})*)\)", re.IGNORECASE)
+REF = re.compile(r"\bmục (\d{1,2}(?:, ?\d{1,2})*)\b|\(((?:mục )?\d{1,2}(?:, ?\d{1,2})*)\)|(?<![\w&])#(\d{1,2})\b", re.IGNORECASE)
 LEAD_WORDS = 25
 BOLD = re.compile(r"\*\*[^*\n]+\*\*")
 # "slide 2", "mục 45, 46": chỉ chỗ trong bài hay trong danh mục, không phải số liệu trợ lý tự thêm
@@ -183,7 +183,7 @@ def check(scenario, reply, root=ROOT):
         options = item if isinstance(item, list) else [item]
         need(any(contains(reply.casefold(), o.casefold()) for o in options), f"thiếu chữ \"{options[0]}\" đứng riêng")
     if "min_refs" in rules:
-        refs = len({n for a, b in REF.findall(reply) for n in re.findall(r"\d+", a or b)})
+        refs = len({n for groups in REF.findall(reply) for n in re.findall(r"\d+", "".join(groups))})
         need(refs >= rules["min_refs"], f"dẫn {refs} mục trong danh mục, cần từ {rules['min_refs']}")
     if "min_overlap" in rules or "max_overlap" in rules:
         ratio = overlap(source, reply)

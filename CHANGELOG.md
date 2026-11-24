@@ -1,5 +1,15 @@
 # Changelog
 
+## 2.18.0 (2026-11-24)
+
+Tìm dấu hiệu từ cách Turnitin kiểm tra văn AI, thêm một mục vào danh mục.
+
+- Turnitin không công bố danh sách dấu hiệu. Theo trang hỏi đáp bản 11-2026, mô hình học từ dữ liệu và chấm từng câu, không lập trình riêng cho perplexity hay burstiness. Turnitin chưa chấm AI cho bài tiếng Việt, còn phần bắt văn đã qua app viết lại hay humanizer chỉ có cho tiếng Anh. Văn kiểu này thường đổi chữ quen sang chữ đồng nghĩa lạ tai, và Wikipedia cũng ghi đây là dấu hiệu của mô hình đời cũ. Skill không chép tiêu chí chấm điểm nào của Turnitin và không thêm mẹo nào để qua phần mềm này.
+- Mục 67 mới, nhóm M "Đổi chữ cho khác bản cũ": một thứ gọi bằng nhiều tên, cụm quen bị thay bằng chữ lạ. Chỉ sửa khi chữ mới rõ hơn; đổi cách gọi có lý do (tên đầy đủ rồi tên tắt) thì giữ.
+- Hai đề mới viết trước khi thêm mục, chạy bản 2.17.0 trước: `sua-doi-tu-dong-nghia` qua 3/3 cả trước lẫn sau. Ở `soi-doi-tu-dong-nghia`, bản cũ cũng tìm ra lỗi, nhưng cả ba lượt đều ghi danh mục không có mục cho lỗi này nên phải dẫn mục 61, 32. Bản mới dẫn mục 67 cả ba lượt; đề kiểm thêm số mục, bản cũ 0/3, bản mới 3/3. Bộ đề lên 70.
+- `evals/check.py` đếm cả cách dẫn mục kiểu "#45". Trước đây một bản soi dẫn tám mục theo kiểu này vẫn bị chấm trượt `soi-bai-ai`.
+- `references/sources.md` thêm trang hỏi đáp của Turnitin và phần "elegant variation" của Wikipedia làm nguồn mục 67.
+
 ## 2.17.0 (2026-11-24)
 
 Học thêm từ mattpocock/skills, chỉ giữ quy tắc đo được là có ích.

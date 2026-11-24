@@ -1,11 +1,11 @@
 # Bộ đề thử skill
 
-`scenarios.json` có 68 tình huống thường gặp, dùng khi chỉnh skill. `held-out.json` có 14 đề để riêng, chỉ chạy trên bản đã chốt. Mỗi đề có `tin_nhan` là lời người dùng, `tep` (nếu có) là file đầu vào, `mong_doi` là điều người đọc cần thấy trong câu trả lời, `kiem` là phần script đếm được. `trigger.json` có 41 lời nhờ để thử skill có tự bật đúng lúc không, `trigger-held-out.json` có 32 lời nhờ để riêng cho phần này. File trong `inputs/` là văn viết ra để thử, tên người và số liệu đều bịa.
+`scenarios.json` có 70 tình huống thường gặp, dùng khi chỉnh skill. `held-out.json` có 14 đề để riêng, chỉ chạy trên bản đã chốt. Mỗi đề có `tin_nhan` là lời người dùng, `tep` (nếu có) là file đầu vào, `mong_doi` là điều người đọc cần thấy trong câu trả lời, `kiem` là phần script đếm được. `trigger.json` có 41 lời nhờ để thử skill có tự bật đúng lúc không, `trigger-held-out.json` có 32 lời nhờ để riêng cho phần này. File trong `inputs/` là văn viết ra để thử, tên người và số liệu đều bịa.
 
 ## Chạy
 
 ```bash
-python3 -I evals/run.py evals/results/<bản> --runs 3            # 68 đề, mỗi đề 3 lượt
+python3 -I evals/run.py evals/results/<bản> --runs 3            # 70 đề, mỗi đề 3 lượt
 python3 -I evals/run.py evals/results/<bản>-held-out --held-out --runs 3
 python3 -I evals/run.py evals/results/<bản>-khong-skill --khong-skill   # cùng đề, không bật skill
 python3 -I evals/run.py evals/results/trigger-<bản> --trigger --runs 3   # skill có tự bật đúng lúc không
@@ -125,6 +125,17 @@ Không bật skill, Sonnet 5.5 qua 36/63 đề chính và 2/13 đề để riên
 Không chênh lệch nào vượt sai số (kiểm định dấu, p từ 0,2 trở lên). Bản tiếng Anh có 3 câu trả lời quay sang nói tiếng Anh với người dùng, kiểu "I'll draft the ready-to-use PR description now"; bản tiếng Việt có 1. Cả bốn đều trên Sonnet 5.
 
 Skill vì vậy giữ tiếng Việt. Bản dịch không giúp Sonnet làm tốt hơn, có thêm nó chỉ thêm một bản phải sửa cho khớp. Gemini chưa được thử.
+
+## Kết quả bản 2.18.0
+
+Mục 67 mới (một thứ gọi bằng nhiều tên, cụm quen bị thay bằng chữ lạ), tìm ra khi đọc cách Turnitin kiểm tra văn AI. Hai đề viết trước, chạy bản 2.17.0 trước. Opus mức medium, ba lượt mỗi đề.
+
+| | Bản 2.17.0 | Bản 2.18.0 |
+|---|---|---|
+| `sua-doi-tu-dong-nghia` | 3/3 | 3/3 |
+| `soi-doi-tu-dong-nghia` | 0/3 | 3/3 |
+
+Bản cũ sửa đúng cả ba lượt và khi soi cũng chỉ ra đúng lỗi. Có điều cả ba lượt soi đều ghi "danh mục không có mục riêng cho lỗi này" rồi dẫn mục 61, 32, nên đề kiểm thêm số mục 67 và bản cũ trượt ở điều kiện này. Bản mới dẫn mục 67 cả ba lượt. Chạy lại một lượt 14 đề cũ gần với mục này (soi lỗi, lặp chữ, sửa nhẹ bài người viết): qua 13. Đề trượt là `sua-nhe-bai-nguoi-viet`, khi mô hình nhận ra tùy bút Thạch Lam rồi chỉ liệt kê chỗ gõ nhầm, không trả lại cả bài. Chạy lại đề này ba lượt thì qua cả ba. Lượt đầu, `soi-bai-ai` cũng bị chấm trượt dù bản soi dẫn tám mục, vì viết theo kiểu "#45"; `check.py` nay đếm cả kiểu này.
 
 ## Kết quả bản 2.17.0
 

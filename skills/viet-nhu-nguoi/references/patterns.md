@@ -1,6 +1,6 @@
 # Danh mục dấu hiệu văn AI trong tiếng Việt
 
-Mục lục: A Dàn dựng thay vì nói thẳng (1-6); B Nhịp theo luật (7-12); C Thổi phồng và mượn uy tín (13-19); D Trình bày theo luật (20-22); E Đồ thừa của chat và bản nháp (sửa ngay khi gặp) (23-27); F Viết sai người đọc (28-29); G Riêng tiếng Việt (30-38); H Slide và tài liệu nhiều trang (39-44); I Cả bài: dấu hiệu còn lại sau khi từng câu đã sạch (45-55); K Văn dịch sâu: câu nghĩ bằng tiếng Anh, viết bằng chữ Việt (56-62); L Tin nhắn: lạc giọng người gửi, lặp câu qua các tin (63-66); cuối file là phần Giữ lại.
+Mục lục: A Dàn dựng thay vì nói thẳng (1-6); B Nhịp theo luật (7-12); C Thổi phồng và mượn uy tín (13-19); D Trình bày theo luật (20-22); E Đồ thừa của chat và bản nháp (sửa ngay khi gặp) (23-27); F Viết sai người đọc (28-29); G Riêng tiếng Việt (30-38); H Slide và tài liệu nhiều trang (39-44); I Cả bài: dấu hiệu còn lại sau khi từng câu đã sạch (45-55); K Văn dịch sâu: câu nghĩ bằng tiếng Anh, viết bằng chữ Việt (56-62); L Tin nhắn: lạc giọng người gửi, lặp câu qua các tin (63-66); M Đổi chữ cho khác bản cũ (67); cuối file là phần Giữ lại.
 
 Sắp từ mạnh đến yếu. Ở nhóm A và E, chỉ sửa câu sáo hoặc thừa trong ngữ cảnh. Nhóm G (mục 30-38) dành riêng cho tiếng Việt. Nhóm H (mục 39-44) dành cho slide, lời thuyết trình và tài liệu nhiều trang, hướng dẫn đầy đủ ở `slides.md`. Nhóm K (mục 56-62) là văn dịch ở tầng sâu hơn nhóm G: từng chữ đều là tiếng Việt nhưng câu vẫn theo khuôn tiếng Anh. Văn tiếng Việt nào cũng nên rà nhóm này. Nhóm I (mục 45-55) là những dấu hiệu chỉ thấy khi nhìn cả bài, thường vẫn còn sau khi đã sửa sạch từng câu. Bài dài và bài đăng mạng xã hội thì đọc nhóm này trước. Mục ghi *yếu* chỉ sửa khi đi cùng dấu hiệu khác trong cùng đoạn. Vài khối "Sau" có chi tiết cụ thể mà khối "Trước" không có (tên người, con số): đó là chi tiết giả định người viết đã cung cấp, còn khi sửa bài thật thì không tự thêm.
 
@@ -640,6 +640,19 @@ Tin nhắn trả lời bạn bè, đồng nghiệp thân thì người nhận bi
 >
 > cảm ơn c ạ. còn phụ lục B nữa, c xem nốt giúp e nhé
 **Sửa:** Đọc lại ba tin gần nhất của chính người gửi trước khi viết tin mới. Câu nhờ, lời cảm ơn, câu báo nào đã có thì không dùng lại, đổi một hai chữ vẫn là lặp. Chỉ báo phần mới; phải nhờ lại thì nói cách khác, ngắn hơn. Tin trên Teams thì gõ tắt chừng một nửa số chữ có dạng tắt quen như khối Sau, cách làm ở `references/chat.md`.
+
+## M. Đổi chữ cho khác bản cũ
+
+Văn đã chạy qua app viết lại, "humanizer", hoặc nhờ AI "viết lại cho khác" thường đổi chữ quen sang chữ cùng nghĩa mà lạ tai. Mô hình đời cũ cũng hay đổi tên một thứ qua từng câu để khỏi lặp chữ.
+
+### 67. Một thứ gọi bằng nhiều tên, cụm quen bị thay bằng chữ lạ
+**Dấu hiệu:** cùng một việc, một nhóm người mà mỗi câu một tên ("học sinh", "học trò", "người học", "giới học đường" trong một đoạn); cụm quen bị thay bằng chữ cùng nghĩa mà hiếm gặp ("quỹ thời gian" thay cho "thời gian", "đưa ra phán quyết" thay cho "quyết định", "gia tăng tính hữu hiệu" thay cho "hiệu quả hơn").
+**Vấn đề:** Người đọc tưởng đang nói về mấy thứ khác nhau. Chữ lạ còn kéo theo nghĩa khác, đọc như bản dịch máy.
+**Trước:**
+> Từ tháng 9, trường cho học sinh nghỉ sáng thứ Bảy. Các em học trò dùng buổi này để ôn bài, người học nào cần thì lên thư viện. Nhà trường mong giới học đường sẽ chủ động sắp xếp quỹ thời gian.
+**Sau:**
+> Từ tháng 9, trường cho học sinh nghỉ sáng thứ Bảy để ôn bài, em nào cần thì lên thư viện. Nhà trường mong các em tự sắp xếp thời gian.
+**Sửa:** Mỗi thứ giữ một tên quen suốt bài. Muốn đỡ lặp thì dùng "các em", "việc này", hoặc bỏ chủ ngữ khi câu vẫn rõ. Trả cụm về cách người Việt vẫn nói, nhưng chỉ thay khi chữ mới rõ hơn cho người đọc. Đổi cách gọi có lý do thì giữ, ví dụ tên đầy đủ ở lần đầu, tên tắt ở các lần sau.
 
 ## Giữ lại
 

@@ -263,6 +263,40 @@
   }
  },
  {
+  "id": "soi-doi-tu-dong-nghia",
+  "che_do": "soi lỗi",
+  "tep": "evals/inputs/doan-doi-tu-dong-nghia.md",
+  "tin_nhan": "Soi giúp đoạn này xem chỗ nào nghe không ổn, chưa cần sửa: {tep}",
+  "mong_doi": "Chỉ ra cùng một việc bị gọi bằng năm sáu tên khác nhau (làm việc từ xa, nhân viên, nhóm) và các cụm đổi chữ lạ như \"phận sự\", \"tổ đội\", \"tác nghiệp tại gia\"; gợi ý dùng một tên quen. Không viết lại cả đoạn.",
+  "kiem": {
+   "must_keep": [
+    [
+     "đồng nghĩa",
+     "nhiều tên",
+     "ba tên",
+     "bốn tên",
+     "năm tên",
+     "nhiều cách gọi",
+     "đổi tên",
+     "gọi khác nhau",
+     "cách gọi khác",
+     "tên gọi khác",
+     "mỗi câu một tên",
+     "mỗi câu một kiểu"
+    ],
+    "67",
+    "phận sự",
+    "tổ đội"
+   ],
+   "min_refs": 1,
+   "max_overlap": 0.6,
+   "must_read": [
+    "review.md"
+   ],
+   "max_refs": 3
+  }
+ },
+ {
   "id": "soi-bai-nguoi-viet",
   "che_do": "soi lỗi",
   "tep": "tests/fixtures/nguoi-viet/lit-03.txt",
@@ -1433,6 +1467,37 @@
    ],
    "min_overlap": 0.5,
    "max_words": 130,
+   "must_read": [
+    "edit.md"
+   ],
+   "max_refs": 3
+  }
+ },
+ {
+  "id": "sua-doi-tu-dong-nghia",
+  "che_do": "sửa",
+  "tep": "evals/inputs/doan-doi-tu-dong-nghia.md",
+  "tin_nhan": "Đoạn này đọc thấy kỳ kỳ, sửa giúp cho tự nhiên, chỉ trả bản sửa: {tep}",
+  "mong_doi": "Gọi một việc bằng một tên quen (làm việc từ xa / làm ở nhà, nhân viên, nhóm), trả lại cụm quen. Giữ đủ số liệu.",
+  "kiem": {
+   "must_not": [
+    "Thao tác từ khoảng cách",
+    "lao động viễn thông",
+    "phận sự",
+    "tổ đội",
+    "người làm công",
+    "tác nghiệp tại gia",
+    "phi tập trung"
+   ],
+   "must_keep": [
+    "120",
+    "70%",
+    "2 ngày",
+    "1 giờ",
+    "3 ngày"
+   ],
+   "max_added_numbers": 0,
+   "max_words": 150,
    "must_read": [
     "edit.md"
    ],
