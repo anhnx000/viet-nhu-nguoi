@@ -347,4 +347,4 @@ If you find a Vietnamese AI phrasing the skill misses, or a natural sentence it 
 
 ## License
 
-[MIT](LICENSE). You may use, modify, redistribute and sell it. Copies and modified versions only need to keep the LICENSE file, whose copyright line links to the original at https://github.com/anhnx000/viet-nhu-nguoi. Text you write with the skill needs no credit. Release 2.15.0 alone was published under Apache 2.0.
+[MIT](LICENSE). You may use, modify, redistribute and sell it. Copies and modified versions only need to keep the LICENSE file, whose copyright line links to the original at https://github.com/anhnx000/viet-nhu-nguoi. Text you write with the skill needs no credit.

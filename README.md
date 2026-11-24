@@ -311,4 +311,4 @@ tests/                       python3 -m unittest discover -s tests
 
 ## Giấy phép
 
-[MIT](LICENSE). Dùng, sửa, chia sẻ lại, đưa vào sản phẩm thương mại đều được. Bản chép lại hay bản sửa chỉ cần giữ file LICENSE, trong đó dòng bản quyền có link bản gốc https://github.com/anhnx000/viet-nhu-nguoi. Bài và tin nhắn soạn ra khi dùng skill không cần ghi nguồn. Riêng bản 2.15.0 phát hành theo Apache 2.0.
+[MIT](LICENSE). Dùng, sửa, chia sẻ lại, đưa vào sản phẩm thương mại đều được. Bản chép lại hay bản sửa chỉ cần giữ file LICENSE, trong đó dòng bản quyền có link bản gốc https://github.com/anhnx000/viet-nhu-nguoi. Bài và tin nhắn soạn ra khi dùng skill không cần ghi nguồn.
