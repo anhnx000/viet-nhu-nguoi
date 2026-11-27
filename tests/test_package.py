@@ -168,7 +168,7 @@ class Evals(unittest.TestCase):
     def test_scenarios_are_well_formed(self):
         known = {"min_words", "max_words", "min_questions", "max_questions", "max_placeholders", "max_bold",
                  "must_keep", "must_not", "min_refs", "min_overlap", "max_overlap", "scan_max",
-                 "max_added_numbers", "lead_keep", "must_word", "must_read", "must_not_read", "allow_read", "max_refs"}
+                 "max_added_numbers", "lead_keep", "must_word", "write_keep", "must_read", "must_not_read", "allow_read", "max_refs"}
         self.assertGreaterEqual(len(self.scenarios), 16)
         for sid, sc in self.scenarios.items():
             self.assertTrue(sc["tin_nhan"] and sc["mong_doi"], sid)
@@ -249,11 +249,14 @@ class Evals(unittest.TestCase):
 
     def test_teams_reply_does_not_repeat_the_last_request(self):
         sc = self.scenarios["chat-teams-khong-lap"]
-        self.assertEqual(self.check.check(sc, "tks a, e mở !13 kéo release/2.4 về dev r, ko có code mới, a xem giúp e với"), [])
-        # lặp câu nhờ của ba tin trước, chỉ đổi "em" thành "e"
-        self.assertTrue(self.check.check(sc, "cảm ơn a, e mở !13 kéo release/2.4 về dev, ko có code mới, a duyệt giúp e nha"))
-        # không lặp nhưng viết đủ chữ như văn bản
-        self.assertTrue(self.check.check(sc, "Em cảm ơn anh. Em mở MR !13 đưa release/2.4 về dev, không có code mới, anh merge giúp em."))
+        self.assertEqual(self.check.check(sc, "cảm ơn anh, em mở !13 kéo release/2.4 về dev rồi, không có code mới, anh xem giúp em với"), [])
+        # lặp câu nhờ của ba tin trước
+        self.assertTrue(self.check.check(sc, "cảm ơn anh, em mở !13 kéo release/2.4 về dev, không có code mới, anh duyệt giúp em nhé"))
+        # anh Quân là người trên: gõ tắt thì trượt
+        self.assertTrue(self.check.check(sc, "tks a, e mở !13 kéo release/2.4 về dev r, ko có code mới, a xem giúp e với"))
+        junior = self.scenarios["chat-teams-nhan-em"]
+        self.assertEqual(self.check.check(junior, "a xem r, đổi tokenTmp thành accessToken, xong e tự merge, demo dùng bản đó"), [])
+        self.assertTrue(self.check.check(junior, "anh xem rồi, đổi tokenTmp thành accessToken, xong em tự merge, demo dùng bản đó"))
         customer = self.scenarios["chat-teams-khach"]
         self.assertTrue(self.check.check(customer, "dạ a, tối thứ Bảy 22h-2h sáng CN bên e nâng cấp, xong e báo qua mail, lâu thì e gọi a"))
 
@@ -263,6 +266,21 @@ class Evals(unittest.TestCase):
         audit = dict(self.scenarios["soi-bai-ai"], kiem={"min_refs": 3})
         self.assertEqual(self.check.check(audit, "1. Câu mở (45, 3). 2. Câu kết (mục 50)."), [])
         self.assertTrue(self.check.check(audit, "Bài có vài chỗ nghe giống AI."))
+
+    def test_saved_note_is_checked_in_written_file(self):
+        sc = self.scenarios["luu-xung-ho-memory"]
+        table = ("| Anh Quân | người trên | anh / em | viết đủ |\n| Chị Hà | người trên | chị / em | viết đủ |\n"
+                 "| Khiêm | đồng cấp | ông / tui | gõ tắt |\n| Khách hàng | khách hàng | / em | viết đủ |")
+        note = [("Write", {"file_path": "memory/xung-ho.md", "content": table}, True)]
+        reply = "Mình lưu vào memory của project rồi."
+        self.assertEqual(self.check.check(sc, reply, saved=self.check.written(note)), [])
+        no_role = [("Write", {"file_path": "memory/xung-ho.md", "content": table.replace("người trên", "").replace("đồng cấp", "")}, True)]
+        self.assertTrue(self.check.check(sc, reply, saved=self.check.written(no_role)))
+        self.assertTrue(self.check.check(sc, reply, saved=self.check.written([])))  # không ghi file nào
+        denied = [(t, d, False) for t, d, _ in note]
+        self.assertTrue(self.check.check(sc, reply, saved=self.check.written(denied)))
+        codex = [("Write", {"changes": [{"path": "AGENTS.md", "kind": "add"}]}, True)]
+        self.assertIsNone(self.check.written(codex))
 
     def test_opened_files_from_trace(self):
         trace = [("Read", {"file_path": ".claude/skills/viet-nhu-nguoi/references/chat.md"}, True),

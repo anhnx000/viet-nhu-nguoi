@@ -636,10 +636,10 @@ Tin nhắn trả lời bạn bè, đồng nghiệp thân thì người nhận bi
 **Sau:**
 > em gửi chị báo cáo tháng 10 rồi ạ, chị xem giúp em nhé
 >
-> bảng chi phí e sửa theo ý c r ạ
+> bảng chi phí em sửa theo ý chị rồi ạ
 >
-> cảm ơn c ạ. còn phụ lục B nữa, c xem nốt giúp e nhé
-**Sửa:** Đọc lại ba tin gần nhất của chính người gửi trước khi viết tin mới. Câu nhờ, lời cảm ơn, câu báo nào đã có thì không dùng lại, đổi một hai chữ vẫn là lặp. Chỉ báo phần mới; phải nhờ lại thì nói cách khác, ngắn hơn. Tin trên Teams thì gõ tắt chừng một nửa số chữ có dạng tắt quen như khối Sau, cách làm ở `references/chat.md`.
+> cảm ơn chị ạ. còn phụ lục B nữa, chị xem nốt giúp em nhé
+**Sửa:** Đọc lại ba tin gần nhất của chính người gửi trước khi viết tin mới. Câu nhờ, lời cảm ơn, câu báo nào đã có thì không dùng lại, đổi một hai chữ vẫn là lặp. Chỉ báo phần mới; phải nhờ lại thì nói cách khác, ngắn hơn. Gõ tắt hay viết đủ thì theo người nhận, cách làm ở `references/chat.md`.
 
 ## M. Đổi chữ cho khác bản cũ
 

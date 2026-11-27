@@ -6,4 +6,4 @@ Tóm tắt họp sáng thứ Sáu:
 
 Còn chờ
 - Bản iOS: Phúc đã nộp duyệt, chưa chắc qua vì lần trước bị trả về hai lần. Phúc theo dõi, có gì báo nhóm.
-- Ngân sách quảng cáo đợt ra mắt: chưa chốt, Tuấn hỏi lại sếp.
+- Ngân sách quảng cáo đợt ra mắt: chưa chốt, Thịnh hỏi lại sếp.

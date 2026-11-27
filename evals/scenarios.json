@@ -486,8 +486,8 @@
   "id": "soi-email-anh-chi",
   "che_do": "soi lỗi",
   "tep": "evals/inputs/email-nghi-anh-chi.md",
-  "tin_nhan": "Email xin nghỉ gửi anh Tuấn trưởng phòng, AI soạn hộ. Soi giúp xem gửi được chưa, chưa cần sửa: {tep}",
-  "mong_doi": "Chỉ ra thư gửi anh Tuấn mà xưng \"anh/chị\" bốn lần, phải đổi hết thành \"anh\". Thư còn lại ổn, không bới thêm lỗi.",
+  "tin_nhan": "Email xin nghỉ gửi anh Thịnh trưởng phòng, AI soạn hộ. Soi giúp xem gửi được chưa, chưa cần sửa: {tep}",
+  "mong_doi": "Chỉ ra thư gửi anh Thịnh mà xưng \"anh/chị\" bốn lần, phải đổi hết thành \"anh\". Thư còn lại ổn, không bới thêm lỗi.",
   "kiem": {
    "must_keep": [
     "anh/chị"
@@ -676,6 +676,38 @@
    ],
    "must_read": [
     "edit.md"
+   ],
+   "max_refs": 3
+  }
+ },
+ {
+  "id": "luu-xung-ho-memory",
+  "che_do": "viết mới",
+  "tin_nhan": "Mình là Thư. Ghi nhớ giúp mình mấy quy tắc xưng hô khi nhắn tin công việc, lưu vào memory của project này để lần sau khỏi dặn lại: anh Quân (trưởng nhóm) và chị Hà (PM) thì gọi anh, chị, xưng em, viết đủ chữ, có dạ, ạ. Khiêm cùng nhóm thì xưng tui, gọi ông, gõ tắt thoải mái. Tin gửi khách hàng thì xưng em, viết đủ chữ, không icon.",
+  "mong_doi": "Ghi quy tắc vào bộ nhớ trợ lý đọc mỗi phiên: memory riêng của trợ lý nếu có, không thì CLAUDE.md hay AGENTS.md của project. Không hỏi lại lưu ở đâu. Ghi thành bảng, mỗi người hoặc nhóm một hàng, có cột vai theo bảng vai trong chat.md: anh Quân, chị Hà là người trên, Khiêm là đồng cấp, khách hàng. Các cột khác: cặp xưng hô, chữ Việt viết đủ hay gõ tắt, dạ/ạ, icon. Chỉ báo đã lưu khi ghi được file.",
+  "kiem": {
+   "must_keep": [
+    [
+     "lưu",
+     "ghi"
+    ]
+   ],
+   "write_keep": [
+    "Quân",
+    "Hà",
+    "Khiêm",
+    "khách",
+    "người trên",
+    "đồng cấp",
+    [
+     "viết đủ",
+     "không viết tắt",
+     "không gõ tắt"
+    ]
+   ],
+   "max_words": 220,
+   "must_read": [
+    "voice.md"
    ],
    "max_refs": 3
   }
@@ -1308,7 +1340,7 @@
   "che_do": "chat",
   "tep": "evals/inputs/chat-teams-mr.md",
   "tin_nhan": "Mình là Thư. Rep giúp mình tin cuối của anh Quân trong đoạn chat Teams này: {tep}\nÝ là: cảm ơn anh đã merge, em đã mở MR !13 đưa release/2.4 về dev, không có code mới, pipeline xanh, nhờ anh duyệt.",
-  "mong_doi": "Tin ngắn kiểu chat Teams: cảm ơn, MR !13 đưa release/2.4 về dev, không có code mới, nhờ duyệt hoặc merge. Ba tin gần nhất của Thư đều kết bằng \"anh duyệt giúp em nha\", nên tin này không lặp câu đó, kể cả đổi \"nha\" thành \"nhé\" hay \"em\" thành \"e\"; nhờ bằng cách khác, ngắn hơn. Gõ tắt chừng một nửa số chữ có dạng tắt quen (a, e, r, ko...), không tắt hết, giữ nguyên số MR và tên nhánh.",
+  "mong_doi": "Tin ngắn kiểu chat Teams: cảm ơn, MR !13 đưa release/2.4 về dev, không có code mới, nhờ duyệt hoặc merge. Ba tin gần nhất của Thư đều kết bằng \"anh duyệt giúp em nha\", nên tin này không lặp câu đó, kể cả đổi \"nha\" thành \"nhé\"; nhờ bằng cách khác, ngắn hơn. Anh Quân là người duyệt, Thư gọi anh, xưng em, nên viết đủ chữ như các tin trước của Thư, không gõ tắt chữ Việt (a, e, r, ko...) dù là Teams. Chữ tắt công việc như MR, số MR và tên nhánh giữ nguyên.",
   "kiem": {
    "must_keep": [
     "!13",
@@ -1321,26 +1353,29 @@
     "duyệt giúp e nha",
     "duyệt giúp em nhé",
     "duyệt giúp e nhé",
-    "chạy lại cũng xanh"
-   ],
-   "must_word": [
-    [
-     "ko",
-     "k",
-     "đc",
-     "dc",
-     "r",
-     "vs",
-     "j",
-     "a",
-     "e",
-     "c",
-     "mn",
-     "cx",
-     "trc",
-     "bh",
-     "hnay"
-    ]
+    "chạy lại cũng xanh",
+    "ko",
+    "k",
+    "đc",
+    "dc",
+    "r",
+    "vs",
+    "j",
+    "a",
+    "e",
+    "c",
+    "mn",
+    "cx",
+    "trc",
+    "bh",
+    "hnay",
+    "A",
+    "E",
+    "C",
+    "Ko",
+    "K",
+    "merge request",
+    "Merge request"
    ],
    "max_words": 60,
    "must_read": [
@@ -1389,6 +1424,93 @@
     "cx"
    ],
    "max_words": 90,
+   "must_read": [
+    "chat.md"
+   ],
+   "max_refs": 3
+  }
+ },
+ {
+  "id": "chat-zalo-sep-go-tat",
+  "che_do": "chat",
+  "tep": "evals/inputs/zalo-sep-go-tat.md",
+  "tin_nhan": "Mình là Linh. Rep giúp mình tin cuối của anh Thịnh (sếp mình) trên Zalo, theo giọng mình: {tep}\nÝ là: xe hỏng nên đơn giao trễ 2 ngày, thứ Năm giao được, mình đã gọi báo chị Ngân và chị ấy đồng ý.",
+  "mong_doi": "Anh Thịnh là sếp nên viết đủ các chữ Việt dù các tin trước của Linh gõ tắt (a, e, r): \"anh\", \"em\", \"rồi\". Phần khác vẫn theo giọng Linh: chữ thường, \"dạ\", \"ạ\". Đủ: trễ 2 ngày vì xe hỏng, thứ Năm giao, đã báo chị Ngân và chị đồng ý.",
+  "kiem": {
+   "must_keep": [
+    [
+     "thứ Năm",
+     "thứ 5"
+    ],
+    [
+     "2 ngày",
+     "hai ngày"
+    ],
+    "Ngân",
+    "ạ"
+   ],
+   "must_not": [
+    "ko",
+    "k",
+    "đc",
+    "dc",
+    "r",
+    "vs",
+    "j",
+    "a",
+    "e",
+    "c",
+    "mn",
+    "cx",
+    "trc",
+    "bh",
+    "hnay",
+    "A",
+    "E",
+    "C",
+    "Ko",
+    "K"
+   ],
+   "max_words": 70,
+   "must_read": [
+    "chat.md"
+   ],
+   "max_refs": 3
+  }
+ },
+ {
+  "id": "chat-teams-nhan-em",
+  "che_do": "chat",
+  "tep": "evals/inputs/chat-teams-nhan-em.md",
+  "tin_nhan": "Mình là Khoa, trưởng nhóm. Rep giúp mình tin cuối của Ngọc trên Teams: {tep}\nÝ là: xem rồi, logic ổn, chỉ cần đổi tên biến tokenTmp thành accessToken, sửa xong thì tự merge, không cần chờ mình, chiều demo cứ dùng bản đó.",
+  "mong_doi": "Ngọc gọi Khoa là anh, xưng em, tức là người dưới, nên tin Teams vẫn gõ tắt chừng một nửa số chữ có dạng tắt quen (a, e, r, ko...). Không tắt tên biến, số MR. Đủ: đã xem, ổn, đổi tokenTmp thành accessToken, sửa xong tự merge, demo dùng bản đó.",
+  "kiem": {
+   "must_keep": [
+    "tokenTmp",
+    "accessToken",
+    "merge",
+    "demo"
+   ],
+   "must_word": [
+    [
+     "ko",
+     "k",
+     "đc",
+     "dc",
+     "r",
+     "vs",
+     "j",
+     "a",
+     "e",
+     "c",
+     "mn",
+     "cx",
+     "trc",
+     "bh",
+     "hnay"
+    ]
+   ],
+   "max_words": 60,
    "must_read": [
     "chat.md"
    ],
@@ -1726,6 +1848,44 @@
     "rất mong"
    ],
    "min_overlap": 0.85,
+   "max_words": 90,
+   "must_read": [
+    "edit.md"
+   ],
+   "max_refs": 3
+  }
+ },
+ {
+  "id": "sua-tin-sep-go-tat",
+  "che_do": "sửa",
+  "tep": "evals/inputs/tin-sep-go-tat.md",
+  "tin_nhan": "Sửa giúp mình tin này trước khi gửi, mình nhắn sếp trên Zalo: {tep}",
+  "mong_doi": "Tin gửi sếp nên viết đủ các chữ tắt kiểu chat (a, e, r, đc, ko) thành anh, em, rồi, được, không. Chữ tắt công việc \"PO\" giữ nguyên, không viết thành \"đơn đặt hàng\". Phần còn lại gần như giữ nguyên: dạ, ạ, Thành Công, thứ 6, 2 đợt, 30%, chiều nay. Không thêm lời chào, cảm ơn hay câu rào đón.",
+  "kiem": {
+   "must_keep": [
+    "Thành Công",
+    [
+     "thứ 6",
+     "thứ Sáu"
+    ],
+    [
+     "2 đợt",
+     "hai đợt"
+    ],
+    "chiều nay",
+    "ạ",
+    "PO",
+    "30%",
+    "được không"
+   ],
+   "must_not": [
+    "e gửi",
+    "a xem",
+    "A xem",
+    "đc ko",
+    "e trả lời"
+   ],
+   "min_overlap": 0.6,
    "max_words": 90,
    "must_read": [
     "edit.md"

@@ -79,10 +79,11 @@ Nhờ soạn thứ gì đứng tên bạn thì skill tự bật. Gõ `/viet-nhu-
 
 - Nói rõ ai đọc và vai vế: "gửi chị trưởng phòng, xưng em" ra email khác hẳn "gửi khách hàng, xưng chúng tôi".
 - Dán kèm một đoạn bạn tự viết cùng loại. Muốn dùng lại ở phiên sau, nhờ lưu giọng vào một file Markdown. Lần sau đưa đường dẫn đó cùng dữ kiện của bài mới.
+- Muốn khỏi dặn lại cách xưng hô, nhờ "lưu quy tắc xưng hô vào memory của project". Skill ghi thành bảng vào memory của trợ lý, hoặc `CLAUDE.md`, `AGENTS.md`, mỗi người một hàng kèm vai (người trên, đồng cấp, cấp dưới, khách hàng), cặp xưng hô và có gõ tắt hay không.
 - Số liệu, tên, ngày tháng đưa bản thật, thiếu thì skill hỏi lại.
 - Câu nào không giống mình thì bảo "mình không nói thế", skill nhớ tới hết cuộc trò chuyện.
 - Bài bạn tự viết thì skill chỉ sửa nhẹ.
-- Tin nhắn, bình luận, bài chê do bạn tự viết thì giữ nguyên chữ viết thường, viết tắt và độ gắt. Skill chỉ bỏ lời chatbot còn sót, như "Chắc chắn rồi! Đây là bài review...".
+- Tin nhắn, bình luận, bài chê do bạn tự viết thì giữ nguyên chữ viết thường, viết tắt và độ gắt. Riêng tin gửi sếp, anh chị, thầy cô thì chữ tắt kiểu chat ("ko", "đc", "a", "e") được viết đủ. Skill chỉ bỏ lời chatbot còn sót, như "Chắc chắn rồi! Đây là bài review...".
 
 </details>
 
@@ -163,7 +164,7 @@ Dấu hiệu xếp theo nhóm, nhóm nào cũng kèm số dòng và cụm bị b
 
 Repo kèm một bộ đề để đo trợ lý AI viết tiếng Việt theo hai ý: bài viết ra có đọc như người Việt viết không, và tên, số, ngày, lời phủ định của người nhờ có còn nguyên không. Skill đổi chỗ nào thì chạy lại cả bộ. Bộ đề cũng chạy được khi không bật skill, để biết mô hình tự viết được tới đâu.
 
-- 78 đề thường gặp: 22 đề sửa bài, 26 đề viết mới, 16 đề trả lời tin nhắn theo giọng người gửi, 10 đề soi lỗi, thêm tóm tắt, slide, câu hỏi thường và một đề phải chép nguyên văn.
+- 82 đề thường gặp: 23 đề sửa bài, 27 đề viết mới, 18 đề trả lời tin nhắn theo giọng người gửi, 10 đề soi lỗi, thêm tóm tắt, slide, câu hỏi thường và một đề phải chép nguyên văn.
 - 14 đề để riêng, không dùng khi chỉnh skill, để biết skill có học thuộc bộ đề hay không.
 - 73 lời nhờ thử xem skill có tự bật đúng lúc không, trong đó có câu hỏi về code, kiến thức, phép tính mà skill phải đứng ngoài.
 - File đầu vào viết riêng cho bộ đề, tên người và số liệu đều bịa. Đề nào cũng có đáp án mẫu, và đáp án mẫu phải qua mọi điều kiện chấm của đề đó.
@@ -184,7 +185,7 @@ Bật đúng lúc: Claude bật 68/68 lượt nên bật và không bật nhầm
 Chạy lại trên máy mình (cần Claude Code hoặc Codex CLI):
 
 ```bash
-python3 -I evals/run.py evals/results/thu --runs 3              # 78 đề, mỗi đề 3 lượt
+python3 -I evals/run.py evals/results/thu --runs 3              # 82 đề, mỗi đề 3 lượt
 python3 -I evals/run.py evals/results/thu-goc --khong-skill     # cùng đề, không bật skill
 python3 -I evals/check.py evals/results/thu                     # chấm
 ```
@@ -222,7 +223,7 @@ Có tật phải đọc cả bài mới thấy. Từng câu ổn, nhưng "không
 
 Slide thì hay có tiêu đề chỉ là nhãn hoặc đếm số ("3 trụ cột"), slide nào cũng đúng ba ý, ghi chú thuyết trình như công văn ([slides.md](skills/viet-nhu-nguoi/references/slides.md)).
 
-Tin nhắn thì icon, kiểu cười, viết tắt học từ 30 lượt chat gần nhất, giọng đổi theo người nhận, "à", "nhé", "ạ" giữ đúng ý hỏi, nhờ hay hứa. Trên Teams thì gõ tắt chừng một nửa số chữ có dạng tắt quen ("ko", "đc", "r", "a", "e"), tin gửi khách hàng thì viết đủ. Trước khi viết, skill đọc lại ba tin gần nhất của bạn để tin mới không chép lại câu nhờ cũ, kiểu tin nào cũng kết bằng "anh duyệt giúp em nha" ([chat.md](skills/viet-nhu-nguoi/references/chat.md), [spoken.md](skills/viet-nhu-nguoi/references/spoken.md)).
+Tin nhắn thì icon, kiểu cười, viết tắt học từ 30 lượt chat gần nhất, giọng đổi theo người nhận, "à", "nhé", "ạ" giữ đúng ý hỏi, nhờ hay hứa. Nhắn đồng cấp, cấp dưới trên Teams thì gõ tắt chừng một nửa số chữ có dạng tắt quen ("ko", "đc", "r", "a", "e"). Nhắn sếp, anh chị, thầy cô hay khách hàng thì chữ Việt viết đủ, kể cả khi tin cũ của bạn có gõ tắt. Chữ tắt công việc như MR, API vẫn giữ. Trước khi viết, skill đọc lại ba tin gần nhất của bạn để tin mới không chép lại câu nhờ cũ, kiểu tin nào cũng kết bằng "anh duyệt giúp em nha" ([chat.md](skills/viet-nhu-nguoi/references/chat.md), [spoken.md](skills/viet-nhu-nguoi/references/spoken.md)).
 
 </details>
 

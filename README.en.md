@@ -107,9 +107,9 @@ For the same paragraph, ask “sửa để mình gửi” for a send-ready edit 
 
 For closer results, say who will read it and who you are to them: "to my department head, I'm em" produces a different email from "to a customer, we are chúng tôi". Paste a passage you wrote yourself and the skill picks up your sentence rhythm and favourite words. Give it the real numbers, names and dates, and it asks about whatever is missing. When a phrase feels off, say "mình không nói thế" (*I don't talk like that*) and it adjusts for the rest of the conversation.
 
-To reuse a voice across sessions, ask the assistant to save a Markdown note with the audience and an approved example. Give it the note and the new facts when you draft the next issue.
+To reuse a voice across sessions, ask the assistant to save a Markdown note with the audience and an approved example. Give it the note and the new facts when you draft the next issue. To stop repeating how you address people, ask it to "lưu quy tắc xưng hô vào memory của project" (*save the address rules to project memory*): it writes a table to the assistant's memory, `CLAUDE.md` or `AGENTS.md`, one row per person with their role (senior, peer, junior, customer), the pronoun pair and whether to abbreviate.
 
-Type `/viet-nhu-nguoi` to turn it on for the whole conversation, short replies included. It turns itself on when you ask for an email, message or post that goes out under your name. Text you wrote yourself only gets a light edit. Messages, comments and angry reviews keep their lowercase, abbreviations and bluntness; the skill only strips leftover chatbot lines. For an important deck, a second assistant that knows nothing about the context reads it and scores it on seven criteria, and you choose which comments to accept.
+Type `/viet-nhu-nguoi` to turn it on for the whole conversation, short replies included. It turns itself on when you ask for an email, message or post that goes out under your name. Text you wrote yourself only gets a light edit. Messages, comments and angry reviews keep their lowercase, abbreviations and bluntness; the skill only strips leftover chatbot lines. The exception is a message to a boss or anyone you address as em: Vietnamese chat shorthand ("ko", "đc", "a", "e") is spelled out. For an important deck, a second assistant that knows nothing about the context reads it and scores it on seven criteria, and you choose which comments to accept.
 
 ## Before and after
 
@@ -184,7 +184,7 @@ Flags are grouped, each with its line number and the matched phrase. The score m
 
 The repo ships a benchmark for AI assistants writing Vietnamese. It checks two things: whether the output reads like a Vietnamese person wrote it, and whether the requester's names, numbers, dates and negations survive. It is rerun whenever the skill changes, and it also runs with the skill off, to show what the model does on its own.
 
-- 78 common cases: 22 edits, 26 new drafts, 16 chat replies in the sender's voice, 10 reviews, plus a summary, a slide deck, a plain question and one case that must come back word for word.
+- 82 common cases: 23 edits, 27 new drafts, 18 chat replies in the sender's voice, 10 reviews, plus a summary, a slide deck, a plain question and one case that must come back word for word.
 - 14 held-out cases that are never used to tune the skill, to catch overfitting to the main set.
 - 73 prompts that test whether the skill loads on its own when it should, including code, factual and math questions where it must stay out.
 - Input files written for the benchmark, with made-up names and numbers. Every case has a reference answer, and that answer must pass all of the case's checks.
@@ -205,7 +205,7 @@ Loading: Claude loaded the skill in 68/68 runs where it should and in none of 63
 To rerun it (needs Claude Code or the Codex CLI):
 
 ```bash
-python3 -I evals/run.py evals/results/try --runs 3              # 78 cases, 3 runs each
+python3 -I evals/run.py evals/results/try --runs 3              # 82 cases, 3 runs each
 python3 -I evals/run.py evals/results/try-base --khong-skill    # same cases, skill off
 python3 -I evals/check.py evals/results/try                     # grade
 ```
@@ -242,7 +242,7 @@ Some patterns only show when counted across the whole text, even after each sent
 
 Slides have their own group: titles that are only labels, titles that count points ("3 trụ cột", *3 pillars*), exactly three bullets on every slide, speaker notes that read like a memo. Guide: [slides.md](skills/viet-nhu-nguoi/references/slides.md) (in Vietnamese).
 
-For chat replies, icons, laugh style and abbreviations come from up to the last 30 turns the skill can read, and the voice changes with each recipient. Particles such as "à", "nhé", "ạ" must keep what the speaker was doing: asking, requesting or promising. On Teams, about half of the words that have a common short form get abbreviated ("ko", "đc", "r", "a", "e"); messages to customers stay unabbreviated. Before writing, the skill rereads your last three messages so the new one does not repeat the same request, as when every message ends in "anh duyệt giúp em nha" (*please approve it for me*). The scanner flags drafts that pile three or four slang words into one message or mix Northern, Central and Southern markers ("giời ơi", "rứa", "nghen") in one sentence. Guides: [chat.md](skills/viet-nhu-nguoi/references/chat.md) and [spoken.md](skills/viet-nhu-nguoi/references/spoken.md) (in Vietnamese).
+For chat replies, icons, laugh style and abbreviations come from up to the last 30 turns the skill can read, and the voice changes with each recipient. Particles such as "à", "nhé", "ạ" must keep what the speaker was doing: asking, requesting or promising. On Teams, messages to peers and juniors abbreviate about half of the words that have a common short form ("ko", "đc", "r", "a", "e"). Messages to a boss, an older colleague, a teacher or a customer spell Vietnamese words out, even if your earlier messages used shorthand. Work acronyms such as MR and API stay. Before writing, the skill rereads your last three messages so the new one does not repeat the same request, as when every message ends in "anh duyệt giúp em nha" (*please approve it for me*). The scanner flags drafts that pile three or four slang words into one message or mix Northern, Central and Southern markers ("giời ơi", "rứa", "nghen") in one sentence. Guides: [chat.md](skills/viet-nhu-nguoi/references/chat.md) and [spoken.md](skills/viet-nhu-nguoi/references/spoken.md) (in Vietnamese).
 
 The remaining groups apply to English as well: false contrasts, one-line punchlines, lists forced to three items, em dashes, inflated significance, vague authorities, decorative bold and emoji, chatbot filler.
 

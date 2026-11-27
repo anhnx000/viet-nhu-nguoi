@@ -111,6 +111,18 @@ def opened(trace):
     return files
 
 
+def written(trace):
+    """Chữ trợ lý đã ghi ra file bằng Write, Edit (lệnh chạy được); None nếu vết không giữ nội dung (Codex chỉ ghi tên file)."""
+    parts = []
+    for tool, data, ok in trace:
+        if tool not in ("Write", "Edit") or not ok or not isinstance(data, dict):
+            continue
+        if "changes" in data:
+            return None
+        parts.append(str(data.get("content") or data.get("new_string") or ""))
+    return "\n".join(parts)
+
+
 def check_trace(rules, trace):
     """Lỗi về việc mở file hướng dẫn, theo vết công cụ."""
     files, errors = opened(trace), []
@@ -130,8 +142,11 @@ def check_trace(rules, trace):
     return errors
 
 
-def check(scenario, reply, root=ROOT):
-    """Trả về danh sách lỗi phần nội dung (rỗng nghĩa là qua phần tự động)."""
+def check(scenario, reply, root=ROOT, saved=None):
+    """Trả về danh sách lỗi phần nội dung (rỗng nghĩa là qua phần tự động).
+
+    saved là chữ trợ lý đã ghi ra file (xem written); None thì bỏ qua write_keep.
+    """
     rules, errors = scenario.get("kiem", {}), []
     words = len(reply.split())
     if not words:
@@ -182,6 +197,10 @@ def check(scenario, reply, root=ROOT):
     for item in rules.get("must_word", []):
         options = item if isinstance(item, list) else [item]
         need(any(contains(reply.casefold(), o.casefold()) for o in options), f"thiếu chữ \"{options[0]}\" đứng riêng")
+    # Đề nhờ lưu ghi chú (memory, AGENTS.md): điều cần có nằm trong file đã ghi, không phải câu trả lời.
+    for fact in rules.get("write_keep", []) if saved is not None else []:
+        options = fact if isinstance(fact, list) else [fact]
+        need(any(o.casefold() in saved.casefold() for o in options), f"file đã ghi thiếu \"{options[0]}\"")
     if "min_refs" in rules:
         refs = len({n for groups in REF.findall(reply) for n in re.findall(r"\d+", "".join(groups))})
         need(refs >= rules["min_refs"], f"dẫn {refs} mục trong danh mục, cần từ {rules['min_refs']}")
@@ -220,13 +239,14 @@ def grade(scenario, folder):
     answer = folder / f"{scenario['id']}.md"
     if not answer.exists():
         return None
-    route = None
+    route = saved = None
     trace_path = folder / f"{scenario['id']}.json"
     if trace_path.exists():
         data = json.loads(trace_path.read_text(encoding="utf-8"))
+        saved = written(load_trace(trace_path))
         if not (isinstance(data, dict) and data.get("skill") is False):
             route = check_trace(scenario.get("kiem", {}), load_trace(trace_path))
-    return check(scenario, answer.read_text(encoding="utf-8")), route
+    return check(scenario, answer.read_text(encoding="utf-8"), saved=saved), route
 
 
 def wilson(k, n, z=1.96):

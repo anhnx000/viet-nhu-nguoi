@@ -1,11 +1,11 @@
 # Bộ đề thử skill
 
-`scenarios.json` có 78 tình huống thường gặp, dùng khi chỉnh skill. `held-out.json` có 14 đề để riêng, chỉ chạy trên bản đã chốt. Mỗi đề có `tin_nhan` là lời người dùng, `tep` (nếu có) là file đầu vào, `mong_doi` là điều người đọc cần thấy trong câu trả lời, `kiem` là phần script đếm được. `trigger.json` có 41 lời nhờ để thử skill có tự bật đúng lúc không, `trigger-held-out.json` có 32 lời nhờ để riêng cho phần này. File trong `inputs/` là văn viết ra để thử, tên người và số liệu đều bịa.
+`scenarios.json` có 82 tình huống thường gặp, dùng khi chỉnh skill. `held-out.json` có 14 đề để riêng, chỉ chạy trên bản đã chốt. Mỗi đề có `tin_nhan` là lời người dùng, `tep` (nếu có) là file đầu vào, `mong_doi` là điều người đọc cần thấy trong câu trả lời, `kiem` là phần script đếm được. `trigger.json` có 41 lời nhờ để thử skill có tự bật đúng lúc không, `trigger-held-out.json` có 32 lời nhờ để riêng cho phần này. File trong `inputs/` là văn viết ra để thử, tên người và số liệu đều bịa.
 
 ## Chạy
 
 ```bash
-python3 -I evals/run.py evals/results/<bản> --runs 3            # 78 đề, mỗi đề 3 lượt
+python3 -I evals/run.py evals/results/<bản> --runs 3            # 82 đề, mỗi đề 3 lượt
 python3 -I evals/run.py evals/results/<bản>-held-out --held-out --runs 3
 python3 -I evals/run.py evals/results/<bản>-khong-skill --khong-skill   # cùng đề, không bật skill
 python3 -I evals/run.py evals/results/trigger-<bản> --trigger --runs 3   # skill có tự bật đúng lúc không
@@ -38,7 +38,7 @@ Chỉ dùng lỗi ở `scenarios.json` để sửa skill. Đề trong `held-out.
 
 ## Thêm đề
 
-Thêm một mục vào `scenarios.json` và một đáp án mẫu. Điều kiện trong `kiem` nên lỏng vừa đủ: câu trả lời đúng mà viết khác đi một chút thì vẫn phải qua. Đừng đặt `must_not` cho cụm mà trợ lý có thể trích lại trong ghi chú ("mình đã bỏ câu ..."), khi đó dùng `max_overlap`. `lead_keep` dùng cho tin có việc nhờ: dữ kiện phải nằm trong 25 chữ đầu. `must_word` tìm chữ đứng riêng, dùng cho chữ tắt một hai ký tự như "a", "r", "ko", vì `must_keep` sẽ khớp nhầm "a" trong "anh". `max_added_numbers` không dùng cho đề có nguồn tiếng Anh, vì "March 1, 2027" và "1/3/2027" bị tính là hai số khác nhau.
+Thêm một mục vào `scenarios.json` và một đáp án mẫu. Điều kiện trong `kiem` nên lỏng vừa đủ: câu trả lời đúng mà viết khác đi một chút thì vẫn phải qua. Đừng đặt `must_not` cho cụm mà trợ lý có thể trích lại trong ghi chú ("mình đã bỏ câu ..."), khi đó dùng `max_overlap`. `lead_keep` dùng cho tin có việc nhờ: dữ kiện phải nằm trong 25 chữ đầu. `must_word` tìm chữ đứng riêng, dùng cho chữ tắt một hai ký tự như "a", "r", "ko", vì `must_keep` sẽ khớp nhầm "a" trong "anh". `write_keep` tìm trong chữ trợ lý đã ghi ra file (Write, Edit chạy được), dùng cho đề nhờ lưu ghi chú hay memory. `max_added_numbers` không dùng cho đề có nguồn tiếng Anh, vì "March 1, 2027" và "1/3/2027" bị tính là hai số khác nhau.
 
 ## Skill có tự bật đúng lúc không
 
@@ -125,6 +125,23 @@ Không bật skill, Sonnet 5.5 qua 36/63 đề chính và 2/13 đề để riên
 Không chênh lệch nào vượt sai số (kiểm định dấu, p từ 0,2 trở lên). Bản tiếng Anh có 3 câu trả lời quay sang nói tiếng Anh với người dùng, kiểu "I'll draft the ready-to-use PR description now"; bản tiếng Việt có 1. Cả bốn đều trên Sonnet 5.
 
 Skill vì vậy giữ tiếng Việt. Bản dịch không giúp Sonnet làm tốt hơn, có thêm nó chỉ thêm một bản phải sửa cho khớp. Gemini chưa được thử.
+
+## Kết quả bản 2.20.0
+
+Nhắn người trên thì viết đủ chữ Việt, quy tắc xưng hô lưu vào memory thành bảng theo vai. Bốn đề mới và hai đề đổi điều kiện, chạy bản 2.19.0 trước. Opus mức medium, ba lượt mỗi đề.
+
+| | Bản 2.19.0 | Bản 2.20.0 |
+|---|---|---|
+| `chat-zalo-sep-go-tat` | 0/3 | 3/3 |
+| `chat-teams-khong-lap` | 0/3 | 2/3 |
+| `sua-tin-sep-go-tat` | 0/3 | 3/3 |
+| `luu-xung-ho-memory` | 0/3 | 3/3 |
+| `chat-teams-nhan-em` | 3/3 | 3/3 |
+| `chat-teams-bao-tien-do` (để riêng) | 0/3 | 2/3 |
+
+Bản cũ chép chữ tắt từ mẫu khi nhắn sếp ("e gọi báo chị Ngân r", "đc a ạ"), gõ tắt khi nhắn anh Quân trên Teams, và trả nguyên văn tin gửi sếp có "a xem giúp e có đc ko" vì cho là đã tự nhiên. Bản mới viết đủ chữ cả ba đề, vẫn giữ chữ thường, "dạ", "ạ", "MR", "PO". Lượt trượt của `chat-teams-khong-lap` viết đủ chữ nhưng thêm ghi chú dưới tin, trích lại câu "anh duyệt giúp em nha", nên quá số chữ và dính cụm cấm. Đề để riêng chạy sau khi chốt bản. Lượt trượt viết đủ chữ, chỉ thêm ghi chú rằng hôm chạy thử (27/11) cũng là thứ Sáu nên ghi rõ "thứ Sáu tuần sau", và vượt 70 chữ. `chat-teams-nhan-em` giữ làm chốt chặn: tin Teams gửi người dưới vẫn gõ tắt chừng một nửa ở cả hai bản. 22 đề chat, sửa tin và giọng chạy lại một lượt đều qua, tin gửi bạn và người dưới vẫn gõ tắt như mẫu.
+
+Đề memory: Claude Code bản cũ tự ghi vào memory riêng của nó, Codex bản cũ ghi vào `AGENTS.md`, đều đúng chỗ nhưng là gạch đầu dòng không có vai. Bản mới cả ba lượt ghi bảng có cột "Vai" (người trên, đồng cấp, khách hàng). Câu dặn chỗ lưu vì vậy bị bỏ; chạy lại bản rút gọn vẫn qua 3/3. Phần chấm đầu tiên đòi câu trả lời nhắc tên file và có chữ "người trên", trong khi ba lượt đã ghi đúng file, chỉ tóm tắt bằng bảng gọn hơn trong câu trả lời. Vì vậy `check.py` có thêm `write_keep` để chấm file đã ghi. Vết Codex chỉ có tên file, không có nội dung, nên `write_keep` bỏ qua lượt Codex.
 
 ## Kết quả bản 2.19.0
 

@@ -2,6 +2,16 @@
 
 English notes for each GitHub release. The release workflow publishes the section that matches the version in `SKILL.md`. The full development log, in Vietnamese, is in [CHANGELOG.md](CHANGELOG.md).
 
+## 2.20.0
+
+No Vietnamese chat shorthand in messages to a boss or anyone senior, and address rules saved to memory as a table by role.
+
+- `references/chat.md` now has a recipient table: senior, peer, junior, partner or spouse, customer. The role comes from how the user addresses the person, never from the name. For seniors (the user calls themselves em, con or cháu: bosses, older colleagues, teachers, parents), Vietnamese words are spelled out ("không", "được", "rồi", "anh", "em") even when the user's own past messages use shorthand. Work acronyms such as MR, PR, API, QA, PO and ok stay. The old rule abbreviated about half the words on Teams for every recipient, bosses included.
+- `references/edit.md`: when editing a message to a senior, shorthand such as "a", "e", "r", "đc", "ko" is spelled out and the rest is left alone. The old version returned such a message untouched as already natural.
+- `references/voice.md`: address rules meant to last across sessions are saved as a table, one row per person, with a "Vai" (role) column that uses the same role names as the chat table, so later sessions look up the row. An existing row is updated in place. Before writing colleagues' names into a file committed to a shared repo, the assistant asks first. Claude Code and Codex already picked the right place (their memory, or `AGENTS.md`) on 2.19.0, so the skill does not say where to save.
+- Four new cases and a new `write_keep` check in `evals/check.py` that grades the text the assistant wrote to a file. Two Teams cases now expect no shorthand to a senior. The suite has 82 cases.
+- Opus, medium effort, 3 runs each: boss on Zalo with shorthand samples 0/3 to 3/3; editing a message to a boss 0/3 to 3/3 with "PO" kept; saving address rules 0/3 to 3/3; Teams reply to a senior 0/3 to 2/3 (the miss spelled words out but added a note under the message). Juniors on Teams still get shorthand (3/3). 22 chat, edit and voice cases still pass. The held-out Teams case, run after the version was final: 0/3 to 2/3; the miss spelled words out but added a note that the test day was itself a Friday.
+
 ## 2.19.0
 
 A search for more signs of AI writing in Vietnamese: one new rule, seven regression cases.

@@ -59,7 +59,7 @@
   "che_do": "chat",
   "tep": "evals/inputs/chat-teams-tien-do.md",
   "tin_nhan": "Mình là Nam. Rep chị Hà giúp mình trên Teams, đoạn chat đây: {tep}\nÝ là: API thanh toán code xong rồi, đang chờ đối tác gửi khóa test, có khóa thì test 2 ngày, dự kiến xong thứ Sáu.",
-  "mong_doi": "Tin trả lời chị Hà: API thanh toán đã code xong, chờ đối tác gửi khóa test, có khóa thì test 2 ngày, dự kiến thứ Sáu. Ba tin trước của Nam đều có \"em cập nhật file tiến độ rồi\" và \"chị xem giúp em nhé\"; lời dặn không nhắc file tiến độ, nên tin này không chép hai câu đó. Vẫn \"Dạ\", \"ạ\" với chị Hà, gõ tắt chừng một nửa số chữ có dạng tắt quen.",
+  "mong_doi": "Tin trả lời chị Hà: API thanh toán đã code xong, chờ đối tác gửi khóa test, có khóa thì test 2 ngày, dự kiến thứ Sáu. Ba tin trước của Nam đều có \"em cập nhật file tiến độ rồi\" và \"chị xem giúp em nhé\"; lời dặn không nhắc file tiến độ, nên tin này không chép hai câu đó. Chị Hà là người trên nên viết đủ chữ như các tin trước của Nam, vẫn \"Dạ\", \"ạ\", không gõ tắt dù là Teams.",
   "kiem": {
    "must_keep": [
     [
@@ -81,26 +81,27 @@
    "must_not": [
     "file tiến độ",
     "xem giúp em nhé",
-    "xem giúp e nhé"
-   ],
-   "must_word": [
-    [
-     "ko",
-     "k",
-     "đc",
-     "dc",
-     "r",
-     "vs",
-     "j",
-     "a",
-     "e",
-     "c",
-     "mn",
-     "cx",
-     "trc",
-     "bh",
-     "hnay"
-    ]
+    "xem giúp e nhé",
+    "ko",
+    "k",
+    "đc",
+    "dc",
+    "r",
+    "vs",
+    "j",
+    "a",
+    "e",
+    "c",
+    "mn",
+    "cx",
+    "trc",
+    "bh",
+    "hnay",
+    "A",
+    "E",
+    "C",
+    "Ko",
+    "K"
    ],
    "max_words": 70,
    "must_read": [
@@ -216,7 +217,7 @@
   "che_do": "tóm tắt",
   "tep": "evals/inputs/chep-loi-hop-phat-hanh.md",
   "tin_nhan": "Tóm tắt giúp mình cuộc họp này thành tin gửi nhóm: việc đã chốt, ai làm gì, việc còn chờ: {tep}",
-  "mong_doi": "Đã chốt: dời phát hành từ 15/12 sang 18/12 vì cổng thanh toán chưa test xong; Linh gọi ngân hàng thứ Hai. Còn chờ: bản iOS chờ duyệt, Phúc chưa chắc qua; ngân sách quảng cáo chưa chốt, Tuấn hỏi sếp. Không biến 'chắc là qua' thành chắc chắn.",
+  "mong_doi": "Đã chốt: dời phát hành từ 15/12 sang 18/12 vì cổng thanh toán chưa test xong; Linh gọi ngân hàng thứ Hai. Còn chờ: bản iOS chờ duyệt, Phúc chưa chắc qua; ngân sách quảng cáo chưa chốt, Thịnh hỏi sếp. Không biến 'chắc là qua' thành chắc chắn.",
   "kiem": {
    "must_keep": [
     "15/12",

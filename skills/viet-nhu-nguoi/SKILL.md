@@ -3,7 +3,7 @@ name: viet-nhu-nguoi
 description: Viết tiếng Việt tự nhiên (humanize, bớt giọng AI). Dùng khi soạn, sửa, dịch sang tiếng Việt hoặc soi văn bản, email, báo cáo, PR, tin nhắn, slide và lời nói cho đúng giọng người gửi. Không dùng cho câu hỏi về code, kiến thức hay phép tính.
 license: MIT
 metadata:
-  version: "2.19.0"
+  version: "2.20.0"
 ---
 
 # Viết như người
@@ -27,7 +27,7 @@ Chọn dòng sát việc được nhờ nhất. Chỉ mở thêm tài liệu khi
 | Quét chữ, soát tiêu đề hay so hai file PPTX | [Soát file trình chiếu](references/slides-review.md) |
 | Chép, gọt, tóm tắt lời họp hoặc sửa sắc thái lời nói | [Lời thoại](references/spoken.md) |
 
-Viết từ nguồn tiếng Anh hoặc sửa câu dịch sát thì xem [văn dịch](references/vietnamese.md). Khi người dùng đưa mẫu văn, gọi tên giọng hoặc muốn lưu giọng qua các phiên, xem [mẫu giọng](references/voice.md).
+Viết từ nguồn tiếng Anh hoặc sửa câu dịch sát thì xem [văn dịch](references/vietnamese.md). Khi người dùng đưa mẫu văn, gọi tên giọng hoặc muốn lưu giọng, cách xưng hô qua các phiên, xem [mẫu giọng](references/voice.md).
 
 Nếu người dùng nhắc số mục, tra thẳng số đó trong [danh mục](references/patterns.md). Chạy `python3 -I scripts/patterns.py 46` với số cần tra, hoặc tìm tiêu đề và chỉ đọc mục ấy. Các đường dẫn lệnh tính từ thư mục chứa skill. Khi cần quét file, chạy `python3 -I scripts/scan.py <file>`. Với tài liệu có trích ví dụ, thêm `--meta`. So dữ kiện bằng `python3 -I scripts/check_facts.py <gốc> <mới>`.
 

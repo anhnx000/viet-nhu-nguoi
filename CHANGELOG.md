@@ -1,5 +1,16 @@
 # Changelog
 
+## 2.20.0 (2026-11-27)
+
+Nhắn sếp, anh chị thì không gõ tắt chữ Việt; quy tắc xưng hô lưu vào memory thành bảng theo vai.
+
+- `references/chat.md` có bảng vai người nhận: người trên, đồng cấp, cấp dưới, người yêu hay vợ chồng, khách hàng. Vai nhận ra từ cách người dùng xưng hô, không đoán từ tên. Nhắn người trên (người dùng xưng em, con, cháu: sếp, anh chị, thầy cô, cô chú, bố mẹ) thì chữ Việt viết đủ, kể cả khi tin cũ của người dùng có gõ tắt. Chữ tắt công việc như MR, PR, API, QA, PO, ok vẫn giữ. Bản cũ dặn gõ tắt trên Teams với mọi người nhận, kể cả cấp trên, và chép chữ tắt từ mẫu khi nhắn sếp.
+- `references/edit.md`: sửa tin gửi người trên thì viết đủ chữ Việt gõ tắt, phần còn lại để nguyên. Bản cũ coi tin "dạ a, e gửi ... a xem giúp e có đc ko" là đã tự nhiên rồi trả nguyên văn.
+- `references/voice.md`: quy tắc xưng hô cần nhớ qua các phiên thì ghi thành bảng, mỗi người một hàng, cột "Vai" dùng đúng tên vai trong bảng của `chat.md` để lần sau tra theo hàng. Người đã có hàng thì sửa hàng ấy. File commit lên repo chung thì hỏi trước khi ghi tên đồng nghiệp. Claude Code và Codex bản cũ đều tự ghi vào memory hay `AGENTS.md`, nên skill không dặn chỗ lưu. Bản đầu có câu dặn chỗ lưu, bỏ đi rồi chạy lại vẫn qua 3/3.
+- Mục 66: khối Sau viết đủ chữ, vì người nhận là chị trưởng nhóm.
+- Bộ đề thêm bốn đề: `chat-zalo-sep-go-tat`, `sua-tin-sep-go-tat` (có "PO" phải giữ), `chat-teams-nhan-em` (nhắn người dưới vẫn gõ tắt), `luu-xung-ho-memory`. `chat-teams-khong-lap` và đề để riêng `chat-teams-bao-tien-do` đổi điều kiện: nhắn anh Quân, chị Hà thì không gõ tắt chữ Việt. `check.py` có thêm `write_keep`, chấm chữ trong file trợ lý đã ghi: đề nhờ lưu memory thì phải chấm file đã ghi. Bộ đề lên 82.
+- Kết quả, Opus mức medium, ba lượt mỗi đề. `chat-zalo-sep-go-tat` từ 0/3 lên 3/3. `sua-tin-sep-go-tat` từ 0/3 lên 3/3, "PO" còn nguyên cả ba lượt. `luu-xung-ho-memory` từ 0/3 lên 3/3: bản cũ lưu gạch đầu dòng không có vai, bản mới lưu bảng có cột "Vai". `chat-teams-khong-lap` từ 0/3 lên 2/3: lượt trượt vẫn viết đủ chữ nhưng thêm ghi chú dưới tin, trích lại câu "anh duyệt giúp em nha". `chat-teams-nhan-em` qua 3/3 ở cả hai bản. 22 đề chat, sửa tin và giọng chạy lại một lượt đều qua; tin gửi bạn, gửi người dưới vẫn gõ tắt như mẫu. Đề để riêng `chat-teams-bao-tien-do` chạy sau khi chốt bản: bản cũ 0/3 ("e code xong r ạ", "thứ Sáu c nhé"), bản mới 2/3. Lượt trượt vẫn viết đủ chữ, chỉ thêm ghi chú rằng hôm chạy thử cũng là thứ Sáu nên nên ghi rõ "thứ Sáu tuần sau", và vượt 70 chữ.
+
 ## 2.19.0 (2026-11-24)
 
 Tìm thêm dấu hiệu văn AI tiếng Việt: một quy tắc mới, bảy đề chốt chặn.
